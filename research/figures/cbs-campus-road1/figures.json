@@ -1,0 +1,534 @@
+{
+  "components": {
+    "Alpha": {
+      "alignment_SE3": [
+        [
+          -0.7680728450526987,
+          0.6401319583034548,
+          0.017180822193296568,
+          744073.6179601338
+        ],
+        [
+          -0.640120076894107,
+          -0.7667675548335687,
+          -0.04810201671065376,
+          2553113.7993998537
+        ],
+        [
+          -0.017617941132151985,
+          -0.04794364205120127,
+          0.9986946557067032,
+          0.15420467390100567
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "bev": {
+        "display_resolution_m": 0.3,
+        "extent_m": [
+          -285.0,
+          558.6,
+          -295.5,
+          215.39999999999998
+        ],
+        "occupied_pixels": 929914,
+        "view_limits_m": null
+      },
+      "map_point_counts": {
+        "Alpha": 2429805,
+        "Bob": 2203445,
+        "Carol": 2822527
+      },
+      "map_point_total": 7455777,
+      "oblique": {
+        "azimuth_deg": -65,
+        "elevation_deg": 52,
+        "rendered_points": 650000,
+        "sampling_seed": 0,
+        "vertical_exaggeration": 1,
+        "view_limits_m": null
+      },
+      "origin_world_m": [
+        744073.322586885,
+        2553112.01818464,
+        0.1892
+      ],
+      "robots": [
+        "Alpha",
+        "Bob",
+        "Carol"
+      ]
+    }
+  },
+  "dpi": 350,
+  "elevation_color_limits_m": [
+    -2.0,
+    25.0
+  ],
+  "evaluation_files": {
+    "Alpha-corrected.jsonl": "c6fe1bb9f17bbacb06a00f8b23253732940ff8af4d9ddd45db792aabc48e3b53",
+    "Alpha-corrected.tum": "a770b1c6e8567bbc7a98b102681782dbf6bd367835c0e49c039d7b10d7644a7e",
+    "Alpha-maps.npz": "0872199a1f4a11c6a679157af4cd5382856ea42df0dbbcb1bdf78a3585982e35",
+    "Bob-corrected.jsonl": "5811d11ccbda8a9f99e6500c265e0ecab1cf57c2ac660e9e8e3a0ee9cedee7f1",
+    "Bob-corrected.tum": "7b821d60f30b9423b4ccdde7cdd7745da422e696404f237351ca8fc637f3fc35",
+    "Bob-maps.npz": "c17570dd7e70879d15a9b406dc6639d7068e2dfd42f744543a1387a6b9f7ce3b",
+    "Carol-corrected.jsonl": "8f39c77b3bb3531dd33d83e37b17020ed41ef3cb7b488d13c0ef0b223f92aa81",
+    "Carol-corrected.tum": "19db052564970b966159aa63a376199c6dd2e2ce564fcf71e6041634b0b24ad2",
+    "Carol-maps.npz": "e470992331510ff6030a197c6b0b266f40587caef1db64825bb8a92a4c869191",
+    "evo/cbs/Alpha-ape.zip": "0d6f252c578fa6d1d0c45a9dad34ae6b79f1a730c6d959c15aec54e2406a2334",
+    "evo/cbs/Alpha-component-ape.zip": "cdda724a530ead4091a3a9575deffef99c6b52866196d3e9dc63479a7c05951f",
+    "evo/cbs/Alpha-estimate-aligned.tum": "8fc88c5f52b9048b11cd81b375c9c8feb13837d08dc59c71b0a90b3eeb63755b",
+    "evo/cbs/Alpha-estimate.kitti": "d863253d45a789eb8681d79fb366e2114614237f3686d9e2a58cc74dca5710b3",
+    "evo/cbs/Alpha-reference-matched.tum": "774e35cf665af32ba19ddaeebb6e4e6543c9ace856cb5185935236dccd45bf5c",
+    "evo/cbs/Alpha-reference.kitti": "f662c60fdc82a6dbed961cbe65285e322ee4615974669aa111864e7674cdd9ee",
+    "evo/cbs/Bob-ape.zip": "179c08c2fe128c026572e455bd90f952ecfc78f3437ca038133b2a15501ad33f",
+    "evo/cbs/Bob-estimate-aligned.tum": "d4d4fb25f722c2980a4cbc029d7abd92795a9be78768a290febd2763da2380a9",
+    "evo/cbs/Bob-reference-matched.tum": "34c9eb244bebde1709dee663588a43a369ba347e45756360cabaed9b94854635",
+    "evo/cbs/Carol-ape.zip": "8658c48221eedf06d91fa1aa9f3631ea0357603ef16788b54f08ea0ec70165ff",
+    "evo/cbs/Carol-estimate-aligned.tum": "4729dccbc5f73eed59b6038c9876c4e752cdcefa982688898fd19694acc42408",
+    "evo/cbs/Carol-reference-matched.tum": "a68d25dbc91bd2fcd5d17ccae2826bb1234ae686055ad91a69c5e4bcd93ffc80",
+    "evo/cbs/README.md": "f52615a1a00ca4ac0cebbf80e1b04b3660fc4fbb0a06bcbbb674bc2fca1fea27",
+    "evo/cbs/evaluation.json": "44fabe98c8226e181eadd91deeb594f622b015a88f087c2bbde69f0cde8347a8",
+    "factors.jsonl": "1c8e8b349cc7ba544b69be774cf210cbc11cc75aedade0cc2d6ded508dbb2a89",
+    "metrics.csv": "8bfaeddf03fbd3e12006e30d0866ac03608a01e3fee9df414a1c69d8d1db7097",
+    "poses.jsonl": "b07d4e13fd01ececc9c9184830a0d26b3a87dc4c03d622b441c244af8051fcd5",
+    "report.json": "4a2ac439d9c3815440d90cf67998f88dc9bfca03dae334f8e60aeeb8a37faaab",
+    "result.rrd": "e0aa3037ad3c8a12f7c323d92ec5e3609e09039211949315cc38545efbff769b",
+    "trajectories.png": "a5abd060e50bc2079c79e09166cbf91e03a4fd58872a03a915bd0a1f062cfbe8",
+    "visualization-input.json": "0fc04aa6fcba5feea91baeadf7675f037d969890a126d593a4acb23e7ded4c81"
+  },
+  "evaluation_stage": "c9553aa0d7e5e8ba7acceb5425cfc17b186f860ca670f19d5d0aeec4171dfb4c",
+  "experiment": {
+    "branch_attribution": {
+      "accepted_constraints": {
+        "mapclosures": 35,
+        "mapclosures+megaloc": 99,
+        "megaloc": 22
+      },
+      "verification_attempts": {
+        "mapclosures": 278,
+        "mapclosures+megaloc": 247,
+        "megaloc": 70
+      }
+    },
+    "config": {
+      "backend": {
+        "evidence": {
+          "max_points": 16000,
+          "voxel_m": 0.5
+        },
+        "fusion": {
+          "visual_min_similarity": 0.5
+        },
+        "mapclosures": {
+          "density_map_resolution": 0.5,
+          "density_threshold": 0.05,
+          "hamming_distance_threshold": 50,
+          "inliers_threshold": 5,
+          "local_map": "frozen trailing 5-second submap; 0.25 m voxel centroids",
+          "max_hypotheses_per_query": 20,
+          "max_range_m": 80.0,
+          "upstream_commit": "1710f15db000a579324e3ba045cd64a0b4d706da"
+        },
+        "name": "megaloc_mapclosures",
+        "registration": {
+          "correspondence_m": 1.5,
+          "inlier_m": 0.6,
+          "max_condition": 1000000,
+          "max_iterations": 40,
+          "max_points": 20000,
+          "max_range_m": 80.0,
+          "max_rmse_m": 0.35,
+          "min_initial_overlap": 0.1,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "rotation_sigma_floor_deg": 2.0,
+          "seed": 0,
+          "translation_sigma_floor_m": 0.2,
+          "voxel_m": 0.4
+        }
+      },
+      "dataset": "/data/s3e/S3E_Campus_Road_1",
+      "dpgo": {
+        "localhost_only": true,
+        "loop_rate_hz": 10.0,
+        "mode": "peers",
+        "ros_domain_id": 73,
+        "settle_iterations": 100,
+        "timeout_s": 240
+      },
+      "evaluation": {
+        "evo_max_diff_s": 0.05,
+        "gt_max_gap_s": 2.0,
+        "map_voxel_m": 0.25,
+        "proximity_m": 10.0,
+        "rerun_sensor_stride": 20,
+        "rerun_verification_limit": 80,
+        "rerun_version": "0.37.1"
+      },
+      "keyframes": {
+        "max_interval_s": 2.0,
+        "rotation_deg": 10.0,
+        "submap_s": 5.0,
+        "translation_m": 1.0,
+        "voxel_m": 0.25
+      },
+      "loops": {
+        "branch_verification_limits": {
+          "mapclosures": 1,
+          "megaloc": 1
+        },
+        "min_verification_interval_s": 2.0,
+        "same_robot_exclusion_s": 30,
+        "top_k": 20,
+        "verification_queue_size": 2,
+        "worker_timeout_s": 120
+      },
+      "odometry": {
+        "rate": 1.0
+      },
+      "output_root": ".ros2/campus-road1-megaloc-mapclosures-cbs",
+      "pgo": {
+        "alignment_min_support": 2,
+        "alignment_rotation_deg": 15.0,
+        "alignment_translation_m": 2.0,
+        "gnc_probability": 0.99,
+        "odometry_rotation_sigma_deg": 1.0,
+        "odometry_translation_sigma_m": 0.15
+      },
+      "robots": [
+        "Alpha",
+        "Bob",
+        "Carol"
+      ],
+      "schema_version": 2,
+      "visual": {
+        "checkpoint": ".ros2/research-models/megaloc/model.safetensors",
+        "checkpoint_sha256": "d4f9f2bcb60018f91eb6a8e061ed054fd55654e10c2569cf13841ea986ffb4f8",
+        "gpu_lock": ".ros2/research-models/gpu.lock",
+        "python": ".ros2/model-venv/bin/python",
+        "source": ".ros2/research-models/megaloc"
+      }
+    },
+    "end_to_end_clock": "run log filesystem birth to final registry write",
+    "end_to_end_wall_s": 4200.907497644424,
+    "figure_files_verified": 10,
+    "native": {
+      "cbs": {
+        "branch": "dev/fast-livo2-s3e-dpgo",
+        "commit": "11d84afe3397870cddecb5b6c07f4ed6866466a4"
+      },
+      "cbs_ros": {
+        "branch": "dev/fast-livo2-s3e-dpgo",
+        "commit": "86e3e3511b9c4bb2750628c823b682b5200c34a3"
+      }
+    },
+    "rerun_verified": true,
+    "retrieval": {
+      "accepted_proximity_precision": 1.0,
+      "detection_latency_median_s": 0.0,
+      "detection_latency_p95_s": 0.0,
+      "metric_label": "position-proximity labels; S3E orientations are placeholders",
+      "proximity_precision": 0.22944388721720718,
+      "proximity_recall": 0.5044841950502328,
+      "queries_with_causal_positive": 867,
+      "recall": {
+        "1": 0.881199538638985,
+        "20": 0.9123414071510957,
+        "5": 0.9019607843137255
+      },
+      "verification_attempts": 595,
+      "verification_cache_hits": 0,
+      "verification_cache_misses": 595,
+      "verification_cached_runtime_s": 0,
+      "verification_runtime_s": 98.70519427998624,
+      "verification_uncached_runtime_s": 98.70519427998624,
+      "verification_yield": 0.26218487394957984,
+      "wall_detection_latency_median_s": 0.3140039869995235,
+      "wall_detection_latency_p95_s": 0.5208589402998766
+    },
+    "source_snapshot": "c37389536b9bd9e6c31b909b987df90c64e6e77aa6210d9f6c5945f99730964c",
+    "stage_elapsed_s": {
+      "descriptors.livo.megaloc.Alpha": 56.43114017199969,
+      "descriptors.livo.megaloc.Bob": 43.76365354900008,
+      "descriptors.livo.megaloc.Carol": 49.570458525000504,
+      "descriptors.livo.megaloc_mapclosures.Alpha": 29.040126817999408,
+      "descriptors.livo.megaloc_mapclosures.Bob": 23.702039615000103,
+      "descriptors.livo.megaloc_mapclosures.Carol": 33.73682241900042,
+      "dpgo": 176.70143741300035,
+      "dpgo_evaluate": 277.5201082399999,
+      "keyframes.livo.Alpha": 517.8093326260005,
+      "keyframes.livo.Bob": 542.6138399060001,
+      "keyframes.livo.Carol": 649.6358891559994,
+      "odometry.livo.Alpha": 739.0177557769998,
+      "odometry.livo.Bob": 899.3990141889999,
+      "odometry.livo.Carol": 725.0690077520003
+    },
+    "stage_hashes": {
+      "descriptors.livo.megaloc.Alpha": "25631d661cf5ad528b721d15c7fe3c5f59f7b450bfecba1d57972fb4d8741093",
+      "descriptors.livo.megaloc.Bob": "1238166e223ef44902f7aa0503ff4be5d0d9385fbdb383aa69dbba86d6ba03d9",
+      "descriptors.livo.megaloc.Carol": "76c1885643527acdf33b084b0450e0be5e657ad1028d548cf68977f57f83158b",
+      "descriptors.livo.megaloc_mapclosures.Alpha": "d2f8e1c0b5a35915cb09e674cec293b46271841cc0cef152bed51e6b711a125b",
+      "descriptors.livo.megaloc_mapclosures.Bob": "f79d29743c9c2b208a133c2acbbd80384445b25872e935f31133adb6df1529c4",
+      "descriptors.livo.megaloc_mapclosures.Carol": "a550a6793fe2e5ffdb9e444c96a3e315ae8ac13d840b075aed3e9784d9aa07a2",
+      "dpgo": "7eae41dbd93ed08b39412809c0703d7049a4b5164823726a73140e35de35f897",
+      "dpgo_evaluate": "c9553aa0d7e5e8ba7acceb5425cfc17b186f860ca670f19d5d0aeec4171dfb4c",
+      "keyframes.livo.Alpha": "c40dca276c2cec2d402839f84ddeb7ebe1c16f8609f3e02ac760b32196dfcae6",
+      "keyframes.livo.Bob": "087febef6acad9d449ec04fe2a2f994e04e2740f18b6d2f2b1de3910ff7596bc",
+      "keyframes.livo.Carol": "c5652e661e14f1ea7d0c5f445657b8a662d24872773bccf45098326f4caa5bdb",
+      "odometry.livo.Alpha": "cef1a6adaf0d78ccff8e9f3dfd947ba83164ef69479940ac6bcb888b8c3c6de2",
+      "odometry.livo.Bob": "aad86a90e7b5757e4663108eb528cfdfabb2d858280b153d22f68ab7c3beafcc",
+      "odometry.livo.Carol": "6af7015bb04d4129f03ac2d66c225d7f1261471ebe98e13c349eb287d23305e9"
+    },
+    "tests": {
+      "optional_ros_skipped": 4,
+      "passed": 30
+    },
+    "trajectory": {
+      "Alpha": {
+        "alignment_SE3": [
+          [
+            -0.7680728450526987,
+            0.6401319583034548,
+            0.017180822193296568,
+            744073.6179601338
+          ],
+          [
+            -0.640120076894107,
+            -0.7667675548335687,
+            -0.04810201671065376,
+            2553113.7993998537
+          ],
+          [
+            -0.017617941132151985,
+            -0.04794364205120127,
+            0.9986946557067032,
+            0.15420467390100567
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+        "association_max_diff_s": 0.05,
+        "engine": "evo 1.36.5",
+        "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+        "median_m": 1.1690131155774532,
+        "per_robot": {
+          "Alpha": {
+            "samples": 467,
+            "statistics": {
+              "max": 4.087197808556707,
+              "mean": 1.4394616441823425,
+              "median": 1.2227806567861081,
+              "min": 0.46628159373534905,
+              "rmse": 1.5669281759512559,
+              "sse": 1146.6082453114973,
+              "std": 0.6190428769623288
+            }
+          },
+          "Bob": {
+            "samples": 857,
+            "statistics": {
+              "max": 5.066852845109734,
+              "mean": 1.3065001308174555,
+              "median": 1.2292188149731926,
+              "min": 0.45081875541976063,
+              "rmse": 1.4955939583042746,
+              "sse": 1916.9387039156245,
+              "std": 0.727913934672376
+            }
+          },
+          "Carol": {
+            "samples": 581,
+            "statistics": {
+              "max": 4.510845363853971,
+              "mean": 1.173889351165953,
+              "median": 0.950388607494149,
+              "min": 0.29233862130563165,
+              "rmse": 1.34859257652527,
+              "sse": 1056.6658256637174,
+              "std": 0.6638416442783961
+            }
+          }
+        },
+        "rmse_m": 1.4706601754479975,
+        "robots": [
+          "Alpha",
+          "Bob",
+          "Carol"
+        ],
+        "samples": 1905,
+        "scale": 1.0,
+        "statistics": {
+          "max": 5.066852845109734,
+          "mean": 1.2986503480163423,
+          "median": 1.1690131155774532,
+          "min": 0.29233862130563165,
+          "rmse": 1.4706601754479975,
+          "sse": 4120.21277489084,
+          "std": 0.6901801397068507
+        }
+      }
+    },
+    "validation": {
+      "accepted_gt_available": 112,
+      "accepted_within_10m": 112,
+      "causality_violations": [],
+      "dataset": "/data/s3e/S3E_Campus_Road_1",
+      "evo_archive_reproduction": {
+        "Alpha": {
+          "max": 5.066852845109734,
+          "mean": 1.2986503480163423,
+          "median": 1.1690131155774532,
+          "min": 0.29233862130563165,
+          "rmse": 1.4706601754479975,
+          "sse": 4120.21277489084,
+          "std": 0.6901801397068507
+        }
+      },
+      "loop_pair_counts": {
+        "Alpha-Alpha": 20,
+        "Alpha-Bob": 69,
+        "Alpha-Carol": 24,
+        "Bob-Bob": 15,
+        "Bob-Carol": 23,
+        "Carol-Carol": 5
+      },
+      "mapclosures_features": {
+        "Alpha": {
+          "keyframes": 939,
+          "max": 458,
+          "median": 261.0,
+          "nonempty": 939
+        },
+        "Bob": {
+          "keyframes": 942,
+          "max": 425,
+          "median": 218.5,
+          "nonempty": 942
+        },
+        "Carol": {
+          "keyframes": 1009,
+          "max": 500,
+          "median": 261.0,
+          "nonempty": 1009
+        }
+      },
+      "ranked_candidates": 259457,
+      "ranked_replies": 8670,
+      "unique_loops": 156,
+      "verification_count": 595,
+      "verification_gt_available": 468,
+      "verification_gt_unavailable": 127,
+      "wire_accounting_exact": true,
+      "wire_bytes": 396762579,
+      "wire_records": 15539,
+      "within_10m_reasons": {
+        "accepted": 112,
+        "high_rmse": 331,
+        "mapclosures_no_pose": 2
+      },
+      "within_10m_selected": 445
+    },
+    "verification_reasons": {
+      "accepted": 156,
+      "high_rmse": 432,
+      "mapclosures_no_pose": 7
+    }
+  },
+  "files": {
+    "ground_truth_trajectories.pdf": "2f69cd52da58064359e9071f52f1c05383397cda50956eb703a8f1a6c32b6fe0",
+    "ground_truth_trajectories.png": "5f0ad59345124286cacac711da0cd87361928922eb8737b5b728d087418125ee",
+    "map_oblique.pdf": "7bc4f57f74fca4f70be6d5c646d20edd37ec351708fe9c91044ce561f0ab1b09",
+    "map_oblique.png": "f3f97cfd85edfea40271fcd27cb890da49205ed422c0eb7fc03434db380620a9",
+    "map_top_down.pdf": "cd0b804e3fe7859772b9872a5a211869dc018f5cef24ded8338a30efae811128",
+    "map_top_down.png": "664128ff98c201a3e81296235188782eae18c3acff12545d779648db0e5cab44",
+    "position_error.pdf": "bbbd561db75dbf34be98ce7f27651d9094526f01a008c39f77515967f98b4014",
+    "position_error.png": "578c1f0e8257ced90dfb247a02a4e2311f3ec0043be72bf0412e5b4e1b4efa40",
+    "trajectories_and_loops.pdf": "d699f86c29a95df7490786a4de6561c47374f7619b9abbc4a84ec5dcbdfe6dcd",
+    "trajectories_and_loops.png": "73a1125a4b556ddfaa2d6b7638f0916bddd19107e354f9462b4306aec48dc186"
+  },
+  "generator_sha256": "09fe3a1b2d6ea80384a0e4d4b06981475a6e70b4081254565aa50d656f82fe95",
+  "input_run": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/campus-road1-megaloc-mapclosures-cbs/run-4987c2a2f0438749.json",
+  "map_color": "robot identity or elevation; XYZ source contains no RGB",
+  "matplotlib_version": "3.10.9",
+  "position_error": {
+    "Alpha": {
+      "cbs": {
+        "samples": 467,
+        "statistics": {
+          "max": 4.087197808556707,
+          "mean": 1.4394616441823425,
+          "median": 1.2227806567861081,
+          "min": 0.46628159373534905,
+          "rmse": 1.5669281759512559,
+          "sse": 1146.6082453114973,
+          "std": 0.6190428769623288
+        }
+      }
+    },
+    "Bob": {
+      "cbs": {
+        "samples": 857,
+        "statistics": {
+          "max": 5.066852845109734,
+          "mean": 1.3065001308174555,
+          "median": 1.2292188149731926,
+          "min": 0.45081875541976063,
+          "rmse": 1.4955939583042746,
+          "sse": 1916.9387039156245,
+          "std": 0.727913934672376
+        }
+      }
+    },
+    "Carol": {
+      "cbs": {
+        "samples": 581,
+        "statistics": {
+          "max": 4.510845363853971,
+          "mean": 1.173889351165953,
+          "median": 0.950388607494149,
+          "min": 0.29233862130563165,
+          "rmse": 1.34859257652527,
+          "sse": 1056.6658256637174,
+          "std": 0.6638416442783961
+        }
+      }
+    }
+  },
+  "retention": {
+    "cleanup_root": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/campus-road1-megaloc-mapclosures-cbs",
+    "completed_at": "2026-09-13T21:15:53+03:00",
+    "recording_bytes": 471691930,
+    "recording_path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/recordings/campus-road1-cbs.rrd",
+    "recording_sha256": "e0aa3037ad3c8a12f7c323d92ec5e3609e09039211949315cc38545efbff769b",
+    "removed_file_bytes": 28002545694,
+    "removed_logs": [
+      {
+        "bytes": 14535,
+        "name": "campus-road1-cbs.log"
+      },
+      {
+        "bytes": 335,
+        "name": "campus-road1-carol-keyframes.log"
+      },
+      {
+        "bytes": 233,
+        "name": "campus-road1-figures.log"
+      }
+    ],
+    "status": "cleanup_complete"
+  },
+  "schema_version": 2,
+  "trajectory_error_source": "saved evo result arrays and statistics"
+}

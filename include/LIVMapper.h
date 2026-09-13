@@ -14,6 +14,7 @@ which is included as part of this source code package.
 #define LIV_MAPPER_H
 
 #include "IMU_Processing.h"
+#include "research_export.h"
 #include "vio.h"
 #include "preprocess.h"
 #if __has_include(<cv_bridge/cv_bridge.hpp>)
@@ -41,6 +42,14 @@ public:
   void stateEstimationAndMapping();
   void handleVIO();
   void handleLIO();
+  void exportResearchFrame(const cv::Mat& image, bool visual_updated);
+  std::unique_ptr<ResearchExport> research_export;
+  PointCloudXYZI::Ptr research_cloud;
+  std::string robot_id, world_frame, body_frame, camera_parameter_node, output_directory;
+  std::string research_directory;
+  int64_t research_stamp_ns = 0;
+  uint64_t research_frame_id = 0;
+  std::deque<int64_t> img_stamp_ns_buffer;
   void savePCD();
   void processImu();
   
@@ -66,7 +75,7 @@ public:
   template <typename T> void set_posestamp(T &out);
   template <typename T> void pointBodyToWorld(const Eigen::Matrix<T, 3, 1> &pi, Eigen::Matrix<T, 3, 1> &po);
   template <typename T> Eigen::Matrix<T, 3, 1> pointBodyToWorld(const Eigen::Matrix<T, 3, 1> &pi);
-  cv::Mat getImageFromMsg(const sensor_msgs::msg::Image::ConstSharedPtr &img_msg);
+  static cv::Mat getImageFromMsg(const sensor_msgs::msg::Image::ConstSharedPtr &img_msg);
 
   std::mutex mtx_buffer, mtx_buffer_imu_prop;
   std::condition_variable sig_buffer;

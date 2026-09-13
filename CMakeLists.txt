@@ -30,9 +30,10 @@ if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm|aarch64|ARM|AARCH64)")
   endif()
   add_definitions(-DARM_ARCH)
 else()
-  # x86-64 (Intel/AMD) optimizations
-  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -march=native -mtune=native -funroll-loops") #-flto
-  message(STATUS "Using general x86 optimizations: -O3 -march=native -mtune=native -funroll-loops") 
+  # Keep Eigen's SSE allocation ABI compatible with Ubuntu's prebuilt PCL/Vikit.
+  # -march=native enables AVX and changes Eigen's aligned malloc/free convention.
+  set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -mtune=native -funroll-loops")
+  message(STATUS "Using system-compatible x86 optimizations: -O3 -mtune=native -funroll-loops")
   add_definitions(-DX86_ARCH)
 endif()
 
@@ -97,9 +98,11 @@ find_package(OpenCV REQUIRED)
 find_package(Sophus REQUIRED)
 find_package(Boost REQUIRED COMPONENTS thread)
 find_package(fmt REQUIRED)
+find_path(NLOHMANN_JSON_INCLUDE_DIR nlohmann/json.hpp REQUIRED)
 
 # Include directories for dependencies
 include_directories(
+  ${NLOHMANN_JSON_INCLUDE_DIR}
   ${EIGEN3_INCLUDE_DIR}
   ${PCL_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
@@ -126,7 +129,7 @@ set(dependencies
   livox_ros_driver2
 )
 
-set(COMMON_DEPENDENCIES OpenMP::OpenMP_CXX fmt::fmt)
+set(COMMON_DEPENDENCIES OpenMP::OpenMP_CXX fmt::fmt Sophus::Sophus)
 
 # link_directories(${COMMON_DEPENDENCIES}
 #   ${vikit_common_LIBRARIES}/libvikit_common.so
@@ -138,7 +141,7 @@ add_library(vio src/vio.cpp src/frame.cpp src/visual_point.cpp)
 add_library(lio src/voxel_map.cpp)
 add_library(pre src/preprocess.cpp)
 add_library(imu_proc src/IMU_Processing.cpp)
-add_library(laser_mapping src/LIVMapper.cpp)
+add_library(laser_mapping src/LIVMapper.cpp src/research_export.cpp)
 add_library(utils src/utils.cpp)
 
 ament_target_dependencies(vio ${dependencies} )
@@ -149,8 +152,8 @@ ament_target_dependencies(laser_mapping ${dependencies})
 
 # linking libraries or executables to public dependencies
 target_link_libraries(laser_mapping 
-    ${CMAKE_SOURCE_DIR}/../../install/vikit_common/lib/libvikit_common.so 
-    ${CMAKE_SOURCE_DIR}/../../install/vikit_ros/lib/libvikit_ros.so
+    ${vikit_common_LIBRARIES}
+    ${vikit_ros_LIBRARIES}
     ${COMMON_DEPENDENCIES}
 )
 target_link_libraries(vio ${COMMON_DEPENDENCIES})
@@ -182,6 +185,19 @@ if(mimalloc_FOUND)
 endif()
 
 # Install the executable
+include(CTest)
+if(BUILD_TESTING)
+  add_executable(test_s3e_preprocess tests/test_preprocess.cpp)
+  ament_target_dependencies(test_s3e_preprocess ${dependencies})
+  target_link_libraries(test_s3e_preprocess pre ${PCL_LIBRARIES} ${COMMON_DEPENDENCIES})
+  add_test(NAME s3e_velodyne_preprocess COMMAND test_s3e_preprocess)
+  add_executable(test_s3e_image_buffer tests/test_image_buffer.cpp)
+  ament_target_dependencies(test_s3e_image_buffer ${dependencies})
+  target_link_libraries(test_s3e_image_buffer laser_mapping vio lio pre imu_proc
+    ${PCL_LIBRARIES} ${OpenCV_LIBRARIES} ${COMMON_DEPENDENCIES})
+  add_test(NAME s3e_image_buffer_ownership COMMAND test_s3e_image_buffer)
+endif()
+
 install(TARGETS
   fastlivo_mapping
   DESTINATION lib/${PROJECT_NAME}
@@ -193,6 +209,8 @@ install(
 )
 
 # Export dependencies
+install(PROGRAMS scripts/s3e_adapter.py DESTINATION lib/${PROJECT_NAME})
+
 ament_export_dependencies(
   rclcpp
   rclpy

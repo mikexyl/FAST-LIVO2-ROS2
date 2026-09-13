@@ -1,5 +1,9 @@
 # FAST-LIVO2 ROS2 HUMBLE
 
+Local S3E Square 1 setup: see [docs/S3E.md](docs/S3E.md) for build, one-command replay, calibration, and validation details.
+
+Offline three-robot loop closure: see [research/README.md](research/README.md) for the MegaLoc + MapClosures pipeline, saved results and Rerun inspection.
+
 ## FAST-LIVO2: Fast, Direct LiDAR-Inertial-Visual Odometry
 
 Thanks to hku mars lab chunran zheng for the open source excellent work
@@ -189,6 +193,13 @@ Do not forget to `source` your ROS2 workspace before running the following comma
 ros2 launch fast_livo mapping_aviz.launch.py use_rviz:=True
 ros2 bag play -p Retail_Street  # space bar controls play/pause
 ```
+
+## Offline multi-robot S3E experiments
+
+The [research pipeline](research/README.md) adds immutable synchronized MCAP export,
+isolated Alpha/Bob/Carol workers, independent MegaLoc + MapClosures loop retrieval, centralized GTSAM
+PGO, position-only evaluation and Rerun inspection. See the [method report](research/METHODS.md)
+for pinned pretrained checkpoints, source revisions, licensing and S3E adaptations.
 
 ## 5. License
 

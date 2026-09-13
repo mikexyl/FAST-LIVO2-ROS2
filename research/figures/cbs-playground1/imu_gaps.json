@@ -1,0 +1,35 @@
+{
+  "dataset": "/data/s3e/S3E_Playground_1/S3E_Playground_1.db3",
+  "decoder": "ROS2 CDR little-endian Header stamp at bytes 4..11; read-only SQLite timestamp order",
+  "threshold_s": 0.2,
+  "topics": {
+    "/Bob/imu/data": {
+      "message_count": 29483,
+      "header_gaps_over_0_2_s": [
+        {
+          "previous_ns": 1661163898477254907,
+          "next_ns": 1661163899046991936,
+          "gap_s": 0.569737029
+        },
+        {
+          "previous_ns": 1661163899066956941,
+          "next_ns": 1661163899377426601,
+          "gap_s": 0.31046966
+        },
+        {
+          "previous_ns": 1661163899467267603,
+          "next_ns": 1661163899747922751,
+          "gap_s": 0.280655148
+        }
+      ]
+    },
+    "/Carol/imu/data": {
+      "message_count": 29556,
+      "header_gaps_over_0_2_s": []
+    },
+    "/Alpha/imu/data": {
+      "message_count": 29237,
+      "header_gaps_over_0_2_s": []
+    }
+  }
+}

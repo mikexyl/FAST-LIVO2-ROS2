@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "dataset": "S3E_Laboratory_1",
+  "ground_truth_type": "start_end_positions_only",
+  "source": "https://huggingface.co/datasets/PengYu-Team/S3E/blob/main/README.md#known-issues",
+  "inputs": [
+    {
+      "path": "/data/s3e/S3E_Laboratory_1/alpha_gt.txt",
+      "sha256": "e9d6a3fa4cbb330e87874682cc2d4330e835c0f551b8f23e2c4046f5ffc40562",
+      "records": 2
+    },
+    {
+      "path": "/data/s3e/S3E_Laboratory_1/bob_gt.txt",
+      "sha256": "3230b381b8eb427dc7b7206ce66d79135fccae1febdd246a6e543a9a713246e3",
+      "records": 2
+    },
+    {
+      "path": "/data/s3e/S3E_Laboratory_1/carol_gt.txt",
+      "sha256": "fcc44422d87468d2dc2a13cb6f82a2c3338765787d42e40d14914e8c7c3c092e",
+      "records": 2
+    }
+  ],
+  "positions": [
+    {
+      "robot": "Alpha",
+      "endpoint": "start",
+      "record_id": 0,
+      "x": 782.608,
+      "y": 873.523,
+      "z": -866.465
+    },
+    {
+      "robot": "Alpha",
+      "endpoint": "end",
+      "record_id": 1,
+      "x": 783.146,
+      "y": 913.073,
+      "z": 61.758
+    },
+    {
+      "robot": "Bob",
+      "endpoint": "start",
+      "record_id": 0,
+      "x": 783.678,
+      "y": -315.667,
+      "z": -170.987
+    },
+    {
+      "robot": "Bob",
+      "endpoint": "end",
+      "record_id": 1,
+      "x": 785.587,
+      "y": -288.041,
+      "z": -264.224
+    },
+    {
+      "robot": "Carol",
+      "endpoint": "start",
+      "record_id": 0,
+      "x": 757.631,
+      "y": -2001.674,
+      "z": -276.049
+    },
+    {
+      "robot": "Carol",
+      "endpoint": "end",
+      "record_id": 1,
+      "x": 760.844,
+      "y": -2020.714,
+      "z": -433.321
+    }
+  ],
+  "projection": [
+    "y",
+    "z"
+  ],
+  "units": "source units; no unit conversion assumed",
+  "alignment": "none",
+  "timestamp_association": "not applicable to endpoint IDs",
+  "orientation": "ignored",
+  "connected_paths": false,
+  "dpi": 350,
+  "script_sha256": "cbfa375cb500c07e661fb87751787560f8c8c44338bc5f655b317811371a12ff",
+  "matplotlib_version": "3.10.9",
+  "artifacts": [
+    {
+      "path": "ground_truth_endpoints.png",
+      "sha256": "bafe957bad4f2875788be49970baca52a2340427c95fffac8516cdb3a6e29af3"
+    },
+    {
+      "path": "ground_truth_endpoints.pdf",
+      "sha256": "a1dc1adc324894bcef9607db525e9ff95bdb4cdf18fcdc010c869d2399a9bb9e"
+    },
+    {
+      "path": "positions.csv",
+      "sha256": "5fb1a97db73d2bcb193f60d8a206a25ab4eb2c0bba18dc6d01d376149d6dbb5f"
+    }
+  ]
+}

@@ -37,12 +37,19 @@
   <build_depend>sophus</build_depend>
   <build_depend>eigen</build_depend>
   <build_depend>fmt</build_depend>
+  <build_depend>nlohmann-json3-dev</build_depend>
 
   <exec_depend>cv_bridge</exec_depend>
   <exec_depend>image_transport</exec_depend>
   <exec_depend>libopencv-dev</exec_depend>
   <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>demo_nodes_cpp</exec_depend>
+  <exec_depend>rosbag2_transport</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
 
   <member_of_group>rosidl_interface_packages</member_of_group>
 

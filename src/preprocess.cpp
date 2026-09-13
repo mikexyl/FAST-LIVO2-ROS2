@@ -53,12 +53,14 @@ void Preprocess::set(bool feat_en, int lid_type, double bld, int pfilt_num)
 
 void Preprocess::process(const livox_ros_driver2::msg::CustomMsg::SharedPtr &msg, PointCloudXYZI::Ptr &pcl_out)
 {
+  blind_sqr = blind * blind;
   avia_handler(msg);
   *pcl_out = pl_surf;
 }
 
 void Preprocess::process(const sensor_msgs::msg::PointCloud2::ConstSharedPtr &msg, PointCloudXYZI::Ptr &pcl_out)
 {
+  blind_sqr = blind * blind;
   switch (lidar_type)
   {
   case OUST64:
@@ -399,7 +401,7 @@ void Preprocess::velodyne_handler(const sensor_msgs::msg::PointCloud2::ConstShar
       added_pt.y = pl_orig.points[i].y;
       added_pt.z = pl_orig.points[i].z;
       added_pt.intensity = pl_orig.points[i].intensity;
-      added_pt.curvature = pl_orig.points[i].time / 1000.0; // units: ms
+      added_pt.curvature = pl_orig.points[i].time * velodyne_time_scale; // units: ms
 
       if (!given_offset_time)
       {
@@ -462,7 +464,7 @@ void Preprocess::velodyne_handler(const sensor_msgs::msg::PointCloud2::ConstShar
       added_pt.y = pl_orig.points[i].y;
       added_pt.z = pl_orig.points[i].z;
       added_pt.intensity = pl_orig.points[i].intensity;
-      added_pt.curvature = pl_orig.points[i].time / 1000.0;
+      added_pt.curvature = pl_orig.points[i].time * velodyne_time_scale;
 
       if (!given_offset_time)
       {

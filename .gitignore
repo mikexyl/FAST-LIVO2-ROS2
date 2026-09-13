@@ -1,2 +1,6 @@
 Log/*
 build/*
+
+__pycache__/
+*.pyc
+.pytest_cache/

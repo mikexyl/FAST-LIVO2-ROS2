@@ -166,6 +166,7 @@ public:
   int lidar_type, point_filter_num, N_SCANS;
   
   double blind, blind_sqr;
+  double velodyne_time_scale = 0.001; // input point time to milliseconds
   bool feature_enabled, given_offset_time;
   std::shared_ptr<rclcpp::Publisher<sensor_msgs::msg::PointCloud2>> pub_full;
   std::shared_ptr<rclcpp::Publisher<sensor_msgs::msg::PointCloud2>> pub_surf;

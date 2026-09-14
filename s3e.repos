@@ -18,8 +18,8 @@ repositories:
   cbs:
     type: git
     url: https://github.com/mikexyl/cbs.git
-    version: 11d84afe3397870cddecb5b6c07f4ed6866466a4
+    version: bea1d3552283335f94f7b806276f508bb9d75ab0
   cbs_ros:
     type: git
     url: https://github.com/mikexyl/cbs_ros.git
-    version: 86e3e3511b9c4bb2750628c823b682b5200c34a3
+    version: 2b7d0d19ac206616160e8ab37cfe0b6591ea9123

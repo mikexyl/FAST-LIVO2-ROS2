@@ -76,6 +76,11 @@ evaluation:
   rerun_verification_limit: 80
   rerun_version: 0.37.1
 dpgo:
+  pcm:
+    enabled: true
+    probability: 0.99
+    minimum_clique_size: 2
+    timeout_s: 60.0
   mode: peers
   settle_iterations: 100
   loop_rate_hz: 10.0

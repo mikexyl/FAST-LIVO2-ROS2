@@ -1,0 +1,110 @@
+[
+  {
+    "robot": "Alpha",
+    "offset_s": 10,
+    "converged": true,
+    "translation": [
+      1.344867503379434,
+      0.001055009616907885,
+      0.015332435472649343
+    ],
+    "distance_m": 1.3449553145992794,
+    "inliers": 6012
+  },
+  {
+    "robot": "Alpha",
+    "offset_s": 30,
+    "converged": true,
+    "translation": [
+      1.2868841464984038,
+      0.010128959077539655,
+      0.01594006458463124
+    ],
+    "distance_m": 1.287022722402321,
+    "inliers": 5416
+  },
+  {
+    "robot": "Alpha",
+    "offset_s": 60,
+    "converged": true,
+    "translation": [
+      1.4275919582771925,
+      0.0366946193168606,
+      0.009963727419210963
+    ],
+    "distance_m": 1.4280982355176421,
+    "inliers": 5909
+  },
+  {
+    "robot": "Bob",
+    "offset_s": 10,
+    "converged": false,
+    "translation": [
+      1.4226626971316017,
+      0.056645322113047965,
+      0.0018631274232015751
+    ],
+    "distance_m": 1.4237911762512259,
+    "inliers": 6226
+  },
+  {
+    "robot": "Bob",
+    "offset_s": 30,
+    "converged": true,
+    "translation": [
+      1.1886768205672802,
+      0.014056401193789436,
+      -0.0010434890053635517
+    ],
+    "distance_m": 1.1887603858800828,
+    "inliers": 5501
+  },
+  {
+    "robot": "Bob",
+    "offset_s": 60,
+    "converged": true,
+    "translation": [
+      -1.703479119116988,
+      -0.0282555661969142,
+      -0.010013491288089869
+    ],
+    "distance_m": 1.7037428668365642,
+    "inliers": 5747
+  },
+  {
+    "robot": "Carol",
+    "offset_s": 10,
+    "converged": true,
+    "translation": [
+      1.4330945833461888,
+      0.02975165168512881,
+      -0.012262846940945286
+    ],
+    "distance_m": 1.4334558322492106,
+    "inliers": 6710
+  },
+  {
+    "robot": "Carol",
+    "offset_s": 30,
+    "converged": true,
+    "translation": [
+      1.2516585599698051,
+      0.028799474234625474,
+      -0.018046284151346757
+    ],
+    "distance_m": 1.25211989395327,
+    "inliers": 6579
+  },
+  {
+    "robot": "Carol",
+    "offset_s": 60,
+    "converged": true,
+    "translation": [
+      1.8217310616201314,
+      0.043675694238942304,
+      -0.00999535098624842
+    ],
+    "distance_m": 1.822281957925338,
+    "inliers": 7305
+  }
+]

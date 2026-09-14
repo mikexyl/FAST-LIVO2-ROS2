@@ -1,10 +1,12 @@
 """Launch independent CBS/ROS robot processes and collect their saved outputs."""
 import os
+import math
 from pathlib import Path
 import signal
 import subprocess
 import sys
 import time
+import uuid
 from .artifacts import digest, file_hash, read_json, read_jsonl, write_json, write_jsonl
 
 
@@ -36,6 +38,20 @@ def run(cfg, artifacts, source, out):
     mode = settings.get('mode', 'peers')
     if mode not in ('peers', 'frozen'): raise ValueError('dpgo.mode must be peers or frozen')
     frozen = read_jsonl(Path(artifacts[f'loops.livo.{method}'])/'constraints.jsonl') if mode == 'frozen' else []
+    pcm = dict(settings.get('pcm', {}))
+    pcm_enabled = pcm.get('enabled', False)
+    if type(pcm_enabled) is not bool: raise ValueError('dpgo.pcm.enabled must be boolean')
+    if set(pcm) - {'enabled', 'probability', 'minimum_clique_size', 'timeout_s'}:
+        raise ValueError('Unknown dpgo.pcm option')
+    if pcm_enabled:
+        probability, minimum, timeout = pcm.get('probability', .99), pcm.get('minimum_clique_size', 2), pcm.get('timeout_s', 60.)
+        if type(probability) not in (int, float) or not 0 < probability < 1:
+            raise ValueError('PCM probability must be finite and strictly between 0 and 1')
+        if type(minimum) is not int or minimum < 1:
+            raise ValueError('PCM minimum_clique_size must be a positive integer')
+        if type(timeout) not in (int, float) or not math.isfinite(timeout) or timeout <= 0:
+            raise ValueError('PCM timeout_s must be finite and positive')
+    pcm_session = uuid.uuid4().hex if pcm_enabled else ''
     processes = []; logs = []; observers = {}; peak_rss = {}
     env = dict(os.environ, ROS_DOMAIN_ID=str(settings['ros_domain_id']),
         PYTHONPATH=str(Path(__file__).resolve().parents[1])+os.pathsep+os.environ.get('PYTHONPATH', ''),
@@ -56,6 +72,13 @@ def run(cfg, artifacts, source, out):
                 online=True, enable_gkcm=False, enable_soft_reset=False, enable_dcs=False,
                 use_robust_noise_models=False, log_dir=str(local/'native'))
             params.update(settings.get('cbs_parameters', {}))
+            if any(k.startswith('pcm_') for k in settings.get('cbs_parameters', {})):
+                raise ValueError('Configure PCM through dpgo.pcm, not cbs_parameters')
+            params.update(pcm_enabled=pcm_enabled)
+            if pcm_enabled:
+                params.update(pcm_session_id=pcm_session, pcm_probability=float(pcm.get('probability', .99)),
+                    pcm_minimum_clique_size=pcm.get('minimum_clique_size', 2),
+                    pcm_timeout_sec=float(pcm.get('timeout_s', 60.)))
             import yaml
             param_path = local/'cbs.yaml'
             param_path.write_text(yaml.safe_dump({'/**': {'ros__parameters': params}}))
@@ -65,8 +88,10 @@ def run(cfg, artifacts, source, out):
             write_jsonl(local/'input-constraints.jsonl', incident)
             spec = dict(robot=robot, robots=robots, mode=mode, output=str(local),
                 store=str(Path(artifacts[f'keyframes.livo.{robot}'])/'store'),
-                descriptors=artifacts[f'descriptors.livo.{method}.{robot}'], backend=cfg['backend'],
+                descriptors=artifacts.get(f'descriptors.livo.{method}.{robot}',
+                                          str(Path(artifacts[f'keyframes.livo.{robot}'])/'store')), backend=cfg['backend'],
                 loops=cfg['loops'], pgo=cfg['pgo'], constraints=str(local/'input-constraints.jsonl'),
+                pcm_enabled=pcm_enabled, pcm_session_id=pcm_session,
                 ros_underlay=str(underlay), ros_overlay=str(overlay))
             write_json(local/'spec.json', spec)
             observers[robot] = launch(f'{robot}-frontend', [sys.executable, '-m', 's3e_pipeline.ros_dpgo_worker',
@@ -98,7 +123,7 @@ def run(cfg, artifacts, source, out):
             except subprocess.TimeoutExpired:
                 os.killpg(p.pid, signal.SIGKILL); p.wait()
         for log in logs: log.close()
-    poses = []; unique = {}; summaries = {}
+    poses = []; unique = {}; proposed = {}; summaries = {}; pcm_decisions = {}
     for robot in robots:
         summaries[robot] = read_json(out/robot/'summary.json')
         poses += read_jsonl(out/robot/'poses.jsonl')
@@ -107,10 +132,30 @@ def run(cfg, artifacts, source, out):
             if key in unique and digest(unique[key]) != digest(edge):
                 raise ValueError('Loop endpoints disagree on final constraint')
             unique[key] = edge
+        for edge in read_jsonl(out/robot/'proposed-constraints.jsonl'):
+            key = (tuple(edge['i']), tuple(edge['j']))
+            if key in proposed and digest(proposed[key]) != digest(edge):
+                raise ValueError('Loop endpoints disagree on proposed constraint')
+            proposed[key] = edge
+        if pcm_enabled:
+            for decision in read_json(out/robot/'pcm.json')['verdicts']:
+                key = (decision['robot_from'], decision['key_from'], decision['robot_to'], decision['key_to'])
+                if key in pcm_decisions and pcm_decisions[key] != decision:
+                    raise ValueError('PCM endpoint decisions disagree')
+                pcm_decisions[key] = decision
     constraints = [unique[k] for k in sorted(unique)]
     write_jsonl(out/'poses.jsonl', poses); write_jsonl(out/'constraints.jsonl', constraints)
+    write_jsonl(out/'proposed-constraints.jsonl', [proposed[k] for k in sorted(proposed)])
+    if pcm_enabled:
+        write_json(out/'pcm.json', dict(session_id=pcm_session, settings=pcm,
+            verdicts=[pcm_decisions[k] for k in sorted(pcm_decisions)],
+            proposed_loops=len(proposed), retained_loops=len(constraints),
+            excluded_loops=len(proposed)-len(constraints),
+            scope='inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged'))
     write_json(out/'summary.json', dict(backend='CBS SE(3)', transport='ROS2 Fast DDS', mode=mode,
         wall_s=time.monotonic()-start, robots=summaries, keyframes=len(poses), loops=len(constraints),
+        proposed_loops=len(proposed), pcm_enabled=pcm_enabled,
+        pcm_network_cdr_bytes=sum(s['pcm_network_cdr_bytes'] for s in summaries.values()),
         shared_reference=all(s['reference_available'] for s in summaries.values()),
         # Existing NodeStats counts the client side: requests sent + responses
         # received. Summing both counts each service message exactly once.

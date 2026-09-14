@@ -89,7 +89,10 @@ def test_evo_degenerate_alignment_reported_as_unavailable(tmp_path):
 
 
 @pytest.mark.parametrize('config_name,sequence', [
+    ('square2-cbs.yaml', 'S3E_Square_2'),
+    ('library1-cbs.yaml', 'S3E_Library_1'),
     ('playground1-cbs.yaml', 'S3E_Playground_1'),
+    ('playground2-cbs.yaml', 'S3E_Playground_2'),
     ('laboratory1-cbs.yaml', 'S3E_Laboratory_1'),
     ('campus-road1-cbs.yaml', 'S3E_Campus_Road_1'),
 ])
@@ -99,6 +102,10 @@ def test_different_sequence_registry_is_rejected(tmp_path, config_name, sequence
     square = yaml.safe_load((configs/'square1-cbs.yaml').read_text())
     if sequence == 'S3E_Playground_1':
         square['odometry']['start_offsets_s'] = {'Bob': 22.0}
+        # Excluded historical sequence retains its pre-PCM configuration.
+        square['dpgo'].pop('pcm')
+    if sequence in ('S3E_Playground_2', 'S3E_Square_2', 'S3E_Library_1'):
+        square['odometry']['mapping_overrides'] = {r:{'vio.img_point_cov':100} for r in cfg['robots']}
     assert {k:v for k,v in cfg.items() if k not in ('dataset','output_root')} == {k:v for k,v in square.items() if k not in ('dataset','output_root')}
     dataset = tmp_path/sequence; dataset.mkdir(); (dataset/'metadata.yaml').write_text('{}')
     cfg.update(dataset=str(dataset), output_root=str(tmp_path/'output'))

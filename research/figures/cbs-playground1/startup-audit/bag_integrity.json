@@ -1,0 +1,44 @@
+{
+  "database": "/data/s3e/S3E_Playground_1/S3E_Playground_1.db3",
+  "database_bytes": 9411952640,
+  "sqlite_quick_check": [
+    [
+      "ok"
+    ]
+  ],
+  "metadata_counts": {
+    "/Bob/velodyne_points": 2963,
+    "/Bob/imu/data": 29483,
+    "/Bob/left_camera/compressed": 2949,
+    "/Bob/right_camera/compressed": 2949,
+    "/Bob/fix": 295,
+    "/Carol/imu/data": 29556,
+    "/Carol/velodyne_points": 2956,
+    "/Carol/right_camera/compressed": 2949,
+    "/Carol/left_camera/compressed": 2950,
+    "/Carol/fix": 295,
+    "/Alpha/left_camera/compressed": 2927,
+    "/Alpha/right_camera/compressed": 2927,
+    "/Alpha/imu/data": 29237,
+    "/Alpha/velodyne_points": 2923,
+    "/Alpha/fix": 292
+  },
+  "actual_counts": {
+    "/Bob/velodyne_points": 2963,
+    "/Bob/imu/data": 29483,
+    "/Bob/left_camera/compressed": 2949,
+    "/Bob/right_camera/compressed": 2949,
+    "/Bob/fix": 295,
+    "/Carol/imu/data": 29556,
+    "/Carol/velodyne_points": 2956,
+    "/Carol/right_camera/compressed": 2949,
+    "/Carol/left_camera/compressed": 2950,
+    "/Carol/fix": 295,
+    "/Alpha/left_camera/compressed": 2927,
+    "/Alpha/right_camera/compressed": 2927,
+    "/Alpha/imu/data": 29237,
+    "/Alpha/velodyne_points": 2923,
+    "/Alpha/fix": 292
+  },
+  "limitation": "Structural integrity and message counts do not establish whether samples were lost during recording or bag creation."
+}

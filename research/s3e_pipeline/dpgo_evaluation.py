@@ -92,6 +92,8 @@ def evaluate(cfg, artifacts, dataset, output):
         dataset=str(dataset), ground_truth=gt_status,
         trajectory_evaluation=read_json(output/'evo/cbs/evaluation.json'))
     report['trajectory_metrics_status'] = 'available' if report['trajectory'] else 'unavailable: see evo component status'
+    if summary.get('pcm_enabled'):
+        report['pcm'] = read_json(dpgo/'pcm.json')
     if events:
         report['retrieval'] = retrieval_metrics(all_keys, events, gt, cfg['evaluation'], cfg['loops']['same_robot_exclusion_s'])
         latencies = [e['wall_detection_latency_s'] for e in events if 'wall_detection_latency_s' in e]

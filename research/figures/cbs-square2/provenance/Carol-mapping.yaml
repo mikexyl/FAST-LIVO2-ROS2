@@ -1,0 +1,104 @@
+/**:
+  ros__parameters:
+    common:
+      img_topic: /Carol/left_camera/image
+      lid_topic: /Carol/velodyne_points_start
+      imu_topic: /Carol/imu/data
+      img_en: 1
+      lidar_en: 1
+      ros_driver_bug_fix: false
+    extrin_calib:
+      extrinsic_T:
+      - -0.03181799390095727
+      - -0.0050584361631037245
+      - 0.20284730569079368
+      extrinsic_R:
+      - 0.9996571430423355
+      - 0.020396103869417127
+      - 0.01641957545551314
+      - -0.020033102981335992
+      - 0.9995577585857329
+      - -0.02197625725243218
+      - -0.016860545614981855
+      - 0.021639784965623222
+      - 0.9996236544083085
+      Rcl:
+      - 0.024713433215211727
+      - -0.9995014955006603
+      - 0.019647053485449387
+      - 0.012207384934017436
+      - -0.019349870412999574
+      - -0.9997382468766874
+      - 0.9996200408013984
+      - 0.024946803541596237
+      - 0.011723097767527564
+      Pcl:
+      - 0.16232181385671593
+      - -0.1683031338869671
+      - -0.15942932745661434
+    time_offset:
+      imu_time_offset: 0.0
+      img_time_offset: 0.0
+      exposure_time_init: 0.0
+    preprocess:
+      point_filter_num: 1
+      filter_size_surf: 0.2
+      lidar_type: 2
+      scan_line: 16
+      blind: 1.0
+      velodyne_time_scale: 1000.0
+    vio:
+      max_iterations: 5
+      outlier_threshold: 1000
+      img_point_cov: 100
+      patch_size: 8
+      patch_pyrimid_level: 4
+      normal_en: true
+      raycast_en: false
+      inverse_composition_en: false
+      exposure_estimate_en: true
+      inv_expo_cov: 0.1
+    imu:
+      imu_en: true
+      imu_int_frame: 30
+      acc_cov: 0.5
+      gyr_cov: 0.3
+    lio:
+      max_iterations: 5
+      dept_err: 0.02
+      beam_err: 0.05
+      min_eigen_value: 0.0025
+      voxel_size: 2.0
+      max_layer: 2
+      max_points_num: 50
+      layer_init_num:
+      - 5
+      - 5
+      - 5
+      - 5
+      - 5
+    local_map:
+      map_sliding_en: true
+      half_map_size: 100
+      sliding_thresh: 8.0
+    uav:
+      imu_rate_odom: false
+      gravity_align_en: true
+    publish:
+      dense_map_en: false
+      pub_effect_point_en: false
+      pub_plane_en: false
+      pub_scan_num: 1
+      blind_rgb_points: 0.0
+    evo:
+      seq_name: S3E_Square_1_carol
+      pose_output_en: true
+    pcd_save:
+      pcd_save_en: false
+      type: 0
+      colmap_output_en: false
+      filter_size_pcd: 0.15
+      interval: -1
+    image_save:
+      img_save_en: false
+      interval: 1

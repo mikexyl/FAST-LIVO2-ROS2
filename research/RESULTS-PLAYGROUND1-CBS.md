@@ -2,6 +2,66 @@
 
 Paths under `.ros2/` refer to local artifacts; generated data and Rerun recordings are not published in this repository.
 
+**Status: excluded from further experiments at the user's request.** The
+results below are retained as a failed historical run. The follow-up startup
+diagnosis identified a configuration sensitivity in Alpha and an unresolved
+post-gap startup problem in Bob; this sequence is not a validated benchmark
+result for FAST-LIVO2 or CBS.
+
+## Follow-up startup diagnosis
+
+Bounded replays reproduced the early under-motion before loop detection or
+CBS. Changing only `vio.img_point_cov` from 1000 to the upstream Avia
+configuration's 100 restored Alpha's early trajectory. This gives the visual
+measurements ten times their previous inverse-variance weight. The same
+change did not resolve Bob's post-gap restart.
+
+| Robot / requested bag interval | Visual variance | Position ATE RMSE (m) | Matched GT samples |
+|---|---:|---:|---:|
+| Alpha / 0–105 s | 1000 | 37.6765 | 104 |
+| Alpha / 0–105 s | 100 | 0.1478 | 104 |
+| Bob / 22–105 s | 1000 | 34.4114 | 82 |
+| Bob / 22–105 s | 100 | 32.4329 | 82 |
+| Bob / 0–19 s, before the gap | 100 | 0.0640 | 16 |
+
+These are **prefix diagnostics**, each independently aligned by evo 1.36.5
+with one rigid SE(3) transform and no scale fitting. Nearest timestamp
+association uses 0.05 s, with no interpolation or time offset. Each paired
+variance comparison uses identical matched GT timestamps. Actual estimate
+coverage begins after sensor startup; raw and matched trajectories and native
+evo result archives are retained in the [diagnostic evidence](figures/cbs-playground1/startup-audit/diagnosis.json).
+
+![Startup motion diagnosis](figures/cbs-playground1/startup-audit/startup_motion.png)
+
+Bob's stored IMU stream contains the three gaps documented below. The SQLite
+database passes `PRAGMA quick_check`, and all topic message counts agree with
+the bag metadata. This establishes gaps in the stored stream, without
+evidence of structural database corruption; it does not identify where the
+samples were lost. After 22 s, the inspected IMU prefix has no further gaps
+over 0.2 s. Alpha and Carol have no such gaps in the inspected first 105 s.
+All inspected LiDAR and image payloads change between adjacent messages,
+header timestamps are monotonic and equal their bag timestamps, and every
+diagnostic export timestamp matches an input camera timestamp exactly.
+[Timing audit](figures/cbs-playground1/startup-audit/sensor_timing.json) ·
+[Database integrity](figures/cbs-playground1/startup-audit/bag_integrity.json).
+
+Bob tracks the short pre-gap segment accurately with variance 100, but fails
+after restarting while moving. Initialization is therefore a remaining
+suspect, not an isolated cause: these intervals also contain different
+measurements. No full-sequence replay or CBS rerun followed these controls.
+The historical experiment configuration and its full-run scores below remain
+unchanged. The earlier raw-odometry error alone did **not** establish an
+intrinsic FAST-LIVO2 limitation.
+
+The runner now accepts `--mapping-config` and saves the exact YAML it loads.
+The experiment CLI supports per-robot `odometry.mapping_overrides`, includes
+effective mapping configuration and camera-file hashes in new odometry cache
+identities, and rejects frozen odometry with a different mapping configuration.
+These controls preserve the existing robot defaults. Verification after these
+changes: 37 Python tests passed, 4 optional ROS tests skipped.
+
+## Historical full pipeline run
+
 **Bob was restarted at bag offset 22.0 seconds**, after its final IMU gap.
 **The restart fixes the odometry stall, but joint trajectory accuracy remains
 poor: 25.6036 m combined CBS ATE RMSE.**
@@ -232,7 +292,7 @@ The report and seven figures have verified PNG and single-page PDF exports
 (14 files). Full-precision metrics, source/stage hashes and the cleanup audit
 are in [figures.json](figures/cbs-playground1/figures.json).
 
-Rerun recording, 275.5 MB (local: `.ros2/recordings/playground1-cbs.rrd`)
+The 275.5 MB Rerun recording was subsequently removed at the user's request when switching to Playground 2. Reports, figures and small diagnostic evidence remain.
 was verified by Rerun 0.37.1 and its SHA-256 was checked after moving it outside
 the run directory. It contains maps, trajectories, loop/registration views
 and sampled sensor data. Both the stopped attempt and restarted run's large

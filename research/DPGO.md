@@ -1,7 +1,7 @@
 # Distributed MegaLoc + MapClosures + CBS
 
-This is an offline ROS2 DDS pipeline for S3E Square 1, Playground 1,
-Laboratory 1 and Campus Road 1. Each robot owns its
+This is an offline ROS2 DDS pipeline for the evaluated S3E sequences (see
+[results](RESULTS-SUMMARY.md); Playground 1 is excluded). Each robot owns its
 FAST-LIVO2 odometry, keyframe store, retrieval index, geometric verifier and CBS
 optimizer. The launch process starts/stops processes and collects completed
 results. Retrieval, registration, constraint delivery and optimization happen
@@ -15,9 +15,12 @@ flowchart LR
   AF <-->|DDS queries and requested evidence| BF
   BF <-->|DDS queries and requested evidence| CF
   CF <-->|DDS queries and requested evidence| AF
-  AF --> AP[Alpha CBS]
-  BF --> BP[Bob CBS]
-  CF --> CP[Carol CBS]
+  AF --> AP[Alpha PCM then CBS]
+  BF --> BP[Bob PCM then CBS]
+  CF --> CP[Carol PCM then CBS]
+  AP <-->|separator odometry and PCM selections| BP
+  BP <-->|separator odometry and PCM selections| CP
+  CP <-->|separator odometry and PCM selections| AP
   AP <-->|pose and anchor beliefs| BP
   BP <-->|pose and anchor beliefs| CP
   CP <-->|pose and anchor beliefs| AP
@@ -44,7 +47,10 @@ FAST-LIVO2-ROS2/scripts/s3e_experiment.sh run --stage dpgo dpgo_evaluate \
   --input-run .ros2/megaloc-mapclosures/run-b404b29e5e9327f3.json --resume
 ```
 
-`dpgo` reruns loop detection over DDS and optimizes concurrently. `dpgo_evaluate`
+`dpgo` reruns loop detection over DDS. With the current PCM-enabled configs,
+each robot buffers its graph, exchanges separator odometry, selects a consistent
+inter-robot loop clique with each neighbor, and checks peer agreement before
+its first CBS update. `dpgo_evaluate`
 reuses its completed outputs for trajectory metrics, maps and Rerun. Supply the
 printed registry as `--input-run` when invoking evaluation separately. With the
 CBS configuration, `--stage all` selects odometry, descriptors, distributed
@@ -73,10 +79,11 @@ There are no parameter sweeps, alternate backends or enlarged spatial maps.
 MegaLoc's cached CUDA inference results are reused; retrieval, MapClosures,
 GICP and CBS in this evaluation use CPU.
 
-Accepted constraints go directly to both endpoint robots. Reciprocal proposals
+Geometrically accepted proposals go to both endpoint robots. Reciprocal proposals
 are deduplicated by canonical endpoints, with earliest-query priority independent
-of verifier completion order. The first endpoint owns the CBS factor; the
-other receives the edge for neighbor discovery. The transform maps j into i,
+of verifier completion order. Distributed PCM gates inter-robot proposals before
+CBS initialization. The first endpoint owns each retained CBS factor; both
+endpoints derive neighbor topology from retained loops. The transform maps j into i,
 with right SE(3) tangent ordering `[rx,ry,rz,tx,ty,tz]`. Full information/covariance
 cross terms and nanosecond timestamps survive the bridge. Filter marginal
 covariances are not treated as independent edge noise.
@@ -91,8 +98,10 @@ and libraries, without another robot's store or S3E ground truth.
 
 After all observations and verifications drain, each peer sends a FIFO terminal
 message behind its last constraints on every directed link. Each robot then
-signals its own CBS input complete and runs 100 additional local iterations at
-10 Hz. Final beliefs remain available until all peer exports finish. The whole
+seals its own CBS input with an exact graph-message count. PCM exchanges and
+agreement finish before 100 local CBS iterations run at 10 Hz. With PCM disabled,
+the previous incremental optimization and Bool completion remain available.
+Final beliefs remain available until all peer exports finish. The whole
 launch is bounded to 240 seconds. The stopping budget is reported separately
 from measured convergence. Retrieval ordering is deterministic; CBS runs on
 independent timers with belief-change suppression, so repeated uncached
@@ -108,6 +117,36 @@ The communication report counts the actual CDR messages per directed recipient.
 For CBS services it sums client requests sent plus responses received; it does
 not double-count server observations. RTPS headers, discovery, retransmission,
 local graph input and local visualization/diagnostic topics are excluded.
+
+## Distributed PCM
+
+Current CBS configs include:
+
+```yaml
+dpgo:
+  pcm:
+    enabled: true
+    probability: 0.99
+    minimum_clique_size: 2
+    timeout_s: 60.0
+```
+
+The implementation follows DOOR-SLAM's per-neighbor SE(3) consistency graphs
+and clique filtering. It uses each robot's raw relative odometry noise and
+registration covariance, never GT or optimized poses. The squared Mahalanobis
+test uses a six-dimensional chi-square quantile; a singleton is withheld by
+default. Intra-robot loops remain outside this PCM scope. See the
+[native protocol, reference commits, adaptations and limitations](../../cbs_ros/docs/distributed_pcm.md).
+
+The current gate is one immutable offline batch per process lifetime. It waits
+for peer evidence/selection and fails on timeout or disagreement; it does not
+fall back to unchecked loops. Removed inter-robot loops cannot influence CBS
+separator or anchor initialization. `proposed-constraints.jsonl` preserves
+geometrically accepted input, `constraints.jsonl` contains only the factors
+retained for CBS, and `pcm.json` plus native CSVs record all PCM decisions and
+pairwise checks. `pcm_network_cdr_bytes` reports additional peer packets
+separately from front-end and CBS-belief traffic. Existing historical results
+predate this gate and retain their original labels and values.
 
 ## Validation
 

@@ -1,0 +1,105 @@
+{
+  "dataset": "/data/s3e/S3E_Library_1",
+  "download": {
+    "repository": "PengYu-Team/S3E",
+    "revision": "dd2d0dccb95985468800ed858a5418005ce75cd3",
+    "files": [
+      {
+        "name": "metadata.yaml",
+        "size": 3225,
+        "checksum": "d9029ced63fa73ad55fa1d02a5f7e0c046a9efbc",
+        "algorithm": "git_blob_sha1"
+      },
+      {
+        "name": "alpha_gt.txt",
+        "size": 35101,
+        "checksum": "dd505af420503a93f4d367bfbbbf0cb60075e1169b73d7cc63f34eea873a9b71",
+        "algorithm": "sha256"
+      },
+      {
+        "name": "bob_gt.txt",
+        "size": 25083,
+        "checksum": "6f86b23795d6dffced0790aea339489acd88b84f7db84098cb3b5cd6292ba8a2",
+        "algorithm": "sha256"
+      },
+      {
+        "name": "carol_gt.txt",
+        "size": 24803,
+        "checksum": "8fab8f66be68c3cca83372df850d3efe5e306a81ba66e59499f082c680777e0f",
+        "algorithm": "sha256"
+      },
+      {
+        "name": "S3E_Library_1.db3",
+        "size": 17527721984,
+        "checksum": "dfc6b668e17088a933081475792942b0c4903df3492a48d1f4862413fa820274",
+        "algorithm": "sha256"
+      }
+    ]
+  },
+  "duration_s": 454.358005749,
+  "bag_start_ns": 1660900382220135936,
+  "robots": {
+    "Alpha": {
+      "imu_messages": 44501,
+      "imu_rate_hz": 97.68104228797914,
+      "imu_header_bag_max_difference_s": 0.0,
+      "imu_nonincreasing": 0,
+      "imu_max_dt_s": 0.119991706,
+      "imu_values_finite": true,
+      "imu_gaps_over_0_2_s": [],
+      "input_clouds": 4468,
+      "input_images": 4446,
+      "ground_truth": {
+        "samples": 400,
+        "first_offset_s": 3.5330348014831543,
+        "last_offset_s": 428.5361444950104,
+        "max_gap_s": 21.000093698501587,
+        "gaps_over_2_s": 2,
+        "placeholder_orientations": true
+      }
+    },
+    "Bob": {
+      "imu_messages": 44881,
+      "imu_rate_hz": 96.36116627654046,
+      "imu_header_bag_max_difference_s": 0.0,
+      "imu_nonincreasing": 0,
+      "imu_max_dt_s": 0.015853391,
+      "imu_values_finite": true,
+      "imu_gaps_over_0_2_s": [],
+      "input_clouds": 4469,
+      "input_images": 4476,
+      "ground_truth": {
+        "samples": 379,
+        "first_offset_s": 6.234354019165039,
+        "last_offset_s": 435.23278403282166,
+        "max_gap_s": 43.005719900131226,
+        "gaps_over_2_s": 3,
+        "placeholder_orientations": true
+      }
+    },
+    "Carol": {
+      "imu_messages": 45415,
+      "imu_rate_hz": 100.64955194845454,
+      "imu_header_bag_max_difference_s": 0.0,
+      "imu_nonincreasing": 0,
+      "imu_max_dt_s": 0.120791653,
+      "imu_values_finite": true,
+      "imu_gaps_over_0_2_s": [],
+      "input_clouds": 4544,
+      "input_images": 4544,
+      "ground_truth": {
+        "samples": 377,
+        "first_offset_s": 0.5554540157318115,
+        "last_offset_s": 432.55641412734985,
+        "max_gap_s": 29.00130009651184,
+        "gaps_over_2_s": 5,
+        "placeholder_orientations": true
+      }
+    }
+  },
+  "sqlite_quick_check": [
+    [
+      "ok"
+    ]
+  ]
+}

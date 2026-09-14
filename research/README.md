@@ -1,9 +1,33 @@
 # MegaLoc + MapClosures on S3E Square 1
 
+See the [consolidated results summary](RESULTS-SUMMARY.md) for all completed
+sequences, individual CBS ATEs, loop attribution, runtime and known failures.
+
+The [loop-quality audit](LOOP-QUALITY.md) reports per-experiment distance
+flags, local cycle consistency, missing-evidence limits and per-loop CSVs.
+
+Current distributed CBS configs enable **DOOR-SLAM-style distributed PCM**
+before optimization. See the [implementation and Square 1 validation](RESULTS-PCM-CBS.md):
+all 50 frozen Square 1 loops were retained; synthetic false closures were
+withheld. Historical sequence reports below predate PCM.
+
 The distributed setup also has sequence configurations and reports for
-[Playground 1](RESULTS-PLAYGROUND1-CBS.md) and
+[Square 2](RESULTS-SQUARE2-CBS.md), [Library 1](RESULTS-LIBRARY1-CBS.md),
+[Playground 2](RESULTS-PLAYGROUND2-CBS.md) and
 [Campus Road 1](RESULTS-CAMPUS-ROAD1-CBS.md). These retain the Square 1
 detection settings and use evo for trajectory evaluation.
+[Playground 1](RESULTS-PLAYGROUND1-CBS.md) is excluded; its report retains the
+startup diagnosis and historical results.
+
+Square 2, Library 1 and Playground 2 use `configs/square2-cbs.yaml`,
+`configs/library1-cbs.yaml` and `configs/playground2-cbs.yaml`, with all robots starting at
+bag offset zero and `vio.img_point_cov=100`. Per-robot
+`odometry.mapping_overrides` are validated against the mapping YAML, saved
+with each run and included in the odometry cache identity. A changed mapping
+configuration cannot reuse incompatible frozen odometry.
+
+Library 1 is the outdoor `S3E_Library_1` sequence; it is separate from
+the indoor `S3E_Laboratory_1` dataset below.
 
 The distributed path also supports **S3E Laboratory 1** through
 `configs/laboratory1-cbs.yaml`. New trajectory evaluations use **evo 1.36.5**,

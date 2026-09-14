@@ -16,7 +16,7 @@ from rclpy.node import Node
 from rclpy.qos import QoSProfile, ReliabilityPolicy, DurabilityPolicy
 from rclpy.serialization import serialize_message
 from std_msgs.msg import Bool, String, UInt8MultiArray
-from cbs_ros.msg import Estimate, NodeStats
+from cbs_ros.msg import Estimate, NodeStats, PcmInputSeal, PcmStatus
 from pose_graph_tools_msgs.msg import PoseGraph
 from .artifacts import canonical, read_json, read_jsonl, write_json, write_jsonl
 from .cbs_bridge import local_graph, loop_for_robot, ros_graph, matrix_pose
@@ -40,12 +40,18 @@ class Robot(Node):
         self.graph_sent = False; self.input_complete = False; self.finished = False
         self.edges = {}; self.events = []; self.wire = []; self.stats = []
         self.last_estimate = None; self.last_progress = self.start
+        self.graph_messages = 0; self.pcm_status = None
         self.query_wall_start = {}
         self.graph_pub = self.create_publisher(PoseGraph, f'/{self.robot}/cbs/pose_graph', reliable(durable=True))
         self.complete_pub = self.create_publisher(Bool, f'/{self.robot}/cbs/input_complete', reliable(1, True))
+        pcm_prefix = f'/cbs_ros_{self.robots.index(self.robot)}/pcm'
+        self.seal_pub = self.create_publisher(PcmInputSeal, f'{pcm_prefix}/input_seal', reliable(1, True))
         self.subscriptions_ = [self.create_subscription(Estimate, f'/{self.robot}/cbs/estimate', self.estimate,
                                                        reliable(1, True)),
             self.create_subscription(NodeStats, f'/cbs_ros_{self.robots.index(self.robot)}/stats', self.statistics, reliable())]
+        if spec.get('pcm_enabled', False):
+            self.subscriptions_.append(self.create_subscription(PcmStatus, f'{pcm_prefix}/status',
+                                                               self.pcm_update, reliable(1, True)))
         self.peer_publishers = {}
         for peer in self.robots:
             if peer == self.robot: continue
@@ -116,7 +122,22 @@ class Robot(Node):
                           tuple(e.get('diagnostics', {}).get('query', e['i'])))
         if key in self.edges and rank(self.edges[key]) <= rank(edge): return
         self.edges[key] = edge
-        self.graph_pub.publish(ros_graph([], [edge], self.robots))
+        self.publish_graph([], [edge])
+
+    def publish_graph(self, nodes, edges):
+        self.graph_pub.publish(ros_graph(nodes, edges, self.robots))
+        self.graph_messages += 1
+
+    def pcm_update(self, msg):
+        if msg.session_id != self.spec['pcm_session_id']: return
+        if msg.robot_id != self.robots.index(self.robot): raise ValueError('Foreign PCM status')
+        if msg.state == 'error': raise RuntimeError(f'Distributed PCM failed: {msg.error}')
+        self.pcm_status = dict(session_id=msg.session_id, robot_id=msg.robot_id, state=msg.state,
+            graph_messages=msg.graph_messages, own_nodes=msg.own_nodes,
+            network_cdr_bytes=msg.network_cdr_bytes,
+            compute_s=msg.compute_s, elapsed_s=msg.elapsed_s,
+            verdicts=[{k: getattr(v, k) for k in v.get_fields_and_field_types()} for v in msg.verdicts])
+        if self.last_estimate and self.last_estimate.finished: self.estimate(self.last_estimate)
 
     def result(self, outgoing, records):
         for record in records:
@@ -134,7 +155,7 @@ class Robot(Node):
             if self.graph_pub.get_subscription_count() < 1 or any(p.get_subscription_count() < 1 for p in self.peer_publishers.values()): return
             self.graph_sent = True
             if self.spec['mode'] == 'frozen':
-                self.graph_pub.publish(ros_graph(self.nodes, self.odometry, self.robots))
+                self.publish_graph(self.nodes, self.odometry)
                 for edge in self.frozen: self.accept(edge)
                 self.next_index = len(self.rows)
             self.publish_status()
@@ -159,7 +180,7 @@ class Robot(Node):
                 if candidates and min(candidates)[1] == self.robot:
                     stamp, _, key = min(candidates)
                     if key != self.next_index: raise ValueError('Invalid peer watermark')
-                    self.graph_pub.publish(ros_graph([self.nodes[key]], self.odometry[key-1:key] if key else [], self.robots))
+                    self.publish_graph([self.nodes[key]], self.odometry[key-1:key] if key else [])
                     self.query = key; self.remaining_replies = set(self.robots)
                     self.query_wall_start[key] = time.monotonic()
                     outgoing, records = self.worker.handle(dict(kind='observe', src=self.robot,
@@ -172,7 +193,13 @@ class Robot(Node):
         # DONE is FIFO behind the sender's final constraints on every link.
         if self.done_peers == set(self.robots) and not self.input_complete:
             # Wait for own graph to reach CBS before starting its settling budget.
-            if self.last_estimate and len(self.last_estimate.keyframe_ids) == len(self.rows):
+            if self.spec.get('pcm_enabled', False):
+                # Seal names the exact number of graph messages. CBS waits for
+                # their receipt before exchanging PCM evidence, across topics.
+                self.seal_pub.publish(PcmInputSeal(session_id=self.spec['pcm_session_id'],
+                    graph_messages=self.graph_messages, own_nodes=len(self.rows)))
+                self.input_complete = True; self.detection_s = time.monotonic()-self.start
+            elif self.last_estimate and len(self.last_estimate.keyframe_ids) == len(self.rows):
                 self.complete_pub.publish(Bool(data=True)); self.input_complete = True
                 self.detection_s = time.monotonic()-self.start
         now = time.monotonic()
@@ -194,6 +221,8 @@ class Robot(Node):
         # Estimates and statistics have independent DDS topics. Wait for the
         # matching final statistics so the last request/response is counted.
         if not self.stats or self.stats[-1]['iteration'] < msg.iteration: return
+        pcm_enabled = self.spec.get('pcm_enabled', False)
+        if pcm_enabled and (not self.pcm_status or self.pcm_status['state'] != 'ready'): return
         if list(msg.keyframe_ids) != [r['keyframe_id'] for r in self.rows] or list(msg.stamp_ns) != [r['stamp_ns'] for r in self.rows]:
             raise ValueError('Incomplete or mistimestamped CBS estimate')
         poses = [dict(robot_id=self.robot, keyframe_id=int(key), stamp_ns=int(stamp),
@@ -201,10 +230,23 @@ class Robot(Node):
             component=self.robots[msg.reference_robot_id])
             for key, stamp, p in zip(msg.keyframe_ids, msg.stamp_ns, msg.poses)]
         write_jsonl(self.output/'poses.jsonl', poses)
-        write_jsonl(self.output/'constraints.jsonl', [self.edges[k] for k in sorted(self.edges)])
+        proposals = [self.edges[k] for k in sorted(self.edges)]
+        retained = proposals
+        if pcm_enabled:
+            decisions = {((self.robots[v['robot_from']], v['key_from']),
+                          (self.robots[v['robot_to']], v['key_to'])): v for v in self.pcm_status['verdicts']}
+            expected = {k for k in self.edges if k[0][0] != k[1][0]}
+            if set(decisions) != expected: raise ValueError('PCM verdicts do not cover incident inter-robot loops')
+            retained = [e for e in proposals if e['i'][0] == e['j'][0] or
+                        decisions[tuple(e['i']), tuple(e['j'])]['retained']]
+            write_json(self.output/'pcm.json', self.pcm_status)
+        write_jsonl(self.output/'proposed-constraints.jsonl', proposals)
+        write_jsonl(self.output/'constraints.jsonl', retained)
         write_jsonl(self.output/'events.jsonl', self.events); write_jsonl(self.output/'wire.jsonl', self.wire)
         write_jsonl(self.output/'stats.jsonl', self.stats)
-        write_json(self.output/'summary.json', dict(robot=self.robot, poses=len(poses), loops=len(self.edges),
+        write_json(self.output/'summary.json', dict(robot=self.robot, poses=len(poses), loops=len(retained),
+            proposed_loops=len(proposals), pcm_enabled=pcm_enabled,
+            pcm_network_cdr_bytes=self.pcm_status['network_cdr_bytes'] if pcm_enabled else 0,
             finished=True, reference_available=msg.reference_available, reference_robot_id=msg.reference_robot_id,
             iterations=msg.iteration,
             detection_s=self.detection_s, wall_s=time.monotonic()-self.start,

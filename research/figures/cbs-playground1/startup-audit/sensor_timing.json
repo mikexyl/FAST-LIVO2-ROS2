@@ -1,0 +1,99 @@
+{
+  "/Alpha/imu/data": {
+    "count": 10464,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [],
+    "adjacent_repeated_payloads": null,
+    "scan_span_range_s": null
+  },
+  "/Alpha/left_camera/compressed": {
+    "count": 1050,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [],
+    "adjacent_repeated_payloads": 0,
+    "scan_span_range_s": null
+  },
+  "/Alpha/velodyne_points": {
+    "count": 1046,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [],
+    "adjacent_repeated_payloads": 0,
+    "scan_span_range_s": [
+      0.09930521994829178,
+      0.10103680193424225
+    ]
+  },
+  "/Bob/imu/data": {
+    "count": 10175,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [
+      {
+        "start_offset_s": 20.544254907,
+        "end_offset_s": 21.113991936,
+        "duration_s": 0.569737029
+      },
+      {
+        "start_offset_s": 21.133956941,
+        "end_offset_s": 21.444426601,
+        "duration_s": 0.31046966
+      },
+      {
+        "start_offset_s": 21.534267603,
+        "end_offset_s": 21.814922751,
+        "duration_s": 0.280655148
+      }
+    ],
+    "adjacent_repeated_payloads": null,
+    "scan_span_range_s": null
+  },
+  "/Bob/left_camera/compressed": {
+    "count": 1018,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [],
+    "adjacent_repeated_payloads": 0,
+    "scan_span_range_s": null
+  },
+  "/Bob/velodyne_points": {
+    "count": 1032,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [],
+    "adjacent_repeated_payloads": 0,
+    "scan_span_range_s": [
+      0.0979471355676651,
+      0.1012725755572319
+    ]
+  },
+  "/Carol/imu/data": {
+    "count": 10321,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [],
+    "adjacent_repeated_payloads": null,
+    "scan_span_range_s": null
+  },
+  "/Carol/left_camera/compressed": {
+    "count": 1027,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [],
+    "adjacent_repeated_payloads": 0,
+    "scan_span_range_s": null
+  },
+  "/Carol/velodyne_points": {
+    "count": 1032,
+    "max_header_record_difference_s": 0.0,
+    "nonincreasing_header_count": 0,
+    "gap_over_0_2_s": [],
+    "adjacent_repeated_payloads": 0,
+    "scan_span_range_s": [
+      0.09930291026830673,
+      0.10102938115596771
+    ]
+  }
+}

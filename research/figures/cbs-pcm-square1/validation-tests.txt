@@ -1,0 +1,107 @@
+CBS core tests
+Start testing: Sep 14 12:31 EEST
+----------------------------------------------------------
+1/5 Testing: inter_robot_pcm
+1/5 Test: inter_robot_pcm
+Command: "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs/test_inter_robot_pcm"
+Directory: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs
+"inter_robot_pcm" start time: Sep 14 12:31 EEST
+Output:
+----------------------------------------------------------
+PCM geometry, covariance, clique, reversal, isolation and gap tests passed
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"inter_robot_pcm" end time: Sep 14 12:31 EEST
+"inter_robot_pcm" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: between_initialization
+2/5 Test: between_initialization
+Command: "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs/test_between_initialization"
+Directory: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs
+"between_initialization" start time: Sep 14 12:31 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"between_initialization" end time: Sep 14 12:31 EEST
+"between_initialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: sim3_transport
+3/5 Test: sim3_transport
+Command: "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs/test_sim3_transport"
+Directory: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs
+"sim3_transport" start time: Sep 14 12:31 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"sim3_transport" end time: Sep 14 12:31 EEST
+"sim3_transport" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: belief_republish
+4/5 Test: belief_republish
+Command: "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs/test_belief_republish"
+Directory: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs
+"belief_republish" start time: Sep 14 12:31 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"belief_republish" end time: Sep 14 12:31 EEST
+"belief_republish" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: absolute_pose_scale
+5/5 Test: absolute_pose_scale
+Command: "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs/test_absolute_pose_scale"
+Directory: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs
+"absolute_pose_scale" start time: Sep 14 12:31 EEST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"absolute_pose_scale" end time: Sep 14 12:31 EEST
+"absolute_pose_scale" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 14 12:31 EEST
+
+ROS native tests including distributed PCM protocol
+Internal ctest changing into directory: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs_ros
+Test project /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs_ros
+    Start 1: distributed_pcm_protocol
+1/4 Test #1: distributed_pcm_protocol .........   Passed    1.32 sec
+    Start 2: belief_batch
+2/4 Test #2: belief_batch .....................   Passed    0.00 sec
+    Start 3: pose_graph_factor
+3/4 Test #3: pose_graph_factor ................   Passed    0.00 sec
+    Start 4: loop_scale_sidecar
+4/4 Test #4: loop_scale_sidecar ...............   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 4
+
+Total Test time (real) =   1.34 sec
+
+Three-robot DDS integration tests
+......                                                                   [100%]
+6 passed in 45.69s
+
+Normal Python suite
+..sssssss......................................                          [100%]
+
+40 passed, 7 optional ROS/DDS tests skipped in this environment.
+
+ROS bridge serialization tests: 3 passed in 0.41 s through the project ROS overlay.

@@ -1,6 +1,7 @@
 """One reproducible S3E visual/LiDAR loop pipeline, with reusable stages."""
 import argparse
 import base64
+import copy
 import os
 from pathlib import Path
 import subprocess
@@ -24,6 +25,26 @@ def resolved(path):
     return p if p.is_absolute() else SOURCE/p
 
 
+def odometry_mapping(robot, overrides):
+    """Resolve existing ROS parameters without modifying shared robot YAMLs."""
+    mapping=yaml.safe_load((REPO/f'config/s3e/{robot.lower()}.yaml').read_text())
+    params=mapping['/**']['ros__parameters']
+    for key,value in overrides.items():
+        parts=key.split('.'); parent=params
+        for part in parts[:-1]:
+            if not isinstance(parent,dict) or part not in parent:
+                raise ValueError(f'Unknown odometry mapping parameter: {key}')
+            parent=parent[part]
+        if not isinstance(parent,dict) or parts[-1] not in parent:
+            raise ValueError(f'Unknown odometry mapping parameter: {key}')
+        if type(value) is not type(parent[parts[-1]]):
+            raise ValueError(f'Wrong type for odometry mapping parameter: {key}')
+        if isinstance(value,float) and not math.isfinite(value):
+            raise ValueError(f'Non-finite odometry mapping parameter: {key}')
+        parent[parts[-1]]=copy.deepcopy(value)
+    return mapping
+
+
 def code_hash(stage):
     names=['cli.py','artifacts.py']
     names+=dict(odometry=['mcap_writer.py'],keyframes=['data.py','geometry.py'],
@@ -35,7 +56,8 @@ def code_hash(stage):
         inspect=['mapclosures_inspection.py','mapclosures_rerun.py','backends.py','registration.py','geometry.py'])[stage]
     hashes={name:file_hash(Path(__file__).with_name(name)) for name in names}
     if stage=='odometry':
-        for p in [*sorted((REPO/'src').glob('*.cpp')),*sorted((REPO/'include').rglob('*.h')),REPO/'scripts/run_s3e.py']:
+        for p in [*sorted((REPO/'src').glob('*.cpp')),*sorted((REPO/'include').rglob('*.h')),
+                  REPO/'scripts/run_s3e.py',REPO/'scripts/s3e_adapter.py',REPO/'launch/mapping_s3e.launch.py']:
             hashes[str(p.relative_to(REPO))]=file_hash(p)
     if stage in ('descriptors','loops','inspect'):
         hashes.update({str(p.relative_to(CODE_ROOT)):file_hash(p) for p in sorted((CODE_ROOT/'adapters/mapclosures').glob('*')) if p.is_file()})
@@ -82,10 +104,15 @@ def run(args):
     offsets=cfg['odometry'].get('start_offsets_s',{})
     if not isinstance(offsets,dict) or set(offsets)-set(robots) or any(not math.isfinite(float(v)) or float(v)<0 for v in offsets.values()):
         raise ValueError('Odometry start_offsets_s must map robot names to finite nonnegative bag offsets')
+    overrides=cfg['odometry'].get('mapping_overrides',{})
+    if (not isinstance(overrides,dict) or set(overrides)-set(robots) or
+            any(not isinstance(v,dict) or any(not isinstance(k,str) for k in v) for v in overrides.values())):
+        raise ValueError('Odometry mapping_overrides must map robot names to parameter dictionaries')
+    mappings={r:odometry_mapping(r,overrides.get(r,{})) for r in robots}
     replay_robots=getattr(args,'odometry_robots',None) or robots
     if set(replay_robots)-set(robots):raise ValueError('Unknown odometry robot')
     dataset=resolved(cfg['dataset'])
-    if dataset.name not in ('S3E_Square_1','S3E_Playground_1','S3E_Laboratory_1','S3E_Campus_Road_1'):raise ValueError('Unsupported dataset')
+    if dataset.name not in ('S3E_Square_1','S3E_Square_2','S3E_Playground_1','S3E_Playground_2','S3E_Library_1','S3E_Laboratory_1','S3E_Campus_Road_1'):raise ValueError('Unsupported dataset')
     if any(s in ('all','odometry') for s in args.stage) and not (dataset/'metadata.yaml').is_file():
         raise FileNotFoundError(dataset/'metadata.yaml')
     root=resolved(cfg['output_root']);root.mkdir(parents=True,exist_ok=True)
@@ -101,6 +128,10 @@ def run(args):
         will_replay=any(s in ('all','odometry') for s in args.stage) and robot in replay_robots
         if odometry_input and not will_replay and read_json(Path(odometry_input)/'run/summary.json').get('start_offset_s',0.)!=float(offsets.get(robot,0.)):
             raise ValueError(f'Frozen odometry start offset differs for {robot}; replay it')
+        if odometry_input and not will_replay:
+            saved=Path(odometry_input)/'run/mapping_config.yaml'
+            if not saved.is_file() or yaml.safe_load(saved.read_text())!=mappings[robot]:
+                raise ValueError(f'Frozen odometry mapping configuration differs for {robot}; replay it')
     prefix='inspection-run' if args.stage==['inspect'] else 'run'
     registry=root/f'{prefix}-{digest(cfg)[:16]}.json'
     def get(label):
@@ -139,12 +170,17 @@ def run(args):
                     print(f'odometry.livo.{robot}: reusing validated input {previous}',flush=True)
                     continue
                 offset=float(offsets.get(robot,0.))
-                settings=dict(robot=robot,**{k:v for k,v in cfg['odometry'].items() if k!='start_offsets_s'})
+                settings=dict(robot=robot,**{k:v for k,v in cfg['odometry'].items() if k not in ('start_offsets_s','mapping_overrides')})
+                settings['mapping_config']=mappings[robot]
+                settings['camera_config_sha256']=file_hash(REPO/f'config/s3e/{robot.lower()}_camera.yaml')
                 if offset:settings['start_offset_s']=offset
                 def odometry(out):
+                    config_path=out/'mapping_config.yaml'
+                    config_path.write_text(yaml.safe_dump(mappings[robot],sort_keys=False))
                     subprocess.run([str(REPO/'scripts/run_s3e.sh'),'--robot',robot,'--namespace',robot,
                         '--bag',str(dataset),'--rate',str(cfg['odometry']['rate']),'--export','--output',str(out/'run'),
                         '--start-offset',str(offset),
+                        '--mapping-config',str(config_path),
                         '--export-python',str(SOURCE/'.ros2/research-venv/bin/python')],check=True,cwd=SOURCE)
                     summary=read_json(out/'run/summary.json')
                     if not summary['success']:raise ValueError('Odometry failed')

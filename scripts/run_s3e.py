@@ -51,6 +51,8 @@ def main():
     p.add_argument('--rerun-port', type=int, default=9877)
     p.add_argument('--gdb', action='store_true', help='Capture a native crash backtrace in mapping.log')
     p.add_argument('--output', type=Path, help='Explicit fresh output directory for an experiment stage')
+    p.add_argument('--mapping-config', type=Path,
+                   help='Override the robot mapping YAML; save the exact configuration in the run')
     p.add_argument('--namespace', default='')
     p.add_argument('--export', action='store_true', help='Direct synchronized MCAP export')
     p.add_argument('--export-python', type=Path)
@@ -61,6 +63,8 @@ def main():
         p.error('rate must be positive; duration and start offset must be finite and nonnegative')
     if not (args.bag / 'metadata.yaml').is_file():
         p.error(f'No metadata.yaml in {args.bag}')
+    if args.mapping_config and not args.mapping_config.is_file():
+        p.error(f'No mapping configuration at {args.mapping_config}')
     source = Path(__file__).resolve().parents[2]
     use_rerun = args.rerun or args.rerun_headless
     rerun_bin = source / '.ros2/rerun-venv/bin'
@@ -70,7 +74,8 @@ def main():
     output = args.output.resolve() if args.output else source / '.ros2/runs' / seq
     output.mkdir(parents=True)
     config_dir = source / 'FAST-LIVO2-ROS2/config/s3e'
-    shutil.copy2(config_dir / f'{args.robot.lower()}.yaml', output / 'mapping_config.yaml')
+    mapping_config = args.mapping_config or config_dir / f'{args.robot.lower()}.yaml'
+    shutil.copy2(mapping_config, output / 'mapping_config.yaml')
     shutil.copy2(config_dir / f'{args.robot.lower()}_camera.yaml', output / 'camera_config.yaml')
     # Upstream writes its debug and trajectory files below the source directory.
     for directory in ['result', 'pcd', 'image']:
@@ -160,6 +165,7 @@ def main():
                 f'robot:={args.robot}', f'use_rviz:={str(args.rviz).lower()}',
                 f'use_rerun:={str(use_rerun).lower()}', f'seq_name:={seq}',
                 f'namespace:={args.namespace}',
+                f'mapping_config:={output / "mapping_config.yaml"}',
                 f'output_directory:={output / "mapper" if args.export else ""}',
                 f'export_directory:={output / "export" if args.export else ""}',
                 f'export_python:={args.export_python or source / ".ros2/research-venv/bin/python"}',

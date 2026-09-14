@@ -17,7 +17,7 @@ def setup(context):
         raise ValueError('robot must be Alpha, Bob, or Carol')
     seq = LaunchConfiguration('seq_name').perform(context) or f'S3E_Square_1_{robot.lower()}'
     camera = str(root / 'config/s3e' / f'{robot.lower()}_camera.yaml')
-    config = str(root / 'config/s3e' / f'{robot.lower()}.yaml')
+    config = LaunchConfiguration('mapping_config').perform(context) or str(root / 'config/s3e' / f'{robot.lower()}.yaml')
     namespace = LaunchConfiguration('namespace').perform(context).strip('/')
     extra = {'use_sim_time': True, 'evo.seq_name': seq,
              'research.robot_id': robot,
@@ -57,6 +57,7 @@ def generate_launch_description():
         DeclareLaunchArgument('use_rerun', default_value='false'),
         DeclareLaunchArgument('seq_name', default_value=''),
         DeclareLaunchArgument('namespace', default_value=''),
+        DeclareLaunchArgument('mapping_config', default_value=''),
         DeclareLaunchArgument('output_directory', default_value=''),
         DeclareLaunchArgument('export_directory', default_value=''),
         DeclareLaunchArgument('export_python', default_value='/usr/bin/python3'),

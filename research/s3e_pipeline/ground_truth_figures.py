@@ -11,7 +11,7 @@ from .report_figures import COLORS, ROBOTS, configure, plt, Line2D, save
 
 def render(dataset, output, gap_s=2., dpi=350):
     dataset, output = Path(dataset).resolve(), Path(output).resolve()
-    if dataset.name not in ('S3E_Square_1', 'S3E_Playground_1', 'S3E_Campus_Road_1'):
+    if dataset.name not in ('S3E_Square_1', 'S3E_Square_2', 'S3E_Playground_1', 'S3E_Playground_2', 'S3E_Library_1', 'S3E_Campus_Road_1'):
         raise ValueError('Expected a supported sequence with timestamped position GT')
     tracks = {r: read_tum_trajectory_file(dataset/f'{r.lower()}_gt.txt') for r in ROBOTS}
     for robot, track in tracks.items():

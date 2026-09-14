@@ -12,6 +12,7 @@ from s3e_pipeline.artifacts import read_json, stage_output, stage_path, write_js
 
 def test_restart_bob_reuses_other_robots_and_invalidates_its_descriptors(tmp_path, monkeypatch):
     cfg = yaml.safe_load((Path(__file__).parents[1]/'configs/playground1-cbs.yaml').read_text())
+    cfg['odometry'].pop('mapping_overrides',None)
     dataset=tmp_path/'S3E_Playground_1';dataset.mkdir()
     (dataset/'metadata.yaml').write_text('{}')
     root=tmp_path/'run';cfg.update(dataset=str(dataset),output_root=str(root))
@@ -20,6 +21,7 @@ def test_restart_bob_reuses_other_robots_and_invalidates_its_descriptors(tmp_pat
         settings=dict(robot=robot,rate=1.)
         with stage_output(root,'odometry',settings,{},'old') as (out,_):
             (out/'run').mkdir()
+            (out/'run/mapping_config.yaml').write_text(yaml.safe_dump(cli.odometry_mapping(robot,{})))
             summary=dict(bag=str(dataset),success=True)
             write_json(out/'run/summary.json',summary);write_json(out/'summary.json',summary)
         old=stage_path(root,'odometry',settings,{},'old');old_paths[robot]=old
@@ -63,3 +65,54 @@ def test_invalid_start_offset_rejected_before_work(tmp_path,offset):
     path=tmp_path/'config.yaml';path.write_text(yaml.safe_dump(cfg))
     with pytest.raises(ValueError,match='finite nonnegative'):
         cli.run(SimpleNamespace(config=path))
+
+
+def test_mapping_override_isolated_and_validated():
+    original=cli.odometry_mapping('Alpha',{})
+    changed=cli.odometry_mapping('Alpha',{'vio.img_point_cov':100})
+    assert original['/**']['ros__parameters']['vio']['img_point_cov']==1000
+    assert changed['/**']['ros__parameters']['vio']['img_point_cov']==100
+    assert cli.odometry_mapping('Alpha',{})==original
+    with pytest.raises(ValueError,match='Unknown odometry mapping parameter'):
+        cli.odometry_mapping('Alpha',{'vio.img_point_cvo':100})
+    with pytest.raises(ValueError,match='Wrong type'):
+        cli.odometry_mapping('Alpha',{'vio.img_point_cov':'100'})
+
+
+def test_mapping_change_rejects_frozen_odometry_and_invalidates_dependents(tmp_path,monkeypatch):
+    cfg=yaml.safe_load((Path(__file__).parents[1]/'configs/playground1-cbs.yaml').read_text())
+    cfg['odometry'].pop('mapping_overrides',None)
+    dataset=tmp_path/'S3E_Playground_1';dataset.mkdir()
+    (dataset/'metadata.yaml').write_text('{}')
+    root=tmp_path/'run';cfg.update(dataset=str(dataset),output_root=str(root))
+    config=tmp_path/'config.yaml';config.write_text(yaml.safe_dump(cfg))
+    commands=[]
+    def replay(command,**kwargs):
+        commands.append(command)
+        out=Path(command[command.index('--output')+1]);out.mkdir()
+        mapping=Path(command[command.index('--mapping-config')+1]).read_text()
+        (out/'mapping_config.yaml').write_text(mapping)
+        write_json(out/'summary.json',dict(bag=str(dataset),success=True,
+                   start_offset_s=float(command[command.index('--start-offset')+1])))
+    monkeypatch.setattr(cli.subprocess,'run',replay)
+    args=SimpleNamespace(config=config,input_run=None,stage=['odometry'],resume=True,odometry_robots=None)
+    first=cli.run(args);old=read_json(first);artifacts=old['artifacts']
+    alpha=Path(artifacts['odometry.livo.Alpha'])
+    old_hash=read_json(alpha/'COMPLETE.json')['stage_hash']
+    with stage_output(root,'keyframes',{},dict(odometry=old_hash),'old') as (out,_):pass
+    artifacts['keyframes.livo.Alpha']=str(stage_path(root,'keyframes',{},dict(odometry=old_hash),'old'))
+    write_json(first,old)
+    cfg['odometry']['mapping_overrides']={'Alpha':{'vio.img_point_cov':100}}
+    config.write_text(yaml.safe_dump(cfg));args.input_run=first;args.stage=['descriptors']
+    with pytest.raises(ValueError,match='mapping configuration differs for Alpha'):
+        cli.run(args)
+    args.stage=['odometry'];args.odometry_robots=['Alpha']
+    result=read_json(cli.run(args))['artifacts']
+    assert len(commands)==4
+    assert result['odometry.livo.Alpha']!=str(alpha)
+    assert 'keyframes.livo.Alpha' not in result
+    assert all(result[f'odometry.livo.{r}']==artifacts[f'odometry.livo.{r}'] for r in ('Bob','Carol'))
+    new=Path(result['odometry.livo.Alpha'])
+    identity=read_json(new/'COMPLETE.json')['identity']['config']
+    assert identity['mapping_config']['/**']['ros__parameters']['vio']['img_point_cov']==100
+    assert yaml.safe_load((alpha/'run/mapping_config.yaml').read_text())['/**']['ros__parameters']['vio']['img_point_cov']==1000

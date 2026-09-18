@@ -1,0 +1,37 @@
+{
+  "Swarm-SLAM": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/Swarm-SLAM",
+    "commit": "af17c4b71432f750571ea699a0beccfbe9004872",
+    "remote": "https://github.com/MISTLab/Swarm-SLAM.git"
+  },
+  "cslam": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/Swarm-SLAM/src/cslam",
+    "commit": "fccf88765167431d293a1245c19411fd874f937d",
+    "remote": "https://github.com/lajoiepy/cslam.git"
+  },
+  "cslam_interfaces": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/Swarm-SLAM/src/cslam_interfaces",
+    "commit": "0e6bb91411796db593c8ce680f382a1f242ab7d9",
+    "remote": "https://github.com/lajoiepy/cslam_interfaces.git"
+  },
+  "cslam_experiments": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/Swarm-SLAM/src/cslam_experiments",
+    "commit": "0b5fc6c9354f75ed99971aa6c6e04b6a91141689",
+    "remote": "https://github.com/lajoiepy/cslam_experiments.git"
+  },
+  "rtabmap_ros": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/Swarm-SLAM/src/rtabmap_ros",
+    "commit": "c25a091c2a682f0e0f4e8d19d807953e7f1a8161",
+    "remote": "https://github.com/introlab/rtabmap_ros.git"
+  },
+  "teaserpp": {
+    "path": "/home/mikexyl/workspaces/sb_slam_ros2_ws/src/TEASER-plusplus",
+    "commit": "52a9c52ee7d4c838c5e8a75458c33178be5bfb70",
+    "remote": "https://github.com/MIT-SPARK/TEASER-plusplus.git"
+  },
+  "gtsam": {
+    "path": "/home/mikexyl/workspaces/sb_slam_ros2_ws/src/gtsam",
+    "commit": "0c2049c0352e5b24a7a19f29610cf6c580e38ef8",
+    "remote": "https://github.com/borglab/gtsam.git"
+  }
+}

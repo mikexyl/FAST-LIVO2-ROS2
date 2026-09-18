@@ -1,0 +1,51 @@
+{
+  "status": "incomplete_optimized_coverage",
+  "error": null,
+  "wall_s": 143.08093256200664,
+  "observed_clouds": {
+    "Alpha": 889,
+    "Bob": 873,
+    "Carol": 873
+  },
+  "valid_odometry": {
+    "Alpha": 883,
+    "Bob": 855,
+    "Carol": 872
+  },
+  "invalid_odometry": {
+    "Alpha": 1,
+    "Bob": 1,
+    "Carol": 1
+  },
+  "descriptors": {
+    "Alpha": 168,
+    "Bob": 113,
+    "Carol": 145
+  },
+  "coverage": {
+    "Alpha": {
+      "keyframes": 191,
+      "optimized": 191,
+      "complete": true
+    },
+    "Bob": {
+      "keyframes": 113,
+      "optimized": 0,
+      "complete": false
+    },
+    "Carol": {
+      "keyframes": 175,
+      "optimized": 0,
+      "complete": false
+    }
+  },
+  "states": {
+    "0": 0,
+    "1": 0,
+    "2": 0
+  },
+  "loop_attempts": 0,
+  "accepted_inter": 0,
+  "accepted_intra": 0,
+  "notes": "Native online processing may drop scans; counts are observations, not exact all-scan acknowledgments."
+}

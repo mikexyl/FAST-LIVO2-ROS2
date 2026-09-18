@@ -1,0 +1,307 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 0164f94..1b88dce 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -65,6 +65,13 @@ set(dependencies
+ )
+ 
+ ament_auto_add_library(ellipselio_mapping SHARED src/map_processing.cpp src/lidar_processing.cpp src/imu_processing.cpp src/cam_processing.cpp)
++if(S3E_RESEARCH_SOURCE)
++  find_package(nlohmann_json REQUIRED)
++  target_sources(ellipselio_mapping PRIVATE src/research_frame.cpp "${S3E_RESEARCH_SOURCE}/src/research_export.cpp")
++  target_include_directories(ellipselio_mapping PRIVATE "${S3E_RESEARCH_SOURCE}/include")
++  target_link_libraries(ellipselio_mapping nlohmann_json::nlohmann_json)
++  target_compile_definitions(ellipselio_mapping PRIVATE ELLIPSELIO_RESEARCH_EXPORT)
++endif()
+ target_include_directories(ellipselio_mapping PRIVATE ${PYTHON_INCLUDE_DIRS})
+ 
+ target_include_directories(ellipselio_mapping PUBLIC
+@@ -88,4 +95,4 @@ ament_auto_package(USE_SCOPED_HEADER_INSTALL_DIR INSTALL_TO_SHARE
+ launch
+ rviz
+ config
+-)
+\ No newline at end of file
++)
+diff --git a/include/imu_processing.h b/include/imu_processing.h
+index 48d5b7f..e0bbb3f 100644
+--- a/include/imu_processing.h
++++ b/include/imu_processing.h
+@@ -107,7 +107,7 @@ class ImuProcess {
+    * @details Performs EKF measurement update step to incorporate LiDAR
+    *          point association constraints.
+    */
+-  void UpdateStatesWithLidar(KfState* kf_state,
++  bool UpdateStatesWithLidar(KfState* kf_state,
+                              const rclcpp::Time& lidar_end_time,
+                              double max_solve_time);
+ 
+diff --git a/include/lidar_processing.h b/include/lidar_processing.h
+index 76b73d6..c90e7b0 100644
+--- a/include/lidar_processing.h
++++ b/include/lidar_processing.h
+@@ -11,6 +11,7 @@
+ 
+ #include <rclcpp/rclcpp.hpp>
+ #include <sensor_msgs/msg/point_cloud2.hpp>
++#include <deque>
+ 
+ #include "common_lib.h"
+ 
+@@ -47,6 +48,8 @@ struct LidarParams {
+   double vertical_fov;
+   /// @brief ROS 2 topic name for point cloud subscription
+   std::string topic;
++  bool research_full_cloud = false;
++  bool reliable = false;
+ };
+ 
+ /**
+@@ -72,6 +75,8 @@ class LidarProcess {
+    * @brief Clear all buffered point clouds.
+    */
+   void ClearPointCloud();
++  void TakeResearchCloud(const rclcpp::Time& start, const rclcpp::Time& end,
++                         EllipseLioPointCloudPtr output);
+ 
+   /**
+    * @brief Retrieve processed point cloud and temporal/spatial metadata.
+@@ -131,6 +136,7 @@ class LidarProcess {
+   std::vector<float> octree_resolutions_;
+ 
+  private:
++  std::deque<EllipseLioPoint> research_points_;
+   /**
+    * @brief ROS 2 callback for point cloud reception.
+    * @param msg_in Incoming PointCloud2 message
+diff --git a/include/map_processing.h b/include/map_processing.h
+index ba1c3ae..2970690 100644
+--- a/include/map_processing.h
++++ b/include/map_processing.h
+@@ -36,6 +36,9 @@
+ #include "common_lib.h"
+ #include "imu_processing.h"
+ #include "lidar_processing.h"
++#ifdef ELLIPSELIO_RESEARCH_EXPORT
++#include "research_export.h"
++#endif
+ 
+ namespace ellipselio {
+ 
+@@ -61,6 +64,16 @@ class MappingNode : public rclcpp::Node {
+   ~MappingNode();
+ 
+  private:
++#ifdef ELLIPSELIO_RESEARCH_EXPORT
++  std::unique_ptr<ResearchExport> research_export_;
++  EllipseLioPointCloudPtr research_cloud_{new EllipseLioPointCloud()};
++  std::string research_robot_;
++  uint64_t research_frame_ = 0;
++  bool research_lidar_updated_ = false;
++  rclcpp::Time research_stamp_{0, 0, RCL_ROS_TIME};
++  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr research_finish_;
++  void ExportResearchFrame();
++#endif
+   /**
+    * @brief Synchronize IMU, LiDAR, and camera measurements.
+    * @return True if synchronization successful and new measurements available
+diff --git a/src/imu_processing.cpp b/src/imu_processing.cpp
+index 7444b4b..60857aa 100644
+--- a/src/imu_processing.cpp
++++ b/src/imu_processing.cpp
+@@ -34,7 +34,8 @@ ImuProcess::ImuProcess(IkfomSPtr kf, ImuParams params,
+   q_.block<3, 3>(9, 9).diagonal() = acc_bias_;
+ 
+   sub_imu_ = node_->create_subscription<sensor_msgs::msg::Imu>(
+-      params.topic, rclcpp::SensorDataQoS(),
++      params.topic, node_->get_parameter("input.reliable").as_bool() ?
++          rclcpp::QoS(1000).reliable() : rclcpp::QoS(rclcpp::SensorDataQoS()),
+       std::bind(&ImuProcess::ImuCallback, this, std::placeholders::_1),
+       imu_opt);
+ }
+@@ -326,7 +327,7 @@ void ImuProcess::ColorisePoint(EllipseLioPoint* pt, const CamProcessVec& cams,
+   }
+ }
+ 
+-void ImuProcess::UpdateStatesWithLidar(KfState* kf_state,
++bool ImuProcess::UpdateStatesWithLidar(KfState* kf_state,
+                                        const rclcpp::Time& lidar_end_time,
+                                        double max_solve_time) {
+   int match_idx;
+@@ -344,7 +345,7 @@ void ImuProcess::UpdateStatesWithLidar(KfState* kf_state,
+                                                 max_solve_time)) {
+     RCLCPP_ERROR_THROTTLE(node_->get_logger(), clk, 1000,
+                           "Insufficient matches for iEKF update");
+-    return;
++    return false;
+   }
+ 
+   imu_mutex_.lock();
+@@ -394,6 +395,7 @@ void ImuProcess::UpdateStatesWithLidar(KfState* kf_state,
+ 
+   SetKfState();
+   imu_mutex_.unlock();
++  return true;
+ }
+ 
+ void ImuProcess::SetKfState() {
+diff --git a/src/lidar_processing.cpp b/src/lidar_processing.cpp
+index cc55d47..13ab160 100644
+--- a/src/lidar_processing.cpp
++++ b/src/lidar_processing.cpp
+@@ -80,7 +80,7 @@ LidarProcess::LidarProcess(LidarParams params, float map_resolution,
+   }
+ 
+   sub_pcl_pc_ = node_->create_subscription<sensor_msgs::msg::PointCloud2>(
+-      params.topic, rclcpp::SensorDataQoS(),
++      params.topic, params.reliable ? rclcpp::QoS(100).reliable() : rclcpp::QoS(rclcpp::SensorDataQoS()),
+       std::bind(&LidarProcess::LidarCallback, this, std::placeholders::_1),
+       lidar_opt);
+ }
+@@ -207,6 +207,21 @@ void LidarProcess::ClearPointCloud() {
+   lidar_mutex_.unlock();
+ }
+ 
++void LidarProcess::TakeResearchCloud(const rclcpp::Time& start,
++                                    const rclcpp::Time& end,
++                                    EllipseLioPointCloudPtr output) {
++  std::lock_guard<std::mutex> lock(lidar_mutex_);
++  output->clear();
++  auto stamp = [](const EllipseLioPoint& p) {
++    return rclcpp::Time(p.time_secs, p.time_nsecs, RCL_ROS_TIME);
++  };
++  while (!research_points_.empty() && stamp(research_points_.front()) <= end) {
++    if (stamp(research_points_.front()) >= start)
++      output->push_back(research_points_.front());
++    research_points_.pop_front();
++  }
++}
++
+ bool LidarProcess::GetPointCloud(EllipseLioPointCloudPtr pc,
+                                  rclcpp::Time* start_time,
+                                  rclcpp::Time* end_time,
+@@ -333,6 +348,25 @@ void LidarProcess::PointCloudHandler(
+   }
+ 
+   proc_points = num_points - rej_points.load();
++  if (params_.research_full_cloud) {
++    std::vector<EllipseLioPoint> full;
++    full.reserve(proc_points);
++    for (int bin = 0; bin < num_bins_; ++bin)
++      for (int j = 0; j < bin_sizes_[bin]; ++j)
++        full.push_back(process_pc_->points[bin_idxs_[bin][j]]);
++    std::stable_sort(full.begin(), full.end(), [](const auto& a, const auto& b) {
++      return std::tie(a.time_secs, a.time_nsecs) < std::tie(b.time_secs, b.time_nsecs);
++    });
++    const auto previous_size = research_points_.size();
++    research_points_.insert(research_points_.end(), full.begin(), full.end());
++    std::inplace_merge(research_points_.begin(), research_points_.begin()+previous_size,
++        research_points_.end(), [](const auto& a, const auto& b) {
++          return std::tie(a.time_secs, a.time_nsecs) < std::tie(b.time_secs, b.time_nsecs);
++        });
++    // Bounded evidence queue. Fail explicitly instead of losing measurements.
++    if (research_points_.size() > 2000000)
++      throw std::runtime_error("research raw-cloud queue exceeded 2 million points");
++  }
+ 
+   for (size_t i = 0; i < num_bins_; i++) {
+     if (mean_num > 0.5 * proc_points && bin_sizes_[i] < 0.01 * proc_points) {
+diff --git a/src/map_processing.cpp b/src/map_processing.cpp
+index ff43454..688220b 100644
+--- a/src/map_processing.cpp
++++ b/src/map_processing.cpp
+@@ -962,6 +962,8 @@ MappingNode::MappingNode(
+   this->declare_parameter<bool>("publish.tf", true);
+ 
+   this->declare_parameter<int>("imu.rate", 100);
++  const bool reliable_input = this->declare_parameter<bool>("input.reliable", false);
++  lidar_params_.reliable = reliable_input;
+   this->declare_parameter<double>("imu.gyr_noise", 0.1);
+   this->declare_parameter<double>("imu.acc_noise", 0.1);
+   this->declare_parameter<double>("imu.gyr_bias", 0.0001);
+@@ -1028,6 +1030,17 @@ MappingNode::MappingNode(
+                                               std::vector<double>());
+   this->get_parameter_or<std::vector<double>>("lidar.r_imu_lidar", r_imu_lidar_,
+                                               std::vector<double>());
++#ifdef ELLIPSELIO_RESEARCH_EXPORT
++  if (this->declare_parameter<bool>("research.enabled", false)) {
++    research_robot_ = this->declare_parameter<std::string>("research.robot", "");
++    if (research_robot_.empty()) throw std::invalid_argument("research.robot is required");
++    research_export_ = std::make_unique<ResearchExport>(
++        this->declare_parameter<std::string>("research.python", ""),
++        this->declare_parameter<std::string>("research.writer", ""),
++        this->declare_parameter<std::string>("research.output", ""), 2);
++    lidar_params_.research_full_cloud = true;
++  }
++#endif
+ 
+   this->get_parameter_or<int>("cameras.num_cams", num_cams_, 0);
+   this->get_parameter_or<std::string>("cameras.transport", cam_transport_,
+@@ -1149,6 +1162,18 @@ MappingNode::MappingNode(
+       this, this->get_clock(),
+       std::chrono::milliseconds(std::max(1000 / imu_params_.rate, 10)),
+       std::bind(&MappingNode::TimerCallback, this), loop_callback_group_);
++#ifdef ELLIPSELIO_RESEARCH_EXPORT
++  if (research_export_) {
++    research_finish_ = this->create_service<std_srvs::srv::Trigger>(
++        "/" + research_robot_ + "/research/finish",
++        [this](const std::shared_ptr<std_srvs::srv::Trigger::Request>,
++               std::shared_ptr<std_srvs::srv::Trigger::Response> response) {
++          loop_timer_->cancel();
++          try { research_export_->close(); response->success = true; }
++          catch (const std::exception& e) { response->message = e.what(); }
++        }, rmw_qos_profile_services_default, loop_callback_group_);
++  }
++#endif
+   if (publish_tf_ || publish_analytics_ || publish_scan_) {
+     pub_odom_lid_timer_ = rclcpp::create_timer(
+         this, this->get_clock(),
+@@ -1188,7 +1213,11 @@ MappingNode::MappingNode(
+   RCLCPP_INFO(this->get_logger(), "Node init finished.");
+ }
+ 
+-MappingNode::~MappingNode() {}
++MappingNode::~MappingNode() {
++#ifdef ELLIPSELIO_RESEARCH_EXPORT
++  if (research_export_) research_export_->close();
++#endif
++}
+ 
+ void MappingNode::InitCamProcess() {
+   if (num_cams_ == 0) return;
+@@ -1405,16 +1434,34 @@ void MappingNode::TimerCallback() {
+ 
+     imu_process_->UndistortPointCloud(scan_cloud_, &kf_state_, scan_start_time_,
+                                       scan_end_time_, cams_process_);
++#ifdef ELLIPSELIO_RESEARCH_EXPORT
++    if (research_export_) {
++      lid_process_->TakeResearchCloud(scan_start_time_, scan_end_time_, research_cloud_);
++      KfState full_state;
++      imu_process_->UndistortPointCloud(research_cloud_, &full_state,
++          scan_start_time_, scan_end_time_, cams_process_);
++      if (full_state.time != kf_state_.time)
++        throw std::runtime_error("research deskew/state timestamp mismatch");
++      research_stamp_ = full_state.time;
++      research_lidar_updated_ = false;
++    }
++#endif
+ 
+     t2 = omp_get_wtime();
+ 
+     if (map_counter_) {
+       ekfom_iter_cnt_ = 0;
+-      imu_process_->UpdateStatesWithLidar(&kf_state_, scan_end_time_,
++      const bool updated = imu_process_->UpdateStatesWithLidar(&kf_state_, scan_end_time_,
+                                           0.5 / lidar_params_.rate);
++#ifdef ELLIPSELIO_RESEARCH_EXPORT
++      research_lidar_updated_ = updated;
++#endif
+     }
+ 
+     t3 = omp_get_wtime();
++#ifdef ELLIPSELIO_RESEARCH_EXPORT
++    if (research_export_) ExportResearchFrame();
++#endif
+ 
+     map_mutex_.lock();
+     MapIncremental();

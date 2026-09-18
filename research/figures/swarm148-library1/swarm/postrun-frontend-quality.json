@@ -1,0 +1,37 @@
+{
+  "Alpha": {
+    "passed": true,
+    "max_speed_limit_m_s": 20.0,
+    "frames": 4403,
+    "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+    "path_length_m": 530.2258113702054,
+    "max_scan_step_m": 0.4210195578029584,
+    "max_speed_m_s": 4.246801649269762,
+    "intervals_over_speed_limit": 0,
+    "reason": "Finite, chronological poses within the declared motion bound"
+  },
+  "Bob": {
+    "passed": true,
+    "max_speed_limit_m_s": 20.0,
+    "frames": 4454,
+    "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+    "path_length_m": 552.0019722096098,
+    "max_scan_step_m": 0.7620835879255045,
+    "max_speed_m_s": 7.621267471631963,
+    "intervals_over_speed_limit": 0,
+    "reason": "Finite, chronological poses within the declared motion bound"
+  },
+  "Carol": {
+    "passed": true,
+    "max_speed_limit_m_s": 20.0,
+    "frames": 4515,
+    "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+    "path_length_m": 514.258946617183,
+    "max_scan_step_m": 0.2680439560888787,
+    "max_speed_m_s": 2.265373645308702,
+    "intervals_over_speed_limit": 0,
+    "reason": "Finite, chronological poses within the declared motion bound"
+  },
+  "scope": "Retrospective sanity check after native run; no estimator or trajectory modification.",
+  "guard_sha256": "8f3f3a7c3ee0ca532d0a52fb32a67f178f73679e0c611b1e189df0db1cfe6e3b"
+}

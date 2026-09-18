@@ -1,0 +1,474 @@
+{
+  "complete": true,
+  "bytes": 51763389,
+  "files": [
+    {
+      "path": "Alpha/export/sensors.mcap",
+      "bytes": 45835255,
+      "sha256": "851f4bc9c4d0a70754d3a94b72f8891d506adc308afdfb04ec7ac32e810de730"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000000.npz",
+      "bytes": 1117,
+      "sha256": "c51185e4a6aabc76c60a39fcc88320a418a3a7624c9a7a28a85aaebe1267cf58"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000001.npz",
+      "bytes": 42001,
+      "sha256": "379111d66530a5e4e2cf5298be0418738eff3426b8189665606aa76d39179b5e"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000002.npz",
+      "bytes": 39997,
+      "sha256": "470f3e9aeee24c9f6e792853069ad648814d2ded2b609ca6d375af911d80418b"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000003.npz",
+      "bytes": 142697,
+      "sha256": "dd17514866f278ce894f2327c0a93ad2b2a2fd6a06a6938d400edd44bb22c3f5"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000004.npz",
+      "bytes": 590580,
+      "sha256": "b2dec8526d016113528c7441f3757047a9e74723abe8f94afcac44453c36645a"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000005.npz",
+      "bytes": 378819,
+      "sha256": "64ead46140f3626eb95b9c86126cef98ffaf7da111d520eb33430fe70ee24085"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000006.npz",
+      "bytes": 566765,
+      "sha256": "1297421d9aa634b02a53281782fd389381467dd6046a70e7e2be3b947bce155f"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000007.npz",
+      "bytes": 556327,
+      "sha256": "60a05d268ea885e1d37748d32351c95b885928bebc47f9697f7333f1fdd8c4a2"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000008.npz",
+      "bytes": 491083,
+      "sha256": "5e7ed6cc2b4b4197d0faa3f085dccf99192832d7c7afd22d15803f6bf144672e"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000009.npz",
+      "bytes": 487202,
+      "sha256": "16a03d46ce2237fcefb7cae3b95345579ca7495f5054bc39a2ef4e15c3bafb31"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000010.npz",
+      "bytes": 349810,
+      "sha256": "5dce12126cfe21de5c877201c81590f6ad2bd9dcfa65cbe771de2e95557d31fa"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000011.npz",
+      "bytes": 507471,
+      "sha256": "0b22bea888f74f2535a13370391847d864abeaf03b589f50fd16ba822c4ccab4"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000012.npz",
+      "bytes": 151147,
+      "sha256": "6bcc2bfb8712bbbc82b4b5e89b5662ac9b9356dc6aca86d78582983f6b81d266"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000013.npz",
+      "bytes": 139321,
+      "sha256": "546229b97374188f4ef3d4acc9d2dd0215a7570a0d033f25a30ee152da96a9e2"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000014.npz",
+      "bytes": 593352,
+      "sha256": "b8aa6290294cc301c4bf830368bde7294e7ef41d649425e9890bced8654ae162"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000015.npz",
+      "bytes": 162398,
+      "sha256": "c4d23bf02d07f5c0cc19120eae2576238272fac609a506caa41a7c6d96c6bf62"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000016.npz",
+      "bytes": 80061,
+      "sha256": "936b5e6a42680b950e258898579af1beb4a30516c1973ee5231a3090b67f5a6e"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000017.npz",
+      "bytes": 3352,
+      "sha256": "48c92cb2d65cc39ab3b02aff06b790c37d1de8b6182d6ff42e92a4dd48ffec03"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000018.npz",
+      "bytes": 34316,
+      "sha256": "72845d198d6ff58fb72df034c4715e95f4c5fb8e44574f4735f1d5872ea5e2cf"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000019.npz",
+      "bytes": 85187,
+      "sha256": "77c0e05a43f670de382d59cf029db08cb583c8631faa083918ee547d3140f436"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000020.npz",
+      "bytes": 221430,
+      "sha256": "ed4342d1988fd6e747af07e0c948e6710ea9e852e90e89a436222d11174bfc9a"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000021.npz",
+      "bytes": 132887,
+      "sha256": "1dc8b4bf938fed97ed2a392edf34daa6bd1b96a5a7fceab94da2231600415dfd"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000022.npz",
+      "bytes": 5276,
+      "sha256": "ad4d20cf9286a6baebc6d9da2d70656d91299fc51d1a122520640e76e52ee665"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000023.npz",
+      "bytes": 17971,
+      "sha256": "c61a87a74822d699fe2b92362e358d86f71a0021774810f3480b2dda7978aa73"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000024.npz",
+      "bytes": 16515,
+      "sha256": "9a612d9a940ffc65acf9b339b27555ae24aa1cda19bb40b931c06f74eee3d83f"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000025.npz",
+      "bytes": 20021,
+      "sha256": "a99a0709edfab8bf985172407aff7434ec0d45a95e24d35995b74ec128f9680d"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000026.npz",
+      "bytes": 25166,
+      "sha256": "c0458bdcd611d5039a5e688e38386badc4bbfef8cdaaafe3e4d2dab03a62b909"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000027.npz",
+      "bytes": 2547,
+      "sha256": "7bfc6851587726e06207f9dec02a48d2a8c06eb91c158dde77df0666f7e774b3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000028.npz",
+      "bytes": 4076,
+      "sha256": "fecec009dc2e79d2aaf6928ed15c9f0b4295ea76c5c8b1445096efc0560729e8"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000029.npz",
+      "bytes": 2025,
+      "sha256": "1c81d061687aeae5cf85a50217fda9c57ddae0e91f48e2d5923da98c60717397"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000030.npz",
+      "bytes": 2321,
+      "sha256": "46138042f1ee6851e34a93911406c6138e1012f0ae111493ca7dca94ae0af318"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000031.npz",
+      "bytes": 1879,
+      "sha256": "5380ea5ff60adf8acf49402ef0bf712466a0ddb2edb7926881367e37e993f345"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000032.npz",
+      "bytes": 2497,
+      "sha256": "f1c1d70e9667a287be22aab375c2fc88e7176a33c4d48ef90dc6c960e0ba5012"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000033.npz",
+      "bytes": 2730,
+      "sha256": "3bc6be759f12da2ad44e5038537f5667a1a2a15276aa37358e281a5bf1825ee4"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000034.npz",
+      "bytes": 1743,
+      "sha256": "d308580d4b6b9034453a13ce27f22a5725771c3c6ddfaa6dc1ddec7e19de9014"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000035.npz",
+      "bytes": 3039,
+      "sha256": "7042a5dc9443c0c4776629b73ff828931ba675066c71f1044cdb2a7ec96dd636"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000036.npz",
+      "bytes": 2603,
+      "sha256": "f454cac71d4df78a4386b5706714f73c1a4f4b29a7989b4d9b486edf52f2ef00"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000037.npz",
+      "bytes": 1032,
+      "sha256": "86ae2a72bb3426561335a2796b2e906803d2bf5d777f5ebcda70354dc9b75dd7"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000038.npz",
+      "bytes": 560,
+      "sha256": "1f0a6edb7c38cb68185b0f953ae11dacaeef5adfcf210643ea2cfb211b38240e"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000039.npz",
+      "bytes": 3125,
+      "sha256": "3de7e0fe4fc1dbe2eb66609ebe960e7311b769a8ab02e3cd7ed0deb92522b240"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000040.npz",
+      "bytes": 1782,
+      "sha256": "fe849d2df9de327b6d4e13086cbf0109a4d035d6764b5075901c18c733d53eb6"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000041.npz",
+      "bytes": 1601,
+      "sha256": "e905ca7476d1be6c25a234a3ddf422e8718476e3a75c0efbb0977e774f3a6c92"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000042.npz",
+      "bytes": 1222,
+      "sha256": "15ea57ab590015e9f1ef2511dc5aba1ef83f7b0e8aea360fd898338ca2765c03"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000043.npz",
+      "bytes": 1807,
+      "sha256": "bc1fbb83d2d0bf448da6bc907a3ddec059ed2114a334db5f7ac44348b5112387"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000044.npz",
+      "bytes": 602,
+      "sha256": "92fec6eb11344c942df59389ee076ea49dc6c0db1523cf9bab60d132da89444a"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000045.npz",
+      "bytes": 1419,
+      "sha256": "31dd2af6b89cc47bc507eeabf9066bc07bb9b67b1373553d99e4efb5f0545438"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000046.npz",
+      "bytes": 2357,
+      "sha256": "89e2dd07bf744820ab437c80fc2be066020446efc46836619981e1046783c114"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000047.npz",
+      "bytes": 4362,
+      "sha256": "8d22619af9a35eb9485701b4c165fc2984ca7a9a2c2cbdf423690d79eb642e04"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000048.npz",
+      "bytes": 1531,
+      "sha256": "aab3cedb97f75b2ea45b2e5d840b7a3e6802f2ea92afbdc69c0eae909daabb1b"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000049.npz",
+      "bytes": 1650,
+      "sha256": "20c2bca08059ed646c53ae73ba95089c4c61e51ed320e0299f25f4772b460370"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000050.npz",
+      "bytes": 1855,
+      "sha256": "43c805ace922eaaf92e68859136eea4ee52bf21fb68dc404e6db6d31724c6d9a"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000051.npz",
+      "bytes": 2587,
+      "sha256": "925dd4a67d114c065ecb597ca9a4f0b55d8cdd30dd58fae9236686fd17b93644"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000052.npz",
+      "bytes": 1128,
+      "sha256": "b781273789b4475981709f422062aab48494b3238c4324a8986154885cb15405"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000053.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000054.npz",
+      "bytes": 1140,
+      "sha256": "1c93a55fbeaf781d956fa3b3dde83eabcd46ba0ba84e79ee8428ea30f3d1ba35"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000055.npz",
+      "bytes": 1034,
+      "sha256": "d2ec087380564f4d1ee61313d6e133a4b0773b7ccf18064d129ce44a3e1662d3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000056.npz",
+      "bytes": 603,
+      "sha256": "e6b6a584a2e6b10eef2dbae4794153db8bf8dd1d1231d8b96a12fa807f3b53f2"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000057.npz",
+      "bytes": 570,
+      "sha256": "be7fd0110409f93ebae6dd1e96b0155f483e08773ff954f69a783bbdd47aa158"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000058.npz",
+      "bytes": 815,
+      "sha256": "2b34b2176ceb9fdd0b71ca239d38cc6114d6af209d3e4dca3e3ebc6589f4abaa"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000059.npz",
+      "bytes": 671,
+      "sha256": "81c16ee55cc49247c7767c486e48f7dc3f43f0527d59f362f39fa58c3ba0f8c5"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000060.npz",
+      "bytes": 1505,
+      "sha256": "099b57946a62a3951831403c61c5a41567656e3ba14c4ae1a1310bf4a14caca6"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000061.npz",
+      "bytes": 444,
+      "sha256": "ba8481651c6210f2511e239b62b138a4b8a3f080b5d576306904a9e77cd965e6"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000062.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000063.npz",
+      "bytes": 1583,
+      "sha256": "31103d3139b1c35d3cedae417261494cc25217e630f13bd66c3a8f44930d0578"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000064.npz",
+      "bytes": 853,
+      "sha256": "0e763a2f61903ee99dcf14ca9d5275d39994f7c9f49790c02a0029bdc89c1b5b"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000065.npz",
+      "bytes": 485,
+      "sha256": "bf46b29f0a69e6fdd17dc66b3e019f908fbdb8cd34e98cd4239754c2ff35d5e3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000066.npz",
+      "bytes": 2226,
+      "sha256": "fd03d47da99e920d034dd3cab6d43322bf4d48ed057b87fd9639185d21018d37"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000067.npz",
+      "bytes": 1130,
+      "sha256": "3080515d1f5cfea35b024c68a8bb0387169f0dc41ed4c28c14c8ba97f33cdc22"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000068.npz",
+      "bytes": 1314,
+      "sha256": "cf2e5e0c2a86138db8d0cb1e93591c4c8664f76dbc944c4105b23d594f1b154e"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000069.npz",
+      "bytes": 1041,
+      "sha256": "be9cc6a617db52d586882a18a50a9e00474f19e8b233ae1717a257aeac3a642b"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000070.npz",
+      "bytes": 423,
+      "sha256": "1069340fffc7da8d476fca1ba68c512164cf6c302cd7bf71a32ffc50ac1f3ac1"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000071.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000072.npz",
+      "bytes": 863,
+      "sha256": "5921de0483a0836ba1725147b49005f83ea976f637a8c50890f4492cc47cde44"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000073.npz",
+      "bytes": 1250,
+      "sha256": "30eba8be9a88770eb111196928403b575b0a4d705536bf3beb9a004cae67095a"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000074.npz",
+      "bytes": 569,
+      "sha256": "2024ec2eb44363d0a928feefb9a60c342011c80a2e56f340a7fdfeca39fcdb2e"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000075.npz",
+      "bytes": 993,
+      "sha256": "35939841ed102f0fa911ab675c6a844d64dcc67ec002c794610ae54bc4b0d199"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000076.npz",
+      "bytes": 951,
+      "sha256": "07264b88c1fea723c5f4c6459cd85b10a0345fa1c1663a190ff8216393ec217c"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000077.npz",
+      "bytes": 1597,
+      "sha256": "1b80a8bafa6b003f1b6a79e9232884c4961b5017fecd2df0e968f9759ffaf81c"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000078.npz",
+      "bytes": 1153,
+      "sha256": "d4c9fae15a0f7be3492fe658315f770fcdcb98bd76348f5dbe45e18ec3f5be47"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000079.npz",
+      "bytes": 627,
+      "sha256": "e58752a88560392c9898929486e2c96dc57743acb3ad93f460bbca2836fd0dd4"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000080.npz",
+      "bytes": 1694,
+      "sha256": "8dfa8e1bb02b79fcfec0282e1dc93efef782fc48239c5c0b5c2b1ba7c93766c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000081.npz",
+      "bytes": 593,
+      "sha256": "303dafd1b04c79ba0cdee8f33af59aa92053f951d542df2a161efc1b98adf6be"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000082.npz",
+      "bytes": 404,
+      "sha256": "c33e2e5a25dadf6fb1ca9397c7b73b87253db0e327e33573d30bfa8d949879f2"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000083.npz",
+      "bytes": 865,
+      "sha256": "e3ec4c4c91555801c92a73f23052f9ced4f46cb1a2034c3f3b9b5997757947cf"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000084.npz",
+      "bytes": 419,
+      "sha256": "b540120224ed6ad20e2fbfb8261828cea506bda3d08ac954697114f9d3104432"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000085.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000086.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000087.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000088.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000089.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000090.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    },
+    {
+      "path": "Alpha/export/ellipsoids/000091.npz",
+      "bytes": 397,
+      "sha256": "7d8de145f8d41dbdd6179e90ce48a25b309af0c1f301b3286d801c166a0299c3"
+    }
+  ],
+  "shared_sensor_bytes_retained": 0,
+  "bytes_released": 51763389,
+  "scope": "Generated sensor clouds, ellipsoid deltas, verification submaps and full BEV image cache only; descriptors, selected BEVs, reports, poses and original S3E bags retained"
+}

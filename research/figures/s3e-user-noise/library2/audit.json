@@ -1,0 +1,246 @@
+{
+  "status": "failed; stopped after motion guard violation",
+  "robot": "Alpha",
+  "sequence": "S3E_Library_2",
+  "full_sequence": false,
+  "downstream_started": false,
+  "common_prefix_start_ns": 1689768351946801424,
+  "common_prefix_end_ns": 1689768514250174283,
+  "common_prefix_s": 162.303372859,
+  "calibration_unchanged": true,
+  "trials": {
+    "previous": {
+      "quality": {
+        "passed": false,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 4792,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 11336.459912511526,
+        "max_scan_step_m": 68.636121016598,
+        "max_speed_m_s": 485.7499347795635,
+        "intervals_over_speed_limit": 493,
+        "reason": "Implausible ground-robot odometry speed",
+        "first_invalid_stamp_ns": 1689768783641127824,
+        "first_invalid_after_first_export_s": 432.996902227
+      },
+      "common_prefix_frames": 1622,
+      "common_prefix_quality": {
+        "passed": true,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 1622,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 138.8690526915891,
+        "max_scan_step_m": 0.28556622282920663,
+        "max_speed_m_s": 1.7270629348789268,
+        "intervals_over_speed_limit": 0,
+        "reason": "Finite, chronological poses within the declared motion bound"
+      },
+      "common_prefix_evo": {
+        "Alpha": {
+          "samples": 1622,
+          "robots": [
+            "Alpha"
+          ],
+          "rmse_m": 0.6845615883295098,
+          "median_m": 0.34895278864409357,
+          "statistics": {
+            "rmse": 0.6845615883295098,
+            "mean": 0.5573016387097143,
+            "median": 0.34895278864409357,
+            "std": 0.39754176096064203,
+            "min": 0.02056363160426584,
+            "max": 1.4955457281367868,
+            "sse": 760.1090496467108
+          },
+          "per_robot": {
+            "Alpha": {
+              "samples": 1622,
+              "statistics": {
+                "rmse": 0.6845615883295098,
+                "mean": 0.5573016387097143,
+                "median": 0.34895278864409357,
+                "std": 0.39754176096064203,
+                "min": 0.02056363160426584,
+                "max": 1.4955457281367868,
+                "sse": 760.1090496467108
+              }
+            }
+          },
+          "alignment_SE3": [
+            [
+              0.9996550530609994,
+              0.014783283783680067,
+              0.0217078191023772,
+              2553138.0116099175
+            ],
+            [
+              0.018247307791500363,
+              -0.9854091023731602,
+              -0.16922156103311725,
+              744420.7183693042
+            ],
+            [
+              0.018889432177082537,
+              0.1695592978302691,
+              -0.9853389436490033,
+              -0.5311377280816085
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": 1.0,
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "engine": "evo 1.36.5",
+          "association_max_diff_s": 0.05,
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+        }
+      },
+      "log_error_messages": {
+        "Lidar has no new data": 3,
+        "IMU has no new data": 2,
+        "Lidar start time is before IMU start time": 1
+      },
+      "imu": {
+        "rate": 100,
+        "acc_noise": 0.010919628856399554,
+        "gyr_noise": 0.010451440924866223,
+        "acc_bias": 0.0002185182762911326,
+        "gyr_bias": 8.177000935125718e-05,
+        "topic": "/Alpha/imu/data"
+      },
+      "input": {
+        "reliable": true
+      }
+    },
+    "attempt": {
+      "quality": {
+        "passed": false,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 146,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 55321.64652626686,
+        "max_scan_step_m": 9046.049121575483,
+        "max_speed_m_s": 1174.3131070198003,
+        "intervals_over_speed_limit": 69,
+        "reason": "Implausible ground-robot odometry speed",
+        "first_invalid_stamp_ns": 1689768410546890735,
+        "first_invalid_after_first_export_s": 58.600089311
+      },
+      "common_prefix_frames": 146,
+      "common_prefix_quality": {
+        "passed": false,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 146,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 55321.64652626686,
+        "max_scan_step_m": 9046.049121575483,
+        "max_speed_m_s": 1174.3131070198003,
+        "intervals_over_speed_limit": 69,
+        "reason": "Implausible ground-robot odometry speed",
+        "first_invalid_stamp_ns": 1689768410546890735
+      },
+      "common_prefix_evo": {
+        "Alpha": {
+          "samples": 146,
+          "robots": [
+            "Alpha"
+          ],
+          "rmse_m": 11924.348542271378,
+          "median_m": 6404.974801968756,
+          "statistics": {
+            "rmse": 11924.348542271378,
+            "mean": 8717.74889699621,
+            "median": 6404.974801968756,
+            "std": 8135.781605137332,
+            "min": 856.4648526466732,
+            "max": 48450.91948998773,
+            "sse": 20759752871.005157
+          },
+          "per_robot": {
+            "Alpha": {
+              "samples": 146,
+              "statistics": {
+                "rmse": 11924.348542271378,
+                "mean": 8717.74889699621,
+                "median": 6404.974801968756,
+                "std": 8135.781605137332,
+                "min": 856.4648526466732,
+                "max": 48450.91948998773,
+                "sse": 20759752871.005157
+              }
+            }
+          },
+          "alignment_SE3": [
+            [
+              -0.10345461061651196,
+              -0.8855422194521646,
+              -0.45289305703435145,
+              2546744.5618259944
+            ],
+            [
+              0.22084260270293676,
+              0.4235195956808061,
+              -0.8785554603471306,
+              744153.3887281318
+            ],
+            [
+              0.969807036669449,
+              -0.19090869451677858,
+              0.15175039368753085,
+              -214.33207910381452
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": 1.0,
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "engine": "evo 1.36.5",
+          "association_max_diff_s": 0.05,
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+        }
+      },
+      "log_error_messages": {
+        "Lidar has no new data": 111,
+        "IMU has no new data": 3,
+        "Lidar start time is before IMU start time": 10,
+        "IMU start time later than scan start time": 2
+      },
+      "imu": {
+        "rate": 100,
+        "acc_noise": 0.1,
+        "gyr_noise": 0.1,
+        "acc_bias": 0.0001,
+        "gyr_bias": 0.0001,
+        "topic": "/Alpha/imu/data"
+      },
+      "input": null
+    }
+  },
+  "native_analytics": {
+    "messages": 146,
+    "time_policy": "Latest observed odometry timestamp; native analytics has no exact scan timestamp",
+    "median_lidar_frequency_hz": 3.0,
+    "median_imu_frequency_hz": 100.0,
+    "zero_feature_updates": 68,
+    "updates_excluding_initialization": 145,
+    "median_native_update_ms": 5.345387966372073
+  },
+  "input_sha256": {
+    "alpha_gt.txt": "291b66e68796b2aca0e1b178b7768c33d4a4742e1c2dec5ceafb59c4be52b055",
+    "attempt/Alpha/analytics.jsonl": "98f420046e696a96bf746c05c32fa97417f48f0da9ffa73ce131a4edb1dee595",
+    "previous/retained/Alpha/frames.jsonl.gz": "904d5a378f2dddc3d9eb4a2e88e7ace55f5250186207ed4d8a13a89a02ff7f27",
+    "previous/Alpha/runtime.yaml": "240f0e730bd5f024cc42009e67f81afbb40d753f5e930821fa0eb1e2d3560e9c",
+    "previous/Alpha/mapping.log": "2cf7aa9423992823e74a5790e725e8c574ac4722c6cb809e2b42ffdd93036ead",
+    "attempt/retained/Alpha/frames.jsonl.gz": "de5d00b30282a612c9067905c77c50055e10eca74767ed1d1dc0763fffe6de86",
+    "attempt/Alpha/runtime.yaml": "3ec73cfa9a44bd59178e8c849d1c3c00d9b02907a5f98f0424c3b11286159625",
+    "attempt/Alpha/mapping.log": "b0f732dbbf0882821303163a2e03ab04a9853b5413e9f6ed4d37bf7e8d34d5b2"
+  }
+}

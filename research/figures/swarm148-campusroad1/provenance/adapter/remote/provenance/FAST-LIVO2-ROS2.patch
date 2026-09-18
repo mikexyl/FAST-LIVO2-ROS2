@@ -1,0 +1,1277 @@
+diff --git a/research/DPGO.md b/research/DPGO.md
+index c064a71..cc6bf43 100644
+--- a/research/DPGO.md
++++ b/research/DPGO.md
+@@ -33,6 +33,12 @@ run or model inference is needed to evaluate the distributed front/back end.
+ 
+ ## Build and run
+ 
++Optional live point-cloud factors are now available in the distributed solver.
++See [CBS pose + GICP results and commands](RESULTS-CBS-REGISTRATION.md).
++That mode requests only PCM-retained endpoint submaps over DDS, adds each GICP
++factor at its owning robot, and refreshes its correspondences during CBS
++updates. It reuses the same frozen inputs without centralized initialization.
++
+ Both `cbs` and `cbs_ros` use project branch `dev/fast-livo2-s3e-dpgo`.
+ The native overlay uses ROS Humble and the installed GTSAM 4.3/aria dependencies,
+ separately from the Python GTSAM 4.2 evaluation environment. Set `CBS_UNDERLAY`
+diff --git a/research/README.md b/research/README.md
+index 7bdeb39..7dbf7d2 100644
+--- a/research/README.md
++++ b/research/README.md
+@@ -3,6 +3,12 @@
+ See the [consolidated results summary](RESULTS-SUMMARY.md) for all completed
+ sequences, individual CBS ATEs, loop attribution, runtime and known failures.
+ 
++An alternative [EllipseLIO frontend with LiDAR-only MapClosures](ELLIPSELIO.md)
++uses separate odometry artifacts and the same distributed PCM/CBS backend.
++Its configuration is `configs/square1-ellipselio-mapclosures-cbs.yaml`.
++The [completed Square 1 run](RESULTS-ELLIPSELIO-CBS.md) connected all robots
++with 29 loops and 1.1907 m combined evo ATE; detection and CBS took 40.35 s.
++
+ The [loop-quality audit](LOOP-QUALITY.md) reports per-experiment distance
+ flags, local cycle consistency, missing-evidence limits and per-loop CSVs.
+ 
+@@ -11,6 +17,15 @@ before optimization. See the [implementation and Square 1 validation](RESULTS-PC
+ all 50 frozen Square 1 loops were retained; synthetic false closures were
+ withheld. Historical sequence reports below predate PCM.
+ 
++An optional [centralized mixed pose/GICP graph](MIXED-PGO.md) now uses native
++gtsam_points registration factors. The [Square 1 test](RESULTS-MIXED-PGO.md)
++adds 50 live GICP factors to the retained pose graph; the first conservative
++configuration leaves the combined evo ATE effectively unchanged at 1.198 m.
++
++The [distributed CBS integration](RESULTS-CBS-REGISTRATION.md) also completed
++Square 1: 50 live GICP factors, 24.8 s, 6.20 MiB of requested geometry, and
++1.2045 m combined evo ATE. It retains the pose factors and distributed PCM.
++
+ The distributed setup also has sequence configurations and reports for
+ [Square 2](RESULTS-SQUARE2-CBS.md), [Library 1](RESULTS-LIBRARY1-CBS.md),
+ [Playground 2](RESULTS-PLAYGROUND2-CBS.md) and
+diff --git a/research/RESULTS-SUMMARY.md b/research/RESULTS-SUMMARY.md
+index fded6a2..98f5a29 100644
+--- a/research/RESULTS-SUMMARY.md
++++ b/research/RESULTS-SUMMARY.md
+@@ -1,9 +1,90 @@
+ # Multi-robot FAST-LIVO2: results summary
+ 
+-Updated 2026-09-14. This document consolidates the completed **MegaLoc +
++Updated 2026-09-15. This document consolidates the completed **MegaLoc +
+ MapClosures + distributed CBS** experiments for Alpha, Bob and Carol.
+ 
+-The system connected all three robots on **Square 1, Square 2, Library 1,
++**Alternative frontend:** [EllipseLIO + LiDAR-only MapClosures + PCM/CBS/GICP](RESULTS-ELLIPSELIO-CBS.md)
++completed Square 1 with all three robots connected, 29 loops, **1.1907 m**
++shared ATE, and **40.35 s** for detection plus optimization. Individual shared
++CBS ATEs were **1.4394 / 0.8909 / 1.2279 m**; raw EllipseLIO ATEs with separate
++fits were **1.0922 / 0.7956 / 0.5925 m**. Four of 29 loops have GT distance
++discrepancies above 2 m. This separate run used no visual descriptors; it does
++not alter the historical FAST-LIVO2 tables or establish a controlled comparison.
++Its figures, evo evidence and 87.18 MiB Rerun recording are retained; cleanup
++removed 6.53 GiB of generated intermediates.
++A subsequent centralized pose-factor PGO run on the same 29 loops achieved
++**1.1371 m** shared ATE. It excludes the live GICP factors used by CBS.
++A bounded [ellipsoid-map BEV diagnostic](RESULTS-ELLIPSOID-BEV.md) on the first
++43 seconds confirms MapClosures can match native ellipsoid surfaces: **2/8**
++selected pairs pass GICP, versus **5/8** for fresh raw submaps. Four ellipsoid
++pair tests lack fitted maps at initialization. This does not establish improved
++recall; rendered images, ORB matches and a small Rerun recording are retained.
++
++The subsequent [full-sequence paired ellipsoid-BEV experiment](figures/ellipsoid-bev-full-square1/REPORT.md)
++achieved **1.1408 m** shared centralized-PGO ATE versus **1.1457 m** for raw BEVs
++on identical fresh EllipseLIO odometry and keyframes. Individual shared ATEs
++(Alpha/Bob/Carol) were **1.3950 / 0.9906 / 0.9981 m** for ellipsoids versus
++**1.4889 / 0.9559 / 0.9041 m** for raw BEVs. Fresh raw odometry, independently
++aligned per robot, achieved **1.0957 / 0.8004 / 0.5927 m**. Both graphs connected
++all robots. Ellipsoids supplied 63 loops (55 intra, 8 inter), while raw BEVs
++supplied 38 inter-robot loops. Detection took **102.19 s / 35.79 s** respectively;
++PGO took under 0.5 s per graph, excluding odometry and descriptor preparation.
++The 5 mm aggregate difference does not establish an accuracy advantage. This
++test uses centralized pose-factor PGO, not CBS. Position-only GT checks flagged
++1/52 checkable ellipsoid loops and 6/38 raw loops for endpoint-distance errors
++above 2 m; these are not full 6-DoF outlier labels. The 0.43 MiB Rerun recording,
++plots and compact evidence remain after removing 6.14 GiB of generated data.
++
++The same paired path also completed [Square 2](figures/ellipsoid-bev-full-square2/REPORT.md).
++Centralized shared ATE was **0.4641 m** for ellipsoid BEVs versus **0.4703 m**
++for raw BEVs. Individual shared ATEs (Alpha/Bob/Carol) were
++**0.4583 / 0.6236 / 0.2316 m** versus **0.4612 / 0.6332 / 0.2358 m**.
++Raw EllipseLIO ATEs with independent robot fits were **0.5138 / 0.5974 / 0.2014 m**.
++Both graphs connect all robots; ellipsoid BEVs contribute 30 loops (6 intra,
++24 inter), while raw BEVs contribute 26 (1 intra, 25 inter). No endpoint-distance
++discrepancy above 2 m was found among the 23/30 GT-checkable ellipsoid loops or
++24/26 GT-checkable raw loops. This does not establish full 6-DoF correctness.
++
++| Paired centralized-PGO comparison | Raw ATE | Ellipsoid ATE | Raw detection | Ellipsoid detection |
++|---|---:|---:|---:|---:|
++| Square 1 | 1.1457 m | 1.1408 m | 35.79 s | 102.19 s |
++| Square 2 | 0.4703 m | 0.4641 m | 24.22 s | 51.71 s |
++| Laboratory 1 | Unavailable | Unavailable | 3.32 s | 13.12 s |
++
++On Square 2, ellipsoid BEVs retain **291,486 ORB features** over 861 keyframes,
++versus **197,101** for raw BEVs (+48%). Native descriptor construction takes
++**120.74 s / 9.10 s**, respectively, plus **268.96 s** of ellipsoid CUDA sampling.
++Descriptor inputs average approximately **1.33 million / 77,811 points** per
++keyframe, so this is substantially different preprocessing work rather than an
++equal-input feature-matcher benchmark. These two runs show only 5–6 mm changes
++in aggregate ATE, with higher computation and no increase in inter-robot loops.
++
++Square 2 required a documented Carol retry at **0.5x replay** after the native
++frontend stalled at 1x and the raw-cloud queue limit stopped the process. The
++bag's IMU timestamps were monotonic, with a maximum 15.94 ms interval. The full
++retry succeeded with unchanged estimator/loop settings; both BEV branches share
++that same replay. Frozen PGO reproduced exactly and left all 1,728 watched inputs
++unchanged. Cleanup removed **3.10 GiB** of generated data, including the failed
++attempt's incomplete MCAP, while retaining reports, plots, evo evidence and Rerun.
++
++The indoor [Laboratory 1 paired run](figures/ellipsoid-bev-full-laboratory1/REPORT.md)
++used 804 frozen keyframes and unchanged loop/PGO settings. Ellipsoid BEVs yielded
++**51 accepted and selected loops (37 intra, 14 inter)** and connected all three
++robots. Raw BEVs yielded **9 accepted loops**, but GNC removed all three inter-robot
++factors, leaving **6 selected intra-robot loops and three separate components**.
++This is an improvement in graph connectivity. **ATE and GT-based loop accuracy
++remain unavailable:** the released records contain only endpoints labeled 0 and 1,
++without sensor timestamps. They were not converted into an artificial trajectory.
++Retained ORB features increased from **7,717 to 74,861**, with different accumulated
++map coverage; this does not isolate the effect of the ellipsoid representation.
++Ellipsoid detection took **13.12 s** versus **3.32 s** for raw BEVs, excluding
++preparation. All three frontend replays completed at 0.5x without retries.
++The report includes corrected component maps, density/ORB examples and Rerun.
++Frozen PGO reproduced exactly without changing any of 1,614 watched input hashes;
++31 regression tests passed. Cleanup removed **2.83 GiB**, retaining approximately
++**45 MiB** of reports and evidence, including an **11 MiB** Rerun recording.
++
++The historical FAST-LIVO2 + MegaLoc + MapClosures + CBS runs connected all three robots on **Square 1, Square 2, Library 1,
+ Campus Road 1 and Playground 2**, with combined position ATE RMSE of
+ **1.2147 m, 0.5340 m, 1.4172 m, 1.4707 m and 0.2941 m**, respectively.
+ Laboratory 1 achieved partial connectivity and has
+@@ -21,6 +102,21 @@ and produced 1.2181 m combined ATE; PCM added 65,780 CDR bytes and took
+ 1.3–2.2 ms computation per robot. Its batch execution differs from the earlier
+ incremental CBS run, so the ATE difference is not attributed to PCM.
+ 
++**Centralized registration-factor test:** The separate
++[mixed pose/GICP Square 1 graph](RESULTS-MIXED-PGO.md) adds 50 live
++gtsam_points factors to 1,598 pose factors. Native execution took 2.465 s on
++CPU. Combined evo ATE was effectively unchanged: 1.197976 m pose-only versus
++1.198012 m mixed. This first configuration establishes working integration,
++without evidence of an ATE improvement; it does not alter the CBS results below.
++
++**Distributed registration-factor test:** [PCM + CBS with live GICP](RESULTS-CBS-REGISTRATION.md)
++completed Square 1 in 24.8 s with all 50 added factors passing geometry checks.
++Combined evo ATE was **1.2045 m**; Alpha/Bob/Carol were
++**1.5148 / 0.9301 / 1.1308 m**, using one shared alignment. This is slightly
++lower than the earlier frozen PCM/CBS run's 1.2181 m; asynchronous scheduling
++and a changed relinearization policy prevent attributing that difference solely
++to GICP. Geometry transfer added 6.20 MiB. Historical rows remain unchanged.
++
+ ## System and evaluation
+ 
+ The path used for the historical experiments below was:
+diff --git a/research/s3e_pipeline/backends.py b/research/s3e_pipeline/backends.py
+index 6a526a2..1c74d91 100644
+--- a/research/s3e_pipeline/backends.py
++++ b/research/s3e_pipeline/backends.py
+@@ -64,7 +64,7 @@ def unpack_payload(value):
+ 
+ 
+ def create(cfg):
+-    if cfg.get('name')!='megaloc_mapclosures':
+-        raise ValueError('Only the MegaLoc + MapClosures pipeline is supported')
++    if cfg.get('name') not in ('megaloc_mapclosures','mapclosures'):
++        raise ValueError('Expected MegaLoc + MapClosures or MapClosures-only')
+     from .mapclosures import MegaLocMapClosures
+     return MegaLocMapClosures(cfg)
+diff --git a/research/s3e_pipeline/cli.py b/research/s3e_pipeline/cli.py
+index b0e5082..df03375 100644
+--- a/research/s3e_pipeline/cli.py
++++ b/research/s3e_pipeline/cli.py
+@@ -11,6 +11,7 @@ import json
+ import math
+ import numpy as np
+ import yaml
++from .frontends import frontend_name, ellipse_mapping, ellipse_provenance
+ from .artifacts import (digest,file_hash,read_json,read_jsonl,write_json,write_jsonl,
+                         canonical,stage_output,stage_path,validate_stage,invalidate_dependents)
+ 
+@@ -46,21 +47,24 @@ def odometry_mapping(robot, overrides):
+ 
+ 
+ def code_hash(stage):
+-    names=['cli.py','artifacts.py']
++    names=['cli.py','artifacts.py','frontends.py']
+     names+=dict(odometry=['mcap_writer.py'],keyframes=['data.py','geometry.py'],
+         descriptors=['backends.py','mapclosures.py','data.py','model_worker.py'],
+         loops=['backends.py','mapclosures.py','registration.py','geometry.py','data.py','distributed.py','verification.py','isolation.py'],
+-        pgo=['pgo.py','geometry.py'],evaluate=['evaluation.py','evo_evaluation.py','visualize.py','data.py','geometry.py'],
+-        dpgo=['dpgo.py','ros_dpgo_worker.py','cbs_bridge.py','distributed.py','verification.py','isolation.py','backends.py','mapclosures.py','registration.py','geometry.py','data.py'],
++        pgo=['pgo.py','mixed_pgo.py','registration.py','geometry.py'],evaluate=['evaluation.py','evo_evaluation.py','visualize.py','data.py','geometry.py'],
++        dpgo=['dpgo.py','ros_dpgo_worker.py','registration_exchange.py','mixed_pgo.py','cbs_bridge.py','distributed.py','verification.py','isolation.py','backends.py','mapclosures.py','registration.py','geometry.py','data.py'],
+         dpgo_evaluate=['dpgo_evaluation.py','dpgo_visualize.py','evaluation.py','evo_evaluation.py','visualize.py','cbs_bridge.py','geometry.py','data.py'],
+         inspect=['mapclosures_inspection.py','mapclosures_rerun.py','backends.py','registration.py','geometry.py'])[stage]
+     hashes={name:file_hash(Path(__file__).with_name(name)) for name in names}
+     if stage=='odometry':
+         for p in [*sorted((REPO/'src').glob('*.cpp')),*sorted((REPO/'include').rglob('*.h')),
+-                  REPO/'scripts/run_s3e.py',REPO/'scripts/s3e_adapter.py',REPO/'launch/mapping_s3e.launch.py']:
++                  REPO/'scripts/run_s3e.py',REPO/'scripts/s3e_adapter.py',REPO/'launch/mapping_s3e.launch.py',
++                  REPO/'scripts/run_ellipselio.py',REPO/'scripts/run_ellipselio.sh']:
+             hashes[str(p.relative_to(REPO))]=file_hash(p)
+     if stage in ('descriptors','loops','inspect'):
+         hashes.update({str(p.relative_to(CODE_ROOT)):file_hash(p) for p in sorted((CODE_ROOT/'adapters/mapclosures').glob('*')) if p.is_file()})
++    if stage == 'pgo':
++        hashes.update({str(p.relative_to(CODE_ROOT)):file_hash(p) for p in sorted((CODE_ROOT/'adapters/gtsam_points').rglob('*')) if p.is_file()})
+     return digest(hashes)
+ 
+ 
+@@ -69,37 +73,41 @@ def verification_code_hash():
+         ['backends.py','mapclosures.py','registration.py','geometry.py','artifacts.py']})
+ 
+ 
+-def selected_inputs(artifacts,robots,METHOD):
+-    LOOPS=f'loops.livo.{METHOD}';PGO=f'pgo.livo.{METHOD}'
+-    labels={f'{stage}.livo.{r}' for stage in ['odometry','keyframes'] for r in robots}
+-    labels|={f'descriptors.livo.{method}.{r}' for method in ['megaloc',METHOD] for r in robots}
++def selected_inputs(artifacts,robots,METHOD,FRONTEND='livo'):
++    LOOPS=f'loops.{FRONTEND}.{METHOD}';PGO=f'pgo.{FRONTEND}.{METHOD}'
++    labels={f'{stage}.{FRONTEND}.{r}' for stage in ['odometry','keyframes'] for r in robots}
++    labels|={f'descriptors.{FRONTEND}.{method}.{r}' for method in ['megaloc',METHOD] for r in robots}
+     labels|={LOOPS,PGO,'evaluate','inspect','dpgo','dpgo_evaluate'}
+     chosen={k:v for k,v in artifacts.items() if k in labels}
+     if LOOPS not in chosen or PGO not in chosen:chosen.pop('evaluate',None)
+     return chosen
+ 
+ 
+-def check_lineage(artifacts,robots,METHOD):
+-    LOOPS=f'loops.livo.{METHOD}';PGO=f'pgo.livo.{METHOD}'
++def check_lineage(artifacts,robots,METHOD,FRONTEND='livo'):
++    LOOPS=f'loops.{FRONTEND}.{METHOD}';PGO=f'pgo.{FRONTEND}.{METHOD}'
+     hashes={k:validate_stage(v)['stage_hash'] for k,v in artifacts.items() if k!='evaluate'}
+     for robot in robots:
+-        k=f'keyframes.livo.{robot}';v=f'descriptors.livo.megaloc.{robot}';d=f'descriptors.livo.{METHOD}.{robot}'
+-        expected={k:{'odometry':hashes[f'odometry.livo.{robot}']},v:{'keyframes':hashes[k]},
+-                  d:{'keyframes':hashes[k],'visual':hashes[v]}}
++        k=f'keyframes.{FRONTEND}.{robot}';v=f'descriptors.{FRONTEND}.megaloc.{robot}';d=f'descriptors.{FRONTEND}.{METHOD}.{robot}'
++        expected={k:{'odometry':hashes[f'odometry.{FRONTEND}.{robot}']},d:{'keyframes':hashes[k]}}
++        if METHOD=='megaloc_mapclosures':
++            expected[v]={'keyframes':hashes[k]};expected[d]['visual']=hashes[v]
+         for label,inputs in expected.items():
+             if read_json(Path(artifacts[label])/'COMPLETE.json')['identity']['inputs']!=inputs:
+                 raise ValueError(f'Invalid input lineage: {label}')
+-    inputs={r:dict(keyframes=hashes[f'keyframes.livo.{r}'],descriptors=hashes[f'descriptors.livo.{METHOD}.{r}']) for r in robots}
++    inputs={r:dict(keyframes=hashes[f'keyframes.{FRONTEND}.{r}'],descriptors=hashes[f'descriptors.{FRONTEND}.{METHOD}.{r}']) for r in robots}
+     if read_json(Path(artifacts[LOOPS])/'COMPLETE.json')['identity']['inputs']!=inputs:raise ValueError('Invalid loop lineage')
+-    expected=dict(keyframes={r:hashes[f'keyframes.livo.{r}'] for r in robots},loops=hashes[LOOPS])
++    expected=dict(keyframes={r:hashes[f'keyframes.{FRONTEND}.{r}'] for r in robots},loops=hashes[LOOPS])
+     if read_json(Path(artifacts[PGO])/'COMPLETE.json')['identity']['inputs']!=expected:raise ValueError('Invalid graph lineage')
+     return hashes
+ 
+ 
+ def run(args):
+     cfg=yaml.safe_load(args.config.read_text());robots=cfg['robots']
+-    METHOD=cfg['backend']['name'];LOOPS=f'loops.livo.{METHOD}';PGO=f'pgo.livo.{METHOD}'
+-    if METHOD!='megaloc_mapclosures':raise ValueError('Only the MegaLoc + MapClosures pipeline is supported')
++    FRONTEND=frontend_name(cfg)
++    METHOD=cfg['backend']['name'];LOOPS=f'loops.{FRONTEND}.{METHOD}';PGO=f'pgo.{FRONTEND}.{METHOD}'
++    if METHOD not in ('megaloc_mapclosures','mapclosures'):raise ValueError('Expected MegaLoc + MapClosures or MapClosures-only')
++    if FRONTEND=='ellipselio' and METHOD!='mapclosures':raise ValueError('EllipseLIO currently requires LiDAR-only MapClosures')
++    if FRONTEND=='ellipselio' and 'inspect' in args.stage:raise ValueError('RGB inspection requires camera exports; use dpgo_evaluate for EllipseLIO maps and registration overlays')
+     if cfg.get('schema_version')!=2 or robots!=['Alpha','Bob','Carol']:raise ValueError('Expected the single three-robot S3E configuration')
+     offsets=cfg['odometry'].get('start_offsets_s',{})
+     if not isinstance(offsets,dict) or set(offsets)-set(robots) or any(not math.isfinite(float(v)) or float(v)<0 for v in offsets.values()):
+@@ -108,7 +116,8 @@ def run(args):
+     if (not isinstance(overrides,dict) or set(overrides)-set(robots) or
+             any(not isinstance(v,dict) or any(not isinstance(k,str) for k in v) for v in overrides.values())):
+         raise ValueError('Odometry mapping_overrides must map robot names to parameter dictionaries')
+-    mappings={r:odometry_mapping(r,overrides.get(r,{})) for r in robots}
++    if FRONTEND=='ellipselio' and overrides:raise ValueError('EllipseLIO mapping_overrides are not supported')
++    mappings={r:(ellipse_mapping(SOURCE,r) if FRONTEND=='ellipselio' else odometry_mapping(r,overrides.get(r,{}))) for r in robots}
+     replay_robots=getattr(args,'odometry_robots',None) or robots
+     if set(replay_robots)-set(robots):raise ValueError('Unknown odometry robot')
+     dataset=resolved(cfg['dataset'])
+@@ -117,12 +126,13 @@ def run(args):
+         raise FileNotFoundError(dataset/'metadata.yaml')
+     root=resolved(cfg['output_root']);root.mkdir(parents=True,exist_ok=True)
+     previous_run=read_json(args.input_run) if args.input_run else None
++    if previous_run and frontend_name(previous_run.get('config',{}))!=FRONTEND:raise ValueError('Input run belongs to a different odometry frontend')
+     previous_dataset=previous_run.get('config',{}).get('dataset') if previous_run else None
+     if previous_dataset and resolved(previous_dataset)!=dataset:
+         raise ValueError('Input run belongs to a different S3E sequence')
+-    artifacts=selected_inputs(previous_run['artifacts'],robots,METHOD) if previous_run else {}
++    artifacts=selected_inputs(previous_run['artifacts'],robots,METHOD,FRONTEND) if previous_run else {}
+     for robot in robots:
+-        odometry_input=artifacts.get(f'odometry.livo.{robot}')
++        odometry_input=artifacts.get(f'odometry.{FRONTEND}.{robot}')
+         if odometry_input and resolved(read_json(Path(odometry_input)/'run/summary.json')['bag'])!=dataset:
+             raise ValueError('Input odometry belongs to a different S3E sequence')
+         will_replay=any(s in ('all','odometry') for s in args.stage) and robot in replay_robots
+@@ -162,91 +172,101 @@ def run(args):
+             inputs['metadata.yaml']=file_hash(dataset/'metadata.yaml')
+             for robot in robots:
+                 if robot not in replay_robots:
+-                    if f'odometry.livo.{robot}' not in artifacts:
++                    if f'odometry.{FRONTEND}.{robot}' not in artifacts:
+                         raise ValueError(f'No frozen odometry for skipped robot {robot}; provide --input-run or replay it')
+-                    previous,_=get(f'odometry.livo.{robot}')
++                    previous,_=get(f'odometry.{FRONTEND}.{robot}')
+                     if read_json(previous/'run/summary.json').get('start_offset_s',0.)!=float(offsets.get(robot,0.)):
+                         raise ValueError(f'Frozen odometry start offset differs for {robot}; replay it')
+-                    print(f'odometry.livo.{robot}: reusing validated input {previous}',flush=True)
++                    print(f'odometry.{FRONTEND}.{robot}: reusing validated input {previous}',flush=True)
+                     continue
+                 offset=float(offsets.get(robot,0.))
+                 settings=dict(robot=robot,**{k:v for k,v in cfg['odometry'].items() if k not in ('start_offsets_s','mapping_overrides')})
+                 settings['mapping_config']=mappings[robot]
+-                settings['camera_config_sha256']=file_hash(REPO/f'config/s3e/{robot.lower()}_camera.yaml')
++                if FRONTEND=='livo':settings['camera_config_sha256']=file_hash(REPO/f'config/s3e/{robot.lower()}_camera.yaml')
++                else:settings['native']=ellipse_provenance(SOURCE)
+                 if offset:settings['start_offset_s']=offset
+                 def odometry(out):
+                     config_path=out/'mapping_config.yaml'
+                     config_path.write_text(yaml.safe_dump(mappings[robot],sort_keys=False))
+-                    subprocess.run([str(REPO/'scripts/run_s3e.sh'),'--robot',robot,'--namespace',robot,
+-                        '--bag',str(dataset),'--rate',str(cfg['odometry']['rate']),'--export','--output',str(out/'run'),
+-                        '--start-offset',str(offset),
+-                        '--mapping-config',str(config_path),
+-                        '--export-python',str(SOURCE/'.ros2/research-venv/bin/python')],check=True,cwd=SOURCE)
++                    if FRONTEND=='ellipselio':
++                        subprocess.run(['bash',str(REPO/'scripts/run_ellipselio.sh'),'--robot',robot,
++                            '--bag',str(dataset),'--rate',str(cfg['odometry']['rate']),
++                            '--output',str(out/'run'),'--start-offset',str(offset),
++                            '--mapping-config',str(config_path)],check=True,cwd=SOURCE)
++                    else:
++                        subprocess.run([str(REPO/'scripts/run_s3e.sh'),'--robot',robot,'--namespace',robot,
++                            '--bag',str(dataset),'--rate',str(cfg['odometry']['rate']),'--export','--output',str(out/'run'),
++                            '--start-offset',str(offset),
++                            '--mapping-config',str(config_path),
++                            '--export-python',str(SOURCE/'.ros2/research-venv/bin/python')],check=True,cwd=SOURCE)
+                     summary=read_json(out/'run/summary.json')
+                     if not summary['success']:raise ValueError('Odometry failed')
+                     write_json(out/'summary.json',summary)
+-                execute(stage,f'odometry.livo.{robot}',settings,inputs,odometry)
++                execute(stage,f'odometry.{FRONTEND}.{robot}',settings,inputs,odometry)
+         elif stage=='descriptors':
+             from .data import keyframes,LocalStore
+             from .backends import create,JsonWorker,pack_array
+             model=None
+             try:
+                 for robot in robots:
+-                    odom,oh=get(f'odometry.livo.{robot}')
+-                    keylabel=f'keyframes.livo.{robot}'
++                    odom,oh=get(f'odometry.{FRONTEND}.{robot}')
++                    keylabel=f'keyframes.{FRONTEND}.{robot}'
+                     if keylabel not in artifacts:
+-                        camera=yaml.safe_load((odom/'run/camera_config.yaml').read_text())['/**']['ros__parameters']
++                        camera=yaml.safe_load((odom/'run/camera_config.yaml').read_text())['/**']['ros__parameters'] if FRONTEND=='livo' else None
+                         execute('keyframes',keylabel,dict(robot=robot,**cfg['keyframes']),{'odometry':oh},
+                             lambda out:keyframes(odom/'run/export',out/'store',cfg['keyframes'],camera))
+                     keys,kh=get(keylabel);manifest=read_json(keys/'COMPLETE.json')
+                     if manifest['identity']['inputs']!={'odometry':oh} or manifest['identity']['config']!=dict(robot=robot,**cfg['keyframes']):
+                         raise ValueError('Frozen keyframes do not match configuration')
+-                    store=LocalStore(keys/'store',robot);visual_label=f'descriptors.livo.megaloc.{robot}'
+-                    if visual_label not in artifacts:
+-                        vcfg=cfg['visual'];checkpoint=resolved(vcfg['checkpoint'])
+-                        if file_hash(checkpoint)!=vcfg['checkpoint_sha256']:raise ValueError('MegaLoc checkpoint hash mismatch')
+-                        if model is None:
+-                            model=JsonWorker([str(resolved(vcfg['python'])),str(CODE_ROOT/'s3e_pipeline/model_worker.py'),
+-                                '--source',str(resolved(vcfg['source'])),'--checkpoint',str(checkpoint),
+-                                '--gpu-lock',str(resolved(vcfg['gpu_lock']))])
+-                        def visual(out):
+-                            timings=[]
+-                            for row in store.rows:
+-                                key=row['keyframe_id'];start=time.monotonic()
+-                                image=(store.root/f'{key:06d}.png').read_bytes()
+-                                desc=model.call(op='describe',image=base64.b64encode(image).decode())
+-                                (out/f'{key:06d}.json.zlib').write_bytes(zlib.compress(canonical(desc)))
+-                                timings.append(dict(keyframe_id=key,seconds=time.monotonic()-start))
+-                            write_jsonl(out/'timing.jsonl',timings)
+-                            write_json(out/'summary.json',dict(frames=len(timings),runtime_s=sum(t['seconds'] for t in timings),model=model.call(op='stats')))
+-                        execute(stage,visual_label,vcfg,{'keyframes':kh},visual)
+-                    visual,vh=get(visual_label)
+-                    vm=read_json(visual/'COMPLETE.json')['identity']
+-                    if vm['inputs']!={'keyframes':kh}:raise ValueError('MegaLoc/keyframe mismatch')
+-                    provenance=vm['config']
+-                    checkpoint_hash=provenance.get('checkpoint_sha256') or provenance.get('file_hashes',{}).get(str(resolved(cfg['visual']['checkpoint'])))
+-                    if checkpoint_hash!=cfg['visual']['checkpoint_sha256']:raise ValueError('Frozen MegaLoc checkpoint mismatch')
++                    store=LocalStore(keys/'store',robot);visual=None;vh=None
++                    if METHOD=='megaloc_mapclosures':
++                        visual_label=f'descriptors.{FRONTEND}.megaloc.{robot}'
++                        if visual_label not in artifacts:
++                            vcfg=cfg['visual'];checkpoint=resolved(vcfg['checkpoint'])
++                            if file_hash(checkpoint)!=vcfg['checkpoint_sha256']:raise ValueError('MegaLoc checkpoint hash mismatch')
++                            if model is None:
++                                model=JsonWorker([str(resolved(vcfg['python'])),str(CODE_ROOT/'s3e_pipeline/model_worker.py'),
++                                    '--source',str(resolved(vcfg['source'])),'--checkpoint',str(checkpoint),
++                                    '--gpu-lock',str(resolved(vcfg['gpu_lock']))])
++                            def visual(out):
++                                timings=[]
++                                for row in store.rows:
++                                    key=row['keyframe_id'];start=time.monotonic()
++                                    image=(store.root/f'{key:06d}.png').read_bytes()
++                                    desc=model.call(op='describe',image=base64.b64encode(image).decode())
++                                    (out/f'{key:06d}.json.zlib').write_bytes(zlib.compress(canonical(desc)))
++                                    timings.append(dict(keyframe_id=key,seconds=time.monotonic()-start))
++                                write_jsonl(out/'timing.jsonl',timings)
++                                write_json(out/'summary.json',dict(frames=len(timings),runtime_s=sum(t['seconds'] for t in timings),model=model.call(op='stats')))
++                            execute(stage,visual_label,vcfg,{'keyframes':kh},visual)
++                        visual,vh=get(visual_label)
++                        vm=read_json(visual/'COMPLETE.json')['identity']
++                        if vm['inputs']!={'keyframes':kh}:raise ValueError('MegaLoc/keyframe mismatch')
++                        provenance=vm['config']
++                        checkpoint_hash=provenance.get('checkpoint_sha256') or provenance.get('file_hashes',{}).get(str(resolved(cfg['visual']['checkpoint'])))
++                        if checkpoint_hash!=cfg['visual']['checkpoint_sha256']:raise ValueError('Frozen MegaLoc checkpoint mismatch')
+                     def fused(out):
+                         instance=create(backend);timings=[]
+                         for row in store.rows:
+                             key=row['keyframe_id'];start=time.monotonic()
+                             with np.load(store.root/f'{key:06d}.npz') as f:scan=f['cloud']
+                             desc=instance.describe(row,scan,b'')
+-                            v=json.loads(zlib.decompress((visual/f'{key:06d}.json.zlib').read_bytes()))
+-                            desc['visual']=pack_array(np.asarray(v['global'],dtype=np.float32))
++                            if visual is not None:
++                                v=json.loads(zlib.decompress((visual/f'{key:06d}.json.zlib').read_bytes()))
++                                desc['visual']=pack_array(np.asarray(v['global'],dtype=np.float32))
+                             (out/f'{key:06d}.json.zlib').write_bytes(zlib.compress(canonical(desc)))
+                             timings.append(dict(keyframe_id=key,seconds=time.monotonic()-start,features=desc.get('mapclosures_features')))
+                             if key%100==0:print(f'{robot}: {key+1}/{len(store.rows)} LiDAR descriptors',flush=True)
+                         write_jsonl(out/'timing.jsonl',timings)
+-                        write_json(out/'summary.json',dict(frames=len(timings),runtime_s=sum(t['seconds'] for t in timings),visual_reused=True))
+-                    execute(stage,f'descriptors.livo.{METHOD}.{robot}',dict(preprocessing=backend['mapclosures'],native_binary_sha256=backend.get('native_binary_sha256'),visual=vh),{'keyframes':kh,'visual':vh},fused)
++                        write_json(out/'summary.json',dict(frames=len(timings),runtime_s=sum(t['seconds'] for t in timings),visual_reused=visual is not None))
++                    execute(stage,f'descriptors.{FRONTEND}.{METHOD}.{robot}',dict(preprocessing=backend['mapclosures'],native_binary_sha256=backend.get('native_binary_sha256'),visual=vh),dict(keyframes=kh,**({'visual':vh} if visual is not None else {})),fused)
+             finally:
+                 if model:model.close()
+         elif stage=='loops':
+             from .distributed import replay
+             stores={};descs={};inputs={}
+             for robot in robots:
+-                k,kh=get(f'keyframes.livo.{robot}');d,dh=get(f'descriptors.livo.{METHOD}.{robot}')
++                k,kh=get(f'keyframes.{FRONTEND}.{robot}');d,dh=get(f'descriptors.{FRONTEND}.{METHOD}.{robot}')
+                 dm=read_json(d/'COMPLETE.json')['identity']
+                 if dm['inputs'].get('keyframes')!=kh:raise ValueError('Loop descriptor/keyframe mismatch')
+                 if dm['config']['preprocessing']!=backend['mapclosures']:raise ValueError('LiDAR preprocessing mismatch')
+@@ -258,25 +278,34 @@ def run(args):
+                     lambda out:replay(stores,descs,dict(backend,verification_cache=str(cache)),dict(cfg['loops'],robots=robots),out))
+         elif stage=='pgo':
+             from .pgo import optimize
+-            loop,lh=get(LOOPS);rows=[];hashes={}
++            from .mixed_pgo import settings as registration_settings, native_provenance, refine_graph
++            registration=registration_settings(cfg['pgo'].get('registration_factors',{}))
++            provenance=native_provenance(SOURCE) if registration['enabled'] else None
++            loop,lh=get(LOOPS);rows=[];hashes={};stores={}
+             for robot in robots:
+-                p,h=get(f'keyframes.livo.{robot}');rows+=read_jsonl(p/'store/keyframes.jsonl');hashes[robot]=h
+-            execute(stage,PGO,cfg['pgo'],dict(keyframes=hashes,loops=lh),
+-                    lambda out:write_json(out/'graph.json',optimize(rows,read_jsonl(loop/'constraints.jsonl'),cfg['pgo'])))
++                p,h=get(f'keyframes.{FRONTEND}.{robot}');rows+=read_jsonl(p/'store/keyframes.jsonl');hashes[robot]=h
++                stores[robot]=p/'store'
++            settings=dict(cfg['pgo'],registration_factors=registration,native=provenance) if registration['enabled'] else cfg['pgo']
++            def pgo(out):
++                graph=optimize(rows,read_jsonl(loop/'constraints.jsonl'),cfg['pgo'])
++                if registration['enabled']:
++                    graph=refine_graph(graph,stores,registration,SOURCE,out,provenance)
++                write_json(out/'graph.json',graph)
++            execute(stage,PGO,settings,dict(keyframes=hashes,loops=lh),pgo)
+         elif stage=='evaluate':
+             from .evaluation import evaluate
+-            inputs=check_lineage(artifacts,robots,METHOD)
++            inputs=check_lineage(artifacts,robots,METHOD,FRONTEND)
+             execute(stage,'evaluate',cfg['evaluation'],inputs,lambda out:evaluate(cfg,artifacts,dataset,out))
+         elif stage=='dpgo':
+             from .dpgo import run as run_dpgo, native_provenance
+-            labels=[f'keyframes.livo.{r}' for r in robots]
+-            labels += [LOOPS] if cfg['dpgo'].get('mode','peers')=='frozen' else [f'descriptors.livo.{METHOD}.{r}' for r in robots]
++            labels=[f'keyframes.{FRONTEND}.{r}' for r in robots]
++            labels += [LOOPS] if cfg['dpgo'].get('mode','peers')=='frozen' else [f'descriptors.{FRONTEND}.{METHOD}.{r}' for r in robots]
+             inputs={label:get(label)[1] for label in labels}
+             if cfg['dpgo'].get('mode','peers')=='peers':
+                 import s3e_mapclosures_native as native
+                 for robot in robots:
+-                    dm=read_json(Path(artifacts[f'descriptors.livo.{METHOD}.{robot}'])/'COMPLETE.json')['identity']
+-                    if dm['inputs']['keyframes']!=inputs[f'keyframes.livo.{robot}']:
++                    dm=read_json(Path(artifacts[f'descriptors.{FRONTEND}.{METHOD}.{robot}'])/'COMPLETE.json')['identity']
++                    if dm['inputs']['keyframes']!=inputs[f'keyframes.{FRONTEND}.{robot}']:
+                         raise ValueError('DDS descriptor/keyframe mismatch')
+                     if dm['config']['preprocessing']!=cfg['backend']['mapclosures'] or dm['config']['native_binary_sha256']!=file_hash(native.__file__):
+                         raise ValueError('DDS descriptor preprocessing or native binary mismatch')
+@@ -285,7 +314,7 @@ def run(args):
+             execute(stage,'dpgo',settings,inputs,lambda out:run_dpgo(cfg,artifacts,SOURCE,out))
+         elif stage=='dpgo_evaluate':
+             from .dpgo_evaluation import evaluate as evaluate_dpgo
+-            labels=['dpgo',*[f'{s}.livo.{r}' for s in ('keyframes','odometry') for r in robots]]
++            labels=['dpgo',*[f'{s}.{FRONTEND}.{r}' for s in ('keyframes','odometry') for r in robots]]
+             if PGO in artifacts:labels.append(PGO)
+             inputs={label:get(label)[1] for label in labels}
+             inputs['position_ground_truth']={r:file_hash(dataset/f'{r.lower()}_gt.txt') if (dataset/f'{r.lower()}_gt.txt').is_file() else None for r in robots}
+@@ -293,8 +322,8 @@ def run(args):
+         elif stage=='inspect':
+             from .mapclosures_inspection import build
+             import s3e_mapclosures_inspection as native
+-            labels=[LOOPS,*[f'keyframes.livo.{r}' for r in robots],
+-                    *[f'descriptors.livo.{METHOD}.{r}' for r in robots]]
++            labels=[LOOPS,*[f'keyframes.{FRONTEND}.{r}' for r in robots],
++                    *[f'descriptors.{FRONTEND}.{METHOD}.{r}' for r in robots]]
+             inputs={label:get(label)[1] for label in labels}
+             settings=dict(mapclosures=backend['mapclosures'],evidence=backend['evidence'],
+                 native_binary_sha256=file_hash(native.__file__),rerun_version=cfg['evaluation']['rerun_version'])
+diff --git a/research/s3e_pipeline/data.py b/research/s3e_pipeline/data.py
+index bc5726f..067edf1 100644
+--- a/research/s3e_pipeline/data.py
++++ b/research/s3e_pipeline/data.py
+@@ -47,7 +47,9 @@ def frames(export, verify=True):
+                 if channel.topic != entry['topic'] or msg.log_time != row['stamp_ns']:
+                     raise ValueError('MCAP/frame index mismatch')
+                 payload[channel.topic.rsplit('/',1)[-1]]=types.deserialize_cdr(msg.data,schema.name)
+-            yield row, cloud_array(payload['cloud']), bytes(payload['image'].data)
++            if 'image' not in payload and row.get('image_available') is not False:
++                raise ValueError('Missing image without explicit image-free export metadata')
++            yield row, cloud_array(payload['cloud']), bytes(payload['image'].data) if 'image' in payload else b''
+         if next(messages,None) is not None:
+             raise ValueError('Unindexed MCAP messages')
+ 
+@@ -81,14 +83,16 @@ def keyframes(export, output, cfg, camera_config):
+         submap=voxel_downsample(np.concatenate(cloud_parts),cfg['voxel_m'])
+         np.savez_compressed(output/f'{key:06d}.npz',cloud=submap.astype(np.float32),
+                             scan=body.astype(np.float32))
+-        (output/f'{key:06d}.png').write_bytes(image)
++        if image: (output/f'{key:06d}.png').write_bytes(image)
+         item={k:v for k,v in row.items() if k!='messages'}
+-        scaled_camera=dict(camera_config)
+-        sx=row.get('image_width',camera_config['cam_width'])/camera_config['cam_width']
+-        sy=row.get('image_height',camera_config['cam_height'])/camera_config['cam_height']
+-        for field in ('cam_fx','cam_cx'):scaled_camera[field]*=sx
+-        for field in ('cam_fy','cam_cy'):scaled_camera[field]*=sy
+-        scaled_camera.update(cam_width=round(camera_config['cam_width']*sx),cam_height=round(camera_config['cam_height']*sy),scale=1.0)
++        scaled_camera=None
++        if image:
++            scaled_camera=dict(camera_config)
++            sx=row.get('image_width',camera_config['cam_width'])/camera_config['cam_width']
++            sy=row.get('image_height',camera_config['cam_height'])/camera_config['cam_height']
++            for field in ('cam_fx','cam_cx'):scaled_camera[field]*=sx
++            for field in ('cam_fy','cam_cy'):scaled_camera[field]*=sy
++            scaled_camera.update(cam_width=round(camera_config['cam_width']*sx),cam_height=round(camera_config['cam_height']*sy),scale=1.0)
+         item.update(keyframe_id=key, submap_start_ns=trailing[0][0], submap_end_ns=row['stamp_ns'],
+                     submap_points=len(submap), camera=scaled_camera,
+                     cloud_frame=row['body_frame'], geometry_preprocessing='causal trailing submap in keyframe IMU frame')
+@@ -116,4 +120,4 @@ class LocalStore:
+         row=self.row(key)
+         with np.load(self.root/f'{key:06d}.npz',allow_pickle=False) as f:
+             cloud=f['cloud']
+-        return row,cloud,(self.root/f'{key:06d}.png').read_bytes()
++        return row,cloud,b'' if row.get('image_available') is False else (self.root/f'{key:06d}.png').read_bytes()
+diff --git a/research/s3e_pipeline/dpgo.py b/research/s3e_pipeline/dpgo.py
+index 2f0b5ca..6cd25e3 100644
+--- a/research/s3e_pipeline/dpgo.py
++++ b/research/s3e_pipeline/dpgo.py
+@@ -2,12 +2,14 @@
+ import os
+ import math
+ from pathlib import Path
++from .frontends import frontend_name
+ import signal
+ import subprocess
+ import sys
+ import time
+ import uuid
+ from .artifacts import digest, file_hash, read_json, read_jsonl, write_json, write_jsonl
++from .mixed_pgo import settings as registration_settings
+ 
+ 
+ def native_provenance(source):
+@@ -25,6 +27,10 @@ def native_provenance(source):
+     underlay = Path(os.environ.get('CBS_UNDERLAY', '/home/mikexyl/workspaces/sb_slam_ros2_ws/install'))
+     result['gtsam_library'] = dict(path=str((underlay/'gtsam/lib/libgtsam.so').resolve()),
+                                   sha256=file_hash(underlay/'gtsam/lib/libgtsam.so'))
++    adapter = source/'FAST-LIVO2-ROS2/research/adapters/gtsam_points'
++    result['registration_adapter_sources'] = {str(p.relative_to(adapter)):file_hash(p)
++        for p in sorted(adapter.rglob('*')) if p.is_file()}
++    result['registration_upstream_commit'] = '9d32e7dbecf6015560d84b4901d6b0a6f483ec46'
+     return result
+ 
+ 
+@@ -37,7 +43,7 @@ def run(cfg, artifacts, source, out):
+     native = overlay/'cbs_ros/lib/cbs_ros/cbs_ros_node'
+     mode = settings.get('mode', 'peers')
+     if mode not in ('peers', 'frozen'): raise ValueError('dpgo.mode must be peers or frozen')
+-    frozen = read_jsonl(Path(artifacts[f'loops.livo.{method}'])/'constraints.jsonl') if mode == 'frozen' else []
++    frozen = read_jsonl(Path(artifacts[f'loops.{frontend_name(cfg)}.{method}'])/'constraints.jsonl') if mode == 'frozen' else []
+     pcm = dict(settings.get('pcm', {}))
+     pcm_enabled = pcm.get('enabled', False)
+     if type(pcm_enabled) is not bool: raise ValueError('dpgo.pcm.enabled must be boolean')
+@@ -52,6 +58,9 @@ def run(cfg, artifacts, source, out):
+         if type(timeout) not in (int, float) or not math.isfinite(timeout) or timeout <= 0:
+             raise ValueError('PCM timeout_s must be finite and positive')
+     pcm_session = uuid.uuid4().hex if pcm_enabled else ''
++    registration = registration_settings(settings.get('registration_factors', {}))
++    if registration['enabled'] and not pcm_enabled:
++        raise ValueError('CBS registration factors require the immutable PCM gate')
+     processes = []; logs = []; observers = {}; peak_rss = {}
+     env = dict(os.environ, ROS_DOMAIN_ID=str(settings['ros_domain_id']),
+         PYTHONPATH=str(Path(__file__).resolve().parents[1])+os.pathsep+os.environ.get('PYTHONPATH', ''),
+@@ -75,6 +84,13 @@ def run(cfg, artifacts, source, out):
+             if any(k.startswith('pcm_') for k in settings.get('cbs_parameters', {})):
+                 raise ValueError('Configure PCM through dpgo.pcm, not cbs_parameters')
+             params.update(pcm_enabled=pcm_enabled)
++            if any(k.startswith('registration_') for k in settings.get('cbs_parameters', {})):
++                raise ValueError('Configure registration through dpgo.registration_factors')
++            params.update(registration_enabled=registration['enabled'])
++            if registration['enabled']:
++                import json
++                params.update(registration_directory=str(local/'registration'),
++                              registration_settings=json.dumps(registration, sort_keys=True))
+             if pcm_enabled:
+                 params.update(pcm_session_id=pcm_session, pcm_probability=float(pcm.get('probability', .99)),
+                     pcm_minimum_clique_size=pcm.get('minimum_clique_size', 2),
+@@ -87,11 +103,12 @@ def run(cfg, artifacts, source, out):
+             incident = [e for e in frozen if robot in (e['i'][0], e['j'][0])]
+             write_jsonl(local/'input-constraints.jsonl', incident)
+             spec = dict(robot=robot, robots=robots, mode=mode, output=str(local),
+-                store=str(Path(artifacts[f'keyframes.livo.{robot}'])/'store'),
+-                descriptors=artifacts.get(f'descriptors.livo.{method}.{robot}',
+-                                          str(Path(artifacts[f'keyframes.livo.{robot}'])/'store')), backend=cfg['backend'],
++                store=str(Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'),
++                descriptors=artifacts.get(f'descriptors.{frontend_name(cfg)}.{method}.{robot}',
++                                          str(Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store')), backend=cfg['backend'],
+                 loops=cfg['loops'], pgo=cfg['pgo'], constraints=str(local/'input-constraints.jsonl'),
+                 pcm_enabled=pcm_enabled, pcm_session_id=pcm_session,
++                registration_factors=registration,
+                 ros_underlay=str(underlay), ros_overlay=str(overlay))
+             write_json(local/'spec.json', spec)
+             observers[robot] = launch(f'{robot}-frontend', [sys.executable, '-m', 's3e_pipeline.ros_dpgo_worker',
+@@ -144,6 +161,26 @@ def run(cfg, artifacts, source, out):
+                     raise ValueError('PCM endpoint decisions disagree')
+                 pcm_decisions[key] = decision
+     constraints = [unique[k] for k in sorted(unique)]
++    if registration['enabled']:
++        pairs = []; expected = {(tuple(e['i']), tuple(e['j'])) for e in unique.values()}
++        for robot in robots:
++            result = summaries[robot]['registration']
++            if not result or not result['final'] or not result['success']: raise ValueError('Incomplete native registration result')
++            for pair in result['pairs']:
++                i, j = pair['i'], pair['j']
++                if i[0] != robots.index(robot): raise ValueError('Registration factor assigned to wrong owner')
++                pairs.append(((robots[i[0]], i[1]), (robots[j[0]], j[1])))
++        if len(set(pairs)) != len(pairs) or set(pairs) != expected:
++            raise ValueError('Native registration pair coverage/ownership mismatch')
++        write_json(out/'registration.json', dict(settings=registration,
++            robots={r:summaries[r]['registration'] for r in robots},
++            registration_factor_count=sum(summaries[r]['registration']['registration_factor_count'] for r in robots),
++            network_cdr_bytes=sum(s['registration_network_cdr_bytes'] for s in summaries.values()),
++            ownership='one binary GICP factor per geometrically supported PCM-retained loop, on its canonical first robot'))
++        # Exchanges are reproducible from original NPZs + the retained manifests.
++        # Do not retain a second copy of the temporary transport clouds.
++        for robot in robots:
++            for payload in (out/robot/'registration').glob('*.bin'): payload.unlink()
+     write_jsonl(out/'poses.jsonl', poses); write_jsonl(out/'constraints.jsonl', constraints)
+     write_jsonl(out/'proposed-constraints.jsonl', [proposed[k] for k in sorted(proposed)])
+     if pcm_enabled:
+@@ -155,6 +192,8 @@ def run(cfg, artifacts, source, out):
+     write_json(out/'summary.json', dict(backend='CBS SE(3)', transport='ROS2 Fast DDS', mode=mode,
+         wall_s=time.monotonic()-start, robots=summaries, keyframes=len(poses), loops=len(constraints),
+         proposed_loops=len(proposed), pcm_enabled=pcm_enabled,
++        registration_enabled=registration['enabled'],
++        registration_network_cdr_bytes=sum(s['registration_network_cdr_bytes'] for s in summaries.values()),
+         pcm_network_cdr_bytes=sum(s['pcm_network_cdr_bytes'] for s in summaries.values()),
+         shared_reference=all(s['reference_available'] for s in summaries.values()),
+         # Existing NodeStats counts the client side: requests sent + responses
+diff --git a/research/s3e_pipeline/dpgo_evaluation.py b/research/s3e_pipeline/dpgo_evaluation.py
+index 6198de3..e6316b3 100644
+--- a/research/s3e_pipeline/dpgo_evaluation.py
++++ b/research/s3e_pipeline/dpgo_evaluation.py
+@@ -1,5 +1,6 @@
+ """Evaluate owner-exported CBS poses. Ground truth is used only here."""
+ from pathlib import Path
++from .frontends import frontend_name
+ import time
+ import numpy as np
+ from .artifacts import read_json, read_jsonl, write_json, write_jsonl
+@@ -47,18 +48,19 @@ def evaluate(cfg, artifacts, dataset, output):
+     # No align_robots call: common-frame transforms come exclusively from CBS.
+     if any(components[e['i'][0]] != components[e['j'][0]] for e in loops):
+         raise ValueError('CBS failed to establish a common frame for a connected component')
+-    dense = []; all_keys = []; factors = list(loops); central_dense = []; events = []
+-    central_label = f'pgo.livo.{cfg["backend"]["name"]}'
++    dense = []; raw_dense = []; all_keys = []; factors = list(loops); central_dense = []; events = []
++    central_label = f'pgo.{frontend_name(cfg)}.{cfg["backend"]["name"]}'
+     central = read_json(Path(artifacts[central_label])/'graph.json') if central_label in artifacts else None
+     for robot in cfg['robots']:
+-        store = Path(artifacts[f'keyframes.livo.{robot}'])/'store'
++        store = Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
+         keys = read_jsonl(store/'keyframes.jsonl'); all_keys += keys
+         rows = [p for p in poses if p['robot_id'] == robot]
+         # Original map uses the first optimized pose as a display origin only.
+         # Neither this transform nor evaluation alignment feeds back to CBS.
+         display_alignment = pose(rows[0]['T_world_body']) @ inv(pose(keys[0]['T_world_body']))
+         for row, key in zip(rows, keys): row['T_initial_body'] = (display_alignment @ pose(key['T_world_body'])).tolist()
+-        export = Path(artifacts[f'odometry.livo.{robot}'])/'run/export'
++        export = Path(artifacts[f'odometry.{frontend_name(cfg)}.{robot}'])/'run/export'
++        raw_dense += [dict(r,component=robot) for r in read_jsonl(export/'frames.jsonl')]
+         original, optimized, track = build_maps(export, keys, rows, cfg['evaluation']['map_voxel_m'], store)
+         for r in track: r['component'] = components[robot]
+         dense += track
+@@ -81,6 +83,8 @@ def evaluate(cfg, artifacts, dataset, output):
+         edge['rotation_residual_rad'] = float(np.linalg.norm(error[:3]))
+     stats = {r: read_jsonl(dpgo/r/'stats.jsonl') for r in cfg['robots']}
+     report = dict(runtime=summary, trajectory=trajectory_metrics(dict(poses=dense), gt, cfg['evaluation'], output/'evo/cbs'),
++        raw_odometry=trajectory_metrics(dict(poses=raw_dense), gt, cfg['evaluation'], output/'evo/raw_odometry'),
++        frontend=frontend_name(cfg),
+         centralized_reference=trajectory_metrics(dict(poses=central_dense), gt, cfg['evaluation'], output/'evo/centralized') if central else None,
+         components=components, factor_count=len(factors), loop_count=len(loops),
+         gaussian_cost=.5*sum(e['squared_whitened_residual'] for e in factors),
+@@ -94,6 +98,12 @@ def evaluate(cfg, artifacts, dataset, output):
+     report['trajectory_metrics_status'] = 'available' if report['trajectory'] else 'unavailable: see evo component status'
+     if summary.get('pcm_enabled'):
+         report['pcm'] = read_json(dpgo/'pcm.json')
++    if summary.get('registration_enabled'):
++        report['registration'] = read_json(dpgo/'registration.json')
++        report['pose_factor_count'] = len(factors)
++        report['registration_factor_count'] = report['registration']['registration_factor_count']
++        report['factor_count'] += report['registration_factor_count']
++        report['cost_scope'] += '; pose-only diagnostic, excludes live GICP costs recorded per owner in registration'
+     if events:
+         report['retrieval'] = retrieval_metrics(all_keys, events, gt, cfg['evaluation'], cfg['loops']['same_robot_exclusion_s'])
+         latencies = [e['wall_detection_latency_s'] for e in events if 'wall_detection_latency_s' in e]
+@@ -128,7 +138,7 @@ def comparison_plot(cfg, dense, central, gt, report, output):
+     COLORS={'Alpha':[235,85,80],'Bob':[70,170,245],'Carol':[95,205,130]}
+     with (output/'metrics.csv').open('w') as f:
+         writer = csv.writer(f); writer.writerow(['method','component','position_rmse_m','samples','status'])
+-        for label, metrics in [('CBS DDS',report['trajectory']),('Centralized reference',report['centralized_reference'])]:
++        for label, metrics in [('CBS DDS',report['trajectory']),('Raw odometry (individual alignment)',report.get('raw_odometry',{})),('Centralized reference',report['centralized_reference'])]:
+             for component, values in (metrics or {}).items():
+                 writer.writerow([label,component,values['rmse_m'],values['samples'],'available'])
+         for component in sorted(set(report['components'].values()) - set(report['trajectory'])):
+diff --git a/research/s3e_pipeline/dpgo_visualize.py b/research/s3e_pipeline/dpgo_visualize.py
+index 9c46bd7..12ec3f8 100644
+--- a/research/s3e_pipeline/dpgo_visualize.py
++++ b/research/s3e_pipeline/dpgo_visualize.py
+@@ -1,6 +1,7 @@
+ """Rerun 0.37.1 export in its isolated Python environment."""
+ import sys
+ from pathlib import Path
++from .frontends import frontend_name
+ import numpy as np
+ from .artifacts import read_json, read_jsonl
+ from .geometry import pose
+@@ -12,15 +13,16 @@ def visualize(cfg, artifacts, poses, factors, stats, events, output, report):
+     from .visualize import COLORS
+     from .geometry import transform
+     if rr.__version__ != '0.37.1': raise ValueError('Rerun 0.37.1 required')
+-    rr.init('S3E MegaLoc + MapClosures + CBS'); rr.save(str(output/'result.rrd'))
++    rr.init('S3E '+frontend_name(cfg)+' '+cfg['backend']['name']+' CBS'); rr.save(str(output/'result.rrd'))
+     rr.log('/', rr.ViewCoordinates.FLU, static=True)
+     components = sorted({p['component'] for p in poses})
++    inspection_views = [rrb.Spatial2DView(name='Query', origin='/inspection/query'),
++                        rrb.Spatial2DView(name='Candidate', origin='/inspection/candidate')] if cfg['backend']['name']=='megaloc_mapclosures' else []
+     rr.send_blueprint(rrb.Blueprint(rrb.Horizontal(rrb.Tabs(*[
+         rrb.Spatial3DView(name=c, origin=f'/components/{c}') for c in components],
+         rrb.Spatial3DView(name='Registration', origin='/registration')),
+         rrb.Vertical(rrb.TimeSeriesView(name='CBS convergence', contents=['/convergence/**']),
+-                     rrb.Spatial2DView(name='Query', origin='/inspection/query'),
+-                     rrb.Spatial2DView(name='Candidate', origin='/inspection/candidate'),
++                     *inspection_views,
+                      rrb.TextDocumentView(name='Evaluation', origin='/report')))))
+     import json
+     rr.log('/report', rr.TextDocument(json.dumps(report, indent=2)), static=True)
+@@ -31,8 +33,11 @@ def visualize(cfg, artifacts, poses, factors, stats, events, output, report):
+             rr.log(prefix+'/'+label, rr.LineStrips3D([[pose(p[field])[:3, 3] for p in rows]],
+                 colors=COLORS[robot] if label == 'optimized' else [130, 130, 130]), static=True)
+         with np.load(output/f'{robot}-maps.npz') as maps:
+-            rr.log(prefix+'/optimized_map', rr.Points3D(maps['optimized'], colors=COLORS[robot], radii=.025), static=True)
+-            rr.log(prefix+'/original_map', rr.Points3D(maps['original'], colors=[100,100,100], radii=.02), static=True)
++            def display(points):
++                limit=cfg['evaluation'].get('rerun_map_max_points',0)
++                return points[np.linspace(0,len(points)-1,min(len(points),limit),dtype=int)] if limit else points
++            rr.log(prefix+'/optimized_map', rr.Points3D(display(maps['optimized']), colors=COLORS[robot], radii=.025), static=True)
++            rr.log(prefix+'/original_map', rr.Points3D(display(maps['original']), colors=[100,100,100], radii=.02), static=True)
+         lookup.update({(robot, p['keyframe_id']): pose(p['T_world_body'])[:3,3] for p in rows})
+         for stat in stats[robot]:
+             rr.set_time('iteration', sequence=stat['iteration'])
+@@ -47,11 +52,12 @@ def visualize(cfg, artifacts, poses, factors, stats, events, output, report):
+         rr.log(f'/components/{component}/loops/{index}', rr.LineStrips3D([[lookup[tuple(edge['i'])], lookup[tuple(edge['j'])]]],
+             colors=[240,200,50]), static=True)
+     verifications = [e for e in events if e['type'] == 'verification']
+-    for index in np.linspace(0, len(verifications)-1, min(len(verifications), 80), dtype=int):
++    for index in np.linspace(0, len(verifications)-1, min(len(verifications), cfg['evaluation'].get('rerun_verification_limit',80)), dtype=int):
+         edge = verifications[index]; rr.set_time('event', sequence=int(index))
+         for label in ('query', 'candidate'):
+-            robot, key = edge[label]; store = Path(artifacts[f'keyframes.livo.{robot}'])/'store'
+-            rr.log('/inspection/'+label, rr.EncodedImage(path=store/f'{key:06d}.png'))
++            robot, key = edge[label]; store = Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
++            if (store/f'{key:06d}.png').is_file():
++                rr.log('/inspection/'+label, rr.EncodedImage(path=store/f'{key:06d}.png'))
+             with np.load(store/f'{key:06d}.npz') as data: cloud = data['cloud'][:, :3]
+             if label == 'candidate':
+                 T = edge.get('T_i_j', edge.get('initial_T_i_j'))
+diff --git a/research/s3e_pipeline/evaluation.py b/research/s3e_pipeline/evaluation.py
+index de559ef..d99d823 100644
+--- a/research/s3e_pipeline/evaluation.py
++++ b/research/s3e_pipeline/evaluation.py
+@@ -1,6 +1,7 @@
+ """Evaluation is the only stage granted access to S3E position ground truth."""
+ from collections import defaultdict
+ from pathlib import Path
++from .frontends import frontend_name
+ import csv
+ import subprocess
+ import sys
+@@ -125,17 +126,18 @@ def evaluate(cfg,artifacts,dataset,output):
+     from collections import Counter
+     import time
+     start=time.monotonic();output=Path(output)
+-    method=cfg['backend']['name'];LOOPS=f'loops.livo.{method}';PGO=f'pgo.livo.{method}'
+-    title='MegaLoc + MapClosures'
++    method=cfg['backend']['name'];LOOPS=f'loops.{frontend_name(cfg)}.{method}';PGO=f'pgo.{frontend_name(cfg)}.{method}'
++    title='MegaLoc + MapClosures' if method=='megaloc_mapclosures' else 'MapClosures'
+     gt={r:ground_truth(dataset/f'{r.lower()}_gt.txt') for r in cfg['robots']}
+     graph=read_json(Path(artifacts[PGO])/'graph.json')
++    if 'registration' in graph:title+=' + mixed pose/GICP PGO'
+     loop=Path(artifacts[LOOPS]);events=read_jsonl(loop/'events.jsonl')
+     rows=[];all_dense=[];all_original=[]
+     for robot in cfg['robots']:
+-        keyroot=Path(artifacts[f'keyframes.livo.{robot}'])/'store'
++        keyroot=Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
+         keyrows=read_jsonl(keyroot/'keyframes.jsonl');rows+=keyrows
+         graphrows=[r for r in graph['poses'] if r['robot_id']==robot]
+-        export=Path(artifacts[f'odometry.livo.{robot}'])/'run/export'
++        export=Path(artifacts[f'odometry.{frontend_name(cfg)}.{robot}'])/'run/export'
+         original,optimized,dense=build_maps(export,keyrows,graphrows,cfg['evaluation']['map_voxel_m'],keyroot)
+         np.savez_compressed(output/f'{robot}-maps.npz',original=original.astype(np.float32),optimized=optimized.astype(np.float32))
+         initial=[dict(r,T_world_body=r['T_initial_body']) for r in graphrows]
+@@ -159,6 +161,8 @@ def evaluate(cfg,artifacts,dataset,output):
+         gnc_rejected_loops=sum(f['kind']=='loop' and f['robust_weight']<.5 for f in graph['factors']),
+         orientation_ground_truth_used=False,
+         thresholds=cfg['backend']['fusion'],evaluation_runtime_s=time.monotonic()-start)
++    if 'registration' in graph:
++        report['registration_factors']=graph['registration']
+     def provenance(e):return '+'.join(sorted(e.get('retrieval_sources',[]))) or 'unknown'
+     report['branch_attribution']=dict(
+         verification_attempts=dict(Counter(provenance(e) for e in verifications)),
+@@ -197,15 +201,18 @@ def evaluate(cfg,artifacts,dataset,output):
+     # Render one strongest accepted cross-robot pair (or an intra-robot pair if none).
+     accepted=[e for e in verifications if e['accepted']]
+     selected=sorted(accepted,key=lambda e:(e.get('retrieval_sources')!=['mapclosures'],
+-        e['query'][0]==e['candidate'][0],-e.get('visual_similarity',0)))[:1]
++        e['query'][0]==e['candidate'][0],-(e.get('visual_similarity') or 0)))[:1]
+     for e in selected:
+         import matplotlib.image as mpimg
+         fig,axes=plt.subplots(1,3,figsize=(16,5))
+         clouds=[]
+         for ax,endpoint in zip(axes[:2],[e['query'],e['candidate']]):
+-            robot,key=endpoint;p=Path(artifacts[f'keyframes.livo.{robot}'])/'store'
+-            ax.imshow(mpimg.imread(p/f'{key:06d}.png'));ax.set_title(f'{robot} keyframe {key}');ax.axis('off')
++            robot,key=endpoint;p=Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
+             with np.load(p/f'{key:06d}.npz') as data:clouds.append(data['cloud'][:,:3])
++            if (p/f'{key:06d}.png').exists():ax.imshow(mpimg.imread(p/f'{key:06d}.png'))
++            else:
++                xyz=clouds[-1];ax.scatter(xyz[::10,0],xyz[::10,1],s=.3);ax.set_aspect('equal')
++            ax.set_title(f'{robot} keyframe {key}');ax.axis('off')
+         a,b=clouds;b=transform(pose(e['T_i_j']),b)
+         axes[2].scatter(a[::10,0],a[::10,1],s=.3,label=e['query'][0]);axes[2].scatter(b[::10,0],b[::10,1],s=.3,label=e['candidate'][0])
+         axes[2].set_aspect('equal');axes[2].legend();axes[2].set_title(f"Accepted registration: RMSE {e['rmse_m']:.3f} m")
+diff --git a/research/s3e_pipeline/evo_evaluation.py b/research/s3e_pipeline/evo_evaluation.py
+index b9b6254..28014cb 100644
+--- a/research/s3e_pipeline/evo_evaluation.py
++++ b/research/s3e_pipeline/evo_evaluation.py
+@@ -12,6 +12,7 @@ from evo.main_ape import ape
+ from evo.tools import file_interface
+ 
+ from .artifacts import write_json
++from .geometry import pose
+ 
+ EVO_VERSION = '1.36.5'
+ 
+@@ -23,7 +24,7 @@ def associate(rows, truth, max_diff_s=.05):
+     reference = PoseTrajectory3D(positions_xyz=truth[1],
+         orientations_quat_wxyz=np.tile([1., 0., 0., 0.], (len(truth[0]), 1)),
+         timestamps=np.asarray(truth[0], dtype=np.float64)/1e9)
+-    estimate = PoseTrajectory3D(poses_se3=[np.asarray(r['T_world_body']) for r in rows],
++    estimate = PoseTrajectory3D(poses_se3=[pose(r['T_world_body']) for r in rows],
+         timestamps=np.asarray([r['stamp_ns'] for r in rows], dtype=np.float64)/1e9)
+     return sync.associate_trajectories(reference, estimate, max_diff=max_diff_s,
+         first_name='position ground truth', snd_name='estimate')
+diff --git a/research/s3e_pipeline/mapclosures.py b/research/s3e_pipeline/mapclosures.py
+index d38f321..8c88e0e 100644
+--- a/research/s3e_pipeline/mapclosures.py
++++ b/research/s3e_pipeline/mapclosures.py
+@@ -16,7 +16,9 @@ class MegaLocMapClosures(Backend):
+         import s3e_mapclosures_native as native
+         if native.upstream_commit!=cfg['mapclosures']['upstream_commit']:
+             raise ValueError('MapClosures binary/source revision mismatch')
+-        self.options=cfg['mapclosures'];self.visual_min=cfg['fusion']['visual_min_similarity']
++        self.visual_enabled=cfg['name']=='megaloc_mapclosures'
++        self.name=cfg['name']
++        self.options=cfg['mapclosures'];self.visual_min=cfg.get('fusion',{}).get('visual_min_similarity',.5)
+         if not 0<self.visual_min<1 or self.options['inliers_threshold']<3:
+             raise ValueError('Explicit retrieval thresholds are required')
+         self.engine=native.MapClosures(self.options['density_map_resolution'],
+@@ -30,11 +32,14 @@ class MegaLocMapClosures(Backend):
+         return dict(mapclosures={k:pack_array(result[k]) for k in ('ground','xy','bits')},
+                     mapclosures_features=len(result['xy']))
+ 
+-    @staticmethod
+-    def decode(desc):
+-        vector=unpack_array(desc['visual']).astype(np.float64).ravel()
+-        if not np.isfinite(vector).all() or abs(np.linalg.norm(vector)-1)>.001:
+-            raise ValueError('Invalid normalized MegaLoc vector')
++    def decode(self,desc):
++        vector=None
++        if self.visual_enabled:
++            vector=unpack_array(desc['visual']).astype(np.float64).ravel()
++            if not np.isfinite(vector).all() or abs(np.linalg.norm(vector)-1)>.001:
++                raise ValueError('Invalid normalized MegaLoc vector')
++        elif 'visual' in desc:
++            raise ValueError('Visual descriptors are not permitted in MapClosures-only mode')
+         return vector,{k:unpack_array(v) for k,v in desc['mapclosures'].items()}
+ 
+     def native_pass(self,h):
+@@ -47,16 +52,15 @@ class MegaLocMapClosures(Backend):
+             if key not in self.cached:
+                 self.cached[key]=self.decode(index[key]);self.engine.add(key,self.cached[key][1])
+         keys=sorted(index)
+-        scores=np.stack([self.cached[k][0] for k in keys])@qv
+-        visual_scores=dict(zip(keys,map(float,scores)))
++        visual_scores=dict(zip(keys,map(float,np.stack([self.cached[k][0] for k in keys])@qv))) if self.visual_enabled else dict.fromkeys(keys,0.)
+         ranked={}
+         def item(key):
+             if key not in ranked:
+                 visual=visual_scores[key]
+-                ranked[key]=dict(keyframe_id=key,visual_similarity=visual,score=max(0.,visual),
++                ranked[key]=dict(keyframe_id=key,visual_similarity=visual if self.visual_enabled else None,score=max(0.,visual),
+                     eligible=False,sources=[],branch_scores={},rejection_reason='retrieval_threshold')
+             return ranked[key]
+-        for key in sorted(keys,key=lambda k:(-visual_scores[k],k))[:top_k]:
++        for key in (sorted(keys,key=lambda k:(-visual_scores[k],k))[:top_k] if self.visual_enabled else []):
+             r=item(key)
+             if r['visual_similarity']>=self.visual_min:
+                 r['sources'].append('megaloc');r['branch_scores']['megaloc']=r['visual_similarity'];r['eligible']=True
+@@ -76,7 +80,7 @@ class MegaLocMapClosures(Backend):
+         # Preserve the HBST database hypothesis. Visual-only proposals use a
+         # two-map native HBST match, without a LiDAR retrieval gate on MegaLoc.
+         if h is None or not self.native_pass(h):h=native_result(self.engine.pair(qf,cf))
+-        diagnostics=dict(backend=self.name,visual_similarity=float(qv@cv),retrieval_sources=sources,
++        diagnostics=dict(backend=self.name,visual_similarity=float(qv@cv) if self.visual_enabled else None,retrieval_sources=sources,
+             selected_branches=proposal.get('selected_branches',[]),
+             native=dict(method='MapClosures',hypothesis=h),pose_initializer='MapClosures density-map RANSAC')
+         if not self.native_pass(h):
+diff --git a/research/s3e_pipeline/mcap_writer.py b/research/s3e_pipeline/mcap_writer.py
+index 12d8a09..1d8ce36 100644
+--- a/research/s3e_pipeline/mcap_writer.py
++++ b/research/s3e_pipeline/mcap_writer.py
+@@ -25,16 +25,17 @@ def exact(stream, n):
+     return bytes(chunks)
+ 
+ 
+-def consume(stream, output):
++def consume(stream, output, message_filter=None):
+     output = Path(output)
+     output.mkdir(parents=True, exist_ok=True)
+     types = get_typestore(Stores.ROS2_HUMBLE)
+     channels = {}
+     count, previous, robot = 0, -1, None
++    source_metadata = {}
+     start = time.monotonic()
+     with (output / 'sensors.mcap').open('xb') as f, (output / 'frames.jsonl').open('xb') as index:
+         writer = Writer(f, compression=CompressionType.ZSTD, chunk_size=4 * 1024 * 1024)
+-        writer.start(profile='ros2', library='FAST-LIVO2 direct synchronized export v1')
++        writer.start(profile='ros2', library='S3E direct synchronized odometry export v1')
+         while True:
+             n = struct.unpack('<I', exact(stream, 4))[0]
+             if not n:
+@@ -48,6 +49,10 @@ def consume(stream, output):
+             if robot is not None and robot != row['robot_id']:
+                 raise ValueError('Mixed robot export')
+             robot, previous = row['robot_id'], stamp
++            current = {k:row[k] for k in ('frontend','cloud_source','pose_source') if k in row}
++            if count and current != source_metadata: raise ValueError('Changing export provenance')
++            source_metadata = current
++            retained=[]
+             for entry in row['messages']:
+                 topic, typename = entry['topic'], entry['type']
+                 if not topic.startswith(f'/{robot}/research/'):
+@@ -62,18 +67,23 @@ def consume(stream, output):
+                 msg = types.deserialize_cdr(data, typename)
+                 if msg.header.stamp.sec * 10**9 + msg.header.stamp.nanosec != stamp:
+                     raise ValueError('Sensor/state timestamp association failed')
++                if message_filter is not None and not message_filter(row,entry,msg):
++                    continue
+                 writer.add_message(channels[topic], stamp, data, publish_time=stamp, sequence=count)
++                retained.append(entry)
++            row['messages']=retained
+             index.write(canonical(row) + b'\n')
+             count += 1
+         writer.finish()
+     if not count:
+         raise ValueError('Export contained no frames')
++    extra_files=message_filter.files if message_filter is not None else []
+     write_json(output / 'manifest.json', dict(schema_version=1, complete=True, robot_id=robot,
+         frames=count, last_stamp_ns=previous, elapsed_s=time.monotonic()-start,
+-        files={name:file_hash(output/name) for name in ('sensors.mcap','frames.jsonl')},
+-        cloud_source='complete preprocessed deskewed LiDAR in lidar frame, before mapping downsample',
+-        pose_source='IMU/body state after visual update, at exact input image timestamp',
+-        covariance='filter marginals are diagnostics only'))
++        files={name:file_hash(output/name) for name in ('sensors.mcap','frames.jsonl',*extra_files)},
++        covariance='filter marginals are diagnostics only',
++        **dict(dict(cloud_source='complete preprocessed deskewed LiDAR in lidar frame, before mapping downsample',
++            pose_source='IMU/body state after visual update, at exact input image timestamp'), **source_metadata)))
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/research/s3e_pipeline/ros_dpgo_worker.py b/research/s3e_pipeline/ros_dpgo_worker.py
+index 32fb389..5ca5697 100644
+--- a/research/s3e_pipeline/ros_dpgo_worker.py
++++ b/research/s3e_pipeline/ros_dpgo_worker.py
+@@ -70,6 +70,11 @@ class Robot(Node):
+             self.worker = Worker(self.robot, spec['store'], spec['descriptors'], spec['backend'],
+                                  dict(spec['loops'], robots=self.robots))
+         self.frozen = read_jsonl(spec['constraints']) if spec['mode'] == 'frozen' else []
++        self.registration = None
++        if spec.get('registration_factors', {}).get('enabled', False):
++            from .registration_exchange import RegistrationExchange
++            self.registration = RegistrationExchange(self.robot, self.robots, self.rows, spec['store'],
++                self.output/'registration', spec['pcm_session_id'], spec['registration_factors'], self.send)
+         # ROS middleware loads plugins lazily, so initialize its interfaces first.
+         # Restrict filesystem reads for this process and its verifier subprocess.
+         from .isolation import restrict_reads, worker_paths
+@@ -163,6 +168,9 @@ class Robot(Node):
+             event = self.mailbox.popleft(); kind = event['kind']
+             if kind == 'constraint': self.accept(event['body']); continue
+             if kind == 'done': self.done_peers.add(event['src']); continue
++            if kind.startswith('registration_'):
++                if self.registration is None: raise ValueError('Unexpected registration exchange')
++                self.registration.receive(event); continue
+             if self.worker is None: raise ValueError('Retrieval message in frozen mode')
+             body = event['body']; now = body.get('query_stamp_ns', body.get('stamp_ns'))
+             if kind == 'candidates': self.remaining_replies.discard(event['src'])
+@@ -202,6 +210,7 @@ class Robot(Node):
+             elif self.last_estimate and len(self.last_estimate.keyframe_ids) == len(self.rows):
+                 self.complete_pub.publish(Bool(data=True)); self.input_complete = True
+                 self.detection_s = time.monotonic()-self.start
++        if self.registration: self.registration.advance(self.pcm_status, self.edges)
+         now = time.monotonic()
+         if now-self.last_progress > 5:
+             self.last_progress = now
+@@ -223,6 +232,16 @@ class Robot(Node):
+         if not self.stats or self.stats[-1]['iteration'] < msg.iteration: return
+         pcm_enabled = self.spec.get('pcm_enabled', False)
+         if pcm_enabled and (not self.pcm_status or self.pcm_status['state'] != 'ready'): return
++        registration = None
++        if self.registration:
++            path = self.output/'native'/self.robot/'cbs_online/registration.json'
++            if not path.is_file(): return
++            registration = read_json(path)
++            if not registration['final']: return
++            if not registration['success']: raise RuntimeError('CBS registration quality failed')
++            if registration['session_id'] != self.spec['pcm_session_id']:
++                raise ValueError('Foreign registration result')
++            write_json(self.output/'registration-result.json', registration)
+         if list(msg.keyframe_ids) != [r['keyframe_id'] for r in self.rows] or list(msg.stamp_ns) != [r['stamp_ns'] for r in self.rows]:
+             raise ValueError('Incomplete or mistimestamped CBS estimate')
+         poses = [dict(robot_id=self.robot, keyframe_id=int(key), stamp_ns=int(stamp),
+@@ -247,12 +266,14 @@ class Robot(Node):
+         write_json(self.output/'summary.json', dict(robot=self.robot, poses=len(poses), loops=len(retained),
+             proposed_loops=len(proposals), pcm_enabled=pcm_enabled,
+             pcm_network_cdr_bytes=self.pcm_status['network_cdr_bytes'] if pcm_enabled else 0,
++            registration=registration,
++            registration_network_cdr_bytes=sum(m['network_bytes'] for m in self.wire if m['kind'].startswith('registration_')),
+             finished=True, reference_available=msg.reference_available, reference_robot_id=msg.reference_robot_id,
+             iterations=msg.iteration,
+             detection_s=self.detection_s, wall_s=time.monotonic()-self.start,
+             max_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+             verifier_max_rss_kib=0 if self.worker is None else self.worker.verifier_rss,
+-            loop_network_cdr_bytes=sum(m['network_bytes'] for m in self.wire),
++            loop_network_cdr_bytes=sum(m['network_bytes'] for m in self.wire if not m['kind'].startswith('registration_')),
+             cbs_last_stats=self.stats[-1] if self.stats else None))
+         self.finished = True
+ 
+diff --git a/research/s3e_pipeline/visualize.py b/research/s3e_pipeline/visualize.py
+index 53a3614..7768caa 100644
+--- a/research/s3e_pipeline/visualize.py
++++ b/research/s3e_pipeline/visualize.py
+@@ -3,6 +3,7 @@
+ import sys
+ from pathlib import Path
+ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
++from s3e_pipeline.frontends import frontend_name
+ import numpy as np
+ import rerun as rr
+ import rerun.blueprint as rrb
+@@ -15,7 +16,7 @@ def visualize(plan):
+     if rr.__version__!='0.37.1':raise RuntimeError('Rerun 0.37.1 is required')
+     cfg=plan['config'];artifacts=plan['artifacts'];output=Path(plan['output'])
+     method=cfg['backend']['name']
+-    graph=read_json(Path(artifacts[f'pgo.livo.{method}'])/'graph.json')
++    graph=read_json(Path(artifacts[f'pgo.{frontend_name(cfg)}.{method}'])/'graph.json')
+     rr.init('S3E '+method);rr.save(str(output/'result.rrd'))
+     rr.log('/',rr.ViewCoordinates.FLU,static=True)
+     views=[rrb.Spatial3DView(name=f'{c} component',origin=f'/components/{c}') for c in sorted(set(graph['components'].values()))]
+@@ -28,8 +29,8 @@ def visualize(plan):
+     from mcap.writer import Writer,CompressionType
+     positions={}
+     for robot in cfg['robots']:
+-        odom=Path(artifacts[f'odometry.livo.{robot}'])/'run/export'
+-        keys=read_jsonl(Path(artifacts[f'keyframes.livo.{robot}'])/'store/keyframes.jsonl')
++        odom=Path(artifacts[f'odometry.{frontend_name(cfg)}.{robot}'])/'run/export'
++        keys=read_jsonl(Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store/keyframes.jsonl')
+         times={r['stamp_ns'] for r in keys[::cfg['evaluation']['rerun_sensor_stride']]}
+         mcap_path=output/f'{robot}-keyframes.mcap'
+         with (odom/'sensors.mcap').open('rb') as source,mcap_path.open('wb') as target:
+@@ -58,13 +59,13 @@ def visualize(plan):
+         color=[80,210,110] if f['robust_weight']>=.5 else [250,65,65]
+         rr.log(f'/components/{a}/loops/{f["factor_index"]}',rr.LineStrips3D([[positions[tuple(f['i'])],positions[tuple(f['j'])]]],colors=color),static=True)
+         rr.set_time('factor',sequence=f['factor_index']);rr.log('/residuals/graph',rr.Scalars(f['squared_whitened_residual']))
+-    events=[e for e in read_jsonl(Path(artifacts[f'loops.livo.{method}'])/'events.jsonl') if e['type']=='verification']
++    events=[e for e in read_jsonl(Path(artifacts[f'loops.{frontend_name(cfg)}.{method}'])/'events.jsonl') if e['type']=='verification']
+     indices=np.linspace(0,len(events)-1,min(len(events),cfg['evaluation']['rerun_verification_limit']),dtype=int)
+     for index in indices:
+         e=events[index];rr.set_time('event',sequence=int(index))
+         for label,endpoint in [('query',e['query']),('candidate',e['candidate'])]:
+-            robot,key=endpoint;p=Path(artifacts[f'keyframes.livo.{robot}'])/'store'
+-            rr.log('/inspection/'+label,rr.EncodedImage(path=p/f'{key:06d}.png'))
++            robot,key=endpoint;p=Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
++            if (p/f'{key:06d}.png').is_file():rr.log('/inspection/'+label,rr.EncodedImage(path=p/f'{key:06d}.png'))
+             with np.load(p/f'{key:06d}.npz') as data:points=data['cloud'][:,:3]
+             if label=='candidate':
+                 T=e.get('T_i_j',e.get('initial_T_i_j'))
+diff --git a/research/tests/test_cbs_integration.py b/research/tests/test_cbs_integration.py
+index 18c0346..140af7b 100644
+--- a/research/tests/test_cbs_integration.py
++++ b/research/tests/test_cbs_integration.py
+@@ -15,6 +15,15 @@ from s3e_pipeline.dpgo import run
+ @pytest.mark.parametrize('disconnected', [False, True, 'alpha'])
+ @pytest.mark.parametrize('pcm_enabled', [False, True])
+ def test_native_unknown_frames_and_components(tmp_path, disconnected, pcm_enabled):
++    exercise_native(tmp_path, disconnected, pcm_enabled)
++
++
++@pytest.mark.skipif(os.environ.get('S3E_TEST_DDS') != '1', reason='Set S3E_TEST_DDS=1 for native DDS tests')
++def test_native_distributed_registration(tmp_path):
++    exercise_native(tmp_path, False, True, registration=True)
++
++
++def exercise_native(tmp_path, disconnected, pcm_enabled, registration=False):
+     source = Path(__file__).resolve().parents[3]
+     robots = ['Alpha','Bob','Carol']; artifacts = {}; truth = {}; all_loops = []
+     for index, robot in enumerate(robots):
+@@ -28,6 +37,13 @@ def test_native_unknown_frames_and_components(tmp_path, disconnected, pcm_enable
+             truth[robot,k] = T
+             rows.append(dict(robot_id=robot,keyframe_id=k,stamp_ns=1700000000000000001+k*10**9,
+                 T_world_body=(inv(gauge)@T).tolist()))
++            if registration:
++                from test_pipeline import scene
++                from s3e_pipeline.geometry import transform
++                rows[-1].update(cloud_frame=robot+'/imu', body_frame=robot+'/imu',
++                    submap_end_ns=rows[-1]['stamp_ns'],
++                    geometry_preprocessing='causal trailing submap in keyframe IMU frame')
++                np.savez_compressed(store/f'{k:06d}.npz', cloud=transform(inv(T), scene()))
+         write_jsonl(store/'keyframes.jsonl',rows)
+         artifacts[f'keyframes.livo.{robot}'] = str(store.parent)
+         artifacts[f'descriptors.livo.megaloc_mapclosures.{robot}'] = str(store)
+@@ -57,8 +73,23 @@ def test_native_unknown_frames_and_components(tmp_path, disconnected, pcm_enable
+         dpgo=dict(mode='frozen',settle_iterations=60,loop_rate_hz=10.,timeout_s=60,
+                   pcm=dict(enabled=pcm_enabled,probability=.99,minimum_clique_size=2,timeout_s=20.),
+                   ros_domain_id=78 if disconnected == 'alpha' else (77 if disconnected else 76)))
++    if registration:
++        cfg['dpgo']['registration_factors'] = dict(enabled=True, num_threads=1, voxel_m=.01, max_points=4000)
+     out = tmp_path/'result'; out.mkdir(); run(cfg,artifacts,source,out)
+     assert len(read_jsonl(out/'constraints.jsonl')) == expected_loops
++    if registration:
++        from s3e_pipeline.artifacts import file_hash
++        result = read_json(out/'registration.json'); summary = read_json(out/'summary.json')
++        assert result['registration_factor_count'] == expected_loops
++        assert [result['robots'][r]['registration_factor_count'] for r in robots] == [6,3,0]
++        assert all(p['linearizations'] > 20 and p['final_quality_reason'] == 'accepted'
++            for r in result['robots'].values() for p in r['pairs'])
++        wire = [e for p in out.glob('*/wire.jsonl') for e in read_jsonl(p)
++                if e['kind'].startswith('registration_')]
++        assert sum(e['network_bytes'] for e in wire) == summary['registration_network_cdr_bytes'] > 0
++        assert not list(out.glob('*/registration/*.bin'))
++        for p in out.glob('*/registration/transport.json'):
++            assert all(file_hash(s['source_npz']) == s['source_sha256'] for s in read_json(p)['sources'])
+     if pcm_enabled:
+         import csv
+         pcm = read_json(out/'pcm.json'); summary = read_json(out/'summary.json')
+@@ -76,7 +107,7 @@ def test_native_unknown_frames_and_components(tmp_path, disconnected, pcm_enable
+         reference = ('Bob' if robot in ('Bob','Carol') else 'Alpha') if disconnected == 'alpha' else ('Carol' if disconnected and robot=='Carol' else 'Alpha')
+         expected = inv(truth[reference,0])@truth[robot,key]
+         error = inv(expected)@pose(row['T_world_body'])
+-        assert np.linalg.norm(error[:3,3]) < 1e-3
+-        assert Rotation.from_matrix(error[:3,:3]).magnitude() < 1e-4
++        assert np.linalg.norm(error[:3,3]) < (2e-3 if registration else 1e-3)
++        assert Rotation.from_matrix(error[:3,:3]).magnitude() < (1e-3 if registration else 1e-4)
+         assert row['reference_available'] == (reference == 'Alpha')
+         assert row['component'] == reference
+diff --git a/research/tests/test_export.py b/research/tests/test_export.py
+index 0500814..21140d1 100644
+--- a/research/tests/test_export.py
++++ b/research/tests/test_export.py
+@@ -59,3 +59,27 @@ def test_frame_reader_yields_before_reading_all_chunks(tmp_path,monkeypatch):
+     assert row['frame_id']==0 and cloud.shape==(4,4) and image==b'\x01\x02\x03'
+     assert streams[0].tell()<(root/'sensors.mcap').stat().st_size/2
+     rest=list(frames);assert len(rest)==39 and rest[-1][0]['frame_id']==39
++
++
++@pytest.mark.parametrize('explicit_image_free',[True,False])
++def test_image_free_mcap_requires_explicit_metadata(tmp_path,explicit_image_free):
++    from s3e_pipeline.data import frames
++    ts=get_typestore(Stores.ROS2_HUMBLE);t=ts.types
++    stamp=t['builtin_interfaces/msg/Time'](1661157300,123456789)
++    h=t['std_msgs/msg/Header'](stamp,'Alpha/lidar')
++    fields=[t['sensor_msgs/msg/PointField'](name,4*i,7,1) for i,name in enumerate(['x','y','z','intensity'])]
++    points=np.array([[3,4,5,6],[7,8,9,10]],dtype='<f4')
++    cloud=t['sensor_msgs/msg/PointCloud2'](h,1,2,fields,False,16,32,points.view(np.uint8).ravel(),True)
++    raw=bytes(ts.serialize_cdr(cloud,'sensor_msgs/msg/PointCloud2'))
++    row=dict(robot_id='Alpha',frame_id=0,stamp_ns=1661157300123456789,frontend='ellipselio',
++        cloud_source='native full deskewed cloud',pose_source='native post-LiDAR update',
++        messages=[dict(topic='/Alpha/research/cloud',type='sensor_msgs/msg/PointCloud2',size=len(raw))])
++    if explicit_image_free:row['image_available']=False
++    meta=canonical(row)
++    consume(io.BytesIO(struct.pack('<I',len(meta))+meta+raw+struct.pack('<I',0)),tmp_path)
++    if explicit_image_free:
++        item,decoded,image=next(frames(tmp_path))
++        assert np.array_equal(decoded,points) and image==b'' and item['stamp_ns']==row['stamp_ns']
++        assert read_json(tmp_path/'manifest.json')['frontend']=='ellipselio'
++    else:
++        with pytest.raises(ValueError,match='explicit image-free'):next(frames(tmp_path))
+diff --git a/research/tests/test_mapclosures.py b/research/tests/test_mapclosures.py
+index f8e9a75..b835085 100644
+--- a/research/tests/test_mapclosures.py
++++ b/research/tests/test_mapclosures.py
+@@ -59,7 +59,8 @@ def test_independent_budgets_and_union_deduplication():
+     selected,_=select_branches(both,{'mapclosures':1,'megaloc':1},{},10**9,2*10**9)
+     assert len(selected)==1 and selected[0][1]['selected_branches']==['mapclosures','megaloc']
+ 
+-def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path):
++@pytest.mark.parametrize('lidar_only',[False,True])
++def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,lidar_only):
+     stores={};descs={};rng=np.random.default_rng(12)
+     parts=[]
+     for axis in range(3):
+@@ -69,10 +70,16 @@ def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path):
+         store=tmp_path/robot;store.mkdir();stores[robot]=store
+         root=tmp_path/(robot+'-descriptors');root.mkdir();descs[robot]=root
+         row=dict(robot_id=robot,keyframe_id=0,stamp_ns=10**9,T_world_body=np.eye(4).tolist())
++        if lidar_only:row['image_available']=False
+         write_jsonl(store/'keyframes.jsonl',[row]);np.savez_compressed(store/'000000.npz',cloud=cloud,scan=cloud)
+-        (store/'000000.png').write_bytes(b'inspection-only')
+-        write_json(root/'000000.json',descriptor(features(),np.eye(3)[i]))
++        if not lidar_only:(store/'000000.png').write_bytes(b'inspection-only')
++        desc=descriptor(features(),np.eye(3)[i])
++        if lidar_only:del desc['visual']
++        write_json(root/'000000.json',desc)
+     cfg=dict(CFG['loops'],robots=list(stores));backend=dict(CFG['backend'],read_paths=[])
++    if lidar_only:
++        backend['name']='mapclosures';backend.pop('fusion')
++        cfg['branch_verification_limits']={'mapclosures':1}
+     # Separate empty caches establish cold determinism, then reuse one cache.
+     first_backend=dict(backend,verification_cache=str(tmp_path/'cache-first'))
+     second_backend=dict(backend,verification_cache=str(tmp_path/'cache-second'))
+diff --git a/scripts/build_dpgo.sh b/scripts/build_dpgo.sh
+index c465829..da2de62 100755
+--- a/scripts/build_dpgo.sh
++++ b/scripts/build_dpgo.sh
+@@ -12,4 +12,7 @@ colcon --log-base .ros2/dpgo-log build --base-paths cbs cbs_ros \
+   --build-base .ros2/dpgo-build --install-base .ros2/dpgo-install \
+   --executor sequential --cmake-args -DCMAKE_BUILD_TYPE=Release \
+   -DCBS_BUILD_UTILS=OFF -DCBS_BUILD_EXAMPLES=OFF -DBUILD_TESTING=ON \
++  -DCBS_ROS_WITH_REGISTRATION_FACTORS="${S3E_REGISTRATION_FACTORS:-OFF}" \
++  -DS3E_REGISTRATION_ADAPTER_DIR="$S3E_SOURCE_ROOT/FAST-LIVO2-ROS2/research/adapters/gtsam_points" \
++  -DGTSAM_POINTS_SOURCE_DIR="$S3E_SOURCE_ROOT/.ros2/deps/gtsam_points" \
+   -DPython3_EXECUTABLE=/usr/bin/python3 -DPYTHON_EXECUTABLE=/usr/bin/python3

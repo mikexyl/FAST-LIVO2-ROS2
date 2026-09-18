@@ -1,0 +1,54 @@
+/**:
+  ros__parameters:
+    mapping:
+      map_resolution: 0.1
+      pub_map_n_secs: 10
+      namespace: robot4
+    publish:
+      map: false
+      scan: false
+      markers: false
+      odometry: true
+      analytics: true
+      tf: false
+    lidar:
+      type: 2
+      rate: 10
+      scan_lines: 16
+      vertical_fov: 30.0
+      min_range: 2.0
+      max_range: 100.0
+      topic: /velodyne/points
+      t_imu_lidar:
+      - -0.01192777
+      - -0.01973063
+      - 0.12260907
+      r_imu_lidar:
+      - 0.99991642
+      - 0.01018984
+      - 0.00795779
+      - -0.01025064
+      - 0.99991829
+      - 0.0076374
+      - -0.00787932
+      - -0.00771833
+      - 0.99993917
+    imu:
+      rate: 125
+      acc_noise: 0.010028108
+      gyr_noise: 0.00083723892
+      acc_bias: 0.00055367077
+      gyr_bias: 1.5212086e-05
+      topic: /gnss/imu
+    input:
+      reliable: true
+    cameras:
+      num_cams: 0
+    research:
+      ellipsoid_keyframes: true
+      ellipsoid_range_m: 80.0
+      ellipsoid_world_frame: true
+      ellipsoid_delta_export: true
+      keyframe_translation_m: 1.0
+      keyframe_rotation_deg: 10.0
+      keyframe_interval_s: 2.0

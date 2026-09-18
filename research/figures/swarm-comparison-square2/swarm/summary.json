@@ -1,0 +1,1 @@
+{"complete":false,"error":"TimeoutError('Native keyframes/descriptors did not drain within bounded wait')","expected_keyframes":[521,436,446],"native_optimizer_error_count":0,"processed_scans":[2356,2425,2498],"published_scans":[2358,2428,2502],"received_descriptors":[521,436,446],"received_keyframes":[521,436,446],"sensor_replay_wall_s":1804.6866283109994,"success":false}

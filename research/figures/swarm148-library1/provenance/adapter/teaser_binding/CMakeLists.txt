@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.16)
+project(s3e_teaser_python LANGUAGES CXX)
+find_package(pybind11 REQUIRED)
+find_package(teaserpp REQUIRED)
+find_package(OpenMP REQUIRED)
+pybind11_add_module(_teaserpp "${TEASER_SOURCE}/python/teaserpp_python/teaserpp_python.cc")
+target_link_libraries(_teaserpp PRIVATE teaserpp::teaser_registration OpenMP::OpenMP_CXX)
+set_target_properties(_teaserpp PROPERTIES LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/teaserpp_python")
+configure_file("${TEASER_SOURCE}/python/teaserpp_python/__init__.py"
+               "${CMAKE_BINARY_DIR}/teaserpp_python/__init__.py" COPYONLY)

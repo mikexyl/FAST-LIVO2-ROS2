@@ -1,0 +1,59 @@
+/**:
+  ros__parameters:
+    mapping:
+      map_resolution: 0.1
+      pub_map_n_secs: 10
+      namespace: Bob
+    publish:
+      map: false
+      scan: false
+      markers: false
+      odometry: true
+      analytics: true
+      tf: false
+    lidar:
+      type: 2
+      rate: 10
+      scan_lines: 16
+      vertical_fov: 30.0
+      min_range: 1.0
+      max_range: 100.0
+      topic: /Bob/velodyne_points
+      t_imu_lidar:
+      - 0.013931101421011644
+      - -0.04644857674286426
+      - 0.09032158643500168
+      r_imu_lidar:
+      - 0.9998360035118392
+      - 0.017380188738742166
+      - -0.005089103557281066
+      - -0.017434631709917527
+      - 0.9997890631539471
+      - -0.010856022117090714
+      - 0.004899351171394799
+      - 0.010942961843047787
+      - 0.9999281168087709
+    imu:
+      rate: 100
+      acc_noise: 0.1
+      gyr_noise: 0.1
+      acc_bias: 0.0001
+      gyr_bias: 0.0001
+      topic: /Bob/imu/data
+    cameras:
+      num_cams: 0
+    input:
+      reliable: true
+    research:
+      ellipsoid_keyframes: true
+      ellipsoid_range_m: 80.0
+      ellipsoid_world_frame: true
+      keyframe_translation_m: 1.0
+      keyframe_rotation_deg: 10.0
+      keyframe_interval_s: 2.0
+      enabled: true
+      robot: Bob
+      python: /workspace/.ros2/research-venv/bin/python
+      writer: /workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_delta_writer.py
+      output: /workspace/.ros2/s3e-noise-reliable-test/library2-20260917/S3E_Library_2/20260917T143446Z-ac1857/Bob/export
+    use_sim_time: true

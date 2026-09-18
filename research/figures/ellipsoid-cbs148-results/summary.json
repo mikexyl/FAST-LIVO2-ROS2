@@ -1,0 +1,2113 @@
+{
+  "started_utc": "2026-09-16T15:52:56Z",
+  "finished_utc": "2026-09-17T01:14:01Z",
+  "status": "finished",
+  "pipeline": "EllipseLIO + ellipsoid BEV MapClosures + distributed PCM/CBS + GICP",
+  "configuration": "fixed; no sweep",
+  "sequences": {
+    "S3E_Square_1": {
+      "status": "complete",
+      "dataset": "/data/s3e/S3Ev1/S3E_Square_1",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_1/20260916T155256Z-8a1cc3",
+      "started_utc": "2026-09-16T15:52:56Z",
+      "finished_utc": "2026-09-16T16:43:36Z",
+      "backend": {
+        "backend": "CBS SE(3)",
+        "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+        "cbs_network_cdr_bytes": 41350,
+        "keyframes": 1552,
+        "loop_network_cdr_bytes": 77357406,
+        "loops": 55,
+        "memory_sampling_interval_s": 0.2,
+        "mode": "peers",
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 9630,
+        "proposed_loops": 55,
+        "registration_enabled": true,
+        "registration_network_cdr_bytes": 1247464,
+        "sampled_peak_rss_kib": {
+          "Alpha-cbs": 414756,
+          "Alpha-frontend": 264104,
+          "Bob-cbs": 220664,
+          "Bob-frontend": 256944,
+          "Carol-cbs": 171128,
+          "Carol-frontend": 244568
+        },
+        "shared_reference": true,
+        "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+        "transport": "ROS2 Fast DDS",
+        "wall_s": 76.84730433102231
+      },
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 55,
+        "retained_loops": 55,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "da7505f964b24dfeae7b623483b09c06",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      },
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Alpha"
+      },
+      "trajectory": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              0.018733905567472346,
+              -0.9990072967946636,
+              -0.040416107348528726,
+              744478.6079452584
+            ],
+            [
+              0.9998244856350962,
+              0.018726547281213608,
+              0.0005606705276266118,
+              2553263.481558327
+            ],
+            [
+              0.00019674019698812106,
+              -0.04041951728983458,
+              0.9991827780318031,
+              2.297274643895815
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.8097936477277731,
+          "per_robot": {
+            "Alpha": {
+              "samples": 384,
+              "statistics": {
+                "max": 2.286292145781245,
+                "mean": 1.1420620848411185,
+                "median": 0.8597904298690644,
+                "min": 0.12346733611887711,
+                "rmse": 1.3050872261700819,
+                "sse": 654.0490244783304,
+                "std": 0.6316224048279766
+              }
+            },
+            "Bob": {
+              "samples": 452,
+              "statistics": {
+                "max": 3.4798220579731174,
+                "mean": 0.8206927650577822,
+                "median": 0.6868440148594395,
+                "min": 0.1404249658048282,
+                "rmse": 1.0144122012079777,
+                "sse": 465.12251550974577,
+                "std": 0.5962344332067938
+              }
+            },
+            "Carol": {
+              "samples": 337,
+              "statistics": {
+                "max": 3.1332718807054585,
+                "mean": 1.0475491531364982,
+                "median": 0.9853710952466606,
+                "min": 0.4206806575191218,
+                "rmse": 1.1290930685082863,
+                "sse": 429.6248400281153,
+                "std": 0.42129791017338664
+              }
+            }
+          },
+          "rmse_m": 1.1490744190321884,
+          "robots": [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ],
+          "samples": 1173,
+          "scale": 1.0,
+          "statistics": {
+            "max": 3.4798220579731174,
+            "mean": 0.9910733461143282,
+            "median": 0.8097936477277731,
+            "min": 0.12346733611887711,
+            "rmse": 1.1490744190321884,
+            "sse": 1548.7963800161913,
+            "std": 0.5815029175300074
+          }
+        }
+      },
+      "raw_odometry": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              0.023890045445284332,
+              -0.9988367145862663,
+              -0.041886553010930354,
+              744477.7419025702
+            ],
+            [
+              0.9997106701895228,
+              0.02398633486405926,
+              -0.0017976787825041037,
+              2553263.4924579854
+            ],
+            [
+              0.002800292455819177,
+              -0.041831487354676115,
+              0.9991207559789045,
+              2.0086283760648938
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.8188119204197277,
+          "per_robot": {
+            "Alpha": {
+              "samples": 384,
+              "statistics": {
+                "max": 3.071438409769841,
+                "mean": 0.9546091023674571,
+                "median": 0.8188119204197277,
+                "min": 0.12480936229790421,
+                "rmse": 1.0937745051755177,
+                "sse": 459.3955845780283,
+                "std": 0.5339139723299501
+              }
+            }
+          },
+          "rmse_m": 1.0937745051755177,
+          "robots": [
+            "Alpha"
+          ],
+          "samples": 384,
+          "scale": 1.0,
+          "statistics": {
+            "max": 3.071438409769841,
+            "mean": 0.9546091023674571,
+            "median": 0.8188119204197277,
+            "min": 0.12480936229790421,
+            "rmse": 1.0937745051755177,
+            "sse": 459.3955845780283,
+            "std": 0.5339139723299501
+          }
+        },
+        "Bob": {
+          "alignment_SE3": [
+            [
+              -0.04219572456650534,
+              -0.9987058869488712,
+              -0.028391410707739505,
+              744482.9957534723
+            ],
+            [
+              0.9990496415077394,
+              -0.04248686521974219,
+              0.009730369317590472,
+              2553263.2675595996
+            ],
+            [
+              -0.010924039159802352,
+              -0.027953848705810753,
+              0.9995495223904456,
+              2.8940173277755434
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.6028301562450449,
+          "per_robot": {
+            "Bob": {
+              "samples": 452,
+              "statistics": {
+                "max": 2.9108847981970065,
+                "mean": 0.6567171768656783,
+                "median": 0.6028301562450449,
+                "min": 0.15534271783556844,
+                "rmse": 0.7975455649048808,
+                "sse": 287.5076755009494,
+                "std": 0.45254997260967633
+              }
+            }
+          },
+          "rmse_m": 0.7975455649048808,
+          "robots": [
+            "Bob"
+          ],
+          "samples": 452,
+          "scale": 1.0,
+          "statistics": {
+            "max": 2.9108847981970065,
+            "mean": 0.6567171768656783,
+            "median": 0.6028301562450449,
+            "min": 0.15534271783556844,
+            "rmse": 0.7975455649048808,
+            "sse": 287.5076755009494,
+            "std": 0.45254997260967633
+          }
+        },
+        "Carol": {
+          "alignment_SE3": [
+            [
+              4.6663337743322035e-05,
+              -0.9999451347452237,
+              -0.010474985531791348,
+              744485.6575951622
+            ],
+            [
+              0.9997549588651036,
+              0.0002785277767364959,
+              -0.02213469328710034,
+              2553263.228139345
+            ],
+            [
+              0.02213639643594522,
+              -0.010471385850779908,
+              0.9997001200516058,
+              2.1590167668363827
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.28682149180813227,
+          "per_robot": {
+            "Carol": {
+              "samples": 337,
+              "statistics": {
+                "max": 3.2642330920971347,
+                "mean": 0.37980895565876327,
+                "median": 0.28682149180813227,
+                "min": 0.03170723440574482,
+                "rmse": 0.5930480108012708,
+                "sse": 118.52490282987097,
+                "std": 0.4554680014191378
+              }
+            }
+          },
+          "rmse_m": 0.5930480108012708,
+          "robots": [
+            "Carol"
+          ],
+          "samples": 337,
+          "scale": 1.0,
+          "statistics": {
+            "max": 3.2642330920971347,
+            "mean": 0.37980895565876327,
+            "median": 0.28682149180813227,
+            "min": 0.03170723440574482,
+            "rmse": 0.5930480108012708,
+            "sse": 118.52490282987097,
+            "std": 0.4554680014191378
+          }
+        }
+      },
+      "metric_source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_1/20260916T155256Z-8a1cc3/report/report.json",
+      "ground_truth": {
+        "Alpha": {
+          "available": true,
+          "first_stamp_ns": 1661157277828690000,
+          "last_stamp_ns": 1661157730830070000,
+          "matched_samples": 384,
+          "path": "/data/s3e/S3Ev1/S3E_Square_1/alpha_gt.txt",
+          "pose_samples": 4544,
+          "rows": 384
+        },
+        "Bob": {
+          "available": true,
+          "first_stamp_ns": 1661157277591042300,
+          "last_stamp_ns": 1661157732595353600,
+          "matched_samples": 452,
+          "path": "/data/s3e/S3Ev1/S3E_Square_1/bob_gt.txt",
+          "pose_samples": 4523,
+          "rows": 456
+        },
+        "Carol": {
+          "available": true,
+          "first_stamp_ns": 1661157277420992000,
+          "last_stamp_ns": 1661157734420452600,
+          "matched_samples": 337,
+          "path": "/data/s3e/S3Ev1/S3E_Square_1/carol_gt.txt",
+          "pose_samples": 4571,
+          "rows": 338
+        }
+      },
+      "rerun": {
+        "host_path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_1/20260916T155256Z-8a1cc3/report/result.rrd",
+        "bytes": 105352091
+      },
+      "full_report_complete": true
+    },
+    "S3E_Square_2": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev1/S3E_Square_2",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_2/20260916T164340Z-93ffd7",
+      "started_utc": "2026-09-16T16:43:40Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_2.log')",
+      "finished_utc": "2026-09-16T17:08:20Z",
+      "backend": {
+        "backend": "CBS SE(3)",
+        "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+        "cbs_network_cdr_bytes": 50165,
+        "keyframes": 856,
+        "loop_network_cdr_bytes": 44247776,
+        "loops": 23,
+        "memory_sampling_interval_s": 0.2,
+        "mode": "peers",
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 21898,
+        "proposed_loops": 23,
+        "registration_enabled": true,
+        "registration_network_cdr_bytes": 2495834,
+        "sampled_peak_rss_kib": {
+          "Alpha-cbs": 244440,
+          "Alpha-frontend": 200352,
+          "Bob-cbs": 152568,
+          "Bob-frontend": 200032,
+          "Carol-cbs": 124688,
+          "Carol-frontend": 200084
+        },
+        "shared_reference": true,
+        "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+        "transport": "ROS2 Fast DDS",
+        "wall_s": 38.29563423100626
+      },
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 23,
+        "retained_loops": 23,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "67f47a0c931e43179b4d93873354a868",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      },
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Alpha"
+      },
+      "trajectory": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              -0.08119639037028033,
+              -0.9952797572293102,
+              -0.053154031271413285,
+              744469.596340627
+            ],
+            [
+              0.996461742355758,
+              -0.08222302173842416,
+              0.017417540513229503,
+              2553620.2905029687
+            ],
+            [
+              -0.021705810562253028,
+              -0.051551717195142635,
+              0.9984344135906313,
+              -1.688930547173533
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.3813498842678865,
+          "per_robot": {
+            "Alpha": {
+              "samples": 195,
+              "statistics": {
+                "max": 4.1166865607434655,
+                "mean": 0.3513660542029123,
+                "median": 0.2949408358203059,
+                "min": 0.08068203064097139,
+                "rmse": 0.499322627664055,
+                "sse": 48.61800186698062,
+                "std": 0.35477455158341414
+              }
+            },
+            "Bob": {
+              "samples": 242,
+              "statistics": {
+                "max": 1.3302572160155783,
+                "mean": 0.649893837110495,
+                "median": 0.5656563086716677,
+                "min": 0.25730741219544895,
+                "rmse": 0.7157470438813932,
+                "sse": 123.97510705963862,
+                "std": 0.29988636399601504
+              }
+            },
+            "Carol": {
+              "samples": 253,
+              "statistics": {
+                "max": 0.7760864785773642,
+                "mean": 0.43084532412752746,
+                "median": 0.40042991875456263,
+                "min": 0.18061145040326146,
+                "rmse": 0.45747962448038104,
+                "sse": 52.94976452412175,
+                "std": 0.15381779315851699
+              }
+            }
+          },
+          "rmse_m": 0.571728720320009,
+          "robots": [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ],
+          "samples": 690,
+          "scale": 1.0,
+          "statistics": {
+            "max": 4.1166865607434655,
+            "mean": 0.4852095016732929,
+            "median": 0.3813498842678865,
+            "min": 0.08068203064097139,
+            "rmse": 0.571728720320009,
+            "sse": 225.54287345074096,
+            "std": 0.30239951905502394
+          }
+        }
+      },
+      "raw_odometry": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              -0.08696355983621754,
+              -0.9950065621767371,
+              -0.04898245079456084,
+              744469.6894848779
+            ],
+            [
+              0.9960665964755563,
+              -0.0876843175567832,
+              0.012759147314823738,
+              2553620.7224531085
+            ],
+            [
+              -0.016990428076209117,
+              -0.04768020217899789,
+              0.9987181402547753,
+              -1.6758911728759442
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.20790116454980875,
+          "per_robot": {
+            "Alpha": {
+              "samples": 195,
+              "statistics": {
+                "max": 3.7828948673833738,
+                "mean": 0.31553737075582866,
+                "median": 0.20790116454980875,
+                "min": 0.032116582735760416,
+                "rmse": 0.5020617861898385,
+                "sse": 49.15287724466556,
+                "std": 0.3905153067533074
+              }
+            }
+          },
+          "rmse_m": 0.5020617861898385,
+          "robots": [
+            "Alpha"
+          ],
+          "samples": 195,
+          "scale": 1.0,
+          "statistics": {
+            "max": 3.7828948673833738,
+            "mean": 0.31553737075582866,
+            "median": 0.20790116454980875,
+            "min": 0.032116582735760416,
+            "rmse": 0.5020617861898385,
+            "sse": 49.15287724466556,
+            "std": 0.3905153067533074
+          }
+        },
+        "Bob": {
+          "alignment_SE3": [
+            [
+              -0.008142818459060702,
+              -0.9999317783005512,
+              0.008374559823656053,
+              744474.5566215724
+            ],
+            [
+              0.9998299617149958,
+              -0.008002850685664717,
+              0.016613309059099163,
+              2553620.971326291
+            ],
+            [
+              -0.0165451553190948,
+              0.00850841498753849,
+              0.999826917376136,
+              -2.0991746134748857
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.5317289847908373,
+          "per_robot": {
+            "Bob": {
+              "samples": 242,
+              "statistics": {
+                "max": 1.3283745700255323,
+                "mean": 0.5407230781425358,
+                "median": 0.5317289847908373,
+                "min": 0.11208291920802212,
+                "rmse": 0.5955265268926251,
+                "sse": 85.82574630433578,
+                "std": 0.2495403714769486
+              }
+            }
+          },
+          "rmse_m": 0.5955265268926251,
+          "robots": [
+            "Bob"
+          ],
+          "samples": 242,
+          "scale": 1.0,
+          "statistics": {
+            "max": 1.3283745700255323,
+            "mean": 0.5407230781425358,
+            "median": 0.5317289847908373,
+            "min": 0.11208291920802212,
+            "rmse": 0.5955265268926251,
+            "sse": 85.82574630433578,
+            "std": 0.2495403714769486
+          }
+        },
+        "Carol": {
+          "alignment_SE3": [
+            [
+              -0.04691902908133223,
+              -0.9987815803653315,
+              -0.015295732509250787,
+              744482.9751758311
+            ],
+            [
+              0.9987904292620782,
+              -0.04668299929180339,
+              -0.015439429769086563,
+              2553621.3339547343
+            ],
+            [
+              0.01470656739481088,
+              -0.016001634293127634,
+              0.9997638043935231,
+              -1.7574633424737809
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.14998160443436567,
+          "per_robot": {
+            "Carol": {
+              "samples": 253,
+              "statistics": {
+                "max": 0.38467485017511205,
+                "mean": 0.17441153777316254,
+                "median": 0.14998160443436567,
+                "min": 0.023915552661677438,
+                "rmse": 0.19858966067552716,
+                "sse": 9.977776891786917,
+                "std": 0.09496561914093819
+              }
+            }
+          },
+          "rmse_m": 0.19858966067552716,
+          "robots": [
+            "Carol"
+          ],
+          "samples": 253,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.38467485017511205,
+            "mean": 0.17441153777316254,
+            "median": 0.14998160443436567,
+            "min": 0.023915552661677438,
+            "rmse": 0.19858966067552716,
+            "sse": 9.977776891786917,
+            "std": 0.09496561914093819
+          }
+        }
+      },
+      "metric_source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_2/20260916T164340Z-93ffd7/trajectory-audit-20260917/audit.json",
+      "ground_truth": {
+        "Alpha": {
+          "available": true,
+          "first_stamp_ns": 1661153735935197600,
+          "last_stamp_ns": 1661153973936532500,
+          "matched_samples": 195,
+          "path": "/data/s3e/S3Ev1/S3E_Square_2/alpha_gt.txt",
+          "pose_samples": 2357,
+          "rows": 197
+        },
+        "Bob": {
+          "available": true,
+          "first_stamp_ns": 1661153736531583500,
+          "last_stamp_ns": 1661153986533159000,
+          "matched_samples": 242,
+          "path": "/data/s3e/S3Ev1/S3E_Square_2/bob_gt.txt",
+          "pose_samples": 2457,
+          "rows": 248
+        },
+        "Carol": {
+          "available": true,
+          "first_stamp_ns": 1661153736335318000,
+          "last_stamp_ns": 1661153989332858000,
+          "matched_samples": 253,
+          "path": "/data/s3e/S3Ev1/S3E_Square_2/carol_gt.txt",
+          "pose_samples": 2525,
+          "rows": 254
+        }
+      },
+      "full_report_complete": false
+    },
+    "S3E_Library_1": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev1/S3E_Library_1",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Library_1/20260916T170822Z-92c20f",
+      "started_utc": "2026-09-16T17:08:22Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Library_1.log')",
+      "finished_utc": "2026-09-16T18:00:54Z",
+      "backend": {
+        "backend": "CBS SE(3)",
+        "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+        "cbs_network_cdr_bytes": 345660,
+        "keyframes": 1484,
+        "loop_network_cdr_bytes": 255278942,
+        "loops": 563,
+        "memory_sampling_interval_s": 0.2,
+        "mode": "peers",
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 755034,
+        "proposed_loops": 563,
+        "registration_enabled": true,
+        "registration_network_cdr_bytes": 79037876,
+        "sampled_peak_rss_kib": {
+          "Alpha-cbs": 2261004,
+          "Alpha-frontend": 456100,
+          "Bob-cbs": 1052212,
+          "Bob-frontend": 396312,
+          "Carol-cbs": 181588,
+          "Carol-frontend": 332268
+        },
+        "shared_reference": false,
+        "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+        "transport": "ROS2 Fast DDS",
+        "wall_s": 333.7453469649772
+      },
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 563,
+        "retained_loops": 563,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "17ed9839be964c79b00d797263bbfb69",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      },
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Bob",
+        "Carol": "Bob"
+      },
+      "full_report_complete": false
+    },
+    "S3E_Laboratory_1": {
+      "status": "complete",
+      "dataset": "/data/s3e/S3Ev1/S3E_Laboratory_1",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_1/20260916T180058Z-cdf3bd",
+      "started_utc": "2026-09-16T18:00:58Z",
+      "finished_utc": "2026-09-16T18:20:21Z",
+      "backend": {
+        "backend": "CBS SE(3)",
+        "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+        "cbs_network_cdr_bytes": 18417,
+        "keyframes": 798,
+        "loop_network_cdr_bytes": 7400239,
+        "loops": 44,
+        "memory_sampling_interval_s": 0.2,
+        "mode": "peers",
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 6250,
+        "proposed_loops": 46,
+        "registration_enabled": true,
+        "registration_network_cdr_bytes": 107419,
+        "sampled_peak_rss_kib": {
+          "Alpha-cbs": 140564,
+          "Alpha-frontend": 125112,
+          "Bob-cbs": 212352,
+          "Bob-frontend": 152920,
+          "Carol-cbs": 143928,
+          "Carol-frontend": 133900
+        },
+        "shared_reference": false,
+        "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+        "transport": "ROS2 Fast DDS",
+        "wall_s": 18.641006871010177
+      },
+      "pcm": {
+        "excluded_loops": 2,
+        "proposed_loops": 46,
+        "retained_loops": 44,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "43f3d2f8ef804d8e8906f17857e5470e",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      },
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Bob",
+        "Carol": "Bob"
+      },
+      "trajectory": {},
+      "raw_odometry": {},
+      "metric_source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_1/20260916T180058Z-cdf3bd/report/report.json",
+      "ground_truth": {
+        "Alpha": {
+          "available": false,
+          "first_stamp_ns": 0,
+          "last_stamp_ns": 1000000000,
+          "matched_samples": 0,
+          "path": "/data/s3e/S3Ev1/S3E_Laboratory_1/alpha_gt.txt",
+          "pose_samples": 2906,
+          "reason": "no_timestamp_overlap_with_sensor_trajectory",
+          "rows": 2
+        },
+        "Bob": {
+          "available": false,
+          "first_stamp_ns": 0,
+          "last_stamp_ns": 1000000000,
+          "matched_samples": 0,
+          "path": "/data/s3e/S3Ev1/S3E_Laboratory_1/bob_gt.txt",
+          "pose_samples": 2925,
+          "reason": "no_timestamp_overlap_with_sensor_trajectory",
+          "rows": 2
+        },
+        "Carol": {
+          "available": false,
+          "first_stamp_ns": 0,
+          "last_stamp_ns": 1000000000,
+          "matched_samples": 0,
+          "path": "/data/s3e/S3Ev1/S3E_Laboratory_1/carol_gt.txt",
+          "pose_samples": 2920,
+          "reason": "no_timestamp_overlap_with_sensor_trajectory",
+          "rows": 2
+        }
+      },
+      "rerun": {
+        "host_path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_1/20260916T180058Z-cdf3bd/report/result.rrd",
+        "bytes": 16277257
+      },
+      "full_report_complete": true
+    },
+    "S3E_Playground_2": {
+      "status": "complete",
+      "dataset": "/data/s3e/S3Ev1/S3E_Playground_2",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Playground_2/20260916T182023Z-5613e8",
+      "started_utc": "2026-09-16T18:20:23Z",
+      "finished_utc": "2026-09-16T18:44:51Z",
+      "backend": {
+        "backend": "CBS SE(3)",
+        "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+        "cbs_network_cdr_bytes": 92805,
+        "keyframes": 1282,
+        "loop_network_cdr_bytes": 37546537,
+        "loops": 75,
+        "memory_sampling_interval_s": 0.2,
+        "mode": "peers",
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 69512,
+        "proposed_loops": 76,
+        "registration_enabled": true,
+        "registration_network_cdr_bytes": 7467588,
+        "sampled_peak_rss_kib": {
+          "Alpha-cbs": 432936,
+          "Alpha-frontend": 193448,
+          "Bob-cbs": 260876,
+          "Bob-frontend": 180880,
+          "Carol-cbs": 157556,
+          "Carol-frontend": 187548
+        },
+        "shared_reference": true,
+        "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+        "transport": "ROS2 Fast DDS",
+        "wall_s": 47.167618226027116
+      },
+      "pcm": {
+        "excluded_loops": 1,
+        "proposed_loops": 76,
+        "retained_loops": 75,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "84af4e4af43944b38ea03bcb2d7958f9",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      },
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Alpha"
+      },
+      "trajectory": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              0.02978566453286607,
+              0.9982665920060153,
+              0.050760471560360766,
+              744140.466371763
+            ],
+            [
+              -0.999550654269696,
+              0.02991787761882078,
+              -0.0018466585519795495,
+              2552897.2719224533
+            ],
+            [
+              -0.0033621031152998963,
+              -0.050682658607060914,
+              0.9987091490414826,
+              -1.243485623951124
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.2591633165173372,
+          "per_robot": {
+            "Alpha": {
+              "samples": 220,
+              "statistics": {
+                "max": 0.29991053468416495,
+                "mean": 0.20304177795837983,
+                "median": 0.20482424468859114,
+                "min": 0.08600177079228141,
+                "rmse": 0.2071844529632358,
+                "sse": 9.443587460928558,
+                "std": 0.041224191358658305
+              }
+            },
+            "Bob": {
+              "samples": 218,
+              "statistics": {
+                "max": 0.6962491690785093,
+                "mean": 0.4041018269348959,
+                "median": 0.3616834403860376,
+                "min": 0.08779829781181468,
+                "rmse": 0.4232410195113008,
+                "sse": 39.05098541013843,
+                "std": 0.12583590133521003
+              }
+            },
+            "Carol": {
+              "samples": 218,
+              "statistics": {
+                "max": 0.5323884887722933,
+                "mean": 0.2858276966120124,
+                "median": 0.2639890652685424,
+                "min": 0.10924413811230721,
+                "rmse": 0.3036249043191652,
+                "sse": 20.097001989975247,
+                "std": 0.10242368072029844
+              }
+            }
+          },
+          "rmse_m": 0.32335789387623826,
+          "robots": [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ],
+          "samples": 656,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.6962491690785093,
+            "mean": 0.2973686391525451,
+            "median": 0.2591633165173372,
+            "min": 0.08600177079228141,
+            "rmse": 0.32335789387623826,
+            "sse": 68.59157486104223,
+            "std": 0.12701267645648615
+          }
+        }
+      },
+      "raw_odometry": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              0.03402599714677661,
+              0.9981977742638645,
+              0.04943111340881594,
+              744140.5130010387
+            ],
+            [
+              -0.9994112157606709,
+              0.03420229561282726,
+              -0.0027248461590506064,
+              2552897.260906054
+            ],
+            [
+              -0.004410592924455269,
+              -0.04930929354067508,
+              0.9987738183595796,
+              -1.2659626025656556
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.1423522876485521,
+          "per_robot": {
+            "Alpha": {
+              "samples": 220,
+              "statistics": {
+                "max": 0.35667912237300203,
+                "mean": 0.15335578931205796,
+                "median": 0.1423522876485521,
+                "min": 0.04041818654820082,
+                "rmse": 0.16708953345425898,
+                "sse": 6.1421606817916246,
+                "std": 0.06633938554461913
+              }
+            }
+          },
+          "rmse_m": 0.16708953345425898,
+          "robots": [
+            "Alpha"
+          ],
+          "samples": 220,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.35667912237300203,
+            "mean": 0.15335578931205796,
+            "median": 0.1423522876485521,
+            "min": 0.04041818654820082,
+            "rmse": 0.16708953345425898,
+            "sse": 6.1421606817916246,
+            "std": 0.06633938554461913
+          }
+        },
+        "Bob": {
+          "alignment_SE3": [
+            [
+              -0.03547671504779006,
+              0.9991466348099641,
+              0.02115194641971649,
+              744137.6966695513
+            ],
+            [
+              -0.9993086873163657,
+              -0.035231167265295446,
+              -0.011870648978318002,
+              2552896.3234141013
+            ],
+            [
+              -0.011115311217397174,
+              -0.021558455442109114,
+              0.9997057981503815,
+              -1.2431667607386019
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.29129199587076726,
+          "per_robot": {
+            "Bob": {
+              "samples": 218,
+              "statistics": {
+                "max": 0.6010374824058793,
+                "mean": 0.2770813024640757,
+                "median": 0.29129199587076726,
+                "min": 0.064805348871551,
+                "rmse": 0.3049063081879975,
+                "sse": 20.266992776477842,
+                "std": 0.127254896163745
+              }
+            }
+          },
+          "rmse_m": 0.3049063081879975,
+          "robots": [
+            "Bob"
+          ],
+          "samples": 218,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.6010374824058793,
+            "mean": 0.2770813024640757,
+            "median": 0.29129199587076726,
+            "min": 0.064805348871551,
+            "rmse": 0.3049063081879975,
+            "sse": 20.266992776477842,
+            "std": 0.127254896163745
+          }
+        },
+        "Carol": {
+          "alignment_SE3": [
+            [
+              0.022563426849938374,
+              0.9996061739708864,
+              0.016684985108591545,
+              744135.1990412221
+            ],
+            [
+              -0.9993355217261896,
+              0.022073179011533384,
+              0.029004995855348898,
+              2552895.388329323
+            ],
+            [
+              0.02862528226990002,
+              -0.017328350400753003,
+              0.9994400039458883,
+              -1.2835332201626517
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.25908403384259215,
+          "per_robot": {
+            "Carol": {
+              "samples": 218,
+              "statistics": {
+                "max": 0.34873730996674346,
+                "mean": 0.25563146107268697,
+                "median": 0.25908403384259215,
+                "min": 0.06484143845175913,
+                "rmse": 0.2605732939009756,
+                "sse": 14.801860245780118,
+                "std": 0.05050740147985774
+              }
+            }
+          },
+          "rmse_m": 0.2605732939009756,
+          "robots": [
+            "Carol"
+          ],
+          "samples": 218,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.34873730996674346,
+            "mean": 0.25563146107268697,
+            "median": 0.25908403384259215,
+            "min": 0.06484143845175913,
+            "rmse": 0.2605732939009756,
+            "sse": 14.801860245780118,
+            "std": 0.05050740147985774
+          }
+        }
+      },
+      "metric_source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Playground_2/20260916T182023Z-5613e8/report/report.json",
+      "ground_truth": {
+        "Alpha": {
+          "available": true,
+          "first_stamp_ns": 1661164288227422200,
+          "last_stamp_ns": 1661164507228830000,
+          "matched_samples": 220,
+          "path": "/data/s3e/S3Ev1/S3E_Playground_2/alpha_gt.txt",
+          "pose_samples": 2191,
+          "rows": 220
+        },
+        "Bob": {
+          "available": true,
+          "first_stamp_ns": 1661164292310893300,
+          "last_stamp_ns": 1661164509311699000,
+          "matched_samples": 218,
+          "path": "/data/s3e/S3Ev1/S3E_Playground_2/bob_gt.txt",
+          "pose_samples": 2191,
+          "rows": 218
+        },
+        "Carol": {
+          "available": true,
+          "first_stamp_ns": 1661164290373169200,
+          "last_stamp_ns": 1661164508372920800,
+          "matched_samples": 218,
+          "path": "/data/s3e/S3Ev1/S3E_Playground_2/carol_gt.txt",
+          "pose_samples": 2174,
+          "rows": 219
+        }
+      },
+      "rerun": {
+        "host_path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Playground_2/20260916T182023Z-5613e8/report/result.rrd",
+        "bytes": 85075628
+      },
+      "full_report_complete": true
+    },
+    "S3E_Dormitory_1": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev1/S3E_Dormitory_1",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Dormitory_1/20260916T184453Z-818bea",
+      "started_utc": "2026-09-16T18:44:53Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Dormitory_1.log')",
+      "finished_utc": "2026-09-16T20:02:15Z",
+      "full_report_complete": false
+    },
+    "S3E_Laboratory_2": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev1/S3E_Laboratory_2",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036",
+      "started_utc": "2026-09-16T20:02:21Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2.log')",
+      "finished_utc": "2026-09-16T20:24:38Z",
+      "full_report_complete": false
+    },
+    "S3E_Laboratory_3": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev1/S3E_Laboratory_3",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_3/20260916T202441Z-504898",
+      "started_utc": "2026-09-16T20:24:41Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_3.log')",
+      "finished_utc": "2026-09-16T20:50:57Z",
+      "full_report_complete": false
+    },
+    "S3E_Laboratory_4": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_4/20260916T205100Z-cf7e86",
+      "started_utc": "2026-09-16T20:51:00Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_4.log')",
+      "finished_utc": "2026-09-16T21:10:19Z",
+      "full_report_complete": false
+    },
+    "S3E_Teaching_Building_1": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev1/S3E_Teaching_Building_1",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff",
+      "started_utc": "2026-09-16T21:10:21Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1.log')",
+      "finished_utc": "2026-09-16T22:27:15Z",
+      "full_report_complete": false
+    },
+    "S3E_Campus_Road_2": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_2/20260916T222721Z-52eca3",
+      "started_utc": "2026-09-16T22:27:21Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_2.log')",
+      "finished_utc": "2026-09-16T22:53:51Z",
+      "full_report_complete": false
+    },
+    "S3E_Campus_Road_3": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_3/20260916T225354Z-f86e65",
+      "started_utc": "2026-09-16T22:53:54Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_3.log')",
+      "finished_utc": "2026-09-16T23:08:23Z",
+      "full_report_complete": false
+    },
+    "S3E_Library_2": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev2/S3E_Library_2",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Library_2/20260916T230824Z-831a58",
+      "started_utc": "2026-09-16T23:08:24Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Library_2.log')",
+      "finished_utc": "2026-09-16T23:16:35Z",
+      "full_report_complete": false
+    },
+    "S3E_Playground_3": {
+      "status": "complete",
+      "dataset": "/data/s3e/S3Ev2/S3E_Playground_3",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Playground_3/20260916T231636Z-81ec36",
+      "started_utc": "2026-09-16T23:16:36Z",
+      "finished_utc": "2026-09-16T23:27:50Z",
+      "backend": {
+        "backend": "CBS SE(3)",
+        "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+        "cbs_network_cdr_bytes": 109878,
+        "keyframes": 422,
+        "loop_network_cdr_bytes": 46886500,
+        "loops": 121,
+        "memory_sampling_interval_s": 0.2,
+        "mode": "peers",
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 130922,
+        "proposed_loops": 121,
+        "registration_enabled": true,
+        "registration_network_cdr_bytes": 12527484,
+        "sampled_peak_rss_kib": {
+          "Alpha-cbs": 604348,
+          "Alpha-frontend": 193696,
+          "Bob-cbs": 232964,
+          "Bob-frontend": 167680,
+          "Carol-cbs": 125760,
+          "Carol-frontend": 175444
+        },
+        "shared_reference": true,
+        "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+        "transport": "ROS2 Fast DDS",
+        "wall_s": 84.30513560899999
+      },
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 121,
+        "retained_loops": 121,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "723358c4e72a43a3af657c482851ad5d",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      },
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Alpha"
+      },
+      "trajectory": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              -0.9993257282128193,
+              0.03583800056352798,
+              -0.007982897188823633,
+              2552959.8934168257
+            ],
+            [
+              0.035545360164355416,
+              0.9987828252757648,
+              0.03419642239980741,
+              744214.5493337687
+            ],
+            [
+              0.009198712013374175,
+              0.033889609761228956,
+              -0.9993832488327621,
+              -1.2574775471566249
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.31875068188225114,
+          "per_robot": {
+            "Alpha": {
+              "samples": 873,
+              "statistics": {
+                "max": 0.4604227496639167,
+                "mean": 0.3042545517239939,
+                "median": 0.2985401922783265,
+                "min": 0.11478372899009799,
+                "rmse": 0.31143721906432914,
+                "sse": 84.67501245837053,
+                "std": 0.06650044491395872
+              }
+            },
+            "Bob": {
+              "samples": 992,
+              "statistics": {
+                "max": 0.4396352220874186,
+                "mean": 0.2742613656116677,
+                "median": 0.25927547970471615,
+                "min": 0.09801442302607187,
+                "rmse": 0.28187306833723924,
+                "sse": 78.81680724061914,
+                "std": 0.06506250830296262
+              }
+            },
+            "Carol": {
+              "samples": 877,
+              "statistics": {
+                "max": 0.4968825386280491,
+                "mean": 0.38179726454215807,
+                "median": 0.3821154857328105,
+                "min": 0.2213779532386276,
+                "rmse": 0.3849463673744984,
+                "sse": 129.95710994697913,
+                "std": 0.049138117006532415
+              }
+            }
+          },
+          "rmse_m": 0.3271391641085532,
+          "robots": [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ],
+          "samples": 2742,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.4968825386280491,
+            "mean": 0.3182048502353369,
+            "median": 0.31875068188225114,
+            "min": 0.09801442302607188,
+            "rmse": 0.3271391641085532,
+            "sse": 293.44892964596886,
+            "std": 0.0759322459851527
+          }
+        }
+      },
+      "raw_odometry": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              -0.9992861966332927,
+              0.03673387467187855,
+              -0.008815876006357541,
+              2552959.922114843
+            ],
+            [
+              0.03643361710189823,
+              0.9988205785074545,
+              0.03209429069016645,
+              744214.5272212089
+            ],
+            [
+              0.009984426024615446,
+              0.03175018742658627,
+              -0.999445964940244,
+              -1.281988402543983
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.3038657992678437,
+          "per_robot": {
+            "Alpha": {
+              "samples": 873,
+              "statistics": {
+                "max": 0.4574631340084591,
+                "mean": 0.31105689254735763,
+                "median": 0.3038657992678437,
+                "min": 0.13308526419759897,
+                "rmse": 0.31626925590150456,
+                "sse": 87.32290946547297,
+                "std": 0.057182618226809
+              }
+            }
+          },
+          "rmse_m": 0.31626925590150456,
+          "robots": [
+            "Alpha"
+          ],
+          "samples": 873,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.4574631340084591,
+            "mean": 0.31105689254735763,
+            "median": 0.3038657992678437,
+            "min": 0.13308526419759897,
+            "rmse": 0.31626925590150456,
+            "sse": 87.32290946547297,
+            "std": 0.057182618226809
+          }
+        },
+        "Bob": {
+          "alignment_SE3": [
+            [
+              -0.8344615086889394,
+              -0.5509852326698059,
+              -0.009447957259684107,
+              2552960.076303164
+            ],
+            [
+              -0.5510554280142583,
+              0.8344298523069255,
+              0.00804592039893214,
+              744212.8299399442
+            ],
+            [
+              0.0034504742577519966,
+              0.011920359006479662,
+              -0.99992299666952,
+              -1.264414348058481
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.2530315381646238,
+          "per_robot": {
+            "Bob": {
+              "samples": 992,
+              "statistics": {
+                "max": 0.528553824657602,
+                "mean": 0.2679607575919051,
+                "median": 0.2530315381646238,
+                "min": 0.09728599722490644,
+                "rmse": 0.28937991814605496,
+                "sse": 83.07081113000774,
+                "std": 0.10926009983973904
+              }
+            }
+          },
+          "rmse_m": 0.28937991814605496,
+          "robots": [
+            "Bob"
+          ],
+          "samples": 992,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.528553824657602,
+            "mean": 0.2679607575919051,
+            "median": 0.2530315381646238,
+            "min": 0.09728599722490644,
+            "rmse": 0.28937991814605496,
+            "sse": 83.07081113000774,
+            "std": 0.10926009983973904
+          }
+        },
+        "Carol": {
+          "alignment_SE3": [
+            [
+              -0.9903278333241224,
+              0.13697860519122174,
+              0.02208266884725022,
+              2552960.2795773773
+            ],
+            [
+              0.13708321507713994,
+              0.990554077938598,
+              0.0032879816495550735,
+              744211.1669466058
+            ],
+            [
+              -0.021423694538160953,
+              0.006283342986078221,
+              -0.9997507413917004,
+              -1.2513597238129432
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.37273578260258694,
+          "per_robot": {
+            "Carol": {
+              "samples": 877,
+              "statistics": {
+                "max": 0.5261398739386067,
+                "mean": 0.3706850764217221,
+                "median": 0.37273578260258694,
+                "min": 0.2163752813843447,
+                "rmse": 0.37490770139824636,
+                "sse": 123.26742306588748,
+                "std": 0.056110236908595214
+              }
+            }
+          },
+          "rmse_m": 0.37490770139824636,
+          "robots": [
+            "Carol"
+          ],
+          "samples": 877,
+          "scale": 1.0,
+          "statistics": {
+            "max": 0.5261398739386067,
+            "mean": 0.3706850764217221,
+            "median": 0.37273578260258694,
+            "min": 0.2163752813843447,
+            "rmse": 0.37490770139824636,
+            "sse": 123.26742306588748,
+            "std": 0.056110236908595214
+          }
+        }
+      },
+      "metric_source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Playground_3/20260916T231636Z-81ec36/report/report.json",
+      "ground_truth": {
+        "Alpha": {
+          "available": true,
+          "first_stamp_ns": 1689220124989719152,
+          "last_stamp_ns": 1689220213849892139,
+          "matched_samples": 873,
+          "path": "/data/s3e/S3Ev2/S3E_Playground_3/alpha_gt.txt",
+          "pose_samples": 874,
+          "rows": 5077
+        },
+        "Bob": {
+          "available": true,
+          "first_stamp_ns": 1689220103009873390,
+          "last_stamp_ns": 1689220204369887828,
+          "matched_samples": 992,
+          "path": "/data/s3e/S3Ev2/S3E_Playground_3/bob_gt.txt",
+          "pose_samples": 996,
+          "rows": 6308
+        },
+        "Carol": {
+          "available": true,
+          "first_stamp_ns": 1689220123629848957,
+          "last_stamp_ns": 1689220214669884204,
+          "matched_samples": 877,
+          "path": "/data/s3e/S3Ev2/S3E_Playground_3/carol_gt.txt",
+          "pose_samples": 877,
+          "rows": 5627
+        }
+      },
+      "rerun": {
+        "host_path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Playground_3/20260916T231636Z-81ec36/report/result.rrd",
+        "bytes": 86574757
+      },
+      "full_report_complete": true
+    },
+    "S3E_Square_3": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev2/S3E_Square_3",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_3/20260916T232751Z-af9b2a",
+      "started_utc": "2026-09-16T23:27:51Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_3.log')",
+      "finished_utc": "2026-09-17T00:18:33Z",
+      "backend": {
+        "backend": "CBS SE(3)",
+        "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+        "cbs_network_cdr_bytes": 156880,
+        "keyframes": 1532,
+        "loop_network_cdr_bytes": 193222089,
+        "loops": 192,
+        "memory_sampling_interval_s": 0.2,
+        "mode": "peers",
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 222870,
+        "proposed_loops": 192,
+        "registration_enabled": true,
+        "registration_network_cdr_bytes": 22878231,
+        "sampled_peak_rss_kib": {
+          "Alpha-cbs": 971972,
+          "Alpha-frontend": 342168,
+          "Bob-cbs": 399204,
+          "Bob-frontend": 307980,
+          "Carol-cbs": 175936,
+          "Carol-frontend": 319920
+        },
+        "shared_reference": true,
+        "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+        "transport": "ROS2 Fast DDS",
+        "wall_s": 195.83974144002423
+      },
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 192,
+        "retained_loops": 192,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "c06dcf1cce7a4d929e9bbdfb3c69a1ca",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      },
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Alpha"
+      },
+      "trajectory": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              0.9966975121824946,
+              -0.010508553504765079,
+              -0.08052105012022431,
+              2553154.7777572144
+            ],
+            [
+              -0.011873029850496835,
+              -0.9997936074186835,
+              -0.01648556116438342,
+              744421.8940226211
+            ],
+            [
+              -0.0803311917712877,
+              0.01738714663114413,
+              -0.9966165695796113,
+              5.603272325623778
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 1.5434508505654567,
+          "per_robot": {
+            "Alpha": {
+              "samples": 4079,
+              "statistics": {
+                "max": 5.770122388626714,
+                "mean": 1.801594216596611,
+                "median": 1.6872738192535581,
+                "min": 0.32430326642530155,
+                "rmse": 2.0426203555986366,
+                "sse": 17018.803203874966,
+                "std": 0.9625778907867883
+              }
+            },
+            "Bob": {
+              "samples": 4217,
+              "statistics": {
+                "max": 5.7460517876055155,
+                "mean": 1.8321359545111955,
+                "median": 1.5480722287241795,
+                "min": 0.2814193928580951,
+                "rmse": 2.1948592528453443,
+                "sse": 20315.00590854007,
+                "std": 1.208588012512194
+              }
+            },
+            "Carol": {
+              "samples": 4611,
+              "statistics": {
+                "max": 6.025944687884459,
+                "mean": 1.6770743060868694,
+                "median": 1.4984843027760744,
+                "min": 0.37299132930772294,
+                "rmse": 2.0591740253021675,
+                "sse": 19551.551440135278,
+                "std": 1.1948302968800113
+              }
+            }
+          },
+          "rmse_m": 2.0993633082151204,
+          "robots": [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ],
+          "samples": 12907,
+          "scale": 1.0,
+          "statistics": {
+            "max": 6.025944687884459,
+            "mean": 1.7670883826635038,
+            "median": 1.5434508505654567,
+            "min": 0.2814193928580951,
+            "rmse": 2.0993633082151204,
+            "sse": 56885.360552550315,
+            "std": 1.1334570780296964
+          }
+        }
+      },
+      "raw_odometry": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              0.9966103920132546,
+              -0.015171356870177068,
+              -0.08085515729936107,
+              2553154.9082961185
+            ],
+            [
+              -0.016610876455462283,
+              -0.9997147514051751,
+              -0.017160845150251215,
+              744422.113710879
+            ],
+            [
+              -0.08057174017338878,
+              0.018445751641157252,
+              -0.9965781198339773,
+              5.8636339030692515
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 1.4306839584215654,
+          "per_robot": {
+            "Alpha": {
+              "samples": 4079,
+              "statistics": {
+                "max": 6.058556234731602,
+                "mean": 1.5458356896413696,
+                "median": 1.4306839584215654,
+                "min": 0.039357226883471104,
+                "rmse": 1.9200039605838444,
+                "sse": 15036.887636114549,
+                "std": 1.1387744417963723
+              }
+            }
+          },
+          "rmse_m": 1.9200039605838444,
+          "robots": [
+            "Alpha"
+          ],
+          "samples": 4079,
+          "scale": 1.0,
+          "statistics": {
+            "max": 6.058556234731602,
+            "mean": 1.5458356896413696,
+            "median": 1.4306839584215654,
+            "min": 0.039357226883471104,
+            "rmse": 1.9200039605838444,
+            "sse": 15036.887636114549,
+            "std": 1.1387744417963723
+          }
+        },
+        "Bob": {
+          "alignment_SE3": [
+            [
+              0.994279555807132,
+              0.06180766317192703,
+              -0.08710899883018519,
+              2553153.923139043
+            ],
+            [
+              0.06376333384096479,
+              -0.997767666358296,
+              0.019847448889104738,
+              744421.7295423328
+            ],
+            [
+              -0.08568781804584162,
+              -0.025288272838324962,
+              -0.9960010547662069,
+              5.263672657392781
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 1.4320693672695328,
+          "per_robot": {
+            "Bob": {
+              "samples": 4217,
+              "statistics": {
+                "max": 5.667627598435989,
+                "mean": 1.6365948504682488,
+                "median": 1.4320693672695328,
+                "min": 0.3404415284600945,
+                "rmse": 1.94437297140041,
+                "sse": 15942.732224314843,
+                "std": 1.0498302469129333
+              }
+            }
+          },
+          "rmse_m": 1.94437297140041,
+          "robots": [
+            "Bob"
+          ],
+          "samples": 4217,
+          "scale": 1.0,
+          "statistics": {
+            "max": 5.667627598435989,
+            "mean": 1.6365948504682488,
+            "median": 1.4320693672695328,
+            "min": 0.3404415284600945,
+            "rmse": 1.94437297140041,
+            "sse": 15942.732224314843,
+            "std": 1.0498302469129333
+          }
+        },
+        "Carol": {
+          "alignment_SE3": [
+            [
+              0.9921967478742362,
+              -0.06341006461588376,
+              -0.10735351514132399,
+              2553154.2636406245
+            ],
+            [
+              -0.06259888665346508,
+              -0.9979791050832523,
+              0.010912616871211676,
+              744422.9918159319
+            ],
+            [
+              -0.10782853470921178,
+              -0.004107252444231001,
+              -0.9941610219576221,
+              4.99359955143179
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 1.2827883922140533,
+          "per_robot": {
+            "Carol": {
+              "samples": 4611,
+              "statistics": {
+                "max": 5.212719567649938,
+                "mean": 1.572626043147645,
+                "median": 1.2827883922140533,
+                "min": 0.061514296323728186,
+                "rmse": 1.8932580816979714,
+                "sse": 16527.7890418106,
+                "std": 1.0541695747499367
+              }
+            }
+          },
+          "rmse_m": 1.8932580816979714,
+          "robots": [
+            "Carol"
+          ],
+          "samples": 4611,
+          "scale": 1.0,
+          "statistics": {
+            "max": 5.212719567649938,
+            "mean": 1.572626043147645,
+            "median": 1.2827883922140533,
+            "min": 0.061514296323728186,
+            "rmse": 1.8932580816979714,
+            "sse": 16527.7890418106,
+            "std": 1.0541695747499367
+          }
+        }
+      },
+      "metric_source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_3/20260916T232751Z-af9b2a/trajectory-audit-20260917/audit.json",
+      "ground_truth": {
+        "Alpha": {
+          "available": true,
+          "first_stamp_ns": 1689768893186256647,
+          "last_stamp_ns": 1689769303049839973,
+          "matched_samples": 4079,
+          "path": "/data/s3e/S3Ev2/S3E_Square_3/alpha_gt.txt",
+          "pose_samples": 4079,
+          "rows": 40657
+        },
+        "Bob": {
+          "available": true,
+          "first_stamp_ns": 1689768895279800653,
+          "last_stamp_ns": 1689769324039878368,
+          "matched_samples": 4217,
+          "path": "/data/s3e/S3Ev2/S3E_Square_3/bob_gt.txt",
+          "pose_samples": 4237,
+          "rows": 26149
+        },
+        "Carol": {
+          "available": true,
+          "first_stamp_ns": 1689768879899817466,
+          "last_stamp_ns": 1689769346109790325,
+          "matched_samples": 4611,
+          "path": "/data/s3e/S3Ev2/S3E_Square_3/carol_gt.txt",
+          "pose_samples": 4611,
+          "rows": 32969
+        }
+      },
+      "rerun": {
+        "host_path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Square_3/20260916T232751Z-af9b2a/report/result.rrd",
+        "bytes": 102669704
+      },
+      "full_report_complete": false
+    },
+    "S3E_Tunnel_1": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev2/S3E_Tunnel_1",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33",
+      "started_utc": "2026-09-17T00:18:37Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1.log')",
+      "finished_utc": "2026-09-17T01:01:54Z",
+      "backend": {
+        "backend": "CBS SE(3)",
+        "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+        "cbs_network_cdr_bytes": 352516,
+        "keyframes": 1476,
+        "loop_network_cdr_bytes": 213476308,
+        "loops": 602,
+        "memory_sampling_interval_s": 0.2,
+        "mode": "peers",
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 758960,
+        "proposed_loops": 602,
+        "registration_enabled": true,
+        "registration_network_cdr_bytes": 71155992,
+        "sampled_peak_rss_kib": {
+          "Alpha-cbs": 2033212,
+          "Alpha-frontend": 419128,
+          "Bob-cbs": 1121900,
+          "Bob-frontend": 396004,
+          "Carol-cbs": 307040,
+          "Carol-frontend": 334356
+        },
+        "shared_reference": false,
+        "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+        "transport": "ROS2 Fast DDS",
+        "wall_s": 305.3869434010121
+      },
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 602,
+        "retained_loops": 602,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "f24e4cc658344e24a160827a2d0c22cc",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      },
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Bob",
+        "Carol": "Bob"
+      },
+      "full_report_complete": false
+    },
+    "S3E_Campus_Road_1": {
+      "status": "failed",
+      "dataset": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+      "work": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_1/20260917T010157Z-0d5eb9",
+      "started_utc": "2026-09-17T01:01:57Z",
+      "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_1.log')",
+      "finished_utc": "2026-09-17T01:14:00Z",
+      "full_report_complete": false
+    }
+  }
+}

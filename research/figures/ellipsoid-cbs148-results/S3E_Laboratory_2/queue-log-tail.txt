@@ -1,0 +1,13 @@
+2026-09-16T20:02:21Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Alpha --bag /data/s3e/S3Ev1/S3E_Laboratory_2 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036/Alpha --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036/Alpha.yaml --rate 1.0
+2026-09-16T20:09:03Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Bob --bag /data/s3e/S3Ev1/S3E_Laboratory_2 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036/Bob --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036/Bob.yaml --rate 1.0
+2026-09-16T20:15:43Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Carol --bag /data/s3e/S3Ev1/S3E_Laboratory_2 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036/Carol --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036/Carol.yaml --rate 1.0
+2026-09-16T20:22:26Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_full prepare --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036 --robot Alpha
+2026-09-16T20:23:46Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_full prepare --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036 --robot Bob
+Traceback (most recent call last):
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 314, in <module>
+    if args.sequence:sequence(args.sequence.resolve(),args.work.resolve(),args.duration)
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 161, in sequence
+    call([PYTHON,'-m','s3e_pipeline.ellipsoid_full','prepare','--work',work,'--robot',robot],
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 63, in call
+    if code:raise RuntimeError(f'Command exited {code}; see {log}')
+RuntimeError: Command exited -11; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_2/20260916T200221Z-8fb036/Bob-descriptors.log

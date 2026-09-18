@@ -1,0 +1,7 @@
+dataset: /data/s3e/S3E_Campus_Road_1
+robots:
+- Alpha
+- Bob
+- Carol
+evaluation:
+  evo_max_diff_s: 0.05

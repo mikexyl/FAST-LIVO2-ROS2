@@ -1,0 +1,26 @@
+{
+  "scope": "Synthetic four-robot fixture, not CU-Multi trajectory results",
+  "robots": [
+    "robot1",
+    "robot2",
+    "robot3",
+    "robot4"
+  ],
+  "pcm_proposed": 30,
+  "pcm_retained": 18,
+  "pcm_excluded": 12,
+  "live_gicp_factors": 18,
+  "native_wall_s": 8.199390351015609,
+  "pose_translation_tolerance_m": 0.002,
+  "pose_rotation_tolerance_rad": 0.001,
+  "imu_probe": {
+    "robot": "robot1",
+    "duration_s": 120,
+    "samples": 59998,
+    "max_gap_ms": 14.240402
+  },
+  "source_files": {
+    "FAST-LIVO2-ROS2/research/tests/test_cbs_integration.py": "2725cad5f3b8ae690cc460cf716040ddfcebe288b3a852b768e25447c9645314",
+    "FAST-LIVO2-ROS2/research/tests/test_cu_multi.py": "aedae591b6759730ac78e63c286bac12d19d7f033dc6ad9250e15f51f323dd5c"
+  }
+}

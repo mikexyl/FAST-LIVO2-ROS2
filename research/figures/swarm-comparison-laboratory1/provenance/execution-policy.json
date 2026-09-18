@@ -1,0 +1,12 @@
+{
+  "sequences": {
+    "square1": 124,
+    "square2": 125,
+    "laboratory1": 126
+  },
+  "sequence_jobs": "May overlap; independent ROS domains; wall timings include shared-host CPU contention.",
+  "frontend": "Serial EllipseLIO replays at 1x; one CUDA preparation job at a time.",
+  "swarm_replay": "Timestamp-ordered shared exports, target 1x plus bounded processing backpressure; 30-second final settling interval.",
+  "cpu_threads_per_swarm_process": 2,
+  "ground_truth": "Evaluation only."
+}

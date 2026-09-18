@@ -1,0 +1,19 @@
+{
+  "complete": true,
+  "retired": [
+    {
+      "robot": "Alpha",
+      "path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/swarm148/campusroad1/frontend/Alpha/export/sensors.mcap",
+      "bytes": 2243790456,
+      "sha256": "2f53fe0374d52eb0b21d8a44dae446c39a70262a99ce0f9667349b7fa3dd73f5"
+    },
+    {
+      "robot": "Bob",
+      "path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/swarm148/campusroad1/frontend/Bob/export/sensors.mcap",
+      "bytes": 1471028827,
+      "sha256": "371bb38539e9056a89b9e3d67c83d64a92410e22bc9879e4fc50400c2a117aee"
+    }
+  ],
+  "total_bytes": 3714819283,
+  "policy": "Only generated sensor MCAPs retired. Exact frame indices, available original manifests, interruption evidence, reports, and generated figures/recordings remain. Original S3E bags are untouched."
+}

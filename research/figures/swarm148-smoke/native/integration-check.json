@@ -1,0 +1,33 @@
+{
+  "fixture": "Same Alpha input supplied to three native robots; no GT used.",
+  "exact_selected_inputs": {
+    "Alpha": {
+      "expected": 95,
+      "received": 95,
+      "exact_selected_timestamps_and_poses": true,
+      "differing_timestamps": 0,
+      "first_timestamp_differences": []
+    },
+    "Bob": {
+      "expected": 95,
+      "received": 95,
+      "exact_selected_timestamps_and_poses": true,
+      "differing_timestamps": 0,
+      "first_timestamp_differences": []
+    },
+    "Carol": {
+      "expected": 95,
+      "received": 95,
+      "exact_selected_timestamps_and_poses": true,
+      "differing_timestamps": 0,
+      "first_timestamp_differences": []
+    }
+  },
+  "all_scans_processed": true,
+  "same_origin": true,
+  "compared_pairs": 285,
+  "max_corresponding_position_difference_m": 0.061194095304711614,
+  "rms_corresponding_position_difference_m": 0.009243960733398554,
+  "native_success": true,
+  "passed": true
+}

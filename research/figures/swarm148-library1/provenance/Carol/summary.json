@@ -1,0 +1,30 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Carol",
+  "bag": "/data/s3e/S3E_Library_1",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 0.0,
+  "odometry_messages": 39223,
+  "finite": true,
+  "path_length_m": 580.0306821363133,
+  "max_pose_step_m": 0.13273945889891367,
+  "first_pose_stamp_ns": 1660900383933211809,
+  "last_pose_stamp_ns": 1660900836568633891,
+  "exported_frames": 4515,
+  "export_complete": true,
+  "synchronized_export": {
+    "first_stamp_ns": 1660900383923624845,
+    "last_stamp_ns": 1660900836528673346,
+    "span_s": 452.605048501,
+    "max_gap_s": 0.20988218,
+    "gaps_over_200ms": 7,
+    "lidar_updates": 4514,
+    "min_cloud_points": 21438,
+    "max_cloud_points": 54091,
+    "image_frames": 0
+  },
+  "success": true,
+  "error": null,
+  "wall_s": 458.54450794600416
+}

@@ -1,0 +1,14 @@
+2026-09-16T21:10:21Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Alpha --bag /data/s3e/S3Ev1/S3E_Teaching_Building_1 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff/Alpha --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff/Alpha.yaml --rate 1.0
+2026-09-16T21:23:14Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Bob --bag /data/s3e/S3Ev1/S3E_Teaching_Building_1 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff/Bob --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff/Bob.yaml --rate 1.0
+2026-09-16T21:36:10Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Carol --bag /data/s3e/S3Ev1/S3E_Teaching_Building_1 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff/Carol --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff/Carol.yaml --rate 1.0
+2026-09-16T21:49:34Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_full prepare --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff --robot Alpha
+2026-09-16T21:59:35Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_full prepare --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff --robot Bob
+2026-09-16T22:14:27Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_full prepare --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff --robot Carol
+Traceback (most recent call last):
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 314, in <module>
+    if args.sequence:sequence(args.sequence.resolve(),args.work.resolve(),args.duration)
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 161, in sequence
+    call([PYTHON,'-m','s3e_pipeline.ellipsoid_full','prepare','--work',work,'--robot',robot],
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 63, in call
+    if code:raise RuntimeError(f'Command exited {code}; see {log}')
+RuntimeError: Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Teaching_Building_1/20260916T211021Z-40e2ff/Carol-descriptors.log

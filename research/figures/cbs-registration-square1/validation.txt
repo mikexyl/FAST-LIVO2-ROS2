@@ -1,0 +1,39 @@
+native-tests
+Internal ctest changing into directory: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs_ros
+Test project /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/dpgo-build/cbs_ros
+    Start 1: registration_factors
+1/5 Test #1: registration_factors .............   Passed    0.06 sec
+    Start 2: distributed_pcm_protocol
+2/5 Test #2: distributed_pcm_protocol .........   Passed    1.36 sec
+    Start 3: belief_batch
+3/5 Test #3: belief_batch .....................   Passed    0.01 sec
+    Start 4: pose_graph_factor
+4/5 Test #4: pose_graph_factor ................   Passed    0.01 sec
+    Start 5: loop_scale_sidecar
+5/5 Test #5: loop_scale_sidecar ...............   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   1.44 sec
+
+dds-tests
+.......                                                                  [100%]
+7 passed in 52.89s
+
+python-tests
+..............                                                           [100%]
+14 passed in 0.92s
+
+regression-tests
+..s......................................                                [100%]
+=============================== warnings summary ===============================
+FAST-LIVO2-ROS2/research/tests/test_sequence_evaluation.py::test_unmatched_and_missing_gt_still_plot_disconnected_trajectories
+  /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/research-venv/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+    warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+40 passed, 1 skipped, 1 warning in 7.59s
+
+resume
+dpgo: cached /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/square1-cbs-registration/dpgo/a369b536fa785fbcb47cc3e0c03e8623371b4db28991ea1c766bf28554c47218
+Run registry: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/square1-cbs-registration/run-d41d2e9f392e0f48.json

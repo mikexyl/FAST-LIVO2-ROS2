@@ -1,0 +1,10 @@
+{
+  "bytes": {
+    "/cslam/global_descriptors": 9532296,
+    "/cslam/pose_graph": 292992,
+    "/r0/cslam/optimized_estimates": 71168,
+    "/r1/cslam/optimized_estimates": 320,
+    "/r2/cslam/optimized_estimates": 320
+  },
+  "semantics": "Observed serialized CDR publications on recorded coordination topics only; no DDS overhead or broadcast fanout."
+}

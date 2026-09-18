@@ -1,0 +1,16 @@
+2026-09-17T00:18:37Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Alpha --bag /data/s3e/S3Ev2/S3E_Tunnel_1 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33/Alpha --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33/Alpha.yaml --rate 1.0
+2026-09-17T00:25:46Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Bob --bag /data/s3e/S3Ev2/S3E_Tunnel_1 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33/Bob --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33/Bob.yaml --rate 1.0
+2026-09-17T00:32:56Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Carol --bag /data/s3e/S3Ev2/S3E_Tunnel_1 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33/Carol --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33/Carol.yaml --rate 1.0
+2026-09-17T00:40:03Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_full prepare --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33 --robot Alpha
+2026-09-17T00:45:28Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_full prepare --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33 --robot Bob
+2026-09-17T00:51:50Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_full prepare --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33 --robot Carol
+2026-09-17T00:56:47Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_cbs solve --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33
+2026-09-17T01:01:53Z RUN /workspace/.ros2/research-venv/bin/python -m s3e_pipeline.ellipsoid_cbs evaluate --work /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33
+Traceback (most recent call last):
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 314, in <module>
+    if args.sequence:sequence(args.sequence.resolve(),args.work.resolve(),args.duration)
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 166, in sequence
+    call([PYTHON,'-m','s3e_pipeline.ellipsoid_cbs','evaluate','--work',work],work/'evaluation.log',1800)
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 63, in call
+    if code:raise RuntimeError(f'Command exited {code}; see {log}')
+RuntimeError: Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Tunnel_1/20260917T001837Z-eb6a33/evaluation.log

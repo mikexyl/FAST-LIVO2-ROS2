@@ -1,0 +1,19 @@
+.ros2/mixed-pgo-tests.log
+........                                                                 [100%]
+8 passed in 0.93s
+
+
+.ros2/mixed-pgo-regression-tests.log
+..sssssss......................................                          [100%]
+=============================== warnings summary ===============================
+FAST-LIVO2-ROS2/research/tests/test_sequence_evaluation.py::test_unmatched_and_missing_gt_still_plot_disconnected_trajectories
+  /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/research-venv/lib/python3.10/site-packages/matplotlib/projections/__init__.py:63: UserWarning: Unable to import Axes3D. This may be due to multiple versions of Matplotlib being installed (e.g. as a system package and as a pip package). As a result, the 3D projection is not available.
+    warnings.warn("Unable to import Axes3D. This may be due to multiple versions of "
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+40 passed, 7 skipped, 1 warning in 9.43s
+
+
+.ros2/mixed-pgo-resume.log
+pgo.livo.megaloc_mapclosures: cached /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/square1-mixed-pgo/pgo/60b6a548b1b4b67d24a1ae13f5e3900bf4bf5961057bf28e00fbdc1a7409abea
+Run registry: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/square1-mixed-pgo/run-4901cc390df01e42.json

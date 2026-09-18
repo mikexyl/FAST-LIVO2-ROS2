@@ -1,0 +1,54 @@
+/**:
+  ros__parameters:
+    mapping:
+      map_resolution: 0.1
+      pub_map_n_secs: 10
+      namespace: Carol
+    publish:
+      map: false
+      scan: false
+      markers: false
+      odometry: true
+      analytics: false
+      tf: false
+    lidar:
+      type: 2
+      rate: 10
+      scan_lines: 16
+      vertical_fov: 30.0
+      min_range: 1.0
+      max_range: 100.0
+      topic: /Carol/velodyne_points
+      t_imu_lidar:
+      - -0.03181799390095727
+      - -0.005058436163103697
+      - 0.20284730569079368
+      r_imu_lidar:
+      - 0.9996571430423355
+      - 0.020396103869417127
+      - 0.016419575455513136
+      - -0.02003310298133599
+      - 0.9995577585857328
+      - -0.02197625725243218
+      - -0.016860545614981855
+      - 0.021639784965623222
+      - 0.9996236544083085
+    imu:
+      rate: 100
+      acc_noise: 0.011692699862662088
+      gyr_noise: 0.010216647894856925
+      acc_bias: 0.0002041305895172543
+      gyr_bias: 8.45143056189658e-05
+      topic: /Carol/imu/data
+    cameras:
+      num_cams: 0
+    input:
+      reliable: true
+    research:
+      ellipsoid_keyframes: true
+      ellipsoid_range_m: 80.0
+      ellipsoid_world_frame: true
+      ellipsoid_delta_export: true
+      keyframe_translation_m: 1.0
+      keyframe_rotation_deg: 10.0
+      keyframe_interval_s: 2.0

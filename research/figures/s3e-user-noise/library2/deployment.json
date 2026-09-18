@@ -1,0 +1,60 @@
+{
+  "container": "/ellipsoid-s3e-noise148",
+  "image": "sha256:cb89f7676e64520d3c6acfb37be9006b1b1dd52019d928b09f8ed7315ceb3ecc",
+  "created": "2026-09-17T14:19:52.468204613Z",
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src",
+      "Destination": "/workspace",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/s3e-noise-test/source/FAST-LIVO2-ROS2",
+      "Destination": "/workspace/FAST-LIVO2-ROS2",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/mnt/data/s3e",
+      "Destination": "/data/s3e",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/usr/local/cuda-12.9",
+      "Destination": "/usr/local/cuda",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "cpu_quota_cores": 12.0,
+  "memory_bytes": 42949672960,
+  "command": [
+    "FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/entrypoint.sh",
+    "--base",
+    "/workspace/.ros2/s3e-noise-test/library2-20260917",
+    "--sequences",
+    "S3E_Library_2",
+    "--config",
+    "/workspace/FAST-LIVO2-ROS2/research/configs/s3e-ellipselio-user-noise.yaml"
+  ],
+  "ros_domain_id": 191,
+  "qos_observation": {
+    "method": "ros2 topic info --verbose --no-daemon during replay",
+    "topics": [
+      "/Alpha/velodyne_points",
+      "/Alpha/imu/data"
+    ],
+    "native_subscription_reliability": "BEST_EFFORT",
+    "bag_publisher_reliability": "RELIABLE"
+  }
+}

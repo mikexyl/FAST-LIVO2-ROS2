@@ -1,0 +1,30 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Bob",
+  "bag": "/data/s3e/S3Ev1/S3E_Teaching_Building_1",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 0.0,
+  "odometry_messages": 69061,
+  "finite": true,
+  "path_length_m": 867.2209683345314,
+  "max_pose_step_m": 0.2074801395873204,
+  "first_pose_stamp_ns": 1661159313801971607,
+  "last_pose_stamp_ns": 1661160059235542370,
+  "exported_frames": 7435,
+  "export_complete": true,
+  "synchronized_export": {
+    "first_stamp_ns": 1661159313792243482,
+    "last_stamp_ns": 1661160059195626663,
+    "span_s": 745.403383181,
+    "max_gap_s": 0.209535116,
+    "gaps_over_200ms": 11,
+    "lidar_updates": 7434,
+    "min_cloud_points": 16808,
+    "max_cloud_points": 57223,
+    "image_frames": 0
+  },
+  "success": true,
+  "error": null,
+  "wall_s": 774.6313370540156
+}

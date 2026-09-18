@@ -1,0 +1,28 @@
+{
+  "groups": {
+    "raw": {
+      "Alpha": [
+        "Alpha"
+      ],
+      "Bob": [
+        "Bob"
+      ],
+      "Carol": [
+        "Carol"
+      ]
+    },
+    "ellipsoid": {
+      "Alpha": [
+        "Alpha"
+      ],
+      "Bob": [
+        "Bob"
+      ],
+      "Carol": [
+        "Carol"
+      ]
+    },
+    "swarm": {}
+  },
+  "gt_available": false
+}

@@ -1,0 +1,17 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Carol",
+  "bag": "/data/s3e/S3E_Square_2",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 0.0,
+  "odometry_messages": 2967,
+  "finite": true,
+  "path_length_m": 12.19500900983732,
+  "max_pose_step_m": 0.6068799156149205,
+  "first_pose_stamp_ns": 1661153736985835374,
+  "last_pose_stamp_ns": 1661153768575390530,
+  "success": false,
+  "error": "EllipseLIO exited during replay",
+  "wall_s": 34.66849877000004
+}

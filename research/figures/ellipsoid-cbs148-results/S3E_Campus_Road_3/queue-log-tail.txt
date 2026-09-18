@@ -1,0 +1,9 @@
+2026-09-16T22:53:54Z RUN bash /workspace/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh --robot Alpha --bag /data/s3e/S3Ev2/S3E_Campus_Road_3 --output /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_3/20260916T225354Z-f86e65/Alpha --mapping-config /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_3/20260916T225354Z-f86e65/Alpha.yaml --rate 1.0
+Traceback (most recent call last):
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 314, in <module>
+    if args.sequence:sequence(args.sequence.resolve(),args.work.resolve(),args.duration)
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 140, in sequence
+    call(cmd,work/f'{robot}-odometry.log',max(300,(duration or info['duration_s'])*2+240))
+  File "/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py", line 63, in call
+    if code:raise RuntimeError(f'Command exited {code}; see {log}')
+RuntimeError: Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_3/20260916T225354Z-f86e65/Alpha-odometry.log

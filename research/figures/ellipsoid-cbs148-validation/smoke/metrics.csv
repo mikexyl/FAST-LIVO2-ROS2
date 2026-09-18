@@ -1,0 +1,6 @@
+method,component,position_rmse_m,samples,status
+CBS DDS,Alpha,0.23939555649350533,82,available
+CBS DDS,Carol,0.1240598970131476,42,available
+Raw odometry (individual alignment),Alpha,0.09293921038797233,42,available
+Raw odometry (individual alignment),Bob,0.18014298714800517,40,available
+Raw odometry (individual alignment),Carol,0.12405989702130045,42,available

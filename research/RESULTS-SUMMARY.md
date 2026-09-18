@@ -1,9 +1,103 @@
 # Multi-robot FAST-LIVO2: results summary
 
-Updated 2026-09-14. This document consolidates the completed **MegaLoc +
+Updated 2026-09-15. This document consolidates the completed **MegaLoc +
 MapClosures + distributed CBS** experiments for Alpha, Bob and Carol.
 
-The system connected all three robots on **Square 1, Square 2, Library 1,
+The [2026-09-17 S3E IMU-noise/QoS trials](RESULTS-S3E-IMU-NOISE.md)
+initially failed on Library 2 / Alpha with best-effort input. Restoring
+`input.reliable: true`, with the requested noise unchanged, restored normal
+scan updates and Alpha completed with **1.2407 m raw ATE**. Bob still diverged
+late (**155.2664 m** diagnostic ATE), stopping the queue before Carol or CBS.
+There is no new valid multi-robot result.
+
+New trial (2026-09-17): [GRACO ground-01..06 as one six-robot group](RESULTS-GRACO.md)
+uses EllipseLIO, ellipsoid BEVs, MapClosures and PCM/CBS. The six-robot smoke
+completed without loops; the full run stopped at robot1 frontend divergence,
+so there is no valid full-sequence GRACO result. The [CU-Multi download](CU-MULTI.md)
+and its automatic test watcher are paused at the user's request.
+
+**Alternative frontend:** [EllipseLIO + LiDAR-only MapClosures + PCM/CBS/GICP](RESULTS-ELLIPSELIO-CBS.md)
+completed Square 1 with all three robots connected, 29 loops, **1.1907 m**
+shared ATE, and **40.35 s** for detection plus optimization. Individual shared
+CBS ATEs were **1.4394 / 0.8909 / 1.2279 m**; raw EllipseLIO ATEs with separate
+fits were **1.0922 / 0.7956 / 0.5925 m**. Four of 29 loops have GT distance
+discrepancies above 2 m. This separate run used no visual descriptors; it does
+not alter the historical FAST-LIVO2 tables or establish a controlled comparison.
+Its figures, evo evidence and 87.18 MiB Rerun recording are retained; cleanup
+removed 6.53 GiB of generated intermediates.
+A subsequent centralized pose-factor PGO run on the same 29 loops achieved
+**1.1371 m** shared ATE. It excludes the live GICP factors used by CBS.
+A bounded [ellipsoid-map BEV diagnostic](RESULTS-ELLIPSOID-BEV.md) on the first
+43 seconds confirms MapClosures can match native ellipsoid surfaces: **2/8**
+selected pairs pass GICP, versus **5/8** for fresh raw submaps. Four ellipsoid
+pair tests lack fitted maps at initialization. This does not establish improved
+recall; rendered images, ORB matches and a small Rerun recording are retained.
+
+The subsequent [full-sequence paired ellipsoid-BEV experiment](figures/ellipsoid-bev-full-square1/REPORT.md)
+achieved **1.1408 m** shared centralized-PGO ATE versus **1.1457 m** for raw BEVs
+on identical fresh EllipseLIO odometry and keyframes. Individual shared ATEs
+(Alpha/Bob/Carol) were **1.3950 / 0.9906 / 0.9981 m** for ellipsoids versus
+**1.4889 / 0.9559 / 0.9041 m** for raw BEVs. Fresh raw odometry, independently
+aligned per robot, achieved **1.0957 / 0.8004 / 0.5927 m**. Both graphs connected
+all robots. Ellipsoids supplied 63 loops (55 intra, 8 inter), while raw BEVs
+supplied 38 inter-robot loops. Detection took **102.19 s / 35.79 s** respectively;
+PGO took under 0.5 s per graph, excluding odometry and descriptor preparation.
+The 5 mm aggregate difference does not establish an accuracy advantage. This
+test uses centralized pose-factor PGO, not CBS. Position-only GT checks flagged
+1/52 checkable ellipsoid loops and 6/38 raw loops for endpoint-distance errors
+above 2 m; these are not full 6-DoF outlier labels. The 0.43 MiB Rerun recording,
+plots and compact evidence remain after removing 6.14 GiB of generated data.
+
+The same paired path also completed [Square 2](figures/ellipsoid-bev-full-square2/REPORT.md).
+Centralized shared ATE was **0.4641 m** for ellipsoid BEVs versus **0.4703 m**
+for raw BEVs. Individual shared ATEs (Alpha/Bob/Carol) were
+**0.4583 / 0.6236 / 0.2316 m** versus **0.4612 / 0.6332 / 0.2358 m**.
+Raw EllipseLIO ATEs with independent robot fits were **0.5138 / 0.5974 / 0.2014 m**.
+Both graphs connect all robots; ellipsoid BEVs contribute 30 loops (6 intra,
+24 inter), while raw BEVs contribute 26 (1 intra, 25 inter). No endpoint-distance
+discrepancy above 2 m was found among the 23/30 GT-checkable ellipsoid loops or
+24/26 GT-checkable raw loops. This does not establish full 6-DoF correctness.
+
+| Paired centralized-PGO comparison | Raw ATE | Ellipsoid ATE | Raw detection | Ellipsoid detection |
+|---|---:|---:|---:|---:|
+| Square 1 | 1.1457 m | 1.1408 m | 35.79 s | 102.19 s |
+| Square 2 | 0.4703 m | 0.4641 m | 24.22 s | 51.71 s |
+| Laboratory 1 | Unavailable | Unavailable | 3.32 s | 13.12 s |
+
+On Square 2, ellipsoid BEVs retain **291,486 ORB features** over 861 keyframes,
+versus **197,101** for raw BEVs (+48%). Native descriptor construction takes
+**120.74 s / 9.10 s**, respectively, plus **268.96 s** of ellipsoid CUDA sampling.
+Descriptor inputs average approximately **1.33 million / 77,811 points** per
+keyframe, so this is substantially different preprocessing work rather than an
+equal-input feature-matcher benchmark. These two runs show only 5–6 mm changes
+in aggregate ATE, with higher computation and no increase in inter-robot loops.
+
+Square 2 required a documented Carol retry at **0.5x replay** after the native
+frontend stalled at 1x and the raw-cloud queue limit stopped the process. The
+bag's IMU timestamps were monotonic, with a maximum 15.94 ms interval. The full
+retry succeeded with unchanged estimator/loop settings; both BEV branches share
+that same replay. Frozen PGO reproduced exactly and left all 1,728 watched inputs
+unchanged. Cleanup removed **3.10 GiB** of generated data, including the failed
+attempt's incomplete MCAP, while retaining reports, plots, evo evidence and Rerun.
+
+The indoor [Laboratory 1 paired run](figures/ellipsoid-bev-full-laboratory1/REPORT.md)
+used 804 frozen keyframes and unchanged loop/PGO settings. Ellipsoid BEVs yielded
+**51 accepted and selected loops (37 intra, 14 inter)** and connected all three
+robots. Raw BEVs yielded **9 accepted loops**, but GNC removed all three inter-robot
+factors, leaving **6 selected intra-robot loops and three separate components**.
+This is an improvement in graph connectivity. **ATE and GT-based loop accuracy
+remain unavailable:** the released records contain only endpoints labeled 0 and 1,
+without sensor timestamps. They were not converted into an artificial trajectory.
+Retained ORB features increased from **7,717 to 74,861**, with different accumulated
+map coverage; this does not isolate the effect of the ellipsoid representation.
+Ellipsoid detection took **13.12 s** versus **3.32 s** for raw BEVs, excluding
+preparation. All three frontend replays completed at 0.5x without retries.
+The report includes corrected component maps, density/ORB examples and Rerun.
+Frozen PGO reproduced exactly without changing any of 1,614 watched input hashes;
+31 regression tests passed. Cleanup removed **2.83 GiB**, retaining approximately
+**45 MiB** of reports and evidence, including an **11 MiB** Rerun recording.
+
+The historical FAST-LIVO2 + MegaLoc + MapClosures + CBS runs connected all three robots on **Square 1, Square 2, Library 1,
 Campus Road 1 and Playground 2**, with combined position ATE RMSE of
 **1.2147 m, 0.5340 m, 1.4172 m, 1.4707 m and 0.2941 m**, respectively.
 Laboratory 1 achieved partial connectivity and has
@@ -20,6 +114,21 @@ historical table below remains unchanged. A separate
 and produced 1.2181 m combined ATE; PCM added 65,780 CDR bytes and took
 1.3–2.2 ms computation per robot. Its batch execution differs from the earlier
 incremental CBS run, so the ATE difference is not attributed to PCM.
+
+**Centralized registration-factor test:** The separate
+[mixed pose/GICP Square 1 graph](RESULTS-MIXED-PGO.md) adds 50 live
+gtsam_points factors to 1,598 pose factors. Native execution took 2.465 s on
+CPU. Combined evo ATE was effectively unchanged: 1.197976 m pose-only versus
+1.198012 m mixed. This first configuration establishes working integration,
+without evidence of an ATE improvement; it does not alter the CBS results below.
+
+**Distributed registration-factor test:** [PCM + CBS with live GICP](RESULTS-CBS-REGISTRATION.md)
+completed Square 1 in 24.8 s with all 50 added factors passing geometry checks.
+Combined evo ATE was **1.2045 m**; Alpha/Bob/Carol were
+**1.5148 / 0.9301 / 1.1308 m**, using one shared alignment. This is slightly
+lower than the earlier frozen PCM/CBS run's 1.2181 m; asynchronous scheduling
+and a changed relinearization policy prevent attributing that difference solely
+to GICP. Geometry transfer added 6.20 MiB. Historical rows remain unchanged.
 
 ## System and evaluation
 
@@ -311,3 +420,17 @@ three DDS synthetic cases. Native project branches are
 `dev/fast-livo2-s3e-dpgo`, with CBS at `11d84af` and cbs_ros at `86e3e35`.
 Full hashes, configurations, timing and validation details are linked from
 each sequence report.
+
+## Swarm-SLAM comparison on workstation 148
+
+The separate [Swarm-SLAM results](RESULTS-SWARM-SLAM.md#workstation-148) use
+saved EllipseLIO inputs and three native Swarm robot instances, followed by evo.
+This multistage benchmark was explicitly retained by the user; it is not an
+untouched official online launch. The final remote checks passed 32 tests and the
+three-robot integration fixture passed exact input and geometry checks.
+The linked report tracks completed sequence ATEs, raw odometry ATEs, loop
+diagnostics, figures, and cleanup records independently of the CBS results above.
+
+## Ellipsoid MapClosures + PCM/CBS overnight queue on 148
+
+[Completed overnight results and failure report](RESULTS-ELLIPSOID-CBS-148.md): the exact EllipseLIO → ellipsoid-projected BEVs → MapClosures → distributed PCM/CBS pipeline finished 17 attempts in 9 h 21 min on 2026-09-17. Four completed every stage; two additional runs have valid trajectory results despite reporting crashes. Shared three-robot ATEs are **1.1491 m** (Square 1), **0.5717 m** (Square 2, recovered), **2.0994 m** (Square 3, reproduced), **0.3234 m** (Playground 2) and **0.3271 m** (Playground 3). Laboratory 1 completed with two components and no usable trajectory GT. Eleven other attempts failed before a valid combined score: five frontends, four descriptor preparations and two CBS reference-frame failures. The linked report includes individual CBS/raw ATEs, PCM counts, figures and evidence. These results are separate from the earlier centralized ellipsoid-PGO experiments; the matched Swarm-SLAM comparison remains pending.

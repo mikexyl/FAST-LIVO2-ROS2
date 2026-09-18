@@ -1,0 +1,3 @@
+method,component,position_rmse_m,samples,status
+CBS DDS,Alpha,,0,unavailable: no usable timestamp-matched ground truth
+CBS DDS,Bob,,0,unavailable: no usable timestamp-matched ground truth

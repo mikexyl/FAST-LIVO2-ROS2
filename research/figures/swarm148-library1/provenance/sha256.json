@@ -1,0 +1,13 @@
+{
+  "alpha_gt.txt": "dd505af420503a93f4d367bfbbbf0cb60075e1169b73d7cc63f34eea873a9b71",
+  "Alpha/frames.jsonl": "399d7c6ab3b5f79b4d779c6de29aa7aee23c4241ded5d2e77a396ebd63d636ec",
+  "Alpha/manifest.json": "aaad01dc14ca51b802c47cd9b6d19df51725c5cb17d8a4224db100de988f500b",
+  "bob_gt.txt": "6f86b23795d6dffced0790aea339489acd88b84f7db84098cb3b5cd6292ba8a2",
+  "Bob/frames.jsonl": "e921b9d2fbee6047915205a412228e1f71b60b94b43064403566a807fad2160c",
+  "Bob/manifest.json": "05c487021675ff3daba63bee58d7def3b6daa6610686763a60601132a2788444",
+  "carol_gt.txt": "8fab8f66be68c3cca83372df850d3efe5e306a81ba66e59499f082c680777e0f",
+  "Carol/frames.jsonl": "ba7a3684d1877542b50f955e0a5e8f4df12ed324e5e5264083b1b4f90035a7e8",
+  "Carol/manifest.json": "7298902d9845ff15e401f2b6fdbcffab077c2f71c31afe70db61078dc352f621",
+  "evaluate.py": "4e27c56ed0c47290ca2d83561c1c73f96f244d2ec2c3135291e7a671ecea7d18",
+  "report.py": "4113f666d10914ff05a3652f9e2076d8ed133c55e70b7975e6e820132d3b96dd"
+}

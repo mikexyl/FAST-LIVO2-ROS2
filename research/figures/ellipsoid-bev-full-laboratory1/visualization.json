@@ -1,0 +1,237 @@
+{
+  "gt_available": false,
+  "components": {
+    "raw": {
+      "Alpha": [
+        "Alpha"
+      ],
+      "Bob": [
+        "Bob"
+      ],
+      "Carol": [
+        "Carol"
+      ]
+    },
+    "ellipsoid": {
+      "Alpha": [
+        "Alpha",
+        "Bob",
+        "Carol"
+      ]
+    }
+  },
+  "coordinates": "Independent PGO component frames; no alignment between components or to GT",
+  "report": {
+    "branches": {
+      "ellipsoid": {
+        "components": {
+          "Alpha": "Alpha",
+          "Bob": "Alpha",
+          "Carol": "Alpha"
+        },
+        "constraints": 51,
+        "detection": {
+          "accepted": 51,
+          "filesystem_isolation": "Linux Landlock",
+          "latency_semantics": "unrestricted deterministic delivery; compute runtime reported separately",
+          "messages": 5349,
+          "network_bytes": 8606783,
+          "robots": [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ],
+          "verification_completed": 237,
+          "verification_execution": "bounded robot-owned processes; causal retrieval order; optimizer-only results",
+          "verification_queue_size": 2,
+          "verification_submitted": 237,
+          "verifier_max_rss_kib": {
+            "Alpha": 106956,
+            "Bob": 184148,
+            "Carol": 121340
+          },
+          "wall_runtime_s": 13.121068153999659,
+          "wire_codec": "zlib-compressed canonical JSON v1, including envelope",
+          "worker_max_rss_kib": {
+            "Alpha": 115220,
+            "Bob": 115380,
+            "Carol": 115540
+          }
+        },
+        "optimization_s": 0.17958936899958644,
+        "selected_inter_robot_loops": 14,
+        "selected_loops": 51,
+        "trajectory": {},
+        "verification_attempts": 237,
+        "verification_reasons": {
+          "accepted": 51,
+          "high_rmse": 1,
+          "initial_low_overlap": 51,
+          "insufficient_inliers": 1,
+          "low_overlap": 129,
+          "not_converged": 4
+        },
+        "verification_task_time_sum_s": 6.766065843050455
+      },
+      "raw": {
+        "components": {
+          "Alpha": "Alpha",
+          "Bob": "Bob",
+          "Carol": "Carol"
+        },
+        "constraints": 9,
+        "detection": {
+          "accepted": 9,
+          "filesystem_isolation": "Linux Landlock",
+          "latency_semantics": "unrestricted deterministic delivery; compute runtime reported separately",
+          "messages": 4851,
+          "network_bytes": 1558795,
+          "robots": [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ],
+          "verification_completed": 9,
+          "verification_execution": "bounded robot-owned processes; causal retrieval order; optimizer-only results",
+          "verification_queue_size": 2,
+          "verification_submitted": 9,
+          "verifier_max_rss_kib": {
+            "Alpha": 0,
+            "Bob": 82936,
+            "Carol": 70704
+          },
+          "wall_runtime_s": 3.322070624999469,
+          "wire_codec": "zlib-compressed canonical JSON v1, including envelope",
+          "worker_max_rss_kib": {
+            "Alpha": 80172,
+            "Bob": 80332,
+            "Carol": 80332
+          }
+        },
+        "optimization_s": 0.17617033299939067,
+        "selected_inter_robot_loops": 0,
+        "selected_loops": 6,
+        "trajectory": {},
+        "verification_attempts": 9,
+        "verification_reasons": {
+          "accepted": 9
+        },
+        "verification_task_time_sum_s": 0.2782717350000894
+      }
+    },
+    "comparison": "raw-cloud versus ellipsoid-surface BEVs; identical fresh odometry, keyframes, raw verification evidence and centralized GNC-TLS PGO",
+    "dataset": "/data/s3e/S3E_Laboratory_1",
+    "frontend": "ellipselio",
+    "frozen_preparation": {
+      "Alpha": "fbffe944b666f68f981c4ab3583870de97f81891a4033904b870b31e8e548aad",
+      "Bob": "37254acce9bd0bcc2792cd9d3b78fb34b458fc593459333af8154d775a794543",
+      "Carol": "8c55fa983c410a55910d908322fca0c76fafa9187c81ca34398cab448f2a3408"
+    },
+    "keyframes": {
+      "Alpha": 295,
+      "Bob": 223,
+      "Carol": 286
+    },
+    "odometry_frames": {
+      "Alpha": 2874,
+      "Bob": 2880,
+      "Carol": 2892
+    },
+    "odometry_runtime_s": 1778.6188629259996,
+    "preparation": {
+      "Alpha": {
+        "ellipsoid_descriptor_s": 4.574804116999985,
+        "ellipsoid_orb_total": 10382,
+        "ground_truth_used": false,
+        "input_hashes": {
+          "config": "bda3014b6a8c57a1c1a021af014e708780f1dbd213192dfd073263192131b6ec",
+          "export": "39d38b42e2e9657cf2904dbd0298147079160c4ab9ff7cb308e4add37c828c62",
+          "schedule": "86f12662ebb7e36dcc6c9c8c018814558662fc4e00ee7889e1338a9121dfb922"
+        },
+        "keyframes": 295,
+        "merged_schedule_snapshots": 0,
+        "odometry_frames": 2874,
+        "preparation_s": 115.27454599599969,
+        "raw_descriptor_s": 0.3545799449957485,
+        "raw_orb_total": 1266,
+        "robot": "Alpha",
+        "sampling_s": 38.23368050899444,
+        "scheduled": 295
+      },
+      "Bob": {
+        "ellipsoid_descriptor_s": 8.920302729997275,
+        "ellipsoid_orb_total": 47053,
+        "ground_truth_used": false,
+        "input_hashes": {
+          "config": "bda3014b6a8c57a1c1a021af014e708780f1dbd213192dfd073263192131b6ec",
+          "export": "aae3d5b2b049cee064ef394a45ce8668a43886d79814f739938c786281c031c5",
+          "schedule": "86f12662ebb7e36dcc6c9c8c018814558662fc4e00ee7889e1338a9121dfb922"
+        },
+        "keyframes": 223,
+        "merged_schedule_snapshots": 0,
+        "odometry_frames": 2880,
+        "preparation_s": 131.54927825400046,
+        "raw_descriptor_s": 0.4869622529968183,
+        "raw_orb_total": 5646,
+        "robot": "Bob",
+        "sampling_s": 28.890203095981633,
+        "scheduled": 223
+      },
+      "Carol": {
+        "ellipsoid_descriptor_s": 3.437977261006381,
+        "ellipsoid_orb_total": 17426,
+        "ground_truth_used": false,
+        "input_hashes": {
+          "config": "bda3014b6a8c57a1c1a021af014e708780f1dbd213192dfd073263192131b6ec",
+          "export": "9d4f853c8f057c683d8a22c4827a6ed4d5ea9e0b7dd1ea1afac94aa53fc5a562",
+          "schedule": "86f12662ebb7e36dcc6c9c8c018814558662fc4e00ee7889e1338a9121dfb922"
+        },
+        "keyframes": 286,
+        "merged_schedule_snapshots": 0,
+        "odometry_frames": 2892,
+        "preparation_s": 83.52826103799998,
+        "raw_descriptor_s": 0.2608943519862805,
+        "raw_orb_total": 805,
+        "robot": "Carol",
+        "sampling_s": 16.01017036298981,
+        "scheduled": 286
+      }
+    },
+    "raw_odometry": {},
+    "schedule_provenance": {
+      "ground_truth_used": false,
+      "note": "Frozen from prior raw odometry; both BEV branches use identical fresh EllipseLIO exports at these times.",
+      "selection": {
+        "max_interval_s": 2.0,
+        "rotation_deg": 10.0,
+        "submap_s": 5.0,
+        "translation_m": 1.0,
+        "voxel_m": 0.25
+      },
+      "source_frontend": "FAST-LIVO2",
+      "sources": {
+        "Alpha": {
+          "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/ellipse-laboratory1-schedule-input/Alpha/raw.tum",
+          "sha256": "07f0b3e8a275ed77c5de3da33fa5d392790719e327e20e2c83e357d47eb80bab"
+        },
+        "Bob": {
+          "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/ellipse-laboratory1-schedule-input/Bob/raw.tum",
+          "sha256": "afb239003aa593d8480c555313b6f23ab223eabbcb798507013319a740dbeec5"
+        },
+        "Carol": {
+          "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/ellipse-laboratory1-schedule-input/Carol/raw.tum",
+          "sha256": "8f2996ac146fee9f5c47fd5e3f4dacbe2815536cbe6ea6bea28c318941d77042"
+        }
+      }
+    },
+    "schema_version": 1,
+    "solver": {
+      "alignment_min_support": 2,
+      "alignment_rotation_deg": 15.0,
+      "alignment_translation_m": 2.0,
+      "gnc_probability": 0.99,
+      "odometry_rotation_sigma_deg": 1.0,
+      "odometry_translation_sigma_m": 0.15
+    }
+  }
+}

@@ -1,0 +1,111 @@
+rosbag2_bagfile_information:
+  compression_format: ''
+  compression_mode: ''
+  custom_data: {}
+  duration:
+    nanoseconds: 255197090340
+  files:
+  - duration:
+      nanoseconds: 255197090340
+    message_count: 97199
+    path: S3E_Square_2.db3
+    starting_time:
+      nanoseconds_since_epoch: 1661153734519000000
+  message_count: 97199
+  relative_file_paths:
+  - S3E_Square_2.db3
+  starting_time:
+    nanoseconds_since_epoch: 1661153734519000000
+  storage_identifier: sqlite3
+  topics_with_message_count:
+  - message_count: 251
+    topic_metadata:
+      name: /Bob/fix
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/NavSatFix
+  - message_count: 25025
+    topic_metadata:
+      name: /Bob/imu/data
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/Imu
+  - message_count: 2490
+    topic_metadata:
+      name: /Bob/right_camera/compressed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/CompressedImage
+  - message_count: 2490
+    topic_metadata:
+      name: /Bob/left_camera/compressed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/CompressedImage
+  - message_count: 2483
+    topic_metadata:
+      name: /Bob/velodyne_points
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/PointCloud2
+  - message_count: 2397
+    topic_metadata:
+      name: /Alpha/right_camera/compressed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/CompressedImage
+  - message_count: 2397
+    topic_metadata:
+      name: /Alpha/left_camera/compressed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/CompressedImage
+  - message_count: 2388
+    topic_metadata:
+      name: /Alpha/velodyne_points
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/PointCloud2
+  - message_count: 239
+    topic_metadata:
+      name: /Alpha/fix
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/NavSatFix
+  - message_count: 23771
+    topic_metadata:
+      name: /Alpha/imu/data
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/Imu
+  - message_count: 25396
+    topic_metadata:
+      name: /Carol/imu/data
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/Imu
+  - message_count: 2540
+    topic_metadata:
+      name: /Carol/velodyne_points
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/PointCloud2
+  - message_count: 2539
+    topic_metadata:
+      name: /Carol/left_camera/compressed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/CompressedImage
+  - message_count: 2539
+    topic_metadata:
+      name: /Carol/right_camera/compressed
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/CompressedImage
+  - message_count: 254
+    topic_metadata:
+      name: /Carol/fix
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: sensor_msgs/msg/NavSatFix
+  version: 6

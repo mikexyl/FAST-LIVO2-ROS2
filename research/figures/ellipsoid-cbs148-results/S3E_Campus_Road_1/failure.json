@@ -1,0 +1,10 @@
+{
+  "error": "RuntimeError('Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_1.log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py\", line 292, in queue\n    call([PYTHON,__file__,'--sequence',dataset,'--work',work,'--duration',args.duration],base/f'{name}.log',limit)\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py\", line 63, in call\n    if code:raise RuntimeError(f'Command exited {code}; see {log}')\nRuntimeError: Command exited 1; see /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_1.log\n",
+  "progress": {
+    "stage": "odometry",
+    "robot": "Alpha",
+    "updated_utc": "2026-09-17T01:01:58Z"
+  },
+  "utc": "2026-09-17T01:14:00Z"
+}

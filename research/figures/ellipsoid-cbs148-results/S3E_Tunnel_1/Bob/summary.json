@@ -1,0 +1,30 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Bob",
+  "bag": "/data/s3e/S3Ev2/S3E_Tunnel_1",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 0.0,
+  "odometry_messages": 36704,
+  "finite": true,
+  "path_length_m": 544.1237368031469,
+  "max_pose_step_m": 0.16125987223255195,
+  "first_pose_stamp_ns": 1689766161991904020,
+  "last_pose_stamp_ns": 1689766585335206985,
+  "exported_frames": 4205,
+  "export_complete": true,
+  "synchronized_export": {
+    "first_stamp_ns": 1689766161991904020,
+    "last_stamp_ns": 1689766585285212039,
+    "span_s": 423.293308019,
+    "max_gap_s": 0.213669539,
+    "gaps_over_200ms": 19,
+    "lidar_updates": 4204,
+    "min_cloud_points": 17157,
+    "max_cloud_points": 54619,
+    "image_frames": 0
+  },
+  "success": true,
+  "error": null,
+  "wall_s": 429.9215354670305
+}

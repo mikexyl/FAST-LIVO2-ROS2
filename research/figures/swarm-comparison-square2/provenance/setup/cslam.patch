@@ -1,0 +1,274 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 19400ae..262b90b 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,6 +1,37 @@
+ cmake_minimum_required(VERSION 3.5)
+ project(cslam)
+ 
++# Build the upstream Python LiDAR frontend and C++ decentralized backend
++# without pulling in the unrelated RTAB-Map visual frontend implementation.
++option(CSLAM_LIDAR_ONLY "Build LiDAR frontend and decentralized PGO only" OFF)
++if(CSLAM_LIDAR_ONLY)
++  set(CMAKE_CXX_STANDARD 17)
++  find_package(ament_cmake REQUIRED)
++  find_package(ament_cmake_python REQUIRED)
++  find_package(GTSAM CONFIG REQUIRED)
++  set(lidar_dependencies rclcpp sensor_msgs nav_msgs geometry_msgs std_msgs
++      diagnostic_msgs tf2_ros cslam_common_interfaces)
++  foreach(dependency IN LISTS lidar_dependencies)
++    find_package(${dependency} REQUIRED)
++  endforeach()
++  if("$ENV{ROS_DISTRO}" STRLESS "iron")
++    add_definitions(-DPRE_ROS_IRON)
++  endif()
++  add_executable(pose_graph_manager
++    src/back_end/decentralized_pgo.cpp src/back_end/pose_graph_manager_node.cpp
++    src/back_end/utils/logger.cpp src/back_end/gtsam_utils.cpp
++    src/back_end/utils/simulated_rendezvous.cpp)
++  target_include_directories(pose_graph_manager PRIVATE include)
++  ament_target_dependencies(pose_graph_manager ${lidar_dependencies})
++  target_link_libraries(pose_graph_manager gtsam)
++  install(TARGETS pose_graph_manager DESTINATION lib/${PROJECT_NAME})
++  ament_python_install_package(${PROJECT_NAME})
++  install(PROGRAMS cslam/loop_closure_detection_node.py cslam/lidar_handler_node.py
++    DESTINATION lib/${PROJECT_NAME})
++  ament_package()
++  return()
++endif()
++
+ # Default to C99
+ if(NOT CMAKE_C_STANDARD)
+   set(CMAKE_C_STANDARD 99)
+@@ -219,4 +250,4 @@ foreach(_test_path ${_cslam_python_tests})
+   )
+ endforeach()
+ 
+-ament_package()
+\ No newline at end of file
++ament_package()
+diff --git a/cslam/lidar_handler_node.py b/cslam/lidar_handler_node.py
+index ae42d44..02119bd 100755
+--- a/cslam/lidar_handler_node.py
++++ b/cslam/lidar_handler_node.py
+@@ -12,6 +12,7 @@ from rclpy.node import Node
+ from rclpy.clock import Clock
+ from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
+ from diagnostic_msgs.msg import KeyValue
++from std_msgs.msg import Int64
+ 
+ class LidarHandler: 
+     """Front-End data handler for lidar data
+@@ -31,6 +32,9 @@ class LidarHandler:
+         tss.registerCallback(self.lidar_callback)
+ 
+         self.keyframe_odom_publisher = self.node.create_publisher(KeyframeOdom, "cslam/keyframe_odom", 100)
++        # Optional observer acknowledgement for lossless offline replay. It
++        # does not enter keyframe selection, retrieval or optimization.
++        self.processed_stamp_publisher = self.node.create_publisher(Int64, "cslam/input_processed_stamp", 100)
+ 
+         self.keyframe_pointcloud_publisher = self.node.create_publisher(KeyframePointCloud, "cslam/keyframe_data", 100)
+ 
+@@ -201,6 +205,8 @@ class LidarHandler:
+                     viz_msg.pointcloud = msg_pointcloud.pointcloud
+                     self.viz_pointcloud_publisher.publish(viz_msg)
+                 self.nb_local_keyframes = self.nb_local_keyframes + 1
++            stamp = data[1].header.stamp
++            self.processed_stamp_publisher.publish(Int64(data=stamp.sec*10**9+stamp.nanosec))
+ 
+ if __name__ == '__main__':
+ 
+@@ -250,4 +256,4 @@ if __name__ == '__main__':
+     lidar_handler = LidarHandler(node, params)
+     node.get_logger().info('Initialization done.')
+     rclpy.spin(node)
+-    rclpy.shutdown()
+\ No newline at end of file
++    rclpy.shutdown()
+diff --git a/cslam/lidar_pr/icp_utils.py b/cslam/lidar_pr/icp_utils.py
+index 8ee7008..e2e57e4 100644
+--- a/cslam/lidar_pr/icp_utils.py
++++ b/cslam/lidar_pr/icp_utils.py
+@@ -178,7 +178,9 @@ def downsample_ros_pointcloud(pc_msg, voxel_size):
+ def compute_transform(src, dst, voxel_size, min_inliers):
+     """Computes a 3D transform between 2 point clouds using TEASER++.
+ 
+-    Be careful: TEASER++ computes the transform from dst to src.
++    TEASER++/Open3D align src points into dst coordinates. The ROS loop
++    endpoints are (src frame, dst frame), so a GTSAM BetweenFactor expects
++    the inverse: T_src_dst maps dst points into the src frame.
+ 
+     Args:
+         src (Open3D point cloud): pointcloud from
+@@ -192,5 +194,7 @@ def compute_transform(src, dst, voxel_size, min_inliers):
+     valid, translation, rotation = solve_teaser(src, dst, voxel_size,
+                                                 min_inliers)
+     success = valid
++    rotation = np.asarray(rotation).T
++    translation = -rotation @ np.asarray(translation)
+     transform = to_transform_msg(translation, rotation)
+     return transform, success
+diff --git a/src/back_end/decentralized_pgo.cpp b/src/back_end/decentralized_pgo.cpp
+index 0d2fe57..c222673 100644
+--- a/src/back_end/decentralized_pgo.cpp
++++ b/src/back_end/decentralized_pgo.cpp
+@@ -68,9 +68,9 @@ DecentralizedPGO::DecentralizedPGO(std::shared_ptr<rclcpp::Node> &node)
+       rotation_default_noise_std_, translation_default_noise_std_,
+       translation_default_noise_std_, translation_default_noise_std_;
+   default_noise_model_ = gtsam::noiseModel::Diagonal::Sigmas(sigmas);
+-  pose_graph_ = boost::make_shared<gtsam::NonlinearFactorGraph>();
+-  current_pose_estimates_ = boost::make_shared<gtsam::Values>();
+-  odometry_pose_estimates_ = boost::make_shared<gtsam::Values>();
++  pose_graph_ = std::make_shared<gtsam::NonlinearFactorGraph>();
++  current_pose_estimates_ = std::make_shared<gtsam::Values>();
++  odometry_pose_estimates_ = std::make_shared<gtsam::Values>();
+ 
+   // Optimization timers
+   optimization_timer_ = node_->create_wall_timer(
+@@ -377,7 +377,7 @@ cslam_common_interfaces::msg::PoseGraph DecentralizedPGO::fill_pose_graph_msg(co
+   cslam_common_interfaces::msg::PoseGraph out_msg;
+   out_msg.robot_id = robot_id_;
+   out_msg.values = gtsam_values_to_msg(odometry_pose_estimates_);
+-  auto graph = boost::make_shared<gtsam::NonlinearFactorGraph>();
++  auto graph = std::make_shared<gtsam::NonlinearFactorGraph>();
+   graph->push_back(pose_graph_->begin(), pose_graph_->end());
+ 
+   std::set<unsigned int> connected_robots;
+@@ -558,8 +558,8 @@ DecentralizedPGO::aggregate_pose_graphs()
+   // Check connectivity
+   auto is_pose_graph_connected = connected_robot_pose_graph();
+   // Aggregate graphs
+-  auto graph = boost::make_shared<gtsam::NonlinearFactorGraph>();
+-  auto estimates = boost::make_shared<gtsam::Values>();
++  auto graph = std::make_shared<gtsam::NonlinearFactorGraph>();
++  auto estimates = std::make_shared<gtsam::Values>();
+   // Local graph
+   graph->push_back(pose_graph_->begin(), pose_graph_->end());
+   estimates->insert(*odometry_pose_estimates_);
+@@ -611,7 +611,7 @@ DecentralizedPGO::aggregate_pose_graphs()
+     for (const auto &factor_ : *other_robots_graph_and_estimates_[id].first)
+     {
+       auto factor =
+-          boost::dynamic_pointer_cast<gtsam::BetweenFactor<gtsam::Pose3>>(
++          std::dynamic_pointer_cast<gtsam::BetweenFactor<gtsam::Pose3>>(
+               factor_);
+       unsigned int robot0_id =
+           ROBOT_ID(gtsam::LabeledSymbol(factor->key1()).label());
+@@ -672,9 +672,11 @@ void DecentralizedPGO::share_optimized_estimates(
+     cslam_common_interfaces::msg::OptimizationResult msg;
+     msg.success = true;
+     msg.origin_robot_id = origin_robot_id_;
+-    msg.estimates =
+-        gtsam_values_to_msg(estimates.filter(gtsam::LabeledSymbol::LabelTest(
+-            ROBOT_LABEL(included_robots_ids.robots.ids[i]))));
++    for (const auto &value : gtsam_values_to_msg(estimates)) {
++      if (value.key.robot_id == included_robots_ids.robots.ids[i]) {
++        msg.estimates.push_back(value);
++      }
++    }
+     optimized_estimates_publishers_[included_robots_ids.robots.ids[i]]->publish(
+         msg);
+   }
+@@ -701,7 +703,7 @@ void DecentralizedPGO::visualization_callback()
+     out_msg.robot_id = robot_id_;
+     out_msg.origin_robot_id = origin_robot_id_;
+     out_msg.values = gtsam_values_to_msg(current_pose_estimates_);
+-    auto graph = boost::make_shared<gtsam::NonlinearFactorGraph>();
++    auto graph = std::make_shared<gtsam::NonlinearFactorGraph>();
+     graph->push_back(pose_graph_->begin(), pose_graph_->end());
+ 
+     for (unsigned int i = 0; i < max_nb_robots_; i++)
+diff --git a/src/back_end/gtsam_utils.cpp b/src/back_end/gtsam_utils.cpp
+index c207f1e..14ac49b 100644
+--- a/src/back_end/gtsam_utils.cpp
++++ b/src/back_end/gtsam_utils.cpp
+@@ -7,11 +7,11 @@ geometry_msgs::msg::Pose gtsam_pose_to_msg(const gtsam::Pose3 &pose) {
+   msg.position.x = pose.x();
+   msg.position.y = pose.y();
+   msg.position.z = pose.z();
+-  auto rotation = pose.rotation().quaternion();
+-  msg.orientation.w = rotation[0];
+-  msg.orientation.x = rotation[1];
+-  msg.orientation.y = rotation[2];
+-  msg.orientation.z = rotation[3];
++  auto rotation = pose.rotation().toQuaternion();
++  msg.orientation.w = rotation.w();
++  msg.orientation.x = rotation.x();
++  msg.orientation.y = rotation.y();
++  msg.orientation.z = rotation.z();
+   return msg;
+ }
+ 
+@@ -22,11 +22,11 @@ gtsam_pose_to_transform_msg(const gtsam::Pose3 &pose) {
+   msg.translation.y = pose.y();
+   msg.translation.z = pose.z();
+ 
+-  auto rotation = pose.rotation().quaternion();
+-  msg.rotation.w = rotation[0];
+-  msg.rotation.x = rotation[1];
+-  msg.rotation.y = rotation[2];
+-  msg.rotation.z = rotation[3];
++  auto rotation = pose.rotation().toQuaternion();
++  msg.rotation.w = rotation.w();
++  msg.rotation.x = rotation.x();
++  msg.rotation.y = rotation.y();
++  msg.rotation.z = rotation.z();
+ 
+   return msg;
+ }
+@@ -60,7 +60,7 @@ gtsam_factors_to_msg(const gtsam::NonlinearFactorGraph &factors) {
+   std::vector<cslam_common_interfaces::msg::PoseGraphEdge> edges;
+   for (const auto &factor_ : factors) {
+     auto factor =
+-        boost::dynamic_pointer_cast<gtsam::BetweenFactor<gtsam::Pose3>>(
++        std::dynamic_pointer_cast<gtsam::BetweenFactor<gtsam::Pose3>>(
+             factor_);
+     if (factor) {
+       cslam_common_interfaces::msg::PoseGraphEdge edge_msg;
+@@ -76,7 +76,7 @@ gtsam_factors_to_msg(const gtsam::NonlinearFactorGraph &factors) {
+ 
+       gtsam::SharedNoiseModel model = factor->noiseModel();
+       auto noise =
+-          boost::dynamic_pointer_cast<gtsam::noiseModel::Diagonal>(model);
++          std::dynamic_pointer_cast<gtsam::noiseModel::Diagonal>(model);
+       auto sigmas = noise->sigmas();
+       for (unsigned int i = 0; i < 6; i++) {
+         edge_msg.noise_std[i] = sigmas[i];
+@@ -113,7 +113,7 @@ gtsam::Pose3 odometry_msg_to_pose3(const nav_msgs::msg::Odometry &odom_msg) {
+ 
+ gtsam::Values::shared_ptr values_msg_to_gtsam(
+     const std::vector<cslam_common_interfaces::msg::PoseGraphValue> &msg) {
+-  auto values = boost::make_shared<gtsam::Values>();
++  auto values = std::make_shared<gtsam::Values>();
+   for (auto v : msg) {
+     gtsam::Pose3 pose = pose_msg_to_gtsam(v.pose);
+     gtsam::LabeledSymbol symbol(GRAPH_LABEL, ROBOT_LABEL(v.key.robot_id),
+@@ -125,7 +125,7 @@ gtsam::Values::shared_ptr values_msg_to_gtsam(
+ 
+ gtsam::NonlinearFactorGraph::shared_ptr edges_msg_to_gtsam(
+     const std::vector<cslam_common_interfaces::msg::PoseGraphEdge> &msg) {
+-  auto graph = boost::make_shared<gtsam::NonlinearFactorGraph>();
++  auto graph = std::make_shared<gtsam::NonlinearFactorGraph>();
+   for (auto e : msg) {
+     gtsam::Pose3 pose = pose_msg_to_gtsam(e.measurement);
+     gtsam::LabeledSymbol symbol_from(
+@@ -145,4 +145,4 @@ gtsam::NonlinearFactorGraph::shared_ptr edges_msg_to_gtsam(
+   return graph;
+ }
+ 
+-} // namespace cslam
+\ No newline at end of file
++} // namespace cslam
+diff --git a/src/back_end/utils/logger.cpp b/src/back_end/utils/logger.cpp
+index c104025..7694457 100644
+--- a/src/back_end/utils/logger.cpp
++++ b/src/back_end/utils/logger.cpp
+@@ -229,7 +229,7 @@ namespace cslam
+                 for (const auto &factor_ : *graph)
+                 {
+                     auto factor =
+-                        boost::dynamic_pointer_cast<gtsam::BetweenFactor<gtsam::Pose3>>(
++                        std::dynamic_pointer_cast<gtsam::BetweenFactor<gtsam::Pose3>>(
+                             factor_);
+                     if (factor)
+                     {

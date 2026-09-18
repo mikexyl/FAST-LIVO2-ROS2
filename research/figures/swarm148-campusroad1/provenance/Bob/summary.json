@@ -1,0 +1,17 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Bob",
+  "bag": "/data/s3e/S3E_Campus_Road_1",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 0.0,
+  "odometry_messages": 41881,
+  "finite": true,
+  "path_length_m": 623.1029756913015,
+  "max_pose_step_m": 0.17720933594418803,
+  "first_pose_stamp_ns": 1660988159288708232,
+  "last_pose_stamp_ns": 1660988630640465965,
+  "success": false,
+  "error": "Interrupted",
+  "wall_s": 473.8676615420263
+}

@@ -1,0 +1,33 @@
+{
+  "frontend": "ellipselio",
+  "robot": "robot2",
+  "bag": "/data/graco-inputs/sensors/robot2",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 45.0,
+  "odometry_messages": 3967,
+  "finite": true,
+  "path_length_m": 61.10942513292668,
+  "max_pose_step_m": 0.16559987918366653,
+  "first_pose_stamp_ns": 1661303706304002047,
+  "last_pose_stamp_ns": 1661303750104064941,
+  "analytics_messages": 415,
+  "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+  "exported_frames": 415,
+  "export_complete": true,
+  "synchronized_export": {
+    "first_stamp_ns": 1661303706304002047,
+    "last_stamp_ns": 1661303750024065018,
+    "span_s": 43.720062971,
+    "max_gap_s": 0.120005131,
+    "gaps_over_200ms": 0,
+    "lidar_updates": 414,
+    "min_cloud_points": 18764,
+    "max_cloud_points": 24571,
+    "image_frames": 0
+  },
+  "native_mapper_returncode": 0,
+  "success": true,
+  "error": null,
+  "wall_s": 48.66570439102361
+}

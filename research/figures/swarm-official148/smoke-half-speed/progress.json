@@ -1,0 +1,49 @@
+{
+  "phase": "incomplete_optimized_coverage",
+  "error": null,
+  "observed_clouds": {
+    "Alpha": 589,
+    "Bob": 575,
+    "Carol": 575
+  },
+  "valid_odometry": {
+    "Alpha": 584,
+    "Bob": 557,
+    "Carol": 574
+  },
+  "invalid_odometry": {
+    "Alpha": 1,
+    "Bob": 1,
+    "Carol": 1
+  },
+  "descriptors": {
+    "Alpha": 116,
+    "Bob": 67,
+    "Carol": 104
+  },
+  "coverage": {
+    "Alpha": {
+      "keyframes": 116,
+      "optimized": 116,
+      "complete": true
+    },
+    "Bob": {
+      "keyframes": 67,
+      "optimized": 0,
+      "complete": false
+    },
+    "Carol": {
+      "keyframes": 104,
+      "optimized": 0,
+      "complete": false
+    }
+  },
+  "states": {
+    "0": 0,
+    "1": 0,
+    "2": 0
+  },
+  "loop_attempts": 0,
+  "accepted_inter": 0,
+  "accepted_intra": 0
+}

@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "retired": [
+    {
+      "robot": "Alpha",
+      "path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/swarm148/smoke/frontend/Alpha/export/sensors.mcap",
+      "bytes": 159350902,
+      "sha256": "092eb485139d56cf3ff68493950230e7099ec549ada2c1d36f807a1bcce65aed"
+    }
+  ],
+  "total_bytes": 159350902,
+  "policy": "Only generated sensor MCAPs retired. Exact frame indices, available original manifests, interruption evidence, reports, and generated figures/recordings remain. Original S3E bags are untouched."
+}

@@ -1,0 +1,13 @@
+method,component,position_rmse_m,samples,status
+CBS DDS,robot1,0.06864212706809854,409,available
+CBS DDS,robot2,3.7203481296799317,415,available
+CBS DDS,robot3,7.588339493014531,416,available
+CBS DDS,robot4,0.05483223071683173,416,available
+CBS DDS,robot5,0.0457997756490961,417,available
+CBS DDS,robot6,0.040274806417738715,411,available
+Raw odometry (individual alignment),robot1,0.0686421270680371,409,available
+Raw odometry (individual alignment),robot2,3.7203481296797065,415,available
+Raw odometry (individual alignment),robot3,7.588339493014588,416,available
+Raw odometry (individual alignment),robot4,0.05483223071699476,416,available
+Raw odometry (individual alignment),robot5,0.04579977564912088,417,available
+Raw odometry (individual alignment),robot6,0.04027480641774259,411,available

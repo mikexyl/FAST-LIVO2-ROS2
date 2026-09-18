@@ -1,0 +1,19 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Alpha",
+  "bag": "/data/s3e/S3E_Square_1",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 30.0,
+  "odometry_messages": 2586,
+  "finite": true,
+  "path_length_m": 30.70048257907996,
+  "max_pose_step_m": 0.14149056110511285,
+  "first_pose_stamp_ns": 1661157277010103256,
+  "last_pose_stamp_ns": 1661157304609630499,
+  "exported_frames": 276,
+  "export_complete": true,
+  "success": true,
+  "error": null,
+  "wall_s": 33.79426373399838
+}

@@ -1,0 +1,216 @@
+[
+  {
+    "name": "imu-static-tf",
+    "argv": [
+      "ros2",
+      "run",
+      "tf2_ros",
+      "static_transform_publisher",
+      "-0.051",
+      "0.0195",
+      "-0.094",
+      "0",
+      "0",
+      "0",
+      "1",
+      "velodyne",
+      "imu_link"
+    ]
+  },
+  {
+    "name": "Alpha-icp",
+    "argv": [
+      "ros2",
+      "launch",
+      "/experiment/code/rtabmap_s3e_lidar_odometry.launch.py",
+      "namespace:=/r0",
+      "publish_tf_odom:=false",
+      "log_level:=info"
+    ]
+  },
+  {
+    "name": "Alpha-lidar_handler_node.py",
+    "argv": [
+      "/ros2_ws/install/cslam/lib/cslam/lidar_handler_node.py",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r0",
+      "-p",
+      "robot_id:=0",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "Alpha-loop_closure_detection_node.py",
+    "argv": [
+      "/ros2_ws/install/cslam/lib/cslam/loop_closure_detection_node.py",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r0",
+      "-p",
+      "robot_id:=0",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "Alpha-pose_graph_manager",
+    "argv": [
+      "/experiment/build/pose_graph_manager",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r0",
+      "-p",
+      "robot_id:=0",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "Bob-icp",
+    "argv": [
+      "ros2",
+      "launch",
+      "/experiment/code/rtabmap_s3e_lidar_odometry.launch.py",
+      "namespace:=/r1",
+      "publish_tf_odom:=false",
+      "log_level:=info"
+    ]
+  },
+  {
+    "name": "Bob-lidar_handler_node.py",
+    "argv": [
+      "/ros2_ws/install/cslam/lib/cslam/lidar_handler_node.py",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r1",
+      "-p",
+      "robot_id:=1",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "Bob-loop_closure_detection_node.py",
+    "argv": [
+      "/ros2_ws/install/cslam/lib/cslam/loop_closure_detection_node.py",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r1",
+      "-p",
+      "robot_id:=1",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "Bob-pose_graph_manager",
+    "argv": [
+      "/experiment/build/pose_graph_manager",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r1",
+      "-p",
+      "robot_id:=1",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "Carol-icp",
+    "argv": [
+      "ros2",
+      "launch",
+      "/experiment/code/rtabmap_s3e_lidar_odometry.launch.py",
+      "namespace:=/r2",
+      "publish_tf_odom:=false",
+      "log_level:=info"
+    ]
+  },
+  {
+    "name": "Carol-lidar_handler_node.py",
+    "argv": [
+      "/ros2_ws/install/cslam/lib/cslam/lidar_handler_node.py",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r2",
+      "-p",
+      "robot_id:=2",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "Carol-loop_closure_detection_node.py",
+    "argv": [
+      "/ros2_ws/install/cslam/lib/cslam/loop_closure_detection_node.py",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r2",
+      "-p",
+      "robot_id:=2",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "Carol-pose_graph_manager",
+    "argv": [
+      "/experiment/build/pose_graph_manager",
+      "--ros-args",
+      "--params-file",
+      "/experiment/code/lidar.yaml",
+      "-r",
+      "__ns:=/r2",
+      "-p",
+      "robot_id:=2",
+      "-p",
+      "max_nb_robots:=3"
+    ]
+  },
+  {
+    "name": "bag",
+    "argv": [
+      "ros2",
+      "bag",
+      "play",
+      "/data/s3e/v1/S3E_Square_1",
+      "--rate",
+      "0.5",
+      "--disable-keyboard-controls",
+      "--read-ahead-queue-size",
+      "2000",
+      "--topics",
+      "/Alpha/velodyne_points",
+      "/Alpha/imu/data",
+      "/Bob/velodyne_points",
+      "/Bob/imu/data",
+      "/Carol/velodyne_points",
+      "/Carol/imu/data",
+      "--remap",
+      "/Alpha/velodyne_points:=/r0/pointcloud",
+      "/Alpha/imu/data:=/r0/imu/data",
+      "/Bob/velodyne_points:=/r1/pointcloud",
+      "/Bob/imu/data:=/r1/imu/data",
+      "/Carol/velodyne_points:=/r2/pointcloud",
+      "/Carol/imu/data:=/r2/imu/data"
+    ]
+  }
+]

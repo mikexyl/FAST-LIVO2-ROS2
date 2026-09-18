@@ -1,0 +1,6 @@
+{
+  "mapping_identical": true,
+  "mapping_sha256": "d3e3f1b5d23adb751dd3238fffb3f33c56e7e3daf83440f4ae28ed298f11798a",
+  "first_invalid_s": 25.611393881,
+  "scope": "Same input prefix and mapping configuration; not a deterministic reproduction or established root cause"
+}

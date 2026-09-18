@@ -1,0 +1,26 @@
+{
+  "Alpha": {
+    "new_frames": 406,
+    "matched": 406,
+    "max_position_delta_m": 0.13017876097464284,
+    "max_rotation_delta_deg": 0.5578399655868389,
+    "snapshots": 4,
+    "maximum_snapshot_delay_ns": 0
+  },
+  "Bob": {
+    "new_frames": 380,
+    "matched": 380,
+    "max_position_delta_m": 0.15704493978432676,
+    "max_rotation_delta_deg": 1.119839476542612,
+    "snapshots": 5,
+    "maximum_snapshot_delay_ns": 0
+  },
+  "Carol": {
+    "new_frames": 397,
+    "matched": 397,
+    "max_position_delta_m": 0.11088625545286934,
+    "max_rotation_delta_deg": 0.447367024500463,
+    "snapshots": 4,
+    "maximum_snapshot_delay_ns": 0
+  }
+}

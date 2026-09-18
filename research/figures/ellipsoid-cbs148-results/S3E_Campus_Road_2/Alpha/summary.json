@@ -1,0 +1,30 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Alpha",
+  "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 0.0,
+  "odometry_messages": 134955,
+  "finite": true,
+  "path_length_m": 10265.030110629912,
+  "max_pose_step_m": 14.320140103362107,
+  "first_pose_stamp_ns": 1689769591844183444,
+  "last_pose_stamp_ns": 1689771171586935997,
+  "exported_frames": 15704,
+  "export_complete": true,
+  "synchronized_export": {
+    "first_stamp_ns": 1689769591844183444,
+    "last_stamp_ns": 1689771171535320997,
+    "span_s": 1579.691137553,
+    "max_gap_s": 0.215921164,
+    "gaps_over_200ms": 59,
+    "lidar_updates": 15703,
+    "min_cloud_points": 16967,
+    "max_cloud_points": 50044,
+    "image_frames": 0
+  },
+  "success": true,
+  "error": null,
+  "wall_s": 1589.0467159749824
+}

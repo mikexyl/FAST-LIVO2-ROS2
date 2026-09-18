@@ -1,0 +1,50 @@
+{
+  "image": "sha256:cb89f7676e64520d3c6acfb37be9006b1b1dd52019d928b09f8ed7315ceb3ecc",
+  "container": "/ellipsoid-cbs148-overnight",
+  "created": "2026-09-16T15:52:56.182545813Z",
+  "restart_policy": {
+    "Name": "unless-stopped",
+    "MaximumRetryCount": 0
+  },
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/usr/local/cuda-12.9",
+      "Destination": "/usr/local/cuda",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src",
+      "Destination": "/workspace",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/mnt/data/s3e",
+      "Destination": "/data/s3e",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "memory": 51539607552,
+  "nano_cpus": 16000000000,
+  "device_requests": [
+    {
+      "Driver": "",
+      "Count": -1,
+      "DeviceIDs": null,
+      "Capabilities": [
+        [
+          "gpu"
+        ]
+      ],
+      "Options": {}
+    }
+  ]
+}

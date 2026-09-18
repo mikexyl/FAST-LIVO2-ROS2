@@ -1,0 +1,77 @@
+{
+  "first_pose_ns": 1660988160955680734,
+  "last_pose_ns": 1660988873662210534,
+  "scan_pose_path_length_m": 37410.85124224242,
+  "max_scan_pose_step_m": 102.70491042665964,
+  "max_scan_speed_m_s": 1027.6186105005356,
+  "first_speed_over_3m_s": {
+    "bag_elapsed_s": 359.79281503,
+    "stamp_ns": 1660988517158815030,
+    "speed": 3.2651164149638334,
+    "position": [
+      35.053193786024835,
+      72.74043417372286,
+      1.6672339239455147
+    ]
+  },
+  "first_speed_over_5m_s": {
+    "bag_elapsed_s": 637.096708827,
+    "stamp_ns": 1660988794462708827,
+    "speed": 5.515531476489744,
+    "position": [
+      -35.233134891763804,
+      10.339320898938986,
+      -0.3105467257004132
+    ]
+  },
+  "first_speed_over_10m_s": {
+    "bag_elapsed_s": 640.39778727,
+    "stamp_ns": 1660988797763787270,
+    "speed": 11.097199810538715,
+    "position": [
+      -40.74095151548309,
+      14.997181829350994,
+      -0.1544297787145315
+    ]
+  },
+  "first_speed_over_20m_s": {
+    "bag_elapsed_s": 641.596032343,
+    "stamp_ns": 1660988798962032343,
+    "speed": 21.30296284241832,
+    "position": [
+      -36.21245716801723,
+      30.911538090677883,
+      0.433442382843862
+    ]
+  },
+  "first_speed_over_100m_s": {
+    "bag_elapsed_s": 645.196640686,
+    "stamp_ns": 1660988802562640686,
+    "speed": 100.97649275043024,
+    "position": [
+      131.4858293092435,
+      203.45194712517463,
+      8.224373475066786
+    ]
+  },
+  "topics": [
+    {
+      "message_count": 7155,
+      "topic_metadata": {
+        "name": "/Alpha/velodyne_points",
+        "offered_qos_profiles": "",
+        "serialization_format": "cdr",
+        "type": "sensor_msgs/msg/PointCloud2"
+      }
+    },
+    {
+      "message_count": 71401,
+      "topic_metadata": {
+        "name": "/Alpha/imu/data",
+        "offered_qos_profiles": "",
+        "serialization_format": "cdr",
+        "type": "sensor_msgs/msg/Imu"
+      }
+    }
+  ]
+}

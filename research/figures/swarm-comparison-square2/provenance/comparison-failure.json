@@ -1,0 +1,14 @@
+{
+  "delta_file": "ellipsoids/000132.npz",
+  "error": "ValueError: Ellipsoid axes are not orthonormal",
+  "export_modified": false,
+  "frame_id": 977,
+  "invalid_count": 1,
+  "map_ids": [
+    164938
+  ],
+  "max_orthogonality_error": 2.6304970830448582e-05,
+  "reason": "Square 2 Alpha hit the ellipsoid renderer\u2019s numerical validation guard: one native basis had orthogonality error 2.6305e-5 against the 2e-5 tolerance. The joint preparation aborted before either BEV branch was solved. This is a preprocessing failure, not evidence of failed odometry or failed raw MapClosures.",
+  "robot": "Alpha",
+  "stamp_ns": 1661153835426597576
+}

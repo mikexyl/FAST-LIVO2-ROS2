@@ -1,0 +1,56 @@
+{
+  "Swarm-SLAM": {
+    "commit": "af17c4b71432f750571ea699a0beccfbe9004872",
+    "branch": "dev/s3e-lidar-comparison",
+    "status": "?? s3e/\n",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "Swarm-SLAM/src/cslam": {
+    "commit": "fccf88765167431d293a1245c19411fd874f937d",
+    "branch": "dev/s3e-lidar-comparison",
+    "status": " M CMakeLists.txt\n M cslam/lidar_handler_node.py\n M cslam/lidar_pr/icp_utils.py\n M src/back_end/decentralized_pgo.cpp\n M src/back_end/gtsam_utils.cpp\n M src/back_end/utils/logger.cpp\n",
+    "patch_sha256": "20ec51b56c930597b5a3c5fcb3bd72584aa1a87765be5a4f47cb79ee926da042"
+  },
+  "Swarm-SLAM/src/cslam_interfaces": {
+    "commit": "0e6bb91411796db593c8ce680f382a1f242ab7d9",
+    "branch": "main",
+    "status": "",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "Swarm-SLAM/src/cslam_experiments": {
+    "commit": "0b5fc6c9354f75ed99971aa6c6e04b6a91141689",
+    "branch": "main",
+    "status": "",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "Swarm-SLAM/src/rtabmap_ros": {
+    "commit": "c25a091c2a682f0e0f4e8d19d807953e7f1a8161",
+    "branch": "humble-devel",
+    "status": "",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "ellipselio": {
+    "commit": "171acea502f1122e3043a460d2e6e3a30d8f8246",
+    "branch": "dev/s3e-mapclosures-cbs",
+    "status": " M CMakeLists.txt\n M include/imu_processing.h\n M include/lidar_processing.h\n M include/map_processing.h\n M src/imu_processing.cpp\n M src/lidar_processing.cpp\n M src/map_processing.cpp\n?? README_S3E.md\n?? src/research_frame.cpp\n",
+    "patch_sha256": "b267b0324144a8e9d456420edbae0d24b6aca8a6dfdaa212e2ba545f4fe38e21"
+  },
+  "FAST-LIVO2-ROS2": {
+    "commit": "4af5553a2531891f801f04bf0ce838161eb34696",
+    "branch": "dev/fast-livo2-s3e-dpgo",
+    "status": " M research/DPGO.md\n M research/README.md\n M research/RESULTS-SUMMARY.md\n M research/s3e_pipeline/backends.py\n M research/s3e_pipeline/cli.py\n M research/s3e_pipeline/data.py\n M research/s3e_pipeline/dpgo.py\n M research/s3e_pipeline/dpgo_evaluation.py\n M research/s3e_pipeline/dpgo_visualize.py\n M research/s3e_pipeline/evaluation.py\n M research/s3e_pipeline/evo_evaluation.py\n M research/s3e_pipeline/mapclosures.py\n M research/s3e_pipeline/mcap_writer.py\n M research/s3e_pipeline/ros_dpgo_worker.py\n M research/s3e_pipeline/visualize.py\n M research/tests/test_cbs_integration.py\n M research/tests/test_export.py\n M research/tests/test_mapclosures.py\n M scripts/build_dpgo.sh\n?? research/ELLIPSELIO.md\n?? research/MIXED-PGO.md\n?? research/RESULTS-CBS-REGISTRATION.md\n?? research/RESULTS-ELLIPSELIO-CBS.md\n?? research/RESULTS-ELLIPSOID-BEV.md\n?? research/RESULTS-MIXED-PGO.md\n?? research/RESULTS-SWARM-SLAM.md\n?? research/adapters/ellipsoid_cuda/\n?? research/adapters/gtsam_points/\n?? research/configs/square1-cbs-registration.yaml\n?? research/configs/square1-ellipselio-mapclosures-cbs.yaml\n?? research/configs/square1-mixed-pgo.yaml\n?? research/figures/cbs-registration-square1/\n?? research/figures/ellipselio-square1/\n?? research/figures/ellipsoid-bev-full-laboratory1/\n?? research/figures/ellipsoid-bev-full-square1/\n?? research/figures/ellipsoid-bev-full-square2/\n?? research/figures/ellipsoid-bev-square1/\n?? research/figures/mixed-pgo-square1/\n?? research/figures/swarm-comparison-laboratory1/\n?? research/figures/swarm-comparison-square1/\n?? research/figures/swarm-comparison-square2/\n?? research/s3e_pipeline/cbs_registration_maps.py\n?? research/s3e_pipeline/cbs_registration_report.py\n?? research/s3e_pipeline/ellipselio_report.py\n?? research/s3e_pipeline/ellipsoid_bev.py\n?? research/s3e_pipeline/ellipsoid_bev_report.py\n?? research/s3e_pipeline/ellipsoid_cuda.py\n?? research/s3e_pipeline/ellipsoid_delta_writer.py\n?? research/s3e_pipeline/ellipsoid_full.py\n?? research/s3e_pipeline/ellipsoid_full_archive.py\n?? research/s3e_pipeline/ellipsoid_full_maps.py\n?? research/s3e_pipeline/ellipsoid_full_report.py\n?? research/s3e_pipeline/ellipsoid_unreferenced_report.py\n?? research/s3e_pipeline/frontends.py\n?? research/s3e_pipeline/mixed_pgo.py\n?? research/s3e_pipeline/mixed_pgo_report.py\n?? research/s3e_pipeline/registration_exchange.py\n?? research/tests/benchmark_ellipsoid_cuda.py\n?? research/tests/test_ellipselio.py\n?? research/tests/test_ellipsoid_bev.py\n?? research/tests/test_ellipsoid_delta.py\n?? research/tests/test_ellipsoid_unreferenced_report.py\n?? research/tests/test_mixed_pgo.py\n?? research/tests/test_registration_exchange.py\n?? scripts/build_ellipselio.sh\n?? scripts/build_ellipsoid_cuda.sh\n?? scripts/build_mixed_pgo.sh\n?? scripts/finish_ellipsoid_full.sh\n?? scripts/prepare_ellipsoid_sequence.py\n?? scripts/run_ellipselio.py\n?? scripts/run_ellipselio.sh\n?? scripts/run_ellipsoid_full_preparation.sh\n",
+    "patch_sha256": "b2372d475deb5eb331d155ff6585f416d578230f422c4090477ed851f2645ce6"
+  },
+  "/home/mikexyl/workspaces/sb_slam_ros2_ws/src/gtsam": {
+    "commit": "0c2049c0352e5b24a7a19f29610cf6c580e38ef8",
+    "branch": "feature/sim3_bernoulli_jac",
+    "status": "",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "/home/mikexyl/workspaces/sb_slam_ros2_ws/src/TEASER-plusplus": {
+    "commit": "52a9c52ee7d4c838c5e8a75458c33178be5bfb70",
+    "branch": "master",
+    "status": "",
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

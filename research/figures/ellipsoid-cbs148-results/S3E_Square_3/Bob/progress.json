@@ -1,0 +1,1 @@
+{"frontend": "ellipselio", "robot": "Bob", "bag": "/data/s3e/S3Ev2/S3E_Square_3", "rate": 1.0, "start_offset_s": 0.0, "requested_duration": 0.0, "odometry_messages": 33313, "finite": true, "path_length_m": 585.6714872590704, "max_pose_step_m": 0.12407969227043217, "first_pose_stamp_ns": 1689768896475702762, "last_pose_stamp_ns": 1689769299879806518, "elapsed_bag_s": 420.01669602}

@@ -1,0 +1,41 @@
+{
+  "Alpha": {
+    "frames": 4542,
+    "lidar_updates": 4541,
+    "snapshots": 543,
+    "scheduled": 543,
+    "complete": true,
+    "max_stamp_gap_s": 0.20389223,
+    "max_uncovered_interval_ns": 4141818,
+    "max_snapshot_delay_ns": 190053682,
+    "maximum_ellipsoids": 241914,
+    "delta_entries": 1704210,
+    "full_snapshot_entries": 90069479
+  },
+  "Bob": {
+    "frames": 4522,
+    "lidar_updates": 4521,
+    "snapshots": 483,
+    "scheduled": 483,
+    "complete": true,
+    "max_stamp_gap_s": 0.210295894,
+    "max_uncovered_interval_ns": 3362046,
+    "max_snapshot_delay_ns": 90461396,
+    "maximum_ellipsoids": 486939,
+    "delta_entries": 2522811,
+    "full_snapshot_entries": 157566868
+  },
+  "Carol": {
+    "frames": 4569,
+    "lidar_updates": 4568,
+    "snapshots": 522,
+    "scheduled": 522,
+    "complete": true,
+    "max_stamp_gap_s": 0.199703251,
+    "max_uncovered_interval_ns": 1871870,
+    "max_snapshot_delay_ns": 90662549,
+    "maximum_ellipsoids": 309439,
+    "delta_entries": 2168969,
+    "full_snapshot_entries": 113804810
+  }
+}

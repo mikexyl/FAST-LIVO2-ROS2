@@ -1,0 +1,54 @@
+{
+  "pid": 265,
+  "robots": [
+    "robot1",
+    "robot2",
+    "robot3",
+    "robot4",
+    "robot5",
+    "robot6"
+  ],
+  "expected_components": 1,
+  "started_utc": "2026-09-17T12:25:36Z",
+  "attempts": [
+    {
+      "label": "smoke",
+      "work": "/workspace/.ros2/graco/runs/ground-01-06-smoke-20260917",
+      "command": [
+        "/workspace/.ros2/research-venv/bin/python",
+        "/workspace/FAST-LIVO2-ROS2/scripts/run_graco.py",
+        "--stage",
+        "run",
+        "--inputs",
+        "/data/graco-inputs",
+        "--work",
+        "/workspace/.ros2/graco/runs/ground-01-06-smoke-20260917",
+        "--duration",
+        "45"
+      ],
+      "status": "complete"
+    },
+    {
+      "label": "full",
+      "work": "/workspace/.ros2/graco/runs/ground-01-06-full-20260917",
+      "command": [
+        "/workspace/.ros2/research-venv/bin/python",
+        "/workspace/FAST-LIVO2-ROS2/scripts/run_graco.py",
+        "--stage",
+        "run",
+        "--inputs",
+        "/data/graco-inputs",
+        "--work",
+        "/workspace/.ros2/graco/runs/ground-01-06-full-20260917",
+        "--duration",
+        "0"
+      ]
+    }
+  ],
+  "phase": "failed",
+  "updated_utc": "2026-09-17T12:40:27Z",
+  "work": "/workspace/.ros2/graco/runs/ground-01-06-full-20260917",
+  "subprocess_pid": 1316,
+  "error": "full exited 1; see /workspace/.ros2/graco/runs/ground-01-06-full-20260917/failure.json",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/graco148/controller.py\", line 69, in main\n    if proc.returncode: raise RuntimeError(f'{label} exited {proc.returncode}; see {work}/failure.json')\nRuntimeError: full exited 1; see /workspace/.ros2/graco/runs/ground-01-06-full-20260917/failure.json\n"
+}

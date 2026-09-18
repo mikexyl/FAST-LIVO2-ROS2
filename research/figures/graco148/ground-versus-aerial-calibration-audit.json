@@ -1,0 +1,132 @@
+{
+  "scope": "Audit of archived configurations; no parameters or original run artifacts changed",
+  "preset": "ellipselio/config/vlp16_graco.yaml",
+  "preset_translation_matches_aerial": true,
+  "preset_rotation_max_error_vs_aerial": 1.0144569727657538e-07,
+  "preset_noise_matches_aerial": true,
+  "ground_T_imu_lidar": [
+    [
+      0.99991642,
+      0.01018984,
+      0.00795779,
+      -0.01192777
+    ],
+    [
+      -0.01025064,
+      0.99991829,
+      0.0076374,
+      -0.01973063
+    ],
+    [
+      -0.00787932,
+      -0.00771833,
+      0.99993917,
+      0.12260907
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "ground_noise": {
+    "acc_noise": 0.010028108,
+    "gyr_noise": 0.00083723892,
+    "acc_bias": 0.00055367077,
+    "gyr_bias": 1.5212086e-05
+  },
+  "runs": {
+    "full/robot1": {
+      "translation_matches_ground": true,
+      "rotation_matches_ground": true,
+      "imu_noise_matches_ground": true,
+      "imu_rate_hz": 125,
+      "lidar_rate_hz": 10,
+      "map_resolution_m": 0.1,
+      "range_filter_m": [
+        2.0,
+        100.0
+      ],
+      "runtime_sha256": "9e5915a4c48c7d3508cbe2891787be8297077ab98dc8d7e4c9ea61a9c1d859b3"
+    },
+    "smoke/robot1": {
+      "translation_matches_ground": true,
+      "rotation_matches_ground": true,
+      "imu_noise_matches_ground": true,
+      "imu_rate_hz": 125,
+      "lidar_rate_hz": 10,
+      "map_resolution_m": 0.1,
+      "range_filter_m": [
+        2.0,
+        100.0
+      ],
+      "runtime_sha256": "ddc15cc752d9ed5ecd980c08f8f8bce3ee34a143df759ad95dbf87ca2570d8d1"
+    },
+    "smoke/robot2": {
+      "translation_matches_ground": true,
+      "rotation_matches_ground": true,
+      "imu_noise_matches_ground": true,
+      "imu_rate_hz": 125,
+      "lidar_rate_hz": 10,
+      "map_resolution_m": 0.1,
+      "range_filter_m": [
+        2.0,
+        100.0
+      ],
+      "runtime_sha256": "1cf4e77024f4183ac2a60413d016112a3e69bff9e90329b96c34dc57ab323ffa"
+    },
+    "smoke/robot3": {
+      "translation_matches_ground": true,
+      "rotation_matches_ground": true,
+      "imu_noise_matches_ground": true,
+      "imu_rate_hz": 125,
+      "lidar_rate_hz": 10,
+      "map_resolution_m": 0.1,
+      "range_filter_m": [
+        2.0,
+        100.0
+      ],
+      "runtime_sha256": "cde16c421a81cc3f10559b356af7d260f1cff4be7e6e8dffa5b5a85bcd7b7bd0"
+    },
+    "smoke/robot4": {
+      "translation_matches_ground": true,
+      "rotation_matches_ground": true,
+      "imu_noise_matches_ground": true,
+      "imu_rate_hz": 125,
+      "lidar_rate_hz": 10,
+      "map_resolution_m": 0.1,
+      "range_filter_m": [
+        2.0,
+        100.0
+      ],
+      "runtime_sha256": "7a3d741e0aafd1e3375261215d45b398a4cc6bc288b056078b44c51ffad0a8a6"
+    },
+    "smoke/robot5": {
+      "translation_matches_ground": true,
+      "rotation_matches_ground": true,
+      "imu_noise_matches_ground": true,
+      "imu_rate_hz": 125,
+      "lidar_rate_hz": 10,
+      "map_resolution_m": 0.1,
+      "range_filter_m": [
+        2.0,
+        100.0
+      ],
+      "runtime_sha256": "c6ef7cb3d1c4fe15b3315c060d1bccf0586e2e7aad1047ff84fbe429effcd5d0"
+    },
+    "smoke/robot6": {
+      "translation_matches_ground": true,
+      "rotation_matches_ground": true,
+      "imu_noise_matches_ground": true,
+      "imu_rate_hz": 125,
+      "lidar_rate_hz": 10,
+      "map_resolution_m": 0.1,
+      "range_filter_m": [
+        2.0,
+        100.0
+      ],
+      "runtime_sha256": "a3437bf4a74f75c59e3329a76f83d807db2744068e20a6fcc140d110a5411e33"
+    }
+  }
+}

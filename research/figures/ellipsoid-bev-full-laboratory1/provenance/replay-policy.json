@@ -1,0 +1,9 @@
+{
+  "rate": 0.5,
+  "robots": [
+    "Alpha",
+    "Bob",
+    "Carol"
+  ],
+  "reason": "Conservative offline replay following the Square 2 synchronization stall; estimator and loop settings unchanged."
+}

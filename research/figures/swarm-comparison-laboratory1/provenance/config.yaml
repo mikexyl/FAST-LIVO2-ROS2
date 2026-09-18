@@ -1,0 +1,70 @@
+backend:
+  evidence:
+    max_points: 16000
+    voxel_m: 0.5
+  mapclosures:
+    density_map_resolution: 0.5
+    density_threshold: 0.05
+    hamming_distance_threshold: 50
+    inliers_threshold: 5
+    local_map: frozen trailing 5-second submap; 0.25 m voxel centroids
+    max_hypotheses_per_query: 20
+    max_range_m: 80.0
+    upstream_commit: 1710f15db000a579324e3ba045cd64a0b4d706da
+  name: mapclosures
+  registration:
+    correspondence_m: 1.5
+    inlier_m: 0.6
+    max_condition: 1000000
+    max_iterations: 40
+    max_points: 20000
+    max_range_m: 80.0
+    max_rmse_m: 0.35
+    min_initial_overlap: 0.1
+    min_inliers: 100
+    min_observability: 0.0001
+    min_overlap: 0.3
+    rotation_sigma_floor_deg: 2.0
+    seed: 0
+    translation_sigma_floor_m: 0.2
+    voxel_m: 0.4
+dataset: /data/s3e/S3E_Laboratory_1
+evaluation:
+  evo_max_diff_s: 0.05
+  gt_max_gap_s: 2.0
+  map_voxel_m: 0.25
+  proximity_m: 10.0
+  rerun_map_max_points: 250000
+  rerun_sensor_stride: 20
+  rerun_verification_limit: 40
+  rerun_version: 0.37.1
+keyframes:
+  max_interval_s: 2.0
+  rotation_deg: 10.0
+  submap_s: 5.0
+  translation_m: 1.0
+  voxel_m: 0.25
+loops:
+  branch_verification_limits:
+    mapclosures: 1
+  min_verification_interval_s: 2.0
+  same_robot_exclusion_s: 30
+  top_k: 20
+  verification_queue_size: 2
+  worker_timeout_s: 120
+odometry:
+  frontend: ellipselio
+  rate: 1.0
+output_root: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/swarm/laboratory1/frontend
+pgo:
+  alignment_min_support: 2
+  alignment_rotation_deg: 15.0
+  alignment_translation_m: 2.0
+  gnc_probability: 0.99
+  odometry_rotation_sigma_deg: 1.0
+  odometry_translation_sigma_m: 0.15
+robots:
+- Alpha
+- Bob
+- Carol
+schema_version: 2

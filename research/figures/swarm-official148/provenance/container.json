@@ -1,0 +1,20 @@
+{
+  "image_id": "sha256:c189512677d25e90cb434675ff82c86e4794969a5064c9b9a010a666cb017f7a",
+  "name": "/swarm-official-s3e148",
+  "created": "2026-09-17T09:28:41.469881658Z",
+  "host_config": {
+    "NanoCpus": 12000000000,
+    "Memory": 30064771072,
+    "ShmSize": 2147483648,
+    "PidsLimit": 2048,
+    "NetworkMode": "bridge",
+    "Binds": [
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/swarm/teaser-build:/teaser:ro",
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/swarm/native:/native:ro",
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/research-venv:/evo-env:ro",
+      "/data3/mikexyl/swarm_official_s3e:/experiment",
+      "/mnt/data/s3e/S3Ev1:/data/s3e/v1:ro",
+      "/mnt/data/s3e/S3Ev2:/data/s3e/v2:ro"
+    ]
+  }
+}

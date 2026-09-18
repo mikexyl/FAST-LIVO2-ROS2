@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "max_speed_limit_m_s": 20.0,
+  "frames": 132,
+  "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+  "path_length_m": 25671.84167129855,
+  "max_scan_step_m": 2571.5606215518255,
+  "max_speed_m_s": 770.7628128233499,
+  "intervals_over_speed_limit": 55,
+  "reason": "Implausible ground-robot odometry speed",
+  "first_invalid_stamp_ns": 1689768410546890735,
+  "first_frame_stamp_ns": 1689768351946801424,
+  "last_frame_stamp_ns": 1689768484651160955,
+  "first_invalid_elapsed_s": 58.600089311
+}

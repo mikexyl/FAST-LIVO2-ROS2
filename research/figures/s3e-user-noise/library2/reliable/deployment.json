@@ -1,0 +1,20 @@
+{
+  "container": "/ellipsoid-s3e-reliable148",
+  "image": "sha256:cb89f7676e64520d3c6acfb37be9006b1b1dd52019d928b09f8ed7315ceb3ecc",
+  "created": "2026-09-17T14:34:45.922148411Z",
+  "work": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/s3e-noise-reliable-test/library2-20260917/S3E_Library_2/20260917T143446Z-ac1857",
+  "cpu_quota_cores": 12.0,
+  "memory_bytes": 42949672960,
+  "ros_domain_id": 191,
+  "runtime_equivalence": "Only input.reliable=true and unique research.output differ from best-effort trial",
+  "imu": {
+    "rate": 100,
+    "acc_noise": 0.1,
+    "gyr_noise": 0.1,
+    "acc_bias": 0.0001,
+    "gyr_bias": 0.0001,
+    "topic": "/Alpha/imu/data"
+  },
+  "imu_qos": "Type: sensor_msgs/msg/Imu\n\nPublisher count: 1\n\nNode name: rosbag2_player\nNode namespace: /\nTopic type: sensor_msgs/msg/Imu\nEndpoint type: PUBLISHER\nGID: 01.0f.24.0d.85.00.f0.85.00.00.00.00.00.00.14.03.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: RELIABLE\n  History (Depth): UNKNOWN\n  Durability: VOLATILE\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\nSubscription count: 1\n\nNode name: alpha_ellipselio\nNode namespace: /\nTopic type: sensor_msgs/msg/Imu\nEndpoint type: SUBSCRIPTION\nGID: 01.0f.24.0d.74.00.67.9d.00.00.00.00.00.00.1a.04.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: RELIABLE\n  History (Depth): UNKNOWN\n  Durability: VOLATILE\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\n",
+  "lidar_qos": "Type: sensor_msgs/msg/PointCloud2\n\nPublisher count: 1\n\nNode name: rosbag2_player\nNode namespace: /\nTopic type: sensor_msgs/msg/PointCloud2\nEndpoint type: PUBLISHER\nGID: 01.0f.24.0d.85.00.f0.85.00.00.00.00.00.00.13.03.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: RELIABLE\n  History (Depth): UNKNOWN\n  Durability: VOLATILE\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\nSubscription count: 1\n\nNode name: alpha_ellipselio\nNode namespace: /\nTopic type: sensor_msgs/msg/PointCloud2\nEndpoint type: SUBSCRIPTION\nGID: 01.0f.24.0d.74.00.67.9d.00.00.00.00.00.00.1b.04.00.00.00.00.00.00.00.00\nQoS profile:\n  Reliability: RELIABLE\n  History (Depth): UNKNOWN\n  Durability: VOLATILE\n  Lifespan: Infinite\n  Deadline: Infinite\n  Liveliness: AUTOMATIC\n  Liveliness lease duration: Infinite\n\n"
+}

@@ -1,0 +1,10 @@
+{
+  "error": "RuntimeError('Command exited 1; see /workspace/.ros2/s3e-noise-reliable-test/library2-20260917/S3E_Library_2.log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py\", line 310, in queue\n    call(command,base/f'{name}.log',limit)\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py\", line 63, in call\n    if code:raise RuntimeError(f'Command exited {code}; see {log}')\nRuntimeError: Command exited 1; see /workspace/.ros2/s3e-noise-reliable-test/library2-20260917/S3E_Library_2.log\n",
+  "progress": {
+    "stage": "odometry",
+    "robot": "Bob",
+    "updated_utc": "2026-09-17T14:42:57Z"
+  },
+  "utc": "2026-09-17T14:51:10Z"
+}

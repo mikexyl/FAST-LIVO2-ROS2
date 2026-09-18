@@ -1,0 +1,21 @@
+{
+  "rrd_bytes": 509309071,
+  "rrd_sha256": "5aa20134db20965ff8b0566b039dad3e5761ea6b576da08a18aa76faef34d61d",
+  "verification": "Rerun 0.37.1: 1 file verified without error on both workstations",
+  "robot": "Bob",
+  "sequence": "S3E_Library_2",
+  "run_id": "20260917T154757Z",
+  "capture": "live ROS subscriptions during fresh 1x replay",
+  "native_frontend_returncode": 0,
+  "research_export_enabled": false,
+  "executor_threads": 4,
+  "scan_count": 4847,
+  "pose_count": 4847,
+  "full_map_snapshots": 31,
+  "total_map_snapshots": 48,
+  "first_motion_violation": {
+    "stamp_ns": 1689768765488135814,
+    "elapsed_s": 417.491816044,
+    "speed_m_s": 23.796289134097396
+  }
+}

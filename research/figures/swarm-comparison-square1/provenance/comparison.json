@@ -1,0 +1,6 @@
+{
+  "baseline_archive": "/home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/research/figures/ellipsoid-bev-full-square1",
+  "shared_inputs": "Both systems consume this same fresh EllipseLIO export; Swarm uses its native keyframe selector and single scans.",
+  "replay_policy": "1x serial replay; one documented 0.5x retry on failure; single CUDA preparation job.",
+  "ground_truth_used": false
+}

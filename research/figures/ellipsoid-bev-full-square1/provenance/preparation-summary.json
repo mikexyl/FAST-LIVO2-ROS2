@@ -1,0 +1,44 @@
+{
+  "Alpha": {
+    "ground_truth_used": false,
+    "input_hashes": {
+      "export": "ddabb3094cfaf37113476d2a42564c51357fa2fddcc618b7bfcd2bbe7e3b0a46",
+      "schedule": "92f4206bd38808d906f4619470493eb019cdbc7814ed548f891d56c12c96cd6a"
+    },
+    "keyframes": 543,
+    "merged_schedule_snapshots": 0,
+    "odometry_frames": 4542,
+    "preparation_s": 570.505014907,
+    "robot": "Alpha",
+    "sampling_s": 180.89827239899364,
+    "scheduled": 543
+  },
+  "Bob": {
+    "ground_truth_used": false,
+    "input_hashes": {
+      "export": "fe6431501038a7fac78c9ed0cd3d73ec8334c01b3b4a6ffcead6b45a04954313",
+      "schedule": "92f4206bd38808d906f4619470493eb019cdbc7814ed548f891d56c12c96cd6a"
+    },
+    "keyframes": 483,
+    "merged_schedule_snapshots": 0,
+    "odometry_frames": 4522,
+    "preparation_s": 588.4226125659998,
+    "robot": "Bob",
+    "sampling_s": 241.88418254099906,
+    "scheduled": 483
+  },
+  "Carol": {
+    "ground_truth_used": false,
+    "input_hashes": {
+      "export": "f40a9de9fff852dff12b9c68d2c95f18bcab157fd38cfb38f8a2a0f72326fcd8",
+      "schedule": "92f4206bd38808d906f4619470493eb019cdbc7814ed548f891d56c12c96cd6a"
+    },
+    "keyframes": 522,
+    "merged_schedule_snapshots": 0,
+    "odometry_frames": 4569,
+    "preparation_s": 636.9316268189996,
+    "robot": "Carol",
+    "sampling_s": 217.54445523099366,
+    "scheduled": 522
+  }
+}

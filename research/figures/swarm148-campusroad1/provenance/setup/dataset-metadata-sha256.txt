@@ -1,0 +1,11 @@
+11ca40997233b6c84cb48572110f700fca31ce3f46c3b8be234126737078a6be  /mnt/data/s3e/S3Ev1/Calibration/alpha.yaml
+192d5da1cbf3f2e30c5c8210dc241efe6abd954abf89bdba8d6f88176c070f96  /mnt/data/s3e/S3Ev1/Calibration/bob.yaml
+eef73c62c9c0afd3d4d9dbe8e0cc32d5c2d33d8791a849aa1987e96353df0479  /mnt/data/s3e/S3Ev1/Calibration/carol.yaml
+241bf375f1b2841d59208db33c1065d5ea81dc4c75b763adbd6a675aa02e14ad  /mnt/data/s3e/S3Ev1/S3E_Library_1/metadata.yaml
+dd505af420503a93f4d367bfbbbf0cb60075e1169b73d7cc63f34eea873a9b71  /mnt/data/s3e/S3Ev1/S3E_Library_1/alpha_gt.txt
+6f86b23795d6dffced0790aea339489acd88b84f7db84098cb3b5cd6292ba8a2  /mnt/data/s3e/S3Ev1/S3E_Library_1/bob_gt.txt
+8fab8f66be68c3cca83372df850d3efe5e306a81ba66e59499f082c680777e0f  /mnt/data/s3e/S3Ev1/S3E_Library_1/carol_gt.txt
+b33186d7f3ef047ec80ddf27f1d59aa0fbbf1b634439a9f670676a278a35ca23  /mnt/data/s3e/S3Ev1/S3E_Campus_Road_1/metadata.yaml
+b8581aa32e6d11aab466ab0f0c9406301aab8d6b4ed4d9a767f4ba592bc88cc8  /mnt/data/s3e/S3Ev1/S3E_Campus_Road_1/alpha_gt.txt
+42cc45f016de24e6ee6c50f33b03c16becfd14b7c253f1b1c099b2d7d2a5cd2e  /mnt/data/s3e/S3Ev1/S3E_Campus_Road_1/bob_gt.txt
+93d12b1bbc414d87e1c11199413668425ab7cf61504a2b916aff71e6593a37bd  /mnt/data/s3e/S3Ev1/S3E_Campus_Road_1/carol_gt.txt

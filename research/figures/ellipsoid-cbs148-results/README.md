@@ -1,0 +1,3 @@
+# Frozen overnight evidence from workstation 148
+
+See [the results report](../../RESULTS-ELLIPSOID-CBS-148.md). `summary.json` includes original queue statuses and remote artifact locations. `MANIFEST.json` contains the original 591-file retrieval manifest; `failure-logtails.json` and this README were added afterward. Original report markdown and stage manifests are preserved verbatim and may reference large remote artifacts not included here. Native optimizer evidence is under each sequence's `native-dpgo/` directory. No raw point clouds, map NPZs or Rerun recordings were copied into this bundle. Square 2/3 trajectory audits are separate artifacts and do not change the failed original report statuses.

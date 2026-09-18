@@ -1,0 +1,101 @@
+schema_version: 2
+dataset: /data/s3e/S3Ev2/S3E_Playground_3
+robots:
+- Alpha
+- Bob
+- Carol
+output_root: /workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Playground_3/20260916T231636Z-81ec36
+odometry:
+  rate: 1.0
+  frontend: ellipselio
+keyframes:
+  translation_m: 1.0
+  rotation_deg: 10.0
+  max_interval_s: 2.0
+  submap_s: 5.0
+  voxel_m: 0.25
+backend:
+  name: mapclosures
+  registration:
+    seed: 0
+    voxel_m: 0.4
+    max_range_m: 80.0
+    max_points: 20000
+    min_initial_overlap: 0.1
+    max_iterations: 40
+    correspondence_m: 1.5
+    inlier_m: 0.6
+    min_inliers: 100
+    min_overlap: 0.3
+    max_rmse_m: 0.35
+    min_observability: 0.0001
+    max_condition: 1000000
+    rotation_sigma_floor_deg: 2.0
+    translation_sigma_floor_m: 0.2
+  evidence:
+    voxel_m: 0.5
+    max_points: 16000
+  mapclosures:
+    upstream_commit: 1710f15db000a579324e3ba045cd64a0b4d706da
+    density_map_resolution: 0.5
+    density_threshold: 0.05
+    hamming_distance_threshold: 50
+    inliers_threshold: 5
+    max_hypotheses_per_query: 20
+    max_range_m: 80.0
+    local_map: Causal native persistent ellipsoid map; 80 m crop; 0.125 m surface
+      sampling and 0.25 m voxel centroids
+loops:
+  top_k: 20
+  same_robot_exclusion_s: 30
+  min_verification_interval_s: 2.0
+  verification_queue_size: 2
+  worker_timeout_s: 120
+  branch_verification_limits:
+    mapclosures: 1
+pgo:
+  odometry_rotation_sigma_deg: 1.0
+  odometry_translation_sigma_m: 0.15
+  alignment_translation_m: 2.0
+  alignment_rotation_deg: 15.0
+  alignment_min_support: 2
+  gnc_probability: 0.99
+evaluation:
+  evo_max_diff_s: 0.05
+  gt_max_gap_s: 2.0
+  proximity_m: 10.0
+  map_voxel_m: 0.25
+  rerun_sensor_stride: 20
+  rerun_verification_limit: 40
+  rerun_version: 0.37.1
+  rerun_map_max_points: 250000
+dpgo:
+  pcm:
+    enabled: true
+    probability: 0.99
+    minimum_clique_size: 2
+    timeout_s: 60.0
+  mode: peers
+  settle_iterations: 100
+  loop_rate_hz: 10.0
+  timeout_s: 1200
+  ros_domain_id: 186
+  localhost_only: true
+  registration_factors:
+    enabled: true
+    factor: gicp
+    num_threads: 2
+    timeout_s: 60.0
+    voxel_m: 0.5
+    max_points: 12000
+    max_range_m: 80.0
+    covariance_neighbors: 20
+    correspondence_m: 1.5
+    min_inliers: 100
+    min_overlap: 0.3
+    min_observability: 0.0001
+    max_condition: 1000000.0
+    max_information_ratio: 1.0
+descriptor_branches:
+- ellipsoid
+ellipsoid_basis_roundoff_tolerance: 0.001

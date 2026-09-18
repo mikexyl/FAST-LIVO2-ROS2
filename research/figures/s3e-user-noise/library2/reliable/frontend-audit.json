@@ -1,0 +1,518 @@
+{
+  "sequence": "S3E_Library_2",
+  "input_reliable": true,
+  "sequence_status": "failed",
+  "backend_started": false,
+  "runtime_check": "Only input.reliable and export path differ from best-effort trial",
+  "frozen_pipeline_hashes_match": true,
+  "raw_odometry": {
+    "Alpha": {
+      "replay_completed": true,
+      "quality": {
+        "passed": true,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 4788,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 546.2703292965888,
+        "max_scan_step_m": 0.6757316594729429,
+        "max_speed_m_s": 5.974384287715969,
+        "intervals_over_speed_limit": 0,
+        "reason": "Finite, chronological poses within the declared motion bound"
+      },
+      "evo": {
+        "Alpha": {
+          "samples": 4788,
+          "robots": [
+            "Alpha"
+          ],
+          "rmse_m": 1.2407429546008168,
+          "median_m": 1.141735945244182,
+          "statistics": {
+            "rmse": 1.2407429546008168,
+            "mean": 1.189844876533624,
+            "median": 1.141735945244182,
+            "std": 0.3517275212124426,
+            "min": 0.15664898466941649,
+            "max": 2.897139022407502,
+            "sse": 7370.853464126811
+          },
+          "per_robot": {
+            "Alpha": {
+              "samples": 4788,
+              "statistics": {
+                "rmse": 1.2407429546008168,
+                "mean": 1.189844876533624,
+                "median": 1.141735945244182,
+                "std": 0.3517275212124426,
+                "min": 0.15664898466941649,
+                "max": 2.897139022407502,
+                "sse": 7370.853464126811
+              }
+            }
+          },
+          "alignment_SE3": [
+            [
+              0.9999178547620804,
+              0.011328943578607538,
+              0.005994894944285515,
+              2553137.901884751
+            ],
+            [
+              0.011549189139416195,
+              -0.9992080586138129,
+              -0.03807718255645587,
+              744421.7147495799
+            ],
+            [
+              0.0055587730860589095,
+              0.0381432908728179,
+              -0.9992568185422449,
+              -0.4388094081819023
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": 1.0,
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "engine": "evo 1.36.5",
+          "association_max_diff_s": 0.05,
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+        }
+      },
+      "analytics": {
+        "messages": 4777,
+        "zero_feature_updates": 0,
+        "median_lidar_hz": 10.0,
+        "median_imu_hz": 100.0,
+        "median_native_update_ms": 10.221739998087287,
+        "time_association": "Latest observed odometry stamp; native analytics has no exact timestamp"
+      },
+      "wall_s": 490.3249044219847,
+      "late_analytics_windows": {
+        "350-400s": {
+          "messages": 484,
+          "medians": {
+            "lid_freq": 10.0,
+            "imu_freq": 100.0,
+            "num_feats": 1339.0,
+            "res_mean": 0.07306796208236607
+          }
+        },
+        "400-430s": {
+          "messages": 297,
+          "medians": {
+            "lid_freq": 10.0,
+            "imu_freq": 100.0,
+            "num_feats": 1132.0,
+            "res_mean": 0.09628175578422053
+          }
+        },
+        "430-450s": {
+          "messages": 196,
+          "medians": {
+            "lid_freq": 10.0,
+            "imu_freq": 100.0,
+            "num_feats": 1551.5,
+            "res_mean": 0.0808708159350096
+          }
+        },
+        "450-485s": {
+          "messages": 330,
+          "medians": {
+            "lid_freq": 10.0,
+            "imu_freq": 100.0,
+            "num_feats": 1673.5,
+            "res_mean": 0.06499507619537323
+          }
+        }
+      },
+      "frame_hash_verified_against_export_manifest": true,
+      "result_status": "completed frontend; passed motion guard"
+    },
+    "Bob": {
+      "replay_completed": true,
+      "quality": {
+        "passed": false,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 4844,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 1491.9318919716513,
+        "max_scan_step_m": 10.595448469513284,
+        "max_speed_m_s": 54.048595733407865,
+        "intervals_over_speed_limit": 210,
+        "reason": "Implausible ground-robot odometry speed",
+        "first_invalid_stamp_ns": 1689768792889283895,
+        "first_invalid_after_first_export_s": 443.699814796
+      },
+      "evo": {
+        "Bob": {
+          "samples": 4823,
+          "robots": [
+            "Bob"
+          ],
+          "rmse_m": 155.26638171748598,
+          "median_m": 62.26135218169402,
+          "statistics": {
+            "rmse": 155.26638171748598,
+            "mean": 86.78292054188441,
+            "median": 62.26135218169402,
+            "std": 128.74926793524315,
+            "min": 4.358341800529572,
+            "max": 643.5218061962194,
+            "sse": 116271192.53358003
+          },
+          "per_robot": {
+            "Bob": {
+              "samples": 4823,
+              "statistics": {
+                "rmse": 155.26638171748598,
+                "mean": 86.78292054188441,
+                "median": 62.26135218169402,
+                "std": 128.74926793524315,
+                "min": 4.358341800529572,
+                "max": 643.5218061962194,
+                "sse": 116271192.53358003
+              }
+            }
+          },
+          "alignment_SE3": [
+            [
+              0.84285236209818,
+              -0.5321956787126079,
+              -0.07979758934420073,
+              2553096.315598783
+            ],
+            [
+              -0.5356739767121482,
+              -0.8439007708164747,
+              -0.02974692738340629,
+              744499.0610335071
+            ],
+            [
+              -0.051510060948440864,
+              0.06781776002631791,
+              -0.9963671336641432,
+              9.052073684422368
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": 1.0,
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "engine": "evo 1.36.5",
+          "association_max_diff_s": 0.05,
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+        }
+      },
+      "analytics": {
+        "messages": 4836,
+        "zero_feature_updates": 0,
+        "median_lidar_hz": 10.0,
+        "median_imu_hz": 100.0,
+        "median_native_update_ms": 10.390283016022295,
+        "time_association": "Latest observed odometry stamp; native analytics has no exact timestamp"
+      },
+      "wall_s": 491.4253310019849,
+      "late_analytics_windows": {
+        "350-400s": {
+          "messages": 498,
+          "medians": {
+            "lid_freq": 10.0,
+            "imu_freq": 100.0,
+            "num_feats": 1413.0,
+            "res_mean": 0.0760768286506942
+          }
+        },
+        "400-430s": {
+          "messages": 297,
+          "medians": {
+            "lid_freq": 10.0,
+            "imu_freq": 100.0,
+            "num_feats": 1102.0,
+            "res_mean": 0.09123356986950257
+          }
+        },
+        "430-450s": {
+          "messages": 196,
+          "medians": {
+            "lid_freq": 10.0,
+            "imu_freq": 100.0,
+            "num_feats": 1208.5,
+            "res_mean": 0.12133878698443057
+          }
+        },
+        "450-485s": {
+          "messages": 342,
+          "medians": {
+            "lid_freq": 10.0,
+            "imu_freq": 100.0,
+            "num_feats": 669.0,
+            "res_mean": 0.2104432578484409
+          }
+        }
+      },
+      "frame_hash_verified_against_export_manifest": true,
+      "result_status": "failed frontend; ATE is diagnostic only"
+    }
+  },
+  "input_sha256": {
+    "reliable/attempt/retained/Alpha/frames.jsonl.gz": "ade4b80f93978e2bc152695c6483619792ab2989dfef28732e636ad53da59944",
+    "reliable/attempt/Alpha/summary.json": "5b1060d2eef0716b130c11a9295b6c7dc3e9798bc2ed5d2dcab1a7909927da46",
+    "alpha_gt.txt": "291b66e68796b2aca0e1b178b7768c33d4a4742e1c2dec5ceafb59c4be52b055",
+    "reliable/attempt/Alpha/runtime.yaml": "d6ea755fac30bfde1cd942e310843dd19f04acfa4f502a31875285b23b8c5d61",
+    "reliable/attempt/retained/Bob/frames.jsonl.gz": "048b7ffb3840b8291e51603018e19be772f007db1852b5bf582bd64a6f95b6bd",
+    "reliable/attempt/Bob/summary.json": "63efb3e5ff06a0ffe0dd82c5a104a835d75ad66fedf7cf77b020d40ba4f336f7",
+    "bob_gt.txt": "485faeaf572d494ac6365888c14f0bab22f462e2ee20f1f69a947b092fbe6f18",
+    "reliable/attempt/Bob/runtime.yaml": "615cf73bae32c2ea8d56cbfec44b7d1fe143b469ab46f2d77e89bf3b669ca0ab"
+  },
+  "common_window_ns": [
+    1689768351946801424,
+    1689768514250174283
+  ],
+  "common_window_s": 162.303372859,
+  "common_window": {
+    "previous": {
+      "frames": 1622,
+      "quality": {
+        "passed": true,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 1622,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 138.8690526915891,
+        "max_scan_step_m": 0.28556622282920663,
+        "max_speed_m_s": 1.7270629348789268,
+        "intervals_over_speed_limit": 0,
+        "reason": "Finite, chronological poses within the declared motion bound"
+      },
+      "evo": {
+        "Alpha": {
+          "samples": 1622,
+          "robots": [
+            "Alpha"
+          ],
+          "rmse_m": 0.6845615883295098,
+          "median_m": 0.34895278864409357,
+          "statistics": {
+            "rmse": 0.6845615883295098,
+            "mean": 0.5573016387097143,
+            "median": 0.34895278864409357,
+            "std": 0.39754176096064203,
+            "min": 0.02056363160426584,
+            "max": 1.4955457281367868,
+            "sse": 760.1090496467108
+          },
+          "per_robot": {
+            "Alpha": {
+              "samples": 1622,
+              "statistics": {
+                "rmse": 0.6845615883295098,
+                "mean": 0.5573016387097143,
+                "median": 0.34895278864409357,
+                "std": 0.39754176096064203,
+                "min": 0.02056363160426584,
+                "max": 1.4955457281367868,
+                "sse": 760.1090496467108
+              }
+            }
+          },
+          "alignment_SE3": [
+            [
+              0.9996550530609994,
+              0.014783283783680067,
+              0.0217078191023772,
+              2553138.0116099175
+            ],
+            [
+              0.018247307791500363,
+              -0.9854091023731602,
+              -0.16922156103311725,
+              744420.7183693042
+            ],
+            [
+              0.018889432177082537,
+              0.1695592978302691,
+              -0.9853389436490033,
+              -0.5311377280816085
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": 1.0,
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "engine": "evo 1.36.5",
+          "association_max_diff_s": 0.05,
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+        }
+      }
+    },
+    "attempt": {
+      "frames": 146,
+      "quality": {
+        "passed": false,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 146,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 55321.64652626686,
+        "max_scan_step_m": 9046.049121575483,
+        "max_speed_m_s": 1174.3131070198003,
+        "intervals_over_speed_limit": 69,
+        "reason": "Implausible ground-robot odometry speed",
+        "first_invalid_stamp_ns": 1689768410546890735
+      },
+      "evo": {
+        "Alpha": {
+          "samples": 146,
+          "robots": [
+            "Alpha"
+          ],
+          "rmse_m": 11924.348542271378,
+          "median_m": 6404.974801968756,
+          "statistics": {
+            "rmse": 11924.348542271378,
+            "mean": 8717.74889699621,
+            "median": 6404.974801968756,
+            "std": 8135.781605137332,
+            "min": 856.4648526466732,
+            "max": 48450.91948998773,
+            "sse": 20759752871.005157
+          },
+          "per_robot": {
+            "Alpha": {
+              "samples": 146,
+              "statistics": {
+                "rmse": 11924.348542271378,
+                "mean": 8717.74889699621,
+                "median": 6404.974801968756,
+                "std": 8135.781605137332,
+                "min": 856.4648526466732,
+                "max": 48450.91948998773,
+                "sse": 20759752871.005157
+              }
+            }
+          },
+          "alignment_SE3": [
+            [
+              -0.10345461061651196,
+              -0.8855422194521646,
+              -0.45289305703435145,
+              2546744.5618259944
+            ],
+            [
+              0.22084260270293676,
+              0.4235195956808061,
+              -0.8785554603471306,
+              744153.3887281318
+            ],
+            [
+              0.969807036669449,
+              -0.19090869451677858,
+              0.15175039368753085,
+              -214.33207910381452
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": 1.0,
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "engine": "evo 1.36.5",
+          "association_max_diff_s": 0.05,
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+        }
+      }
+    },
+    "reliable": {
+      "frames": 1620,
+      "quality": {
+        "passed": true,
+        "max_speed_limit_m_s": 20.0,
+        "frames": 1620,
+        "purpose": "S3E ground-robot sanity check only; not an accuracy metric; no GT used.",
+        "path_length_m": 147.04231939258494,
+        "max_scan_step_m": 0.29056263223187206,
+        "max_speed_m_s": 1.969593509467782,
+        "intervals_over_speed_limit": 0,
+        "reason": "Finite, chronological poses within the declared motion bound"
+      },
+      "evo": {
+        "Alpha": {
+          "samples": 1620,
+          "robots": [
+            "Alpha"
+          ],
+          "rmse_m": 0.6831057640840075,
+          "median_m": 0.351904952123977,
+          "statistics": {
+            "rmse": 0.6831057640840075,
+            "mean": 0.5563548751742193,
+            "median": 0.351904952123977,
+            "std": 0.3963618773225731,
+            "min": 0.017875056225373664,
+            "max": 1.5067062335830006,
+            "sse": 755.9462455781689
+          },
+          "per_robot": {
+            "Alpha": {
+              "samples": 1620,
+              "statistics": {
+                "rmse": 0.6831057640840075,
+                "mean": 0.5563548751742193,
+                "median": 0.351904952123977,
+                "std": 0.3963618773225731,
+                "min": 0.017875056225373664,
+                "max": 1.5067062335830006,
+                "sse": 755.9462455781689
+              }
+            }
+          },
+          "alignment_SE3": [
+            [
+              0.9996599296215253,
+              0.015221250361462782,
+              0.021174008749421346,
+              2553137.992972522
+            ],
+            [
+              0.018617512312991597,
+              -0.9851321247995569,
+              -0.17078666494544034,
+              744420.7113511832
+            ],
+            [
+              0.018259609644308047,
+              0.17112279282826162,
+              -0.9850804923610523,
+              -0.529526556074528
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "scale": 1.0,
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "engine": "evo 1.36.5",
+          "association_max_diff_s": 0.05,
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Alpha",
+  "bag": "/data/s3e/S3E_Square_1",
+  "rate": 1.0,
+  "start_offset_s": 0.0,
+  "requested_duration": 30.0,
+  "odometry_messages": 8821,
+  "finite": true,
+  "path_length_m": 150.3765617145194,
+  "max_pose_step_m": 0.14678576495859047,
+  "first_pose_stamp_ns": 1661157277010103256,
+  "last_pose_stamp_ns": 1661157378501380894,
+  "success": false,
+  "error": "Synchronized export did not complete",
+  "wall_s": 107.62820570099939
+}

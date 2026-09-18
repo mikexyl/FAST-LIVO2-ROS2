@@ -46,7 +46,7 @@ original bag start in integer nanoseconds and a new output directory:
 Wait for `READY`, then run the frontend with the same ROS domain:
 
 ```bash
-FAST-LIVO2-ROS2/scripts/run_ellipselio.sh \
+bash FAST-LIVO2-ROS2/scripts/run_ellipselio.sh \
   --robot Bob --bag /data/s3e/S3Ev2/S3E_Library_2 \
   --mapping-config /path/to/Bob.yaml --output /path/to/new/frontend \
   --rate 1 --no-research-export \

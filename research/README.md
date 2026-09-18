@@ -1,5 +1,8 @@
 # MegaLoc + MapClosures on S3E Square 1
 
+See [multi-robot LiDAR SLAM development](DEVELOPMENT.md) for the published
+repository branches, workspace manifest, and validation status.
+
 See the [consolidated results summary](RESULTS-SUMMARY.md) for all completed
 sequences, individual CBS ATEs, loop attribution, runtime and known failures.
 

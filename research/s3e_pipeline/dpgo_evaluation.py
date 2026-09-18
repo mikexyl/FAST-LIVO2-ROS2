@@ -1,5 +1,6 @@
 """Evaluate owner-exported CBS poses. Ground truth is used only here."""
 from pathlib import Path
+from .frontends import frontend_name
 import time
 import numpy as np
 from .artifacts import read_json, read_jsonl, write_json, write_jsonl
@@ -12,11 +13,23 @@ def evaluation_ground_truth(robots, dataset, dense, cfg):
     """Keep unavailable/out-of-sequence GT explicit, without blocking map export."""
     tracks = {}; status = {}
     for robot in robots:
-        path = Path(dataset)/f'{robot.lower()}_gt.txt'
+        cu_multi = cfg.get('ground_truth_format') == 'cu_multi_utm'
+        path = (Path(dataset)/robot/f'{robot}_{Path(dataset).name}_gt_utm_poses.csv'
+                if cu_multi else Path(dataset)/f'{robot.lower()}_gt.txt')
         rows = [r for r in dense if r['robot_id'] == robot]
         info = dict(path=str(path), available=False, matched_samples=0, pose_samples=len(rows))
         try:
-            stamps, xyz = ground_truth(path)
+            if cu_multi:
+                from .cu_multi import position_ground_truth
+                stamps, xyz = position_ground_truth(path, cfg['T_reference_body'][robot])
+                info.update(reference='CU-Multi LIO-SAM2 + RTK GPS in shared UTM coordinates',
+                            reference_frame='Ouster sensor', evaluated_frame='LORD IMU',
+                            orientation_used_for_lever_arm=True)
+            else:
+                stamps, xyz = ground_truth(path)
+                if cfg.get('ground_truth_format') == 'graco_imu_enu':
+                    info.update(reference='GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates',
+                                reference_frame='IMU', evaluated_frame='IMU', orientation_used_for_lever_arm=False)
             if not len(stamps) or xyz.shape != (len(stamps), 3) or not np.isfinite(xyz).all() or np.any(np.diff(stamps) <= 0):
                 raise ValueError('Position GT must contain finite positions and strictly increasing timestamps')
             tracks[robot] = (stamps, xyz)
@@ -47,18 +60,19 @@ def evaluate(cfg, artifacts, dataset, output):
     # No align_robots call: common-frame transforms come exclusively from CBS.
     if any(components[e['i'][0]] != components[e['j'][0]] for e in loops):
         raise ValueError('CBS failed to establish a common frame for a connected component')
-    dense = []; all_keys = []; factors = list(loops); central_dense = []; events = []
-    central_label = f'pgo.livo.{cfg["backend"]["name"]}'
+    dense = []; raw_dense = []; all_keys = []; factors = list(loops); central_dense = []; events = []
+    central_label = f'pgo.{frontend_name(cfg)}.{cfg["backend"]["name"]}'
     central = read_json(Path(artifacts[central_label])/'graph.json') if central_label in artifacts else None
     for robot in cfg['robots']:
-        store = Path(artifacts[f'keyframes.livo.{robot}'])/'store'
+        store = Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
         keys = read_jsonl(store/'keyframes.jsonl'); all_keys += keys
         rows = [p for p in poses if p['robot_id'] == robot]
         # Original map uses the first optimized pose as a display origin only.
         # Neither this transform nor evaluation alignment feeds back to CBS.
         display_alignment = pose(rows[0]['T_world_body']) @ inv(pose(keys[0]['T_world_body']))
         for row, key in zip(rows, keys): row['T_initial_body'] = (display_alignment @ pose(key['T_world_body'])).tolist()
-        export = Path(artifacts[f'odometry.livo.{robot}'])/'run/export'
+        export = Path(artifacts[f'odometry.{frontend_name(cfg)}.{robot}'])/'run/export'
+        raw_dense += [dict(r,component=robot) for r in read_jsonl(export/'frames.jsonl')]
         original, optimized, track = build_maps(export, keys, rows, cfg['evaluation']['map_voxel_m'], store)
         for r in track: r['component'] = components[robot]
         dense += track
@@ -81,6 +95,8 @@ def evaluate(cfg, artifacts, dataset, output):
         edge['rotation_residual_rad'] = float(np.linalg.norm(error[:3]))
     stats = {r: read_jsonl(dpgo/r/'stats.jsonl') for r in cfg['robots']}
     report = dict(runtime=summary, trajectory=trajectory_metrics(dict(poses=dense), gt, cfg['evaluation'], output/'evo/cbs'),
+        raw_odometry=trajectory_metrics(dict(poses=raw_dense), gt, cfg['evaluation'], output/'evo/raw_odometry'),
+        frontend=frontend_name(cfg),
         centralized_reference=trajectory_metrics(dict(poses=central_dense), gt, cfg['evaluation'], output/'evo/centralized') if central else None,
         components=components, factor_count=len(factors), loop_count=len(loops),
         gaussian_cost=.5*sum(e['squared_whitened_residual'] for e in factors),
@@ -88,14 +104,25 @@ def evaluate(cfg, artifacts, dataset, output):
         convergence={r:dict(final_pose_change=s[-1]['result_logmap_change'],
             last_10_max_pose_change=max(x['result_logmap_change'] for x in s[-10:]),
             last_10_received_beliefs=sum(x['num_received_beliefs'] for x in s[-10:])) for r, s in stats.items()},
-        evaluation_wall_s=time.monotonic()-start, orientation_ground_truth_used=False,
+        evaluation_wall_s=time.monotonic()-start,
+        orientation_ground_truth_used=cfg['evaluation'].get('gt_orientation_used_for_lever_arm',False),
         dataset=str(dataset), ground_truth=gt_status,
         trajectory_evaluation=read_json(output/'evo/cbs/evaluation.json'))
     report['trajectory_metrics_status'] = 'available' if report['trajectory'] else 'unavailable: see evo component status'
     if summary.get('pcm_enabled'):
         report['pcm'] = read_json(dpgo/'pcm.json')
+    if summary.get('registration_enabled'):
+        report['registration'] = read_json(dpgo/'registration.json')
+        report['pose_factor_count'] = len(factors)
+        report['registration_factor_count'] = report['registration']['registration_factor_count']
+        report['factor_count'] += report['registration_factor_count']
+        report['cost_scope'] += '; pose-only diagnostic, excludes live GICP costs recorded per owner in registration'
     if events:
         report['retrieval'] = retrieval_metrics(all_keys, events, gt, cfg['evaluation'], cfg['loops']['same_robot_exclusion_s'])
+        if cfg['evaluation'].get('ground_truth_format') == 'cu_multi_utm':
+            report['retrieval']['metric_label'] = 'position-proximity labels from CU-Multi LIO-SAM2 + RTK GPS reference'
+        elif cfg['evaluation'].get('ground_truth_format') == 'graco_imu_enu':
+            report['retrieval']['metric_label'] = 'position-proximity labels from GRACO RTK/INS IMU reference; no orientation error evaluated'
         latencies = [e['wall_detection_latency_s'] for e in events if 'wall_detection_latency_s' in e]
         if latencies:
             report['retrieval'].update(wall_detection_latency_median_s=float(np.median(latencies)),
@@ -125,10 +152,11 @@ def comparison_plot(cfg, dense, central, gt, report, output):
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     from .geometry import transform
-    COLORS={'Alpha':[235,85,80],'Bob':[70,170,245],'Carol':[95,205,130]}
+    from .robot_colors import robot_colors
+    COLORS=robot_colors(cfg['robots'])
     with (output/'metrics.csv').open('w') as f:
         writer = csv.writer(f); writer.writerow(['method','component','position_rmse_m','samples','status'])
-        for label, metrics in [('CBS DDS',report['trajectory']),('Centralized reference',report['centralized_reference'])]:
+        for label, metrics in [('CBS DDS',report['trajectory']),('Raw odometry (individual alignment)',report.get('raw_odometry',{})),('Centralized reference',report['centralized_reference'])]:
             for component, values in (metrics or {}).items():
                 writer.writerow([label,component,values['rmse_m'],values['samples'],'available'])
         for component in sorted(set(report['components'].values()) - set(report['trajectory'])):

@@ -1,6 +1,7 @@
 """Rerun 0.37.1 export in its isolated Python environment."""
 import sys
 from pathlib import Path
+from .frontends import frontend_name
 import numpy as np
 from .artifacts import read_json, read_jsonl
 from .geometry import pose
@@ -9,18 +10,23 @@ from .geometry import pose
 def visualize(cfg, artifacts, poses, factors, stats, events, output, report):
     import rerun as rr
     import rerun.blueprint as rrb
-    from .visualize import COLORS
+    from .robot_colors import robot_colors
+    COLORS = robot_colors(cfg['robots'])
     from .geometry import transform
     if rr.__version__ != '0.37.1': raise ValueError('Rerun 0.37.1 required')
-    rr.init('S3E MegaLoc + MapClosures + CBS'); rr.save(str(output/'result.rrd'))
+    rr.init(Path(cfg['dataset']).name+' '+frontend_name(cfg)+' '+cfg['backend']['name']+' CBS'); rr.save(str(output/'result.rrd'))
     rr.log('/', rr.ViewCoordinates.FLU, static=True)
     components = sorted({p['component'] for p in poses})
+    inspection_views = [rrb.Spatial2DView(name='Query', origin='/inspection/query'),
+                        rrb.Spatial2DView(name='Candidate', origin='/inspection/candidate')] if cfg['backend']['name']=='megaloc_mapclosures' else []
+    ellipsoid_bevs = cfg.get('descriptor_branches') == ['ellipsoid']
+    if ellipsoid_bevs:
+        inspection_views += [rrb.Spatial2DView(name=f'{r} ellipsoid BEV', origin=f'/bevs/{r}') for r in cfg['robots']]
     rr.send_blueprint(rrb.Blueprint(rrb.Horizontal(rrb.Tabs(*[
         rrb.Spatial3DView(name=c, origin=f'/components/{c}') for c in components],
         rrb.Spatial3DView(name='Registration', origin='/registration')),
         rrb.Vertical(rrb.TimeSeriesView(name='CBS convergence', contents=['/convergence/**']),
-                     rrb.Spatial2DView(name='Query', origin='/inspection/query'),
-                     rrb.Spatial2DView(name='Candidate', origin='/inspection/candidate'),
+                     *inspection_views,
                      rrb.TextDocumentView(name='Evaluation', origin='/report')))))
     import json
     rr.log('/report', rr.TextDocument(json.dumps(report, indent=2)), static=True)
@@ -31,9 +37,19 @@ def visualize(cfg, artifacts, poses, factors, stats, events, output, report):
             rr.log(prefix+'/'+label, rr.LineStrips3D([[pose(p[field])[:3, 3] for p in rows]],
                 colors=COLORS[robot] if label == 'optimized' else [130, 130, 130]), static=True)
         with np.load(output/f'{robot}-maps.npz') as maps:
-            rr.log(prefix+'/optimized_map', rr.Points3D(maps['optimized'], colors=COLORS[robot], radii=.025), static=True)
-            rr.log(prefix+'/original_map', rr.Points3D(maps['original'], colors=[100,100,100], radii=.02), static=True)
+            def display(points):
+                limit=cfg['evaluation'].get('rerun_map_max_points',0)
+                return points[np.linspace(0,len(points)-1,min(len(points),limit),dtype=int)] if limit else points
+            rr.log(prefix+'/optimized_map', rr.Points3D(display(maps['optimized']), colors=COLORS[robot], radii=.025), static=True)
+            rr.log(prefix+'/original_map', rr.Points3D(display(maps['original']), colors=[100,100,100], radii=.02), static=True)
         lookup.update({(robot, p['keyframe_id']): pose(p['T_world_body'])[:3,3] for p in rows})
+        if ellipsoid_bevs:
+            prepared=Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])
+            key=rows[len(rows)//2]['keyframe_id']
+            with np.load(prepared/'bevs'/f'{key:06d}-ellipsoid.npz') as bev:
+                rr.log(f'/bevs/{robot}',rr.Image(bev['image']),static=True)
+                xy=bev['orb_xy'][bev['kept_indices'].astype(int)]
+                rr.log(f'/bevs/{robot}/orb',rr.Points2D(xy,colors=[80,230,130],radii=2.),static=True)
         for stat in stats[robot]:
             rr.set_time('iteration', sequence=stat['iteration'])
             rr.log(f'/convergence/{robot}/pose_change', rr.Scalars(stat['result_logmap_change']))
@@ -47,11 +63,12 @@ def visualize(cfg, artifacts, poses, factors, stats, events, output, report):
         rr.log(f'/components/{component}/loops/{index}', rr.LineStrips3D([[lookup[tuple(edge['i'])], lookup[tuple(edge['j'])]]],
             colors=[240,200,50]), static=True)
     verifications = [e for e in events if e['type'] == 'verification']
-    for index in np.linspace(0, len(verifications)-1, min(len(verifications), 80), dtype=int):
+    for index in np.linspace(0, len(verifications)-1, min(len(verifications), cfg['evaluation'].get('rerun_verification_limit',80)), dtype=int):
         edge = verifications[index]; rr.set_time('event', sequence=int(index))
         for label in ('query', 'candidate'):
-            robot, key = edge[label]; store = Path(artifacts[f'keyframes.livo.{robot}'])/'store'
-            rr.log('/inspection/'+label, rr.EncodedImage(path=store/f'{key:06d}.png'))
+            robot, key = edge[label]; store = Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
+            if (store/f'{key:06d}.png').is_file():
+                rr.log('/inspection/'+label, rr.EncodedImage(path=store/f'{key:06d}.png'))
             with np.load(store/f'{key:06d}.npz') as data: cloud = data['cloud'][:, :3]
             if label == 'candidate':
                 T = edge.get('T_i_j', edge.get('initial_T_i_j'))

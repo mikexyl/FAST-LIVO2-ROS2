@@ -25,16 +25,17 @@ def exact(stream, n):
     return bytes(chunks)
 
 
-def consume(stream, output):
+def consume(stream, output, message_filter=None):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     types = get_typestore(Stores.ROS2_HUMBLE)
     channels = {}
     count, previous, robot = 0, -1, None
+    source_metadata = {}
     start = time.monotonic()
     with (output / 'sensors.mcap').open('xb') as f, (output / 'frames.jsonl').open('xb') as index:
         writer = Writer(f, compression=CompressionType.ZSTD, chunk_size=4 * 1024 * 1024)
-        writer.start(profile='ros2', library='FAST-LIVO2 direct synchronized export v1')
+        writer.start(profile='ros2', library='S3E direct synchronized odometry export v1')
         while True:
             n = struct.unpack('<I', exact(stream, 4))[0]
             if not n:
@@ -48,6 +49,10 @@ def consume(stream, output):
             if robot is not None and robot != row['robot_id']:
                 raise ValueError('Mixed robot export')
             robot, previous = row['robot_id'], stamp
+            current = {k:row[k] for k in ('frontend','cloud_source','pose_source') if k in row}
+            if count and current != source_metadata: raise ValueError('Changing export provenance')
+            source_metadata = current
+            retained=[]
             for entry in row['messages']:
                 topic, typename = entry['topic'], entry['type']
                 if not topic.startswith(f'/{robot}/research/'):
@@ -62,18 +67,23 @@ def consume(stream, output):
                 msg = types.deserialize_cdr(data, typename)
                 if msg.header.stamp.sec * 10**9 + msg.header.stamp.nanosec != stamp:
                     raise ValueError('Sensor/state timestamp association failed')
+                if message_filter is not None and not message_filter(row,entry,msg):
+                    continue
                 writer.add_message(channels[topic], stamp, data, publish_time=stamp, sequence=count)
+                retained.append(entry)
+            row['messages']=retained
             index.write(canonical(row) + b'\n')
             count += 1
         writer.finish()
     if not count:
         raise ValueError('Export contained no frames')
+    extra_files=message_filter.files if message_filter is not None else []
     write_json(output / 'manifest.json', dict(schema_version=1, complete=True, robot_id=robot,
         frames=count, last_stamp_ns=previous, elapsed_s=time.monotonic()-start,
-        files={name:file_hash(output/name) for name in ('sensors.mcap','frames.jsonl')},
-        cloud_source='complete preprocessed deskewed LiDAR in lidar frame, before mapping downsample',
-        pose_source='IMU/body state after visual update, at exact input image timestamp',
-        covariance='filter marginals are diagnostics only'))
+        files={name:file_hash(output/name) for name in ('sensors.mcap','frames.jsonl',*extra_files)},
+        covariance='filter marginals are diagnostics only',
+        **dict(dict(cloud_source='complete preprocessed deskewed LiDAR in lidar frame, before mapping downsample',
+            pose_source='IMU/body state after visual update, at exact input image timestamp'), **source_metadata)))
 
 
 if __name__ == '__main__':

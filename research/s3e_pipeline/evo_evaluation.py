@@ -12,6 +12,7 @@ from evo.main_ape import ape
 from evo.tools import file_interface
 
 from .artifacts import write_json
+from .geometry import pose
 
 EVO_VERSION = '1.36.5'
 
@@ -23,7 +24,7 @@ def associate(rows, truth, max_diff_s=.05):
     reference = PoseTrajectory3D(positions_xyz=truth[1],
         orientations_quat_wxyz=np.tile([1., 0., 0., 0.], (len(truth[0]), 1)),
         timestamps=np.asarray(truth[0], dtype=np.float64)/1e9)
-    estimate = PoseTrajectory3D(poses_se3=[np.asarray(r['T_world_body']) for r in rows],
+    estimate = PoseTrajectory3D(poses_se3=[pose(r['T_world_body']) for r in rows],
         timestamps=np.asarray([r['stamp_ns'] for r in rows], dtype=np.float64)/1e9)
     return sync.associate_trajectories(reference, estimate, max_diff=max_diff_s,
         first_name='position ground truth', snd_name='estimate')
@@ -33,6 +34,7 @@ def evaluate(graph, truth, cfg, output=None):
     if version('evo') != EVO_VERSION:
         raise ValueError(f'evo {EVO_VERSION} required')
     maximum_diff = float(cfg.get('evo_max_diff_s', .05))
+    orientation_used = cfg.get('gt_orientation_used_for_lever_arm', False)
     if maximum_diff <= 0:
         raise ValueError('evo_max_diff_s must be positive')
     groups = defaultdict(lambda: defaultdict(list))
@@ -73,7 +75,7 @@ def evaluate(graph, truth, cfg, output=None):
         result.info.update(engine=f'evo {EVO_VERSION}', component=component,
             robots=list(pairs), alignment_scope='one shared SE(3) alignment per connected component; scale fixed to 1',
             association_max_diff_s=maximum_diff, association='evo.sync.associate_trajectories; no interpolation',
-            orientation_ground_truth_used=False)
+            orientation_ground_truth_used=orientation_used)
         result.add_np_array('robot_index', np.concatenate([np.full(e.num_poses, i, dtype=np.int32) for i, (_, e) in enumerate(pairs.values())]))
         result.add_np_array('estimate_timestamps', np.concatenate([e.timestamps for _, e in pairs.values()]))
         result.add_np_array('reference_timestamps', np.concatenate([r.timestamps for r, _ in pairs.values()]))
@@ -84,7 +86,7 @@ def evaluate(graph, truth, cfg, output=None):
                 ref_name=f'{robot}-reference', est_name=f'{robot}-estimate')
             individual.info.update(engine=f'evo {EVO_VERSION}',
                 alignment_scope='saved shared component SE(3) alignment; no additional robot alignment',
-                component=component, association_max_diff_s=maximum_diff, orientation_ground_truth_used=False)
+                component=component, association_max_diff_s=maximum_diff, orientation_ground_truth_used=orientation_used)
             robot_results[robot] = dict(samples=est.num_poses, statistics=individual.stats)
             if output is not None:
                 file_interface.save_res_file(output/f'{robot}-ape.zip', individual)
@@ -98,13 +100,13 @@ def evaluate(graph, truth, cfg, output=None):
             median_m=result.stats['median'], statistics=result.stats, per_robot=robot_results,
             alignment_SE3=alignment.tolist(), scale=1., alignment_scope=result.info['alignment_scope'],
             engine=f'evo {EVO_VERSION}', association_max_diff_s=maximum_diff,
-            limitation='translation APE only; supplied GT orientations unused; antenna lever arm uncorrected')
+            limitation=cfg.get('trajectory_limitation','translation APE only; supplied GT orientations unused; antenna lever arm uncorrected'))
         status[component]['available'] = True
     if output is not None:
         write_json(output/'evaluation.json', dict(engine=f'evo {EVO_VERSION}',
             association_max_diff_s=maximum_diff, time_offset_s=0, interpolation=False,
             scale_fitting=False, components=status, metrics=results,
-            orientation_ground_truth_used=False))
+            orientation_ground_truth_used=orientation_used))
         (output/'README.md').write_text(
             '# evo trajectory evaluation\n\n'
             f'evo {EVO_VERSION}; nearest timestamp association within {maximum_diff:g} s, no interpolation or time offset. '
@@ -115,6 +117,7 @@ def evaluate(graph, truth, cfg, output=None):
             '```bash\nevo_ape kitti Alpha-reference.kitti Alpha-estimate.kitti -a -r trans_part --save_results check.zip\n'
             'evo_res Alpha-component-ape.zip --save_plot ape.pdf --save_table statistics.csv\n```\n\n'
             'Each robot ZIP uses the shared component alignment without an additional fit. '
-            'Unavailable results are recorded in `evaluation.json`; no numeric accuracy is invented. '
-            'GT orientations are not used.\n')
+            'Unavailable results are recorded in `evaluation.json`; no numeric accuracy is invented. ' +
+            ('GT orientations are used only to transform the calibrated reference lever arm; the metric is translation APE.\n'
+             if orientation_used else 'GT orientations are not used.\n'))
     return results

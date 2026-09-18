@@ -1,6 +1,7 @@
 """Evaluation is the only stage granted access to S3E position ground truth."""
 from collections import defaultdict
 from pathlib import Path
+from .frontends import frontend_name
 import csv
 import subprocess
 import sys
@@ -125,17 +126,18 @@ def evaluate(cfg,artifacts,dataset,output):
     from collections import Counter
     import time
     start=time.monotonic();output=Path(output)
-    method=cfg['backend']['name'];LOOPS=f'loops.livo.{method}';PGO=f'pgo.livo.{method}'
-    title='MegaLoc + MapClosures'
+    method=cfg['backend']['name'];LOOPS=f'loops.{frontend_name(cfg)}.{method}';PGO=f'pgo.{frontend_name(cfg)}.{method}'
+    title='MegaLoc + MapClosures' if method=='megaloc_mapclosures' else 'MapClosures'
     gt={r:ground_truth(dataset/f'{r.lower()}_gt.txt') for r in cfg['robots']}
     graph=read_json(Path(artifacts[PGO])/'graph.json')
+    if 'registration' in graph:title+=' + mixed pose/GICP PGO'
     loop=Path(artifacts[LOOPS]);events=read_jsonl(loop/'events.jsonl')
     rows=[];all_dense=[];all_original=[]
     for robot in cfg['robots']:
-        keyroot=Path(artifacts[f'keyframes.livo.{robot}'])/'store'
+        keyroot=Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
         keyrows=read_jsonl(keyroot/'keyframes.jsonl');rows+=keyrows
         graphrows=[r for r in graph['poses'] if r['robot_id']==robot]
-        export=Path(artifacts[f'odometry.livo.{robot}'])/'run/export'
+        export=Path(artifacts[f'odometry.{frontend_name(cfg)}.{robot}'])/'run/export'
         original,optimized,dense=build_maps(export,keyrows,graphrows,cfg['evaluation']['map_voxel_m'],keyroot)
         np.savez_compressed(output/f'{robot}-maps.npz',original=original.astype(np.float32),optimized=optimized.astype(np.float32))
         initial=[dict(r,T_world_body=r['T_initial_body']) for r in graphrows]
@@ -159,6 +161,8 @@ def evaluate(cfg,artifacts,dataset,output):
         gnc_rejected_loops=sum(f['kind']=='loop' and f['robust_weight']<.5 for f in graph['factors']),
         orientation_ground_truth_used=False,
         thresholds=cfg['backend']['fusion'],evaluation_runtime_s=time.monotonic()-start)
+    if 'registration' in graph:
+        report['registration_factors']=graph['registration']
     def provenance(e):return '+'.join(sorted(e.get('retrieval_sources',[]))) or 'unknown'
     report['branch_attribution']=dict(
         verification_attempts=dict(Counter(provenance(e) for e in verifications)),
@@ -197,15 +201,18 @@ def evaluate(cfg,artifacts,dataset,output):
     # Render one strongest accepted cross-robot pair (or an intra-robot pair if none).
     accepted=[e for e in verifications if e['accepted']]
     selected=sorted(accepted,key=lambda e:(e.get('retrieval_sources')!=['mapclosures'],
-        e['query'][0]==e['candidate'][0],-e.get('visual_similarity',0)))[:1]
+        e['query'][0]==e['candidate'][0],-(e.get('visual_similarity') or 0)))[:1]
     for e in selected:
         import matplotlib.image as mpimg
         fig,axes=plt.subplots(1,3,figsize=(16,5))
         clouds=[]
         for ax,endpoint in zip(axes[:2],[e['query'],e['candidate']]):
-            robot,key=endpoint;p=Path(artifacts[f'keyframes.livo.{robot}'])/'store'
-            ax.imshow(mpimg.imread(p/f'{key:06d}.png'));ax.set_title(f'{robot} keyframe {key}');ax.axis('off')
+            robot,key=endpoint;p=Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
             with np.load(p/f'{key:06d}.npz') as data:clouds.append(data['cloud'][:,:3])
+            if (p/f'{key:06d}.png').exists():ax.imshow(mpimg.imread(p/f'{key:06d}.png'))
+            else:
+                xyz=clouds[-1];ax.scatter(xyz[::10,0],xyz[::10,1],s=.3);ax.set_aspect('equal')
+            ax.set_title(f'{robot} keyframe {key}');ax.axis('off')
         a,b=clouds;b=transform(pose(e['T_i_j']),b)
         axes[2].scatter(a[::10,0],a[::10,1],s=.3,label=e['query'][0]);axes[2].scatter(b[::10,0],b[::10,1],s=.3,label=e['candidate'][0])
         axes[2].set_aspect('equal');axes[2].legend();axes[2].set_title(f"Accepted registration: RMSE {e['rmse_m']:.3f} m")

@@ -47,7 +47,9 @@ def frames(export, verify=True):
                 if channel.topic != entry['topic'] or msg.log_time != row['stamp_ns']:
                     raise ValueError('MCAP/frame index mismatch')
                 payload[channel.topic.rsplit('/',1)[-1]]=types.deserialize_cdr(msg.data,schema.name)
-            yield row, cloud_array(payload['cloud']), bytes(payload['image'].data)
+            if 'image' not in payload and row.get('image_available') is not False:
+                raise ValueError('Missing image without explicit image-free export metadata')
+            yield row, cloud_array(payload['cloud']), bytes(payload['image'].data) if 'image' in payload else b''
         if next(messages,None) is not None:
             raise ValueError('Unindexed MCAP messages')
 
@@ -81,14 +83,16 @@ def keyframes(export, output, cfg, camera_config):
         submap=voxel_downsample(np.concatenate(cloud_parts),cfg['voxel_m'])
         np.savez_compressed(output/f'{key:06d}.npz',cloud=submap.astype(np.float32),
                             scan=body.astype(np.float32))
-        (output/f'{key:06d}.png').write_bytes(image)
+        if image: (output/f'{key:06d}.png').write_bytes(image)
         item={k:v for k,v in row.items() if k!='messages'}
-        scaled_camera=dict(camera_config)
-        sx=row.get('image_width',camera_config['cam_width'])/camera_config['cam_width']
-        sy=row.get('image_height',camera_config['cam_height'])/camera_config['cam_height']
-        for field in ('cam_fx','cam_cx'):scaled_camera[field]*=sx
-        for field in ('cam_fy','cam_cy'):scaled_camera[field]*=sy
-        scaled_camera.update(cam_width=round(camera_config['cam_width']*sx),cam_height=round(camera_config['cam_height']*sy),scale=1.0)
+        scaled_camera=None
+        if image:
+            scaled_camera=dict(camera_config)
+            sx=row.get('image_width',camera_config['cam_width'])/camera_config['cam_width']
+            sy=row.get('image_height',camera_config['cam_height'])/camera_config['cam_height']
+            for field in ('cam_fx','cam_cx'):scaled_camera[field]*=sx
+            for field in ('cam_fy','cam_cy'):scaled_camera[field]*=sy
+            scaled_camera.update(cam_width=round(camera_config['cam_width']*sx),cam_height=round(camera_config['cam_height']*sy),scale=1.0)
         item.update(keyframe_id=key, submap_start_ns=trailing[0][0], submap_end_ns=row['stamp_ns'],
                     submap_points=len(submap), camera=scaled_camera,
                     cloud_frame=row['body_frame'], geometry_preprocessing='causal trailing submap in keyframe IMU frame')
@@ -116,4 +120,4 @@ class LocalStore:
         row=self.row(key)
         with np.load(self.root/f'{key:06d}.npz',allow_pickle=False) as f:
             cloud=f['cloud']
-        return row,cloud,(self.root/f'{key:06d}.png').read_bytes()
+        return row,cloud,b'' if row.get('image_available') is False else (self.root/f'{key:06d}.png').read_bytes()

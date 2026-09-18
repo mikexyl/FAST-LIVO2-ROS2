@@ -33,6 +33,12 @@ run or model inference is needed to evaluate the distributed front/back end.
 
 ## Build and run
 
+Optional live point-cloud factors are now available in the distributed solver.
+See [CBS pose + GICP results and commands](RESULTS-CBS-REGISTRATION.md).
+That mode requests only PCM-retained endpoint submaps over DDS, adds each GICP
+factor at its owning robot, and refreshes its correspondences during CBS
+updates. It reuses the same frozen inputs without centralized initialization.
+
 Both `cbs` and `cbs_ros` use project branch `dev/fast-livo2-s3e-dpgo`.
 The native overlay uses ROS Humble and the installed GTSAM 4.3/aria dependencies,
 separately from the Python GTSAM 4.2 evaluation environment. Set `CBS_UNDERLAY`

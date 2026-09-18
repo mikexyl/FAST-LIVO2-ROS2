@@ -3,6 +3,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+from s3e_pipeline.frontends import frontend_name
 import numpy as np
 import rerun as rr
 import rerun.blueprint as rrb
@@ -15,7 +16,7 @@ def visualize(plan):
     if rr.__version__!='0.37.1':raise RuntimeError('Rerun 0.37.1 is required')
     cfg=plan['config'];artifacts=plan['artifacts'];output=Path(plan['output'])
     method=cfg['backend']['name']
-    graph=read_json(Path(artifacts[f'pgo.livo.{method}'])/'graph.json')
+    graph=read_json(Path(artifacts[f'pgo.{frontend_name(cfg)}.{method}'])/'graph.json')
     rr.init('S3E '+method);rr.save(str(output/'result.rrd'))
     rr.log('/',rr.ViewCoordinates.FLU,static=True)
     views=[rrb.Spatial3DView(name=f'{c} component',origin=f'/components/{c}') for c in sorted(set(graph['components'].values()))]
@@ -28,8 +29,8 @@ def visualize(plan):
     from mcap.writer import Writer,CompressionType
     positions={}
     for robot in cfg['robots']:
-        odom=Path(artifacts[f'odometry.livo.{robot}'])/'run/export'
-        keys=read_jsonl(Path(artifacts[f'keyframes.livo.{robot}'])/'store/keyframes.jsonl')
+        odom=Path(artifacts[f'odometry.{frontend_name(cfg)}.{robot}'])/'run/export'
+        keys=read_jsonl(Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store/keyframes.jsonl')
         times={r['stamp_ns'] for r in keys[::cfg['evaluation']['rerun_sensor_stride']]}
         mcap_path=output/f'{robot}-keyframes.mcap'
         with (odom/'sensors.mcap').open('rb') as source,mcap_path.open('wb') as target:
@@ -58,13 +59,13 @@ def visualize(plan):
         color=[80,210,110] if f['robust_weight']>=.5 else [250,65,65]
         rr.log(f'/components/{a}/loops/{f["factor_index"]}',rr.LineStrips3D([[positions[tuple(f['i'])],positions[tuple(f['j'])]]],colors=color),static=True)
         rr.set_time('factor',sequence=f['factor_index']);rr.log('/residuals/graph',rr.Scalars(f['squared_whitened_residual']))
-    events=[e for e in read_jsonl(Path(artifacts[f'loops.livo.{method}'])/'events.jsonl') if e['type']=='verification']
+    events=[e for e in read_jsonl(Path(artifacts[f'loops.{frontend_name(cfg)}.{method}'])/'events.jsonl') if e['type']=='verification']
     indices=np.linspace(0,len(events)-1,min(len(events),cfg['evaluation']['rerun_verification_limit']),dtype=int)
     for index in indices:
         e=events[index];rr.set_time('event',sequence=int(index))
         for label,endpoint in [('query',e['query']),('candidate',e['candidate'])]:
-            robot,key=endpoint;p=Path(artifacts[f'keyframes.livo.{robot}'])/'store'
-            rr.log('/inspection/'+label,rr.EncodedImage(path=p/f'{key:06d}.png'))
+            robot,key=endpoint;p=Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'
+            if (p/f'{key:06d}.png').is_file():rr.log('/inspection/'+label,rr.EncodedImage(path=p/f'{key:06d}.png'))
             with np.load(p/f'{key:06d}.npz') as data:points=data['cloud'][:,:3]
             if label=='candidate':
                 T=e.get('T_i_j',e.get('initial_T_i_j'))

@@ -4,3 +4,16 @@ build/*
 __pycache__/
 *.pyc
 .pytest_cache/
+
+# Retain reports, figures, settings, and compact metrics in Git. Full run
+# artifacts stay on the experiment machine (see research/figures/README.md).
+research/figures/**/*.rrd
+research/figures/**/*.npz
+research/figures/**/*.npy
+research/figures/**/*.tum
+research/figures/**/*.kitti
+research/figures/**/*.zip
+research/figures/**/*.gz
+research/figures/**/*.jsonl
+research/figures/**/*.log
+research/figures/**/*_gt.txt

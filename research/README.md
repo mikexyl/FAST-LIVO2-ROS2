@@ -3,6 +3,12 @@
 See the [consolidated results summary](RESULTS-SUMMARY.md) for all completed
 sequences, individual CBS ATEs, loop attribution, runtime and known failures.
 
+An alternative [EllipseLIO frontend with LiDAR-only MapClosures](ELLIPSELIO.md)
+uses separate odometry artifacts and the same distributed PCM/CBS backend.
+Its configuration is `configs/square1-ellipselio-mapclosures-cbs.yaml`.
+The [completed Square 1 run](RESULTS-ELLIPSELIO-CBS.md) connected all robots
+with 29 loops and 1.1907 m combined evo ATE; detection and CBS took 40.35 s.
+
 The [loop-quality audit](LOOP-QUALITY.md) reports per-experiment distance
 flags, local cycle consistency, missing-evidence limits and per-loop CSVs.
 
@@ -10,6 +16,15 @@ Current distributed CBS configs enable **DOOR-SLAM-style distributed PCM**
 before optimization. See the [implementation and Square 1 validation](RESULTS-PCM-CBS.md):
 all 50 frozen Square 1 loops were retained; synthetic false closures were
 withheld. Historical sequence reports below predate PCM.
+
+An optional [centralized mixed pose/GICP graph](MIXED-PGO.md) now uses native
+gtsam_points registration factors. The [Square 1 test](RESULTS-MIXED-PGO.md)
+adds 50 live GICP factors to the retained pose graph; the first conservative
+configuration leaves the combined evo ATE effectively unchanged at 1.198 m.
+
+The [distributed CBS integration](RESULTS-CBS-REGISTRATION.md) also completed
+Square 1: 50 live GICP factors, 24.8 s, 6.20 MiB of requested geometry, and
+1.2045 m combined evo ATE. It retains the pose factors and distributed PCM.
 
 The distributed setup also has sequence configurations and reports for
 [Square 2](RESULTS-SQUARE2-CBS.md), [Library 1](RESULTS-LIBRARY1-CBS.md),
@@ -101,3 +116,7 @@ FAST-LIVO2-ROS2/scripts/s3e_experiment.sh run --stage inspect \
 ```
 
 This produces a separate `inspection-run-*.json` registry and immutable `inspect/<hash>/intermediates.rrd`. It reconstructs native density grids, displays all detected ORB features and the retained subset, and recovers exact HBST correspondences and winning RANSAC membership for every saved verification. Reconstructed descriptor bytes, keypoint coordinates, match/inlier counts and native poses must agree with the completed run. The detector binary, original registry and completed detection/PGO artifacts are preserved. See [INSPECTION.md](INSPECTION.md) for the current recording and legend.
+
+## CU-Multi on workstation 148
+
+[CU-Multi setup, validation and test status](CU-MULTI.md) documents the four-robot EllipseLIO → ellipsoid BEVs → MapClosures → distributed PCM/CBS deployment. The sensor download and a bounded smoke test are queued persistently; no CU-Multi trajectory score is available yet.

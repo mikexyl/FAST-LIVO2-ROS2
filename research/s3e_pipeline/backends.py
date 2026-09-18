@@ -64,7 +64,7 @@ def unpack_payload(value):
 
 
 def create(cfg):
-    if cfg.get('name')!='megaloc_mapclosures':
-        raise ValueError('Only the MegaLoc + MapClosures pipeline is supported')
+    if cfg.get('name') not in ('megaloc_mapclosures','mapclosures'):
+        raise ValueError('Expected MegaLoc + MapClosures or MapClosures-only')
     from .mapclosures import MegaLocMapClosures
     return MegaLocMapClosures(cfg)

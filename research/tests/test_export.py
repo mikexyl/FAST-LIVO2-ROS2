@@ -59,3 +59,27 @@ def test_frame_reader_yields_before_reading_all_chunks(tmp_path,monkeypatch):
     assert row['frame_id']==0 and cloud.shape==(4,4) and image==b'\x01\x02\x03'
     assert streams[0].tell()<(root/'sensors.mcap').stat().st_size/2
     rest=list(frames);assert len(rest)==39 and rest[-1][0]['frame_id']==39
+
+
+@pytest.mark.parametrize('explicit_image_free',[True,False])
+def test_image_free_mcap_requires_explicit_metadata(tmp_path,explicit_image_free):
+    from s3e_pipeline.data import frames
+    ts=get_typestore(Stores.ROS2_HUMBLE);t=ts.types
+    stamp=t['builtin_interfaces/msg/Time'](1661157300,123456789)
+    h=t['std_msgs/msg/Header'](stamp,'Alpha/lidar')
+    fields=[t['sensor_msgs/msg/PointField'](name,4*i,7,1) for i,name in enumerate(['x','y','z','intensity'])]
+    points=np.array([[3,4,5,6],[7,8,9,10]],dtype='<f4')
+    cloud=t['sensor_msgs/msg/PointCloud2'](h,1,2,fields,False,16,32,points.view(np.uint8).ravel(),True)
+    raw=bytes(ts.serialize_cdr(cloud,'sensor_msgs/msg/PointCloud2'))
+    row=dict(robot_id='Alpha',frame_id=0,stamp_ns=1661157300123456789,frontend='ellipselio',
+        cloud_source='native full deskewed cloud',pose_source='native post-LiDAR update',
+        messages=[dict(topic='/Alpha/research/cloud',type='sensor_msgs/msg/PointCloud2',size=len(raw))])
+    if explicit_image_free:row['image_available']=False
+    meta=canonical(row)
+    consume(io.BytesIO(struct.pack('<I',len(meta))+meta+raw+struct.pack('<I',0)),tmp_path)
+    if explicit_image_free:
+        item,decoded,image=next(frames(tmp_path))
+        assert np.array_equal(decoded,points) and image==b'' and item['stamp_ns']==row['stamp_ns']
+        assert read_json(tmp_path/'manifest.json')['frontend']=='ellipselio'
+    else:
+        with pytest.raises(ValueError,match='explicit image-free'):next(frames(tmp_path))

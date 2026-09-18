@@ -2,12 +2,14 @@
 import os
 import math
 from pathlib import Path
+from .frontends import frontend_name
 import signal
 import subprocess
 import sys
 import time
 import uuid
 from .artifacts import digest, file_hash, read_json, read_jsonl, write_json, write_jsonl
+from .mixed_pgo import settings as registration_settings
 
 
 def native_provenance(source):
@@ -25,6 +27,10 @@ def native_provenance(source):
     underlay = Path(os.environ.get('CBS_UNDERLAY', '/home/mikexyl/workspaces/sb_slam_ros2_ws/install'))
     result['gtsam_library'] = dict(path=str((underlay/'gtsam/lib/libgtsam.so').resolve()),
                                   sha256=file_hash(underlay/'gtsam/lib/libgtsam.so'))
+    adapter = source/'FAST-LIVO2-ROS2/research/adapters/gtsam_points'
+    result['registration_adapter_sources'] = {str(p.relative_to(adapter)):file_hash(p)
+        for p in sorted(adapter.rglob('*')) if p.is_file()}
+    result['registration_upstream_commit'] = '9d32e7dbecf6015560d84b4901d6b0a6f483ec46'
     return result
 
 
@@ -37,7 +43,7 @@ def run(cfg, artifacts, source, out):
     native = overlay/'cbs_ros/lib/cbs_ros/cbs_ros_node'
     mode = settings.get('mode', 'peers')
     if mode not in ('peers', 'frozen'): raise ValueError('dpgo.mode must be peers or frozen')
-    frozen = read_jsonl(Path(artifacts[f'loops.livo.{method}'])/'constraints.jsonl') if mode == 'frozen' else []
+    frozen = read_jsonl(Path(artifacts[f'loops.{frontend_name(cfg)}.{method}'])/'constraints.jsonl') if mode == 'frozen' else []
     pcm = dict(settings.get('pcm', {}))
     pcm_enabled = pcm.get('enabled', False)
     if type(pcm_enabled) is not bool: raise ValueError('dpgo.pcm.enabled must be boolean')
@@ -52,6 +58,9 @@ def run(cfg, artifacts, source, out):
         if type(timeout) not in (int, float) or not math.isfinite(timeout) or timeout <= 0:
             raise ValueError('PCM timeout_s must be finite and positive')
     pcm_session = uuid.uuid4().hex if pcm_enabled else ''
+    registration = registration_settings(settings.get('registration_factors', {}))
+    if registration['enabled'] and not pcm_enabled:
+        raise ValueError('CBS registration factors require the immutable PCM gate')
     processes = []; logs = []; observers = {}; peak_rss = {}
     env = dict(os.environ, ROS_DOMAIN_ID=str(settings['ros_domain_id']),
         PYTHONPATH=str(Path(__file__).resolve().parents[1])+os.pathsep+os.environ.get('PYTHONPATH', ''),
@@ -75,6 +84,13 @@ def run(cfg, artifacts, source, out):
             if any(k.startswith('pcm_') for k in settings.get('cbs_parameters', {})):
                 raise ValueError('Configure PCM through dpgo.pcm, not cbs_parameters')
             params.update(pcm_enabled=pcm_enabled)
+            if any(k.startswith('registration_') for k in settings.get('cbs_parameters', {})):
+                raise ValueError('Configure registration through dpgo.registration_factors')
+            params.update(registration_enabled=registration['enabled'])
+            if registration['enabled']:
+                import json
+                params.update(registration_directory=str(local/'registration'),
+                              registration_settings=json.dumps(registration, sort_keys=True))
             if pcm_enabled:
                 params.update(pcm_session_id=pcm_session, pcm_probability=float(pcm.get('probability', .99)),
                     pcm_minimum_clique_size=pcm.get('minimum_clique_size', 2),
@@ -87,11 +103,12 @@ def run(cfg, artifacts, source, out):
             incident = [e for e in frozen if robot in (e['i'][0], e['j'][0])]
             write_jsonl(local/'input-constraints.jsonl', incident)
             spec = dict(robot=robot, robots=robots, mode=mode, output=str(local),
-                store=str(Path(artifacts[f'keyframes.livo.{robot}'])/'store'),
-                descriptors=artifacts.get(f'descriptors.livo.{method}.{robot}',
-                                          str(Path(artifacts[f'keyframes.livo.{robot}'])/'store')), backend=cfg['backend'],
+                store=str(Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store'),
+                descriptors=artifacts.get(f'descriptors.{frontend_name(cfg)}.{method}.{robot}',
+                                          str(Path(artifacts[f'keyframes.{frontend_name(cfg)}.{robot}'])/'store')), backend=cfg['backend'],
                 loops=cfg['loops'], pgo=cfg['pgo'], constraints=str(local/'input-constraints.jsonl'),
                 pcm_enabled=pcm_enabled, pcm_session_id=pcm_session,
+                registration_factors=registration,
                 ros_underlay=str(underlay), ros_overlay=str(overlay))
             write_json(local/'spec.json', spec)
             observers[robot] = launch(f'{robot}-frontend', [sys.executable, '-m', 's3e_pipeline.ros_dpgo_worker',
@@ -144,6 +161,26 @@ def run(cfg, artifacts, source, out):
                     raise ValueError('PCM endpoint decisions disagree')
                 pcm_decisions[key] = decision
     constraints = [unique[k] for k in sorted(unique)]
+    if registration['enabled']:
+        pairs = []; expected = {(tuple(e['i']), tuple(e['j'])) for e in unique.values()}
+        for robot in robots:
+            result = summaries[robot]['registration']
+            if not result or not result['final'] or not result['success']: raise ValueError('Incomplete native registration result')
+            for pair in result['pairs']:
+                i, j = pair['i'], pair['j']
+                if i[0] != robots.index(robot): raise ValueError('Registration factor assigned to wrong owner')
+                pairs.append(((robots[i[0]], i[1]), (robots[j[0]], j[1])))
+        if len(set(pairs)) != len(pairs) or set(pairs) != expected:
+            raise ValueError('Native registration pair coverage/ownership mismatch')
+        write_json(out/'registration.json', dict(settings=registration,
+            robots={r:summaries[r]['registration'] for r in robots},
+            registration_factor_count=sum(summaries[r]['registration']['registration_factor_count'] for r in robots),
+            network_cdr_bytes=sum(s['registration_network_cdr_bytes'] for s in summaries.values()),
+            ownership='one binary GICP factor per geometrically supported PCM-retained loop, on its canonical first robot'))
+        # Exchanges are reproducible from original NPZs + the retained manifests.
+        # Do not retain a second copy of the temporary transport clouds.
+        for robot in robots:
+            for payload in (out/robot/'registration').glob('*.bin'): payload.unlink()
     write_jsonl(out/'poses.jsonl', poses); write_jsonl(out/'constraints.jsonl', constraints)
     write_jsonl(out/'proposed-constraints.jsonl', [proposed[k] for k in sorted(proposed)])
     if pcm_enabled:
@@ -155,6 +192,8 @@ def run(cfg, artifacts, source, out):
     write_json(out/'summary.json', dict(backend='CBS SE(3)', transport='ROS2 Fast DDS', mode=mode,
         wall_s=time.monotonic()-start, robots=summaries, keyframes=len(poses), loops=len(constraints),
         proposed_loops=len(proposed), pcm_enabled=pcm_enabled,
+        registration_enabled=registration['enabled'],
+        registration_network_cdr_bytes=sum(s['registration_network_cdr_bytes'] for s in summaries.values()),
         pcm_network_cdr_bytes=sum(s['pcm_network_cdr_bytes'] for s in summaries.values()),
         shared_reference=all(s['reference_available'] for s in summaries.values()),
         # Existing NodeStats counts the client side: requests sent + responses

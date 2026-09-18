@@ -59,7 +59,8 @@ def test_independent_budgets_and_union_deduplication():
     selected,_=select_branches(both,{'mapclosures':1,'megaloc':1},{},10**9,2*10**9)
     assert len(selected)==1 and selected[0][1]['selected_branches']==['mapclosures','megaloc']
 
-def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path):
+@pytest.mark.parametrize('lidar_only',[False,True])
+def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,lidar_only):
     stores={};descs={};rng=np.random.default_rng(12)
     parts=[]
     for axis in range(3):
@@ -69,10 +70,16 @@ def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path):
         store=tmp_path/robot;store.mkdir();stores[robot]=store
         root=tmp_path/(robot+'-descriptors');root.mkdir();descs[robot]=root
         row=dict(robot_id=robot,keyframe_id=0,stamp_ns=10**9,T_world_body=np.eye(4).tolist())
+        if lidar_only:row['image_available']=False
         write_jsonl(store/'keyframes.jsonl',[row]);np.savez_compressed(store/'000000.npz',cloud=cloud,scan=cloud)
-        (store/'000000.png').write_bytes(b'inspection-only')
-        write_json(root/'000000.json',descriptor(features(),np.eye(3)[i]))
+        if not lidar_only:(store/'000000.png').write_bytes(b'inspection-only')
+        desc=descriptor(features(),np.eye(3)[i])
+        if lidar_only:del desc['visual']
+        write_json(root/'000000.json',desc)
     cfg=dict(CFG['loops'],robots=list(stores));backend=dict(CFG['backend'],read_paths=[])
+    if lidar_only:
+        backend['name']='mapclosures';backend.pop('fusion')
+        cfg['branch_verification_limits']={'mapclosures':1}
     # Separate empty caches establish cold determinism, then reuse one cache.
     first_backend=dict(backend,verification_cache=str(tmp_path/'cache-first'))
     second_backend=dict(backend,verification_cache=str(tmp_path/'cache-second'))

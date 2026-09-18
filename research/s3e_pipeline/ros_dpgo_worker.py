@@ -70,6 +70,11 @@ class Robot(Node):
             self.worker = Worker(self.robot, spec['store'], spec['descriptors'], spec['backend'],
                                  dict(spec['loops'], robots=self.robots))
         self.frozen = read_jsonl(spec['constraints']) if spec['mode'] == 'frozen' else []
+        self.registration = None
+        if spec.get('registration_factors', {}).get('enabled', False):
+            from .registration_exchange import RegistrationExchange
+            self.registration = RegistrationExchange(self.robot, self.robots, self.rows, spec['store'],
+                self.output/'registration', spec['pcm_session_id'], spec['registration_factors'], self.send)
         # ROS middleware loads plugins lazily, so initialize its interfaces first.
         # Restrict filesystem reads for this process and its verifier subprocess.
         from .isolation import restrict_reads, worker_paths
@@ -163,6 +168,9 @@ class Robot(Node):
             event = self.mailbox.popleft(); kind = event['kind']
             if kind == 'constraint': self.accept(event['body']); continue
             if kind == 'done': self.done_peers.add(event['src']); continue
+            if kind.startswith('registration_'):
+                if self.registration is None: raise ValueError('Unexpected registration exchange')
+                self.registration.receive(event); continue
             if self.worker is None: raise ValueError('Retrieval message in frozen mode')
             body = event['body']; now = body.get('query_stamp_ns', body.get('stamp_ns'))
             if kind == 'candidates': self.remaining_replies.discard(event['src'])
@@ -202,6 +210,7 @@ class Robot(Node):
             elif self.last_estimate and len(self.last_estimate.keyframe_ids) == len(self.rows):
                 self.complete_pub.publish(Bool(data=True)); self.input_complete = True
                 self.detection_s = time.monotonic()-self.start
+        if self.registration: self.registration.advance(self.pcm_status, self.edges)
         now = time.monotonic()
         if now-self.last_progress > 5:
             self.last_progress = now
@@ -223,6 +232,16 @@ class Robot(Node):
         if not self.stats or self.stats[-1]['iteration'] < msg.iteration: return
         pcm_enabled = self.spec.get('pcm_enabled', False)
         if pcm_enabled and (not self.pcm_status or self.pcm_status['state'] != 'ready'): return
+        registration = None
+        if self.registration:
+            path = self.output/'native'/self.robot/'cbs_online/registration.json'
+            if not path.is_file(): return
+            registration = read_json(path)
+            if not registration['final']: return
+            if not registration['success']: raise RuntimeError('CBS registration quality failed')
+            if registration['session_id'] != self.spec['pcm_session_id']:
+                raise ValueError('Foreign registration result')
+            write_json(self.output/'registration-result.json', registration)
         if list(msg.keyframe_ids) != [r['keyframe_id'] for r in self.rows] or list(msg.stamp_ns) != [r['stamp_ns'] for r in self.rows]:
             raise ValueError('Incomplete or mistimestamped CBS estimate')
         poses = [dict(robot_id=self.robot, keyframe_id=int(key), stamp_ns=int(stamp),
@@ -247,12 +266,14 @@ class Robot(Node):
         write_json(self.output/'summary.json', dict(robot=self.robot, poses=len(poses), loops=len(retained),
             proposed_loops=len(proposals), pcm_enabled=pcm_enabled,
             pcm_network_cdr_bytes=self.pcm_status['network_cdr_bytes'] if pcm_enabled else 0,
+            registration=registration,
+            registration_network_cdr_bytes=sum(m['network_bytes'] for m in self.wire if m['kind'].startswith('registration_')),
             finished=True, reference_available=msg.reference_available, reference_robot_id=msg.reference_robot_id,
             iterations=msg.iteration,
             detection_s=self.detection_s, wall_s=time.monotonic()-self.start,
             max_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
             verifier_max_rss_kib=0 if self.worker is None else self.worker.verifier_rss,
-            loop_network_cdr_bytes=sum(m['network_bytes'] for m in self.wire),
+            loop_network_cdr_bytes=sum(m['network_bytes'] for m in self.wire if not m['kind'].startswith('registration_')),
             cbs_last_stats=self.stats[-1] if self.stats else None))
         self.finished = True
 

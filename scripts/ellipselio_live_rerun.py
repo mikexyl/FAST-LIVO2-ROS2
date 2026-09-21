@@ -42,6 +42,9 @@ def main():
 
     p=argparse.ArgumentParser()
     p.add_argument('--robot',required=True)
+    p.add_argument('--sequence',default='Library 2',help='Dataset label for the recording')
+    p.add_argument('--imu-topic',help='Raw IMU topic; defaults to /ROBOT/imu/data')
+    p.add_argument('--submap-dir',type=Path,help='Live immutable native submap index, when enabled')
     p.add_argument('--start-ns',required=True,type=int,help='Original bag start timestamp')
     p.add_argument('--output',required=True,type=Path)
     p.add_argument('--grpc-port',type=int,default=9876)
@@ -51,7 +54,7 @@ def main():
     args=p.parse_args()
     if rr.__version__!='0.37.1':raise RuntimeError('Rerun 0.37.1 is required')
     args.output.mkdir(parents=True,exist_ok=False)
-    rr.init(f'{args.robot} live EllipseLIO / Library 2')
+    rr.init(f'{args.robot} live EllipseLIO / {args.sequence}')
     sinks=[rr.FileSink(str(args.output/'live.rrd'))]
     if args.grpc_port:
         sinks.append(rr.GrpcServerSink(port=args.grpc_port,server_memory_limit='512MiB'))
@@ -83,7 +86,7 @@ def main():
         f'Display sampling: at most {args.max_scan_points} points per scan and {args.max_map_points} per full map. '
         'Ellipsoids are the upstream sparse MarkerArray output (approximately one per 100 newly added map points), not the complete fitted map.\n\n'
         'TF supplies exact post-LiDAR-update poses. Odometry supplies IMU-propagated velocity/covariance diagnostics. '
-        'Analytics has no header: its capture time is the latest observed /clock, not an exact scan association. '
+        'Analytics uses native sensor_stamp_ns when available; legacy publishers use approximate /clock timing. '
         'Covariance diagonals are shown in native published order; they are not relative-edge uncertainty.\n\n'
         'Timeline elapsed = seconds from original bag start. The earlier run first exceeded 20 m/s near 444.9 s on this timeline; this rerun may differ.\n')
     rr.log('/about',rr.TextDocument(description),static=True)
@@ -153,6 +156,8 @@ def main():
         nonlocal map_stamp,map_chunk
         ns=stamp_ns(msg.header.stamp)
         if msg.header.frame_id!=world_frame:rejected['map_frame']+=1;return
+        if ns<handover_ns:
+            rejected['archived_map_chunk']+=1;return
         seen('native_map_chunk',ns);set_time(ns)
         if ns!=map_stamp or map_chunk>=args.map_chunks:
             if map_stamp is not None:map_snapshots.append(dict(stamp_ns=map_stamp,received_chunks=map_chunk))
@@ -165,6 +170,8 @@ def main():
     def markers(msg):
         # Preserve native marker IDs and lifetime. Upstream only publishes new markers.
         for m in msg.markers:
+            if m.action==3:
+                rr.log('/world/ellipsoids',rr.Clear(recursive=True));continue
             ns=stamp_ns(m.header.stamp)
             if m.header.frame_id!=world_frame:rejected['marker_frame']+=1;continue
             seen('native_ellipsoid_marker',ns);set_time(ns)
@@ -182,10 +189,32 @@ def main():
     def scalar(path,value):
         if math.isfinite(value):rr.log(path,rr.Scalars(float(value)))
 
+    diagnostic_rows=(args.output/'analytics.jsonl').open('w',buffering=1)
+    active_id=-1
+    handover_ns=0
+    archived=set()
+
     def analytics(msg):
-        ns=clock_ns
+        nonlocal active_id,handover_ns
+        ns=getattr(msg,'stamp_ns',0) or clock_ns
         if ns is None or ns<args.start_ns:return
         seen('native_analytics',ns);set_time(ns)
+        fields=msg.get_fields_and_field_types()
+        diagnostic_rows.write(json.dumps({k:getattr(msg,k) for k in fields},default=list)+'\n')
+        current=getattr(msg,'active_submap_id',-1)
+        if current != active_id:
+            rr.log('/events',rr.TextLog(f'Submap handover: {active_id} -> {current}'))
+            rr.log('/world/ellipsoids',rr.Clear(recursive=True))
+            rr.log('/world/native_map',rr.Clear(recursive=True))
+            active_id=current
+            handover_ns=ns
+        for field in ('active_submap_id','successor_submap_id','handovers','active_features',
+                      'successor_features','correspondence_age_mean','correspondence_age_max','lidar_updated',
+                      'active_extent_m','successor_extent_m','active_age_s','successor_support','successor_support_ratio',
+                      'active_area_m2','active_new_area_m2','successor_area_m2','shared_area_m2','coverage_overlap_ratio'):
+            if hasattr(msg,field):scalar('/diagnostics/submaps/'+field,getattr(msg,field))
+        if getattr(msg,'submap_event',''):
+            rr.log('/events',rr.TextLog(msg.submap_event))
         for field in ('num_feats','num_reject','num_planes','num_lines','num_balls'):
             scalar('/diagnostics/features/'+field,getattr(msg,field))
         scalar('/diagnostics/residual/res_mean',msg.res_mean)
@@ -213,6 +242,24 @@ def main():
             for axis in ('x','y','z'):scalar(f'/diagnostics/imu/{label}_{axis}',getattr(v,axis))
 
     def status(complete=False):
+        if args.submap_dir and (args.submap_dir/'index.jsonl').exists():
+            import hashlib
+            for line in (args.submap_dir/'index.jsonl').read_text().splitlines(keepends=True):
+                if not line.endswith('\n'):continue
+                row=json.loads(line);key=row['submap_id']
+                if key in archived:continue
+                payload=args.submap_dir/row['payload']
+                if hashlib.sha256(payload.read_bytes()).hexdigest()!=row['sha256']:
+                    raise ValueError('Live submap payload hash mismatch')
+                with np.load(payload,allow_pickle=False) as data:
+                    points=data['points'];stride=max(1,len(points)//args.max_map_points)
+                    T=np.array(row['T_world_imu']).reshape(4,4)
+                    points=points[::stride]@T[:3,:3].T+T[:3,3]
+                set_time(row['available_ns'])
+                entity='area_snapshots' if row.get('strategy')=='area' else 'archived_submaps'
+                rr.log(f'/world/{entity}/{key}',rr.Points3D(points,colors=[90,115,155],radii=.025))
+                rr.log(f'/world/{entity}/{key}/metadata',rr.TextDocument(json.dumps(row,indent=2)))
+                archived.add(key)
         value=dict(robot=args.robot,capture='live ROS subscriptions during a fresh EllipseLIO replay',
             complete=complete,wall_s=time.monotonic()-started,counts=dict(counts),rejected=dict(rejected),
             first_stamp_ns=first,last_stamp_ns=last,first_motion_violation=first_violation,
@@ -229,7 +276,7 @@ def main():
         (PointCloud2,f'/{args.robot}/cloud_scan',scan),(PointCloud2,f'/{args.robot}/cloud_map',map_cloud),
         (MarkerArray,f'/{args.robot}/visualization_marker',markers),
         (EllipseLioAnalytics,f'/{args.robot}/analytics',analytics),
-        (Odometry,f'/{args.robot}/ellipselio_odom',odometry),(Imu,f'/{args.robot}/imu/data',imu)]
+        (Odometry,f'/{args.robot}/ellipselio_odom',odometry),(Imu,args.imu_topic or f'/{args.robot}/imu/data',imu)]
     for msg_type,topic,callback in subscriptions:node.create_subscription(msg_type,topic,callback,qos)
     node.create_timer(5.,status)
     def stop(*_):
@@ -246,6 +293,7 @@ def main():
         rr.get_data_recording().flush()
         rr.disconnect()
         poses.close()
+        diagnostic_rows.close()
         # The closed file includes its footer; the live status size did not.
         final_status=json.loads((args.output/'status.json').read_text())
         final_status['recording_bytes']=(args.output/'live.rrd').stat().st_size

@@ -179,8 +179,9 @@ def run(cfg, artifacts, source, out):
             ownership='one binary GICP factor per geometrically supported PCM-retained loop, on its canonical first robot'))
         # Exchanges are reproducible from original NPZs + the retained manifests.
         # Do not retain a second copy of the temporary transport clouds.
-        for robot in robots:
-            for payload in (out/robot/'registration').glob('*.bin'): payload.unlink()
+        if not settings.get('retain_registration_transport', False):
+            for robot in robots:
+                for payload in (out/robot/'registration').glob('*.bin'): payload.unlink()
     write_jsonl(out/'poses.jsonl', poses); write_jsonl(out/'constraints.jsonl', constraints)
     write_jsonl(out/'proposed-constraints.jsonl', [proposed[k] for k in sorted(proposed)])
     if pcm_enabled:

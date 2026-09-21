@@ -92,7 +92,7 @@ class Robot(Node):
 
     def publish_status(self):
         row = self.rows[self.next_index] if self.next_index < len(self.rows) else None
-        value = dict(robot=self.robot, index=self.next_index, next=None if row is None else row['stamp_ns'])
+        value = dict(robot=self.robot, index=self.next_index, next=None if row is None else row.get('available_ns',row['stamp_ns']))
         self.statuses[self.robot] = value
         msg = String(data=canonical(value).decode()); self.status_pub.publish(msg)
         self.wire.append(dict(kind='watermark', src=self.robot, dst='peers',

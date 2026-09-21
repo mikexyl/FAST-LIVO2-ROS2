@@ -34,6 +34,16 @@ def main():
     shutil.copy2(args.mapping_config,out/'mapping_config.yaml')
     config=yaml.safe_load(args.mapping_config.read_text());params=config['/**']['ros__parameters']
     params['use_sim_time']=True
+    params.setdefault('mapping',{})['diagnostics_path']=str(out/'native_updates.jsonl')
+    submaps=params.get('mapping',{}).get('submaps',{})
+    if submaps.get('enabled',False):
+        submaps.update(robot=args.robot,python=str(source/'.ros2/research-venv/bin/python'),
+            writer=str(source/'FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py'),
+            output=str(out/'submaps'))
+    area_maps=params.get('mapping',{}).get('area_maps',{})
+    if area_maps.get('enabled',False):
+        area_maps.update(robot=args.robot,python=str(source/'.ros2/research-venv/bin/python'),
+            writer=str(source/'FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py'),output=str(out/'area_maps'))
     research_options=params.get('research',{})
     writer_name='ellipsoid_delta_writer.py' if research_options.pop('ellipsoid_delta_export',False) else 'mcap_writer.py'
     params['research']=dict(research_options,enabled=not args.no_research_export,robot=args.robot,python=str(source/'.ros2/research-venv/bin/python'),
@@ -114,6 +124,12 @@ def main():
             drain=time.monotonic()+3
             while time.monotonic()<drain:rclpy.spin_once(node,timeout_sec=.1)
             if stats['odometry_messages']<10:raise RuntimeError('Insufficient EllipseLIO output')
+            mapping_finish=node.create_client(Trigger,f'/{args.robot}/mapping/finish')
+            if not mapping_finish.wait_for_service(timeout_sec=5):raise RuntimeError('Missing mapping completion service; rebuild native mapper')
+            mapping_future=mapping_finish.call_async(Trigger.Request())
+            rclpy.spin_until_future_complete(node,mapping_future,timeout_sec=60)
+            if not mapping_future.done() or not mapping_future.result().success:
+                raise RuntimeError('Native mapping outputs failed to finish')
             if not args.no_research_export:
                 finish=node.create_client(Trigger,f'/{args.robot}/research/finish')
                 if not finish.wait_for_service(timeout_sec=5):raise RuntimeError('Missing export completion service')
@@ -144,6 +160,10 @@ def main():
         if mapper:
             stats['native_mapper_returncode']=mapper.returncode
             if mapper.returncode not in (0,-signal.SIGINT):error=error or f'Native mapper exited with {mapper.returncode}'
+        if submaps.get('enabled',False) and not (out/'submaps/manifest.json').exists():
+            error=error or 'Native submap export did not complete'
+        if area_maps.get('enabled',False) and not (out/'area_maps/manifest.json').exists():
+            error=error or 'Native accumulated area-map export did not complete'
         stats.update(success=error is None,error=error,wall_s=time.monotonic()-begin)
         (out/'summary.json').write_text(json.dumps(stats,indent=2)+'\n')
         node.destroy_node()

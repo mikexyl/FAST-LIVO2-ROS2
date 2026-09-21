@@ -1,0 +1,5 @@
+# Snapshot cadence does not restrict point membership or retention.
+enabled: true
+radius_m: 80.0
+snapshot_step_m: 20.0
+snapshot_interval_s: 10.0

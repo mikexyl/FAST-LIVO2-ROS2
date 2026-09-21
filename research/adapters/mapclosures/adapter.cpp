@@ -67,7 +67,7 @@ public:
         cv::setNumThreads(1);
         orb=cv::ORB::create(500,1.f,1,31,0,2,cv::ORB::HARRIS_SCORE,31,35);
     }
-    py::dict describe(Array cloud) {
+    py::dict describe(Array cloud, py::object ground=py::none()) {
         if (cloud.ndim()!=2 || cloud.shape(1)!=3 || cloud.shape(0)<30)
             throw std::invalid_argument("MapClosures needs a nonempty Nx3 local map");
         auto x=cloud.unchecked<2>();std::vector<Eigen::Vector3d> points;points.reserve(cloud.shape(0));
@@ -77,8 +77,17 @@ public:
             points.push_back(p);
         }
         Features f;
-        f.ground=map_closures::AlignToLocalGround(points,config.density_map_resolution);
+        // An explicit IMU-to-level transform must survive into loop pose recovery.
+        // Do not refit a plane: sparse surface samples can silently produce identity.
+        f.ground=ground.is_none()
+            ? map_closures::AlignToLocalGround(points,config.density_map_resolution)
+            : ground.cast<Eigen::Matrix4d>();
         if (!f.ground.allFinite()) throw std::runtime_error("Ground alignment failed");
+        const Eigen::Matrix3d rotation=f.ground.block<3,3>(0,0);
+        if ((rotation.transpose()*rotation-Eigen::Matrix3d::Identity()).norm()>1e-6 ||
+            std::abs(rotation.determinant()-1)>1e-6 ||
+            (f.ground.row(3)-Eigen::RowVector4d(0,0,0,1)).norm()>1e-9)
+            throw std::invalid_argument("Ground alignment must be a rigid transform");
         const auto density=map_closures::GenerateDensityMap(points,f.ground,config.density_map_resolution,config.density_threshold);
         std::vector<cv::KeyPoint> keypoints;cv::Mat descriptors;
         orb->detectAndCompute(density.grid,cv::noArray(),keypoints,descriptors);
@@ -147,7 +156,8 @@ PYBIND11_MODULE(s3e_mapclosures_native,m) {
     m.attr("upstream_commit")="1710f15db000a579324e3ba045cd64a0b4d706da";
     py::class_<Adapter>(m,"MapClosures")
         .def(py::init<float,float,int>())
-        .def("describe",&Adapter::describe).def("add",&Adapter::add)
+        .def("describe",&Adapter::describe,py::arg("cloud"),py::arg("ground")=py::none())
+        .def("add",&Adapter::add)
         .def("query",&Adapter::query).def("pair",&Adapter::pair);
 }
 #endif

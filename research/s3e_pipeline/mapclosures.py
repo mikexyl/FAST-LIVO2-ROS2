@@ -83,6 +83,15 @@ class MegaLocMapClosures(Backend):
         diagnostics=dict(backend=self.name,visual_similarity=float(qv@cv) if self.visual_enabled else None,retrieval_sources=sources,
             selected_branches=proposal.get('selected_branches',[]),
             native=dict(method='MapClosures',hypothesis=h),pose_initializer='MapClosures density-map RANSAC')
+        for name,payload in [('query',query),('candidate',candidate)]:
+            if 'evidence_preprocessing' in payload:
+                diagnostics[name+'_evidence']=payload['evidence_preprocessing']
+        if self.cfg['registration'].get('sampling')=='fixed':
+            resolution=self.cfg['registration']['voxel_m']
+            for payload in (query,candidate):
+                info=payload.get('evidence_preprocessing')
+                if info is None or info['effective_voxel_m']>resolution+1e-9:
+                    raise ValueError('Fixed-resolution verification requires evidence at the requested resolution or finer')
         if not self.native_pass(h):
             return dict(accepted=False,reason='mapclosures_no_pose',**diagnostics)
         initial=np.asarray(h['T_i_j'])

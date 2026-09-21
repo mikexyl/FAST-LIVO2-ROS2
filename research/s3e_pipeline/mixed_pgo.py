@@ -33,6 +33,7 @@ def settings(cfg):
             raise ValueError(f'Expected positive integer {key}')
     for key in ('voxel_m', 'max_range_m', 'correspondence_m', 'min_overlap',
                 'min_observability', 'max_condition', 'max_information_ratio', 'timeout_s'):
+        if key=='max_range_m' and value[key] is None:continue
         if type(value[key]) not in (int, float) or not math.isfinite(value[key]) or value[key] <= 0:
             raise ValueError(f'Expected finite positive {key}')
     if (value['min_overlap'] > 1 or value['num_threads'] > 64 or

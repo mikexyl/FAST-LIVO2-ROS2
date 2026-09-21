@@ -54,13 +54,17 @@ def unpack_array(value):
 
 
 def pack_payload(payload):
-    return dict(row=payload['row'],cloud=pack_array(payload['cloud']),
+    result=dict(row=payload['row'],cloud=pack_array(payload['cloud']),
         image=base64.b64encode(payload['image']).decode(),descriptor=payload['descriptor'])
+    if 'evidence_preprocessing' in payload:result['evidence_preprocessing']=payload['evidence_preprocessing']
+    return result
 
 
 def unpack_payload(value):
-    return dict(row=value['row'],cloud=unpack_array(value['cloud']),
+    result=dict(row=value['row'],cloud=unpack_array(value['cloud']),
         image=base64.b64decode(value['image'],validate=True),descriptor=value['descriptor'])
+    if 'evidence_preprocessing' in value:result['evidence_preprocessing']=value['evidence_preprocessing']
+    return result
 
 
 def create(cfg):

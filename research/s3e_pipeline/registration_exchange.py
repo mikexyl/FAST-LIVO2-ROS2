@@ -43,8 +43,11 @@ class RegistrationExchange:
             if (row['robot_id'] != self.robot or row['keyframe_id'] != key or
                 row.get('cloud_frame') != row.get('body_frame') or not row.get('body_frame') or
                 row.get('submap_end_ns') != row['stamp_ns'] or
-                row.get('geometry_preprocessing') != 'causal trailing submap in keyframe IMU frame'):
+                row.get('geometry_preprocessing') not in ('causal trailing submap in keyframe IMU frame',
+                    'causal completed native submap in anchor IMU frame','causal accumulated area map in snapshot IMU frame')):
                 raise ValueError('Invalid registration submap coordinates or time')
+            if row.get('strategy')=='area' and self.cfg['max_range_m'] is not None:
+                raise ValueError('Area registration geometry must not have a 3D range crop')
             path = self.store/f'{key:06d}.npz'
             with np.load(path, allow_pickle=False) as data:
                 cloud, voxel = bounded_cloud(data['cloud'], self.cfg['voxel_m'], self.cfg['max_points'], self.cfg['max_range_m'])

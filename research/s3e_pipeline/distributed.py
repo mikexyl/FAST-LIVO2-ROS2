@@ -16,6 +16,29 @@ from .isolation import restrict_reads, worker_paths
 from .verification import Verifier,VerificationProcess
 
 
+def available_ns(row):
+    return row.get('available_ns', row['stamp_ns'])
+
+
+def eligible_observation(row, query, same_robot, exclusion_ns):
+    if not row.get('retrievable', True) or available_ns(row) > query['stamp_ns']:
+        return False
+    if not same_robot:
+        return True
+    anchor = query.get('anchor_ns', query['stamp_ns'])
+    if anchor - row['stamp_ns'] < exclusion_ns:
+        return False
+    if row.get('strategy')=='area' or query.get('strategy')=='area':
+        if row.get('strategy')!='area' or query.get('strategy')!='area':return False
+        from .area_maps import shared_ids
+        # Historical points reused in two crops cannot supply an independent loop.
+        if shared_ids(row['geometry_id_ranges'],query['geometry_id_ranges']):return False
+    elif 'begin_ns' in query and 'begin_ns' in row:
+        if max(query['begin_ns'], row['begin_ns']) < min(query['end_ns'], row['end_ns']):
+            return False
+    return True
+
+
 def select_branches(candidates,limits,last,stamp,cooldown_ns):
     """Independent raw-score budgets; coalesce a pair selected by both branches."""
     chosen={};rejected=[]
@@ -77,10 +100,14 @@ class Worker:
         finally:self.backend.close()
 
     def descriptor(self,key):
-        self.store.row(key)
+        row=self.store.row(key)
         import json,zlib
         path=self.descriptors/f'{key:06d}.json.zlib'
-        return json.loads(zlib.decompress(path.read_bytes())) if path.exists() else read_json(self.descriptors/f'{key:06d}.json')
+        descriptor=json.loads(zlib.decompress(path.read_bytes())) if path.exists() else read_json(self.descriptors/f'{key:06d}.json')
+        if 'submap_id' in row and (descriptor.get('submap_id')!=row['submap_id'] or
+            descriptor.get('member_scan_ids')!=row['member_scan_ids'] or descriptor.get('payload_sha256')!=row['sha256']):
+            raise ValueError('Submap descriptor/evidence membership mismatch')
+        return descriptor
 
     def payload(self,key):
         if key not in self.seen:raise ValueError('Future payload requested')
@@ -88,9 +115,20 @@ class Worker:
         # Geometry is requested only for selected descriptor proposals.
         from .registration import bounded_cloud
         evidence=self.backend_config.get('evidence',{})
-        cloud,_=bounded_cloud(cloud,evidence.get('voxel_m',.5),evidence.get('max_points',16000),80.)
+        sampling=evidence.get('sampling','adaptive')
+        if sampling not in ('adaptive','fixed'):raise ValueError('Unknown evidence sampling policy')
+        if row.get('strategy') in ('coverage','area') and (sampling!='fixed' or self.backend_config['registration'].get('sampling')!='fixed'):
+            raise ValueError('Coverage submaps require fixed-resolution verification')
+        budget=None if sampling=='fixed' else evidence.get('max_points',16000)
+        original_points=len(cloud)
+        max_range=evidence.get('max_range_m',80.)
+        if row.get('strategy')=='area' and (max_range is not None or self.backend_config['registration'].get('max_range_m',80.) is not None):
+            raise ValueError('Area map geometry must not have a 3D range crop')
+        cloud,resolution=bounded_cloud(cloud,evidence.get('voxel_m',.5),budget,max_range)
+        preprocessing=dict(sampling_policy=sampling,requested_voxel_m=evidence.get('voxel_m',.5),
+                           effective_voxel_m=resolution,input_points=original_points,output_points=len(cloud),max_range_m=max_range)
         image=b''
-        return dict(row=row,cloud=cloud,image=image,descriptor=self.descriptor(key))
+        return dict(row=row,cloud=cloud,image=image,descriptor=self.descriptor(key),evidence_preprocessing=preprocessing)
 
     def handle(self,event,now):
         outgoing=[];records=[]
@@ -98,14 +136,15 @@ class Worker:
         kind=event['kind'];body=event['body']
         if kind=='observe':
             key=body['keyframe_id'];row=self.store.row(key)
-            if row['stamp_ns']!=now or key in self.seen:raise ValueError('Invalid observation schedule')
+            if available_ns(row)!=now or not row.get('retrievable',True) or key in self.seen:raise ValueError('Invalid observation schedule')
             self.seen.add(key);self.index[key]=self.descriptor(key)
-            q=dict(query_id=key,stamp_ns=now,descriptor=self.index[key])
+            q=dict(query_id=key,stamp_ns=now,anchor_ns=row['stamp_ns'],descriptor=self.index[key])
+            q.update({k:row[k] for k in ('begin_ns','end_ns','strategy','geometry_id_ranges') if k in row})
             for robot in self.cfg['robots']:send(robot,'query',q)
         elif kind=='query':
             src=event['src'];q=body['query_id'];stamp=body['stamp_ns']
-            eligible={k:v for k,v in self.index.items() if self.store.row(k)['stamp_ns']<=stamp and
-                (src!=self.robot or stamp-self.store.row(k)['stamp_ns']>=round(self.cfg['same_robot_exclusion_s']*1e9))}
+            eligible={k:v for k,v in self.index.items() if eligible_observation(self.store.row(k), body,
+                src==self.robot, round(self.cfg['same_robot_exclusion_s']*1e9))}
             ranked=self.backend.retrieve(body['descriptor'],eligible,self.cfg['top_k'])
             send(src,'candidates',dict(query_id=q,query_stamp_ns=stamp,candidates=ranked))
         elif kind=='candidates':
@@ -134,14 +173,14 @@ class Worker:
             return outgoing,records
         elif kind=='payload_request':
             key=body['candidate_id']
-            if key not in self.seen or self.store.row(key)['stamp_ns']>body['query_stamp_ns']:
+            if key not in self.seen or available_ns(self.store.row(key))>body['query_stamp_ns']:
                 records.append(dict(type='rejection',reason='future_payload',candidate=[self.robot,key]));return outgoing,records
             send(event['src'],'payload_response',dict(**body,payload=pack_payload(self.payload(key))))
         elif kind=='payload_response':
             q=body['query_id'];c=body['candidate_id'];src=event['src']
             if (q,src,c) not in self.requested:raise ValueError('Unrequested payload')
             candidate_row=body['payload']['row']
-            if candidate_row['robot_id']!=src or candidate_row['keyframe_id']!=c or candidate_row['stamp_ns']>body['query_stamp_ns']:
+            if candidate_row['robot_id']!=src or candidate_row['keyframe_id']!=c or available_ns(candidate_row)>body['query_stamp_ns']:
                 raise ValueError('Invalid candidate evidence identity')
             if self.verifier is None:
                 self.verifier=VerificationProcess(self.backend_config,self.cfg.get('worker_timeout_s',300)) if self.queue_size else Verifier(self.backend_config,self.backend)
@@ -191,7 +230,7 @@ def replay(stores,descriptor_roots,backend,cfg,output):
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     ctx=mp.get_context('spawn');connections={};processes={};rss={};verifier_rss={};counter=itertools.count();heap=[]
     rows={robot:read_jsonl(Path(path)/'keyframes.jsonl') for robot,path in stores.items()}
-    epoch=min(r[0]['stamp_ns'] for r in rows.values())
+    epoch=min(available_ns(r[0]) for r in rows.values())
     accepted={};record_batches=[];wire=[]
     pending_verifications={};optimizer_messages=[];accepted_proposals=set();submitted=0;verified=0
     observed=0;handled=0;wall_start=time.monotonic();last_progress=wall_start
@@ -247,7 +286,7 @@ def replay(stores,descriptor_roots,backend,cfg,output):
             proc.start();child.close();processes[robot]=proc
             receive(robot)
             for row in rows[robot]:
-                heapq.heappush(heap,(row['stamp_ns'],0,robot,row['keyframe_id'],next(counter),
+                heapq.heappush(heap,(available_ns(row),0,robot,row['keyframe_id'],next(counter),
                     dict(src=robot,dst=robot,kind='observe',body={'keyframe_id':row['keyframe_id']})))
         while heap:
             now,priority,destination,frame,seq,event=heapq.heappop(heap)

@@ -25,18 +25,19 @@ class FeatureCache:
 
 
 def bounded_cloud(xyz,voxel,max_points=20000,max_range=80.):
-    """Deterministic voxel centroids; keep the frozen full cloud unchanged."""
+    """Deterministic centroids. max_points=None preserves the requested resolution."""
     import small_gicp
     xyz=np.asarray(xyz[:,:3],dtype=np.float64)
     good=np.isfinite(xyz).all(axis=1)
     if max_range is not None:good&=np.linalg.norm(xyz,axis=1)<=max_range
     xyz=xyz[good]
-    if voxel<=0 or max_points<30:raise ValueError('Invalid registration point budget')
+    if not np.isfinite(voxel) or voxel<=0 or (max_points is not None and (type(max_points) is not int or max_points<30)):
+        raise ValueError('Invalid registration point budget')
     resolution=float(voxel)
     if not len(xyz):return xyz,resolution
     for _ in range(32):
         points=small_gicp.voxelgrid_sampling(xyz,resolution,num_threads=1).points()[:,:3].copy()
-        if len(points)<=max_points:return points,resolution
+        if max_points is None or len(points)<=max_points:return points,resolution
         resolution*=1.25
     raise ValueError('Unable to bound registration cloud')
 
@@ -46,8 +47,11 @@ def refine(target, source, initial, cfg, cache=None):
     if initial is None:
         return dict(accepted=False,reason='no_pose_initialization')
     initial=pose(initial)
+    sampling=cfg.get('sampling','adaptive')
+    if sampling not in ('adaptive','fixed'):raise ValueError('Unknown registration sampling policy')
+    budget=None if sampling=='fixed' else cfg.get('max_points',20000)
     def prepare(x):
-        points,resolution=bounded_cloud(x,cfg['voxel_m'],cfg.get('max_points',20000),cfg.get('max_range_m',80.))
+        points,resolution=bounded_cloud(x,cfg['voxel_m'],budget,cfg.get('max_range_m',80.))
         # Sampling happened above. Build covariances on exactly that cloud, once.
         cloud=small_gicp.PointCloud(points)
         if len(points)<cfg['min_inliers']:return (cloud,None,resolution),len(points)*256+4096
@@ -55,12 +59,12 @@ def refine(target, source, initial, cfg, cache=None):
         small_gicp.estimate_normals_covariances(cloud,tree,num_neighbors=20,num_threads=1)
         return (cloud,tree,resolution),len(points)*256+4096
     if cache:
-        kind=('gicp-bounded',cfg.get('max_points',20000),cfg.get('max_range_m',80.),cfg['min_inliers'])
+        kind=('gicp-bounded',budget,cfg.get('max_range_m',80.),cfg['min_inliers'])
         t,tree,tv=cache.get(kind,target,cfg['voxel_m'],prepare)
         s,_,sv=cache.get(kind,source,cfg['voxel_m'],prepare)
     else:(t,tree,tv),_=prepare(target);(s,_,sv),_=prepare(source)
     target=t.points()[:,:3];source=s.points()[:,:3]
-    sizes=dict(target_points=len(target),source_points=len(source),target_voxel_m=tv,source_voxel_m=sv)
+    sizes=dict(target_points=len(target),source_points=len(source),target_voxel_m=tv,source_voxel_m=sv,sampling_policy=sampling)
     if min(len(target),len(source)) < cfg['min_inliers']:
         return dict(accepted=False,reason='insufficient_points',**sizes)
     assessment_tree=cKDTree(target)

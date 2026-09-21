@@ -1,0 +1,120 @@
+{
+  "aerial05": {
+    "native_poses": 1120,
+    "finite_chronological": true,
+    "max_successful_update_gap_s": 0.31999898,
+    "max_speed_m_s": 4.935991044622429,
+    "smoke_passed": true,
+    "full_sequence": false,
+    "ground_truth_used": false,
+    "artifact_validation": {
+      "native_updates": 1120,
+      "snapshots": 52,
+      "completed_snapshots": 50,
+      "inspection_tails": 2,
+      "retrievable_snapshots": 50,
+      "finite_chronological": true,
+      "exact_membership": true,
+      "anchor_poses_verified": true,
+      "payload_hashes_verified": true
+    },
+    "recorded_analytics": 1106,
+    "live_analytics_fraction": 0.9875,
+    "closure_reasons": {
+      "coverage": 50
+    },
+    "duration_s": {
+      "min": 1.464003086,
+      "median": 2.5000031,
+      "max": 31.240028143
+    },
+    "area_m2": {
+      "min": 4000.0,
+      "median": 4028.0,
+      "max": 5239.0
+    },
+    "new_area_m2": {
+      "min": 2929.0,
+      "median": 3140.5,
+      "max": 4336.0
+    },
+    "overlap_ratio": {
+      "min": 0.6953252032520325,
+      "median": 0.7758511984907,
+      "max": 0.9398402396405392
+    },
+    "shared_area_m2": {
+      "min": 2815.0,
+      "median": 3224.0,
+      "max": 4018.0
+    },
+    "processing_s": {
+      "min": 0.0006687850000162143,
+      "median": 0.017746374500347883,
+      "max": 0.07947050000075251
+    },
+    "max_correspondence_age_s": 31.240028143000004,
+    "mapper_peak_rss_mib": 456.6015625,
+    "recovery_events": 0,
+    "max_active_points": 62679
+  },
+  "aerial08": {
+    "native_poses": 1118,
+    "finite_chronological": true,
+    "max_successful_update_gap_s": 1.711999893,
+    "max_speed_m_s": 4.2680650662219435,
+    "smoke_passed": false,
+    "full_sequence": false,
+    "ground_truth_used": false,
+    "artifact_validation": {
+      "native_updates": 1118,
+      "snapshots": 45,
+      "completed_snapshots": 43,
+      "inspection_tails": 2,
+      "retrievable_snapshots": 43,
+      "finite_chronological": true,
+      "exact_membership": true,
+      "anchor_poses_verified": true,
+      "payload_hashes_verified": true
+    },
+    "recorded_analytics": 1106,
+    "live_analytics_fraction": 0.9892665474060823,
+    "closure_reasons": {
+      "coverage": 43
+    },
+    "duration_s": {
+      "min": 1.160000801,
+      "median": 4.480004072,
+      "max": 13.54401803
+    },
+    "area_m2": {
+      "min": 4000.0,
+      "median": 4011.0,
+      "max": 4148.0
+    },
+    "new_area_m2": {
+      "min": 2873.0,
+      "median": 3088.0,
+      "max": 3611.0
+    },
+    "overlap_ratio": {
+      "min": 0.5598802395209581,
+      "median": 0.8078460769615192,
+      "max": 0.97775
+    },
+    "shared_area_m2": {
+      "min": 2244.0,
+      "median": 3233.0,
+      "max": 3911.0
+    },
+    "processing_s": {
+      "min": 0.0020768489994225092,
+      "median": 0.01958151050075685,
+      "max": 0.07575138299944228
+    },
+    "max_correspondence_age_s": 13.54401803,
+    "mapper_peak_rss_mib": 448.50390625,
+    "recovery_events": 0,
+    "max_active_points": 65448
+  }
+}

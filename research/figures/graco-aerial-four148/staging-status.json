@@ -1,0 +1,43 @@
+{
+  "phase": "complete",
+  "started_utc": "2026-09-20T10:44:12.864050+00:00",
+  "robots": {
+    "aerial05": {
+      "phase": "complete",
+      "source": "/data/graco/aerial-05-40m.bag",
+      "counts": {
+        "/velodyne/points": 2963,
+        "/gnss/imu": 37040
+      },
+      "source_sha256": "d704884eb3b55dbf7db8691777919e84dce3eb989817545c41e3a7548a78136d"
+    },
+    "aerial06": {
+      "phase": "complete",
+      "source": "/data/graco/aerial-06-20m.bag",
+      "counts": {
+        "/velodyne/points": 3290,
+        "/gnss/imu": 41149
+      },
+      "source_sha256": "7ffcc94a580fc75c5440b575200f7bfcb57e603e4defdd591619fc06b54f1d67"
+    },
+    "aerial07": {
+      "phase": "complete",
+      "source": "/data/graco/aerial-07-25m.bag",
+      "counts": {
+        "/velodyne/points": 3943,
+        "/gnss/imu": 49287
+      },
+      "source_sha256": "74195f07f2a9d2d3da3c2162388344ce818a593e53867bf904818beb75218d90"
+    },
+    "aerial08": {
+      "phase": "complete",
+      "source": "/data/graco/aerial-08-25m.bag",
+      "counts": {
+        "/velodyne/points": 2780,
+        "/gnss/imu": 34769
+      },
+      "source_sha256": "713308b903f6952a2a7a290de75c0e7ceedce46350fd3ae47610f879687a3464"
+    }
+  },
+  "finished_utc": "2026-09-20T10:46:22.179087+00:00"
+}

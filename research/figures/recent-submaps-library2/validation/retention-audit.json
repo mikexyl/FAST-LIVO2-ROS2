@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "trials": {
+    "bob-baseline": {
+      "path": "/workspace/.ros2/recent-submaps/bob-baseline/recording/live.rrd",
+      "bytes": 546370271,
+      "sha256": "4a11e98d5dd3a42ac5377f49dfcfce510f944ad32aa387a5ee4ac5f2db173b03",
+      "verified": true,
+      "source_hashes": {
+        "ellipselio/src/lidar_processing.cpp": "4174d61e1db260fc63751edd3d1f36c1192330d5e61d45a67c9097ad14cb907a",
+        "ellipselio/src/cam_processing.cpp": "3bba7c8b7950897bb6725ae9232b05fbfb9c42a4a293c4f415c6251380e54cbe",
+        "ellipselio/src/research_frame.cpp": "ad401777bf39ae464b223d96d2c20c6c2277d933a73a8fa8364264d2ccd95023",
+        "ellipselio/src/submaps.cpp": "82094a860265e3043119b7f493d70038c9100280620139d4aa0c595980705848",
+        "ellipselio/src/imu_processing.cpp": "995e8898b2ab62b4a8bad7e9ca1f987ca971d4489f0653a1ca4f43374ce0f783",
+        "ellipselio/src/map_processing.cpp": "4ea43113f120a52ef439004897cd6b12fccd78f5f34db220a1daa4bec41f6bd0",
+        "ellipselio/include/common_pcl.h": "ff73c75c40e2bd564d0de9facb6a5c41ca8608b1269788f937955e0058b49f3f",
+        "ellipselio/include/lidar_processing.h": "6569dd383638d07237a051b9aec188c2948d157bda17bd8ed55ce95796344f46",
+        "ellipselio/include/cam_processing.h": "ae2e5839e8dc17b2aaac7fc56adc2c6270c0e8023b7178dfe935b3ef49174f7c",
+        "ellipselio/include/common_lib.h": "3c8d4cd42c801e1369522d5238657f9c592f6e9f1671c9cee0d8d0553ccc51b4",
+        "ellipselio/include/map_processing.h": "503d4bd309d5d355492b544c59ffbf4a8a4e184e3c054e8920a39f1c73d6c379",
+        "ellipselio/include/imu_processing.h": "6db9c78a14202bd2cd82c1eb7b6715d5ba4be9542e9723e50a5aa1d16e94a448",
+        "ellipselio/include/ikfom/use_ikfom.h": "a5c9050776ef2d1070cc01c206798ffe9e65fee4971ac310dc1628199b2bd6bd",
+        "ellipselio/include/ikfom/so3_math.h": "1e1f7959b0f75d6c1393c8c86f49baea98095b9e41d63404976a8a0ff2578a26",
+        "ellipselio/include/ikfom/esekfom/esekfom.hpp": "f111bde93df4609512f42ec6b9afb9046cf8e213e3befd4375e1efeab4a51cfd",
+        "ellipselio/include/ikfom/esekfom/util.hpp": "3c4265d25ea3f8c7f586d1e34bc352e981e09e30555e42011cd23a0a147d6918",
+        "ellipselio/include/ikfom/mtk/build_manifold.hpp": "0e88522551d02e78dc995e6c9d7883d9ecca7190379ec047ab839fff7186ea0f",
+        "ellipselio/include/ikfom/mtk/startIdx.hpp": "79cdc368bb4e083f5fda7549094c0aba8b599aee1f88e9f2a8b7fa785bf1f757",
+        "ellipselio/include/ikfom/mtk/types/S2.hpp": "f861be0bbb1a80d968189c90f9ef6b8e56b5f4bb19a9043a2e41c9397c215d56",
+        "ellipselio/include/ikfom/mtk/types/vect.hpp": "771ecededd51dc694bdadb57f8a49fad7bc6091c6f6112142096954649ac405f",
+        "ellipselio/include/ikfom/mtk/types/SOn.hpp": "90a8384a05d656698e6826b892561dc6cd619b62a7e32f9e6e3a9253e5e0c8aa",
+        "ellipselio/include/ikfom/mtk/types/wrapped_cv_mat.hpp": "3040f43fcb4195a2572a8819be012ebd2c4b59a38cfae86fcac3e01d7039a589",
+        "ellipselio/include/ikfom/mtk/src/mtkmath.hpp": "f9627989cf578f35ec5594a6956b4e9283d4dd109b26e7d2621682c508546295",
+        "ellipselio/include/ikfom/mtk/src/SubManifold.hpp": "96709f0f453a0c8776b1969064275ebf14dc5234b7024e68eb1cfc51a513864f",
+        "ellipselio/include/ikfom/mtk/src/vectview.hpp": "7855408124ea65df4423bae5f97d5104af5552318796bc6324bdbf98a45101f3",
+        "ellipselio/include/ioctree/ioctree.h": "65fb824c704998985c256527e344b8b9cb802695dd583d608438700a411723a9",
+        "ellipselio/msg/EllipseLioAnalytics.msg": "a58a3e49b51ba589a510a9619cf0d6d83381c3a4b901c0c232e73ad7ead2c6b8",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/baseline.yaml": "f4ffa66d9ccc190ae889adc1b96d15487b4f37720421521a5a72046b26ef658f",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/validate.py": "b9475228e3d4333aee9bddef6cf1b49bd49975ce4ab99e5c6d7d41b7253532fd",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/run_trial.py": "7b137f5847272007a4242be8f1ef0998429f5093f7bf902eb01abbf7624d3aed",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/enabled.yaml": "d285a561659043720d74958e3d2d38fb4b928e6fdaa253f24b85f987b25a3dbd",
+        "ellipselio/CMakeLists.txt": "50bc813ac90a83fda66c00c553ae656661e670f4c71d55998a742a491e09df02",
+        "FAST-LIVO2-ROS2/scripts/run_ellipselio.py": "c4289dbf74fd83098b1d172b4d63a2a9239e805506870d7397f8d6caf7fedbe5",
+        "FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py": "1bb4b7b44700fa0c4dc38c26166b7f54c64236ce305ab1acc7e7c3ca533258a3",
+        "FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py": "681d178c36293adf02874b1355666af7a4506ae0aee4eb3299551aee929b8894",
+        ".ros2/recent-submaps/install/ellipselio/lib/libellipselio_mapping.so": "702e54bec085ad8d0b621fa4ed5ba95161ddd35ef15f7ee783f751fdea253964",
+        ".ros2/recent-submaps/launcher/ellipselio_mapping_mt": "a1253dc9fff62f5d0a8bf3842cceb740f85fb9564c5da0296c81963760b28ddc"
+      }
+    },
+    "bob-enabled": {
+      "path": "/workspace/.ros2/recent-submaps/bob-enabled/recording/live.rrd",
+      "bytes": 670818188,
+      "sha256": "657292d012c16e12f2207d52dbd4e23df6d828b41f5425df4e7425c0f64bd0cf",
+      "verified": true,
+      "source_hashes": {
+        "ellipselio/src/lidar_processing.cpp": "4174d61e1db260fc63751edd3d1f36c1192330d5e61d45a67c9097ad14cb907a",
+        "ellipselio/src/cam_processing.cpp": "3bba7c8b7950897bb6725ae9232b05fbfb9c42a4a293c4f415c6251380e54cbe",
+        "ellipselio/src/research_frame.cpp": "ad401777bf39ae464b223d96d2c20c6c2277d933a73a8fa8364264d2ccd95023",
+        "ellipselio/src/submaps.cpp": "82094a860265e3043119b7f493d70038c9100280620139d4aa0c595980705848",
+        "ellipselio/src/imu_processing.cpp": "995e8898b2ab62b4a8bad7e9ca1f987ca971d4489f0653a1ca4f43374ce0f783",
+        "ellipselio/src/map_processing.cpp": "4ea43113f120a52ef439004897cd6b12fccd78f5f34db220a1daa4bec41f6bd0",
+        "ellipselio/include/common_pcl.h": "ff73c75c40e2bd564d0de9facb6a5c41ca8608b1269788f937955e0058b49f3f",
+        "ellipselio/include/lidar_processing.h": "6569dd383638d07237a051b9aec188c2948d157bda17bd8ed55ce95796344f46",
+        "ellipselio/include/cam_processing.h": "ae2e5839e8dc17b2aaac7fc56adc2c6270c0e8023b7178dfe935b3ef49174f7c",
+        "ellipselio/include/common_lib.h": "3c8d4cd42c801e1369522d5238657f9c592f6e9f1671c9cee0d8d0553ccc51b4",
+        "ellipselio/include/map_processing.h": "503d4bd309d5d355492b544c59ffbf4a8a4e184e3c054e8920a39f1c73d6c379",
+        "ellipselio/include/imu_processing.h": "6db9c78a14202bd2cd82c1eb7b6715d5ba4be9542e9723e50a5aa1d16e94a448",
+        "ellipselio/include/ikfom/use_ikfom.h": "a5c9050776ef2d1070cc01c206798ffe9e65fee4971ac310dc1628199b2bd6bd",
+        "ellipselio/include/ikfom/so3_math.h": "1e1f7959b0f75d6c1393c8c86f49baea98095b9e41d63404976a8a0ff2578a26",
+        "ellipselio/include/ikfom/esekfom/esekfom.hpp": "f111bde93df4609512f42ec6b9afb9046cf8e213e3befd4375e1efeab4a51cfd",
+        "ellipselio/include/ikfom/esekfom/util.hpp": "3c4265d25ea3f8c7f586d1e34bc352e981e09e30555e42011cd23a0a147d6918",
+        "ellipselio/include/ikfom/mtk/build_manifold.hpp": "0e88522551d02e78dc995e6c9d7883d9ecca7190379ec047ab839fff7186ea0f",
+        "ellipselio/include/ikfom/mtk/startIdx.hpp": "79cdc368bb4e083f5fda7549094c0aba8b599aee1f88e9f2a8b7fa785bf1f757",
+        "ellipselio/include/ikfom/mtk/types/S2.hpp": "f861be0bbb1a80d968189c90f9ef6b8e56b5f4bb19a9043a2e41c9397c215d56",
+        "ellipselio/include/ikfom/mtk/types/vect.hpp": "771ecededd51dc694bdadb57f8a49fad7bc6091c6f6112142096954649ac405f",
+        "ellipselio/include/ikfom/mtk/types/SOn.hpp": "90a8384a05d656698e6826b892561dc6cd619b62a7e32f9e6e3a9253e5e0c8aa",
+        "ellipselio/include/ikfom/mtk/types/wrapped_cv_mat.hpp": "3040f43fcb4195a2572a8819be012ebd2c4b59a38cfae86fcac3e01d7039a589",
+        "ellipselio/include/ikfom/mtk/src/mtkmath.hpp": "f9627989cf578f35ec5594a6956b4e9283d4dd109b26e7d2621682c508546295",
+        "ellipselio/include/ikfom/mtk/src/SubManifold.hpp": "96709f0f453a0c8776b1969064275ebf14dc5234b7024e68eb1cfc51a513864f",
+        "ellipselio/include/ikfom/mtk/src/vectview.hpp": "7855408124ea65df4423bae5f97d5104af5552318796bc6324bdbf98a45101f3",
+        "ellipselio/include/ioctree/ioctree.h": "65fb824c704998985c256527e344b8b9cb802695dd583d608438700a411723a9",
+        "ellipselio/msg/EllipseLioAnalytics.msg": "a58a3e49b51ba589a510a9619cf0d6d83381c3a4b901c0c232e73ad7ead2c6b8",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/baseline.yaml": "f4ffa66d9ccc190ae889adc1b96d15487b4f37720421521a5a72046b26ef658f",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/validate.py": "b9475228e3d4333aee9bddef6cf1b49bd49975ce4ab99e5c6d7d41b7253532fd",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/run_trial.py": "7b137f5847272007a4242be8f1ef0998429f5093f7bf902eb01abbf7624d3aed",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/enabled.yaml": "d285a561659043720d74958e3d2d38fb4b928e6fdaa253f24b85f987b25a3dbd",
+        "ellipselio/CMakeLists.txt": "50bc813ac90a83fda66c00c553ae656661e670f4c71d55998a742a491e09df02",
+        "FAST-LIVO2-ROS2/scripts/run_ellipselio.py": "c4289dbf74fd83098b1d172b4d63a2a9239e805506870d7397f8d6caf7fedbe5",
+        "FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py": "1bb4b7b44700fa0c4dc38c26166b7f54c64236ce305ab1acc7e7c3ca533258a3",
+        "FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py": "681d178c36293adf02874b1355666af7a4506ae0aee4eb3299551aee929b8894",
+        ".ros2/recent-submaps/install/ellipselio/lib/libellipselio_mapping.so": "702e54bec085ad8d0b621fa4ed5ba95161ddd35ef15f7ee783f751fdea253964",
+        ".ros2/recent-submaps/launcher/ellipselio_mapping_mt": "a1253dc9fff62f5d0a8bf3842cceb740f85fb9564c5da0296c81963760b28ddc"
+      },
+      "snapshot_validation": {
+        "native_updates": 4852,
+        "snapshots": 98,
+        "completed_snapshots": 96,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      }
+    },
+    "bob-enabled-repeat": {
+      "path": "/workspace/.ros2/recent-submaps/bob-enabled-repeat/recording/live.rrd",
+      "bytes": 670412597,
+      "sha256": "c04b656bf27a25c2f8afc7fce8982fd75ffae2128c15eb189c953343a7854ac3",
+      "verified": true,
+      "source_hashes": {
+        "ellipselio/src/lidar_processing.cpp": "4174d61e1db260fc63751edd3d1f36c1192330d5e61d45a67c9097ad14cb907a",
+        "ellipselio/src/cam_processing.cpp": "3bba7c8b7950897bb6725ae9232b05fbfb9c42a4a293c4f415c6251380e54cbe",
+        "ellipselio/src/research_frame.cpp": "ad401777bf39ae464b223d96d2c20c6c2277d933a73a8fa8364264d2ccd95023",
+        "ellipselio/src/submaps.cpp": "82094a860265e3043119b7f493d70038c9100280620139d4aa0c595980705848",
+        "ellipselio/src/imu_processing.cpp": "995e8898b2ab62b4a8bad7e9ca1f987ca971d4489f0653a1ca4f43374ce0f783",
+        "ellipselio/src/map_processing.cpp": "4ea43113f120a52ef439004897cd6b12fccd78f5f34db220a1daa4bec41f6bd0",
+        "ellipselio/include/common_pcl.h": "ff73c75c40e2bd564d0de9facb6a5c41ca8608b1269788f937955e0058b49f3f",
+        "ellipselio/include/lidar_processing.h": "6569dd383638d07237a051b9aec188c2948d157bda17bd8ed55ce95796344f46",
+        "ellipselio/include/cam_processing.h": "ae2e5839e8dc17b2aaac7fc56adc2c6270c0e8023b7178dfe935b3ef49174f7c",
+        "ellipselio/include/common_lib.h": "3c8d4cd42c801e1369522d5238657f9c592f6e9f1671c9cee0d8d0553ccc51b4",
+        "ellipselio/include/map_processing.h": "503d4bd309d5d355492b544c59ffbf4a8a4e184e3c054e8920a39f1c73d6c379",
+        "ellipselio/include/imu_processing.h": "6db9c78a14202bd2cd82c1eb7b6715d5ba4be9542e9723e50a5aa1d16e94a448",
+        "ellipselio/include/ikfom/use_ikfom.h": "a5c9050776ef2d1070cc01c206798ffe9e65fee4971ac310dc1628199b2bd6bd",
+        "ellipselio/include/ikfom/so3_math.h": "1e1f7959b0f75d6c1393c8c86f49baea98095b9e41d63404976a8a0ff2578a26",
+        "ellipselio/include/ikfom/esekfom/esekfom.hpp": "f111bde93df4609512f42ec6b9afb9046cf8e213e3befd4375e1efeab4a51cfd",
+        "ellipselio/include/ikfom/esekfom/util.hpp": "3c4265d25ea3f8c7f586d1e34bc352e981e09e30555e42011cd23a0a147d6918",
+        "ellipselio/include/ikfom/mtk/build_manifold.hpp": "0e88522551d02e78dc995e6c9d7883d9ecca7190379ec047ab839fff7186ea0f",
+        "ellipselio/include/ikfom/mtk/startIdx.hpp": "79cdc368bb4e083f5fda7549094c0aba8b599aee1f88e9f2a8b7fa785bf1f757",
+        "ellipselio/include/ikfom/mtk/types/S2.hpp": "f861be0bbb1a80d968189c90f9ef6b8e56b5f4bb19a9043a2e41c9397c215d56",
+        "ellipselio/include/ikfom/mtk/types/vect.hpp": "771ecededd51dc694bdadb57f8a49fad7bc6091c6f6112142096954649ac405f",
+        "ellipselio/include/ikfom/mtk/types/SOn.hpp": "90a8384a05d656698e6826b892561dc6cd619b62a7e32f9e6e3a9253e5e0c8aa",
+        "ellipselio/include/ikfom/mtk/types/wrapped_cv_mat.hpp": "3040f43fcb4195a2572a8819be012ebd2c4b59a38cfae86fcac3e01d7039a589",
+        "ellipselio/include/ikfom/mtk/src/mtkmath.hpp": "f9627989cf578f35ec5594a6956b4e9283d4dd109b26e7d2621682c508546295",
+        "ellipselio/include/ikfom/mtk/src/SubManifold.hpp": "96709f0f453a0c8776b1969064275ebf14dc5234b7024e68eb1cfc51a513864f",
+        "ellipselio/include/ikfom/mtk/src/vectview.hpp": "7855408124ea65df4423bae5f97d5104af5552318796bc6324bdbf98a45101f3",
+        "ellipselio/include/ioctree/ioctree.h": "65fb824c704998985c256527e344b8b9cb802695dd583d608438700a411723a9",
+        "ellipselio/msg/EllipseLioAnalytics.msg": "a58a3e49b51ba589a510a9619cf0d6d83381c3a4b901c0c232e73ad7ead2c6b8",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/baseline.yaml": "f4ffa66d9ccc190ae889adc1b96d15487b4f37720421521a5a72046b26ef658f",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/validate.py": "b9475228e3d4333aee9bddef6cf1b49bd49975ce4ab99e5c6d7d41b7253532fd",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/run_trial.py": "7b137f5847272007a4242be8f1ef0998429f5093f7bf902eb01abbf7624d3aed",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/enabled.yaml": "d285a561659043720d74958e3d2d38fb4b928e6fdaa253f24b85f987b25a3dbd",
+        "ellipselio/CMakeLists.txt": "3902c0e849e78d58121eab2f734f875bb0f1ddb8386dea32cb0b1c74ddaf5e09",
+        "FAST-LIVO2-ROS2/scripts/run_ellipselio.py": "c4289dbf74fd83098b1d172b4d63a2a9239e805506870d7397f8d6caf7fedbe5",
+        "FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py": "1bb4b7b44700fa0c4dc38c26166b7f54c64236ce305ab1acc7e7c3ca533258a3",
+        "FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py": "681d178c36293adf02874b1355666af7a4506ae0aee4eb3299551aee929b8894",
+        ".ros2/recent-submaps/install/ellipselio/lib/libellipselio_mapping.so": "702e54bec085ad8d0b621fa4ed5ba95161ddd35ef15f7ee783f751fdea253964",
+        ".ros2/recent-submaps/launcher/ellipselio_mapping_mt": "a1253dc9fff62f5d0a8bf3842cceb740f85fb9564c5da0296c81963760b28ddc"
+      },
+      "snapshot_validation": {
+        "native_updates": 4849,
+        "snapshots": 98,
+        "completed_snapshots": 96,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      }
+    },
+    "alpha-submaps": {
+      "path": "/workspace/.ros2/recent-submaps/alpha-submaps/recording/live.rrd",
+      "bytes": 653979752,
+      "sha256": "f1f5259a7d959dff7527d48bd63e470c9edd9ca2b56290d16298cc9f0cf8d766",
+      "verified": true,
+      "source_hashes": {
+        "ellipselio/src/lidar_processing.cpp": "4174d61e1db260fc63751edd3d1f36c1192330d5e61d45a67c9097ad14cb907a",
+        "ellipselio/src/cam_processing.cpp": "3bba7c8b7950897bb6725ae9232b05fbfb9c42a4a293c4f415c6251380e54cbe",
+        "ellipselio/src/research_frame.cpp": "ad401777bf39ae464b223d96d2c20c6c2277d933a73a8fa8364264d2ccd95023",
+        "ellipselio/src/submaps.cpp": "82094a860265e3043119b7f493d70038c9100280620139d4aa0c595980705848",
+        "ellipselio/src/imu_processing.cpp": "995e8898b2ab62b4a8bad7e9ca1f987ca971d4489f0653a1ca4f43374ce0f783",
+        "ellipselio/src/map_processing.cpp": "4ea43113f120a52ef439004897cd6b12fccd78f5f34db220a1daa4bec41f6bd0",
+        "ellipselio/include/common_pcl.h": "ff73c75c40e2bd564d0de9facb6a5c41ca8608b1269788f937955e0058b49f3f",
+        "ellipselio/include/lidar_processing.h": "6569dd383638d07237a051b9aec188c2948d157bda17bd8ed55ce95796344f46",
+        "ellipselio/include/cam_processing.h": "ae2e5839e8dc17b2aaac7fc56adc2c6270c0e8023b7178dfe935b3ef49174f7c",
+        "ellipselio/include/common_lib.h": "3c8d4cd42c801e1369522d5238657f9c592f6e9f1671c9cee0d8d0553ccc51b4",
+        "ellipselio/include/map_processing.h": "503d4bd309d5d355492b544c59ffbf4a8a4e184e3c054e8920a39f1c73d6c379",
+        "ellipselio/include/imu_processing.h": "6db9c78a14202bd2cd82c1eb7b6715d5ba4be9542e9723e50a5aa1d16e94a448",
+        "ellipselio/include/ikfom/use_ikfom.h": "a5c9050776ef2d1070cc01c206798ffe9e65fee4971ac310dc1628199b2bd6bd",
+        "ellipselio/include/ikfom/so3_math.h": "1e1f7959b0f75d6c1393c8c86f49baea98095b9e41d63404976a8a0ff2578a26",
+        "ellipselio/include/ikfom/esekfom/esekfom.hpp": "f111bde93df4609512f42ec6b9afb9046cf8e213e3befd4375e1efeab4a51cfd",
+        "ellipselio/include/ikfom/esekfom/util.hpp": "3c4265d25ea3f8c7f586d1e34bc352e981e09e30555e42011cd23a0a147d6918",
+        "ellipselio/include/ikfom/mtk/build_manifold.hpp": "0e88522551d02e78dc995e6c9d7883d9ecca7190379ec047ab839fff7186ea0f",
+        "ellipselio/include/ikfom/mtk/startIdx.hpp": "79cdc368bb4e083f5fda7549094c0aba8b599aee1f88e9f2a8b7fa785bf1f757",
+        "ellipselio/include/ikfom/mtk/types/S2.hpp": "f861be0bbb1a80d968189c90f9ef6b8e56b5f4bb19a9043a2e41c9397c215d56",
+        "ellipselio/include/ikfom/mtk/types/vect.hpp": "771ecededd51dc694bdadb57f8a49fad7bc6091c6f6112142096954649ac405f",
+        "ellipselio/include/ikfom/mtk/types/SOn.hpp": "90a8384a05d656698e6826b892561dc6cd619b62a7e32f9e6e3a9253e5e0c8aa",
+        "ellipselio/include/ikfom/mtk/types/wrapped_cv_mat.hpp": "3040f43fcb4195a2572a8819be012ebd2c4b59a38cfae86fcac3e01d7039a589",
+        "ellipselio/include/ikfom/mtk/src/mtkmath.hpp": "f9627989cf578f35ec5594a6956b4e9283d4dd109b26e7d2621682c508546295",
+        "ellipselio/include/ikfom/mtk/src/SubManifold.hpp": "96709f0f453a0c8776b1969064275ebf14dc5234b7024e68eb1cfc51a513864f",
+        "ellipselio/include/ikfom/mtk/src/vectview.hpp": "7855408124ea65df4423bae5f97d5104af5552318796bc6324bdbf98a45101f3",
+        "ellipselio/include/ioctree/ioctree.h": "65fb824c704998985c256527e344b8b9cb802695dd583d608438700a411723a9",
+        "ellipselio/msg/EllipseLioAnalytics.msg": "a58a3e49b51ba589a510a9619cf0d6d83381c3a4b901c0c232e73ad7ead2c6b8",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/evaluate.py": "39fb8ebbdff75a5f53400201607fe8f417a2f31942768196cc8eebdf329c9dc2",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/rollout_report.py": "763c8dca629136bcd0c37f263382ea346a32290501776a444dcac023d2286954",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/baseline.yaml": "f4ffa66d9ccc190ae889adc1b96d15487b4f37720421521a5a72046b26ef658f",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/validate.py": "b9475228e3d4333aee9bddef6cf1b49bd49975ce4ab99e5c6d7d41b7253532fd",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/prepare_rollout.py": "698b1bb07480c42e45eb99732d1845da462358e46b506c3bb46058d4f6bb9085",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/plot_comparison.py": "85895b6e792a55615988eac20ad57e973537bd261abdf5250b7fbd8f139cf194",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/run_trial.py": "5f35ccb1afc6749e36b0635b184c0bef7522d3897b1e048332cb860b6309e0a6",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/README.md": "780c8b82badc142a36423f6efe733e52e8bd5d383624b65178fba88b8a385a7f",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/enabled.yaml": "d285a561659043720d74958e3d2d38fb4b928e6fdaa253f24b85f987b25a3dbd",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/rollout.py": "35f5248ef9c0ebc772f051372cc75d195fc19e7a2a04f97cf9553c168ff37229",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/rollout.yaml": "5bc1a5712dd2b215b118e38e1f4e1391237fe7a5d9867ba202ccc8f41023677f",
+        ".ros2/recent-submaps/configs/Alpha.yaml": "396f82a8b454d2f79f742ddf677449c3205bc0bd38832f83ac362cd6a1bf65b0",
+        "ellipselio/CMakeLists.txt": "3902c0e849e78d58121eab2f734f875bb0f1ddb8386dea32cb0b1c74ddaf5e09",
+        "FAST-LIVO2-ROS2/scripts/run_ellipselio.py": "c4289dbf74fd83098b1d172b4d63a2a9239e805506870d7397f8d6caf7fedbe5",
+        "FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py": "1bb4b7b44700fa0c4dc38c26166b7f54c64236ce305ab1acc7e7c3ca533258a3",
+        "FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py": "681d178c36293adf02874b1355666af7a4506ae0aee4eb3299551aee929b8894",
+        ".ros2/recent-submaps/install/ellipselio/lib/libellipselio_mapping.so": "702e54bec085ad8d0b621fa4ed5ba95161ddd35ef15f7ee783f751fdea253964",
+        ".ros2/recent-submaps/launcher/ellipselio_mapping_mt": "a1253dc9fff62f5d0a8bf3842cceb740f85fb9564c5da0296c81963760b28ddc"
+      },
+      "snapshot_validation": {
+        "native_updates": 4784,
+        "snapshots": 97,
+        "completed_snapshots": 95,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      }
+    },
+    "carol-submaps": {
+      "path": "/workspace/.ros2/recent-submaps/carol-submaps/recording/live.rrd",
+      "bytes": 643095947,
+      "sha256": "9a49ace9df0080728ab2abd0ff4fb413b30c6bcd4826ed576b1722c51542a764",
+      "verified": true,
+      "source_hashes": {
+        "ellipselio/src/lidar_processing.cpp": "4174d61e1db260fc63751edd3d1f36c1192330d5e61d45a67c9097ad14cb907a",
+        "ellipselio/src/cam_processing.cpp": "3bba7c8b7950897bb6725ae9232b05fbfb9c42a4a293c4f415c6251380e54cbe",
+        "ellipselio/src/research_frame.cpp": "ad401777bf39ae464b223d96d2c20c6c2277d933a73a8fa8364264d2ccd95023",
+        "ellipselio/src/submaps.cpp": "82094a860265e3043119b7f493d70038c9100280620139d4aa0c595980705848",
+        "ellipselio/src/imu_processing.cpp": "995e8898b2ab62b4a8bad7e9ca1f987ca971d4489f0653a1ca4f43374ce0f783",
+        "ellipselio/src/map_processing.cpp": "4ea43113f120a52ef439004897cd6b12fccd78f5f34db220a1daa4bec41f6bd0",
+        "ellipselio/include/common_pcl.h": "ff73c75c40e2bd564d0de9facb6a5c41ca8608b1269788f937955e0058b49f3f",
+        "ellipselio/include/lidar_processing.h": "6569dd383638d07237a051b9aec188c2948d157bda17bd8ed55ce95796344f46",
+        "ellipselio/include/cam_processing.h": "ae2e5839e8dc17b2aaac7fc56adc2c6270c0e8023b7178dfe935b3ef49174f7c",
+        "ellipselio/include/common_lib.h": "3c8d4cd42c801e1369522d5238657f9c592f6e9f1671c9cee0d8d0553ccc51b4",
+        "ellipselio/include/map_processing.h": "503d4bd309d5d355492b544c59ffbf4a8a4e184e3c054e8920a39f1c73d6c379",
+        "ellipselio/include/imu_processing.h": "6db9c78a14202bd2cd82c1eb7b6715d5ba4be9542e9723e50a5aa1d16e94a448",
+        "ellipselio/include/ikfom/use_ikfom.h": "a5c9050776ef2d1070cc01c206798ffe9e65fee4971ac310dc1628199b2bd6bd",
+        "ellipselio/include/ikfom/so3_math.h": "1e1f7959b0f75d6c1393c8c86f49baea98095b9e41d63404976a8a0ff2578a26",
+        "ellipselio/include/ikfom/esekfom/esekfom.hpp": "f111bde93df4609512f42ec6b9afb9046cf8e213e3befd4375e1efeab4a51cfd",
+        "ellipselio/include/ikfom/esekfom/util.hpp": "3c4265d25ea3f8c7f586d1e34bc352e981e09e30555e42011cd23a0a147d6918",
+        "ellipselio/include/ikfom/mtk/build_manifold.hpp": "0e88522551d02e78dc995e6c9d7883d9ecca7190379ec047ab839fff7186ea0f",
+        "ellipselio/include/ikfom/mtk/startIdx.hpp": "79cdc368bb4e083f5fda7549094c0aba8b599aee1f88e9f2a8b7fa785bf1f757",
+        "ellipselio/include/ikfom/mtk/types/S2.hpp": "f861be0bbb1a80d968189c90f9ef6b8e56b5f4bb19a9043a2e41c9397c215d56",
+        "ellipselio/include/ikfom/mtk/types/vect.hpp": "771ecededd51dc694bdadb57f8a49fad7bc6091c6f6112142096954649ac405f",
+        "ellipselio/include/ikfom/mtk/types/SOn.hpp": "90a8384a05d656698e6826b892561dc6cd619b62a7e32f9e6e3a9253e5e0c8aa",
+        "ellipselio/include/ikfom/mtk/types/wrapped_cv_mat.hpp": "3040f43fcb4195a2572a8819be012ebd2c4b59a38cfae86fcac3e01d7039a589",
+        "ellipselio/include/ikfom/mtk/src/mtkmath.hpp": "f9627989cf578f35ec5594a6956b4e9283d4dd109b26e7d2621682c508546295",
+        "ellipselio/include/ikfom/mtk/src/SubManifold.hpp": "96709f0f453a0c8776b1969064275ebf14dc5234b7024e68eb1cfc51a513864f",
+        "ellipselio/include/ikfom/mtk/src/vectview.hpp": "7855408124ea65df4423bae5f97d5104af5552318796bc6324bdbf98a45101f3",
+        "ellipselio/include/ioctree/ioctree.h": "65fb824c704998985c256527e344b8b9cb802695dd583d608438700a411723a9",
+        "ellipselio/msg/EllipseLioAnalytics.msg": "a58a3e49b51ba589a510a9619cf0d6d83381c3a4b901c0c232e73ad7ead2c6b8",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/evaluate.py": "39fb8ebbdff75a5f53400201607fe8f417a2f31942768196cc8eebdf329c9dc2",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/rollout_report.py": "763c8dca629136bcd0c37f263382ea346a32290501776a444dcac023d2286954",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/baseline.yaml": "f4ffa66d9ccc190ae889adc1b96d15487b4f37720421521a5a72046b26ef658f",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/validate.py": "b9475228e3d4333aee9bddef6cf1b49bd49975ce4ab99e5c6d7d41b7253532fd",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/prepare_rollout.py": "698b1bb07480c42e45eb99732d1845da462358e46b506c3bb46058d4f6bb9085",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/plot_comparison.py": "85895b6e792a55615988eac20ad57e973537bd261abdf5250b7fbd8f139cf194",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/run_trial.py": "5f35ccb1afc6749e36b0635b184c0bef7522d3897b1e048332cb860b6309e0a6",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/README.md": "780c8b82badc142a36423f6efe733e52e8bd5d383624b65178fba88b8a385a7f",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/enabled.yaml": "d285a561659043720d74958e3d2d38fb4b928e6fdaa253f24b85f987b25a3dbd",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/rollout.py": "35f5248ef9c0ebc772f051372cc75d195fc19e7a2a04f97cf9553c168ff37229",
+        "FAST-LIVO2-ROS2/scripts/recent_submaps/rollout.yaml": "5bc1a5712dd2b215b118e38e1f4e1391237fe7a5d9867ba202ccc8f41023677f",
+        ".ros2/recent-submaps/configs/Carol.yaml": "b63b3c612d5650bcfe416d65a38232833d54befa4a408a4708f3a54a9a8b8175",
+        "ellipselio/CMakeLists.txt": "3902c0e849e78d58121eab2f734f875bb0f1ddb8386dea32cb0b1c74ddaf5e09",
+        "FAST-LIVO2-ROS2/scripts/run_ellipselio.py": "c4289dbf74fd83098b1d172b4d63a2a9239e805506870d7397f8d6caf7fedbe5",
+        "FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py": "1bb4b7b44700fa0c4dc38c26166b7f54c64236ce305ab1acc7e7c3ca533258a3",
+        "FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py": "681d178c36293adf02874b1355666af7a4506ae0aee4eb3299551aee929b8894",
+        ".ros2/recent-submaps/install/ellipselio/lib/libellipselio_mapping.so": "702e54bec085ad8d0b621fa4ed5ba95161ddd35ef15f7ee783f751fdea253964",
+        ".ros2/recent-submaps/launcher/ellipselio_mapping_mt": "a1253dc9fff62f5d0a8bf3842cceb740f85fb9564c5da0296c81963760b28ddc"
+      },
+      "snapshot_validation": {
+        "native_updates": 4515,
+        "snapshots": 91,
+        "completed_snapshots": 89,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      }
+    }
+  },
+  "identical_frontend_binary": true,
+  "native_binary_sha256": "702e54bec085ad8d0b621fa4ed5ba95161ddd35ef15f7ee783f751fdea253964",
+  "outputs": {
+    "report/Alpha-cbs.jsonl": {
+      "bytes": 1774048,
+      "sha256": "e78ec1403e8911e4ed97c1b4589eded5bffd16ccf051b122eae4eec8f0fdfcd3"
+    },
+    "report/Alpha-cbs.tum": {
+      "bytes": 625049,
+      "sha256": "d437ade753d795498e64aec97f365b5427751c6af6a6439f82100d30bc862381"
+    },
+    "report/Alpha-maps.npz": {
+      "bytes": 66494830,
+      "sha256": "3c1ace904e9c8c91a8d85cc471c44834648a221e665278734a512426666bc9b9"
+    },
+    "report/Alpha-raw.tum": {
+      "bytes": 624716,
+      "sha256": "74bf8f570931024ed2d205e2c3006b9ca7cca06464921be1738531744d7cc259"
+    },
+    "report/Bob-cbs.jsonl": {
+      "bytes": 1784064,
+      "sha256": "c691d9fffa2398fe07cf7e327b9c3e065441a347cfa44229132262bbe0a81453"
+    },
+    "report/Bob-cbs.tum": {
+      "bytes": 629251,
+      "sha256": "44ec17bcef8677c5c206990635ee516c0495089ae6ac1e30ee9064af0b3c5fef"
+    },
+    "report/Bob-maps.npz": {
+      "bytes": 68913005,
+      "sha256": "542ada07ab389ba204ffe819d326025a1db306783bc6a3cf5e1c3ff340bde328"
+    },
+    "report/Bob-raw.tum": {
+      "bytes": 635691,
+      "sha256": "1e8cefe34a0211225511e7eecccfc5bcb23e38bd30199d02cccad21dbbe49246"
+    },
+    "report/Carol-cbs.jsonl": {
+      "bytes": 1663766,
+      "sha256": "32b8cc66ba2359ad03aa85eb2d8748b830ca2a7fbd25f6f40c5b7e46ddecf20f"
+    },
+    "report/Carol-cbs.tum": {
+      "bytes": 582587,
+      "sha256": "5aad031486c5829858fd9745a8c06fee848ff60faa269beb569e48489a5b3575"
+    },
+    "report/Carol-maps.npz": {
+      "bytes": 83947121,
+      "sha256": "39ca504fdfbd78995d41c6335e18ef6e64505b6288d5f6beb183488ee7bce8f6"
+    },
+    "report/Carol-raw.tum": {
+      "bytes": 584623,
+      "sha256": "4524d676a8ba55be6522de96ebe64d3d79a642f261844bb3d662f2438bb0c570"
+    },
+    "report/evo/cbs/Alpha-ape.zip": {
+      "bytes": 2115283,
+      "sha256": "036acf9d9762a91bf400a43b1ecb6134d29ff227f69f6d2b96ee741c7a7a24c5"
+    },
+    "report/evo/cbs/Alpha-component-ape.zip": {
+      "bytes": 8956395,
+      "sha256": "dfce8bdee7f300a914b0356b19faf8eb4b38e18f22d3a68bff4859dfe237b4cb"
+    },
+    "report/evo/cbs/Alpha-estimate-aligned.tum": {
+      "bytes": 962738,
+      "sha256": "5937dd9ecb8a72da8b698825d20aa53df2e4799b58d7b0b3f85878f2dcca5128"
+    },
+    "report/evo/cbs/Alpha-estimate.kitti": {
+      "bytes": 4325424,
+      "sha256": "1cb62536a508a60850581073fad7a4c017bd470a29e3a9a679102c5d8f4c9866"
+    },
+    "report/evo/cbs/Alpha-reference-matched.tum": {
+      "bytes": 959008,
+      "sha256": "e2bc064556161438ce829296d3349923bf677ff9246415b9a7b99a893b10f050"
+    },
+    "report/evo/cbs/Alpha-reference.kitti": {
+      "bytes": 4245361,
+      "sha256": "6371a2ead107dba623fdf9e90a7d82421bb88469a9c9dc8eee1638a0959045c0"
+    },
+    "report/evo/cbs/Bob-ape.zip": {
+      "bytes": 2138131,
+      "sha256": "4cbba5ac50bf05f035975c211ec7d22f292da15a11f21cef08fccec1a179d3f9"
+    },
+    "report/evo/cbs/Bob-estimate-aligned.tum": {
+      "bytes": 974280,
+      "sha256": "2b896052dc86c36e86a12f536012cb5618fe852c1d9bd51db250fe690a3dab24"
+    },
+    "report/evo/cbs/Bob-reference-matched.tum": {
+      "bytes": 968443,
+      "sha256": "8074b230bd6d5fcf4f230c7386786b843efaa2f91c13222e97f2a21ec81f68ac"
+    },
+    "report/evo/cbs/Carol-ape.zip": {
+      "bytes": 1998117,
+      "sha256": "d5e3c556df774a93dfe4c2129e283223865d37bd0de9f3bc47d6d96b8b2afc0a"
+    },
+    "report/evo/cbs/Carol-estimate-aligned.tum": {
+      "bytes": 910431,
+      "sha256": "bc9a4687ba1c91f217342990ace40d1f7ff7ac83126f260994569ad8403868c3"
+    },
+    "report/evo/cbs/Carol-reference-matched.tum": {
+      "bytes": 904910,
+      "sha256": "e839638c2da2a355343a576dd41cb5f6a047b806c788318995f12524f6b7197f"
+    },
+    "report/evo/cbs/README.md": {
+      "bytes": 845,
+      "sha256": "f52615a1a00ca4ac0cebbf80e1b04b3660fc4fbb0a06bcbbb674bc2fca1fea27"
+    },
+    "report/evo/cbs/evaluation.json": {
+      "bytes": 1982,
+      "sha256": "ca981e9dc6b72ebe7c3207cebacbbebf7e0865af19cc9b1a7b2e377a2bfbfda1"
+    },
+    "report/evo/raw/Alpha-ape.zip": {
+      "bytes": 2114560,
+      "sha256": "38f6451572fcb00d32d54b830182073d16e56bb5db013b50806c2f381aa24767"
+    },
+    "report/evo/raw/Alpha-component-ape.zip": {
+      "bytes": 3031489,
+      "sha256": "6619a65799eda47d0deb86a8b5102f68941407fa9a1182223a21696dec00018e"
+    },
+    "report/evo/raw/Alpha-estimate-aligned.tum": {
+      "bytes": 962015,
+      "sha256": "ecc5346d0d70b648100f0ef98cbc9f8f960748618c647b1414706e13661b8379"
+    },
+    "report/evo/raw/Alpha-estimate.kitti": {
+      "bytes": 1465993,
+      "sha256": "ce52d545057acb04327e945faf78af630bceb50276626df1e5adbcb387ac4190"
+    },
+    "report/evo/raw/Alpha-reference-matched.tum": {
+      "bytes": 959008,
+      "sha256": "e2bc064556161438ce829296d3349923bf677ff9246415b9a7b99a893b10f050"
+    },
+    "report/evo/raw/Alpha-reference.kitti": {
+      "bytes": 1437408,
+      "sha256": "69113074190294990f464a65fa5b27693de31d71f0e99598051de737258823e2"
+    },
+    "report/evo/raw/Bob-ape.zip": {
+      "bytes": 2138201,
+      "sha256": "465cdc9d7b1ca086a92bad7fd8b2f4a426dbb50ddd1438b45d775f151706f3c3"
+    },
+    "report/evo/raw/Bob-component-ape.zip": {
+      "bytes": 3063104,
+      "sha256": "7c3963e8ff27699bb50c9feea81ed2f3df6def2d6df7465350fc36344997ef62"
+    },
+    "report/evo/raw/Bob-estimate-aligned.tum": {
+      "bytes": 974357,
+      "sha256": "c00ac6a448d7f0ec81e6e3326a287d50a673e2009756d6aee675f4ec0557bd84"
+    },
+    "report/evo/raw/Bob-estimate.kitti": {
+      "bytes": 1474622,
+      "sha256": "c62b34c51d746328bea6cd5fb378d26562dc70019f41ac4b2bfbf8ae7b8bf313"
+    },
+    "report/evo/raw/Bob-reference-matched.tum": {
+      "bytes": 968443,
+      "sha256": "8074b230bd6d5fcf4f230c7386786b843efaa2f91c13222e97f2a21ec81f68ac"
+    },
+    "report/evo/raw/Bob-reference.kitti": {
+      "bytes": 1451543,
+      "sha256": "0e711613e06ca12c085f220a07541bb7008fe3d020b9b523595f82411430d061"
+    },
+    "report/evo/raw/Carol-ape.zip": {
+      "bytes": 1998038,
+      "sha256": "66360197c48a4a40fdfd125c1170e8ecf73165a8d49dadbf3f4410458bf9e293"
+    },
+    "report/evo/raw/Carol-component-ape.zip": {
+      "bytes": 2865587,
+      "sha256": "2a1bde22b747014d8e4bb189605b783b845072cfdcc89b204dd30bc7b4ae7279"
+    },
+    "report/evo/raw/Carol-estimate-aligned.tum": {
+      "bytes": 910351,
+      "sha256": "1ca5e8d5fffba51532351a865b8684e8826427b24c59f98883c7ee220bf3b249"
+    },
+    "report/evo/raw/Carol-estimate.kitti": {
+      "bytes": 1377523,
+      "sha256": "fda308c45952f292a8595556f481bfccc0011fd6842f2f7eca05997b1d30705f"
+    },
+    "report/evo/raw/Carol-reference-matched.tum": {
+      "bytes": 904910,
+      "sha256": "e839638c2da2a355343a576dd41cb5f6a047b806c788318995f12524f6b7197f"
+    },
+    "report/evo/raw/Carol-reference.kitti": {
+      "bytes": 1356410,
+      "sha256": "230e2bef86b20868eeb1b80d61cd8acb1cb3b184bcb7655e29f64f592aea2f7e"
+    },
+    "report/evo/raw/README.md": {
+      "bytes": 845,
+      "sha256": "f52615a1a00ca4ac0cebbf80e1b04b3660fc4fbb0a06bcbbb674bc2fca1fea27"
+    },
+    "report/evo/raw/evaluation.json": {
+      "bytes": 3730,
+      "sha256": "cdc34dfc770e4f106d5986bff511f1ea442e1c59508f729d829d5ffe962fe376"
+    },
+    "report/report.json": {
+      "bytes": 160386,
+      "sha256": "ca085da839b4f8ef13098d3e0a747228ebda885658a0aa8b25bc9bb2f123e76f"
+    },
+    "report/result.rrd": {
+      "bytes": 9940950,
+      "sha256": "741994bbc2958561e9d3b801664b46c12e9b0c651fd37b21b521adfd6de4c9de"
+    },
+    "report/trajectories-maps.png": {
+      "bytes": 854865,
+      "sha256": "93b42fc858b4744268fe4d93c12e5e0a0048ebaf0f9b879b8f7b78c8cf0e6d66"
+    }
+  },
+  "backend_source_hashes": {
+    "research/s3e_pipeline/ellipselio_report.py": "17c0bd91a63f5516db00e52bf7c527580b4ead2120b92536f68801653692b2fa",
+    "research/s3e_pipeline/visualize.py": "737ecfc30bc2a82667b0d486cf83855126a40ba8bbe1c2f54d9a4af5dfd2c01a",
+    "research/s3e_pipeline/model_worker.py": "48a0d141dba5e89abb37b7802dfdf819c65713c7062cd1253ff79bbed3cf3fcb",
+    "research/s3e_pipeline/ellipsoid_full_report.py": "706f648ebbde381f6077c5d30ad240b6931e5b05cdc0ebabf9ca70ebe9467c91",
+    "research/s3e_pipeline/ellipsoid_unreferenced_report.py": "82d2b69a21bd880232d95da03bcc4dcaa5a43994056f8936446c1aa301aea4de",
+    "research/s3e_pipeline/snapshot.py": "5058cf24be50f119a8e8817096e745954273741cd5de7fcc290440e29216bc28",
+    "research/s3e_pipeline/dpgo.py": "84e94ddc7c245faadab4940600af83c627898fc45e1987e2248f34e758052374",
+    "research/s3e_pipeline/ground_truth_figures.py": "d4d9fd849b78e289219366566de94c7f552aca40da4f435d86fd5a34654d4d13",
+    "research/s3e_pipeline/ellipsoid_bev_report.py": "d337107ead1c10b11fa3e03ae363baace977cc35bfb479e4f7e5b9c5cfd5215a",
+    "research/s3e_pipeline/dpgo_visualize.py": "1d528851adbb8d76d7e7a24a287c6bd59d501473b3677364266e64b7f32078e7",
+    "research/s3e_pipeline/dpgo_evaluation.py": "3976007614f1b66052285353d8dff420400ade9d4dfaf77390e90ba2450e1df2",
+    "research/s3e_pipeline/verification.py": "551b8b17d08fd92e7c8e25222321da8095ae4a57c7c1b15577578a2892982f70",
+    "research/s3e_pipeline/submap_writer.py": "681d178c36293adf02874b1355666af7a4506ae0aee4eb3299551aee929b8894",
+    "research/s3e_pipeline/mapclosures_inspection.py": "5a3b34fb29425d1a11940e1b3d3e08a1df8b9b669e0e836617b6f07f1291e114",
+    "research/s3e_pipeline/evo_evaluation.py": "b2cb41b03072a91062e205f554c7dd7511f91f8578b91ccccf57f4040c1cf7f9",
+    "research/s3e_pipeline/cbs_bridge.py": "1fef2773cd37aa664635a72a3ddfc24d6f89f0ce47d485f607a00d1cea827abe",
+    "research/s3e_pipeline/evaluation.py": "041ef1a7d49368fc8452fcf826400195dbe5dc405ba28681d22c31ed85a85068",
+    "research/s3e_pipeline/mapclosures.py": "feb6ab59dd390b9ccee5f90156ddd73d65ea74b2f4eebed842ab50fc23a90d3b",
+    "research/s3e_pipeline/ellipsoid_full_archive.py": "e711556d2f920b5cd9f57467682d1d252e4012bf6b5835f3be57fa6957c7b792",
+    "research/s3e_pipeline/ellipsoid_full.py": "801697d0d262588c1ffb5d7b74ed7534c4d3d62e1804fb93e7bc14fbcbdf9aa5",
+    "research/s3e_pipeline/cbs_registration_report.py": "0d8b82153034ece8d496cdc713da782433c588857d70dccf2da1bc8facca506d",
+    "research/s3e_pipeline/mcap_writer.py": "91703c8186e66b582d5c68c9765f1828aab898bad87d2112e1a7d8ffa96854fc",
+    "research/s3e_pipeline/frontends.py": "bda95ba9ab66f1fdf8292526c2f3e26709cd1ad3f6bbb8c3dbe4c41142187b76",
+    "research/s3e_pipeline/distributed.py": "15336e02029870e5f61067a60fdb6a294f91348e074bac990b55f190f14eaf69",
+    "research/s3e_pipeline/ellipsoid_bev.py": "152c74053ef815f5833737862246d0a5ee9aa38130193372937da59a4059f082",
+    "research/s3e_pipeline/ellipsoid_cuda.py": "5a95ffda79f028c9e2201e26f0d9e22132406fabed6256aa035cce8324bdd1f6",
+    "research/s3e_pipeline/cu_multi.py": "a8963a0d219b363c366203173fe7d20f157fb2c4cdd2d54d854ddc4e16c21d89",
+    "research/s3e_pipeline/isolation.py": "fac934904910d1c7ba8020609f0f6fed7094aeeb1141ce792d82af341b26e398",
+    "research/s3e_pipeline/backends.py": "bb417d84cc775e9e2e651af291c0e78d60d213170ee8cdd1e89a85526f85342b",
+    "research/s3e_pipeline/mapclosures_rerun.py": "cc2ebfcc45c78953f4ac0a6c8d05b2bcb28e4814ae26e08e2b4403c4c5786036",
+    "research/s3e_pipeline/cli.py": "3b12f1dfde4a2e19be695d4480484bf3508a4b8ed2646c7cf590980115234eb4",
+    "research/s3e_pipeline/registration.py": "4f176c0169b674ad1d0bbcc62f2d490d70fadc3baf18c77a9d34377b3c09246b",
+    "research/s3e_pipeline/artifacts.py": "ba9d13e7cc2476876c27f2d3060bf3a9eaddb5259f998d883aa4ced9020cef21",
+    "research/s3e_pipeline/robot_colors.py": "c1fae1dd4d6ff73a116f604c6e994089ecb43161e4c400600700fc1d418b55b2",
+    "research/s3e_pipeline/recent_submaps.py": "6b00725a13486aeae1a0a840ed02ccc155444a2db73ded952e32971384d4da7c",
+    "research/s3e_pipeline/mixed_pgo_report.py": "49e4a45265be03160e5be6d058ecf71b20461f7dd993a7bbded7ba6aa1378678",
+    "research/s3e_pipeline/pgo.py": "8e6341e712925a69135ca53f82fe70a74fa10df78735f1cd71b3ba5aed610078",
+    "research/s3e_pipeline/ellipsoid_cbs.py": "6a343d4c650d9fb718175580898104a63435255a137cbdd534ca83551558f2a5",
+    "research/s3e_pipeline/graco.py": "2120e9f75af338cf076c943cd6e07d22cb34ff9cc76906a2e7f09eee0f4e1604",
+    "research/s3e_pipeline/data.py": "b80926e8f8705d44e439533848edc30f24422a05deb2617ed1c31e79b4d6d66f",
+    "research/s3e_pipeline/ellipsoid_full_maps.py": "09738d55fa217fe2972098e19dad32dcbb2aaa27fada95b3b5d7437c985ff734",
+    "research/s3e_pipeline/mixed_pgo.py": "165a244f6bdd8aa983830ac32774e059316e71c86298988f4b5c2e54cb218d6e",
+    "research/s3e_pipeline/report_figures.py": "09fe3a1b2d6ea80384a0e4d4b06981475a6e70b4081254565aa50d656f82fe95",
+    "research/s3e_pipeline/__init__.py": "681ce20d5b6af6f8c91e54514be735ed1abae2c05be7bd6420efe13ae37da615",
+    "research/s3e_pipeline/ros_dpgo_worker.py": "7f46ecb0f1788db6a72be86725a1df7bf07762fca15f7993040e5f8038c0d7be",
+    "research/s3e_pipeline/cbs_registration_maps.py": "4ae67fa02b15f594fc258a04f45caadad5632cb90aa7a7e28ed8a43d4efaa6f1",
+    "research/s3e_pipeline/ellipsoid_delta_writer.py": "e19f8a9748011b1b2fdb37cbc828632f54ce569693945dfdc358590eb7507d80",
+    "research/s3e_pipeline/geometry.py": "37293882788d19fc854cdc7b98722760c14348d6b887460f0204ccf02b1a5d7a",
+    "research/s3e_pipeline/registration_exchange.py": "24d644d7f62b6ea370f372c0711086557001a75a1cc42da930aef27b0cfd92d9",
+    "scripts/recent_submaps/evaluate.py": "c6dc25ba64a9fb0f01864ea06d78f567d9bbe93f4e4411af241c94408269b5fa",
+    "scripts/recent_submaps/rollout_report.py": "763c8dca629136bcd0c37f263382ea346a32290501776a444dcac023d2286954",
+    "scripts/recent_submaps/baseline.yaml": "f4ffa66d9ccc190ae889adc1b96d15487b4f37720421521a5a72046b26ef658f",
+    "scripts/recent_submaps/validate.py": "b9475228e3d4333aee9bddef6cf1b49bd49975ce4ab99e5c6d7d41b7253532fd",
+    "scripts/recent_submaps/prepare_rollout.py": "698b1bb07480c42e45eb99732d1845da462358e46b506c3bb46058d4f6bb9085",
+    "scripts/recent_submaps/plot_comparison.py": "85895b6e792a55615988eac20ad57e973537bd261abdf5250b7fbd8f139cf194",
+    "scripts/recent_submaps/run_trial.py": "5f35ccb1afc6749e36b0635b184c0bef7522d3897b1e048332cb860b6309e0a6",
+    "scripts/recent_submaps/README.md": "fa440752f911845959e36b092549153f6ab91f59eb4117e1a007a2ae6052e351",
+    "scripts/recent_submaps/enabled.yaml": "d285a561659043720d74958e3d2d38fb4b928e6fdaa253f24b85f987b25a3dbd",
+    "scripts/recent_submaps/rollout.py": "35f5248ef9c0ebc772f051372cc75d195fc19e7a2a04f97cf9553c168ff37229",
+    "scripts/recent_submaps/rollout.yaml": "c829f2f8e045e8dd0e34c43f64df53c5e8dd0a4632f3a37f26acf0878e9bfc99",
+    "scripts/recent_submaps/rollout_rerun.py": "b5f979d50fe13a9b22a0ca3d61f781941547e38864f89b22e0d9313b4105f729",
+    "scripts/recent_submaps/retention_audit.py": "5118f39699d646400f820aacde98822ab12e17344383bb02e407186ae703efa5"
+  },
+  "config_sha256": "c829f2f8e045e8dd0e34c43f64df53c5e8dd0a4632f3a37f26acf0878e9bfc99",
+  "bulk_geometry_retained": true,
+  "live_recording_verification": "\n    Welcome to Rerun!\n\n    This open source library collects anonymous usage data to\n    help the Rerun team improve the library.\n\n    Summary:\n    - We only collect high level events about the features used within the Rerun Viewer.\n    - The actual data you log to Rerun, such as point clouds, images, or text logs,\n      will never be collected.\n    - We don't log IP addresses.\n    - We don't log your user name, file paths, or any personal identifiable data.\n    - Usage data we do collect will be sent to and stored on servers within the EU.\n\n    For more details and instructions on how to opt out, run the command:\n\n      rerun analytics details\n\n    As this is this your first session, _no_ usage data has been sent yet,\n    giving you an opportunity to opt-out first if you wish.\n\n    Happy Rerunning!\n\n\u001b[2m2026-09-18T10:26:42.153179Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mre_analytics\u001b[0m\u001b[2m:\u001b[0m Failed to initialize analytics: Permission denied (os error 13)\n5 files verified without error.\n",
+  "derived_recording_verification": "\n    Welcome to Rerun!\n\n    This open source library collects anonymous usage data to\n    help the Rerun team improve the library.\n\n    Summary:\n    - We only collect high level events about the features used within the Rerun Viewer.\n    - The actual data you log to Rerun, such as point clouds, images, or text logs,\n      will never be collected.\n    - We don't log IP addresses.\n    - We don't log your user name, file paths, or any personal identifiable data.\n    - Usage data we do collect will be sent to and stored on servers within the EU.\n\n    For more details and instructions on how to opt out, run the command:\n\n      rerun analytics details\n\n    As this is this your first session, _no_ usage data has been sent yet,\n    giving you an opportunity to opt-out first if you wish.\n\n    Happy Rerunning!\n\n\u001b[2m2026-09-18T10:30:39.642201Z\u001b[0m \u001b[31mERROR\u001b[0m \u001b[2mre_analytics\u001b[0m\u001b[2m:\u001b[0m Failed to initialize analytics: Permission denied (os error 13)\n1 file verified without error.\n"
+}

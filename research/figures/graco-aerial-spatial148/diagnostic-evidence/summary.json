@@ -1,0 +1,10 @@
+{
+  "complete": true,
+  "frozen_sources_verified": true,
+  "ground_truth_used": false,
+  "original_experiment_unchanged": true,
+  "original_replays": 11,
+  "dense_accepted": 8,
+  "wall_s": 32.863117297994904,
+  "script_sha256": "0890fa8731b7bd8dafcd3430da1daa0d71bf03098bcaeee4ee706e38f7658039"
+}

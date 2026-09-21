@@ -1,0 +1,80 @@
+{
+  "maps": [
+    {
+      "key": 0,
+      "png": "000000.png",
+      "sha256": "3dba573f4cf796ccf9ad604c9ee587a831a2918be018f338c52b0fd55f026d31",
+      "features": 74,
+      "width": 278,
+      "height": 312,
+      "elapsed_s": 65.802671574,
+      "extent_m": 40.1098924379298,
+      "payload_sha256": "b7fb0985ce4537ddf3f18e182f9b368dba818eea986a88d5f0dd4589d173352d",
+      "member_scans": 621
+    },
+    {
+      "key": 1,
+      "png": "000001.png",
+      "sha256": "ecc6b2e7bcb31531c70fc85b46e8414af20164a9683b66cf6135f022554c3b34",
+      "features": 56,
+      "width": 262,
+      "height": 306,
+      "elapsed_s": 22.86402297,
+      "extent_m": 40.06190105943621,
+      "payload_sha256": "7cbe2ab65174742471059ae0686ae4d985c26384edda876260e107973530ad63",
+      "member_scans": 214
+    },
+    {
+      "key": 2,
+      "png": "000002.png",
+      "sha256": "b470c7b83b26ce2ba30af44dbe7c6bf101f646334f8ed83b412ccbbe8c1399bc",
+      "features": 65,
+      "width": 285,
+      "height": 296,
+      "elapsed_s": 22.808022976,
+      "extent_m": 40.09060653585573,
+      "payload_sha256": "53ec71d7f76f0dc54bf003e491363bcdf47018cf2e231d32d8eb8e36f2622ada",
+      "member_scans": 215
+    },
+    {
+      "key": 3,
+      "png": "000003.png",
+      "sha256": "03cbbf5a5b850b28911bbf39611d8e0187ec41df1b1a4c01a5270fb367851772",
+      "features": 74,
+      "width": 266,
+      "height": 306,
+      "elapsed_s": 25.536026001,
+      "extent_m": 40.02642213657002,
+      "payload_sha256": "3b14993e20577f622547f11798e9c2e0e99c014e35e233554546131e7575e63a",
+      "member_scans": 242
+    },
+    {
+      "key": 4,
+      "png": "000004.png",
+      "sha256": "e7e44a0a5db6b438cb923e2402b7a2103bf6e1db9ee02962fcfca8e51ca5d3a7",
+      "features": 63,
+      "width": 206,
+      "height": 307,
+      "elapsed_s": 20.424020052,
+      "extent_m": 40.03069271990994,
+      "payload_sha256": "2113e6bd66c18e77d18d25b986299d8862a3454100b3130b85d5d72564a6d54e",
+      "member_scans": 194
+    },
+    {
+      "key": 5,
+      "png": "000005.png",
+      "sha256": "a462cd2a400055a3efc2cb8083ccffde9fb95105994210ee564987de21a401ab",
+      "features": 90,
+      "width": 198,
+      "height": 308,
+      "elapsed_s": 15.120014905,
+      "extent_m": 40.14852174689382,
+      "payload_sha256": "3baa2c7d498845a0836ac4cb8de9b61aab4a731b6ddd55ad252d9826b4485c6e",
+      "member_scans": 144
+    }
+  ],
+  "exact_cached_features": true,
+  "ground_truth_used": false,
+  "projection": "actual native per-anchor filter gravity",
+  "resolution_m": 0.5
+}

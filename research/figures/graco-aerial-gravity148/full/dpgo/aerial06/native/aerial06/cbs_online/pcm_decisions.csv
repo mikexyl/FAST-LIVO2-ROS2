@@ -1,0 +1,5 @@
+robot_from,robot_to,key_from,key_to,retained,reason,clique_size
+1,2,7,7,1,retained_clique,4
+1,2,10,9,1,retained_clique,4
+1,2,10,10,1,retained_clique,4
+1,2,10,11,1,retained_clique,4

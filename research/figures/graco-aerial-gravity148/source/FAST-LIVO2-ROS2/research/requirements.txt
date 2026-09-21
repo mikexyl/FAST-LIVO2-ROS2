@@ -1,0 +1,8 @@
+numpy==1.26.4
+scipy==1.14.1
+gtsam==4.2
+small-gicp==1.0.0
+mcap==1.4.0
+rosbags==0.11.5
+evo==1.36.5
+PyYAML>=5.4

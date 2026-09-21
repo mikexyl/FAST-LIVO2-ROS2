@@ -1,0 +1,34 @@
+{
+  "aerial05": {
+    "source": "/data/graco/aerial-05-40m.bag",
+    "source_sha256": "d704884eb3b55dbf7db8691777919e84dce3eb989817545c41e3a7548a78136d",
+    "topic": "/gnss/ground_truth",
+    "rows": 59457,
+    "output_sha256": "e814e307b9db4050069b04c1e3617ef68abaa9d2d52d4291edc5dd69462455cb",
+    "evaluation_only": true
+  },
+  "aerial06": {
+    "source": "/data/graco/aerial-06-20m.bag",
+    "source_sha256": "7ffcc94a580fc75c5440b575200f7bfcb57e603e4defdd591619fc06b54f1d67",
+    "topic": "/gnss/ground_truth",
+    "rows": 66034,
+    "output_sha256": "e4f0042b36a0b32a8fd5b6eb02284f755d8c792eb3b95bae460fd635be8034f4",
+    "evaluation_only": true
+  },
+  "aerial07": {
+    "source": "/data/graco/aerial-07-25m.bag",
+    "source_sha256": "74195f07f2a9d2d3da3c2162388344ce818a593e53867bf904818beb75218d90",
+    "topic": "/gnss/ground_truth",
+    "rows": 79072,
+    "output_sha256": "15fb7cc74610c8c61313bc80bd9f4659f1f230b54cb2c229fd78d2acbe93c942",
+    "evaluation_only": true
+  },
+  "aerial08": {
+    "source": "/data/graco/aerial-08-25m.bag",
+    "source_sha256": "713308b903f6952a2a7a290de75c0e7ceedce46350fd3ae47610f879687a3464",
+    "topic": "/gnss/ground_truth",
+    "rows": 55823,
+    "output_sha256": "5b4db62829284dcb3f8cee87b5f2f38aada52e81667a3fa73da576902dc4b33b",
+    "evaluation_only": true
+  }
+}

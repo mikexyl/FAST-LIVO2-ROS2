@@ -1,0 +1,610 @@
+{
+  "pid": 2214,
+  "started_utc": "2026-09-19T12:32:19Z",
+  "frontend_workers": 6,
+  "frontend_ros_domains": [
+    90,
+    92,
+    94,
+    96,
+    98,
+    100
+  ],
+  "phase": "finished",
+  "groups": [
+    {
+      "name": "S3E_Laboratory_4",
+      "status": "complete",
+      "stage": "complete",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/frontends/Alpha",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.7766766718539295,
+            "max_successful_update_gap_s": 0.300989696,
+            "native_poses": 3547,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/frontends/Bob",
+          "ros_domain_id": 100,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.2822766593562103,
+            "max_successful_update_gap_s": 0.302607105,
+            "native_poses": 3547,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/frontends/Carol",
+          "ros_domain_id": 96,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.355041821304524,
+            "max_successful_update_gap_s": 0.300739585,
+            "native_poses": 3600,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "robot": "Carol",
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Alpha"
+      },
+      "connectivity": {
+        "all_robots_connected": true,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "Alpha",
+          "Bob",
+          "Carol"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "Alpha--Bob": 13,
+          "Alpha--Carol": 12,
+          "Bob--Carol": 19
+        },
+        "measured_components": [
+          [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ]
+        ],
+        "output_frames": {
+          "Alpha": [
+            "Alpha"
+          ],
+          "Bob": [
+            "Alpha"
+          ],
+          "Carol": [
+            "Alpha"
+          ]
+        }
+      },
+      "raw_ate": {},
+      "cbs_component_ate": {},
+      "loops": 49,
+      "pcm_rejected": 0
+    },
+    {
+      "name": "S3E_Campus_Road_1",
+      "status": "complete",
+      "stage": "complete",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/frontends/Alpha",
+          "ros_domain_id": 96,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.7840930824712693,
+            "max_successful_update_gap_s": 0.30173696,
+            "native_poses": 5821,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/frontends/Bob",
+          "ros_domain_id": 98,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.2920274896119026,
+            "max_successful_update_gap_s": 0.399669248,
+            "native_poses": 7392,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/frontends/Carol",
+          "ros_domain_id": 100,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 3.1625676632689994,
+            "max_successful_update_gap_s": 0.301651967,
+            "native_poses": 5657,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "robot": "Carol",
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Carol"
+      },
+      "connectivity": {
+        "all_robots_connected": false,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "Alpha",
+          "Bob",
+          "Carol"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "Alpha--Bob": 6
+        },
+        "measured_components": [
+          [
+            "Alpha",
+            "Bob"
+          ],
+          [
+            "Carol"
+          ]
+        ],
+        "output_frames": {
+          "Alpha": [
+            "Alpha"
+          ],
+          "Bob": [
+            "Alpha"
+          ],
+          "Carol": [
+            "Carol"
+          ]
+        }
+      },
+      "raw_ate": {
+        "Alpha": 1.3338670557164831,
+        "Bob": 7.025372172262788,
+        "Carol": 1.590846120741604
+      },
+      "cbs_component_ate": {
+        "Alpha": 6.259853332532204,
+        "Carol": 1.2532096846164067
+      },
+      "loops": 7,
+      "pcm_rejected": 0
+    },
+    {
+      "name": "S3E_Campus_Road_2",
+      "status": "complete",
+      "stage": "complete",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/frontends/Alpha",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.4950453409449906,
+            "max_successful_update_gap_s": 0.305112019,
+            "native_poses": 14146,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/frontends/Bob",
+          "ros_domain_id": 92,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.162339343070413,
+            "max_successful_update_gap_s": 0.302085664,
+            "native_poses": 14079,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/frontends/Carol",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.6174107702687426,
+            "max_successful_update_gap_s": 0.400833312,
+            "native_poses": 13697,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "robot": "Carol",
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Alpha"
+      },
+      "connectivity": {
+        "all_robots_connected": true,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "Alpha",
+          "Bob",
+          "Carol"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "Alpha--Bob": 81,
+          "Alpha--Carol": 66,
+          "Bob--Carol": 34
+        },
+        "measured_components": [
+          [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ]
+        ],
+        "output_frames": {
+          "Alpha": [
+            "Alpha"
+          ],
+          "Bob": [
+            "Alpha"
+          ],
+          "Carol": [
+            "Alpha"
+          ]
+        }
+      },
+      "raw_ate": {
+        "Alpha": 6.314918684563339,
+        "Bob": 13.901710890385516,
+        "Carol": 59.15079714244102
+      },
+      "cbs_component_ate": {
+        "Alpha": 10.92270221469883
+      },
+      "loops": 181,
+      "pcm_rejected": 0
+    },
+    {
+      "name": "S3E_Campus_Road_3",
+      "status": "complete",
+      "stage": "complete",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/frontends/Alpha",
+          "ros_domain_id": 96,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.1395152114163474,
+            "max_successful_update_gap_s": 0.300025362,
+            "native_poses": 8430,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/frontends/Bob",
+          "ros_domain_id": 98,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.0461877648510813,
+            "max_successful_update_gap_s": 0.299899595,
+            "native_poses": 8308,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/frontends/Carol",
+          "ros_domain_id": 100,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.1697246942971953,
+            "max_successful_update_gap_s": 0.29910906,
+            "native_poses": 8318,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "robot": "Carol",
+      "components": {
+        "Alpha": "Alpha",
+        "Bob": "Alpha",
+        "Carol": "Alpha"
+      },
+      "connectivity": {
+        "all_robots_connected": true,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "Alpha",
+          "Bob",
+          "Carol"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "Alpha--Bob": 23,
+          "Alpha--Carol": 15,
+          "Bob--Carol": 3
+        },
+        "measured_components": [
+          [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ]
+        ],
+        "output_frames": {
+          "Alpha": [
+            "Alpha"
+          ],
+          "Bob": [
+            "Alpha"
+          ],
+          "Carol": [
+            "Alpha"
+          ]
+        }
+      },
+      "raw_ate": {
+        "Alpha": 2.26866242530765,
+        "Bob": 3.262952613087127,
+        "Carol": 2.7829624231960537
+      },
+      "cbs_component_ate": {
+        "Alpha": 1.0080985665655262
+      },
+      "loops": 42,
+      "pcm_rejected": 0
+    },
+    {
+      "name": "GRACO_ground_01_06",
+      "status": "complete",
+      "stage": "complete",
+      "frontends": {
+        "robot1": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot1",
+          "ros_domain_id": 98,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.3276755249911263,
+            "max_successful_update_gap_s": 0.343997001,
+            "native_poses": 2728,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot2": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot2",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.3437668721629077,
+            "max_successful_update_gap_s": 0.360004902,
+            "native_poses": 3042,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot3": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot3",
+          "ros_domain_id": 100,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.1067300548684793,
+            "max_successful_update_gap_s": 0.5334302,
+            "native_poses": 2753,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot4": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot4",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.0440075909579276,
+            "max_successful_update_gap_s": 0.279996157,
+            "native_poses": 3013,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot5": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot5",
+          "ros_domain_id": 92,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.4607469946462794,
+            "max_successful_update_gap_s": 0.343998909,
+            "native_poses": 4215,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot6": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot6",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.035427334108848,
+            "max_successful_update_gap_s": 0.256006003,
+            "native_poses": 2845,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "robot": "robot6",
+      "components": {
+        "robot1": "robot1",
+        "robot2": "robot1",
+        "robot3": "robot1",
+        "robot4": "robot1",
+        "robot5": "robot1",
+        "robot6": "robot1"
+      },
+      "connectivity": {
+        "all_robots_connected": true,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "robot1",
+          "robot2",
+          "robot3",
+          "robot4",
+          "robot5",
+          "robot6"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "robot1--robot5": 5,
+          "robot1--robot6": 7,
+          "robot2--robot3": 4,
+          "robot2--robot5": 7,
+          "robot3--robot4": 3,
+          "robot3--robot5": 17
+        },
+        "measured_components": [
+          [
+            "robot1",
+            "robot2",
+            "robot3",
+            "robot4",
+            "robot5",
+            "robot6"
+          ]
+        ],
+        "output_frames": {
+          "robot1": [
+            "robot1"
+          ],
+          "robot2": [
+            "robot1"
+          ],
+          "robot3": [
+            "robot1"
+          ],
+          "robot4": [
+            "robot1"
+          ],
+          "robot5": [
+            "robot1"
+          ],
+          "robot6": [
+            "robot1"
+          ]
+        }
+      },
+      "raw_ate": {
+        "robot1": 3.196807238052282,
+        "robot2": 2.41847996039744,
+        "robot3": 5.59942298916131,
+        "robot4": 0.94850378814674,
+        "robot5": 1.5491715697339656,
+        "robot6": 1.2181147253826343
+      },
+      "cbs_component_ate": {
+        "robot1": 4.837309776307831
+      },
+      "loops": 43,
+      "pcm_rejected": 1
+    }
+  ],
+  "updated_utc": "2026-09-19T13:39:23Z",
+  "finished_utc": "2026-09-19T13:39:23Z"
+}

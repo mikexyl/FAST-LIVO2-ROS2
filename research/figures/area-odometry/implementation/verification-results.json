@@ -1,0 +1,15 @@
+{
+  "native_ctest": {
+    "passed": 3,
+    "seconds": 3.53,
+    "log": "build/ellipselio/Testing/Temporary/LastTest.log",
+    "includes": "Area odometry: stable persistent ownership, no handovers/self-matching, old return geometry, unbounded height, frozen query area, boundary candidate exclusion, 128 filtered-search comparisons against a brute-force oracle and invalid configuration rejection. Existing recent-map and bounded writer regressions also passed."
+  },
+  "python_regression": {
+    "passed": 50,
+    "seconds": 1.73,
+    "files": ["test_area_maps.py", "test_fixed_evidence.py", "test_coverage_submaps.py", "test_recent_submaps.py", "test_spatial_submaps.py", "test_mixed_pgo.py"]
+  },
+  "syntax": "passed",
+  "git_diff_check": "passed in both repositories"
+}

@@ -1,0 +1,159 @@
+{
+  "robot": "aerial05",
+  "capture": "live ROS subscriptions during a fresh EllipseLIO replay",
+  "complete": true,
+  "wall_s": 302.4963001461001,
+  "counts": {
+    "raw_imu": 36927,
+    "post_lidar_tf": 2679,
+    "native_scan": 2679,
+    "native_analytics": 2679,
+    "imu_propagated_odometry": 26145,
+    "native_map_chunk": 210,
+    "native_ellipsoid_marker": 13449
+  },
+  "rejected": {
+    "archived_map_chunk": 2674
+  },
+  "first_stamp_ns": {
+    "raw_imu": 1661851056175615072,
+    "post_lidar_tf": 1661851057279616117,
+    "native_scan": 1661851057279616117,
+    "native_analytics": 1661851057277008392,
+    "imu_propagated_odometry": 1661851057295615911,
+    "native_map_chunk": 1661851066127628088,
+    "native_ellipsoid_marker": 1661851066127628088
+  },
+  "last_stamp_ns": {
+    "raw_imu": 1661851352487905979,
+    "post_lidar_tf": 1661851352383902073,
+    "native_scan": 1661851352383902073,
+    "native_analytics": 1661851352380535052,
+    "imu_propagated_odometry": 1661851352479903936,
+    "native_map_chunk": 1661851347183903933,
+    "native_ellipsoid_marker": 1661851347183903933
+  },
+  "first_motion_violation": null,
+  "maximum_scan_pose_speed_m_s": 4.828663788674171,
+  "clock_ns": 1661851352484223140,
+  "map_snapshots": [
+    {
+      "stamp_ns": 1661851066127628088,
+      "received_chunks": 12
+    },
+    {
+      "stamp_ns": 1661851076079633951,
+      "received_chunks": 12
+    },
+    {
+      "stamp_ns": 1661851086231643915,
+      "received_chunks": 12
+    },
+    {
+      "stamp_ns": 1661851096247653961,
+      "received_chunks": 11
+    },
+    {
+      "stamp_ns": 1661851106319664001,
+      "received_chunks": 11
+    },
+    {
+      "stamp_ns": 1661851116271675110,
+      "received_chunks": 11
+    },
+    {
+      "stamp_ns": 1661851126303684950,
+      "received_chunks": 11
+    },
+    {
+      "stamp_ns": 1661851136359694958,
+      "received_chunks": 10
+    },
+    {
+      "stamp_ns": 1661851146423700094,
+      "received_chunks": 10
+    },
+    {
+      "stamp_ns": 1661851156439714909,
+      "received_chunks": 9
+    },
+    {
+      "stamp_ns": 1661851166503720999,
+      "received_chunks": 9
+    },
+    {
+      "stamp_ns": 1661851176535732031,
+      "received_chunks": 8
+    },
+    {
+      "stamp_ns": 1661851186591742039,
+      "received_chunks": 9
+    },
+    {
+      "stamp_ns": 1661851196623752117,
+      "received_chunks": 8
+    },
+    {
+      "stamp_ns": 1661851206671762943,
+      "received_chunks": 7
+    },
+    {
+      "stamp_ns": 1661851216687772989,
+      "received_chunks": 7
+    },
+    {
+      "stamp_ns": 1661851226767780066,
+      "received_chunks": 6
+    },
+    {
+      "stamp_ns": 1661851236823792934,
+      "received_chunks": 6
+    },
+    {
+      "stamp_ns": 1661851246863801956,
+      "received_chunks": 5
+    },
+    {
+      "stamp_ns": 1661851256911808014,
+      "received_chunks": 5
+    },
+    {
+      "stamp_ns": 1661851266895819902,
+      "received_chunks": 5
+    },
+    {
+      "stamp_ns": 1661851276983830929,
+      "received_chunks": 4
+    },
+    {
+      "stamp_ns": 1661851286959844112,
+      "received_chunks": 5
+    },
+    {
+      "stamp_ns": 1661851296959852934,
+      "received_chunks": 3
+    },
+    {
+      "stamp_ns": 1661851307055860043,
+      "received_chunks": 4
+    },
+    {
+      "stamp_ns": 1661851317087872982,
+      "received_chunks": 3
+    },
+    {
+      "stamp_ns": 1661851327167882919,
+      "received_chunks": 3
+    },
+    {
+      "stamp_ns": 1661851337223889112,
+      "received_chunks": 2
+    },
+    {
+      "stamp_ns": 1661851347183903933,
+      "received_chunks": 2
+    }
+  ],
+  "recording_bytes": 318841783,
+  "error": null
+}

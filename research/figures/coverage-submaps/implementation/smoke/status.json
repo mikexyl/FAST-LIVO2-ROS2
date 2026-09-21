@@ -1,0 +1,6 @@
+{
+  "phase": "failed",
+  "ground_truth_used": false,
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke.py\", line 35, in <module>\n    assert np.isfinite(pose).all() and np.all(np.diff(stamp)>0) and gap<1 and speed<20\nAssertionError\n"
+}

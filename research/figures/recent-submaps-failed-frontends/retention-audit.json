@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "identical_native_binary": true,
+  "native_binary_sha256": "702e54bec085ad8d0b621fa4ed5ba95161ddd35ef15f7ee783f751fdea253964",
+  "graco_reference_label_correction_only": true,
+  "all_bulk_geometry_retained": true,
+  "trials": {
+    "s3e_laboratory_4-carol": {
+      "coverage": {
+        "lidar": {
+          "topic": "/Carol/velodyne_points",
+          "source_messages": 3817,
+          "last_record_ns": 1662378134610838272,
+          "last_header_ns": 1662378134610838272
+        },
+        "imu": {
+          "topic": "/Carol/imu/data",
+          "source_messages": 38166,
+          "last_record_ns": 1662378134656425082,
+          "last_header_ns": 1662378134656425082
+        },
+        "native_last_scan_end_ns": 1662378134609689601,
+        "tail_shortfall_s": 0.001148671,
+        "full_selected_sensor_tail_reached": true,
+        "tolerance_s": 0.2,
+        "native_pose_count": 3794
+      },
+      "snapshot_validation": {
+        "native_updates": 3794,
+        "snapshots": 76,
+        "completed_snapshots": 74,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "source_sensor_settings_preserved": true,
+      "original_imu": {
+        "rate": 100,
+        "acc_noise": 0.011692699862662088,
+        "gyr_noise": 0.010216647894856925,
+        "acc_bias": 0.0002041305895172543,
+        "gyr_bias": 8.45143056189658e-05,
+        "topic": "/Carol/imu/data"
+      },
+      "current_imu": {
+        "rate": 100,
+        "acc_noise": 0.1,
+        "gyr_noise": 0.1,
+        "acc_bias": 0.0001,
+        "gyr_bias": 0.0001,
+        "topic": "/Carol/imu/data"
+      },
+      "recording_verified": true,
+      "files": {
+        "s3e_laboratory_4-carol/recording/live.rrd": {
+          "bytes": 292385076,
+          "sha256": "4091f62494ff6d0fb23405db37de18be2522fd57317131207dad57b310e6a54c"
+        },
+        "s3e_laboratory_4-carol/frontend/native_updates.jsonl": {
+          "bytes": 1905803,
+          "sha256": "6f78c41373c8b30476a3405b6725d55a987c97d3b57e2f8f8d23e6229b09551e"
+        },
+        "s3e_laboratory_4-carol/frontend/submaps/index.jsonl": {
+          "bytes": 111127,
+          "sha256": "a3642ece5ff96d40f918a3e033f8c4da048a5bce9edbeb68f20c54d9fb3d4f82"
+        },
+        "s3e_laboratory_4-carol/frontend/runtime.yaml": {
+          "bytes": 1804,
+          "sha256": "3e87c14c45cc6d229137eec97b9f8b8e95194a984a958a12518f673256a96941"
+        },
+        "s3e_laboratory_4-carol/source-hashes.json": {
+          "bytes": 5697,
+          "sha256": "005ea38f78507aa869c42b344da97d2e547523410af84a3450733492c69e3b74"
+        }
+      }
+    },
+    "s3e_campus_road_1-alpha": {
+      "coverage": {
+        "lidar": {
+          "topic": "/Alpha/velodyne_points",
+          "source_messages": 7155,
+          "last_record_ns": 1660988873655742208,
+          "last_header_ns": 1660988873655742208
+        },
+        "imu": {
+          "topic": "/Alpha/imu/data",
+          "source_messages": 71401,
+          "last_record_ns": 1660988873702131000,
+          "last_header_ns": 1660988873702131000
+        },
+        "native_last_scan_end_ns": 1660988873656993280,
+        "tail_shortfall_s": 0.0,
+        "full_selected_sensor_tail_reached": true,
+        "tolerance_s": 0.2,
+        "native_pose_count": 7129
+      },
+      "snapshot_validation": {
+        "native_updates": 7129,
+        "snapshots": 143,
+        "completed_snapshots": 141,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "source_sensor_settings_preserved": true,
+      "original_imu": {
+        "rate": 100,
+        "acc_noise": 0.010919628856399554,
+        "gyr_noise": 0.010451440924866223,
+        "acc_bias": 0.0002185182762911326,
+        "gyr_bias": 8.177000935125718e-05,
+        "topic": "/Alpha/imu/data"
+      },
+      "current_imu": {
+        "rate": 100,
+        "acc_noise": 0.1,
+        "gyr_noise": 0.1,
+        "acc_bias": 0.0001,
+        "gyr_bias": 0.0001,
+        "topic": "/Alpha/imu/data"
+      },
+      "recording_verified": true,
+      "files": {
+        "s3e_campus_road_1-alpha/recording/live.rrd": {
+          "bytes": 1062012043,
+          "sha256": "07e52ffbad856a4f851c3af0a0eb42aa04c5bf6b170e98d850aca08b8ef6e9e1"
+        },
+        "s3e_campus_road_1-alpha/frontend/native_updates.jsonl": {
+          "bytes": 3590374,
+          "sha256": "1197135b2fa0acd9f203804158be6151a065b3002ffc5e1d9c4107e84b697230"
+        },
+        "s3e_campus_road_1-alpha/frontend/submaps/index.jsonl": {
+          "bytes": 211209,
+          "sha256": "be39a68fa0b40d7797264d82e3cb5a54f3e411e29f2816af8b016afa02480713"
+        },
+        "s3e_campus_road_1-alpha/frontend/runtime.yaml": {
+          "bytes": 1806,
+          "sha256": "284f2e7f1925fd4fe357b8846dd3994b5eb28f66e97d7e6fa79b58296dc480c9"
+        },
+        "s3e_campus_road_1-alpha/source-hashes.json": {
+          "bytes": 5827,
+          "sha256": "021ed8e4832190cd508af8e83116b02d2ebac1e6548f9606574b140a2abe2d67"
+        }
+      }
+    },
+    "s3e_campus_road_2-alpha": {
+      "coverage": {
+        "lidar": {
+          "topic": "/Alpha/velodyne_points",
+          "source_messages": 15810,
+          "last_record_ns": 1689771171531391382,
+          "last_header_ns": 1689771171531391382
+        },
+        "imu": {
+          "topic": "/Alpha/imu/data",
+          "source_messages": 158087,
+          "last_record_ns": 1689771171597439527,
+          "last_header_ns": 1689771171597439527
+        },
+        "native_last_scan_end_ns": 1689771171532642454,
+        "tail_shortfall_s": 0.0,
+        "full_selected_sensor_tail_reached": true,
+        "tolerance_s": 0.2,
+        "native_pose_count": 15704
+      },
+      "snapshot_validation": {
+        "native_updates": 15704,
+        "snapshots": 316,
+        "completed_snapshots": 314,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "source_sensor_settings_preserved": true,
+      "original_imu": {
+        "rate": 100,
+        "acc_noise": 0.010919628856399554,
+        "gyr_noise": 0.010451440924866223,
+        "acc_bias": 0.0002185182762911326,
+        "gyr_bias": 8.177000935125718e-05,
+        "topic": "/Alpha/imu/data"
+      },
+      "current_imu": {
+        "rate": 100,
+        "acc_noise": 0.1,
+        "gyr_noise": 0.1,
+        "acc_bias": 0.0001,
+        "gyr_bias": 0.0001,
+        "topic": "/Alpha/imu/data"
+      },
+      "recording_verified": true,
+      "files": {
+        "s3e_campus_road_2-alpha/recording/live.rrd": {
+          "bytes": 2352610964,
+          "sha256": "d159c004884d143152db433212d77c7ad35303d44791d1a455dd69c5ccd3da29"
+        },
+        "s3e_campus_road_2-alpha/frontend/native_updates.jsonl": {
+          "bytes": 7957875,
+          "sha256": "12f4c5f853b77aedf3f57be0475f939875d9dc8db155247b21bd3af1eafbec80"
+        },
+        "s3e_campus_road_2-alpha/frontend/submaps/index.jsonl": {
+          "bytes": 481197,
+          "sha256": "e4909ba99b60ecfb3a6f5495c5df5ca95668ff013efb7a14cd0fe1fa1b6581fe"
+        },
+        "s3e_campus_road_2-alpha/frontend/runtime.yaml": {
+          "bytes": 1806,
+          "sha256": "1e3295432d9e5e9d9949020494c93d9162f1d2da9242d53c7e52b292877547a8"
+        },
+        "s3e_campus_road_2-alpha/source-hashes.json": {
+          "bytes": 5827,
+          "sha256": "fd43fd8edfcdb566864537315010ee8d6d8749be8791952339df2822d78c388a"
+        }
+      }
+    },
+    "s3e_campus_road_3-alpha": {
+      "coverage": {
+        "lidar": {
+          "topic": "/Alpha/velodyne_points",
+          "source_messages": 8939,
+          "last_record_ns": 1689767769341732025,
+          "last_header_ns": 1689767769341732025
+        },
+        "imu": {
+          "topic": "/Alpha/imu/data",
+          "source_messages": 89378,
+          "last_record_ns": 1689767769345647573,
+          "last_header_ns": 1689767769345647573
+        },
+        "native_last_scan_end_ns": 1689767769243784920,
+        "tail_shortfall_s": 0.097947105,
+        "full_selected_sensor_tail_reached": true,
+        "tolerance_s": 0.2,
+        "native_pose_count": 8892
+      },
+      "snapshot_validation": {
+        "native_updates": 8892,
+        "snapshots": 179,
+        "completed_snapshots": 177,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "source_sensor_settings_preserved": true,
+      "original_imu": {
+        "rate": 100,
+        "acc_noise": 0.010919628856399554,
+        "gyr_noise": 0.010451440924866223,
+        "acc_bias": 0.0002185182762911326,
+        "gyr_bias": 8.177000935125718e-05,
+        "topic": "/Alpha/imu/data"
+      },
+      "current_imu": {
+        "rate": 100,
+        "acc_noise": 0.1,
+        "gyr_noise": 0.1,
+        "acc_bias": 0.0001,
+        "gyr_bias": 0.0001,
+        "topic": "/Alpha/imu/data"
+      },
+      "recording_verified": true,
+      "files": {
+        "s3e_campus_road_3-alpha/recording/live.rrd": {
+          "bytes": 1282785961,
+          "sha256": "d140d14e93f6dd1d81196badb2440ef41942b92041eb4a15f9d8a40fa2141a56"
+        },
+        "s3e_campus_road_3-alpha/frontend/native_updates.jsonl": {
+          "bytes": 4490306,
+          "sha256": "069fcebe8cb39658d2a460bec8cab5ad954d281a8175f75dfef7c254fa66e1d3"
+        },
+        "s3e_campus_road_3-alpha/frontend/submaps/index.jsonl": {
+          "bytes": 264795,
+          "sha256": "55825426937fac06dbc46cb8248f8617e59cb6a6a90c23bdb5814ad0ce1ec398"
+        },
+        "s3e_campus_road_3-alpha/frontend/runtime.yaml": {
+          "bytes": 1806,
+          "sha256": "8bd6f535f1add59b9e96b9f3a7c0c157d24b6042c5242da0c0be3304c11ddd0d"
+        },
+        "s3e_campus_road_3-alpha/source-hashes.json": {
+          "bytes": 5958,
+          "sha256": "120b032d2a26404daeeb5bf982b5f7d3cf61fdebfad245e0db897f7a2d70167e"
+        }
+      }
+    },
+    "graco-ground01-robot1": {
+      "coverage": {
+        "lidar": {
+          "topic": "/velodyne/points",
+          "source_messages": 3338,
+          "last_record_ns": 1661303634000000256,
+          "last_header_ns": 1661303634000000256
+        },
+        "imu": {
+          "topic": "/gnss/imu",
+          "source_messages": 41728,
+          "last_record_ns": 1661303634183886051,
+          "last_header_ns": 1661303634183886051
+        },
+        "native_last_scan_end_ns": 1661303634099759320,
+        "tail_shortfall_s": 0.0,
+        "full_selected_sensor_tail_reached": true,
+        "tolerance_s": 0.2,
+        "native_pose_count": 3142
+      },
+      "snapshot_validation": {
+        "native_updates": 3142,
+        "snapshots": 67,
+        "completed_snapshots": 65,
+        "inspection_tails": 2,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "source_sensor_settings_preserved": true,
+      "original_imu": {
+        "rate": 125,
+        "acc_noise": 0.010028108,
+        "gyr_noise": 0.00083723892,
+        "acc_bias": 0.00055367077,
+        "gyr_bias": 1.5212086e-05,
+        "topic": "/gnss/imu"
+      },
+      "current_imu": {
+        "rate": 125,
+        "acc_noise": 0.010028108,
+        "gyr_noise": 0.00083723892,
+        "acc_bias": 0.00055367077,
+        "gyr_bias": 1.5212086e-05,
+        "topic": "/gnss/imu"
+      },
+      "recording_verified": true,
+      "files": {
+        "graco-ground01-robot1/recording/live.rrd": {
+          "bytes": 477303657,
+          "sha256": "134c01618524f26c1b3f4f9cafba49d87be36d78fc2b12df2aa1bc2ce63ecf77"
+        },
+        "graco-ground01-robot1/frontend/native_updates.jsonl": {
+          "bytes": 1580054,
+          "sha256": "9cea3b4bc66c7d6856514c308904a1e3d81809eca604665783d9600db827f388"
+        },
+        "graco-ground01-robot1/frontend/submaps/index.jsonl": {
+          "bytes": 95258,
+          "sha256": "6abdb1f7288d068b9546e2fb1dc628a2b294c088191f599a3ace8b42ee0b9417"
+        },
+        "graco-ground01-robot1/frontend/runtime.yaml": {
+          "bytes": 1713,
+          "sha256": "093124252fff22eeb9259e715135251ec90af916849f6a727c797b606b16d18d"
+        },
+        "graco-ground01-robot1/source-hashes.json": {
+          "bytes": 5956,
+          "sha256": "b23a096b37631f181326706d35928bf8bd9df94251d16eb8b8f3491655bc20c3"
+        }
+      }
+    }
+  }
+}

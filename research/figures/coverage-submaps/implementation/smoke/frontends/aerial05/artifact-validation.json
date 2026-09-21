@@ -1,0 +1,11 @@
+{
+  "native_updates": 1120,
+  "snapshots": 52,
+  "completed_snapshots": 50,
+  "inspection_tails": 2,
+  "retrievable_snapshots": 50,
+  "finite_chronological": true,
+  "exact_membership": true,
+  "anchor_poses_verified": true,
+  "payload_hashes_verified": true
+}

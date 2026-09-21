@@ -1,0 +1,67 @@
+{
+  "started_utc": "2026-09-20T05:17:25.152457+00:00",
+  "phase": "complete",
+  "diagnostic_only": true,
+  "frontend_quality": {
+    "aerial05": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 5.470204925572224,
+      "max_successful_update_gap_s": 0.131662336,
+      "native_poses": 2778,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial08": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.567553341668015,
+      "max_successful_update_gap_s": 1.38399887,
+      "native_poses": 2610,
+      "ground_truth_used": false,
+      "passed": false
+    }
+  },
+  "reason": "Full finite chronological captures, but aerial08 exceeded the 1-second successful-LiDAR-update gap criterion; that failed gate is preserved. Estimator and backend parameters are unchanged.",
+  "finished_utc": "2026-09-20T05:18:58.687569+00:00",
+  "raw_ate": {
+    "aerial05": 0.8271644799240985,
+    "aerial08": 0.21871146596707045
+  },
+  "shared_cbs_ate": {
+    "aerial05": 0.8271644799511358,
+    "aerial08": 0.07814804332940982
+  },
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial05",
+      "aerial08"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {},
+    "measured_components": [
+      [
+        "aerial05"
+      ],
+      [
+        "aerial08"
+      ]
+    ],
+    "output_frames": {
+      "aerial05": [
+        "aerial05"
+      ],
+      "aerial08": [
+        "aerial08"
+      ]
+    }
+  },
+  "loops": 1,
+  "pcm_rejected": 0,
+  "frozen_sources_verified": true
+}

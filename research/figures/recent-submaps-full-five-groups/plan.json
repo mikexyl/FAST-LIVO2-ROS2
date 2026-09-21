@@ -1,0 +1,214 @@
+[
+  {
+    "name": "S3E_Laboratory_4",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4",
+    "dataset": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/configs/Alpha.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "16fd4126f32eb6a9c385b123136c0cf5d4ed8154464229cb6e23ad7b53c6a340"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/configs/Bob.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "a6e7dab26d0aac72576712d58bb01a0313f1b14aada2e5cec56f7152411f236b"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/s3e_laboratory_4-carol",
+        "reused": true,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/configs/Carol.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "2172231ec4899ed56a191e0c6d37f5a067f639597c13991cf7166753bc69bad1"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_1",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_1",
+    "dataset": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/s3e_campus_road_1-alpha",
+        "reused": true,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_1/configs/Alpha.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "16fd4126f32eb6a9c385b123136c0cf5d4ed8154464229cb6e23ad7b53c6a340"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_1/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_1/configs/Bob.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "a6e7dab26d0aac72576712d58bb01a0313f1b14aada2e5cec56f7152411f236b"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_1/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_1/configs/Carol.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "2172231ec4899ed56a191e0c6d37f5a067f639597c13991cf7166753bc69bad1"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_2",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2",
+    "dataset": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/s3e_campus_road_2-alpha",
+        "reused": true,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/configs/Alpha.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "16fd4126f32eb6a9c385b123136c0cf5d4ed8154464229cb6e23ad7b53c6a340"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/configs/Bob.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "a6e7dab26d0aac72576712d58bb01a0313f1b14aada2e5cec56f7152411f236b"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/configs/Carol.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "2172231ec4899ed56a191e0c6d37f5a067f639597c13991cf7166753bc69bad1"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_3",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_3",
+    "dataset": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/s3e_campus_road_3-alpha",
+        "reused": true,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_3/configs/Alpha.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "16fd4126f32eb6a9c385b123136c0cf5d4ed8154464229cb6e23ad7b53c6a340"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_3/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_3/configs/Bob.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "a6e7dab26d0aac72576712d58bb01a0313f1b14aada2e5cec56f7152411f236b"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_3/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_3/configs/Carol.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "2172231ec4899ed56a191e0c6d37f5a067f639597c13991cf7166753bc69bad1"
+      }
+    }
+  },
+  {
+    "name": "GRACO_ground_01_06",
+    "robots": [
+      "robot1",
+      "robot2",
+      "robot3",
+      "robot4",
+      "robot5",
+      "robot6"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06",
+    "dataset": "/workspace/.ros2/graco/inputs/reference",
+    "graco": true,
+    "trials": {
+      "robot1": {
+        "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/graco-ground01-robot1",
+        "reused": true,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot1",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/configs/robot1.yaml",
+        "duration_s": 333.883886051,
+        "config_sha256": "1a6af85e67a0cd1923bb61d77fa4a2fc14d05bc79eee45bd184421e0dd131d64"
+      },
+      "robot2": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot2",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot2",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/configs/robot2.yaml",
+        "duration_s": 386.66059463,
+        "config_sha256": "5bb955581b98dbb250f1e289b6b1f0f6224ecd96d87cc1c1deb5eada60912b42"
+      },
+      "robot3": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot3",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot3",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/configs/robot3.yaml",
+        "duration_s": 296.973590586,
+        "config_sha256": "839d766142468ac181296dcd80d4ab748a09fa2dd59e39fab813e9236058d109"
+      },
+      "robot4": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot4",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot4",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/configs/robot4.yaml",
+        "duration_s": 328.858244015,
+        "config_sha256": "9899f1e52b74664969105f2e3db84946290de140158f1976aeb49966e87aa0a6"
+      },
+      "robot5": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot5",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot5",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/configs/robot5.yaml",
+        "duration_s": 520.031295016,
+        "config_sha256": "0128083835744709698112cdb63b954bd0c474b32b8b841b7aa4f5d43d50b3c5"
+      },
+      "robot6": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot6",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot6",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/configs/robot6.yaml",
+        "duration_s": 310.416219646,
+        "config_sha256": "720e29ee270149a10b49051fc9c4f72ee27cd600adb568e0dc0acd2893e4f9f9"
+      }
+    }
+  }
+]

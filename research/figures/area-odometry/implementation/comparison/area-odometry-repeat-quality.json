@@ -1,0 +1,28 @@
+{
+  "native_poses": 1119,
+  "finite_chronological": true,
+  "full_sequence": false,
+  "ground_truth_used": false,
+  "passed": true,
+  "max_successful_update_gap_s": 0.127776831,
+  "max_speed_m_s": 3.925795527598605,
+  "successful_updates": 1118,
+  "unsuccessful_updates": 1,
+  "interval_27_to_33_s": {
+    "scans": 56,
+    "failed": 0,
+    "zero_features": 0
+  },
+  "processing_ms": {
+    "median": 13.448542000332964,
+    "p95": 24.757070600026047,
+    "max": 55.98483999983728
+  },
+  "max_correspondence_age_s": 94.14813544100001,
+  "handovers": 0,
+  "odometry_map_source": "accumulated_area",
+  "mapper_peak_rss_mib": 608.97265625,
+  "area_snapshots": 13,
+  "final_archive_points": 380911,
+  "pose_duration_s": 118.788163441
+}

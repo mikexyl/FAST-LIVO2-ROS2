@@ -1,0 +1,61 @@
+/**:
+  ros__parameters:
+    mapping:
+      map_resolution: 0.1
+      pub_map_n_secs: 10
+      namespace: Bob
+      submaps:
+        enabled: true
+        duration_s: 10.0
+        overlap_s: 5.0
+        strategy: motion_overlap
+        keyframe_translation_m: 1.0
+        keyframe_rotation_deg: 10.0
+        keyframe_overlap: 0.6
+        overlap_voxel_m: 0.5
+        extent_m: 20.0
+        max_keyframes: 15
+        max_age_s: 30.0
+        min_handover_matches: 50
+        min_handover_overlap: 0.2
+        min_retrieval_keyframes: 3
+    publish:
+      map: true
+      scan: true
+      markers: true
+      odometry: true
+      analytics: true
+      tf: true
+    lidar:
+      type: 2
+      rate: 10
+      scan_lines: 16
+      vertical_fov: 30.0
+      min_range: 1.0
+      max_range: 100.0
+      topic: /Bob/velodyne_points
+      t_imu_lidar:
+      - 0.013931101421011644
+      - -0.04644857674286426
+      - 0.09032158643500168
+      r_imu_lidar:
+      - 0.9998360035118392
+      - 0.017380188738742166
+      - -0.005089103557281066
+      - -0.017434631709917527
+      - 0.9997890631539471
+      - -0.010856022117090714
+      - 0.004899351171394799
+      - 0.010942961843047787
+      - 0.9999281168087709
+    imu:
+      rate: 100
+      acc_noise: 0.1
+      gyr_noise: 0.1
+      acc_bias: 0.0001
+      gyr_bias: 0.0001
+      topic: /Bob/imu/data
+    cameras:
+      num_cams: 0
+    input:
+      reliable: true

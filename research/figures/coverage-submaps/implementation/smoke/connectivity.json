@@ -1,0 +1,1 @@
+{"all_robots_connected":false,"common_frame_contract":true,"expected_components":1,"expected_robots":["aerial05","aerial08"],"ground_truth_used":false,"inter_robot_loop_counts":{},"measured_components":[["aerial05"],["aerial08"]],"output_frames":{"aerial05":["aerial05"],"aerial08":["aerial08"]}}

@@ -1,0 +1,17 @@
+{
+  "causal_query_events_checked": 1083,
+  "verification_reasons": {
+    "high_rmse": 137,
+    "accepted": 106
+  },
+  "retained_loop_pairs": {
+    "Alpha-Alpha": 1,
+    "Alpha-Bob": 39,
+    "Alpha-Carol": 39,
+    "Bob-Bob": 2,
+    "Bob-Carol": 24
+  },
+  "causal_availability": true,
+  "same_robot_exclusion_and_nonoverlap": true,
+  "completed_endpoints": 280
+}

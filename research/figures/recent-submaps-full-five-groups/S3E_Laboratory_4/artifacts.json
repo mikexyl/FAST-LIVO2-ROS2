@@ -1,0 +1,9 @@
+{
+  "keyframes.ellipselio.Alpha": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/prepared-Alpha",
+  "descriptors.ellipselio.mapclosures.Alpha": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/prepared-Alpha/ellipsoid",
+  "keyframes.ellipselio.Bob": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/prepared-Bob",
+  "descriptors.ellipselio.mapclosures.Bob": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/prepared-Bob/ellipsoid",
+  "keyframes.ellipselio.Carol": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/prepared-Carol",
+  "descriptors.ellipselio.mapclosures.Carol": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/prepared-Carol/ellipsoid",
+  "dpgo": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/dpgo"
+}

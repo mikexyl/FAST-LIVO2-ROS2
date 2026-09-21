@@ -1,0 +1,214 @@
+[
+  {
+    "name": "S3E_Laboratory_4",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4",
+    "dataset": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/configs/Alpha.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "9bf7146d7ddc726d173385154827025ef7249113f6c6ef697f648d5b79e22b12"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/configs/Bob.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "dd85c9886a6996799883ba24efc65f8f96b3196fe2616bf4d4eafabe9c4b6f6b"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Laboratory_4/configs/Carol.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "c9fd9cd5f7809479051fddc76d3a1d509708d064ab7f99b1f26a236d78c5f7de"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_1",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1",
+    "dataset": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/configs/Alpha.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "9bf7146d7ddc726d173385154827025ef7249113f6c6ef697f648d5b79e22b12"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/configs/Bob.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "dd85c9886a6996799883ba24efc65f8f96b3196fe2616bf4d4eafabe9c4b6f6b"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_1/configs/Carol.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "c9fd9cd5f7809479051fddc76d3a1d509708d064ab7f99b1f26a236d78c5f7de"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_2",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2",
+    "dataset": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/configs/Alpha.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "9bf7146d7ddc726d173385154827025ef7249113f6c6ef697f648d5b79e22b12"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/configs/Bob.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "dd85c9886a6996799883ba24efc65f8f96b3196fe2616bf4d4eafabe9c4b6f6b"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_2/configs/Carol.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "c9fd9cd5f7809479051fddc76d3a1d509708d064ab7f99b1f26a236d78c5f7de"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_3",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3",
+    "dataset": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/configs/Alpha.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "9bf7146d7ddc726d173385154827025ef7249113f6c6ef697f648d5b79e22b12"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/configs/Bob.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "dd85c9886a6996799883ba24efc65f8f96b3196fe2616bf4d4eafabe9c4b6f6b"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/S3E_Campus_Road_3/configs/Carol.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "c9fd9cd5f7809479051fddc76d3a1d509708d064ab7f99b1f26a236d78c5f7de"
+      }
+    }
+  },
+  {
+    "name": "GRACO_ground_01_06",
+    "robots": [
+      "robot1",
+      "robot2",
+      "robot3",
+      "robot4",
+      "robot5",
+      "robot6"
+    ],
+    "folder": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06",
+    "dataset": "/workspace/.ros2/graco/inputs/reference",
+    "graco": true,
+    "trials": {
+      "robot1": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot1",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot1",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/configs/robot1.yaml",
+        "duration_s": 333.883886051,
+        "config_sha256": "8330e108f846d55a2fab69a0da778ffeabfca37fee4cf276f7f71e1310f30345"
+      },
+      "robot2": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot2",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot2",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/configs/robot2.yaml",
+        "duration_s": 386.66059463,
+        "config_sha256": "08de757659188b7a3c63f13769f524c259e05720a47f202123bfa3a1b2f9df80"
+      },
+      "robot3": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot3",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot3",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/configs/robot3.yaml",
+        "duration_s": 296.973590586,
+        "config_sha256": "f769d0dd60f366e6d4e4d0e9680ee9394e909911a732c275f4818aa949bd7a23"
+      },
+      "robot4": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot4",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot4",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/configs/robot4.yaml",
+        "duration_s": 328.858244015,
+        "config_sha256": "2297be04370a520f6ed9f572e439fedb9d71147e7d667efae9e25dc7bef4d4bb"
+      },
+      "robot5": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot5",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot5",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/configs/robot5.yaml",
+        "duration_s": 520.031295016,
+        "config_sha256": "ade86ba5846e5dcd29e9d6d879592e6d548aee9e520b3b7de97342cacd91b2ee"
+      },
+      "robot6": {
+        "path": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/frontends/robot6",
+        "reused": false,
+        "bag": "/workspace/.ros2/graco/inputs/sensors/robot6",
+        "config": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/configs/robot6.yaml",
+        "duration_s": 310.416219646,
+        "config_sha256": "caf4340a4328844bc7fb0570103dc9b688abf58f518843c628642913d09e501b"
+      }
+    }
+  }
+]

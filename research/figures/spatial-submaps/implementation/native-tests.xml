@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="2"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname="mikexyl-Lab-ROG"
+	time="2"
+	timestamp="2026-09-20T16:06:46"
+	>
+	<testcase name="recent_history_submaps" classname="recent_history_submaps" time="0.878202" status="run">
+		<properties/>
+		<system-out>[INFO] [1789909606.697597128] [mapping_node]: Node init finished.
+[INFO] [1789909606.734410900] [mapping_node]: Waiting for data...
+[ERROR] [1789909606.734443710] [mapping_node]: Lidar has no new data
+[WARN] [1789909606.736910444] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[INFO] [1789909606.769393172] [mapping_node]: Node init finished.
+[WARN] [1789909606.808792799] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[INFO] [1789909606.842377944] [mapping_node]: Node init finished.
+[WARN] [1789909606.881508706] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[INFO] [1789909606.915235618] [mapping_node]: Node init finished.
+[WARN] [1789909606.952233195] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[INFO] [1789909606.986080210] [mapping_node]: Node init finished.
+[WARN] [1789909607.021856817] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[INFO] [1789909607.055083583] [mapping_node]: Node init finished.
+[WARN] [1789909607.092074052] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+[INFO] [1789909607.125012646] [mapping_node]: Node init finished.
+[WARN] [1789909607.302596737] [rcl.logging_rosout]: Publisher already registered for provided node name. If this is due to multiple nodes with the same name then all logs for that logger name will go out over the existing publisher. As soon as any node with that name is destructed it will unregister the publisher, preventing any further logs for that name from being published on the rosout topic.
+Window boundaries, overlap, map-local indices, member geometry, two-buffer reuse, gaps, state preservation and empty scans passed
+Spatial boundaries, speed independence, gravity plane, readiness, stale recovery, capacity and local ownership passed
+</system-out>
+	</testcase>
+	<testcase name="bounded_submap_writer" classname="bounded_submap_writer" time="1.85032" status="run">
+		<properties/>
+		<system-out>80 immutable packets; explicit clean shutdown; backpressure 1.79293 s; peak RSS growth 4192 KiB
+</system-out>
+	</testcase>
+</testsuite>

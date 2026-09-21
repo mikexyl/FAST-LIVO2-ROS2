@@ -1,0 +1,5 @@
+{
+  "stage": "frontends",
+  "error": "RuntimeError('One or more frontends failed; retained partial outputs and per-robot failure details')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/scripts/recent_submaps/graco_aerial.py\", line 135, in run\n    raise RuntimeError('One or more frontends failed; retained partial outputs and per-robot failure details')\nRuntimeError: One or more frontends failed; retained partial outputs and per-robot failure details\n"
+}

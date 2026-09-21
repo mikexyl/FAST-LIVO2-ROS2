@@ -1,0 +1,6 @@
+# Keep upstream patch context and vendored license text byte-for-byte.
+patches/*.patch -whitespace
+research/adapters/mapclosures/LICENSE* -whitespace
+
+# Historical CSV evidence uses CRLF; preserve its recorded file hashes.
+research/figures/**/*.csv -text whitespace=cr-at-eol

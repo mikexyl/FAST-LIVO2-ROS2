@@ -1,0 +1,8 @@
+{
+  "/data/graco/aerial-calibration-20251121T084428Z-1-001/aerial-calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+  "/data/graco/aerial-calibration-20251121T084428Z-1-001/aerial-calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+  "/data/graco/aerial-calibration-20251121T084428Z-1-001/aerial-calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+  "/data/graco/aerial-calibration-20251121T084428Z-1-001/aerial-calibration/groundtruth.yaml": "57e55e8b9976677d638732b93d0ea2670d4b29ac7adc3fad5c1c91c75d5b76fe",
+  "/data/graco/aerial-calibration-20251121T084428Z-1-001/aerial-calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+  "/data/graco/aerial-calibration-20251121T084428Z-1-001/aerial-calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+}

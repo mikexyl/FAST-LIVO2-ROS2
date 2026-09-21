@@ -1,0 +1,9 @@
+{
+  "submaps": 58,
+  "wall_s": 15.079987650969997,
+  "source_index_sha256": "0d3e0d69061138b801ab462d56032b432f228e26cfd6f5123e3b1b2f6b767fb6",
+  "source": "/workspace/.ros2/graco-aerial-four148-20260920/full/frontends/aerial05/frontend/submaps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": "1c5534199923ef7b1ac536e70aa5d34ae0583e94e03ec57f13664f0999c8066e"
+}

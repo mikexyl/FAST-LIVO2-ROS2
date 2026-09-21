@@ -1,0 +1,61 @@
+/**:
+  ros__parameters:
+    mapping:
+      map_resolution: 0.1
+      pub_map_n_secs: 10
+      namespace: Carol
+      submaps:
+        enabled: true
+        duration_s: 10.0
+        overlap_s: 5.0
+        strategy: motion_overlap
+        keyframe_translation_m: 1.0
+        keyframe_rotation_deg: 10.0
+        keyframe_overlap: 0.6
+        overlap_voxel_m: 0.5
+        extent_m: 20.0
+        max_keyframes: 15
+        max_age_s: 30.0
+        min_handover_matches: 50
+        min_handover_overlap: 0.2
+        min_retrieval_keyframes: 3
+    publish:
+      map: true
+      scan: true
+      markers: true
+      odometry: true
+      analytics: true
+      tf: true
+    lidar:
+      type: 2
+      rate: 10
+      scan_lines: 16
+      vertical_fov: 30.0
+      min_range: 1.0
+      max_range: 100.0
+      topic: /Carol/velodyne_points
+      t_imu_lidar:
+      - -0.03181799390095727
+      - -0.005058436163103697
+      - 0.20284730569079368
+      r_imu_lidar:
+      - 0.9996571430423355
+      - 0.020396103869417127
+      - 0.016419575455513136
+      - -0.02003310298133599
+      - 0.9995577585857328
+      - -0.02197625725243218
+      - -0.016860545614981855
+      - 0.021639784965623222
+      - 0.9996236544083085
+    imu:
+      rate: 100
+      acc_noise: 0.1
+      gyr_noise: 0.1
+      acc_bias: 0.0001
+      gyr_bias: 0.0001
+      topic: /Carol/imu/data
+    cameras:
+      num_cams: 0
+    input:
+      reliable: true

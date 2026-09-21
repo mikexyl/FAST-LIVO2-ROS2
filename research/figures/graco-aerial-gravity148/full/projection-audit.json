@@ -1,0 +1,108 @@
+{
+  "ground_truth_used": false,
+  "projection": "orthographic, aligned to reconstructed startup IMU gravity",
+  "limitation": "Historical per-anchor filter gravity and absolute terrain elevation were not recorded.",
+  "robots": {
+    "aerial05": {
+      "submaps": 58,
+      "old_plane_tilt_deg": {
+        "min": 40.51584132397342,
+        "max": 49.25298364617362,
+        "submap8": 43.97484671086076
+      },
+      "max_horizontal_projection_of_unit_up": 1.1188630228279524e-16,
+      "features_before": {
+        "total": 8050,
+        "median": 131.0,
+        "submap8": 116
+      },
+      "features_after": {
+        "total": 5070,
+        "median": 71.5,
+        "submap8": 71
+      },
+      "startup_acceleration_std_m_s2": [
+        0.011641092851400194,
+        0.006431866858641649,
+        0.008564579851386112
+      ],
+      "startup_half_direction_difference_deg": 0.009477209066813931
+    },
+    "aerial06": {
+      "submaps": 64,
+      "old_plane_tilt_deg": {
+        "min": 39.08063512084217,
+        "max": 50.83802249939225,
+        "submap8": 43.00975073886513
+      },
+      "max_horizontal_projection_of_unit_up": 1.1123893155135927e-16,
+      "features_before": {
+        "total": 6925,
+        "median": 101.0,
+        "submap8": 99
+      },
+      "features_after": {
+        "total": 6700,
+        "median": 92.5,
+        "submap8": 89
+      },
+      "startup_acceleration_std_m_s2": [
+        0.01389144037690245,
+        0.007767668992641898,
+        0.012029765546556562
+      ],
+      "startup_half_direction_difference_deg": 0.003541336481856315
+    },
+    "aerial07": {
+      "submaps": 77,
+      "old_plane_tilt_deg": {
+        "min": 36.638026540268484,
+        "max": 54.35325830730418,
+        "submap8": 46.897146176826006
+      },
+      "max_horizontal_projection_of_unit_up": 1.1123893155135927e-16,
+      "features_before": {
+        "total": 10932,
+        "median": 134.0,
+        "submap8": 102
+      },
+      "features_after": {
+        "total": 6185,
+        "median": 67.0,
+        "submap8": 76
+      },
+      "startup_acceleration_std_m_s2": [
+        0.013314491549857348,
+        0.008276406296342752,
+        0.009077902501641722
+      ],
+      "startup_half_direction_difference_deg": 0.00305827845685593
+    },
+    "aerial08": {
+      "submaps": 54,
+      "old_plane_tilt_deg": {
+        "min": 39.06045581535548,
+        "max": 52.61366425579002,
+        "submap8": 40.69790540362263
+      },
+      "max_horizontal_projection_of_unit_up": 1.1107649934270853e-16,
+      "features_before": {
+        "total": 7107,
+        "median": 137.5,
+        "submap8": 141
+      },
+      "features_after": {
+        "total": 5276,
+        "median": 91.0,
+        "submap8": 95
+      },
+      "startup_acceleration_std_m_s2": [
+        0.02924035214545978,
+        0.01614750778170627,
+        0.01865551471188497
+      ],
+      "startup_half_direction_difference_deg": 0.013502129033737166
+    }
+  },
+  "script_sha256": "780b84978725485cc71de0507a766c1bfabe560b2433046a540adefd030121b5"
+}

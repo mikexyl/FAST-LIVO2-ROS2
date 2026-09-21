@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="30" time="15.619" timestamp="2026-09-20T12:21:25.114154+00:00" hostname="v4rl-server-1"><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_gravity_is_vertical_and_vertical_walls_collapse[gravity0]" time="0.007" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_gravity_is_vertical_and_vertical_walls_collapse[gravity1]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_gravity_is_vertical_and_vertical_walls_collapse[gravity2]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_gravity_is_vertical_and_vertical_walls_collapse[gravity3]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_gravity_is_vertical_and_vertical_walls_collapse[gravity4]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_invalid_gravity_never_falls_back_to_identity[gravity0]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_invalid_gravity_never_falls_back_to_identity[gravity1]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_invalid_gravity_never_falls_back_to_identity[gravity2]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_invalid_gravity_never_falls_back_to_identity[gravity3]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_reconstruction_is_explicit_causal_and_bound_to_payload" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_native_explicit_projection_equals_leveled_cloud" time="0.007" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_native_loop_and_reversed_loop_return_original_imu_frames" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_gravity_bev" name="test_preparation_changes_projection_without_rotating_evidence" time="0.024" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps.RecentSubmaps" name="test_availability_and_same_robot_exclusion" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps.RecentSubmaps" name="test_snapshot_immutable_and_tail" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps.RecentSubmaps" name="test_truncated_stream_never_complete" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps" name="test_submap_graph_uses_anchor_not_availability_and_reversed_endpoints" time="0.005" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps" name="test_worker_observation_requires_availability" time="0.014" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps" name="test_descriptor_and_evidence_membership_must_agree" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps" name="test_prepared_evidence_keeps_anchor_time_and_membership" time="0.004" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps_integration" name="test_submap_three_worker_retrieval_is_causal" time="0.112"><failure message="RuntimeError: Alpha: Traceback (most recent call last):&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py&quot;, line 187, in worker_main&#10;    worker=Worker(robot,store,descriptors,backend,cfg)&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py&quot;, line 59, in __init__&#10;    self.backend=create(backend);self.cfg=cfg;self.index={};self.seen=set();self.requested=set()&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/backends.py&quot;, line 70, in create&#10;    return MegaLocMapClosures(cfg)&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures.py&quot;, line 16, in __init__&#10;    import s3e_mapclosures_native as native&#10;ImportError: /workspace/.ros2/graco-aerial-gravity148-20260920/mapclosures/s3e_mapclosures_native.cpython-310-x86_64-linux-gnu.so: cannot open shared object file: Permission denied">tmp_path = PosixPath('/tmp/pytest-of-unknown/pytest-3/test_submap_three_worker_retri0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x7188fad27070&gt;
+
+    def test_submap_three_worker_retrieval_is_causal(tmp_path,monkeypatch):
+        import test_mapclosures as fixture
+        original_rows=fixture.write_jsonl;original_json=fixture.write_json
+        def rows(path,values):
+            if Path(path).name=='keyframes.jsonl':
+                values=[dict(r,submap_id=0,member_scan_ids=list(range(50)),sha256='source',
+                             begin_ns=0,end_ns=2*10**9,available_ns=6*10**9,retrievable=True) for r in values]
+            return original_rows(path,values)
+        def descriptor(path,value):
+            if Path(path).name=='000000.json':
+                value=dict(value,submap_id=0,member_scan_ids=list(range(50)),payload_sha256='source')
+            return original_json(path,value)
+        monkeypatch.setattr(fixture,'write_jsonl',rows);monkeypatch.setattr(fixture,'write_json',descriptor)
+&gt;       fixture.test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,True)
+
+FAST-LIVO2-ROS2/research/tests/test_recent_submaps_integration.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+FAST-LIVO2-ROS2/research/tests/test_mapclosures.py:86: in test_native_three_worker_replay_cold_determinism_and_lidar_only
+    replay(stores,descs,first_backend,cfg,tmp_path/'first');replay(stores,descs,second_backend,cfg,tmp_path/'second')
+FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py:271: in replay
+    receive(robot)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+robot = 'Alpha', draining = False
+
+    def receive(robot,draining=False):
+        timeout=cfg.get('worker_timeout_s',300)*(cfg.get('verification_queue_size',2)+1 if draining else 1)
+        if not connections[robot].poll(timeout):
+            raise TimeoutError(f'Worker {robot} timed out')
+        result=json.loads(connections[robot].recv_bytes())
+&gt;       if 'error' in result:raise RuntimeError(f'{robot}: {result["traceback"]}')
+E       RuntimeError: Alpha: Traceback (most recent call last):
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py", line 187, in worker_main
+E           worker=Worker(robot,store,descriptors,backend,cfg)
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py", line 59, in __init__
+E           self.backend=create(backend);self.cfg=cfg;self.index={};self.seen=set();self.requested=set()
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/backends.py", line 70, in create
+E           return MegaLocMapClosures(cfg)
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures.py", line 16, in __init__
+E           import s3e_mapclosures_native as native
+E       ImportError: /workspace/.ros2/graco-aerial-gravity148-20260920/mapclosures/s3e_mapclosures_native.cpython-310-x86_64-linux-gnu.so: cannot open shared object file: Permission denied
+
+FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py:227: RuntimeError</failure></testcase><testcase classname="FAST-LIVO2-ROS2.research.tests.test_recent_submaps_integration" name="test_submap_endpoints_native_pcm_cbs_registration" time="7.274" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_native_pose_direction_ground_frames_and_causal_filter" time="0.002" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_independent_lidar_retrieval_despite_orthogonal_visuals" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_empty_density_features_are_a_reportable_failure" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_independent_budgets_and_union_deduplication" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_native_three_worker_replay_cold_determinism_and_lidar_only[False]" time="0.115"><failure message="RuntimeError: Alpha: Traceback (most recent call last):&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py&quot;, line 187, in worker_main&#10;    worker=Worker(robot,store,descriptors,backend,cfg)&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py&quot;, line 59, in __init__&#10;    self.backend=create(backend);self.cfg=cfg;self.index={};self.seen=set();self.requested=set()&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/backends.py&quot;, line 70, in create&#10;    return MegaLocMapClosures(cfg)&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures.py&quot;, line 16, in __init__&#10;    import s3e_mapclosures_native as native&#10;ImportError: /workspace/.ros2/graco-aerial-gravity148-20260920/mapclosures/s3e_mapclosures_native.cpython-310-x86_64-linux-gnu.so: cannot open shared object file: Permission denied">tmp_path = PosixPath('/tmp/pytest-of-unknown/pytest-3/test_native_three_worker_repla0')
+lidar_only = False
+
+    @pytest.mark.parametrize('lidar_only',[False,True])
+    def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,lidar_only):
+        stores={};descs={};rng=np.random.default_rng(12)
+        parts=[]
+        for axis in range(3):
+            points=rng.uniform(-5,5,(1000,3));points[:,axis]=0;parts.append(points)
+        cloud=np.vstack(parts).astype(np.float32)
+        for i,robot in enumerate(['Alpha','Bob','Carol']):
+            store=tmp_path/robot;store.mkdir();stores[robot]=store
+            root=tmp_path/(robot+'-descriptors');root.mkdir();descs[robot]=root
+            row=dict(robot_id=robot,keyframe_id=0,stamp_ns=10**9,T_world_body=np.eye(4).tolist())
+            if lidar_only:row['image_available']=False
+            write_jsonl(store/'keyframes.jsonl',[row]);np.savez_compressed(store/'000000.npz',cloud=cloud,scan=cloud)
+            if not lidar_only:(store/'000000.png').write_bytes(b'inspection-only')
+            desc=descriptor(features(),np.eye(3)[i])
+            if lidar_only:del desc['visual']
+            write_json(root/'000000.json',desc)
+        cfg=dict(CFG['loops'],robots=list(stores));backend=dict(CFG['backend'],read_paths=[])
+        if lidar_only:
+            backend['name']='mapclosures';backend.pop('fusion')
+            cfg['branch_verification_limits']={'mapclosures':1}
+        # Separate empty caches establish cold determinism, then reuse one cache.
+        first_backend=dict(backend,verification_cache=str(tmp_path/'cache-first'))
+        second_backend=dict(backend,verification_cache=str(tmp_path/'cache-second'))
+&gt;       replay(stores,descs,first_backend,cfg,tmp_path/'first');replay(stores,descs,second_backend,cfg,tmp_path/'second')
+
+FAST-LIVO2-ROS2/research/tests/test_mapclosures.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py:271: in replay
+    receive(robot)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+robot = 'Alpha', draining = False
+
+    def receive(robot,draining=False):
+        timeout=cfg.get('worker_timeout_s',300)*(cfg.get('verification_queue_size',2)+1 if draining else 1)
+        if not connections[robot].poll(timeout):
+            raise TimeoutError(f'Worker {robot} timed out')
+        result=json.loads(connections[robot].recv_bytes())
+&gt;       if 'error' in result:raise RuntimeError(f'{robot}: {result["traceback"]}')
+E       RuntimeError: Alpha: Traceback (most recent call last):
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py", line 187, in worker_main
+E           worker=Worker(robot,store,descriptors,backend,cfg)
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py", line 59, in __init__
+E           self.backend=create(backend);self.cfg=cfg;self.index={};self.seen=set();self.requested=set()
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/backends.py", line 70, in create
+E           return MegaLocMapClosures(cfg)
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures.py", line 16, in __init__
+E           import s3e_mapclosures_native as native
+E       ImportError: /workspace/.ros2/graco-aerial-gravity148-20260920/mapclosures/s3e_mapclosures_native.cpython-310-x86_64-linux-gnu.so: cannot open shared object file: Permission denied
+
+FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py:227: RuntimeError</failure></testcase><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_native_three_worker_replay_cold_determinism_and_lidar_only[True]" time="0.112"><failure message="RuntimeError: Alpha: Traceback (most recent call last):&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py&quot;, line 187, in worker_main&#10;    worker=Worker(robot,store,descriptors,backend,cfg)&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py&quot;, line 59, in __init__&#10;    self.backend=create(backend);self.cfg=cfg;self.index={};self.seen=set();self.requested=set()&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/backends.py&quot;, line 70, in create&#10;    return MegaLocMapClosures(cfg)&#10;  File &quot;/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures.py&quot;, line 16, in __init__&#10;    import s3e_mapclosures_native as native&#10;ImportError: /workspace/.ros2/graco-aerial-gravity148-20260920/mapclosures/s3e_mapclosures_native.cpython-310-x86_64-linux-gnu.so: cannot open shared object file: Permission denied">tmp_path = PosixPath('/tmp/pytest-of-unknown/pytest-3/test_native_three_worker_repla1')
+lidar_only = True
+
+    @pytest.mark.parametrize('lidar_only',[False,True])
+    def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,lidar_only):
+        stores={};descs={};rng=np.random.default_rng(12)
+        parts=[]
+        for axis in range(3):
+            points=rng.uniform(-5,5,(1000,3));points[:,axis]=0;parts.append(points)
+        cloud=np.vstack(parts).astype(np.float32)
+        for i,robot in enumerate(['Alpha','Bob','Carol']):
+            store=tmp_path/robot;store.mkdir();stores[robot]=store
+            root=tmp_path/(robot+'-descriptors');root.mkdir();descs[robot]=root
+            row=dict(robot_id=robot,keyframe_id=0,stamp_ns=10**9,T_world_body=np.eye(4).tolist())
+            if lidar_only:row['image_available']=False
+            write_jsonl(store/'keyframes.jsonl',[row]);np.savez_compressed(store/'000000.npz',cloud=cloud,scan=cloud)
+            if not lidar_only:(store/'000000.png').write_bytes(b'inspection-only')
+            desc=descriptor(features(),np.eye(3)[i])
+            if lidar_only:del desc['visual']
+            write_json(root/'000000.json',desc)
+        cfg=dict(CFG['loops'],robots=list(stores));backend=dict(CFG['backend'],read_paths=[])
+        if lidar_only:
+            backend['name']='mapclosures';backend.pop('fusion')
+            cfg['branch_verification_limits']={'mapclosures':1}
+        # Separate empty caches establish cold determinism, then reuse one cache.
+        first_backend=dict(backend,verification_cache=str(tmp_path/'cache-first'))
+        second_backend=dict(backend,verification_cache=str(tmp_path/'cache-second'))
+&gt;       replay(stores,descs,first_backend,cfg,tmp_path/'first');replay(stores,descs,second_backend,cfg,tmp_path/'second')
+
+FAST-LIVO2-ROS2/research/tests/test_mapclosures.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py:271: in replay
+    receive(robot)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+robot = 'Alpha', draining = False
+
+    def receive(robot,draining=False):
+        timeout=cfg.get('worker_timeout_s',300)*(cfg.get('verification_queue_size',2)+1 if draining else 1)
+        if not connections[robot].poll(timeout):
+            raise TimeoutError(f'Worker {robot} timed out')
+        result=json.loads(connections[robot].recv_bytes())
+&gt;       if 'error' in result:raise RuntimeError(f'{robot}: {result["traceback"]}')
+E       RuntimeError: Alpha: Traceback (most recent call last):
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py", line 187, in worker_main
+E           worker=Worker(robot,store,descriptors,backend,cfg)
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py", line 59, in __init__
+E           self.backend=create(backend);self.cfg=cfg;self.index={};self.seen=set();self.requested=set()
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/backends.py", line 70, in create
+E           return MegaLocMapClosures(cfg)
+E         File "/workspace/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures.py", line 16, in __init__
+E           import s3e_mapclosures_native as native
+E       ImportError: /workspace/.ros2/graco-aerial-gravity148-20260920/mapclosures/s3e_mapclosures_native.cpython-310-x86_64-linux-gnu.so: cannot open shared object file: Permission denied
+
+FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py:227: RuntimeError</failure></testcase><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_pgo_stage_needs_no_native_backend_and_preserves_inputs" time="0.420" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_cbs_integration" name="test_native_four_robot_pcm_registration" time="7.257" /></testsuite></testsuites>

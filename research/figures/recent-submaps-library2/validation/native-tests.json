@@ -1,0 +1,26 @@
+{
+  "native_synthetic_passed": true,
+  "checks": [
+    "exact half-open boundaries and overlap",
+    "startup",
+    "timestamp gaps",
+    "two buffer ownership reuse",
+    "map-local neighbour indices",
+    "member scan IDs and geometry count",
+    "state/covariance unchanged at handover",
+    "no current scan in map before matching",
+    "empty scan rejection",
+    "one-feature rejection",
+    "nonfinite tensor rejection",
+    "disabled persistent-map preservation"
+  ],
+  "bounded_writer": {
+    "passed": true,
+    "packets": 80,
+    "packet_bytes": 1048576,
+    "capacity": 2,
+    "elapsed_s": 1.72432,
+    "peak_rss_growth_kib": 4184,
+    "explicit_end": true
+  }
+}

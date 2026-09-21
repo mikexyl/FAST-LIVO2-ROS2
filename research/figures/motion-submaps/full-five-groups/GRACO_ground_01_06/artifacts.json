@@ -1,0 +1,15 @@
+{
+  "keyframes.ellipselio.robot1": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot1",
+  "descriptors.ellipselio.mapclosures.robot1": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot1/ellipsoid",
+  "keyframes.ellipselio.robot2": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot2",
+  "descriptors.ellipselio.mapclosures.robot2": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot2/ellipsoid",
+  "keyframes.ellipselio.robot3": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot3",
+  "descriptors.ellipselio.mapclosures.robot3": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot3/ellipsoid",
+  "keyframes.ellipselio.robot4": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot4",
+  "descriptors.ellipselio.mapclosures.robot4": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot4/ellipsoid",
+  "keyframes.ellipselio.robot5": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot5",
+  "descriptors.ellipselio.mapclosures.robot5": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot5/ellipsoid",
+  "keyframes.ellipselio.robot6": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot6",
+  "descriptors.ellipselio.mapclosures.robot6": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/prepared-robot6/ellipsoid",
+  "dpgo": "/workspace/.ros2/recent-submaps/full-five-groups/GRACO_ground_01_06/dpgo"
+}

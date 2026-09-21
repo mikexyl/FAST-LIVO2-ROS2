@@ -1,0 +1,1 @@
+{"all_robots_connected":true,"common_frame_contract":true,"expected_components":1,"expected_robots":["Alpha","Bob","Carol"],"ground_truth_used":false,"inter_robot_loop_counts":{"Alpha--Bob":13,"Alpha--Carol":12,"Bob--Carol":19},"measured_components":[["Alpha","Bob","Carol"]],"output_frames":{"Alpha":["Alpha"],"Bob":["Alpha"],"Carol":["Alpha"]}}

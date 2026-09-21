@@ -1,0 +1,29 @@
+{
+  "descriptor_evidence_memberships_verified": 280,
+  "causal_ranked_events_verified": 840,
+  "same_robot_loops_verified": 3,
+  "graph_anchor_timestamps_verified": 280,
+  "recording_verified": true,
+  "files": {
+    "/workspace/.ros2/recent-submaps/multi-robot/report/result.rrd": {
+      "bytes": 9940950,
+      "sha256": "741994bbc2958561e9d3b801664b46c12e9b0c651fd37b21b521adfd6de4c9de"
+    },
+    "/workspace/.ros2/recent-submaps/multi-robot/dpgo/poses.jsonl": {
+      "bytes": 111103,
+      "sha256": "9e50191ff557c9419adff3b2f5ab9c4bebf9af21f763a50e02d5f886812ef92f"
+    },
+    "/workspace/.ros2/recent-submaps/multi-robot/dpgo/constraints.jsonl": {
+      "bytes": 462293,
+      "sha256": "7a0cbef2b62fb56031ac7cb58aebcaa9f6d82109dbffcb462e95e78db7e146c4"
+    },
+    "/workspace/.ros2/recent-submaps/multi-robot/report/report.json": {
+      "bytes": 160386,
+      "sha256": "ca085da839b4f8ef13098d3e0a747228ebda885658a0aa8b25bc9bb2f123e76f"
+    },
+    "/workspace/.ros2/recent-submaps/multi-robot/config.yaml": {
+      "bytes": 2499,
+      "sha256": "c829f2f8e045e8dd0e34c43f64df53c5e8dd0a4632f3a37f26acf0878e9bfc99"
+    }
+  }
+}

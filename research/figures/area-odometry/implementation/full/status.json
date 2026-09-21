@@ -1,0 +1,8 @@
+{
+  "phase": "complete",
+  "ground_truth_used_by_frontend": false,
+  "full_sequence": true,
+  "frozen_sources_verified": true,
+  "frontend_passed": true,
+  "post_capture_recovery_wall_s": 2.073864713000148
+}

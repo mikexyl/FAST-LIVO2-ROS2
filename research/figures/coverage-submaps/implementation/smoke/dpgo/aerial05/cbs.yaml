@@ -1,0 +1,33 @@
+/**:
+  ros__parameters:
+    belief_stage_fixed_iterations: 10
+    belief_stage_switch_strategy: fixed_iteration
+    communication_topology_mode: dynamic_factors
+    enable_dcs: false
+    enable_gkcm: false
+    enable_soft_reset: false
+    enable_visualization: false
+    log_dir: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke/dpgo/aerial05/native
+    loop_rate: 10.0
+    max_iterations: -1
+    num_robots: 2
+    online: true
+    pcm_enabled: true
+    pcm_minimum_clique_size: 2
+    pcm_probability: 0.99
+    pcm_session_id: dd360f36b38942fb8067ac7a84f65e72
+    pcm_timeout_sec: 60.0
+    pgo_formulation: pose3
+    pose_graph_topic: /aerial05/cbs/pose_graph
+    registration_directory: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke/dpgo/aerial05/registration
+    registration_enabled: true
+    registration_settings: '{"correspondence_m": 1.5, "covariance_neighbors": 20,
+      "enabled": true, "factor": "gicp", "max_condition": 1000000.0, "max_information_ratio":
+      1.0, "max_iterations": 30, "max_points": 12000, "max_range_m": 80.0, "min_inliers":
+      100, "min_observability": 0.0001, "min_overlap": 0.3, "num_threads": 2, "timeout_s":
+      60.0, "voxel_m": 0.5}'
+    robot_id: 0
+    robot_name: aerial05
+    settle_iterations: 100
+    synchronize_optimization_rounds: false
+    use_robust_noise_models: false

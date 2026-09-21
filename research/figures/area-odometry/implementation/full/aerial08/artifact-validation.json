@@ -1,0 +1,15 @@
+{
+  "native_updates": 2618,
+  "snapshots": 0,
+  "completed_snapshots": 0,
+  "inspection_tails": 0,
+  "retrievable_snapshots": 0,
+  "finite_chronological": true,
+  "exact_membership": true,
+  "anchor_poses_verified": true,
+  "payload_hashes_verified": true,
+  "area_snapshots": 29,
+  "area_retrievable": 29,
+  "accumulated_area_membership_verified": true,
+  "old_in_area_points_retained": true
+}

@@ -1,0 +1,95 @@
+{
+  "description": "Identical physical cloud transformed into another frame; known exact transform; no GT",
+  "original_points": 224923,
+  "evidence_voxel_m": [
+    1.52587890625,
+    1.52587890625
+  ],
+  "at_exact_transform": {
+    "rmse_m": 0.386785154443842,
+    "overlap": 0.6883215369059656,
+    "median_distance_m": 0.4762370862087423,
+    "source_points": 11868,
+    "target_points": 11756
+  },
+  "coarse_refine": {
+    "accepted": false,
+    "reason": "high_rmse",
+    "rmse_m": 0.38752790181181557,
+    "overlap": 0.6877380045696877,
+    "inliers": 8127,
+    "initial_overlap": 0.999915376153,
+    "converged": true,
+    "iterations": 4,
+    "target_points": 11699,
+    "source_points": 11817,
+    "target_voxel_m": 0.4,
+    "source_voxel_m": 0.4,
+    "T_i_j": [
+      [
+        0.8875449922805081,
+        -0.45237248659830137,
+        0.08730990806697042,
+        7.014722577943106
+      ],
+      [
+        0.44941642957376726,
+        0.8918015741188728,
+        0.05210398476381281,
+        -3.9931758579114263
+      ],
+      [
+        -0.10143352259958431,
+        -0.00700612360511024,
+        0.9948176489814953,
+        2.99541669019083
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "fixed_04m_refine": {
+    "accepted": true,
+    "reason": "accepted",
+    "rmse_m": 0.12424680754184039,
+    "overlap": 1.0,
+    "inliers": 103844,
+    "initial_overlap": 1.0,
+    "converged": true,
+    "iterations": 0,
+    "target_points": 104051,
+    "source_points": 103844,
+    "target_voxel_m": 0.4,
+    "source_voxel_m": 0.4,
+    "T_i_j": [
+      [
+        0.887609083656947,
+        -0.45227628535104986,
+        0.08715661947741257,
+        7.000761387899395
+      ],
+      [
+        0.44931736021928514,
+        0.8918494845760266,
+        0.05213834162158322,
+        -3.999949775343132
+      ],
+      [
+        -0.10131152163129298,
+        -0.0071174834408985884,
+        0.9948292903881655,
+        3.0000059812539943
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "robot": "aerial05",
+  "capture": "live ROS subscriptions during a fresh EllipseLIO replay",
+  "complete": true,
+  "wall_s": 125.26951001499947,
+  "counts": {
+    "raw_imu": 14988,
+    "imu_propagated_odometry": 11857,
+    "post_lidar_tf": 1106,
+    "native_scan": 1106,
+    "native_analytics": 1106,
+    "native_ellipsoid_marker": 2369,
+    "native_map_chunk": 330
+  },
+  "rejected": {
+    "archived_map_chunk": 770
+  },
+  "first_stamp_ns": {
+    "raw_imu": 1661851056175615072,
+    "imu_propagated_odometry": 1661851057295615911,
+    "post_lidar_tf": 1661851057279616117,
+    "native_scan": 1661851057279616117,
+    "native_analytics": 1661851057277008392,
+    "native_ellipsoid_marker": 1661851066143626928,
+    "native_map_chunk": 1661851066143626928
+  },
+  "last_stamp_ns": {
+    "raw_imu": 1661851176103732109,
+    "imu_propagated_odometry": 1661851176103732109,
+    "post_lidar_tf": 1661851175943731070,
+    "native_scan": 1661851175943731070,
+    "native_analytics": 1661851175935730934,
+    "native_ellipsoid_marker": 1661851166295722008,
+    "native_map_chunk": 1661851166295722008
+  },
+  "first_motion_violation": null,
+  "maximum_scan_pose_speed_m_s": 4.935991044622429,
+  "clock_ns": 1661851176108101540,
+  "map_snapshots": [
+    {
+      "stamp_ns": 1661851066143626928,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1661851076175635099,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1661851086191641092,
+      "received_chunks": 12
+    },
+    {
+      "stamp_ns": 1661851096223654032,
+      "received_chunks": 45
+    },
+    {
+      "stamp_ns": 1661851106231662035,
+      "received_chunks": 31
+    },
+    {
+      "stamp_ns": 1661851116223675013,
+      "received_chunks": 16
+    },
+    {
+      "stamp_ns": 1661851126223684072,
+      "received_chunks": 3
+    },
+    {
+      "stamp_ns": 1661851136223694086,
+      "received_chunks": 9
+    },
+    {
+      "stamp_ns": 1661851146239705086,
+      "received_chunks": 6
+    },
+    {
+      "stamp_ns": 1661851156263712883,
+      "received_chunks": 1
+    },
+    {
+      "stamp_ns": 1661851166295722008,
+      "received_chunks": 7
+    }
+  ],
+  "recording_bytes": 128219899,
+  "error": null
+}

@@ -1,0 +1,72 @@
+{
+  "ground_truth_used": false,
+  "measurements": {
+    "aerial05": {
+      "initial_125_imu_mean_acceleration": [
+        0.365572497658158,
+        -6.9289598458121135,
+        -6.864042818676649
+      ],
+      "approximate_up_in_anchor_imu": [
+        0.012983812817156635,
+        -0.6942282286380536,
+        -0.7196378166597411
+      ],
+      "projection_plane_tilt_from_horizontal_deg": 43.975413997442686,
+      "orientation_estimate": "initial mean accelerometer direction rotated by saved native anchor pose; no GT",
+      "keyframe_id": 8,
+      "ellipsoids": 60658,
+      "surface_points": 558029,
+      "ground_normal_voxel_resolution_m": 0.5,
+      "max_points_per_ground_voxel": 8,
+      "voxels_with_at_least_10_points": 0,
+      "ground_normal_min_points": 10,
+      "ellipsoid_surface_voxel_m": 0.25,
+      "payload_sha256": "758dcc59b7e35c2e7f715a51dcc1e2389362792fe8eaae2b67e8e5971a358d66"
+    },
+    "aerial06": {
+      "initial_125_imu_mean_acceleration": [
+        0.12576986989833128,
+        -6.77846125170117,
+        -7.023999575722628
+      ],
+      "approximate_up_in_anchor_imu": [
+        0.008446714400039163,
+        -0.6820746514562663,
+        -0.7312337675850705
+      ],
+      "projection_plane_tilt_from_horizontal_deg": 43.01007490133198,
+      "orientation_estimate": "initial mean accelerometer direction rotated by saved native anchor pose; no GT"
+    },
+    "aerial07": {
+      "initial_125_imu_mean_acceleration": [
+        0.09252027056268554,
+        -6.556248618355431,
+        -7.230798523133813
+      ],
+      "approximate_up_in_anchor_imu": [
+        -0.001748457150407015,
+        -0.7301306271107436,
+        -0.6833053565225905
+      ],
+      "projection_plane_tilt_from_horizontal_deg": 46.89752164659499,
+      "orientation_estimate": "initial mean accelerometer direction rotated by saved native anchor pose; no GT"
+    },
+    "aerial08": {
+      "initial_125_imu_mean_acceleration": [
+        0.17299471569865113,
+        -7.024371236265465,
+        -6.771965771105
+      ],
+      "approximate_up_in_anchor_imu": [
+        0.021571745212591753,
+        -0.6517326430796446,
+        -0.7581419535633833
+      ],
+      "projection_plane_tilt_from_horizontal_deg": 40.699330705506256,
+      "orientation_estimate": "initial mean accelerometer direction rotated by saved native anchor pose; no GT"
+    }
+  },
+  "identity_ground_transforms": 253,
+  "images": 253
+}

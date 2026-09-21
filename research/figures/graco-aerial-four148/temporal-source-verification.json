@@ -1,0 +1,8 @@
+{
+  "ellipselio/include/map_processing.h": true,
+  "ellipselio/src/map_processing.cpp": true,
+  "ellipselio/src/submaps.cpp": true,
+  "ellipselio/msg/EllipseLioAnalytics.msg": true,
+  "FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py": true,
+  "FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py": true
+}

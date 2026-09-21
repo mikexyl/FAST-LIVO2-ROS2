@@ -1,0 +1,10 @@
+{
+  "full_completion": true,
+  "finite": true,
+  "chronological": true,
+  "max_speed_m_s": 2.1067300548684793,
+  "max_successful_update_gap_s": 0.5334302,
+  "native_poses": 2753,
+  "ground_truth_used": false,
+  "passed": true
+}

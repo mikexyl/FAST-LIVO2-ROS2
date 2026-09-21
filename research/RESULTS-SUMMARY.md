@@ -1,16 +1,111 @@
 # Multi-robot FAST-LIVO2: results summary
 
-Updated 2026-09-15. This document consolidates the completed **MegaLoc +
+Updated 2026-09-21. This document consolidates the completed **MegaLoc +
 MapClosures + distributed CBS** experiments for Alpha, Bob and Carol.
+
+**Temporal EllipseLIO submapping remains the default: 10 seconds with 5 seconds overlap.**
+Opt-in spatial displacement and observed-coverage strategies are available. The
+earlier keyframe-count motion/overlap implementation remains retired, with its
+historical artifacts retained.
+
+**Accumulated-area odometry on Aerial 08:** [results](RESULTS-AREA-ODOMETRY.md).
+The new opt-in mode matches inside an 80 m horizontal area of the persistent map,
+without recent-map handovers. Two short replays reduced the maximum update gap
+from **1.904 s** in a fresh control to **0.128 s**, with every processed scan after
+initialization corrected. A full flight then completed with **0.1322 m raw ATE**,
+**0.128 s maximum update gap**, and **12.26 ms median scan processing**. All 68
+area snapshots and four recordings verified. This is single-robot odometry
+validation; no new multi-robot backend result is established.
+
+**Accumulated area maps for MapClosures:** [implementation results and gallery](RESULTS-AREA-MAPS.md).
+An independent persistent map now supplies every stored point within an 80 m
+horizontal radius, at any height and from any earlier scan, while odometry retains
+its recent map. Three native and 77 Python tests passed. Two fresh 120-second
+captures produced 26 verified area snapshots and exact BEVs. Aerial-08 still
+failed the successful-update-gap gate at **3.320 s** (median scan computation
+**40.5 ms**). The diagnostic distributed backend finished with no verification
+attempts or loops. No ground truth or full-flight accuracy evaluation was used.
+
+**Observed-coverage implementation:** [local validation](RESULTS-COVERAGE-SUBMAPS.md)
+passes two native test executables, 62 Python tests and six distributed integration
+tests. Boundaries use occupied/new scene area and measured overlap, with motion/time
+as secondary guards. The profile also preserves 0.4 m verification resolution.
+Two 120-second aerial captures produced 93 verified completed maps, but aerial-08
+failed the successful-update-gap gate at **1.712 s**. A diagnostic backend run
+finished with four initial-overlap rejections and zero loops. This is experimental;
+no accuracy improvement or full four-flight coverage result is established.
+
+**Spatial four-robot GRACO aerial trial on 148:** [full results](RESULTS-GRACO-AERIAL-SPATIAL148.md).
+All four fresh captures passed the stability checks with the 40 m / 20 m horizontal
+profile. Raw/CBS ATE was **0.5121 / 2.6409 / 0.2172 / 0.1129 m**; raw accuracy
+improved on three of four flights. However, all 11 geometric verifications failed,
+so no loops reached PCM, CBS applied no corrections, and all four robots remain
+disconnected. All 64 completed spatial submaps, exact BEV images and five Rerun
+recordings verified.
+A [follow-up diagnostic](RESULTS-GRACO-SPATIAL-VERIFICATION-DIAGNOSTIC.md) identified
+excessive adaptive evidence downsampling: fixed 0.4 m geometry makes 8/11 saved
+pairs pass unchanged verification thresholds. PCM/CBS has not yet been rerun. The earlier aerial-06/08 update-gap failures did not recur.
+
+**Four-robot GRACO aerial trial on 148:** [aerial-05/06/07/08](RESULTS-GRACO-AERIAL-FOUR148.md)
+completed four concurrent full captures with no CPU/RAM quotas. Raw ATE was
+**0.8601 / 3.5598 / 0.2034 / 0.1668 m**; CBS ATE was
+**0.8601 / 3.5955 / 0.4948 / 0.0735 m**, with a shared fit for aerial-06/07
+and separate fits for the other components. Five inter-robot loops connected
+aerial-06/07 (**2.4526 m shared ATE**); aerial-05 and aerial-08 remained separate.
+One intra-robot loop improved aerial-08, and PCM rejected one proposal.
+Aerial-06/08 failed the update-gap gate (**2.656 / 1.464 s**), so the backend
+results are diagnostic. All 253 completed submaps and five Rerun recordings verified.
+A later projection audit found identity ground alignment for all 253 descriptors;
+the images use tilted anchor-IMU XY planes (approximately 44° for aerial-05/submap-8).
+These results therefore do not test gravity-levelled top-down BEVs.
+
+**Local GRACO aerial temporal trial:** [aerial-05-40m and aerial-08-25m](RESULTS-GRACO-AERIAL-TEMPORAL.md)
+completed both full captures. Raw ATE was **0.8272 / 0.2187 m**; diagnostic CBS
+ATE was **0.8272 / 0.0781 m**, using separate alignments because the flights
+remain disconnected. One intra-robot loop was accepted on aerial-08 and no
+inter-robot loop was accepted. Aerial-08 had a **1.384 s successful-LiDAR-update
+gap** at the 30-second submap handover, so this is not a passing frontend-stability
+trial. All 112 completed submap memberships and three Rerun recordings verified.
+
+**Retired motion/overlap EllipseLIO experiment:** the
+[experimental strategy](RESULTS-MOTION-SUBMAPS.md) passed native,
+distributed integration and two 120-second smoke checks. The fresh five-group
+batch completed all 18 frontends and all five distributed backends in 67 minutes
+on 148, with six concurrent frontends and no CPU/RAM quotas. Raw ATE improved on
+5/15 measured robots, but Campus Road 2/Carol regressed from **3.3508 to 59.1508 m**.
+Shared CBS ATE was **6.2599 m** for Campus Road 1 Alpha/Bob, **10.9227 m** for
+Campus Road 2, **1.0081 m** for Campus Road 3, and **4.8373 m** for all six GRACO
+robots. Campus Road 1 still left Carol separate; Laboratory 4 connected all
+three but has no usable GT. The motion configuration is now retired;
+the following results describe the earlier temporal strategy.
+
+**Recent-history EllipseLIO submaps:** [Library 2](RESULTS-RECENT-SUBMAPS-LIBRARY2.md)
+passed the Bob frontend gate twice (1.8025 / 1.8451 m raw ATE), then completed
+three-robot ellipsoid-BEV MapClosures → PCM → CBS with **1.5522 m shared ATE**.
+The fresh persistent-map Bob baseline diverged.
+[Retries of five previously failed frontends](RESULTS-RECENT-SUBMAPS-FAILED-FRONTENDS.md)
+all completed stably: Campus Road 1/2/3 raw ATEs were **1.5096 / 6.2167 / 2.8090 m**,
+and GRACO ground-01/robot1 achieved **3.7293 m**. Laboratory 4/Carol has no usable
+timestamp-matched GT. Campus Road 2 remains above the 5 m reference threshold;
+these frontend-only retries do not establish backend or multi-robot outcomes.
+
+[Full submap multi-robot trials on those five groups](RESULTS-RECENT-SUBMAPS-FULL-FIVE-GROUPS.md)
+completed all **18 frontends stably**. Laboratory 4 and Campus Road 3 connected
+all three robots; Campus Road 1 left Carol disconnected and GRACO left robot4
+disconnected. Shared CBS ATE was **1.9743 m** for Campus Road 1 Alpha/Bob,
+**3.6144 m** for Campus Road 3, and **6.1543 m** for GRACO’s five-robot component.
+Laboratory 4 has no usable GT. Campus Road 2 retained 217 loops but failed the
+CBS common-frame contract, so no valid shared CBS ATE is reported. Accuracy
+improvement was not consistent across groups.
 
 The [2026-09-17 S3E IMU-noise/QoS trials](RESULTS-S3E-IMU-NOISE.md)
 initially failed on Library 2 / Alpha with best-effort input. Restoring
 `input.reliable: true`, with the requested noise unchanged, restored normal
 scan updates and Alpha completed with **1.2407 m raw ATE**. Bob still diverged
 late (**155.2664 m** diagnostic ATE), stopping the queue before Carol or CBS.
-There is no new valid multi-robot result.
+That September 17 retry did not produce a valid multi-robot result.
 
-New trial (2026-09-17): [GRACO ground-01..06 as one six-robot group](RESULTS-GRACO.md)
+Earlier trial (2026-09-17): [GRACO ground-01..06 as one six-robot group](RESULTS-GRACO.md)
 uses EllipseLIO, ellipsoid BEVs, MapClosures and PCM/CBS. The six-robot smoke
 completed without loops; the full run stopped at robot1 frontend divergence,
 so there is no valid full-sequence GRACO result. The [CU-Multi download](CU-MULTI.md)
@@ -434,3 +529,28 @@ diagnostics, figures, and cleanup records independently of the CBS results above
 ## Ellipsoid MapClosures + PCM/CBS overnight queue on 148
 
 [Completed overnight results and failure report](RESULTS-ELLIPSOID-CBS-148.md): the exact EllipseLIO → ellipsoid-projected BEVs → MapClosures → distributed PCM/CBS pipeline finished 17 attempts in 9 h 21 min on 2026-09-17. Four completed every stage; two additional runs have valid trajectory results despite reporting crashes. Shared three-robot ATEs are **1.1491 m** (Square 1), **0.5717 m** (Square 2, recovered), **2.0994 m** (Square 3, reproduced), **0.3234 m** (Playground 2) and **0.3271 m** (Playground 3). Laboratory 1 completed with two components and no usable trajectory GT. Eleven other attempts failed before a valid combined score: five frontends, four descriptor preparations and two CBS reference-frame failures. The linked report includes individual CBS/raw ATEs, PCM counts, figures and evidence. These results are separate from the earlier centralized ellipsoid-PGO experiments; the matched Swarm-SLAM comparison remains pending.
+
+## GRACO aerial 05–08: gravity-horizontal BEV correction (2026-09-20)
+
+[Full comparison](RESULTS-GRACO-AERIAL-GRAVITY148.md): all 253 saved temporal submaps
+were reprojected using reconstructed startup IMU gravity, then rerun through
+MapClosures → distributed PCM → CBS/GICP on 148 without resource quotas.
+The corrected images did **not** improve the backend result: five loops (four
+aerial06/07, one aerial05), unchanged three components, and aerial06/07 shared
+ATE 2.4576 m versus 2.4526 m previously. Aerial08 lost its previous loop; CBS
+ATE became 0.1668 m versus 0.0735 m. Raw trajectories/evidence are byte-identical;
+original successful-update gap failures remain. Future exports now carry the
+actual per-anchor filter gravity. Thirty Python and two native tests passed;
+all corrected PNGs reproduce cached ORB features exactly.
+
+## Spatial submaps: implementation and local aerial smoke (2026-09-20)
+
+[Implementation report](RESULTS-SPATIAL-SUBMAPS.md): opt-in spatial displacement
+scheduling, with a BEV-oriented 40 m horizontal radius and 20 m overlap profile.
+Temporal mode remains the default. A 120 s aerial-05 replay produced six completed
+spatial maps (15.12–65.80 s each), with 1,120 finite chronological poses and a
+0.120 s maximum successful-update gap. All six descriptors, exact native BEV
+images, endpoint timestamps and the live Rerun file verified. Two native and
+22 Python/integration tests passed. This validates operation, not full-sequence
+ATE. The subsequent [full four-robot run](RESULTS-GRACO-AERIAL-SPATIAL148.md)
+passed frontend stability but accepted no loops, leaving four disconnected components.

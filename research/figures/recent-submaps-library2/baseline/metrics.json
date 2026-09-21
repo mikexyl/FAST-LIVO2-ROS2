@@ -1,0 +1,21 @@
+{
+  "full_completion": true,
+  "finite": true,
+  "chronological": true,
+  "native_poses": 4845,
+  "successful_lidar_updates": 4568,
+  "max_speed_m_s": 328.36428216710345,
+  "max_successful_update_gap_s": 20.598513869,
+  "ate_rmse_m": 1226.6766771492398,
+  "evo_version": "1.36.5",
+  "association_s": 0.05,
+  "scale_fitting": false,
+  "wall_s": 493.3582513849833,
+  "processing_mean_s": 0.009812004402411046,
+  "processing_max_s": 0.04169040999840945,
+  "peak_rss_kib": 2413640,
+  "max_correspondence_age_s": 430.80346085800005,
+  "handovers": [],
+  "first_speed_violation_s": 429.192596912,
+  "gate_pass": false
+}

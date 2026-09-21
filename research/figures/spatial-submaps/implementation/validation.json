@@ -1,0 +1,197 @@
+{
+  "implemented_strategy": "spatial",
+  "profile": {
+    "enabled": true,
+    "duration_s": 10.0,
+    "overlap_s": 5.0,
+    "strategy": "spatial",
+    "spatial": {
+      "radius_m": 40.0,
+      "overlap_m": 20.0,
+      "distance_metric": "horizontal",
+      "max_age_s": 120.0,
+      "min_support_points": 50,
+      "min_support_ratio": 0.2
+    }
+  },
+  "requested_replay_s": 120,
+  "full_sequence_accuracy_evaluated": false,
+  "ground_truth_used": false,
+  "native_poses": 1120,
+  "finite_chronological": true,
+  "max_speed_m_s": 4.511268729217662,
+  "max_successful_update_gap_s": 0.12000584600000001,
+  "completed_submaps": 6,
+  "inspection_tails": 2,
+  "finish_reasons": {
+    "radius": 6
+  },
+  "max_correspondence_age_s": 59.287712647000006,
+  "processing_mean_s": 0.014190064902683324,
+  "processing_p95_s": 0.02524496004934917,
+  "mapper_peak_rss_mib": 616.34375,
+  "native_tests_passed": 2,
+  "python_tests_passed": 22,
+  "distributed_tests_passed": 4,
+  "live_rerun_verified": true,
+  "live_rerun_path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/spatial-submaps-20260920/trials/aerial05-spatial-smoke/recording/live.rrd",
+  "live_rerun_sha256": "919621b1f278a6216aa81ce6d3a93f3bf403d0496d16c3c077400059ecabacc9",
+  "descriptor_evidence_memberships_verified": 6,
+  "graph_anchor_timestamps_verified": true,
+  "frozen_sources_verified": true,
+  "exact_native_bev_features": true,
+  "backend": {
+    "backend": "CBS SE(3)",
+    "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+    "cbs_network_cdr_bytes": 0,
+    "keyframes": 6,
+    "loop_network_cdr_bytes": 0,
+    "loops": 0,
+    "memory_sampling_interval_s": 0.2,
+    "mode": "peers",
+    "pcm_enabled": true,
+    "pcm_network_cdr_bytes": 0,
+    "proposed_loops": 0,
+    "registration_enabled": true,
+    "registration_network_cdr_bytes": 0,
+    "robots": {
+      "aerial05": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 0,
+          "bandwidth_sent_bytes": 0,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 7,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 7,
+          "residual": 6.442670999443023e-27,
+          "residual_abs_change": 2.101856196121673e-28,
+          "residual_rel_change": 9.465918781639935e-13,
+          "residual_signed_change": 2.101856196121673e-28,
+          "result_logmap_change": 1.0991298969508348e-14,
+          "robot_id": 0,
+          "robot_name": "aerial05"
+        },
+        "detection_s": 0.07290672000090126,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 0,
+        "loops": 0,
+        "max_rss_kib": 92764,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 0,
+        "poses": 6,
+        "proposed_loops": 0,
+        "reference_available": true,
+        "reference_robot_id": 0,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [],
+          "preparation_s": 0.000116016,
+          "registration_factor_count": 0,
+          "robot_id": 0,
+          "schema_version": 1,
+          "session_id": "8067ce51a671492b91e0f10c27029a2e",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": 80.0,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 0,
+        "robot": "aerial05",
+        "verifier_max_rss_kib": 0,
+        "wall_s": 10.150642672000686
+      }
+    },
+    "sampled_peak_rss_kib": {
+      "aerial05-cbs": 90744,
+      "aerial05-frontend": 93564
+    },
+    "shared_reference": true,
+    "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+    "transport": "ROS2 Fast DDS",
+    "wall_s": 11.203689669999221
+  },
+  "original_artifacts": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/spatial-submaps-20260920",
+  "map_details": [
+    {
+      "submap_id": 0,
+      "extent_m": 40.1098924379298,
+      "duration_s": 65.802671574,
+      "member_scans": 621,
+      "finish_reason": "radius"
+    },
+    {
+      "submap_id": 1,
+      "extent_m": 40.06190105943621,
+      "duration_s": 22.86402297,
+      "member_scans": 214,
+      "finish_reason": "radius"
+    },
+    {
+      "submap_id": 2,
+      "extent_m": 40.09060653585573,
+      "duration_s": 22.808022976,
+      "member_scans": 215,
+      "finish_reason": "radius"
+    },
+    {
+      "submap_id": 3,
+      "extent_m": 40.02642213657002,
+      "duration_s": 25.536026001,
+      "member_scans": 242,
+      "finish_reason": "radius"
+    },
+    {
+      "submap_id": 4,
+      "extent_m": 40.03069271990994,
+      "duration_s": 20.424020052,
+      "member_scans": 194,
+      "finish_reason": "radius"
+    },
+    {
+      "submap_id": 5,
+      "extent_m": 40.14852174689382,
+      "duration_s": 15.120014905,
+      "member_scans": 144,
+      "finish_reason": "radius"
+    },
+    {
+      "submap_id": 6,
+      "extent_m": 24.50855082494443,
+      "duration_s": 9.328016996,
+      "member_scans": 89,
+      "finish_reason": "shutdown_or_recovery_tail"
+    },
+    {
+      "submap_id": 7,
+      "extent_m": 4.292688723808289,
+      "duration_s": 2.344012022,
+      "member_scans": 23,
+      "finish_reason": "shutdown_or_recovery_tail"
+    }
+  ]
+}

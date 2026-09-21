@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-09-19T21:29:06.898937+00:00",
+  "host": "mikexyl-Lab-ROG",
+  "phase": "failed",
+  "robots": {
+    "aerial05": {
+      "status": "complete",
+      "bag": "/data/graco/aerial-05-40m",
+      "ros_domain_id": 110,
+      "sensor_duration_s": 296.387891899,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 5.470204925572224,
+        "max_successful_update_gap_s": 0.131662336,
+        "native_poses": 2778,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial08": {
+      "status": "failed",
+      "bag": "/data/graco/aerial-08-25m_ros2",
+      "ros_domain_id": 112,
+      "sensor_duration_s": 278.192647993,
+      "error": "ValueError(\"Frontend sensor-only quality failed: {'full_completion': True, 'finite': True, 'chronological': True, 'max_speed_m_s': 4.567553341668015, 'max_successful_update_gap_s': 1.38399887, 'native_poses': 2610, 'ground_truth_used': False, 'passed': False}\")"
+    }
+  },
+  "updated_utc": "2026-09-19T21:37:15.796643+00:00",
+  "finished_utc": "2026-09-19T21:37:15.796634+00:00",
+  "error": "RuntimeError('One or more frontends failed; retained partial outputs and per-robot failure details')"
+}

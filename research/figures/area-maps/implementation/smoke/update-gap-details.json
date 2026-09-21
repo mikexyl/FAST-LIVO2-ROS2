@@ -1,0 +1,36 @@
+{
+  "aerial05": {
+    "successful_scan_ids": [
+      779,
+      783
+    ],
+    "interval_since_initialization_s": [
+      83.250688694,
+      83.698690556
+    ],
+    "gap_s": 0.448001862,
+    "intervening_processed_scans": 3,
+    "intervening_feature_counts": [
+      0
+    ],
+    "intervening_successful_updates": 0,
+    "intervening_max_processing_s": 0.04101283800014244
+  },
+  "aerial08": {
+    "successful_scan_ids": [
+      267,
+      298
+    ],
+    "interval_since_initialization_s": [
+      28.05205633,
+      31.372060317
+    ],
+    "gap_s": 3.320003987,
+    "intervening_processed_scans": 30,
+    "intervening_feature_counts": [
+      0
+    ],
+    "intervening_successful_updates": 0,
+    "intervening_max_processing_s": 0.11800018700000692
+  }
+}

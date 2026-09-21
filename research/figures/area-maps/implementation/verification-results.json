@@ -1,0 +1,31 @@
+{
+  "native_ctest": {
+    "passed": 3,
+    "seconds": 3.76,
+    "log": "build/ellipselio/Testing/Temporary/LastTest.log",
+    "shutdown_pending_scan_regression": true
+  },
+  "python_unit": {
+    "passed": 50,
+    "seconds": 2.05,
+    "files": [
+      "test_area_maps.py",
+      "test_fixed_evidence.py",
+      "test_coverage_submaps.py",
+      "test_recent_submaps.py",
+      "test_spatial_submaps.py",
+      "test_mixed_pgo.py"
+    ]
+  },
+  "python_integration_and_regression": {
+    "passed": 27,
+    "seconds": 49.18,
+    "files": [
+      "test_recent_submaps_integration.py",
+      "test_mapclosures.py",
+      "test_pipeline.py"
+    ],
+    "includes": "eight isolated retrieval/native PCM-CBS integration tests across temporal, spatial, coverage, area"
+  },
+  "syntax": "passed"
+}

@@ -1,0 +1,33 @@
+repositories:
+  FAST-LIVO2-ROS2:
+    type: git
+    url: https://github.com/mikexyl/FAST-LIVO2-ROS2.git
+    version: dev/multi-robot-lidar-slam
+  ellipselio:
+    type: git
+    url: https://github.com/mikexyl/ellipselio.git
+    version: dev/multi-robot-lidar-slam
+  cbs:
+    type: git
+    url: https://github.com/mikexyl/cbs.git
+    version: dev/multi-robot-lidar-slam
+  cbs_ros:
+    type: git
+    url: https://github.com/mikexyl/cbs_ros.git
+    version: dev/multi-robot-lidar-slam
+  livox_ros_driver2:
+    type: git
+    url: https://github.com/mikexyl/livox_ros_driver2.git
+    version: dev/multi-robot-lidar-slam
+  rpg_vikit:
+    type: git
+    url: https://github.com/mikexyl/rpg_vikit.git
+    version: dev/multi-robot-lidar-slam
+  Swarm-SLAM:
+    type: git
+    url: https://github.com/mikexyl/Swarm-SLAM.git
+    version: dev/multi-robot-lidar-slam-comparison
+  Swarm-SLAM/src/cslam:
+    type: git
+    url: https://github.com/mikexyl/cslam.git
+    version: dev/multi-robot-lidar-slam-comparison

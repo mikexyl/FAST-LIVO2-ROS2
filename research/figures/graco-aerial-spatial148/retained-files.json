@@ -1,0 +1,3336 @@
+{
+  "scope": "Verified local retained copy; complete bulk geometry and live recordings remain on 148",
+  "remote_root": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-spatial148-20260920",
+  "files": {
+    "bev-gallery/images/aerial05-000000.png": {
+      "sha256": "24b9abf4196454f53fcb11205deb47e601a7c566cf9d66e8b9d75871873dcc17",
+      "bytes": 17007
+    },
+    "bev-gallery/images/aerial05-000001.png": {
+      "sha256": "aa8565dd39c3f918506e3aead5484d3de9abbd03e00e5d77f2fee3075e2a2de9",
+      "bytes": 17260
+    },
+    "bev-gallery/images/aerial05-000002.png": {
+      "sha256": "97428e78aafb13f2f279bc57965ac2b00e8c3a786175b2045b9c247aaa148ae8",
+      "bytes": 17812
+    },
+    "bev-gallery/images/aerial05-000003.png": {
+      "sha256": "552c42f8b6e04c28f7dda4f63b7fe00569b3ed81de322a9b13638331f35691be",
+      "bytes": 16436
+    },
+    "bev-gallery/images/aerial05-000004.png": {
+      "sha256": "34fcdfd2b75d8a16de4554f4500dcc6619791e87c32bc48614ecca665841397a",
+      "bytes": 13191
+    },
+    "bev-gallery/images/aerial05-000005.png": {
+      "sha256": "6e9b2e197f1a54c5ae1f3ef614e3abec3720d205d8558edf98b4d988b28a0117",
+      "bytes": 14963
+    },
+    "bev-gallery/images/aerial05-000006.png": {
+      "sha256": "09bc8a397084aa4b341b0a05be670150417b22846ff93c278ba88a9fdf7c6704",
+      "bytes": 18652
+    },
+    "bev-gallery/images/aerial05-000007.png": {
+      "sha256": "cbe4d936e3e699d2d21e0d220d76babd5e804bd01bb8a3ffe6d3865c1a5fa3bd",
+      "bytes": 17107
+    },
+    "bev-gallery/images/aerial05-000008.png": {
+      "sha256": "b3e378d4117d7886a2683aaf48c6b85fab327f69b8b43fae22677a6aec105369",
+      "bytes": 14879
+    },
+    "bev-gallery/images/aerial05-000009.png": {
+      "sha256": "d81733df17d8a23394c56ed65cf08aa13cb71366cd93551f67fa9d305ac58bf8",
+      "bytes": 12921
+    },
+    "bev-gallery/images/aerial05-000010.png": {
+      "sha256": "3c3269225c514f70700f633d5ad0e002cf2e36e51547ab36f96590b68bed6dde",
+      "bytes": 16220
+    },
+    "bev-gallery/images/aerial05-000011.png": {
+      "sha256": "93ee18b84db0281829b800668c20ffaf60dbeb73d1102f08e1a383e5a5d9910e",
+      "bytes": 13091
+    },
+    "bev-gallery/images/aerial05-000012.png": {
+      "sha256": "f1c31ef7a03f667b267e507d1f59f6e625f26b29c63bc581cd1611756b3990ab",
+      "bytes": 12108
+    },
+    "bev-gallery/images/aerial05-000013.png": {
+      "sha256": "f4c88c64a5fd9a53147e8ccd513baae9077db7dd255ecfddfb2d5a8d73134fc9",
+      "bytes": 13599
+    },
+    "bev-gallery/images/aerial05-000014.png": {
+      "sha256": "33235742768111b2ca741ff5a7ee4d66dd977accf1d9cac824558c95184d92a0",
+      "bytes": 11624
+    },
+    "bev-gallery/images/aerial05-000015.png": {
+      "sha256": "ab2934dc107f6a72243b93cf4a5b2083dfe3e77480229b4504229545e97318d4",
+      "bytes": 13692
+    },
+    "bev-gallery/images/aerial05-000016.png": {
+      "sha256": "74d7afad234b6ba4e35008ca3d2dca532263e6b1ea0bcf1d69a00c6eb8db3eba",
+      "bytes": 15616
+    },
+    "bev-gallery/images/aerial05-000017.png": {
+      "sha256": "5fba749504717ef94467204ee293341299323f4b6359c85b6455c9df5f1683c4",
+      "bytes": 13922
+    },
+    "bev-gallery/images/aerial05-000018.png": {
+      "sha256": "485ba95ea09ea3b38f35df22d0ad0ffc1433242cf1a0d812c0629951c1308ea0",
+      "bytes": 15124
+    },
+    "bev-gallery/images/aerial05-000019.png": {
+      "sha256": "8568d0c3ea144385b1e5bbe0132367b5f800f1ee0f31b0548ddeb6954a38ccab",
+      "bytes": 16055
+    },
+    "bev-gallery/images/aerial05-000020.png": {
+      "sha256": "aceba61697c6e104ce81c9df9ad2a6692aa9d18baf44776f7217715021bad263",
+      "bytes": 12299
+    },
+    "bev-gallery/images/aerial05-000021.png": {
+      "sha256": "5904cc214e2294620021f82659e62772edc6bcaf73a89ee3e70f5b341cb38464",
+      "bytes": 10908
+    },
+    "bev-gallery/images/aerial05-000022.png": {
+      "sha256": "3aa9f87a46726286ea7cf992fca05e943f533f750b34eef544defbdda2034461",
+      "bytes": 10807
+    },
+    "bev-gallery/images/aerial06-000000.png": {
+      "sha256": "31dd023b90a15659aa03ea883e50382da91bea098d7e3c993c691ce24fb3098f",
+      "bytes": 20230
+    },
+    "bev-gallery/images/aerial06-000001.png": {
+      "sha256": "46b7f4d5c08ac2dd7d224d4768840405e90f90037899b79f5a094cf7629230ff",
+      "bytes": 15920
+    },
+    "bev-gallery/images/aerial06-000002.png": {
+      "sha256": "a18d355ff1d0b0544c9031c13442e3a646bc01c9efe6264da4e76ab0cc093bf8",
+      "bytes": 15074
+    },
+    "bev-gallery/images/aerial06-000003.png": {
+      "sha256": "83ed0f4d6684b403706bd2b91fff595fb1090538ac4288de8ce750296144155d",
+      "bytes": 18343
+    },
+    "bev-gallery/images/aerial06-000004.png": {
+      "sha256": "6eec2b10fec0ae054920b0cabe342f499fa017f6870958686b2b00a0c7dbb60d",
+      "bytes": 13613
+    },
+    "bev-gallery/images/aerial06-000005.png": {
+      "sha256": "835f976bdd14cc59277a06a3a4a03e64e069e5bb93a162d182b1d9b930b03e97",
+      "bytes": 14122
+    },
+    "bev-gallery/images/aerial06-000006.png": {
+      "sha256": "4c662af392ed77f1a3dd3ffa5c49a8d191600f6cd240c9e47a5ef6ea08edc9aa",
+      "bytes": 19529
+    },
+    "bev-gallery/images/aerial06-000007.png": {
+      "sha256": "1495593eeba9580cbba21d60012403b5920e6d9f1ab4f1a6a1552a4f4d4d3678",
+      "bytes": 18138
+    },
+    "bev-gallery/images/aerial06-000008.png": {
+      "sha256": "90d25fba62920f580e014211222484c20402531d68417e1635284f22d261f388",
+      "bytes": 15474
+    },
+    "bev-gallery/images/aerial06-000009.png": {
+      "sha256": "e8806b32ef5167cbc3c7dd4b89d8c83d32243a25898873f8353ea486751096cb",
+      "bytes": 14320
+    },
+    "bev-gallery/images/aerial06-000010.png": {
+      "sha256": "97c10f154dde023a1689c65edc49e57b2b91e4241105591fa46a3d05a3c6881f",
+      "bytes": 11995
+    },
+    "bev-gallery/images/aerial07-000000.png": {
+      "sha256": "ef3cf1f5cf4619a9bc606bbaf223d8e8efe1f7b66e04a6511bad531114571fd5",
+      "bytes": 15414
+    },
+    "bev-gallery/images/aerial07-000001.png": {
+      "sha256": "1b98762ba3709ec08f06364c081f0b5c9fa0d4edee87ec14b286e3067823b70c",
+      "bytes": 15725
+    },
+    "bev-gallery/images/aerial07-000002.png": {
+      "sha256": "b3d370733aacb9f997cf17920f96d6c43a63988fd3df9c2717b706bd6200925f",
+      "bytes": 15101
+    },
+    "bev-gallery/images/aerial07-000003.png": {
+      "sha256": "ca5239cecd8fd19e268a1c76aea6ea65e5bcfb2d4710dd2409a49f7704af3fbd",
+      "bytes": 14988
+    },
+    "bev-gallery/images/aerial07-000004.png": {
+      "sha256": "a030f41bb8ea8e9ae66fb30519f96469fc8beb40fd1e46bfb3a243b59b95dc47",
+      "bytes": 22027
+    },
+    "bev-gallery/images/aerial07-000005.png": {
+      "sha256": "c947fb21b0738de5aa4ab224177308b3c3ec030859b32ae8d55cddc9d19466b2",
+      "bytes": 20779
+    },
+    "bev-gallery/images/aerial07-000006.png": {
+      "sha256": "424fae41ab6f8228751b929f18880d52be775c395f9373697a0996b0b7f85689",
+      "bytes": 16672
+    },
+    "bev-gallery/images/aerial07-000007.png": {
+      "sha256": "7dadf3efe10d14c79ec3bbc6627db08b4a316b0dcd44b91e0a870b944668def0",
+      "bytes": 15126
+    },
+    "bev-gallery/images/aerial07-000008.png": {
+      "sha256": "32a134497689a257677a9e1a1af5339490be5bcb6ec664d366101597f85719b8",
+      "bytes": 13115
+    },
+    "bev-gallery/images/aerial07-000009.png": {
+      "sha256": "069ea7422032041637219aa3d13d7a9ec29ea41d407bbb7b46c7afac02488013",
+      "bytes": 19784
+    },
+    "bev-gallery/images/aerial07-000010.png": {
+      "sha256": "8bb9a462ae8a4fcf5021327752c400bd27a6e065b0c4da9bc89bf5fae63908c9",
+      "bytes": 16350
+    },
+    "bev-gallery/images/aerial07-000011.png": {
+      "sha256": "79cdb0f24d5205565356addae245172b3c982d3dc5cba78fb3e2a8d179944cbf",
+      "bytes": 12815
+    },
+    "bev-gallery/images/aerial07-000012.png": {
+      "sha256": "f12f07200737033849a184841a9ca2b0038583735c8de19f8fdf22572ef0f373",
+      "bytes": 12782
+    },
+    "bev-gallery/images/aerial07-000013.png": {
+      "sha256": "a6e36c8c3af566153325b994c776b29f677ec9f70d20dc6d0ff776282bb180ef",
+      "bytes": 12570
+    },
+    "bev-gallery/images/aerial07-000014.png": {
+      "sha256": "5aefd5089f4ef36e1c9827b5e6876433fd45a12a7e5e26a13ed024bf84dc5760",
+      "bytes": 17094
+    },
+    "bev-gallery/images/aerial08-000000.png": {
+      "sha256": "f15b6bd2a732ca8496c9d8d357720d6ea27387f3fd104c33e743ce7e60e8d70d",
+      "bytes": 16649
+    },
+    "bev-gallery/images/aerial08-000001.png": {
+      "sha256": "61017e3f478fad4fd6f207105f9d425ed4be77aac2a7aa6de94efe6754389a84",
+      "bytes": 15797
+    },
+    "bev-gallery/images/aerial08-000002.png": {
+      "sha256": "3fc43f799921aab5e10148cc20baa7e5bc867b6cb962913b45d6948d003b8fd9",
+      "bytes": 11967
+    },
+    "bev-gallery/images/aerial08-000003.png": {
+      "sha256": "1fb2630303796c1320650dce6a994f2af8ded1f56c6233e776a2ee6511f3aace",
+      "bytes": 13647
+    },
+    "bev-gallery/images/aerial08-000004.png": {
+      "sha256": "6d0365655a78ea7ffeaf9174b761143fe3f3e26fda21a596613d6aedb881d90a",
+      "bytes": 13463
+    },
+    "bev-gallery/images/aerial08-000005.png": {
+      "sha256": "fc016fd3b53a425ae20c201090baf9c7ce9116b7d430126aab0248f7f26a7a68",
+      "bytes": 15065
+    },
+    "bev-gallery/images/aerial08-000006.png": {
+      "sha256": "76982908892676803adbf0b34a0703c39f10aba0adc1b96e9aed36c0ca48e074",
+      "bytes": 14438
+    },
+    "bev-gallery/images/aerial08-000007.png": {
+      "sha256": "685007f6746f8716bb100942a4dfafff1bb4e73edc02436badaac9007dc77386",
+      "bytes": 14657
+    },
+    "bev-gallery/images/aerial08-000008.png": {
+      "sha256": "725dedf27bff1d2b50522afbc4cf58e8554dc8e6e9171883eade87585253946e",
+      "bytes": 18053
+    },
+    "bev-gallery/images/aerial08-000009.png": {
+      "sha256": "2dc1e4c0e86e60d2a27112fab68a5eb87f8d0e81393e619cd4d1666873161450",
+      "bytes": 21239
+    },
+    "bev-gallery/images/aerial08-000010.png": {
+      "sha256": "1bcd9849253ef073f217b70e4ef59f5c1c3bd826168b7e6f73c29bc36b0e3d5e",
+      "bytes": 19845
+    },
+    "bev-gallery/images/aerial08-000011.png": {
+      "sha256": "f7e268c86a01fd9bb2d7588efbced3aad5fd1c8f0d238428e97df17296d5e15b",
+      "bytes": 13826
+    },
+    "bev-gallery/images/aerial08-000012.png": {
+      "sha256": "b4f542286e5e2c63173cf40112db223fdf1dc61c0fe73252b48805be9a0484b4",
+      "bytes": 12177
+    },
+    "bev-gallery/images/aerial08-000013.png": {
+      "sha256": "3b41f2805eec0b2351158d6e29424cc457b7949dc8f6ff53eb941f04d35bc752",
+      "bytes": 12656
+    },
+    "bev-gallery/images/aerial08-000014.png": {
+      "sha256": "dabde0c1cd702dd79f2bc7abfe773ed5abbcb263dc10a7ad00189e0d44b128d1",
+      "bytes": 18122
+    },
+    "bev-gallery/index.html": {
+      "sha256": "58a5a2e2ef76e57cc080621222e767b3aa50ac313682dc3d7640d111cca26a9f",
+      "bytes": 182668
+    },
+    "bev-gallery/manifest.json": {
+      "sha256": "a0e507a1b5e73171178117eebedd6400331eddbfe102be61ef699003ec8b8ad7",
+      "bytes": 475079
+    },
+    "bev-gallery/overview.png": {
+      "sha256": "682fc51f124305f386f5346234cb8a70583e3566ed6f2cc282e3a2d465b18b0f",
+      "bytes": 283382
+    },
+    "diagnostic-evidence/comparison.csv": {
+      "sha256": "3bb96cc2bea55237750d6cb076188444f2474fe50299e635755db1a0378672a8",
+      "bytes": 1474
+    },
+    "diagnostic-evidence/diagnose.py": {
+      "sha256": "0890fa8731b7bd8dafcd3430da1daa0d71bf03098bcaeee4ee706e38f7658039",
+      "bytes": 5731
+    },
+    "diagnostic-evidence/identical-geometry-control.json": {
+      "sha256": "027dd32eea77cd62362a6d62c651ccaef4a77a5712ed11ee282f8dc6fa6fed74",
+      "bytes": 2062
+    },
+    "diagnostic-evidence/point-counts.json": {
+      "sha256": "a9b8cb0e8ab8bb22a8a255627b7456ebf61054dcacaef48fd42c438aa91e01df",
+      "bytes": 17238
+    },
+    "diagnostic-evidence/range-filter.json": {
+      "sha256": "a09d86f77d89b6f22dc9b449d09e766be1f9dca4cb8890a226651b1dd1465457",
+      "bytes": 833
+    },
+    "diagnostic-evidence/replays.json": {
+      "sha256": "dbba7cec872166a861d00d18440bdeb372ac27922d3adb7f638d1b70ca8f8ae6",
+      "bytes": 26868
+    },
+    "diagnostic-evidence/run.log": {
+      "sha256": "fc6ea4bd17c2a745f6c076e7a194c15f8cd71073d2064acd4c3138799137c1e2",
+      "bytes": 2088
+    },
+    "diagnostic-evidence/summary.json": {
+      "sha256": "42bb54f433b04893c6c67720474a488ee63151a646eb31e4d97bf27c3437dcf1",
+      "bytes": 297
+    },
+    "full/aerial05-coverage.log": {
+      "sha256": "eb77e7aad5581e7cdbfb90af0b7a500c8da55b19839b97e49914d0aab2f72bed",
+      "bytes": 498
+    },
+    "full/aerial05-descriptors.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/aerial05-frontend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/aerial05-quality.json": {
+      "sha256": "522723e4b68e6d3e702a99dfd38db8b5101149bd17ab692130d583d0b78d85f2",
+      "bytes": 229
+    },
+    "full/aerial05-recording-verification.log": {
+      "sha256": "5eedf6de0213674735cfcc8112b70c2e0aee0476c31d567a10a862fcfa0b5d06",
+      "bytes": 989
+    },
+    "full/aerial05-validation.log": {
+      "sha256": "af7b9b0da42b3a1facb822eb38d6db8aa76f77a1f9869266e83f0d286bd5b35e",
+      "bytes": 261
+    },
+    "full/aerial06-coverage.log": {
+      "sha256": "55f9508b2a922542c878af32813294b2b8c3e2e0eb27ebf52bdb889b2fb939e1",
+      "bytes": 498
+    },
+    "full/aerial06-descriptors.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/aerial06-frontend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/aerial06-quality.json": {
+      "sha256": "792e51ee1d358f3b7851d19791d809c0c98af28d67d93d4e2414c57537ead03c",
+      "bytes": 229
+    },
+    "full/aerial06-recording-verification.log": {
+      "sha256": "365a8efa86bf1898b4dc3b69d801e14f7d4855e7b17bef09af61db7ce9d216b0",
+      "bytes": 989
+    },
+    "full/aerial06-validation.log": {
+      "sha256": "f531a52a730cdac491f8c05bb6bcf89addec0f837f3badb6b4c2afc3743f633c",
+      "bytes": 261
+    },
+    "full/aerial07-coverage.log": {
+      "sha256": "e0065b57f68db944973c189c718920eb5c6a57056e726693cde4f7e7065d227a",
+      "bytes": 498
+    },
+    "full/aerial07-descriptors.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/aerial07-frontend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/aerial07-quality.json": {
+      "sha256": "6ec20d8bc614b2d12ee761cf14d2aaa39378d24f83c8dc64e40e51fa651c8f7a",
+      "bytes": 229
+    },
+    "full/aerial07-recording-verification.log": {
+      "sha256": "3e2aca99d887f3ba05b8e4b6a306afcf0baa45dbdb23d0e6815a7cefc25cef9d",
+      "bytes": 989
+    },
+    "full/aerial07-validation.log": {
+      "sha256": "4d0b8b6e1b9cbcf054ca050343c93b947285f5f2c7c4a290c3c1e8220c2aa185",
+      "bytes": 261
+    },
+    "full/aerial08-coverage.log": {
+      "sha256": "305af0bfc77f836044a472bb23a51c5affa52a9ff81e546005605c32e1b6f56f",
+      "bytes": 498
+    },
+    "full/aerial08-descriptors.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/aerial08-frontend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/aerial08-quality.json": {
+      "sha256": "547a164f798bd1d821a0a13405e662582a26b778417167526037e01a7d9f1118",
+      "bytes": 228
+    },
+    "full/aerial08-recording-verification.log": {
+      "sha256": "cdc59851683629b09bb87f771dc56d7e86b1c7358c885bdb524268ae44789d0b",
+      "bytes": 989
+    },
+    "full/aerial08-validation.log": {
+      "sha256": "33e592e16ff42ed9ace06046c2a867e619b5c281ed93b328890a4896cbab83b6",
+      "bytes": 261
+    },
+    "full/artifacts.json": {
+      "sha256": "b8a3f01a911620c027962ad1d39dcec2f03fd514e4bb5868a06151a69d382ed7",
+      "bytes": 987
+    },
+    "full/backend.log": {
+      "sha256": "74685d2e7fe7c40dc7c68bb00ad5247e0433f279b3f5063398cd1f50be8640e1",
+      "bytes": 241
+    },
+    "full/calibration-hashes.json": {
+      "sha256": "b789d3f99c1b03882259e96c0c76a65f8ded943bfe6c86c0b177666d39d75c26",
+      "bytes": 882
+    },
+    "full/comparison.json": {
+      "sha256": "99d28c265ff6679e3a5c0f573fcf65fd3fc3f015674657eb25e04c84e13dbe79",
+      "bytes": 27877
+    },
+    "full/config.yaml": {
+      "sha256": "e7707eab2cf11065312a9c23458cf4c53eff74aca614b2c69b9a7b94254fc051",
+      "bytes": 2958
+    },
+    "full/configs/aerial05.yaml": {
+      "sha256": "8207f114a70942b1da7f790c01899e5c19d6a18edb4fd26f4e807063a699bb86",
+      "bytes": 1158
+    },
+    "full/configs/aerial06.yaml": {
+      "sha256": "4a990a621f16a5963271ed05ef5c12800c93b126ca5c62b5d6a33134048ed151",
+      "bytes": 1158
+    },
+    "full/configs/aerial07.yaml": {
+      "sha256": "e281d80c496b2e269893f945f9c0636a92828558f184c517a50495ae8669d0a9",
+      "bytes": 1158
+    },
+    "full/configs/aerial08.yaml": {
+      "sha256": "0dcea44469c925c78bb685c6a22e66f835d6fc31a633444a8f360fccb7c9a541",
+      "bytes": 1158
+    },
+    "full/connectivity.json": {
+      "sha256": "5f316912854dbb899c3a8b67ef985337e931af0f61248b3754b3223fde0aba59",
+      "bytes": 393
+    },
+    "full/dpgo/aerial05/cbs.yaml": {
+      "sha256": "84a969c3db3a77de49c71e8bae83069149e0e56a2d5ec8d4af89b5e1d0577b58",
+      "bytes": 1339
+    },
+    "full/dpgo/aerial05/constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial05/events.jsonl": {
+      "sha256": "045c3915e405251f08b5248599b3c8e07681acdc49864fb7396ebde421983c9a",
+      "bytes": 17767
+    },
+    "full/dpgo/aerial05/input-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial05/native/aerial05/cbs_online/belief_service_timing_robot_0.csv": {
+      "sha256": "2ea9ea971333bf975aed5d1da97600c94aaeb4b3aa2915481697f5cd02c08362",
+      "bytes": 232
+    },
+    "full/dpgo/aerial05/native/aerial05/cbs_online/pcm_checks.csv": {
+      "sha256": "22c2d170a0b62026e680bcf6b225f88b00714735ead0623e44944c75816270cd",
+      "bytes": 103
+    },
+    "full/dpgo/aerial05/native/aerial05/cbs_online/pcm_decisions.csv": {
+      "sha256": "057a9642f080961dc428516cab706879d38141c7fa470bbb5c3e0ffe7e4a0e08",
+      "bytes": 64
+    },
+    "full/dpgo/aerial05/native/aerial05/cbs_online/pcm_wire.csv": {
+      "sha256": "e5062f23ccaef955cb9f523da3814e24bb35eb7e3decdecb4cfed19c3f531a42",
+      "bytes": 37
+    },
+    "full/dpgo/aerial05/native/aerial05/cbs_online/registration.json": {
+      "sha256": "2c62ce2c5457640649323ec72e18a8340f238c514cdeb40cc11660005f6e7f7f",
+      "bytes": 666
+    },
+    "full/dpgo/aerial05/native/aerial05/cbs_online/stats_robot_0.csv": {
+      "sha256": "a42c9a3a1d267dc02e08be838d54aee93ba6dc1e0acab8b273071bd740fb904b",
+      "bytes": 41
+    },
+    "full/dpgo/aerial05/native/aerial05/cbs_online/timing_robot_0.csv": {
+      "sha256": "0650112df24259c193d63641e477ef95a3a0ebabfd4d4acf61d02bd41ccaf0cb",
+      "bytes": 5692
+    },
+    "full/dpgo/aerial05/pcm.json": {
+      "sha256": "8eaae2b908b05c607d32ee9832f2213e8b56f1fd10ec9f45cfbc045d5a344d99",
+      "bytes": 190
+    },
+    "full/dpgo/aerial05/poses.jsonl": {
+      "sha256": "2cfc02b8d2cf0f20bf117381e59dd14768669cc9098fb644ffd52006ab839ad3",
+      "bytes": 9034
+    },
+    "full/dpgo/aerial05/progress.json": {
+      "sha256": "1e55a04fb6be2e59d6bd1486adbd4d112838c3f32eaa36f9f7ea4b62d842a3d9",
+      "bytes": 121
+    },
+    "full/dpgo/aerial05/proposed-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial05/registration/manifest.json": {
+      "sha256": "1f5b72c9598450239a5c966192dc08f259595c6c5e885f661ed416754a5d412f",
+      "bytes": 420
+    },
+    "full/dpgo/aerial05/registration/transport.json": {
+      "sha256": "bee00103ec148b394e12fcac70677e5186dd3261cfa11817bf89cff39ef4c310",
+      "bytes": 132
+    },
+    "full/dpgo/aerial05/registration-result.json": {
+      "sha256": "2c62ce2c5457640649323ec72e18a8340f238c514cdeb40cc11660005f6e7f7f",
+      "bytes": 666
+    },
+    "full/dpgo/aerial05/spec.json": {
+      "sha256": "1e9aa996affab1eea3e51814cbd5de3852591577b2d8bca97484ecc153fb4c56",
+      "bytes": 2119
+    },
+    "full/dpgo/aerial05/stats.jsonl": {
+      "sha256": "18e479b211cba8105a700d4a34640257c252cafd37ba61299161e65a4757db17",
+      "bytes": 52050
+    },
+    "full/dpgo/aerial05/summary.json": {
+      "sha256": "a62684050d619c3039d1b1e249ad09d80d77c546b9f981dfab515221bf57e625",
+      "bytes": 1582
+    },
+    "full/dpgo/aerial05/wire.jsonl": {
+      "sha256": "eb8f74810254a54ee93e760a84224ba2fe29f8fa2d38490e74fdbc1c5780439d",
+      "bytes": 25843
+    },
+    "full/dpgo/aerial05-cbs.log": {
+      "sha256": "9641a601b27074ff93208b4e9b685ff00936ec44bbe8397cd70e66ef36dea274",
+      "bytes": 615
+    },
+    "full/dpgo/aerial05-frontend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial06/cbs.yaml": {
+      "sha256": "a3d4cd9b071a7f26669abf2bfbb476643b50b39ccdcffc08002a7a86e4ce3f15",
+      "bytes": 1339
+    },
+    "full/dpgo/aerial06/constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial06/events.jsonl": {
+      "sha256": "4bb500640ba28d7b949232ca5530fa272a633c397cf98e8b657903aa289bb7e7",
+      "bytes": 49555
+    },
+    "full/dpgo/aerial06/input-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial06/native/aerial06/cbs_online/belief_service_timing_robot_1.csv": {
+      "sha256": "2ea9ea971333bf975aed5d1da97600c94aaeb4b3aa2915481697f5cd02c08362",
+      "bytes": 232
+    },
+    "full/dpgo/aerial06/native/aerial06/cbs_online/pcm_checks.csv": {
+      "sha256": "22c2d170a0b62026e680bcf6b225f88b00714735ead0623e44944c75816270cd",
+      "bytes": 103
+    },
+    "full/dpgo/aerial06/native/aerial06/cbs_online/pcm_decisions.csv": {
+      "sha256": "057a9642f080961dc428516cab706879d38141c7fa470bbb5c3e0ffe7e4a0e08",
+      "bytes": 64
+    },
+    "full/dpgo/aerial06/native/aerial06/cbs_online/pcm_wire.csv": {
+      "sha256": "e5062f23ccaef955cb9f523da3814e24bb35eb7e3decdecb4cfed19c3f531a42",
+      "bytes": 37
+    },
+    "full/dpgo/aerial06/native/aerial06/cbs_online/registration.json": {
+      "sha256": "41a061d0b4c07cdd4e7267859ddb1acb73cb8bf9e1b29c1227d63268f2949bc9",
+      "bytes": 665
+    },
+    "full/dpgo/aerial06/native/aerial06/cbs_online/stats_robot_1.csv": {
+      "sha256": "a42c9a3a1d267dc02e08be838d54aee93ba6dc1e0acab8b273071bd740fb904b",
+      "bytes": 41
+    },
+    "full/dpgo/aerial06/native/aerial06/cbs_online/timing_robot_1.csv": {
+      "sha256": "d2097820e6eb8712df65637457b65345571442fbad321c41544ec5dfb58f3205",
+      "bytes": 5692
+    },
+    "full/dpgo/aerial06/pcm.json": {
+      "sha256": "0cc08da7acbb9fae819539380c5d40a9203b88dd3985b10eb3305cf68f474730",
+      "bytes": 190
+    },
+    "full/dpgo/aerial06/poses.jsonl": {
+      "sha256": "58a59a947b38dd9d7ed9e31adcd0ff2378184c395c9ba664dafab0a4b35ec751",
+      "bytes": 4259
+    },
+    "full/dpgo/aerial06/progress.json": {
+      "sha256": "c3c82503fc2f320dcc79ff122bca0695dbc46dde96109890c1cb4f9e0a2c399b",
+      "bytes": 120
+    },
+    "full/dpgo/aerial06/proposed-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial06/registration/manifest.json": {
+      "sha256": "82a40cc941050d209ef453b6bc411eea6a6b32973e01bb8c3002285f78e1ede4",
+      "bytes": 420
+    },
+    "full/dpgo/aerial06/registration/transport.json": {
+      "sha256": "fee0b4e190bb780e61e597a812c7cbf9884d3b3761ad6eacf54142837480eb7b",
+      "bytes": 129
+    },
+    "full/dpgo/aerial06/registration-result.json": {
+      "sha256": "41a061d0b4c07cdd4e7267859ddb1acb73cb8bf9e1b29c1227d63268f2949bc9",
+      "bytes": 665
+    },
+    "full/dpgo/aerial06/spec.json": {
+      "sha256": "3f855535d345cdb279179392f6ebb1ed8529bc0bdc651148e2f33881c75bd875",
+      "bytes": 2119
+    },
+    "full/dpgo/aerial06/stats.jsonl": {
+      "sha256": "f1176f7d190b1b29a1bd00e2242a80732668ce45366aeb7a5a44b52c72b8d671",
+      "bytes": 52126
+    },
+    "full/dpgo/aerial06/summary.json": {
+      "sha256": "051e78abbcdbb6e4e44bafd69fc1746a07e9b83fcb96ba6fea2c133753707fe7",
+      "bytes": 1591
+    },
+    "full/dpgo/aerial06/wire.jsonl": {
+      "sha256": "9a55f19bf8d20306f37e1e1be05e78b519763dcefb92b46edb20755b7a9d7594",
+      "bytes": 20610
+    },
+    "full/dpgo/aerial06-cbs.log": {
+      "sha256": "707806eb7a33265206b119e1088d0fd2a174d3eb5bb6f565920a9d034b4b293d",
+      "bytes": 615
+    },
+    "full/dpgo/aerial06-frontend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial07/cbs.yaml": {
+      "sha256": "df98b9525ef33f8ad5e6a98162984fb56cd7c9282fed95a6e6c26214588beefd",
+      "bytes": 1339
+    },
+    "full/dpgo/aerial07/constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial07/events.jsonl": {
+      "sha256": "73ae44a3108e6b9c0d2e121c35363f6bc90343d0a860d4f19109e5243aaedb1e",
+      "bytes": 72260
+    },
+    "full/dpgo/aerial07/input-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial07/native/aerial07/cbs_online/belief_service_timing_robot_2.csv": {
+      "sha256": "2ea9ea971333bf975aed5d1da97600c94aaeb4b3aa2915481697f5cd02c08362",
+      "bytes": 232
+    },
+    "full/dpgo/aerial07/native/aerial07/cbs_online/pcm_checks.csv": {
+      "sha256": "22c2d170a0b62026e680bcf6b225f88b00714735ead0623e44944c75816270cd",
+      "bytes": 103
+    },
+    "full/dpgo/aerial07/native/aerial07/cbs_online/pcm_decisions.csv": {
+      "sha256": "057a9642f080961dc428516cab706879d38141c7fa470bbb5c3e0ffe7e4a0e08",
+      "bytes": 64
+    },
+    "full/dpgo/aerial07/native/aerial07/cbs_online/pcm_wire.csv": {
+      "sha256": "e5062f23ccaef955cb9f523da3814e24bb35eb7e3decdecb4cfed19c3f531a42",
+      "bytes": 37
+    },
+    "full/dpgo/aerial07/native/aerial07/cbs_online/registration.json": {
+      "sha256": "314fb735e6bced1dfa4d1a50936a4bba55d9e4566d690819f8e7d832c8a225e8",
+      "bytes": 665
+    },
+    "full/dpgo/aerial07/native/aerial07/cbs_online/stats_robot_2.csv": {
+      "sha256": "a42c9a3a1d267dc02e08be838d54aee93ba6dc1e0acab8b273071bd740fb904b",
+      "bytes": 41
+    },
+    "full/dpgo/aerial07/native/aerial07/cbs_online/timing_robot_2.csv": {
+      "sha256": "13f7825257d664740c125587f2a8d40a92c8025ed602d26782af824133668237",
+      "bytes": 5692
+    },
+    "full/dpgo/aerial07/pcm.json": {
+      "sha256": "4b67b1b9572feb9f94625f11102bc081bc46fb6301cd51d4f689dea42a0b75ce",
+      "bytes": 190
+    },
+    "full/dpgo/aerial07/poses.jsonl": {
+      "sha256": "ad8c01ea8fd3b1045082b8caabf0cb5bff93c59af675043bdae3562e889ae601",
+      "bytes": 5866
+    },
+    "full/dpgo/aerial07/progress.json": {
+      "sha256": "ea3a3e1288c30373db23d6209f7ad87b85cfd7c6d3bfb176cfee686547bb1c09",
+      "bytes": 121
+    },
+    "full/dpgo/aerial07/proposed-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial07/registration/manifest.json": {
+      "sha256": "7ff40325ca36baf694131ea288125c1ff21d0eb5240a7b10cf2e5f0f64560dae",
+      "bytes": 420
+    },
+    "full/dpgo/aerial07/registration/transport.json": {
+      "sha256": "c18b185ea2df413dcb7508f19900ebb45d8b898df826283d33ee6ae7a849f6b9",
+      "bytes": 129
+    },
+    "full/dpgo/aerial07/registration-result.json": {
+      "sha256": "314fb735e6bced1dfa4d1a50936a4bba55d9e4566d690819f8e7d832c8a225e8",
+      "bytes": 665
+    },
+    "full/dpgo/aerial07/spec.json": {
+      "sha256": "0a6f5c46ec4a50ef3e88abe6d95e5edd7cd62f3c5093db8bc9c440d3c2a94096",
+      "bytes": 2119
+    },
+    "full/dpgo/aerial07/stats.jsonl": {
+      "sha256": "70d88a6f893694d50af8168fbd86eb647d3c2fa46143743b716d67eb2e9ce67f",
+      "bytes": 52013
+    },
+    "full/dpgo/aerial07/summary.json": {
+      "sha256": "8cd752ad448bbf1dff34947ad50ac4dd0500de7acc48509ef498775336d9e37f",
+      "bytes": 1587
+    },
+    "full/dpgo/aerial07/wire.jsonl": {
+      "sha256": "4813d09c65f8516e4d09adc60c5e30879b98e1d9a0a3109a9b96da13697862e3",
+      "bytes": 22730
+    },
+    "full/dpgo/aerial07-cbs.log": {
+      "sha256": "8d6ef65f91ce15f2e11187fbb7c68921dcd1473f0ea5f1a113a670cf87be47f7",
+      "bytes": 615
+    },
+    "full/dpgo/aerial07-frontend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial08/cbs.yaml": {
+      "sha256": "ae0bd6176175eeb2df5dd01097af7597f48c38eac53a50371d02bd625fa879a5",
+      "bytes": 1339
+    },
+    "full/dpgo/aerial08/constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial08/events.jsonl": {
+      "sha256": "a6ae02a9f95156f875c59be4fa09422191382400908f392c01e0cf703b709dac",
+      "bytes": 105983
+    },
+    "full/dpgo/aerial08/input-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial08/native/aerial08/cbs_online/belief_service_timing_robot_3.csv": {
+      "sha256": "2ea9ea971333bf975aed5d1da97600c94aaeb4b3aa2915481697f5cd02c08362",
+      "bytes": 232
+    },
+    "full/dpgo/aerial08/native/aerial08/cbs_online/pcm_checks.csv": {
+      "sha256": "22c2d170a0b62026e680bcf6b225f88b00714735ead0623e44944c75816270cd",
+      "bytes": 103
+    },
+    "full/dpgo/aerial08/native/aerial08/cbs_online/pcm_decisions.csv": {
+      "sha256": "057a9642f080961dc428516cab706879d38141c7fa470bbb5c3e0ffe7e4a0e08",
+      "bytes": 64
+    },
+    "full/dpgo/aerial08/native/aerial08/cbs_online/pcm_wire.csv": {
+      "sha256": "e5062f23ccaef955cb9f523da3814e24bb35eb7e3decdecb4cfed19c3f531a42",
+      "bytes": 37
+    },
+    "full/dpgo/aerial08/native/aerial08/cbs_online/registration.json": {
+      "sha256": "6493d0d06a7f130ef9424b9a2aba5ed340a1f9568bd7bb3d465d8fd90efd8994",
+      "bytes": 665
+    },
+    "full/dpgo/aerial08/native/aerial08/cbs_online/stats_robot_3.csv": {
+      "sha256": "a42c9a3a1d267dc02e08be838d54aee93ba6dc1e0acab8b273071bd740fb904b",
+      "bytes": 41
+    },
+    "full/dpgo/aerial08/native/aerial08/cbs_online/timing_robot_3.csv": {
+      "sha256": "fcb6a199c5e82e08cc8208a23a88dffef26d79cebc93afeaeacfaa57ddac51be",
+      "bytes": 5692
+    },
+    "full/dpgo/aerial08/pcm.json": {
+      "sha256": "4df7df99336d46e2504df2e80f859b9e2341fcb13848c2bd210c103ac25c9f61",
+      "bytes": 190
+    },
+    "full/dpgo/aerial08/poses.jsonl": {
+      "sha256": "947809690fac337516f0c89647b366786fa728c9bffa680d010e484e4ee5c428",
+      "bytes": 5806
+    },
+    "full/dpgo/aerial08/progress.json": {
+      "sha256": "3e71b43c0351e02626c76fd2005bd6ec22fda057e42846bd166e1398c85214fd",
+      "bytes": 121
+    },
+    "full/dpgo/aerial08/proposed-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/aerial08/registration/manifest.json": {
+      "sha256": "eded1c7fa45c41fbab5ebb2a3644de9f97503ca5d4657883509845f86ccba972",
+      "bytes": 420
+    },
+    "full/dpgo/aerial08/registration/transport.json": {
+      "sha256": "676a3f06184f3a51122f35419ec9d960cd537f6e022b80ec46fabb73c1805bb3",
+      "bytes": 128
+    },
+    "full/dpgo/aerial08/registration-result.json": {
+      "sha256": "6493d0d06a7f130ef9424b9a2aba5ed340a1f9568bd7bb3d465d8fd90efd8994",
+      "bytes": 665
+    },
+    "full/dpgo/aerial08/spec.json": {
+      "sha256": "04bbf84800d66e4448332185f7f6c1b99979ca0c0bdb193a973749aa33430c2c",
+      "bytes": 2119
+    },
+    "full/dpgo/aerial08/stats.jsonl": {
+      "sha256": "b378aca4dd22a5f725f680bb97b69bf73aa2c93bb85e87deb84d2c391d38b3f6",
+      "bytes": 52055
+    },
+    "full/dpgo/aerial08/summary.json": {
+      "sha256": "3ebbf7764b0def9cd10f1a9cd18ba52d37e4d4e5c6e32b4f252129786c919142",
+      "bytes": 1590
+    },
+    "full/dpgo/aerial08/wire.jsonl": {
+      "sha256": "b03f1c90f58dc2c0d0984e7bd15f74a3277e52162f2b67348a6a00377596a3dc",
+      "bytes": 22497
+    },
+    "full/dpgo/aerial08-cbs.log": {
+      "sha256": "306595a7decb192ea8b3857e96f9a2a2fb8ac701ffe540c43eba67c29ca7dda8",
+      "bytes": 615
+    },
+    "full/dpgo/aerial08-frontend.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/pcm.json": {
+      "sha256": "f95c452477dd70de3460dd63b67194f271e4fac3716530324d5ec8e8e38d39c0",
+      "bytes": 304
+    },
+    "full/dpgo/poses.jsonl": {
+      "sha256": "d18634933e3fb2951aceacf74a3679270dce8de67d9dc1d3a12c657cf6f8115d",
+      "bytes": 24965
+    },
+    "full/dpgo/progress.json": {
+      "sha256": "35d9dfb098af2f03e9311fceb08b13e6178d90d39b32f788211fa77ba952e3b2",
+      "bytes": 565
+    },
+    "full/dpgo/proposed-constraints.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "full/dpgo/registration.json": {
+      "sha256": "5274da729360764c433a0cf69f24eaff14b4e276cf1cc60754df64dfa9006457",
+      "bytes": 3201
+    },
+    "full/dpgo/summary.json": {
+      "sha256": "1d43ee1f2a5d26fefa59c66ef876a194e388053cec6e06269e8f21f6f657b52f",
+      "bytes": 7201
+    },
+    "full/evaluation.log": {
+      "sha256": "3a0ec202ba8dd3a156ce0feb8e06333bb8f9d150089c152b03516a14bea02db4",
+      "bytes": 366
+    },
+    "full/frontend-gate.json": {
+      "sha256": "08b033d48c72f31177254c5a5244f4b4a553a23b7f8a8c162f0c753154827cd6",
+      "bytes": 1390
+    },
+    "full/frontends/aerial05/artifact-validation.json": {
+      "sha256": "af7b9b0da42b3a1facb822eb38d6db8aa76f77a1f9869266e83f0d286bd5b35e",
+      "bytes": 261
+    },
+    "full/frontends/aerial05/frontend/analytics.jsonl": {
+      "sha256": "fdf53969833091908271ab6c4001c98500941634972815db6bfe409a3261e445",
+      "bytes": 4876475
+    },
+    "full/frontends/aerial05/frontend/mapping.log": {
+      "sha256": "09c216ae776f7a6182cfbf6891ee1bf188f2259849bbb0040bfe48978173e318",
+      "bytes": 846
+    },
+    "full/frontends/aerial05/frontend/mapping_config.yaml": {
+      "sha256": "8207f114a70942b1da7f790c01899e5c19d6a18edb4fd26f4e807063a699bb86",
+      "bytes": 1158
+    },
+    "full/frontends/aerial05/frontend/native_updates.jsonl": {
+      "sha256": "3de216e949c08ed5d2763374cda2e4eabd06ba435360863ec7aa1fb0e2f6f8bf",
+      "bytes": 1854005
+    },
+    "full/frontends/aerial05/frontend/playback.log": {
+      "sha256": "165467792bdf9f8ebef36b883669b415b277ff0e9b64c094240c0d5ca9e426db",
+      "bytes": 435
+    },
+    "full/frontends/aerial05/frontend/processes.json": {
+      "sha256": "d5f8d24d40203ffd8a89d44c9f5f7bc50137fb7a47119731dcb4d5597818cd12",
+      "bytes": 32
+    },
+    "full/frontends/aerial05/frontend/progress.json": {
+      "sha256": "ee7b6435f2a883ca5783d8497255e0d58d85fb8025819bff86b9c1cc5eaf16b0",
+      "bytes": 734
+    },
+    "full/frontends/aerial05/frontend/runtime.yaml": {
+      "sha256": "ed7d10fe4807ecee5a84a6618abef0b62a1f49c78b98d4aca8a527eca37a06bf",
+      "bytes": 1875
+    },
+    "full/frontends/aerial05/frontend/submaps/index.jsonl": {
+      "sha256": "7021491c205c9c45e01946bc7ea4247b111cf144b98d1780d93bc1430e7ce924",
+      "bytes": 64359
+    },
+    "full/frontends/aerial05/frontend/submaps/manifest.json": {
+      "sha256": "1563fa4b51672585c17af133809d194c722f326ec9e623d7ce57391ee85c8d91",
+      "bytes": 149
+    },
+    "full/frontends/aerial05/frontend/summary.json": {
+      "sha256": "48471e4d267157584771039ace5cdfac21294839ed1f747aecd8f201c7397e56",
+      "bytes": 864
+    },
+    "full/frontends/aerial05/memory.jsonl": {
+      "sha256": "a1e9bb4548419d4db35a948a2671e091078e0d1b495415c11cda1781e222b653",
+      "bytes": 20435
+    },
+    "full/frontends/aerial05/recorder.log": {
+      "sha256": "993400e562f6658934f138d9c0c2efdb001800e804e21abc1043a8a69021e9a9",
+      "bytes": 247
+    },
+    "full/frontends/aerial05/recording/ABOUT.md": {
+      "sha256": "21e8aa995fcdd4a624766ac1d19811474822b2cde8a323d19f4d7bd308a73961",
+      "bytes": 1155
+    },
+    "full/frontends/aerial05/recording/READY": {
+      "sha256": "314f56e8392f868bd037b08e6441bbf8af70b14f6bc8daada4ffcd298e2d6609",
+      "bytes": 20
+    },
+    "full/frontends/aerial05/recording/analytics.jsonl": {
+      "sha256": "96b7223bc3096634ea27e25016e0bbde1ac2af693c338f63f48d09df85e5d073",
+      "bytes": 4515494
+    },
+    "full/frontends/aerial05/recording/post_lidar_poses.tum": {
+      "sha256": "320c18f3a5f74b21a55b9cd24ba985934de46c3800ce1a1e1853cbfe565a32cd",
+      "bytes": 347715
+    },
+    "full/frontends/aerial05/recording/status.json": {
+      "sha256": "c97cea653736ee96bc42cd3f43b51d174bf35df45f22005807e5a79d7c95e4ac",
+      "bytes": 3708
+    },
+    "full/frontends/aerial05/selected_mapping.yaml": {
+      "sha256": "8207f114a70942b1da7f790c01899e5c19d6a18edb4fd26f4e807063a699bb86",
+      "bytes": 1158
+    },
+    "full/frontends/aerial05/sensor-coverage.json": {
+      "sha256": "eb77e7aad5581e7cdbfb90af0b7a500c8da55b19839b97e49914d0aab2f72bed",
+      "bytes": 498
+    },
+    "full/frontends/aerial05/source-hashes.json": {
+      "sha256": "dbd4b81d654305665263637c55ae58fff86c162d88e224fedf539a2c6cd4e873",
+      "bytes": 7959
+    },
+    "full/frontends/aerial05/trial.log": {
+      "sha256": "a4f1022e4ff01207d9da49b36094f5be87e1859227dbaca3a7236b24586b2d1f",
+      "bytes": 1288
+    },
+    "full/frontends/aerial06/artifact-validation.json": {
+      "sha256": "f531a52a730cdac491f8c05bb6bcf89addec0f837f3badb6b4c2afc3743f633c",
+      "bytes": 261
+    },
+    "full/frontends/aerial06/frontend/analytics.jsonl": {
+      "sha256": "b3f5851da7b2b67c4c36e8de9c233e109dfd5016f3002c54985ef949966ca4d0",
+      "bytes": 5395838
+    },
+    "full/frontends/aerial06/frontend/mapping.log": {
+      "sha256": "c06e760a0cb0bb8d210d3dc4183b2c21fe1f5aed352d7821cca671166590aa74",
+      "bytes": 1028
+    },
+    "full/frontends/aerial06/frontend/mapping_config.yaml": {
+      "sha256": "4a990a621f16a5963271ed05ef5c12800c93b126ca5c62b5d6a33134048ed151",
+      "bytes": 1158
+    },
+    "full/frontends/aerial06/frontend/native_updates.jsonl": {
+      "sha256": "51f7e4c9f588259cbb389f04374520732c6832c64f9e19804d8b68305520e777",
+      "bytes": 2091476
+    },
+    "full/frontends/aerial06/frontend/playback.log": {
+      "sha256": "ad3c74222b98c7559a4db442e8fc18f6e95ef006e092247ba2af878ea39779f9",
+      "bytes": 435
+    },
+    "full/frontends/aerial06/frontend/processes.json": {
+      "sha256": "9edf31bbb7d06bffaa6f22abd11df705f5da0ecd2e00914c37c3104723a92b64",
+      "bytes": 32
+    },
+    "full/frontends/aerial06/frontend/progress.json": {
+      "sha256": "4b46aa586f32daaeee78934d8d9710257ace542220e7c54466d7360a62343dcb",
+      "bytes": 737
+    },
+    "full/frontends/aerial06/frontend/runtime.yaml": {
+      "sha256": "1feb3392c0d19de3d3f20782a2c354ef17029abb9ee95d6458890349540534a5",
+      "bytes": 1875
+    },
+    "full/frontends/aerial06/frontend/submaps/index.jsonl": {
+      "sha256": "3ff135a98b8275ddea87a0e4efee603187613cf93d145b45dcdd6d49a77f631a",
+      "bytes": 50046
+    },
+    "full/frontends/aerial06/frontend/submaps/manifest.json": {
+      "sha256": "6601a528af2dfb08e2a3fe6d37286b2cf8fddf2b7e1b5062ae82bde19431526f",
+      "bytes": 149
+    },
+    "full/frontends/aerial06/frontend/summary.json": {
+      "sha256": "f74d8b8d1de4a283c1f0fd38ce4c93c2c8dbf710270e49148e64d85e92d6dc63",
+      "bytes": 866
+    },
+    "full/frontends/aerial06/memory.jsonl": {
+      "sha256": "5f1e682679a222464f591d1ff3a8f194cc68a3d6f47b7f479a3b8035acc0d717",
+      "bytes": 22444
+    },
+    "full/frontends/aerial06/recorder.log": {
+      "sha256": "68b0d5c334543925f93098f3b23ac79f79213184b0ba8cdf0c22cd832fa5bd84",
+      "bytes": 247
+    },
+    "full/frontends/aerial06/recording/ABOUT.md": {
+      "sha256": "b02b977c6de93bb4d0acb68e6ca7ea4d5f99c62aa5cd65c5783cb33aeb7746b5",
+      "bytes": 1155
+    },
+    "full/frontends/aerial06/recording/READY": {
+      "sha256": "a72efd328369280ccc15266a7f25e819a7840e805561053cea97a8c6ab976a4e",
+      "bytes": 20
+    },
+    "full/frontends/aerial06/recording/analytics.jsonl": {
+      "sha256": "866921553e6795d1645f70a868783e8195c204914245b4618cda44b41b7b4000",
+      "bytes": 4996250
+    },
+    "full/frontends/aerial06/recording/post_lidar_poses.tum": {
+      "sha256": "4eed35eca229e962fa6a92a78afe4c1e70ac2d9bd213b02e0767ecdca23a45dc",
+      "bytes": 385585
+    },
+    "full/frontends/aerial06/recording/status.json": {
+      "sha256": "a8d6c26e64a2ff230674ceb4fab2f543081691c3878cb0d392a4564b7ce3a804",
+      "bytes": 3880
+    },
+    "full/frontends/aerial06/selected_mapping.yaml": {
+      "sha256": "4a990a621f16a5963271ed05ef5c12800c93b126ca5c62b5d6a33134048ed151",
+      "bytes": 1158
+    },
+    "full/frontends/aerial06/sensor-coverage.json": {
+      "sha256": "55f9508b2a922542c878af32813294b2b8c3e2e0eb27ebf52bdb889b2fb939e1",
+      "bytes": 498
+    },
+    "full/frontends/aerial06/source-hashes.json": {
+      "sha256": "a9f230d94e3ad8fc59df6c0d7f5993faea1493883cdbddcb9c0cb9b238a83a16",
+      "bytes": 7959
+    },
+    "full/frontends/aerial06/trial.log": {
+      "sha256": "202036a0087d97ecd36426163250727af89493a6d12fa929c485571a3bd9c0c5",
+      "bytes": 1338
+    },
+    "full/frontends/aerial07/artifact-validation.json": {
+      "sha256": "4d0b8b6e1b9cbcf054ca050343c93b947285f5f2c7c4a290c3c1e8220c2aa185",
+      "bytes": 261
+    },
+    "full/frontends/aerial07/frontend/analytics.jsonl": {
+      "sha256": "dd6beb506e0ea7d21a9a4f66ff8033016ad7ee782dc00198a4976e3c451428a1",
+      "bytes": 6432676
+    },
+    "full/frontends/aerial07/frontend/mapping.log": {
+      "sha256": "20e2ba1716d61579159bb418aba7b01f12d2dd011cc9880551ec2e4882f8d8b4",
+      "bytes": 937
+    },
+    "full/frontends/aerial07/frontend/mapping_config.yaml": {
+      "sha256": "e281d80c496b2e269893f945f9c0636a92828558f184c517a50495ae8669d0a9",
+      "bytes": 1158
+    },
+    "full/frontends/aerial07/frontend/native_updates.jsonl": {
+      "sha256": "b4d8b59b1817e3db9ca287bfc13c6451a71aaa5e83415efa366b199184c50b68",
+      "bytes": 2498759
+    },
+    "full/frontends/aerial07/frontend/playback.log": {
+      "sha256": "1ec986348aa984b77f50dde70c94336463f30e7df474baad6668a47e189a2792",
+      "bytes": 435
+    },
+    "full/frontends/aerial07/frontend/processes.json": {
+      "sha256": "031e91318494bf03e9ce17618b38d7d20bfdb35fb7d224f45d35923abc5e5f2f",
+      "bytes": 32
+    },
+    "full/frontends/aerial07/frontend/progress.json": {
+      "sha256": "35034efdb93095eb2a70ee97513866525e7142286a9c7272f512ebd6acb77984",
+      "bytes": 735
+    },
+    "full/frontends/aerial07/frontend/runtime.yaml": {
+      "sha256": "5e0c9b68187e4608ca75be41b93fea57d12c8a8a576ca6e43911f5c2dd110478",
+      "bytes": 1875
+    },
+    "full/frontends/aerial07/frontend/submaps/index.jsonl": {
+      "sha256": "5906962a12d990ad369c429b8e0b0a7a65790b053e94efa068bb085c0379b705",
+      "bytes": 63039
+    },
+    "full/frontends/aerial07/frontend/submaps/manifest.json": {
+      "sha256": "4ef73a9a10d37338702ce3e8ebfd23c38c3b8d77ee16bd00bf3a8389e2251422",
+      "bytes": 149
+    },
+    "full/frontends/aerial07/frontend/summary.json": {
+      "sha256": "e9fe7278a20e61467d93046d770995c9d28a5e148c66fb257751483a4ce1c3fc",
+      "bytes": 866
+    },
+    "full/frontends/aerial07/memory.jsonl": {
+      "sha256": "28fff11047714e02cae408b354ec363180ef8256ebbe476c3ae99a742b01eede",
+      "bytes": 26867
+    },
+    "full/frontends/aerial07/recorder.log": {
+      "sha256": "f21ea8926a74b155cec4c2c99f98481b5b0b22b8ecaafe13f43f3f790181f635",
+      "bytes": 247
+    },
+    "full/frontends/aerial07/recording/ABOUT.md": {
+      "sha256": "0a10f39cb6b07bb98c3b0378d3fd0cd0ff66b075107fe386a8c0ff8a72478041",
+      "bytes": 1155
+    },
+    "full/frontends/aerial07/recording/READY": {
+      "sha256": "330a60cb9eebd106c620e41a285a7f17595f19daf5206d6be0412c69970e088e",
+      "bytes": 20
+    },
+    "full/frontends/aerial07/recording/analytics.jsonl": {
+      "sha256": "b1f0dd9bd0e6cdaee2f352b440a3219b815809cb15a912c66421f2b38a69924a",
+      "bytes": 5956172
+    },
+    "full/frontends/aerial07/recording/post_lidar_poses.tum": {
+      "sha256": "6b4b392cb49d8ba8ca8d9daa4fd5fef8292ab9d9502abe19ad987f9cf64facab",
+      "bytes": 455042
+    },
+    "full/frontends/aerial07/recording/status.json": {
+      "sha256": "4e746d960e5fd7c651c5b54217f2f078354bd62865056c2646126fb2d20e048d",
+      "bytes": 4439
+    },
+    "full/frontends/aerial07/selected_mapping.yaml": {
+      "sha256": "e281d80c496b2e269893f945f9c0636a92828558f184c517a50495ae8669d0a9",
+      "bytes": 1158
+    },
+    "full/frontends/aerial07/sensor-coverage.json": {
+      "sha256": "e0065b57f68db944973c189c718920eb5c6a57056e726693cde4f7e7065d227a",
+      "bytes": 498
+    },
+    "full/frontends/aerial07/source-hashes.json": {
+      "sha256": "54fee9d73d28721d2ba20573797b61bc5b1fdc623c589d4812651ac8cd14b9bb",
+      "bytes": 7959
+    },
+    "full/frontends/aerial07/trial.log": {
+      "sha256": "c8910c91a0ed20825f815a2f457b4966b21b3a8f2a1c8618ee2d6ea9e7815065",
+      "bytes": 1482
+    },
+    "full/frontends/aerial08/artifact-validation.json": {
+      "sha256": "33e592e16ff42ed9ace06046c2a867e619b5c281ed93b328890a4896cbab83b6",
+      "bytes": 261
+    },
+    "full/frontends/aerial08/frontend/analytics.jsonl": {
+      "sha256": "d1fc3e806af7ec091d996ce28c3a07d7f21187c66b9e6ed2cae5fb2c95266062",
+      "bytes": 4669179
+    },
+    "full/frontends/aerial08/frontend/mapping.log": {
+      "sha256": "19f06fad0c90aedd0244ce1400b06478e36fdf5e49a629975bb23cdbcf3566e0",
+      "bytes": 846
+    },
+    "full/frontends/aerial08/frontend/mapping_config.yaml": {
+      "sha256": "0dcea44469c925c78bb685c6a22e66f835d6fc31a633444a8f360fccb7c9a541",
+      "bytes": 1158
+    },
+    "full/frontends/aerial08/frontend/native_updates.jsonl": {
+      "sha256": "e40659b5d64f0ce928031a7e9e381ff6400535492db31d95b003dd8e6adca5a9",
+      "bytes": 1764557
+    },
+    "full/frontends/aerial08/frontend/playback.log": {
+      "sha256": "2c614a464b2eb6d9071a1ddaebddbf1efcd6700a701d078e61d0455a49329562",
+      "bytes": 435
+    },
+    "full/frontends/aerial08/frontend/processes.json": {
+      "sha256": "f9e24040f3631896d4c0c03fcb2777da0b2de776e3d28a269af2a6f2c238df62",
+      "bytes": 32
+    },
+    "full/frontends/aerial08/frontend/progress.json": {
+      "sha256": "890bd416a611a5cd67f0975478c8804d48dd25a49a49307e51081ce4d33947b7",
+      "bytes": 737
+    },
+    "full/frontends/aerial08/frontend/runtime.yaml": {
+      "sha256": "1aecfe2859fa4cda53a79e62e056a1933e2f6cffca9d4975709c278f3f8478e2",
+      "bytes": 1875
+    },
+    "full/frontends/aerial08/frontend/submaps/index.jsonl": {
+      "sha256": "f4379905b321987c2de5352f4d2ad84e084baca17375755f578764e2d6a68b3d",
+      "bytes": 50746
+    },
+    "full/frontends/aerial08/frontend/submaps/manifest.json": {
+      "sha256": "60626407108f3b6b1bb000e782103557f92ef339b19824c2215d01f5de6a8623",
+      "bytes": 149
+    },
+    "full/frontends/aerial08/frontend/summary.json": {
+      "sha256": "327d28fbf2071f52376243e97f57a922af94948c645cbc678beea8e7c8f2a26b",
+      "bytes": 867
+    },
+    "full/frontends/aerial08/memory.jsonl": {
+      "sha256": "49ecb990ca022dfef3d0e07430b29508f6346fb741d3dd737ae2dbd1addb2354",
+      "bytes": 18894
+    },
+    "full/frontends/aerial08/recorder.log": {
+      "sha256": "8ff26cacca43101fd08ef9954c77b92e77049a8ae8ebfc2e925d5cb01e3169a9",
+      "bytes": 247
+    },
+    "full/frontends/aerial08/recording/ABOUT.md": {
+      "sha256": "bb9d9107387b026162c479e2ec278d888f75296fa20acce9947f4efb134454c6",
+      "bytes": 1155
+    },
+    "full/frontends/aerial08/recording/READY": {
+      "sha256": "29e9effae66c321337fa334bbbadafecd728d73409a4b137d5349092b40d81ed",
+      "bytes": 20
+    },
+    "full/frontends/aerial08/recording/analytics.jsonl": {
+      "sha256": "4ebe3ecedf04311ccc67ec5e73ada2c262aa90d8f34ce3a7f8f4548eb01e823d",
+      "bytes": 4323459
+    },
+    "full/frontends/aerial08/recording/post_lidar_poses.tum": {
+      "sha256": "376d0a0cf15c043b4447c45b11935774807d21ef6563601201016456b7426207",
+      "bytes": 333909
+    },
+    "full/frontends/aerial08/recording/status.json": {
+      "sha256": "d6e9fda66d28454b52d6711b3f3f6105d34008c35b9f30ecd508aaf8f3aaac54",
+      "bytes": 3469
+    },
+    "full/frontends/aerial08/selected_mapping.yaml": {
+      "sha256": "0dcea44469c925c78bb685c6a22e66f835d6fc31a633444a8f360fccb7c9a541",
+      "bytes": 1158
+    },
+    "full/frontends/aerial08/sensor-coverage.json": {
+      "sha256": "305af0bfc77f836044a472bb23a51c5affa52a9ff81e546005605c32e1b6f56f",
+      "bytes": 498
+    },
+    "full/frontends/aerial08/source-hashes.json": {
+      "sha256": "42896a2a4eb7b765adbd8bcce09e573cad838aca825abbe540e4e163c00c8aaf",
+      "bytes": 7959
+    },
+    "full/frontends/aerial08/trial.log": {
+      "sha256": "bda7c0432410a1c883e4896ee923255438c671852b6c6722416d225fa67cc0c9",
+      "bytes": 1291
+    },
+    "full/prepared-aerial05/ellipsoid/000000.json.zlib": {
+      "sha256": "b8701457bdbd6310489c9d5df5419433e821b642468a2265705ffc6278fbf9bb",
+      "bytes": 5512
+    },
+    "full/prepared-aerial05/ellipsoid/000001.json.zlib": {
+      "sha256": "1121854e5b75512683216bbf06c8fb1f611c354780f4b866bec2da462dd9b211",
+      "bytes": 3250
+    },
+    "full/prepared-aerial05/ellipsoid/000002.json.zlib": {
+      "sha256": "498217b91fcad3c4ffef3fe983b9b2c2be1359cb45ef9f96d0bace02ab0794e0",
+      "bytes": 4048
+    },
+    "full/prepared-aerial05/ellipsoid/000003.json.zlib": {
+      "sha256": "e87193bcae29184854248e564ff367462855f70a8b258cad48959c519937a101",
+      "bytes": 4652
+    },
+    "full/prepared-aerial05/ellipsoid/000004.json.zlib": {
+      "sha256": "01e58784b6d297a0bb43829eade47c8f10bbd0c8a5187656b72f15f87e0e1649",
+      "bytes": 3100
+    },
+    "full/prepared-aerial05/ellipsoid/000005.json.zlib": {
+      "sha256": "f95157c39091cdaa163a315bf8b05eed47d1f5e0feabf79a225ac157027c5437",
+      "bytes": 4628
+    },
+    "full/prepared-aerial05/ellipsoid/000006.json.zlib": {
+      "sha256": "32f3dda7121489c6bf78e21b5fe8712e2060e4ab75df52718f89d2d9afe273ef",
+      "bytes": 7106
+    },
+    "full/prepared-aerial05/ellipsoid/000007.json.zlib": {
+      "sha256": "812c019a3710e78ed0856a013b97de4a789562b0fa8d1d06856ca330dc42195b",
+      "bytes": 4096
+    },
+    "full/prepared-aerial05/ellipsoid/000008.json.zlib": {
+      "sha256": "072ab2f400377e22264f6006eb1753ed9cc71b1418d983b9cd6a91a55108d3b2",
+      "bytes": 3897
+    },
+    "full/prepared-aerial05/ellipsoid/000009.json.zlib": {
+      "sha256": "f5928e21acaf13d46020bd6ea200a029599dc02f06e66028e38362e1f974d8ab",
+      "bytes": 4238
+    },
+    "full/prepared-aerial05/ellipsoid/000010.json.zlib": {
+      "sha256": "a910b2b3ef7d1684520caaa3a2bc1fad3834f71d22361dc7b891cc5ab6442dd8",
+      "bytes": 6987
+    },
+    "full/prepared-aerial05/ellipsoid/000011.json.zlib": {
+      "sha256": "915d7b13fb4c82687db1d045376134c0a10e1d743ad8fa68085aaa5010653d1b",
+      "bytes": 3232
+    },
+    "full/prepared-aerial05/ellipsoid/000012.json.zlib": {
+      "sha256": "dbf20de497b3a71e2c6220d995c1adb0fc8056e2ded680a54c668cb8b222a504",
+      "bytes": 3215
+    },
+    "full/prepared-aerial05/ellipsoid/000013.json.zlib": {
+      "sha256": "34c0253f36289905634d542c3ec21d72e411b188ee67535c5f93760ebe1728e0",
+      "bytes": 4380
+    },
+    "full/prepared-aerial05/ellipsoid/000014.json.zlib": {
+      "sha256": "4f203bcab33c3e55c24b7ad4498054aec43572c36c914473774c645efe5af804",
+      "bytes": 3935
+    },
+    "full/prepared-aerial05/ellipsoid/000015.json.zlib": {
+      "sha256": "d281e3fa9299cd9e4f327fbb2581e61e1eea09883845bd77036a8bdad6934f11",
+      "bytes": 3570
+    },
+    "full/prepared-aerial05/ellipsoid/000016.json.zlib": {
+      "sha256": "c41c66511b40d4a44c9a0ab2558ae3c13ef3981c29c8170c36800806d17efcc1",
+      "bytes": 6991
+    },
+    "full/prepared-aerial05/ellipsoid/000017.json.zlib": {
+      "sha256": "eeec9e2243b7f05e718f137ab9000259bb571134549833caee69560ab49fb6d7",
+      "bytes": 4045
+    },
+    "full/prepared-aerial05/ellipsoid/000018.json.zlib": {
+      "sha256": "bd78823fa876ec637a7333abee6cd1096b86875b367b9631c128d364d8b4b417",
+      "bytes": 3605
+    },
+    "full/prepared-aerial05/ellipsoid/000019.json.zlib": {
+      "sha256": "887055d3424cbf079d1f0f9640a0a005014c1a331a0eac5264e963a0d28ac2a0",
+      "bytes": 4832
+    },
+    "full/prepared-aerial05/ellipsoid/000020.json.zlib": {
+      "sha256": "242c2559048c3f0b3d7e7a8bdc0bdf908f329180bb2902a0641407329224fac1",
+      "bytes": 3344
+    },
+    "full/prepared-aerial05/ellipsoid/000021.json.zlib": {
+      "sha256": "259a07ee84fe11618ec5411cb6107bddd5ae27f7f695924cee9cfb6bb8147569",
+      "bytes": 3894
+    },
+    "full/prepared-aerial05/ellipsoid/000022.json.zlib": {
+      "sha256": "28a1efefa3210bd06ae090aca3c4db9757df4784873982d5c5f7a1526ebd136b",
+      "bytes": 4484
+    },
+    "full/prepared-aerial05/store/keyframes.jsonl": {
+      "sha256": "e52022adec602b0266f43ef291e746dd6697a3abdb3df9227994fd8213857e2e",
+      "bytes": 65068
+    },
+    "full/prepared-aerial05/summary.json": {
+      "sha256": "3c7cf3b2cbb00ee893bcaea1905fdb96231ff6762d816c3e5ad6b8c58cefafd8",
+      "bytes": 352
+    },
+    "full/prepared-aerial05/timings.jsonl": {
+      "sha256": "b93b223dc0a5b7a4c8a6857dba8ff176668420fd3900a84a70c632574d623518",
+      "bytes": 18617
+    },
+    "full/prepared-aerial06/ellipsoid/000000.json.zlib": {
+      "sha256": "8c542668283b2106d512dc564fbb6e277a7118d06536025c0ee2b521c6bf0577",
+      "bytes": 13942
+    },
+    "full/prepared-aerial06/ellipsoid/000001.json.zlib": {
+      "sha256": "9329b815e13fce084946f6090ea1ccf7044320064233dffd6516047f04023740",
+      "bytes": 7191
+    },
+    "full/prepared-aerial06/ellipsoid/000002.json.zlib": {
+      "sha256": "a5b5eb669b0fa8f517dc0877c214f55cc86d010332bb958b8e88d21188c7d4ef",
+      "bytes": 4680
+    },
+    "full/prepared-aerial06/ellipsoid/000003.json.zlib": {
+      "sha256": "2dddb72672d873fa9d32b03b2d788483a4bcc7c6b9d352d157d68733de9c49d7",
+      "bytes": 10636
+    },
+    "full/prepared-aerial06/ellipsoid/000004.json.zlib": {
+      "sha256": "7f21ee1f3d2b96a4d205a68d99e30acf25bfc375c41311946496e381c58b1a08",
+      "bytes": 4337
+    },
+    "full/prepared-aerial06/ellipsoid/000005.json.zlib": {
+      "sha256": "4c3c1f92e4646927494283d37119b9a3256538ad5186a0f4acd29a79f810bce9",
+      "bytes": 6539
+    },
+    "full/prepared-aerial06/ellipsoid/000006.json.zlib": {
+      "sha256": "3f10fad9bd8dbec023af7e71bedde2ae34d64821cfa81a761c1bc7ce961ead39",
+      "bytes": 6836
+    },
+    "full/prepared-aerial06/ellipsoid/000007.json.zlib": {
+      "sha256": "93e02bba5dac7b6acf895e8934ec8fb030530fb4cac2eeb02424c83abb74b57b",
+      "bytes": 5093
+    },
+    "full/prepared-aerial06/ellipsoid/000008.json.zlib": {
+      "sha256": "5a4f5de08aba294937c9652dd9f729313cc023c8369f622b08522d727da0c8dc",
+      "bytes": 6757
+    },
+    "full/prepared-aerial06/ellipsoid/000009.json.zlib": {
+      "sha256": "685b793fdbf2ecb6bc5b8d4797ccc5b48d197aa481f1673a665769aa783348d6",
+      "bytes": 6856
+    },
+    "full/prepared-aerial06/ellipsoid/000010.json.zlib": {
+      "sha256": "98e5ce7237354452976548c47394188084d59480f6f040057f6830dbc06bc42d",
+      "bytes": 6115
+    },
+    "full/prepared-aerial06/store/keyframes.jsonl": {
+      "sha256": "1624368e4b149d76db975f9da841b069f112c89194946a97fb2dae6066d71bee",
+      "bytes": 41194
+    },
+    "full/prepared-aerial06/summary.json": {
+      "sha256": "9907674f641683fb37545af43a7fcf647104e86122cd61e41c1f596697cf5030",
+      "bytes": 351
+    },
+    "full/prepared-aerial06/timings.jsonl": {
+      "sha256": "fc60e4a6cf311e3bf86db82ab5032895350bc3f540c4e7a8328719e5e45544cc",
+      "bytes": 8919
+    },
+    "full/prepared-aerial07/ellipsoid/000000.json.zlib": {
+      "sha256": "606fac2e5cceb8829c042cc9e3f33516ad95db36e42bf5fe68e382dd58f77411",
+      "bytes": 7654
+    },
+    "full/prepared-aerial07/ellipsoid/000001.json.zlib": {
+      "sha256": "9e805bf8daf51b3524021368b010f2b58eae424576ceb932ed19de5d9ec0e053",
+      "bytes": 4896
+    },
+    "full/prepared-aerial07/ellipsoid/000002.json.zlib": {
+      "sha256": "fc4af2a2a34004a5a14c0534bc7ea43e49edb86b05e3f2f2deb6999311a2b9fc",
+      "bytes": 6246
+    },
+    "full/prepared-aerial07/ellipsoid/000003.json.zlib": {
+      "sha256": "72819745646c3a620794b70a54302f476a7b4cfbdd71dddb061e49b0d9046067",
+      "bytes": 5042
+    },
+    "full/prepared-aerial07/ellipsoid/000004.json.zlib": {
+      "sha256": "118944c1730e481aa00906428c0614cf5d2b9dd8a3574df39cf5e4e9a6a26f43",
+      "bytes": 8225
+    },
+    "full/prepared-aerial07/ellipsoid/000005.json.zlib": {
+      "sha256": "5a9db424a52a6c41bece9b0af53ae54246f738a60100594c0b94ee9ac03e6bda",
+      "bytes": 5145
+    },
+    "full/prepared-aerial07/ellipsoid/000006.json.zlib": {
+      "sha256": "3324f22f3e7faea8989d27d300e22369817b80d6f109046cf8b16fa53fcbe581",
+      "bytes": 4845
+    },
+    "full/prepared-aerial07/ellipsoid/000007.json.zlib": {
+      "sha256": "c394a4af82c290e98b719f219aad97202a1fb68832c93cc88126fbda5231af90",
+      "bytes": 5299
+    },
+    "full/prepared-aerial07/ellipsoid/000008.json.zlib": {
+      "sha256": "ef3cd018661dcff6219652a0844b59694e9f902ea976f0a44bbe0fc7968f285b",
+      "bytes": 2726
+    },
+    "full/prepared-aerial07/ellipsoid/000009.json.zlib": {
+      "sha256": "b317ba456e1b75b2edaf0d91eb6caba060548038720598eaa9d2c99f37de1200",
+      "bytes": 6239
+    },
+    "full/prepared-aerial07/ellipsoid/000010.json.zlib": {
+      "sha256": "56b683aad3e5a1669598a7d409fb80d0a8ea7c690a9cea82b3b1cac8e4266540",
+      "bytes": 5524
+    },
+    "full/prepared-aerial07/ellipsoid/000011.json.zlib": {
+      "sha256": "0f135735e0af9c960168abaf3c5d4799f34bcee82d0b963d57d345352f049e17",
+      "bytes": 5299
+    },
+    "full/prepared-aerial07/ellipsoid/000012.json.zlib": {
+      "sha256": "028331950b69927d71fa27d4ac8294868a2ca9ce3500db96f9e4f11ca63d09e8",
+      "bytes": 5203
+    },
+    "full/prepared-aerial07/ellipsoid/000013.json.zlib": {
+      "sha256": "14fc67738bfe357688755fcee66053f7ba7e7c099499d54e4c4b7c1905842719",
+      "bytes": 3606
+    },
+    "full/prepared-aerial07/ellipsoid/000014.json.zlib": {
+      "sha256": "6023f105dcd602e51803013e9d8745e8d14a05e1a3d607e55d7637c4f9afd7b6",
+      "bytes": 8965
+    },
+    "full/prepared-aerial07/store/keyframes.jsonl": {
+      "sha256": "37389a9afefd02705e82d474c13d52f5abbdb7bcb8e47e01f860004885e8455d",
+      "bytes": 55455
+    },
+    "full/prepared-aerial07/summary.json": {
+      "sha256": "7675bd4916d1a987da62bc59e651b3a737a9d67a7b95d4e8157d87cd161cae9a",
+      "bytes": 352
+    },
+    "full/prepared-aerial07/timings.jsonl": {
+      "sha256": "2c4071ff92021a274871330735fa74ce3e0f36abac17ab6ca812a02a6446f6d0",
+      "bytes": 12160
+    },
+    "full/prepared-aerial08/ellipsoid/000000.json.zlib": {
+      "sha256": "7a15b120a4eb16e31497c8a43c1fc4575676c66df120627b475cf41703fdec17",
+      "bytes": 7332
+    },
+    "full/prepared-aerial08/ellipsoid/000001.json.zlib": {
+      "sha256": "7a2256c962b695cda2e82c5adb567e8e1a1ca4a7b48bf69ecb0b80be4f26b841",
+      "bytes": 6161
+    },
+    "full/prepared-aerial08/ellipsoid/000002.json.zlib": {
+      "sha256": "daf181f914dda1b0b0817545c0716823a96601f4e191014b01b22a1e3e9bab30",
+      "bytes": 4224
+    },
+    "full/prepared-aerial08/ellipsoid/000003.json.zlib": {
+      "sha256": "aab7b069363d0b03420e34298f84cd3ac767d459fbf4300ae9c8d994379cd5e9",
+      "bytes": 4700
+    },
+    "full/prepared-aerial08/ellipsoid/000004.json.zlib": {
+      "sha256": "04a032b56d0e65afcf33f893a85e481486c3725651feb22735aed1a98ba5e353",
+      "bytes": 3839
+    },
+    "full/prepared-aerial08/ellipsoid/000005.json.zlib": {
+      "sha256": "110f41c47f7f6bc161ac1a88f34e6e5db0496e994d955ebb8ce92a65bdf796ab",
+      "bytes": 3627
+    },
+    "full/prepared-aerial08/ellipsoid/000006.json.zlib": {
+      "sha256": "8c09340d27a171a7ae748ed3909ddabb9a70f5851e0616befd60b9ba9877e141",
+      "bytes": 4039
+    },
+    "full/prepared-aerial08/ellipsoid/000007.json.zlib": {
+      "sha256": "4aae47b5f0d6551359cfdcacf7033534b7474918578d93d4600602ee0ac0887f",
+      "bytes": 5108
+    },
+    "full/prepared-aerial08/ellipsoid/000008.json.zlib": {
+      "sha256": "479fa8f92a1ad1ad447b92b5df20ed30afbbbec519fad76370483213835a73ee",
+      "bytes": 9507
+    },
+    "full/prepared-aerial08/ellipsoid/000009.json.zlib": {
+      "sha256": "150a2de76bcb8c4c1c4da1c488350f2d2e893e21512bde5ef024c5572e1fdd5c",
+      "bytes": 8857
+    },
+    "full/prepared-aerial08/ellipsoid/000010.json.zlib": {
+      "sha256": "ddea8ee87ee2da7a066881fb680963aeb15efdc5336a0a21a7fa9f4bcb2b5d51",
+      "bytes": 8195
+    },
+    "full/prepared-aerial08/ellipsoid/000011.json.zlib": {
+      "sha256": "02d390ecf6fb33755e9c1f4e44da8e0a9e3b76d4dc062f5d918eef35e7a3f69d",
+      "bytes": 4407
+    },
+    "full/prepared-aerial08/ellipsoid/000012.json.zlib": {
+      "sha256": "0c8a07a4917679667e7144af9de63f544c3bc5d8e08527ba15e74779d96ca0b1",
+      "bytes": 3199
+    },
+    "full/prepared-aerial08/ellipsoid/000013.json.zlib": {
+      "sha256": "6fbcd176f783e8ca4c414504e582b6ef17464b940de9a88d54b237413a1b1358",
+      "bytes": 4855
+    },
+    "full/prepared-aerial08/ellipsoid/000014.json.zlib": {
+      "sha256": "07f5ee40dfdc177d9ac63cb36547ba974f54a430f9b0e293deb8408eed8c76d3",
+      "bytes": 9234
+    },
+    "full/prepared-aerial08/store/keyframes.jsonl": {
+      "sha256": "13f00e1d93220cdea0fd2d8aff5ddc8113734d0655f5f8819ff94472a122c604",
+      "bytes": 45807
+    },
+    "full/prepared-aerial08/summary.json": {
+      "sha256": "02e77cbb3f10bcfd58669975ad7b6104bd01a7a00deb4952a309a6d7589a3581",
+      "bytes": 351
+    },
+    "full/prepared-aerial08/timings.jsonl": {
+      "sha256": "c5f88161bdd960f2cb810fb085e6018053282acf770011cf91db98db83ab4c38",
+      "bytes": 12144
+    },
+    "full/recording-verification.log": {
+      "sha256": "e5c89096a17c5b8943119daf30d35ce3bf6ef37981495e7088204f1ca15665b3",
+      "bytes": 989
+    },
+    "full/reference/aerial05_gt.txt": {
+      "sha256": "e814e307b9db4050069b04c1e3617ef68abaa9d2d52d4291edc5dd69462455cb",
+      "bytes": 9475842
+    },
+    "full/reference/aerial06_gt.txt": {
+      "sha256": "e4f0042b36a0b32a8fd5b6eb02284f755d8c792eb3b95bae460fd635be8034f4",
+      "bytes": 10527388
+    },
+    "full/reference/aerial07_gt.txt": {
+      "sha256": "15fb7cc74610c8c61313bc80bd9f4659f1f230b54cb2c229fd78d2acbe93c942",
+      "bytes": 12630655
+    },
+    "full/reference/aerial08_gt.txt": {
+      "sha256": "5b4db62829284dcb3f8cee87b5f2f38aada52e81667a3fa73da576902dc4b33b",
+      "bytes": 8930375
+    },
+    "full/reference/reuse-provenance.json": {
+      "sha256": "326065ac81eae5d6282f3e88360cda4229fa36af6f9537827d7d9ef7df2c26e3",
+      "bytes": 235
+    },
+    "full/reference/source-hashes.json": {
+      "sha256": "d6277ff7c4d0589fb57abf92abf54aab7ed1548f6fb2ca9a58dc54a095ffd47b",
+      "bytes": 1315
+    },
+    "full/report/aerial05-cbs.jsonl": {
+      "sha256": "b1cba36d892e616a71b12017c2302946c448a860403ae6a9ecab8a137fd51200",
+      "bytes": 1010035
+    },
+    "full/report/aerial05-cbs.tum": {
+      "sha256": "d381fa35ecb538b0a5b494d886377751d44067e4305022a570966d14dc74a355",
+      "bytes": 351617
+    },
+    "full/report/aerial05-maps.npz": {
+      "sha256": "dc17ff996c296c92d7074321b56bcce0a02916c13c7eaa121e22b1384597ac0e",
+      "bytes": 53870634
+    },
+    "full/report/aerial05-raw.tum": {
+      "sha256": "c18758c2c4b3d754f724fa6f1abcdee4d80e53f8822edde77c5a8d53b0ef8f25",
+      "bytes": 354638
+    },
+    "full/report/aerial06-cbs.jsonl": {
+      "sha256": "bc296534ddeb7e70e7ba8ddc0c53cb6bed10094ce84f41b24b4a615e93b2ba8d",
+      "bytes": 1153172
+    },
+    "full/report/aerial06-cbs.tum": {
+      "sha256": "b9ce0d53708d48e102d6f442320c759ef58dcdf3f885bc81cdda2fee4797834a",
+      "bytes": 396390
+    },
+    "full/report/aerial06-maps.npz": {
+      "sha256": "9bd7bde894844adaf644991a1bdd38479363742a390e3b988a9e1ecd3b9482a5",
+      "bytes": 39193644
+    },
+    "full/report/aerial06-raw.tum": {
+      "sha256": "ec284477f728deda04b6c3200b7b1e4ad7270d06190cdff24f1c01a4369b4a32",
+      "bytes": 400817
+    },
+    "full/report/aerial07-cbs.jsonl": {
+      "sha256": "572b8543773cc1db7ef5f9308ec03df30ac98e955df5a9fbd1700578955a7033",
+      "bytes": 1366214
+    },
+    "full/report/aerial07-cbs.tum": {
+      "sha256": "e45a7395f8496a9292440842e293bc8de592a7873b6190d66a03ce806cf6f4d8",
+      "bytes": 472156
+    },
+    "full/report/aerial07-maps.npz": {
+      "sha256": "4b1518f45fea769fc405f6ec8c20eeb2e6af3fdaae2ce306c76ce3a8ba553f99",
+      "bytes": 53953417
+    },
+    "full/report/aerial07-raw.tum": {
+      "sha256": "7fc178a5bd8429d57df20c01e0823cc914929650ee18bfe77e607ae613d26286",
+      "bytes": 474461
+    },
+    "full/report/aerial08-cbs.jsonl": {
+      "sha256": "c53572f8a92da6789b71f913d0f69399c3ba3a6824b01caea3b0a466cb58e2ee",
+      "bytes": 962086
+    },
+    "full/report/aerial08-cbs.tum": {
+      "sha256": "845523c86c711dc78b51b76634b409d695e1e8e2258dcd30699677511955165f",
+      "bytes": 332018
+    },
+    "full/report/aerial08-maps.npz": {
+      "sha256": "24d0b91bbcb38f36b49bf5582943b4e1e510c257091258c8e755df36d8923625",
+      "bytes": 43327039
+    },
+    "full/report/aerial08-raw.tum": {
+      "sha256": "313f3f3d6dadda1712e7c77e9de251d784cfb79c97abd66c509ccf0ccb4b4189",
+      "bytes": 334951
+    },
+    "full/report/cbs-independent.json": {
+      "sha256": "ca03bd61f4aef8bd9584af2f56828fa120e3c18714a3c34247c4acb65acea1b0",
+      "bytes": 6285
+    },
+    "full/report/evo/cbs/README.md": {
+      "sha256": "f52615a1a00ca4ac0cebbf80e1b04b3660fc4fbb0a06bcbbb674bc2fca1fea27",
+      "bytes": 845
+    },
+    "full/report/evo/cbs/aerial05-ape.zip": {
+      "sha256": "3c6df23e459385797d6d7b6b8a6bae59d86de64f6d86aedc7dfa76b0497b45da",
+      "bytes": 1217704
+    },
+    "full/report/evo/cbs/aerial05-component-ape.zip": {
+      "sha256": "5aa485f2640845d63efd1ce859db12c9695561af6c2deeb34b29130dc54ebbcc",
+      "bytes": 1744153
+    },
+    "full/report/evo/cbs/aerial05-estimate-aligned.tum": {
+      "sha256": "a25c7453a2501f669a87b075d180affea8f0ade80c0ecbf602234ddc704ff896",
+      "bytes": 555504
+    },
+    "full/report/evo/cbs/aerial05-estimate.kitti": {
+      "sha256": "fc45e1d1260b8a59db55de207e4131485d2ba8fe71f157b42bb93e45d695b53f",
+      "bytes": 837190
+    },
+    "full/report/evo/cbs/aerial05-reference-matched.tum": {
+      "sha256": "5d532f668acf5ed6c0b4824cbc0cb5ffa0d5e4f783d67d0070f38cf8cf9d1520",
+      "bytes": 550000
+    },
+    "full/report/evo/cbs/aerial05-reference.kitti": {
+      "sha256": "c3fec9a00c01ee989286456c358d338a21f8ae0a8a3bca5f6e890d2cf25e390b",
+      "bytes": 825000
+    },
+    "full/report/evo/cbs/aerial06-ape.zip": {
+      "sha256": "6a8cfd90008735dc42628f06f91064b74377b6934d41382d83b9fc0c6737cb93",
+      "bytes": 1372945
+    },
+    "full/report/evo/cbs/aerial06-component-ape.zip": {
+      "sha256": "e94f35b962acce5dcccc2d4dc65ccdf8890e1cb3ad1c2a8abf413a051c2cecf5",
+      "bytes": 1966844
+    },
+    "full/report/evo/cbs/aerial06-estimate-aligned.tum": {
+      "sha256": "65db5505c98845bd5229231cf8818588cf60b85cd8720287c132e00a8bd37f6c",
+      "bytes": 626475
+    },
+    "full/report/evo/cbs/aerial06-estimate.kitti": {
+      "sha256": "65419da19b825532d057d83f80efa6d50ccb16a18fd1c4e09cc49fbe611e0171",
+      "bytes": 943097
+    },
+    "full/report/evo/cbs/aerial06-reference-matched.tum": {
+      "sha256": "f784bf815dd324accf41ee6776dc75c671c9b0ff84c88b6f8b26d4b589d4552e",
+      "bytes": 620270
+    },
+    "full/report/evo/cbs/aerial06-reference.kitti": {
+      "sha256": "5c9c740d24421c9f20910bf8df6f8473a8be407ef7f55590564a312d7dcf5c20",
+      "bytes": 930270
+    },
+    "full/report/evo/cbs/aerial07-ape.zip": {
+      "sha256": "892990dd92b6e1eda4ce4c296ee8909341bb06209c2fe2ef4c1958b1cfb130f7",
+      "bytes": 1642322
+    },
+    "full/report/evo/cbs/aerial07-component-ape.zip": {
+      "sha256": "fd05f32a3b1f34af2a0e08a34d85809fdd5e179a566f169a83db358b24d39be8",
+      "bytes": 2352373
+    },
+    "full/report/evo/cbs/aerial07-estimate-aligned.tum": {
+      "sha256": "506b1ac5a3c3041f3308c7968178304f38650e1726e283aa63818795ae53a53b",
+      "bytes": 749623
+    },
+    "full/report/evo/cbs/aerial07-estimate.kitti": {
+      "sha256": "f092fb3e5ed1246dff1ca2df08138aa695c3b55c645a5a4bafa7c0c4f3f2c71a",
+      "bytes": 1128712
+    },
+    "full/report/evo/cbs/aerial07-reference-matched.tum": {
+      "sha256": "8323d3fd69a8d9caf54b4a96ed4fbd7ac1e4d0035d858953afc2a91716c15f6d",
+      "bytes": 742215
+    },
+    "full/report/evo/cbs/aerial07-reference.kitti": {
+      "sha256": "2a7786a2c63a7e8e617c963d6c7dfa336a9b663a5179fce1dc300f3a7355b41d",
+      "bytes": 1112915
+    },
+    "full/report/evo/cbs/aerial08-ape.zip": {
+      "sha256": "b1feeae8553566a6b92840d35d4f7bf58c6ef27e4a0599cf3f3e66c86d6feb25",
+      "bytes": 1160934
+    },
+    "full/report/evo/cbs/aerial08-component-ape.zip": {
+      "sha256": "24b89b103fd96292c9a03dd93de0e308cb06312fb34773f034f6225d83f830d2",
+      "bytes": 1662632
+    },
+    "full/report/evo/cbs/aerial08-estimate-aligned.tum": {
+      "sha256": "0372d60b4aaf71ccf94f5fd0fef841724d0418c990214ecc2627c2a9f9c5cece",
+      "bytes": 529594
+    },
+    "full/report/evo/cbs/aerial08-estimate.kitti": {
+      "sha256": "75ba4e90a704c15f0064fcfbf73bb435109fea53049138e3bef4a92ef3bcff1a",
+      "bytes": 795746
+    },
+    "full/report/evo/cbs/aerial08-reference-matched.tum": {
+      "sha256": "72becef291a5d55444262d668c114ab58c601caddcb07ccbb99cae0914f0175d",
+      "bytes": 524334
+    },
+    "full/report/evo/cbs/aerial08-reference.kitti": {
+      "sha256": "495a8d485ccd7821d433e8d717ed57cbfd50908aaac089182e7a8061aab395e9",
+      "bytes": 786334
+    },
+    "full/report/evo/cbs/evaluation.json": {
+      "sha256": "11cfba068d9788cf7b3c96c5b2d876ba6433a2fca9fa7ab06429cc019bd2faea",
+      "bytes": 5011
+    },
+    "full/report/evo/cbs-independent/README.md": {
+      "sha256": "f52615a1a00ca4ac0cebbf80e1b04b3660fc4fbb0a06bcbbb674bc2fca1fea27",
+      "bytes": 845
+    },
+    "full/report/evo/cbs-independent/aerial05-ape.zip": {
+      "sha256": "74cbe7983e9c58943fda4765b082daf8d901ea8f48bc0eb9a0f0e8c93b4ce578",
+      "bytes": 1217704
+    },
+    "full/report/evo/cbs-independent/aerial05-component-ape.zip": {
+      "sha256": "7e07d5717cfa5d064f685ccad897231b8b9581fff0ebd8e17c209cfefbfaec7e",
+      "bytes": 1744153
+    },
+    "full/report/evo/cbs-independent/aerial05-estimate-aligned.tum": {
+      "sha256": "a25c7453a2501f669a87b075d180affea8f0ade80c0ecbf602234ddc704ff896",
+      "bytes": 555504
+    },
+    "full/report/evo/cbs-independent/aerial05-estimate.kitti": {
+      "sha256": "fc45e1d1260b8a59db55de207e4131485d2ba8fe71f157b42bb93e45d695b53f",
+      "bytes": 837190
+    },
+    "full/report/evo/cbs-independent/aerial05-reference-matched.tum": {
+      "sha256": "5d532f668acf5ed6c0b4824cbc0cb5ffa0d5e4f783d67d0070f38cf8cf9d1520",
+      "bytes": 550000
+    },
+    "full/report/evo/cbs-independent/aerial05-reference.kitti": {
+      "sha256": "c3fec9a00c01ee989286456c358d338a21f8ae0a8a3bca5f6e890d2cf25e390b",
+      "bytes": 825000
+    },
+    "full/report/evo/cbs-independent/aerial06-ape.zip": {
+      "sha256": "5e6977e6a5144a8eb3523ca9d0ad0e440da0ff06ec1ef1a7aad1cbadee4debc0",
+      "bytes": 1372945
+    },
+    "full/report/evo/cbs-independent/aerial06-component-ape.zip": {
+      "sha256": "13d4420366beff2594fc9948df585780f771a4f0cbd7fc3f1e41fa7db13091e7",
+      "bytes": 1966844
+    },
+    "full/report/evo/cbs-independent/aerial06-estimate-aligned.tum": {
+      "sha256": "65db5505c98845bd5229231cf8818588cf60b85cd8720287c132e00a8bd37f6c",
+      "bytes": 626475
+    },
+    "full/report/evo/cbs-independent/aerial06-estimate.kitti": {
+      "sha256": "65419da19b825532d057d83f80efa6d50ccb16a18fd1c4e09cc49fbe611e0171",
+      "bytes": 943097
+    },
+    "full/report/evo/cbs-independent/aerial06-reference-matched.tum": {
+      "sha256": "f784bf815dd324accf41ee6776dc75c671c9b0ff84c88b6f8b26d4b589d4552e",
+      "bytes": 620270
+    },
+    "full/report/evo/cbs-independent/aerial06-reference.kitti": {
+      "sha256": "5c9c740d24421c9f20910bf8df6f8473a8be407ef7f55590564a312d7dcf5c20",
+      "bytes": 930270
+    },
+    "full/report/evo/cbs-independent/aerial07-ape.zip": {
+      "sha256": "a2a74a9cc9141ab11507014f11aa7b9a920ee25d9a8da889cc2eaa91791b5c79",
+      "bytes": 1642322
+    },
+    "full/report/evo/cbs-independent/aerial07-component-ape.zip": {
+      "sha256": "79d87cf2313e0cb3b68ead65ccbd48cb45d1a815a89227e3f51d8f33f17ba535",
+      "bytes": 2352373
+    },
+    "full/report/evo/cbs-independent/aerial07-estimate-aligned.tum": {
+      "sha256": "506b1ac5a3c3041f3308c7968178304f38650e1726e283aa63818795ae53a53b",
+      "bytes": 749623
+    },
+    "full/report/evo/cbs-independent/aerial07-estimate.kitti": {
+      "sha256": "f092fb3e5ed1246dff1ca2df08138aa695c3b55c645a5a4bafa7c0c4f3f2c71a",
+      "bytes": 1128712
+    },
+    "full/report/evo/cbs-independent/aerial07-reference-matched.tum": {
+      "sha256": "8323d3fd69a8d9caf54b4a96ed4fbd7ac1e4d0035d858953afc2a91716c15f6d",
+      "bytes": 742215
+    },
+    "full/report/evo/cbs-independent/aerial07-reference.kitti": {
+      "sha256": "2a7786a2c63a7e8e617c963d6c7dfa336a9b663a5179fce1dc300f3a7355b41d",
+      "bytes": 1112915
+    },
+    "full/report/evo/cbs-independent/aerial08-ape.zip": {
+      "sha256": "7ca5875cf388568437045ad6be5bbbaa158f30470543bf1d8e35f6abfb4403de",
+      "bytes": 1160934
+    },
+    "full/report/evo/cbs-independent/aerial08-component-ape.zip": {
+      "sha256": "69ef5c7660119606e72d253e15ca70e7b7566db97f7454d1dd53e8499b04e852",
+      "bytes": 1662632
+    },
+    "full/report/evo/cbs-independent/aerial08-estimate-aligned.tum": {
+      "sha256": "0372d60b4aaf71ccf94f5fd0fef841724d0418c990214ecc2627c2a9f9c5cece",
+      "bytes": 529594
+    },
+    "full/report/evo/cbs-independent/aerial08-estimate.kitti": {
+      "sha256": "75ba4e90a704c15f0064fcfbf73bb435109fea53049138e3bef4a92ef3bcff1a",
+      "bytes": 795746
+    },
+    "full/report/evo/cbs-independent/aerial08-reference-matched.tum": {
+      "sha256": "72becef291a5d55444262d668c114ab58c601caddcb07ccbb99cae0914f0175d",
+      "bytes": 524334
+    },
+    "full/report/evo/cbs-independent/aerial08-reference.kitti": {
+      "sha256": "495a8d485ccd7821d433e8d717ed57cbfd50908aaac089182e7a8061aab395e9",
+      "bytes": 786334
+    },
+    "full/report/evo/cbs-independent/evaluation.json": {
+      "sha256": "11cfba068d9788cf7b3c96c5b2d876ba6433a2fca9fa7ab06429cc019bd2faea",
+      "bytes": 5011
+    },
+    "full/report/evo/raw/README.md": {
+      "sha256": "f52615a1a00ca4ac0cebbf80e1b04b3660fc4fbb0a06bcbbb674bc2fca1fea27",
+      "bytes": 845
+    },
+    "full/report/evo/raw/aerial05-ape.zip": {
+      "sha256": "6301ff6830ae9690548f3d79b93180806e95698f41e12b887397a68db5c0b5e0",
+      "bytes": 1217701
+    },
+    "full/report/evo/raw/aerial05-component-ape.zip": {
+      "sha256": "e520bcd442ae27d059343cbbed6ad4208bcb8a803297667197b715eef4a75a1c",
+      "bytes": 1744150
+    },
+    "full/report/evo/raw/aerial05-estimate-aligned.tum": {
+      "sha256": "cb4bfc683cfd9547ff6a1eaf82f8feba00e364e03fa1bc4f1e48ddaef4beadb2",
+      "bytes": 555504
+    },
+    "full/report/evo/raw/aerial05-estimate.kitti": {
+      "sha256": "c855f88578b2243d16dbca99ce6b0ca0ff47370bd9de5507879e7b54497654cf",
+      "bytes": 838326
+    },
+    "full/report/evo/raw/aerial05-reference-matched.tum": {
+      "sha256": "5d532f668acf5ed6c0b4824cbc0cb5ffa0d5e4f783d67d0070f38cf8cf9d1520",
+      "bytes": 550000
+    },
+    "full/report/evo/raw/aerial05-reference.kitti": {
+      "sha256": "c3fec9a00c01ee989286456c358d338a21f8ae0a8a3bca5f6e890d2cf25e390b",
+      "bytes": 825000
+    },
+    "full/report/evo/raw/aerial06-ape.zip": {
+      "sha256": "9c25c70095da8271bd3b0862d2f72abfcca04faa905b7c3fa111ea01737db8be",
+      "bytes": 1372943
+    },
+    "full/report/evo/raw/aerial06-component-ape.zip": {
+      "sha256": "a0bab64c03bbc9800f31c802d6dbed1c66afbda947a7dc3681f0760d35b8bc83",
+      "bytes": 1966842
+    },
+    "full/report/evo/raw/aerial06-estimate-aligned.tum": {
+      "sha256": "44b7fea1051e512a210496cb9431cb1e379a12f24d4398f681db50bb9a496930",
+      "bytes": 626475
+    },
+    "full/report/evo/raw/aerial06-estimate.kitti": {
+      "sha256": "2de94787fbf9df0d2cc55cc49dc5e96e6c46dee07cf8df453f167f87c47ed471",
+      "bytes": 947812
+    },
+    "full/report/evo/raw/aerial06-reference-matched.tum": {
+      "sha256": "f784bf815dd324accf41ee6776dc75c671c9b0ff84c88b6f8b26d4b589d4552e",
+      "bytes": 620270
+    },
+    "full/report/evo/raw/aerial06-reference.kitti": {
+      "sha256": "5c9c740d24421c9f20910bf8df6f8473a8be407ef7f55590564a312d7dcf5c20",
+      "bytes": 930270
+    },
+    "full/report/evo/raw/aerial07-ape.zip": {
+      "sha256": "3a31526c234a382c0bedeac1fbe35bdfe201a78494036c6b676c70322723e883",
+      "bytes": 1642322
+    },
+    "full/report/evo/raw/aerial07-component-ape.zip": {
+      "sha256": "578e6e420a47fc1b09479202b3696b2aefcee2e83c72ce4306cc510e70e8c8bf",
+      "bytes": 2352373
+    },
+    "full/report/evo/raw/aerial07-estimate-aligned.tum": {
+      "sha256": "5ba8c2324b9d66bc554c6d5838e27199f63b112426a3963a7b7c603a3f40edd8",
+      "bytes": 749623
+    },
+    "full/report/evo/raw/aerial07-estimate.kitti": {
+      "sha256": "71465a7bdadbe201716a6792859e544f729aa9ef9230d570f21c9c4480f4df92",
+      "bytes": 1131500
+    },
+    "full/report/evo/raw/aerial07-reference-matched.tum": {
+      "sha256": "8323d3fd69a8d9caf54b4a96ed4fbd7ac1e4d0035d858953afc2a91716c15f6d",
+      "bytes": 742215
+    },
+    "full/report/evo/raw/aerial07-reference.kitti": {
+      "sha256": "2a7786a2c63a7e8e617c963d6c7dfa336a9b663a5179fce1dc300f3a7355b41d",
+      "bytes": 1112915
+    },
+    "full/report/evo/raw/aerial08-ape.zip": {
+      "sha256": "178f7dc095df230a02bd4b806bf918a4ecbe76487915577878ebed7c671a2a28",
+      "bytes": 1160932
+    },
+    "full/report/evo/raw/aerial08-component-ape.zip": {
+      "sha256": "7ecf9e6f69b9ccd7bc76e575a7fe6f9dffc7e05010023a9925f71d245ba95e09",
+      "bytes": 1662630
+    },
+    "full/report/evo/raw/aerial08-estimate-aligned.tum": {
+      "sha256": "631f6f1a355f5b2c9c305518923a203479e2a817b8ca2fa0f627ac0876cb73ec",
+      "bytes": 529594
+    },
+    "full/report/evo/raw/aerial08-estimate.kitti": {
+      "sha256": "198632a4e06637f1afb39007b5cd74a69c51c5cd4bf68cec555784e8a4a3cb93",
+      "bytes": 797187
+    },
+    "full/report/evo/raw/aerial08-reference-matched.tum": {
+      "sha256": "72becef291a5d55444262d668c114ab58c601caddcb07ccbb99cae0914f0175d",
+      "bytes": 524334
+    },
+    "full/report/evo/raw/aerial08-reference.kitti": {
+      "sha256": "495a8d485ccd7821d433e8d717ed57cbfd50908aaac089182e7a8061aab395e9",
+      "bytes": 786334
+    },
+    "full/report/evo/raw/evaluation.json": {
+      "sha256": "f3c6bd4a60ec820c83085457323d5bfe33fbe6bdf11af6453a76bf424ee121fb",
+      "bytes": 5001
+    },
+    "full/report/report.json": {
+      "sha256": "6dc61ceeeaed6d6daac46860dc137c1c3e4240582c4b6e8de7e45dddec0edea9",
+      "bytes": 33768
+    },
+    "full/report/result.rrd": {
+      "sha256": "972d4dcbbde5b9c4e17abda6e22ab58810dc870bfbc458eb3ab56862f1b87fcc",
+      "bytes": 13862958
+    },
+    "full/report/temporal-spatial-comparison.png": {
+      "sha256": "98926959d2b17095aaa09c4c836eb3050db7dddcc2e4e3d5955e09b8e8788e03",
+      "bytes": 125180
+    },
+    "full/report/trajectories-maps.png": {
+      "sha256": "21571d5b1f342df529dd43145d94206a8c318d192b6f144057503dc987f7c268",
+      "bytes": 2927252
+    },
+    "full/rerun.log": {
+      "sha256": "740b70f85c4b9e13eed8e0d6b13a3358480584636f62dd8db88b221b65134996",
+      "bytes": 355
+    },
+    "full/retention-audit.json": {
+      "sha256": "7c5e3beb375c7c49f2e8193aa6436c0289d7daf61f5a73cd2f4b24e671fd6b22",
+      "bytes": 8022
+    },
+    "full/source-hashes.json": {
+      "sha256": "e47b6aeb691198af18f8438b71b248f00ad9f457e8ef3a746aef5c5023b30afd",
+      "bytes": 17515
+    },
+    "full/status.json": {
+      "sha256": "fb441e595f00dd55a37059bfde92668a5d1f963945199c5f9afba9eb21a19e11",
+      "bytes": 3229
+    },
+    "full/trials.json": {
+      "sha256": "0a06fb4be4ddf3c87d46f63f4e621c0c6964473497a13736c442957fe5ed2056",
+      "bytes": 367
+    },
+    "full/verification-attempts.csv": {
+      "sha256": "e9a6237713a2b475e42c276c09efd0ad5f7e691046e3aa871c76e9aec035cdbd",
+      "bytes": 1109
+    },
+    "source/FAST-LIVO2-ROS2/.gitattributes": {
+      "sha256": "0a7b997e565a5c3a155a24bc3e0ed151287290fef1eb2d4a7d1f694a7ab95d23",
+      "bytes": 276
+    },
+    "source/FAST-LIVO2-ROS2/.gitignore": {
+      "sha256": "c84614687b6121ac95f9bd37dc1af4cd688d1eafafc555fc65a17b73d6c55a66",
+      "bytes": 467
+    },
+    "source/FAST-LIVO2-ROS2/CMakeLists.txt": {
+      "sha256": "9b8387785e7bb64164046184a6e42d91c757cf8779071186670f8a3907e58fe1",
+      "bytes": 6848
+    },
+    "source/FAST-LIVO2-ROS2/LICENSE": {
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+      "bytes": 18092
+    },
+    "source/FAST-LIVO2-ROS2/README.md": {
+      "sha256": "a007ba873251f81eb0eb9fb23a2d39c267c371a5a6b971fdf7189d1d58d66b38",
+      "bytes": 7710
+    },
+    "source/FAST-LIVO2-ROS2/config/HILTI22.yaml": {
+      "sha256": "efae9e702c71c770b19002b6e19d4e1b6f46c67df3727e984981d932258f0b4a",
+      "bytes": 2304
+    },
+    "source/FAST-LIVO2-ROS2/config/MARS_LVIG.yaml": {
+      "sha256": "4af37118e7f650a8e278d8c6c4344bebc2cbc3efbd0f9a4d97bed9fb038d7acd",
+      "bytes": 5958
+    },
+    "source/FAST-LIVO2-ROS2/config/NTU_VIRAL.yaml": {
+      "sha256": "15ccc1b5392a7e01108491683be9323cc4cdb383f204310c225d9a9fb17046df",
+      "bytes": 2302
+    },
+    "source/FAST-LIVO2-ROS2/config/avia.yaml": {
+      "sha256": "f80558e686fcee0f82b984a6cad3db9a1fb390acf81f5b14c6667becb69ad9fd",
+      "bytes": 2309
+    },
+    "source/FAST-LIVO2-ROS2/config/camera_MARS_LVIG.yaml": {
+      "sha256": "2da373aa977c728aa542b1084a4aa28094090436759adc06517f9dc26f1b9e2b",
+      "bytes": 651
+    },
+    "source/FAST-LIVO2-ROS2/config/camera_NTU_VIRAL.yaml": {
+      "sha256": "0870a3a506d294b2bc076e5e8594794a4f9baedbb20ed8f1b7daff418b3829cd",
+      "bytes": 366
+    },
+    "source/FAST-LIVO2-ROS2/config/camera_fisheye_HILTI22.yaml": {
+      "sha256": "a7c6e530912b47f75b618f8e9be4560a2264957a22164659a0031691f869eb62",
+      "bytes": 279
+    },
+    "source/FAST-LIVO2-ROS2/config/camera_pinhole.yaml": {
+      "sha256": "cd58242cf93b5f8408428387291bb91425420be8f7bf2c75ceb1efe1770b442c",
+      "bytes": 277
+    },
+    "source/FAST-LIVO2-ROS2/config/s3e/alpha.yaml": {
+      "sha256": "d216a60c3e0cb07c6024bd02ab7e57ddbcb1c59edfaba3fb0ced4a9ab1ed18b4",
+      "bytes": 2597
+    },
+    "source/FAST-LIVO2-ROS2/config/s3e/alpha_camera.yaml": {
+      "sha256": "eb431529306bf100f389a27c831384b1d56dc5b48e81b3367915e5a8b348ff1c",
+      "bytes": 342
+    },
+    "source/FAST-LIVO2-ROS2/config/s3e/bob.yaml": {
+      "sha256": "c6509dd99a56b354a479233098dfafd3914c240b0d17f682c2c12828d38f1be6",
+      "bytes": 2586
+    },
+    "source/FAST-LIVO2-ROS2/config/s3e/bob_camera.yaml": {
+      "sha256": "66705668391a083becce0a52d2ccad01218186fbaabc24fe80b483d4c29eef0b",
+      "bytes": 342
+    },
+    "source/FAST-LIVO2-ROS2/config/s3e/carol.yaml": {
+      "sha256": "3c72db1cbd0c74785da303c18da46b5bd0f4ce55c5dcfe832ef4fe19d3f9f6d7",
+      "bytes": 2595
+    },
+    "source/FAST-LIVO2-ROS2/config/s3e/carol_camera.yaml": {
+      "sha256": "c15558bae25f5ecd5d6bdfde07ddd1980aa383efeee4378cb0af82c0a85cba82",
+      "bytes": 343
+    },
+    "source/FAST-LIVO2-ROS2/docs/RERUN.md": {
+      "sha256": "1d2a05dfea11f7f416930f435432fc677cf284e31ca633a0edebf4254eca6b60",
+      "bytes": 5983
+    },
+    "source/FAST-LIVO2-ROS2/docs/S3E.md": {
+      "sha256": "e3984aeca4a61dbc43c46fb16099824353d25b4d4f444411b63d058719b84d39",
+      "bytes": 9786
+    },
+    "source/FAST-LIVO2-ROS2/include/IMU_Processing.h": {
+      "sha256": "ebce437f848c0a41cc1d94a3bbaaa67084a2a9894ba76f6ac64e0db19c50901d",
+      "bytes": 2683
+    },
+    "source/FAST-LIVO2-ROS2/include/LIVMapper.h": {
+      "sha256": "70d7c7f4370e080e6dccb6448b56a693764b7b430f066fb419af1cf2ed862d7a",
+      "bytes": 8609
+    },
+    "source/FAST-LIVO2-ROS2/include/common_lib.h": {
+      "sha256": "7b936106168f11c85a7cbf1b647c09457f97d1b9c2f1d97bb7f8898c616a3014",
+      "bytes": 7282
+    },
+    "source/FAST-LIVO2-ROS2/include/feature.h": {
+      "sha256": "27eaea6a52e4d0edc9aa04a770a5f436eb129b4c4fbfc7bf9812c5fd3f644799",
+      "bytes": 2050
+    },
+    "source/FAST-LIVO2-ROS2/include/frame.h": {
+      "sha256": "91a7ff427c0fb1e12220d4e60ac0ea9ed0785c1ae73c8da98c14ebe2f9782fa6",
+      "bytes": 3160
+    },
+    "source/FAST-LIVO2-ROS2/include/livox_ros_driver/CustomMsg.h": {
+      "sha256": "47ae77c64f4d05f7f471d0c2032f52f985926b2eb1c8c2a71f8e78b08c33157d",
+      "bytes": 8375
+    },
+    "source/FAST-LIVO2-ROS2/include/livox_ros_driver/CustomPoint.h": {
+      "sha256": "36b6f7f0a2545dd425779124429a17703b7f73a237f3f59777fcda68175aae78",
+      "bytes": 6575
+    },
+    "source/FAST-LIVO2-ROS2/include/preprocess.h": {
+      "sha256": "453cff743814889dd527432e291a0bef7ef4627fa7f2b71d99c5a717206906f5",
+      "bytes": 5972
+    },
+    "source/FAST-LIVO2-ROS2/include/research_export.h": {
+      "sha256": "d008c0c4545b58044d56f8e71488ef01eee9b8e246cba1be775e440f9783deba",
+      "bytes": 1410
+    },
+    "source/FAST-LIVO2-ROS2/include/utils/color.h": {
+      "sha256": "a8dca85646b18e26432f453993cf2da8de8e6b6e3184228b9fb92651c4a8f2ef",
+      "bytes": 1125
+    },
+    "source/FAST-LIVO2-ROS2/include/utils/so3_math.h": {
+      "sha256": "fa815b3bc8dc157a2ab8d692b0dd604b369680a7e711fef666f4e12d4ab33c37",
+      "bytes": 2526
+    },
+    "source/FAST-LIVO2-ROS2/include/utils/types.h": {
+      "sha256": "ade63d344d8d4cdec2dd8ec0fd6ea7930cb007c9c41ba83500bc7ea79d874d45",
+      "bytes": 1488
+    },
+    "source/FAST-LIVO2-ROS2/include/utils/utils.h": {
+      "sha256": "53e212cc56c9f7627bc9a58cae906b9fe9bb334184b28a1b6f8a2821e2ebf3e8",
+      "bytes": 2059
+    },
+    "source/FAST-LIVO2-ROS2/include/vio.h": {
+      "sha256": "a8eee18edf253e37ac073fc8559536e250ed9e1bf70265e79e4328d976f35915",
+      "bytes": 6207
+    },
+    "source/FAST-LIVO2-ROS2/include/visual_point.h": {
+      "sha256": "c528be4967454ff79f6aac0c5322d62b19ec34c7e8c248b49981d1b3a7f1888d",
+      "bytes": 1739
+    },
+    "source/FAST-LIVO2-ROS2/include/voxel_map.h": {
+      "sha256": "4efc48967c10a8a9ecdb46d2f2a4ce6bda193847a6f2f037705352512b56d130",
+      "bytes": 7284
+    },
+    "source/FAST-LIVO2-ROS2/launch/mapping_avia_marslvig.launch.py": {
+      "sha256": "6e0d174df460bd72a661a2b1d2074d71da43f1263244a104787223030931b4b9",
+      "bytes": 4079
+    },
+    "source/FAST-LIVO2-ROS2/launch/mapping_aviz.launch.py": {
+      "sha256": "b2f38dfbf13530e06b04c5468551f38fb1ee60faf4b3bc09e4070fe97c1d932e",
+      "bytes": 4255
+    },
+    "source/FAST-LIVO2-ROS2/launch/mapping_hesaixt32_hilti22.launch": {
+      "sha256": "d1f2fb0389a2e87bc53e887d0371fb707f8dd94ed0a8ad3466d36c88987a13e8",
+      "bytes": 455
+    },
+    "source/FAST-LIVO2-ROS2/launch/mapping_ouster_ntu.launch.py": {
+      "sha256": "5b46756fdb7f201c42af37336cb47cd6627a94ac173f893897f9cb89065b9b8a",
+      "bytes": 4261
+    },
+    "source/FAST-LIVO2-ROS2/launch/mapping_s3e.launch.py": {
+      "sha256": "99ae3a0beb9d937dad96c61b83bc3e6a74f0873920da3790b1ec08b4f26f8fbc",
+      "bytes": 4048
+    },
+    "source/FAST-LIVO2-ROS2/multi_robot_lidar_slam.repos": {
+      "sha256": "fb5354408f9cf96d0add3ef4c798a03e5497c250c5cb7ba55cfbd39e322a1cc3",
+      "bytes": 995
+    },
+    "source/FAST-LIVO2-ROS2/package.xml": {
+      "sha256": "04944bc838d3cd397c4e6fb6b04ed601ea81aadd5ff968450dcac5b717bb1488",
+      "bytes": 2296
+    },
+    "source/FAST-LIVO2-ROS2/patches/livox_messages_only.patch": {
+      "sha256": "cff16edb369ae2e059231ebf6a545fb544822877387fd3458582a049de581512",
+      "bytes": 795
+    },
+    "source/FAST-LIVO2-ROS2/patches/rpg_vikit_ros2_build.patch": {
+      "sha256": "bb507230b2a4701e1506ffda6c9a12ca95423794e653f0c911e1b4e0a4145a12",
+      "bytes": 6234
+    },
+    "source/FAST-LIVO2-ROS2/research/CU-MULTI.md": {
+      "sha256": "467f9bcc9bb0163df80eb49011feb5e9092867e46d9111c07eac65c7c178143d",
+      "bytes": 9368
+    },
+    "source/FAST-LIVO2-ROS2/research/DEVELOPMENT.md": {
+      "sha256": "14b10173357bdff6318f23cfee3baa45cd0e828aa6a6c3b7af098f75780df9ea",
+      "bytes": 3944
+    },
+    "source/FAST-LIVO2-ROS2/research/DPGO.md": {
+      "sha256": "b0d616a8980d9f447484f01a9a0411d6ebccc0574976b98e6be3776de4961e4c",
+      "bytes": 14431
+    },
+    "source/FAST-LIVO2-ROS2/research/ELLIPSELIO.md": {
+      "sha256": "09828dc8666d4485a42a16b05dcdb3ad3432c80b2b55600a6efa1f12859d7276",
+      "bytes": 13639
+    },
+    "source/FAST-LIVO2-ROS2/research/INSPECTION.md": {
+      "sha256": "e68299956b39a3b556bf3a50d2159ac33e6633e7e7a78a29855f2d48d6b5fe5c",
+      "bytes": 2596
+    },
+    "source/FAST-LIVO2-ROS2/research/LOOP-QUALITY.md": {
+      "sha256": "efb448f92760401520542aa9a5cc4fd367706a17e000dcb622b4321686d12635",
+      "bytes": 9464
+    },
+    "source/FAST-LIVO2-ROS2/research/METHODS.md": {
+      "sha256": "cc6337a7aab868c60b8e6e19760620cd945ac21db6d6ad02f98f7cebb3f6c12d",
+      "bytes": 7544
+    },
+    "source/FAST-LIVO2-ROS2/research/MIXED-PGO.md": {
+      "sha256": "25feb85dff6c74bc431259f4a205807469f927c9bb22a4943155a4974c96484e",
+      "bytes": 7037
+    },
+    "source/FAST-LIVO2-ROS2/research/README.md": {
+      "sha256": "d27439e71eb49f708d45950f5bf6890c660515a3ad6cbe72778611162c5a428c",
+      "bytes": 9194
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-CAMPUS-ROAD1-CBS.md": {
+      "sha256": "f1efefef40520366615975b0575f93a1947c82ad55a9fd4416b112181bcaded2",
+      "bytes": 11001
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-CBS-REGISTRATION.md": {
+      "sha256": "68e2def607aeab6693a83f8230b3295f64ad2fa82c9933ae782f006b14597d28",
+      "bytes": 9507
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-CBS.md": {
+      "sha256": "087dac6f8e0a49c53debd1003de4961009b5b053e1993ab095624e61a8f8f65d",
+      "bytes": 8594
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-ELLIPSELIO-CBS.md": {
+      "sha256": "8ee640842f477762e01ef66c692e6eb60a2d76e504a289feeae5ebbed3d61df5",
+      "bytes": 10713
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-ELLIPSOID-BEV.md": {
+      "sha256": "d18e5b7047a7857670977312e12404bdee8a5654baa7433faedcf40e955120ff",
+      "bytes": 8386
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-ELLIPSOID-CBS-148.md": {
+      "sha256": "9aed6c99f278bd66a8cc20b707ba04c1ef53827d79bb7c6c14f869283318f69a",
+      "bytes": 16922
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-GRACO-AERIAL-TEMPORAL.md": {
+      "sha256": "aeb8233df67803fe7dd72e761f731fa1418ab9e338fc89ea0bbf2bebae701a07",
+      "bytes": 4907
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-GRACO.md": {
+      "sha256": "23c5c73f630610e4c997a48f97b0a75fb67fcdd70eaa30f8396adfabe9493819",
+      "bytes": 8188
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-LABORATORY1-CBS.md": {
+      "sha256": "128df6e7a70d3883bdb1a2b234208c58a71f480c045173f3bf995a54706f6ce9",
+      "bytes": 9404
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-LIBRARY1-CBS.md": {
+      "sha256": "f64b196dc2572b0fd6d80b856ef4e6366507a82dbfcfe08dc389589afd9000c6",
+      "bytes": 7778
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-MAPCLOSURES.md": {
+      "sha256": "4586a012e7ed633f0cf5806fdde222b87b87f292908036d1c2407d993358a24c",
+      "bytes": 7106
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-MIXED-PGO.md": {
+      "sha256": "2bd3526645515990c34cc3448634e086dde2f2866e141c90ffd371c816b61b57",
+      "bytes": 5145
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-MOTION-SUBMAPS.md": {
+      "sha256": "43eeea9396e1364a47332190bf84fe73704f02963f6f5e92982a24ad2c73ed5c",
+      "bytes": 8216
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-PCM-CBS.md": {
+      "sha256": "c275b7f3bfd0b4b0e9dd97e3aa8c968c81fddd47206392da394e1b53e8c2ab45",
+      "bytes": 7548
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-PLAYGROUND1-CBS.md": {
+      "sha256": "9f6504e0c2bd4910104e9e4fb05addcf8035d65d4977a8699b0c3eeb435b8031",
+      "bytes": 16476
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-PLAYGROUND2-CBS.md": {
+      "sha256": "42e85200133297af7e459393887e453d496f52bc491f77c970465b433a7eabc6",
+      "bytes": 6535
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-RECENT-SUBMAPS-FAILED-FRONTENDS.md": {
+      "sha256": "5b0b80b1c3f7839e52d0122a048c26b8abdc8725fa498c90b73fe4878100c515",
+      "bytes": 8244
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-RECENT-SUBMAPS-FULL-FIVE-GROUPS.md": {
+      "sha256": "bc79bfa10523416f665fa6e84896c3e4b8537035f59ae12fb71b111806756ff7",
+      "bytes": 9738
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-RECENT-SUBMAPS-LIBRARY2.md": {
+      "sha256": "e998d17c7f15c8d3c9a2ab620c3c66ea2f12998e3caa8cc511bbd682cf0dda28",
+      "bytes": 10291
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-S3E-IMU-NOISE.md": {
+      "sha256": "70493147eddc40818de5c0d489b8e03122e6fdba3efd6cb0018b35f022f4b513",
+      "bytes": 13402
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-SQUARE2-CBS.md": {
+      "sha256": "4795fd8a04c47274e05e6e767a0c0b29156f7816fffc718673c548083f5dee3d",
+      "bytes": 6994
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-SUMMARY.md": {
+      "sha256": "348c3d8416cb45150c892bdcf2b2be8561462dcb2fc1cc6694db7eb59adecfa0",
+      "bytes": 32312
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-SWARM-SLAM-OFFICIAL.md": {
+      "sha256": "97294fc177911f76578cdf04dae74afb5aa157ae505750f0c6cfab8d2c5f3ade",
+      "bytes": 4696
+    },
+    "source/FAST-LIVO2-ROS2/research/RESULTS-SWARM-SLAM.md": {
+      "sha256": "de7063ff38d0a345867b82d8542ef3a3f68ff8a95a8eafdceb713f57991037fa",
+      "bytes": 4588
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/ellipsoid_cuda/surface.cu": {
+      "sha256": "f38b66d49d083cac3439bf9164501cb2d6f0405b18a41542fe8808028217ed9b",
+      "bytes": 6418
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/gtsam_points/CMakeLists.txt": {
+      "sha256": "6cf8dea05516ef0303a381e329fba1792d6cee45dfddc6e4b5f49f7e4cadf96e",
+      "bytes": 2980
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/gtsam_points/compat/gtsam/base/make_shared.h": {
+      "sha256": "0a737a211c6b63d3a6ed5b48714fe7f5f5685424b3763cf367ff25bf13f73948",
+      "bytes": 663
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/gtsam_points/mixed_pgo.cpp": {
+      "sha256": "f1a3781d2df8984ba72211dd9a0f3e6f77c359700884499353540178de89091a",
+      "bytes": 9902
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/gtsam_points/registration_common.hpp": {
+      "sha256": "00dc847d94084dcdfd5fea378bdf2e41fb71d7f82a934cf5309ed22f56d18c83",
+      "bytes": 5754
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/mapclosures/CMakeLists.txt": {
+      "sha256": "fedee9f8c2e0c6ff723205ac2ebf42dd19a995fe8062060d94efa95b7c9bca44",
+      "bytes": 2796
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/mapclosures/LICENSE": {
+      "sha256": "b0ce530538ecff94cc028f1201d9b66eb65b92cbafbcf0abad3d78b8985b6743",
+      "bytes": 1070
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/mapclosures/LICENSE-HBST": {
+      "sha256": "37e7a72da6abd5dd6ae1d2b71b298c3f752c298182726eb223f1c1d27c32ec5e",
+      "bytes": 1485
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/mapclosures/LICENSE-Sophus": {
+      "sha256": "22ba6b6434263aea3a4c80328257e8b23ff3148930d3ce8320cc1cb33e085c5d",
+      "bytes": 1096
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/mapclosures/adapter.cpp": {
+      "sha256": "8edefddb3738c876fa008cf03aa39589a2376542a7033fa5b90876cb4d5d974d",
+      "bytes": 8617
+    },
+    "source/FAST-LIVO2-ROS2/research/adapters/mapclosures/inspect.cpp": {
+      "sha256": "44b56cd86c4104fe7eb92304cfc96cc0be4448e04eee3401d88146f1140bdeee",
+      "bytes": 4054
+    },
+    "source/FAST-LIVO2-ROS2/research/assets.lock.json": {
+      "sha256": "8e959c4f2f150887624362d97d50295d38c95ef825bdc8a5553c175b8c863983",
+      "bytes": 911
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/campus-road1-cbs.yaml": {
+      "sha256": "8f4d3ab855b14f595e448fcb584688e28bf822fb8e0c8c812f21d1273f245f02",
+      "bytes": 2159
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/laboratory1-cbs.yaml": {
+      "sha256": "f3cfe960dcd57d28ea785f06776288b5dd2fa0e092cc55c4fa5150b3c59c1014",
+      "bytes": 2157
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/library1-cbs.yaml": {
+      "sha256": "2808e046a1d2d38aa8fe8f2fda06cdd66be349fda7f9e3011b0890f2f93f9901",
+      "bytes": 2437
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/playground1-cbs.yaml": {
+      "sha256": "4a1eb748e260ce1cbb27e9c82da6a7627a9f3bb5c7995a924195010cc6d26692",
+      "bytes": 2154
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/playground2-cbs.yaml": {
+      "sha256": "3a4283b45ceb1444f75521ba36abd654ee9a1d8efdf75a36bfb556aec73c5ce9",
+      "bytes": 2443
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/s3e-ellipselio-user-noise-reliable.yaml": {
+      "sha256": "105325d216ef62ac2bbd09ed475abbb95f1e96be183a48b7bc227d7070463a81",
+      "bytes": 2538
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/s3e-ellipselio-user-noise.yaml": {
+      "sha256": "f1e4c186838dbc487b24a0a0862d2dd0704f9801cb0746ba6d758b72557eafd1",
+      "bytes": 2538
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/square1-cbs-registration.yaml": {
+      "sha256": "a526d7cd9863a5e545e0d6740a446a509cfd1d8a25152c55b7f7f57971ec8daf",
+      "bytes": 2489
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/square1-cbs.yaml": {
+      "sha256": "fb639767b14929b7ebb19efcb04b4126b86637cd925768aec9d4fb08c24239be",
+      "bytes": 2141
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/square1-ellipselio-mapclosures-cbs.yaml": {
+      "sha256": "085b78c497059f37a82a0df1a83b8ef1f5c5c2a87f94a067831b04b9e79710fb",
+      "bytes": 2192
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/square1-mapclosures.yaml": {
+      "sha256": "bbe61fd645fc25d6fea52df368c1961c2016c99c53005890599ab3274f76b240",
+      "bytes": 1917
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/square1-mixed-pgo.yaml": {
+      "sha256": "afd3a3a564c842902634b2dfea380aeacf37993bc7a21405489228bcc8ee414e",
+      "bytes": 2283
+    },
+    "source/FAST-LIVO2-ROS2/research/configs/square2-cbs.yaml": {
+      "sha256": "a441b6aad7af0767f6d45f88fc83a079dd6b7d315230fc5ae152686f6a6e829b",
+      "bytes": 2435
+    },
+    "source/FAST-LIVO2-ROS2/research/model-requirements.lock.txt": {
+      "sha256": "ff366ecf92ca9fb4840a32b9ba7bbb9b7d482858805e0b69d39553245132095f",
+      "bytes": 75
+    },
+    "source/FAST-LIVO2-ROS2/research/requirements.txt": {
+      "sha256": "14353a1cb736ef806e63c6f420f8c3d242965e2a00ed7a4208d0ea275d498da1",
+      "bytes": 109
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/__init__.py": {
+      "sha256": "681ce20d5b6af6f8c91e54514be735ed1abae2c05be7bd6420efe13ae37da615",
+      "bytes": 90
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/artifacts.py": {
+      "sha256": "ba9d13e7cc2476876c27f2d3060bf3a9eaddb5259f998d883aa4ced9020cef21",
+      "bytes": 4087
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/backends.py": {
+      "sha256": "bb417d84cc775e9e2e651af291c0e78d60d213170ee8cdd1e89a85526f85342b",
+      "bytes": 2440
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/cbs_bridge.py": {
+      "sha256": "1fef2773cd37aa664635a72a3ddfc24d6f89f0ce47d485f607a00d1cea827abe",
+      "bytes": 3500
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/cbs_registration_maps.py": {
+      "sha256": "4ae67fa02b15f594fc258a04f45caadad5632cb90aa7a7e28ed8a43d4efaa6f1",
+      "bytes": 8286
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/cbs_registration_report.py": {
+      "sha256": "0d8b82153034ece8d496cdc713da782433c588857d70dccf2da1bc8facca506d",
+      "bytes": 7843
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/cli.py": {
+      "sha256": "3b12f1dfde4a2e19be695d4480484bf3508a4b8ed2646c7cf590980115234eb4",
+      "bytes": 24740
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/cu_multi.py": {
+      "sha256": "a8963a0d219b363c366203173fe7d20f157fb2c4cdd2d54d854ddc4e16c21d89",
+      "bytes": 13981
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/data.py": {
+      "sha256": "b80926e8f8705d44e439533848edc30f24422a05deb2617ed1c31e79b4d6d66f",
+      "bytes": 6228
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/distributed.py": {
+      "sha256": "15336e02029870e5f61067a60fdb6a294f91348e074bac990b55f190f14eaf69",
+      "bytes": 21149
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/dpgo.py": {
+      "sha256": "84e94ddc7c245faadab4940600af83c627898fc45e1987e2248f34e758052374",
+      "bytes": 14119
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/dpgo_evaluation.py": {
+      "sha256": "3976007614f1b66052285353d8dff420400ade9d4dfaf77390e90ba2450e1df2",
+      "bytes": 13684
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/dpgo_visualize.py": {
+      "sha256": "1d528851adbb8d76d7e7a24a287c6bd59d501473b3677364266e64b7f32078e7",
+      "bytes": 5789
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipselio_report.py": {
+      "sha256": "17c0bd91a63f5516db00e52bf7c527580b4ead2120b92536f68801653692b2fa",
+      "bytes": 10292
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_bev.py": {
+      "sha256": "152c74053ef815f5833737862246d0a5ee9aa38130193372937da59a4059f082",
+      "bytes": 19557
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_bev_report.py": {
+      "sha256": "d337107ead1c10b11fa3e03ae363baace977cc35bfb479e4f7e5b9c5cfd5215a",
+      "bytes": 12066
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_cbs.py": {
+      "sha256": "6a343d4c650d9fb718175580898104a63435255a137cbdd534ca83551558f2a5",
+      "bytes": 8959
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_cuda.py": {
+      "sha256": "5a95ffda79f028c9e2201e26f0d9e22132406fabed6256aa035cce8324bdd1f6",
+      "bytes": 2967
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_delta_writer.py": {
+      "sha256": "e19f8a9748011b1b2fdb37cbc828632f54ce569693945dfdc358590eb7507d80",
+      "bytes": 3326
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_full.py": {
+      "sha256": "801697d0d262588c1ffb5d7b74ed7534c4d3d62e1804fb93e7bc14fbcbdf9aa5",
+      "bytes": 17612
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_full_archive.py": {
+      "sha256": "e711556d2f920b5cd9f57467682d1d252e4012bf6b5835f3be57fa6957c7b792",
+      "bytes": 11883
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_full_maps.py": {
+      "sha256": "09738d55fa217fe2972098e19dad32dcbb2aaa27fada95b3b5d7437c985ff734",
+      "bytes": 3632
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_full_report.py": {
+      "sha256": "706f648ebbde381f6077c5d30ad240b6931e5b05cdc0ebabf9ca70ebe9467c91",
+      "bytes": 21504
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ellipsoid_unreferenced_report.py": {
+      "sha256": "82d2b69a21bd880232d95da03bcc4dcaa5a43994056f8936446c1aa301aea4de",
+      "bytes": 7222
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/evaluation.py": {
+      "sha256": "041ef1a7d49368fc8452fcf826400195dbe5dc405ba28681d22c31ed85a85068",
+      "bytes": 14490
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/evo_evaluation.py": {
+      "sha256": "b2cb41b03072a91062e205f554c7dd7511f91f8578b91ccccf57f4040c1cf7f9",
+      "bytes": 7858
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/frontends.py": {
+      "sha256": "bda95ba9ab66f1fdf8292526c2f3e26709cd1ad3f6bbb8c3dbe4c41142187b76",
+      "bytes": 2192
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/geometry.py": {
+      "sha256": "37293882788d19fc854cdc7b98722760c14348d6b887460f0204ccf02b1a5d7a",
+      "bytes": 2666
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/graco.py": {
+      "sha256": "2120e9f75af338cf076c943cd6e07d22cb34ff9cc76906a2e7f09eee0f4e1604",
+      "bytes": 12611
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/gravity_bev.py": {
+      "sha256": "b68a210d62b4cbee9d26aa187ea21f41a45112c517f77954c3420991af8defa3",
+      "bytes": 2845
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ground_truth_figures.py": {
+      "sha256": "d4d9fd849b78e289219366566de94c7f552aca40da4f435d86fd5a34654d4d13",
+      "bytes": 4279
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/isolation.py": {
+      "sha256": "fac934904910d1c7ba8020609f0f6fed7094aeeb1141ce792d82af341b26e398",
+      "bytes": 2039
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures.py": {
+      "sha256": "feb6ab59dd390b9ccee5f90156ddd73d65ea74b2f4eebed842ab50fc23a90d3b",
+      "bytes": 5125
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures_inspection.py": {
+      "sha256": "5a3b34fb29425d1a11940e1b3d3e08a1df8b9b669e0e836617b6f07f1291e114",
+      "bytes": 6614
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures_rerun.py": {
+      "sha256": "cc2ebfcc45c78953f4ac0a6c8d05b2bcb28e4814ae26e08e2b4403c4c5786036",
+      "bytes": 5864
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/mcap_writer.py": {
+      "sha256": "91703c8186e66b582d5c68c9765f1828aab898bad87d2112e1a7d8ffa96854fc",
+      "bytes": 4448
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/mixed_pgo.py": {
+      "sha256": "165a244f6bdd8aa983830ac32774e059316e71c86298988f4b5c2e54cb218d6e",
+      "bytes": 10398
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/mixed_pgo_report.py": {
+      "sha256": "49e4a45265be03160e5be6d058ecf71b20461f7dd993a7bbded7ba6aa1378678",
+      "bytes": 6999
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/model_worker.py": {
+      "sha256": "48a0d141dba5e89abb37b7802dfdf819c65713c7062cd1253ff79bbed3cf3fcb",
+      "bytes": 3011
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/pgo.py": {
+      "sha256": "8e6341e712925a69135ca53f82fe70a74fa10df78735f1cd71b3ba5aed610078",
+      "bytes": 10141
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/recent_submaps.py": {
+      "sha256": "134f3be72812796ad6a4948aad887969e8b9f66212fa9ffc8c5cf36a3d2c0101",
+      "bytes": 6057
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/registration.py": {
+      "sha256": "4f176c0169b674ad1d0bbcc62f2d490d70fadc3baf18c77a9d34377b3c09246b",
+      "bytes": 6189
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/registration_exchange.py": {
+      "sha256": "24d644d7f62b6ea370f372c0711086557001a75a1cc42da930aef27b0cfd92d9",
+      "bytes": 7814
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/report_figures.py": {
+      "sha256": "09fe3a1b2d6ea80384a0e4d4b06981475a6e70b4081254565aa50d656f82fe95",
+      "bytes": 16618
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/robot_colors.py": {
+      "sha256": "c1fae1dd4d6ff73a116f604c6e994089ecb43161e4c400600700fc1d418b55b2",
+      "bytes": 531
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/ros_dpgo_worker.py": {
+      "sha256": "7f46ecb0f1788db6a72be86725a1df7bf07762fca15f7993040e5f8038c0d7be",
+      "bytes": 18019
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/snapshot.py": {
+      "sha256": "5058cf24be50f119a8e8817096e745954273741cd5de7fcc290440e29216bc28",
+      "bytes": 2364
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py": {
+      "sha256": "77e64f2d7617d672f1468e792145623a1bad480f51ca59dadc18fb115e779674",
+      "bytes": 2564
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/verification.py": {
+      "sha256": "551b8b17d08fd92e7c8e25222321da8095ae4a57c7c1b15577578a2892982f70",
+      "bytes": 4411
+    },
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/visualize.py": {
+      "sha256": "737ecfc30bc2a82667b0d486cf83855126a40ba8bbe1c2f54d9a4af5dfd2c01a",
+      "bytes": 5715
+    },
+    "source/FAST-LIVO2-ROS2/research/setup_assets.py": {
+      "sha256": "146bcb9115bf8e7bf40d34446bdb0637467f2c4475d3aa52b0fb922bca4eed93",
+      "bytes": 2021
+    },
+    "source/FAST-LIVO2-ROS2/research/setup_mapclosures.py": {
+      "sha256": "75fa042827c28ec6faa7689d567c80beecd1f5aeda926b1aadd8fdfad767db47",
+      "bytes": 2278
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/benchmark_ellipsoid_cuda.py": {
+      "sha256": "396f57a17f821e2e20a0335908b823326db60e8ad41ab377d4aec574d882a7e9",
+      "bytes": 2029
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_cbs_bridge.py": {
+      "sha256": "a7f01a6f449f8c29885249cabbf4fdd39be3e77d278c328d9166acde905d302b",
+      "bytes": 2831
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_cbs_integration.py": {
+      "sha256": "2725cad5f3b8ae690cc460cf716040ddfcebe288b3a852b768e25447c9645314",
+      "bytes": 7450
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_cu_multi.py": {
+      "sha256": "aedae591b6759730ac78e63c286bac12d19d7f033dc6ad9250e15f51f323dd5c",
+      "bytes": 9093
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_ellipselio.py": {
+      "sha256": "7eff100a0ba79bb8fc7637e1b3b7670a1b3c45aa78a13089d0784682cf761b7c",
+      "bytes": 2794
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_ellipsoid_bev.py": {
+      "sha256": "17b4847b9d88c9f6cdd9dec01dd9348961108395d97e36315e6d162188be0297",
+      "bytes": 4958
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_ellipsoid_cbs_queue.py": {
+      "sha256": "61e46343000d45ada90629f797f445ebdffeab8b76e13cc390bfe109f393c82f",
+      "bytes": 4765
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_ellipsoid_delta.py": {
+      "sha256": "469c21161ccf6b44d4a44fe77c170c4fe6dd3df190e666e6a3c3ce1909a38301",
+      "bytes": 1229
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_ellipsoid_unreferenced_report.py": {
+      "sha256": "e40f0721d45a43d76c837ad26b3d8b312f6ad40ae28cf513b3082c43cf52207d",
+      "bytes": 2269
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_export.py": {
+      "sha256": "3e1285b7fa4edc400a6d8369ab7747770b43f63c717adececb5e9a8e175c4fbe",
+      "bytes": 5164
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_full_submap_batch.py": {
+      "sha256": "cdb0810896f51724b8f999ff36db2fd3dbd2d1d8fda1a703213710130f2dd871",
+      "bytes": 3467
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_graco.py": {
+      "sha256": "700f1318d491fd104676ba0cfeb78da54981cff9537e08e1c3fde01f6bede43f",
+      "bytes": 2828
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_gravity_bev.py": {
+      "sha256": "78e56e32b4635c2b9509b5b5ced89847046ae95846a3d5b7075f5453052cb14d",
+      "bytes": 6307
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_mapclosures.py": {
+      "sha256": "7b8025a09d41d54eb19e9d5799595ab2e313c364f43a72b959538e90c5df148e",
+      "bytes": 7874
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_mapclosures_inspection.py": {
+      "sha256": "0cc9c97e15fd39f2edaf35bb3d6233fb1badca1eebde783dabd47352a6ffb5c5",
+      "bytes": 1913
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_mixed_pgo.py": {
+      "sha256": "93cff855e7203b7780cc8c04a78e21754a6b35397759654dd119538cb452afd0",
+      "bytes": 6838
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_odometry_restart.py": {
+      "sha256": "e14dcbc96acf1de17eab547639373f2956a9c62a6d42bab62a0dab2313c61e09",
+      "bytes": 6781
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_pipeline.py": {
+      "sha256": "256aef1a0be7944f6ecf4e99885f2045bd68a2c830686593d43b31be075b5057",
+      "bytes": 8852
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_recent_submaps.py": {
+      "sha256": "3bdf9f9fd28019ecc5ccc594bbdadf26373c7097d0f8b5af2e6a823fc7148247",
+      "bytes": 6562
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_recent_submaps_integration.py": {
+      "sha256": "25e6bcdc404fae9a9cbdcf8fe8359fdaf020d316eeeffdd411795a9be3c68a39",
+      "bytes": 2182
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_registration_exchange.py": {
+      "sha256": "28ffef4c377807562ec2fd0b0519f8d4db597b9fe72a3c3733ba9c52f3180d51",
+      "bytes": 4546
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_sequence_evaluation.py": {
+      "sha256": "e3fc3cf7de08c052eb1248cb5265d3ef33948a8e8faa4561b2394cbd64c67eee",
+      "bytes": 6378
+    },
+    "source/FAST-LIVO2-ROS2/research/tests/test_spatial_submaps.py": {
+      "sha256": "79aa570431c35a8376ca25b5b5edd256bf3a9d64d4dd4dc1016defdcab0fdf18",
+      "bytes": 5320
+    },
+    "source/FAST-LIVO2-ROS2/rviz_cfg/M300.rviz": {
+      "sha256": "e105d66215c46d6ec0683e8822dc9532fa818afab97b4ec3c889f00ec49aae2a",
+      "bytes": 21247
+    },
+    "source/FAST-LIVO2-ROS2/rviz_cfg/fast_livo2.rviz": {
+      "sha256": "7ab648e254601f057fa173fc627b385800711fbd49afadc2f56fa8c09eee2fdc",
+      "bytes": 24536
+    },
+    "source/FAST-LIVO2-ROS2/rviz_cfg/hilti.rviz": {
+      "sha256": "872059998a0c7884a2f6025ce4fd3f2c98ea6079dc765c2345229bd6287f55d0",
+      "bytes": 20721
+    },
+    "source/FAST-LIVO2-ROS2/rviz_cfg/ntu_viral.rviz": {
+      "sha256": "bfbbe26ec395a4642afd15de6eaa45571622a1ee75b69e446b9f38d94d4ccaa1",
+      "bytes": 21280
+    },
+    "source/FAST-LIVO2-ROS2/s3e.repos": {
+      "sha256": "2a630ed949de6c5c4bb52c85bc07137501668ff7380bcbfffffaedac6acd92af",
+      "bytes": 790
+    },
+    "source/FAST-LIVO2-ROS2/scripts/build_dpgo.sh": {
+      "sha256": "2c0bba62b1fd840022aa65ddbc4aa219bd1aaa9112bc475b785d34b206cc3776",
+      "bytes": 1088
+    },
+    "source/FAST-LIVO2-ROS2/scripts/build_ellipselio.sh": {
+      "sha256": "cdd09accf63ff71ebd69722c321e481481d07fe056595f3fe56c132dde7477c4",
+      "bytes": 606
+    },
+    "source/FAST-LIVO2-ROS2/scripts/build_ellipsoid_cuda.sh": {
+      "sha256": "9b3ab0416080bee390129967e0e9dba3b6815daa7ea2fe4df238b3cd5dffe2b7",
+      "bytes": 404
+    },
+    "source/FAST-LIVO2-ROS2/scripts/build_mixed_pgo.sh": {
+      "sha256": "528b9c3dea4dcbd1007dd6f22a8264675f8606db89d4f1fb4b3044ea0998e845",
+      "bytes": 2305
+    },
+    "source/FAST-LIVO2-ROS2/scripts/build_s3e.sh": {
+      "sha256": "5d0acb588f4b9fd8a9f2d1e5cee8b896f0f317c71671a583670b2bb61be17510",
+      "bytes": 968
+    },
+    "source/FAST-LIVO2-ROS2/scripts/colmap_output.sh": {
+      "sha256": "4fce0add323e4087f30e44162b3035e2fcbd108c9807336cf5a2f13fd890582d",
+      "bytes": 465
+    },
+    "source/FAST-LIVO2-ROS2/scripts/cu_multi148/wait_and_test.py": {
+      "sha256": "2eb63769724a0298d7e43d3a521c6423e842abe9016665203680359ddb85cbde",
+      "bytes": 3780
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipselio_live/CMakeLists.txt": {
+      "sha256": "7c91dc6e12b8a8d7ea1b5701a910554d3fbbefb4543aba53ebb46151a6d14568",
+      "bytes": 432
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipselio_live/README.md": {
+      "sha256": "b62b3d4659481ca3fccf781783cc93f95337ce53ad65914c72743cd796208726",
+      "bytes": 3805
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipselio_live/node_main.cpp": {
+      "sha256": "3b863ca04475d19e55edebfbc4baab5027aa412885b8d18eaa5be5b24f73ce4b",
+      "bytes": 2724
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py": {
+      "sha256": "f912e6ce7fd866c60b8035926264fe5945c7aa06d347a258b0259f245552548e",
+      "bytes": 17668
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/README.md": {
+      "sha256": "d7254ec3292d8ecffaa7eeac200b3e123ca2571c74daa4a6e85ae1045ed8ce5e",
+      "bytes": 5015
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/build.sh": {
+      "sha256": "caec9222974878ed93b8670078cf1aee493ae83cb1aa0644c49f4f4aaf617350",
+      "bytes": 3408
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/deploy.sh": {
+      "sha256": "f7926389a77230e6a4d03897ede37b42437002c12e89f6c4dc1a64a62c2eb54d",
+      "bytes": 661
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/entrypoint.sh": {
+      "sha256": "2bf8128a9a49880a45a0a8e30b83912e7f84fcbe830c055dae45058944395540",
+      "bytes": 208
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/env.sh": {
+      "sha256": "5a8947093284732567aa7d8e6243d3f4db9da02377a4047db5c0dbde573ff231",
+      "bytes": 704
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/queue.py": {
+      "sha256": "c796e58b5f220ed070b37a1deaee08fe22b8f70532c3dcfa133ca113b249ccef",
+      "bytes": 20385
+    },
+    "source/FAST-LIVO2-ROS2/scripts/ellipsoid_cbs148/status.py": {
+      "sha256": "4398b2863a7b17df0d16a5d6fb753d8c5dd2e35cc64bb14d9244609737ba909a",
+      "bytes": 1068
+    },
+    "source/FAST-LIVO2-ROS2/scripts/finish_ellipsoid_full.sh": {
+      "sha256": "2c4a01c488693a5f9a66f057af8cd16fe92f68733c7e7208a2e19a588e55966d",
+      "bytes": 953
+    },
+    "source/FAST-LIVO2-ROS2/scripts/generate_s3e_config.py": {
+      "sha256": "ba6d243555d7cb5934b16449e2edaa1b3ea51611da391bc3da010f37f1d82385",
+      "bytes": 3712
+    },
+    "source/FAST-LIVO2-ROS2/scripts/graco148/README.md": {
+      "sha256": "f077bd34a76b76add35e1711daa46b039cbd17de75ac7839667d661fa22f6051",
+      "bytes": 3391
+    },
+    "source/FAST-LIVO2-ROS2/scripts/graco148/controller.py": {
+      "sha256": "a2fff09f3618cb364a61f5717829ad6dcf10a32db0c86bf678ecc3949a14a0b8",
+      "bytes": 3510
+    },
+    "source/FAST-LIVO2-ROS2/scripts/graco148/env.sh": {
+      "sha256": "0d7777945fb16ca7af676ef71b3e3c132625ba48f0fec337316be28b537e7966",
+      "bytes": 661
+    },
+    "source/FAST-LIVO2-ROS2/scripts/mesh.py": {
+      "sha256": "7b7ad6d4dc8b448378dc8e4b32da599bc6aa6b5052138808d2ee6b2d2c3c4cd6",
+      "bytes": 4279
+    },
+    "source/FAST-LIVO2-ROS2/scripts/plot_s3e_trajectory.py": {
+      "sha256": "0315996fc3ece846e85a06e7960ef7b9a2dbcb3d3a338897ad9b50422dbc6c40",
+      "bytes": 2870
+    },
+    "source/FAST-LIVO2-ROS2/scripts/prepare_ellipsoid_sequence.py": {
+      "sha256": "49b1bf6c540907b877d573babfa9dbd66bd2ed325258abfa7f94f92976c21ec9",
+      "bytes": 3388
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/README.md": {
+      "sha256": "7b8b357b696647042745bfc654fcc7819d063947ad7bba4d85fcab70742bcb6b",
+      "bytes": 10807
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/SPATIAL-SUBMAPS.md": {
+      "sha256": "36eff8b570a3162caadeaa8038a3559358bf82062a7f22947c3a73539240b438",
+      "bytes": 5237
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/aerial148_build.sh": {
+      "sha256": "7f31c9bca6e0342540d4dae27130a955097b1cc05c5886e83aa3823c7dab099a",
+      "bytes": 996
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/aerial148_env.sh": {
+      "sha256": "0d68d6f45267fdfd1295e90bb9fb33983fac99ac174c0108ed4bd7e363ccb7c0",
+      "bytes": 768
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/baseline.yaml": {
+      "sha256": "f4ffa66d9ccc190ae889adc1b96d15487b4f37720421521a5a72046b26ef658f",
+      "bytes": 1091
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/enabled.yaml": {
+      "sha256": "d285a561659043720d74958e3d2d38fb4b928e6fdaa253f24b85f987b25a3dbd",
+      "bytes": 1090
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/env.sh": {
+      "sha256": "d3f2665ffd885a9100bf4bdbeb79c36209330667b18d7f85cba338722c773496",
+      "bytes": 714
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/evaluate.py": {
+      "sha256": "baf18f06fa869c952d83f1526a6fcdcc4f92c8a1f48304eb782dc48713a3b356",
+      "bytes": 4544
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/failed_frontends.py": {
+      "sha256": "69038a0425d49c4389829ea8e2d43b05829ba1a7d406f6259cf5e5e0c3c17c2e",
+      "bytes": 6207
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/failed_frontends_audit.py": {
+      "sha256": "d96e745e341b000aed6b489e93ecb3f05e05ff2fbcf469c0b1db4dcf1bb859db",
+      "bytes": 3220
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/failed_frontends_report.py": {
+      "sha256": "5520567f2edb5d97ad6ecb7ab1028801f64e15bec26ac7d796b29205dfc005e6",
+      "bytes": 3744
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/full_batch.py": {
+      "sha256": "ddd88e6c6531aadd52f93b91f17492e322d70deecbbc53087e209cb9ac25d834",
+      "bytes": 16180
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/graco_aerial.py": {
+      "sha256": "3c824663a6db41e04dc928d382e6d626e26c51796f831f159f2ed6ac35a314a2",
+      "bytes": 10744
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/graco_aerial148.py": {
+      "sha256": "fd11db7f493b7ac342d923257b7b4f426ed4fa2ebaebae573b6a5522b96d1e58",
+      "bytes": 19639
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/graco_gravity148.py": {
+      "sha256": "4507d21a88d030fd0a3e030354aa40979c815e54a5aeb1d71309e47f018ecd51",
+      "bytes": 9148
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/graco_spatial148.py": {
+      "sha256": "93752e6071b3e8398a7a949ad3fc201b2a6a2137debec5ed3348bf80fdef3e6a",
+      "bytes": 15149
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/local_env.sh": {
+      "sha256": "f63ee7948675fa8ded126e1d736c2f57e28b06959c5e10b87426140f52965622",
+      "bytes": 718
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/plot_comparison.py": {
+      "sha256": "85895b6e792a55615988eac20ad57e973537bd261abdf5250b7fbd8f139cf194",
+      "bytes": 3083
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/prepare_rollout.py": {
+      "sha256": "698b1bb07480c42e45eb99732d1845da462358e46b506c3bb46058d4f6bb9085",
+      "bytes": 1749
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/render_gravity_bevs.py": {
+      "sha256": "250334e6afcc82ff241bcb13f7eab1e25738dabe264f96d1515617987800d152",
+      "bytes": 11917
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/render_spatial_bevs.py": {
+      "sha256": "7248cb9a1489beab48d19a21ac16c7078c157c1262a59d33d396efc67d63ca87",
+      "bytes": 10644
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/replay_status.py": {
+      "sha256": "efebeab7cfb46ec8631bfb154b92b0500d87ef500e0421ede894666d88e1bffc",
+      "bytes": 1768
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/retention_audit.py": {
+      "sha256": "5118f39699d646400f820aacde98822ab12e17344383bb02e407186ae703efa5",
+      "bytes": 2779
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/rollout.py": {
+      "sha256": "35f5248ef9c0ebc772f051372cc75d195fc19e7a2a04f97cf9553c168ff37229",
+      "bytes": 1783
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/rollout.yaml": {
+      "sha256": "783dbf9783b6f1deac9397418b5fb9270225db31231900f8058bfc91ff206289",
+      "bytes": 2533
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/rollout_report.py": {
+      "sha256": "46e2c7b2d1321bfc1de2053c26d69a84586aa910d0852cc4b4a99cfe0ffb4ab5",
+      "bytes": 6657
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/rollout_rerun.py": {
+      "sha256": "a67e01ffac683f258ec704e6c4e3c74fb60b9945baeff6f73708a270eda58891",
+      "bytes": 2374
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/run_trial.py": {
+      "sha256": "6ffe8ab8ef9d58229361aad408f146b655368a9e92b73b653a083d048efa2b44",
+      "bytes": 5446
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/sensor_coverage.py": {
+      "sha256": "72aedc5362dcfcf8072e91d7ff05d5ef189ed6acddd6170fc79cd001bd1dbdad",
+      "bytes": 2548
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/spatial_submaps.yaml": {
+      "sha256": "aa05eb08187cc55aaec038da0d2220e2581561f8dccaf30d763421e748814574",
+      "bytes": 247
+    },
+    "source/FAST-LIVO2-ROS2/scripts/recent_submaps/validate.py": {
+      "sha256": "e64e3090e14b262818fe532eab9822bc41b35d61e0e142e0e0668acde4f1a8e4",
+      "bytes": 5148
+    },
+    "source/FAST-LIVO2-ROS2/scripts/rerun-requirements.txt": {
+      "sha256": "def72c56021df5c804368eeba3cbc15d60e2a477224c4a591a75267c34dd4b68",
+      "bytes": 46
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_cu_multi.py": {
+      "sha256": "8f49327a1459e7cc1ee74d43ad4eda14a3162bbaf8b0666c9b1fbf884d2c0129",
+      "bytes": 10947
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_dpgo_ros.sh": {
+      "sha256": "98441647da4138a13bfc96482f00bf931bf795c0363c437dfe87224d3669ac7f",
+      "bytes": 494
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_ellipselio.py": {
+      "sha256": "c4289dbf74fd83098b1d172b4d63a2a9239e805506870d7397f8d6caf7fedbe5",
+      "bytes": 11886
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_ellipselio.sh": {
+      "sha256": "41d1abf4482a9bc3b8a783ba9e48f2c615d8c84ce92e5352ff8baff70d48fa44",
+      "bytes": 550
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_ellipsoid_full_preparation.sh": {
+      "sha256": "814477903f4c35d89162aee9cd3e67522dc43a36bbd58edb1bfef2a13a137a31",
+      "bytes": 745
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_graco.py": {
+      "sha256": "beaeffcd8fd7e0600a7ad0a3c4b488592495399b59db92b034acaa39a4cbe80f",
+      "bytes": 9138
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_s3e.py": {
+      "sha256": "ab78705130711feeacdd2b19e41be3c10c7a0ffa8794c1defd14fefa1b3afb3a",
+      "bytes": 15792
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_s3e.sh": {
+      "sha256": "0b2a8028352067070c966c341e5e767002bb2e478881c8bf3851e25db3eb508e",
+      "bytes": 903
+    },
+    "source/FAST-LIVO2-ROS2/scripts/run_s3e_background.sh": {
+      "sha256": "030ff172e370b4b77004f8e7d58fe21d93a1c8c37734d22596bfd28f03f1144a",
+      "bytes": 1091
+    },
+    "source/FAST-LIVO2-ROS2/scripts/s3e_adapter.py": {
+      "sha256": "5a4970228d0965ca3a00474ba53d3052cfdd05ed7da1883082f725b693999246",
+      "bytes": 8494
+    },
+    "source/FAST-LIVO2-ROS2/scripts/s3e_experiment.sh": {
+      "sha256": "360a87b254f90bc902dd8e14261c87fc5c3a70f95dd7edb9cc30f69ce2459d0c",
+      "bytes": 414
+    },
+    "source/FAST-LIVO2-ROS2/scripts/s3e_rerun.py": {
+      "sha256": "b3fcd457344c3b33dd9d19b39ba8e380e479124adcd1fdd3dea2febcb392b889",
+      "bytes": 10994
+    },
+    "source/FAST-LIVO2-ROS2/scripts/s3e_session.py": {
+      "sha256": "8bf050b6db1d81e7e40200a256bea5c2c062cc5f28336cd68e1d8007433e621e",
+      "bytes": 2831
+    },
+    "source/FAST-LIVO2-ROS2/scripts/setup_rerun.sh": {
+      "sha256": "bb298189e825ea5a3cf0fdda2cf64b6034c740224b07d892880aa2f486f2d9db",
+      "bytes": 422
+    },
+    "source/FAST-LIVO2-ROS2/scripts/setup_research.sh": {
+      "sha256": "caf0f48755552be2717677671f51df18991947f1695ea2e47c3568cc53d359ce",
+      "bytes": 1116
+    },
+    "source/FAST-LIVO2-ROS2/src/IMU_Processing.cpp": {
+      "sha256": "2558005b624e44df9b98fc9b43ed6d02dd25db1fea8499076c7dafa04d816291",
+      "bytes": 21903
+    },
+    "source/FAST-LIVO2-ROS2/src/LIVMapper.cpp": {
+      "sha256": "81ea3636221dbd0a4453f17fb969cdeaf008834727c77fda6ff0c473b7fe6a69",
+      "bytes": 65200
+    },
+    "source/FAST-LIVO2-ROS2/src/frame.cpp": {
+      "sha256": "d45bb8ab1edf065089515940d0c7d6ff2c08fe460143778f62f09547e63f489a",
+      "bytes": 1644
+    },
+    "source/FAST-LIVO2-ROS2/src/main.cpp": {
+      "sha256": "b32ef198e6c82b8e811c5fe347f46ffdd1ecf4754e0b0d4b3d8c4dff0934224f",
+      "bytes": 368
+    },
+    "source/FAST-LIVO2-ROS2/src/preprocess.cpp": {
+      "sha256": "80796f8b986c36c47bdc56b86aec1fa57589164e4e419beef9d182fe919dd7a8",
+      "bytes": 33689
+    },
+    "source/FAST-LIVO2-ROS2/src/research_export.cpp": {
+      "sha256": "1b7c3936725b4bddcf601512d873683df855593ac169fde568d4a61d1de5ebc0",
+      "bytes": 3717
+    },
+    "source/FAST-LIVO2-ROS2/src/utils.cpp": {
+      "sha256": "3e0aeaccaf94d7a5e44af952027ddda88f8e3787580b942af5b2db66ff0705d3",
+      "bytes": 658
+    },
+    "source/FAST-LIVO2-ROS2/src/vio.cpp": {
+      "sha256": "5786aeca9a26c796953430d471d5428279a5590c084b07dc945647aa88048911",
+      "bytes": 68088
+    },
+    "source/FAST-LIVO2-ROS2/src/visual_point.cpp": {
+      "sha256": "d067e2b05445835cbbb4c8a159519bf4a01a271b96d06cc3a32419092b3fcc6e",
+      "bytes": 2858
+    },
+    "source/FAST-LIVO2-ROS2/src/voxel_map.cpp": {
+      "sha256": "98e1b52fa3f4f1f25a4b4cae1430569689e821b1c7c867b51135daee7cb56146",
+      "bytes": 38294
+    },
+    "source/FAST-LIVO2-ROS2/tests/test_image_buffer.cpp": {
+      "sha256": "b2ea3417637e8be245313b0241df2368f528838c897ea61bed49b5dc2aedbed0",
+      "bytes": 897
+    },
+    "source/FAST-LIVO2-ROS2/tests/test_preprocess.cpp": {
+      "sha256": "0be3ad5c359ab6659d78263e344389502f03d76754b74fbd6129aaa233129d53",
+      "bytes": 1666
+    },
+    "source/FAST-LIVO2-ROS2/tests/test_rerun_colors.py": {
+      "sha256": "d44b7aa6f5457aba5510ce1b734c50049a6d3681dc6ce608295a871d0e8f3c9a",
+      "bytes": 1264
+    },
+    "source/FAST-LIVO2-ROS2/tests/test_rerun_disconnect.py": {
+      "sha256": "e490f2dfe9cb34924bc0d8b29fa08f5f643ee20c4920b690361517ede6a9933d",
+      "bytes": 1358
+    },
+    "source/FAST-LIVO2-ROS2/tests/test_s3e_adapter.py": {
+      "sha256": "ec09f92c067f643e4f3c026fbe34451cefda48de90743f065decc1d3d31474b4",
+      "bytes": 2671
+    },
+    "source/ellipselio/CHANGELOG.rst": {
+      "sha256": "1bc99e07dd14778b18b3dd495a12be72539a922d95fb2af63dc79d8e2946b18c",
+      "bytes": 332
+    },
+    "source/ellipselio/CMakeLists.txt": {
+      "sha256": "3902c0e849e78d58121eab2f734f875bb0f1ddb8386dea32cb0b1c74ddaf5e09",
+      "bytes": 4193
+    },
+    "source/ellipselio/Doxyfile": {
+      "sha256": "f6ac8a96c894cdd9c27bd89216bb110e395b84895dcf6bc38447706a412a2410",
+      "bytes": 3009
+    },
+    "source/ellipselio/LICENSE": {
+      "sha256": "70d6be8942a03e2c434e05b98fedd97e091246ec4d285fa4edea4eafab736dc9",
+      "bytes": 1087
+    },
+    "source/ellipselio/README.md": {
+      "sha256": "026f7a7f3f89146d1dd8d9468ded5bdbdd9a7ab98cd58e31084a87fb2128d07d",
+      "bytes": 4726
+    },
+    "source/ellipselio/README_S3E.md": {
+      "sha256": "4a864370435d216d3c72b29b7da4165014d22fc0ab52b90dc47c0b8e0133bd1c",
+      "bytes": 2313
+    },
+    "source/ellipselio/config/mid360.yaml": {
+      "sha256": "0cf875b12d345495047d8d1c4ce88e233475a152be83ac067f67b74609bb124e",
+      "bytes": 875
+    },
+    "source/ellipselio/config/os128_ncd.yaml": {
+      "sha256": "fc71c78ad280838681a626cc77eb2f0487ac2fe734827347568ef18d667ecf3e",
+      "bytes": 907
+    },
+    "source/ellipselio/config/os64_geode.yaml": {
+      "sha256": "bb91b82a66cc7eb26522dded1530fdf518f7a01b3be0190e8bc967ff1a484e3c",
+      "bytes": 1021
+    },
+    "source/ellipselio/config/os64_ncd.yaml": {
+      "sha256": "f8bfb29ac341501b7e1bc4546394043ee423584ec563980ab3382bf798a9917c",
+      "bytes": 923
+    },
+    "source/ellipselio/config/qt64_spires.yaml": {
+      "sha256": "93ecc9c5a9712c47fb8822b801e606fa08e99473a680f6db56c74b3b6b9436ad",
+      "bytes": 904
+    },
+    "source/ellipselio/config/vlp16_bot.yaml": {
+      "sha256": "37df6f89ef724b248f7fcf66c6eb863b55bfa2ef987e0065b146f9c7b694bcc1",
+      "bytes": 815
+    },
+    "source/ellipselio/config/vlp16_geode.yaml": {
+      "sha256": "91db913fcc882fa5d33676ac357d32cc1ce9cf916cda52d4c95b5af2bf6a9b85",
+      "bytes": 1022
+    },
+    "source/ellipselio/config/vlp16_graco.yaml": {
+      "sha256": "ba3f56d9572b0c4b7fcda9cebbe484d8d357925e4b4dfa411854734a5193401b",
+      "bytes": 879
+    },
+    "source/ellipselio/ellipselio.gif": {
+      "sha256": "fc338d75c63adc1fa6e34cda87e3f65f339d3c6126db52950872da84d277ab8d",
+      "bytes": 5534685
+    },
+    "source/ellipselio/include/cam_processing.h": {
+      "sha256": "ae2e5839e8dc17b2aaac7fc56adc2c6270c0e8023b7178dfe935b3ef49174f7c",
+      "bytes": 5323
+    },
+    "source/ellipselio/include/common_lib.h": {
+      "sha256": "3c8d4cd42c801e1369522d5238657f9c592f6e9f1671c9cee0d8d0553ccc51b4",
+      "bytes": 4980
+    },
+    "source/ellipselio/include/common_pcl.h": {
+      "sha256": "ff73c75c40e2bd564d0de9facb6a5c41ca8608b1269788f937955e0058b49f3f",
+      "bytes": 7456
+    },
+    "source/ellipselio/include/ikfom/esekfom/esekfom.hpp": {
+      "sha256": "f111bde93df4609512f42ec6b9afb9046cf8e213e3befd4375e1efeab4a51cfd",
+      "bytes": 80480
+    },
+    "source/ellipselio/include/ikfom/esekfom/util.hpp": {
+      "sha256": "3c4265d25ea3f8c7f586d1e34bc352e981e09e30555e42011cd23a0a147d6918",
+      "bytes": 2363
+    },
+    "source/ellipselio/include/ikfom/mtk/build_manifold.hpp": {
+      "sha256": "0e88522551d02e78dc995e6c9d7883d9ecca7190379ec047ab839fff7186ea0f",
+      "bytes": 9436
+    },
+    "source/ellipselio/include/ikfom/mtk/src/SubManifold.hpp": {
+      "sha256": "96709f0f453a0c8776b1969064275ebf14dc5234b7024e68eb1cfc51a513864f",
+      "bytes": 4886
+    },
+    "source/ellipselio/include/ikfom/mtk/src/mtkmath.hpp": {
+      "sha256": "f9627989cf578f35ec5594a6956b4e9283d4dd109b26e7d2621682c508546295",
+      "bytes": 10176
+    },
+    "source/ellipselio/include/ikfom/mtk/src/vectview.hpp": {
+      "sha256": "7855408124ea65df4423bae5f97d5104af5552318796bc6324bdbf98a45101f3",
+      "bytes": 6540
+    },
+    "source/ellipselio/include/ikfom/mtk/startIdx.hpp": {
+      "sha256": "79cdc368bb4e083f5fda7549094c0aba8b599aee1f88e9f2a8b7fa785bf1f757",
+      "bytes": 12515
+    },
+    "source/ellipselio/include/ikfom/mtk/types/S2.hpp": {
+      "sha256": "f861be0bbb1a80d968189c90f9ef6b8e56b5f4bb19a9043a2e41c9397c215d56",
+      "bytes": 9971
+    },
+    "source/ellipselio/include/ikfom/mtk/types/SOn.hpp": {
+      "sha256": "90a8384a05d656698e6826b892561dc6cd619b62a7e32f9e6e3a9253e5e0c8aa",
+      "bytes": 10624
+    },
+    "source/ellipselio/include/ikfom/mtk/types/vect.hpp": {
+      "sha256": "771ecededd51dc694bdadb57f8a49fad7bc6091c6f6112142096954649ac405f",
+      "bytes": 14226
+    },
+    "source/ellipselio/include/ikfom/mtk/types/wrapped_cv_mat.hpp": {
+      "sha256": "3040f43fcb4195a2572a8819be012ebd2c4b59a38cfae86fcac3e01d7039a589",
+      "bytes": 3236
+    },
+    "source/ellipselio/include/ikfom/so3_math.h": {
+      "sha256": "1e1f7959b0f75d6c1393c8c86f49baea98095b9e41d63404976a8a0ff2578a26",
+      "bytes": 2812
+    },
+    "source/ellipselio/include/ikfom/use_ikfom.h": {
+      "sha256": "a5c9050776ef2d1070cc01c206798ffe9e65fee4971ac310dc1628199b2bd6bd",
+      "bytes": 4194
+    },
+    "source/ellipselio/include/imu_processing.h": {
+      "sha256": "6db9c78a14202bd2cd82c1eb7b6715d5ba4be9542e9723e50a5aa1d16e94a448",
+      "bytes": 7305
+    },
+    "source/ellipselio/include/ioctree/ioctree.h": {
+      "sha256": "65fb824c704998985c256527e344b8b9cb802695dd583d608438700a411723a9",
+      "bytes": 50598
+    },
+    "source/ellipselio/include/lidar_processing.h": {
+      "sha256": "6569dd383638d07237a051b9aec188c2948d157bda17bd8ed55ce95796344f46",
+      "bytes": 9606
+    },
+    "source/ellipselio/include/map_processing.h": {
+      "sha256": "942b2bf58ba72dd44fc13d1e99a05ec7ba5692aadfe8981d64bce4f3c99d4f3d",
+      "bytes": 12552
+    },
+    "source/ellipselio/launch/ellipselio.launch.py": {
+      "sha256": "9a36370044206b7d5397587181209c084903625cfdcc1789eadcf38ee7339d83",
+      "bytes": 3341
+    },
+    "source/ellipselio/launch/ellipselio_standalone.launch.py": {
+      "sha256": "28bdd389002a69a86fc46a532d9c3d5fffb33455d03424f594ee6350945a6954",
+      "bytes": 2923
+    },
+    "source/ellipselio/msg/EllipseLioAnalytics.msg": {
+      "sha256": "daeb5076261c35635b4a8df54cec87f71f3c3863278d6a7991b78cf0712cf894",
+      "bytes": 1297
+    },
+    "source/ellipselio/package.xml": {
+      "sha256": "4cb4e948f76ca39f2d601c46490f091d7ae18385ec9fd4514f9b81588349a09d",
+      "bytes": 1035
+    },
+    "source/ellipselio/rviz/ellipselio.rviz": {
+      "sha256": "0e603229ae8699187bcd32ab3b770bd33cac48fc0d263eb5e762b1b63bc746d0",
+      "bytes": 7232
+    },
+    "source/ellipselio/src/cam_processing.cpp": {
+      "sha256": "3bba7c8b7950897bb6725ae9232b05fbfb9c42a4a293c4f415c6251380e54cbe",
+      "bytes": 3869
+    },
+    "source/ellipselio/src/imu_processing.cpp": {
+      "sha256": "995e8898b2ab62b4a8bad7e9ca1f987ca971d4489f0653a1ca4f43374ce0f783",
+      "bytes": 13169
+    },
+    "source/ellipselio/src/lidar_processing.cpp": {
+      "sha256": "4174d61e1db260fc63751edd3d1f36c1192330d5e61d45a67c9097ad14cb907a",
+      "bytes": 13451
+    },
+    "source/ellipselio/src/map_processing.cpp": {
+      "sha256": "2be9293d7c152de1bda9dac01725958513b49f65c8e2e2759af90bb129f2542e",
+      "bytes": 68372
+    },
+    "source/ellipselio/src/research_frame.cpp": {
+      "sha256": "ad401777bf39ae464b223d96d2c20c6c2277d933a73a8fa8364264d2ccd95023",
+      "bytes": 7585
+    },
+    "source/ellipselio/src/submaps.cpp": {
+      "sha256": "98dd5a1884f41d3e11caab9e27477fc92b4ab1c274357c26d837d861843519f9",
+      "bytes": 10902
+    },
+    "source/ellipselio/tests/research_writer.cpp": {
+      "sha256": "22fb3f4563ae85555d1f4424e97c15fd9b6ce0c096a381f757595ad4598de6ce",
+      "bytes": 1059
+    },
+    "source/ellipselio/tests/slow_writer.py": {
+      "sha256": "08de9396e02fee4e99595c87bac697d0ae310b6c89b2617fbe3d33e9a679c1cd",
+      "bytes": 888
+    },
+    "source/ellipselio/tests/submaps.cpp": {
+      "sha256": "a3887b68a54d402e4a1cddec6ccbc13a6c2daa55990f3329347dfef3bcae61dd",
+      "bytes": 12084
+    },
+    "verification/analyze.py": {
+      "sha256": "6d0016119831aadb7a4069601d6fba60df24f4a6151ccd25265194397cc1e26c",
+      "bytes": 7052
+    },
+    "verification/build.log": {
+      "sha256": "db40d6e0b966f91a33687bd06530c4acacf50a8eb81e009396de9195ae6ee821",
+      "bytes": 23444
+    },
+    "verification/build.sh": {
+      "sha256": "778e316ac563d99fb919b1551cb039bbd25f4d86a7b6b6ba89183408579f52c8",
+      "bytes": 1670
+    },
+    "verification/comparison.log": {
+      "sha256": "b24a6aaff6f3bca74949ce44aaf8ab424e722dcafed0f173947491a38b4280c1",
+      "bytes": 28243
+    },
+    "verification/container-hostconfig.json": {
+      "sha256": "c8f965cac7f7cf3de6c79f4dfc5dc5b553c734479d936281fcfec53adf4aa89a",
+      "bytes": 3014
+    },
+    "verification/env.sh": {
+      "sha256": "809f2cb9ec72de4ea47e6d44c15efeeaf2a7b956690249ee7ab55861f7fd021d",
+      "bytes": 880
+    },
+    "verification/finalize.py": {
+      "sha256": "ad19f0ce95474aadc08754318355fb1876ce832e4d47f4d48062b3a10c7134e5",
+      "bytes": 1338
+    },
+    "verification/gallery.log": {
+      "sha256": "89754a569a10cc07e0b433a6c1cef483b834c805f43a52a3bffe918ca92c692e",
+      "bytes": 512
+    },
+    "verification/local-copy-audit.json": {
+      "sha256": "c0bd3f1bd2a7490a636e48b03af8c1ee7324d7c0811c8bafcdd8241fd742b260",
+      "bytes": 135
+    },
+    "verification/monitor.py": {
+      "sha256": "a91eee5363cbec0b14dbc3f7a07f18d55779eb845340a0cb5020bfe6bd3bda1c",
+      "bytes": 1184
+    },
+    "verification/plot_comparison.py": {
+      "sha256": "c808ecadf14e8bc3d91d70d2a84bff627f0b47c32e2d55ef3ebfcb22f8d077fa",
+      "bytes": 1967
+    },
+    "verification/postprocess-status.json": {
+      "sha256": "44fc812fd7d779709beb492bf69a33372be0b71241e0a8714f221a8ffa438c24",
+      "bytes": 26
+    },
+    "verification/python-tests.log": {
+      "sha256": "f7e5e0ef1ae4348589f044bd2908313f78b927241a26744f3b82c5e88eabc145",
+      "bytes": 100
+    },
+    "verification/run.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/source-revisions.json": {
+      "sha256": "2735243b880d26f18184c817327cd5d87471ff3df306600fb279d9f9fa02a0fd",
+      "bytes": 310
+    }
+  },
+  "file_count": 832,
+  "total_bytes": 395076123
+}

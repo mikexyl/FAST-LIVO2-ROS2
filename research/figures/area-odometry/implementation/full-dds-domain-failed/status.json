@@ -1,0 +1,7 @@
+{
+  "phase": "failed",
+  "ground_truth_used_by_frontend": false,
+  "full_sequence": true,
+  "error": "RuntimeError('Exit 1: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/area-odometry-20260921/full/capture.log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/area-odometry-20260921/full.py\", line 21, in <module>\n    call(['/usr/bin/python3',scripts/'run_trial.py','aerial08','--robot','aerial08','--area-odometry',\n  File \"/home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/scripts/recent_submaps/graco_aerial.py\", line 64, in call\n    if code:raise RuntimeError(f'Exit {code}: {log}')\nRuntimeError: Exit 1: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/area-odometry-20260921/full/capture.log\n"
+}

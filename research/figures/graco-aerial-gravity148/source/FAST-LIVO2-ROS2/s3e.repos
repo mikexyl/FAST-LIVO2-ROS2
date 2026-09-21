@@ -1,0 +1,25 @@
+repositories:
+  FAST-LIVO2-ROS2:
+    type: git
+    url: https://github.com/mikexyl/FAST-LIVO2-ROS2.git
+    version: dev/fast-livo2-s3e-dpgo
+  rpg_vikit:
+    type: git
+    url: https://github.com/mikexyl/rpg_vikit.git
+    version: 4b612d096a94d069c553121adea1dd1e8b316361
+  livox_ros_driver2:
+    type: git
+    url: https://github.com/mikexyl/livox_ros_driver2.git
+    version: 518493ab5057da26d06bdde05c27b0ef3251da8b
+  Sophus:
+    type: git
+    url: https://github.com/strasdat/Sophus.git
+    version: de0f8d3d92bf776271e16de56d1803940ebccab9
+  cbs:
+    type: git
+    url: https://github.com/mikexyl/cbs.git
+    version: bea1d3552283335f94f7b806276f508bb9d75ab0
+  cbs_ros:
+    type: git
+    url: https://github.com/mikexyl/cbs_ros.git
+    version: 2b7d0d19ac206616160e8ab37cfe0b6591ea9123

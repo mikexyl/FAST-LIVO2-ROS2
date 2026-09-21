@@ -1,0 +1,1551 @@
+{
+  "cbs": {
+    "aerial05": {
+      "alignment_SE3": [
+        [
+          -0.020173587927658585,
+          0.712757064039851,
+          -0.7011208127073514,
+          195.4993347022109
+        ],
+        [
+          0.9997068288025792,
+          0.004988918107812802,
+          -0.023693187662371263,
+          135.78372520944166
+        ],
+        [
+          -0.01338965255769679,
+          -0.7013932408837469,
+          -0.7126487485760279,
+          24.969389277810084
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.7431117296995745,
+      "per_robot": {
+        "aerial05": {
+          "samples": 2747,
+          "statistics": {
+            "max": 1.6275785303173738,
+            "mean": 0.7740724348860663,
+            "median": 0.7431117296995745,
+            "min": 0.13150977477694487,
+            "rmse": 0.860054989272265,
+            "sse": 2031.9410238196024,
+            "std": 0.37484190016815455
+          }
+        }
+      },
+      "rmse_m": 0.860054989272265,
+      "robots": [
+        "aerial05"
+      ],
+      "samples": 2747,
+      "scale": 1.0,
+      "statistics": {
+        "max": 1.6275785303173738,
+        "mean": 0.7740724348860663,
+        "median": 0.7431117296995745,
+        "min": 0.13150977477694487,
+        "rmse": 0.860054989272265,
+        "sse": 2031.9410238196024,
+        "std": 0.37484190016815455
+      }
+    },
+    "aerial06": {
+      "alignment_SE3": [
+        [
+          -0.7338070541265673,
+          0.4787425978000799,
+          -0.48200905838554503,
+          58.94325073003166
+        ],
+        [
+          0.6793445806021703,
+          0.5126535319186594,
+          -0.5250498043212521,
+          110.58177472183752
+        ],
+        [
+          -0.004260061097042939,
+          -0.7127354917940838,
+          -0.7014199673637008,
+          3.765684644311518
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.45754358394534533,
+      "per_robot": {
+        "aerial06": {
+          "samples": 3103,
+          "statistics": {
+            "max": 18.453142926068573,
+            "mean": 1.2443536871268182,
+            "median": 0.45126895566584796,
+            "min": 0.11095521200092423,
+            "rmse": 3.595483142435619,
+            "sse": 40114.029482452635,
+            "std": 3.3732896301492716
+          }
+        },
+        "aerial07": {
+          "samples": 3717,
+          "statistics": {
+            "max": 0.9022307256248939,
+            "mean": 0.4538960170145771,
+            "median": 0.47837894178786683,
+            "min": 0.03928022535032961,
+            "rmse": 0.494825215618824,
+            "sse": 910.1148617434055,
+            "std": 0.1970543066023129
+          }
+        }
+      },
+      "rmse_m": 2.4526048258331996,
+      "robots": [
+        "aerial06",
+        "aerial07"
+      ],
+      "samples": 6820,
+      "scale": 1.0,
+      "statistics": {
+        "max": 18.453142926068573,
+        "mean": 0.8135426666272287,
+        "median": 0.45754358394534533,
+        "min": 0.03928022535032961,
+        "rmse": 2.4526048258331996,
+        "sse": 41024.14434419604,
+        "std": 2.313745612913692
+      }
+    },
+    "aerial08": {
+      "alignment_SE3": [
+        [
+          0.6002969695826681,
+          -0.6106808093444772,
+          0.5164421530125518,
+          45.01056566963635
+        ],
+        [
+          -0.7990912269130783,
+          -0.4312331854617058,
+          0.4189166394727023,
+          100.86744907883593
+        ],
+        [
+          -0.033117357690753926,
+          -0.6641587828636497,
+          -0.7468576516074924,
+          4.9439398740773335
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.059622894484051836,
+      "per_robot": {
+        "aerial08": {
+          "samples": 2620,
+          "statistics": {
+            "max": 0.28050609576909186,
+            "mean": 0.06485472763880434,
+            "median": 0.059622894484051836,
+            "min": 0.0038798819176941285,
+            "rmse": 0.07347878638463412,
+            "sse": 14.145725967223775,
+            "std": 0.03453977926181927
+          }
+        }
+      },
+      "rmse_m": 0.07347878638463412,
+      "robots": [
+        "aerial08"
+      ],
+      "samples": 2620,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.28050609576909186,
+        "mean": 0.06485472763880434,
+        "median": 0.059622894484051836,
+        "min": 0.0038798819176941285,
+        "rmse": 0.07347878638463412,
+        "sse": 14.145725967223775,
+        "std": 0.03453977926181927
+      }
+    }
+  },
+  "components": {
+    "aerial05": "aerial05",
+    "aerial06": "aerial06",
+    "aerial07": "aerial06",
+    "aerial08": "aerial08"
+  },
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial05",
+      "aerial06",
+      "aerial07",
+      "aerial08"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {
+      "aerial06--aerial07": 5
+    },
+    "measured_components": [
+      [
+        "aerial05"
+      ],
+      [
+        "aerial06",
+        "aerial07"
+      ],
+      [
+        "aerial08"
+      ]
+    ],
+    "output_frames": {
+      "aerial05": [
+        "aerial05"
+      ],
+      "aerial06": [
+        "aerial06"
+      ],
+      "aerial07": [
+        "aerial06"
+      ],
+      "aerial08": [
+        "aerial08"
+      ]
+    }
+  },
+  "dataset": "GRACO aerial 05/06/07/08 on 148, temporal submaps",
+  "evaluation_wall_s": 40.425823568948545,
+  "ground_truth": {
+    "aerial05": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1661851055674999952,
+      "last_stamp_ns": 1661851352954999923,
+      "matched_samples": 2747,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-four148-20260920/full/reference/aerial05_gt.txt",
+      "pose_samples": 2747,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 59457
+    },
+    "aerial06": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1662002400450000047,
+      "last_stamp_ns": 1662002730615000009,
+      "matched_samples": 3103,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-four148-20260920/full/reference/aerial06_gt.txt",
+      "pose_samples": 3103,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 66034
+    },
+    "aerial07": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1662003002799999952,
+      "last_stamp_ns": 1662003398154999971,
+      "matched_samples": 3717,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-four148-20260920/full/reference/aerial07_gt.txt",
+      "pose_samples": 3717,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 79072
+    },
+    "aerial08": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1662347492045000076,
+      "last_stamp_ns": 1662347771154999971,
+      "matched_samples": 2620,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-four148-20260920/full/reference/aerial08_gt.txt",
+      "pose_samples": 2620,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 55823
+    }
+  },
+  "map_source": "native processed member scans in completed submaps; not full-resolution raw geometry",
+  "pcm": {
+    "excluded_loops": 1,
+    "proposed_loops": 7,
+    "retained_loops": 6,
+    "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+    "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+    "settings": {
+      "enabled": true,
+      "minimum_clique_size": 2,
+      "probability": 0.99,
+      "timeout_s": 60.0
+    },
+    "verdicts": [
+      {
+        "key_from": 6,
+        "key_to": 6,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 6,
+        "key_to": 7,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 8,
+        "key_to": 8,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 9,
+        "key_to": 10,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 10,
+        "key_to": 11,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 61,
+        "key_to": 53,
+        "reason": "insufficient_support",
+        "retained": false,
+        "robot_from": 1,
+        "robot_to": 3
+      }
+    ]
+  },
+  "raw": {
+    "aerial05": {
+      "alignment_SE3": [
+        [
+          -0.008903762116889306,
+          0.69779368966546,
+          -0.7162434569915664,
+          195.74288505369938
+        ],
+        [
+          0.9998839461653658,
+          0.015067611294935682,
+          0.0022497312374115605,
+          136.05077255853365
+        ],
+        [
+          0.012361926263398978,
+          -0.7161403031200858,
+          -0.6978468664586301,
+          19.946603178589694
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.7431117296685348,
+      "per_robot": {
+        "aerial05": {
+          "samples": 2747,
+          "statistics": {
+            "max": 1.627578530250514,
+            "mean": 0.7740724348566648,
+            "median": 0.7431117296685348,
+            "min": 0.1315097747848632,
+            "rmse": 0.860054989239995,
+            "sse": 2031.9410236671217,
+            "std": 0.3748419001548286
+          }
+        }
+      },
+      "rmse_m": 0.860054989239995,
+      "robots": [
+        "aerial05"
+      ],
+      "samples": 2747,
+      "scale": 1.0,
+      "statistics": {
+        "max": 1.627578530250514,
+        "mean": 0.7740724348566648,
+        "median": 0.7431117296685348,
+        "min": 0.1315097747848632,
+        "rmse": 0.860054989239995,
+        "sse": 2031.9410236671217,
+        "std": 0.3748419001548286
+      }
+    },
+    "aerial06": {
+      "alignment_SE3": [
+        [
+          -0.7257092553214877,
+          0.4824967320372792,
+          -0.4904518124281721,
+          60.936252946656836
+        ],
+        [
+          0.687553376367572,
+          0.4828844734575053,
+          -0.5423033652294819,
+          111.8150267035885
+        ],
+        [
+          -0.024828036295387435,
+          -0.7307663709196084,
+          -0.6821759888377054,
+          -0.8033485879794107
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.8517987965837923,
+      "per_robot": {
+        "aerial06": {
+          "samples": 3103,
+          "statistics": {
+            "max": 17.904148060980763,
+            "mean": 1.6039617552230896,
+            "median": 0.8517987965837923,
+            "min": 0.48597965438632995,
+            "rmse": 3.5598129499591296,
+            "sse": 39322.048344675924,
+            "std": 3.1779828392359804
+          }
+        }
+      },
+      "rmse_m": 3.5598129499591296,
+      "robots": [
+        "aerial06"
+      ],
+      "samples": 3103,
+      "scale": 1.0,
+      "statistics": {
+        "max": 17.904148060980763,
+        "mean": 1.6039617552230896,
+        "median": 0.8517987965837923,
+        "min": 0.48597965438632995,
+        "rmse": 3.5598129499591296,
+        "sse": 39322.048344675924,
+        "std": 3.1779828392359804
+      }
+    },
+    "aerial07": {
+      "alignment_SE3": [
+        [
+          -0.6245662483817906,
+          0.5782677299444985,
+          -0.5249032614559869,
+          49.93108239043055
+        ],
+        [
+          0.7809658124994199,
+          0.46509297142270634,
+          -0.4168703966946066,
+          97.51416609541002
+        ],
+        [
+          0.00306611960238197,
+          -0.6702946817915497,
+          -0.7420886998685193,
+          -0.7439045503933208
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.1914329237326074,
+      "per_robot": {
+        "aerial07": {
+          "samples": 3717,
+          "statistics": {
+            "max": 0.4266224584749403,
+            "mean": 0.19806651283439428,
+            "median": 0.1914329237326074,
+            "min": 0.07279605841033317,
+            "rmse": 0.20342788600725312,
+            "sse": 153.82025716159734,
+            "std": 0.046395703454120515
+          }
+        }
+      },
+      "rmse_m": 0.20342788600725312,
+      "robots": [
+        "aerial07"
+      ],
+      "samples": 3717,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.4266224584749403,
+        "mean": 0.19806651283439428,
+        "median": 0.1914329237326074,
+        "min": 0.07279605841033317,
+        "rmse": 0.20342788600725312,
+        "sse": 153.82025716159734,
+        "std": 0.046395703454120515
+      }
+    },
+    "aerial08": {
+      "alignment_SE3": [
+        [
+          0.6284720769018052,
+          -0.5408532168043445,
+          0.5590175725566457,
+          46.88650963407433
+        ],
+        [
+          -0.7778239047208475,
+          -0.4403019137489787,
+          0.44846872577003744,
+          100.48024913033174
+        ],
+        [
+          0.0035807540471295696,
+          -0.7166673026037814,
+          -0.6974060191732465,
+          -0.7713852797833987
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.16196215653819018,
+      "per_robot": {
+        "aerial08": {
+          "samples": 2620,
+          "statistics": {
+            "max": 0.33539680106365255,
+            "mean": 0.1587976121130268,
+            "median": 0.16196215653819018,
+            "min": 0.0139873202621352,
+            "rmse": 0.16678501644397173,
+            "sse": 72.88117328076572,
+            "std": 0.05099568704720638
+          }
+        }
+      },
+      "rmse_m": 0.16678501644397173,
+      "robots": [
+        "aerial08"
+      ],
+      "samples": 2620,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.33539680106365255,
+        "mean": 0.1587976121130268,
+        "median": 0.16196215653819018,
+        "min": 0.0139873202621352,
+        "rmse": 0.16678501644397173,
+        "sse": 72.88117328076572,
+        "std": 0.05099568704720638
+      }
+    }
+  },
+  "registration": {
+    "network_cdr_bytes": 856972,
+    "ownership": "one binary GICP factor per geometrically supported PCM-retained loop, on its canonical first robot",
+    "registration_factor_count": 6,
+    "robots": {
+      "aerial05": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [],
+        "preparation_s": 5.6796e-05,
+        "registration_factor_count": 0,
+        "robot_id": 0,
+        "schema_version": 1,
+        "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": 80.0,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      },
+      "aerial06": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [
+          {
+            "accepted": true,
+            "final_error": 0.006940272444523378,
+            "final_quality": {
+              "condition": 12016.394824262386,
+              "inliers": 11795,
+              "observability": 0.09735787582114701,
+              "overlap": 0.9088434179327303,
+              "rmse_m": 0.4705914425334118,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              6
+            ],
+            "information_scale": 3.182239542104407e-07,
+            "initial_error_at_measurement": 0.007013616928096872,
+            "initial_quality": {
+              "condition": 12014.507393118412,
+              "inliers": 11794,
+              "observability": 0.09731927149537242,
+              "overlap": 0.9098972512514271,
+              "rmse_m": 0.47153652418626557,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              6
+            ],
+            "linearizations": 200,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.007141408633251578,
+            "final_quality": {
+              "condition": 14686.852477996119,
+              "inliers": 9340,
+              "observability": 0.08287647820717728,
+              "overlap": 0.9132343900939668,
+              "rmse_m": 0.4853802611205764,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              6
+            ],
+            "information_scale": 3.575993585225754e-07,
+            "initial_error_at_measurement": 0.007188607787953787,
+            "initial_quality": {
+              "condition": 14637.81542537859,
+              "inliers": 9337,
+              "observability": 0.08316510378798356,
+              "overlap": 0.9128831123210679,
+              "rmse_m": 0.4859615491387281,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              7
+            ],
+            "linearizations": 200,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.008216111178088044,
+            "final_quality": {
+              "condition": 11526.557888671252,
+              "inliers": 8628,
+              "observability": 0.0928837213627648,
+              "overlap": 0.8859225793202588,
+              "rmse_m": 0.4407024372987768,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              8
+            ],
+            "information_scale": 4.5141703525484044e-07,
+            "initial_error_at_measurement": 0.008186571729059117,
+            "initial_quality": {
+              "condition": 11569.333094111325,
+              "inliers": 8631,
+              "observability": 0.09265788207985294,
+              "overlap": 0.8862306191600781,
+              "rmse_m": 0.4409417264706879,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              8
+            ],
+            "linearizations": 200,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.012689001536173165,
+            "final_quality": {
+              "condition": 12718.487606673,
+              "inliers": 10037,
+              "observability": 0.07975946295969356,
+              "overlap": 0.8776091081593927,
+              "rmse_m": 0.5269367669564935,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              9
+            ],
+            "information_scale": 4.2302680340548123e-07,
+            "initial_error_at_measurement": 0.012488171103688668,
+            "initial_quality": {
+              "condition": 12712.099133872447,
+              "inliers": 10046,
+              "observability": 0.07975365782039977,
+              "overlap": 0.8783206831119544,
+              "rmse_m": 0.5276340672550649,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              10
+            ],
+            "linearizations": 200,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.01758334532958055,
+            "final_quality": {
+              "condition": 10501.562586921384,
+              "inliers": 10122,
+              "observability": 0.08036376274066998,
+              "overlap": 0.8957813428401664,
+              "rmse_m": 0.5394724239371297,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              10
+            ],
+            "information_scale": 5.637956360633278e-07,
+            "initial_error_at_measurement": 0.017598662015647505,
+            "initial_quality": {
+              "condition": 10514.615920391845,
+              "inliers": 10121,
+              "observability": 0.0802729564678216,
+              "overlap": 0.8961378490790255,
+              "rmse_m": 0.5389708904027573,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              11
+            ],
+            "linearizations": 200,
+            "reason": "accepted"
+          }
+        ],
+        "preparation_s": 0.101800503,
+        "registration_factor_count": 5,
+        "robot_id": 1,
+        "schema_version": 1,
+        "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": 80.0,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      },
+      "aerial07": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [],
+        "preparation_s": 5.2904e-05,
+        "registration_factor_count": 0,
+        "robot_id": 2,
+        "schema_version": 1,
+        "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": 80.0,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      },
+      "aerial08": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [
+          {
+            "accepted": true,
+            "final_error": 0.010185421661315981,
+            "final_quality": {
+              "condition": 9423.420530353525,
+              "inliers": 10087,
+              "observability": 0.1246416645970331,
+              "overlap": 0.8718125430737422,
+              "rmse_m": 0.5380163586124539,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              3,
+              1
+            ],
+            "information_scale": 4.053899512021645e-07,
+            "initial_error_at_measurement": 0.01038689679096669,
+            "initial_quality": {
+              "condition": 9387.812169659906,
+              "inliers": 10088,
+              "observability": 0.12495673813437305,
+              "overlap": 0.8718125430737422,
+              "rmse_m": 0.5379332934850269,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              51
+            ],
+            "linearizations": 102,
+            "reason": "accepted"
+          }
+        ],
+        "preparation_s": 0.023365557,
+        "registration_factor_count": 1,
+        "robot_id": 3,
+        "schema_version": 1,
+        "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": 80.0,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      }
+    },
+    "settings": {
+      "correspondence_m": 1.5,
+      "covariance_neighbors": 20,
+      "enabled": true,
+      "factor": "gicp",
+      "max_condition": 1000000.0,
+      "max_information_ratio": 1.0,
+      "max_iterations": 30,
+      "max_points": 12000,
+      "max_range_m": 80.0,
+      "min_inliers": 100,
+      "min_observability": 0.0001,
+      "min_overlap": 0.3,
+      "num_threads": 2,
+      "timeout_s": 60.0,
+      "voxel_m": 0.5
+    }
+  },
+  "runtime": {
+    "backend": "CBS SE(3)",
+    "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+    "cbs_network_cdr_bytes": 21196,
+    "keyframes": 253,
+    "loop_network_cdr_bytes": 7223643,
+    "loops": 6,
+    "memory_sampling_interval_s": 0.2,
+    "mode": "peers",
+    "pcm_enabled": true,
+    "pcm_network_cdr_bytes": 7764,
+    "proposed_loops": 7,
+    "registration_enabled": true,
+    "registration_network_cdr_bytes": 856972,
+    "robots": {
+      "aerial05": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 0,
+          "bandwidth_sent_bytes": 0,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 59,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 59,
+          "residual": 3.419252100813944e-25,
+          "residual_abs_change": 3.4091488012806996e-26,
+          "residual_rel_change": 1.5353441271098332e-10,
+          "residual_signed_change": -3.4091488012806996e-26,
+          "result_logmap_change": 6.771851058194619e-14,
+          "robot_id": 0,
+          "robot_name": "aerial05"
+        },
+        "detection_s": 2.8497221769066527,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 1382870,
+        "loops": 0,
+        "max_rss_kib": 112700,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 0,
+        "poses": 58,
+        "proposed_loops": 0,
+        "reference_available": true,
+        "reference_robot_id": 0,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [],
+          "preparation_s": 5.6796e-05,
+          "registration_factor_count": 0,
+          "robot_id": 0,
+          "schema_version": 1,
+          "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": 80.0,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 513,
+        "robot": "aerial05",
+        "verifier_max_rss_kib": 107376,
+        "wall_s": 13.121834671939723
+      },
+      "aerial06": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 8156,
+          "bandwidth_sent_bytes": 2266,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 71,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 71,
+          "residual": 0.057250556593547504,
+          "residual_abs_change": 1.942890293094024e-16,
+          "residual_rel_change": 3.393661841382004e-15,
+          "residual_signed_change": 1.942890293094024e-16,
+          "result_logmap_change": 3.8328760173883935e-14,
+          "robot_id": 1,
+          "robot_name": "aerial06"
+        },
+        "detection_s": 2.847775764996186,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 3384457,
+        "loops": 5,
+        "max_rss_kib": 116364,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 3694,
+        "poses": 64,
+        "proposed_loops": 6,
+        "reference_available": false,
+        "reference_robot_id": 1,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [
+            {
+              "accepted": true,
+              "final_error": 0.006940272444523378,
+              "final_quality": {
+                "condition": 12016.394824262386,
+                "inliers": 11795,
+                "observability": 0.09735787582114701,
+                "overlap": 0.9088434179327303,
+                "rmse_m": 0.4705914425334118,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                6
+              ],
+              "information_scale": 3.182239542104407e-07,
+              "initial_error_at_measurement": 0.007013616928096872,
+              "initial_quality": {
+                "condition": 12014.507393118412,
+                "inliers": 11794,
+                "observability": 0.09731927149537242,
+                "overlap": 0.9098972512514271,
+                "rmse_m": 0.47153652418626557,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                6
+              ],
+              "linearizations": 200,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.007141408633251578,
+              "final_quality": {
+                "condition": 14686.852477996119,
+                "inliers": 9340,
+                "observability": 0.08287647820717728,
+                "overlap": 0.9132343900939668,
+                "rmse_m": 0.4853802611205764,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                6
+              ],
+              "information_scale": 3.575993585225754e-07,
+              "initial_error_at_measurement": 0.007188607787953787,
+              "initial_quality": {
+                "condition": 14637.81542537859,
+                "inliers": 9337,
+                "observability": 0.08316510378798356,
+                "overlap": 0.9128831123210679,
+                "rmse_m": 0.4859615491387281,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                7
+              ],
+              "linearizations": 200,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.008216111178088044,
+              "final_quality": {
+                "condition": 11526.557888671252,
+                "inliers": 8628,
+                "observability": 0.0928837213627648,
+                "overlap": 0.8859225793202588,
+                "rmse_m": 0.4407024372987768,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                8
+              ],
+              "information_scale": 4.5141703525484044e-07,
+              "initial_error_at_measurement": 0.008186571729059117,
+              "initial_quality": {
+                "condition": 11569.333094111325,
+                "inliers": 8631,
+                "observability": 0.09265788207985294,
+                "overlap": 0.8862306191600781,
+                "rmse_m": 0.4409417264706879,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                8
+              ],
+              "linearizations": 200,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.012689001536173165,
+              "final_quality": {
+                "condition": 12718.487606673,
+                "inliers": 10037,
+                "observability": 0.07975946295969356,
+                "overlap": 0.8776091081593927,
+                "rmse_m": 0.5269367669564935,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                9
+              ],
+              "information_scale": 4.2302680340548123e-07,
+              "initial_error_at_measurement": 0.012488171103688668,
+              "initial_quality": {
+                "condition": 12712.099133872447,
+                "inliers": 10046,
+                "observability": 0.07975365782039977,
+                "overlap": 0.8783206831119544,
+                "rmse_m": 0.5276340672550649,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                10
+              ],
+              "linearizations": 200,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.01758334532958055,
+              "final_quality": {
+                "condition": 10501.562586921384,
+                "inliers": 10122,
+                "observability": 0.08036376274066998,
+                "overlap": 0.8957813428401664,
+                "rmse_m": 0.5394724239371297,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                10
+              ],
+              "information_scale": 5.637956360633278e-07,
+              "initial_error_at_measurement": 0.017598662015647505,
+              "initial_quality": {
+                "condition": 10514.615920391845,
+                "inliers": 10121,
+                "observability": 0.0802729564678216,
+                "overlap": 0.8961378490790255,
+                "rmse_m": 0.5389708904027573,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                11
+              ],
+              "linearizations": 200,
+              "reason": "accepted"
+            }
+          ],
+          "preparation_s": 0.101800503,
+          "registration_factor_count": 5,
+          "robot_id": 1,
+          "schema_version": 1,
+          "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": 80.0,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 708,
+        "robot": "aerial06",
+        "verifier_max_rss_kib": 97048,
+        "wall_s": 13.149799612001516
+      },
+      "aerial07": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 8908,
+          "bandwidth_sent_bytes": 1866,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 79,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 79,
+          "residual": 0.003993354914984819,
+          "residual_abs_change": 1.1709383462843448e-16,
+          "residual_rel_change": 2.93221707364511e-14,
+          "residual_signed_change": -1.1709383462843448e-16,
+          "result_logmap_change": 6.934535455864306e-14,
+          "robot_id": 2,
+          "robot_name": "aerial07"
+        },
+        "detection_s": 2.848157166969031,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 1486520,
+        "loops": 5,
+        "max_rss_kib": 118652,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 3525,
+        "poses": 77,
+        "proposed_loops": 5,
+        "reference_available": false,
+        "reference_robot_id": 1,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [],
+          "preparation_s": 5.2904e-05,
+          "registration_factor_count": 0,
+          "robot_id": 2,
+          "schema_version": 1,
+          "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": 80.0,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 855232,
+        "robot": "aerial07",
+        "verifier_max_rss_kib": 130504,
+        "wall_s": 13.129084692918696
+      },
+      "aerial08": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 0,
+          "bandwidth_sent_bytes": 0,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 55,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 55,
+          "residual": 0.011811801898788122,
+          "residual_abs_change": 1.6132928326584306e-16,
+          "residual_rel_change": 1.3658312647657719e-14,
+          "residual_signed_change": 1.6132928326584306e-16,
+          "result_logmap_change": 2.0126652092078e-14,
+          "robot_id": 3,
+          "robot_name": "aerial08"
+        },
+        "detection_s": 2.849504978978075,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 969796,
+        "loops": 1,
+        "max_rss_kib": 115108,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 545,
+        "poses": 54,
+        "proposed_loops": 2,
+        "reference_available": false,
+        "reference_robot_id": 3,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [
+            {
+              "accepted": true,
+              "final_error": 0.010185421661315981,
+              "final_quality": {
+                "condition": 9423.420530353525,
+                "inliers": 10087,
+                "observability": 0.1246416645970331,
+                "overlap": 0.8718125430737422,
+                "rmse_m": 0.5380163586124539,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                3,
+                1
+              ],
+              "information_scale": 4.053899512021645e-07,
+              "initial_error_at_measurement": 0.01038689679096669,
+              "initial_quality": {
+                "condition": 9387.812169659906,
+                "inliers": 10088,
+                "observability": 0.12495673813437305,
+                "overlap": 0.8718125430737422,
+                "rmse_m": 0.5379332934850269,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                51
+              ],
+              "linearizations": 102,
+              "reason": "accepted"
+            }
+          ],
+          "preparation_s": 0.023365557,
+          "registration_factor_count": 1,
+          "robot_id": 3,
+          "schema_version": 1,
+          "session_id": "8cf4f31ddc8b42428af515c2658ebe65",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": 80.0,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 519,
+        "robot": "aerial08",
+        "verifier_max_rss_kib": 104420,
+        "wall_s": 13.1351026550401
+      }
+    },
+    "sampled_peak_rss_kib": {
+      "aerial05-cbs": 94540,
+      "aerial05-frontend": 110016,
+      "aerial06-cbs": 127376,
+      "aerial06-frontend": 118788,
+      "aerial07-cbs": 96476,
+      "aerial07-frontend": 120720,
+      "aerial08-cbs": 99860,
+      "aerial08-frontend": 116168
+    },
+    "shared_reference": false,
+    "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+    "transport": "ROS2 Fast DDS",
+    "wall_s": 14.024790814961307
+  },
+  "verification_reasons": {
+    "accepted": 7,
+    "high_rmse": 6,
+    "low_overlap": 1
+  },
+  "diagnostic_only": true,
+  "frontend_quality": {
+    "aerial05": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.828663788674171,
+      "max_successful_update_gap_s": 0.192004919,
+      "native_poses": 2747,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial06": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.1696042565087765,
+      "max_successful_update_gap_s": 2.656000852,
+      "native_poses": 3103,
+      "ground_truth_used": false,
+      "passed": false
+    },
+    "aerial07": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.089083972933384,
+      "max_successful_update_gap_s": 0.424003124,
+      "native_poses": 3717,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial08": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.734857014579956,
+      "max_successful_update_gap_s": 1.464000225,
+      "native_poses": 2620,
+      "ground_truth_used": false,
+      "passed": false
+    }
+  }
+}

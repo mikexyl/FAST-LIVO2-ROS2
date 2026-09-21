@@ -1,0 +1,11 @@
+{
+  "phase": "complete",
+  "ground_truth_used": false,
+  "frontend_gate": {
+    "aerial05": true,
+    "aerial08": false
+  },
+  "diagnostic": true,
+  "wall_s": 253.70304605399997,
+  "frozen_sources_verified": true
+}

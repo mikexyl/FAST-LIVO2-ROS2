@@ -1,0 +1,75 @@
+/**:
+  ros__parameters:
+    mapping:
+      map_resolution: 0.1
+      pub_map_n_secs: 10
+      namespace: aerial05
+      submaps:
+        enabled: true
+        duration_s: 10.0
+        overlap_s: 5.0
+        strategy: coverage
+        coverage:
+          cell_size_m: 1.0
+          start_area_m2: 2000.0
+          target_area_m2: 4000.0
+          start_new_area_m2: 1000.0
+          new_area_m2: 2000.0
+          min_shared_area_m2: 1000.0
+          min_overlap_ratio: 0.25
+          max_displacement_m: 80.0
+          max_age_s: 120.0
+          min_support_points: 50
+          min_support_ratio: 0.2
+        robot: aerial05
+        python: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/research-venv/bin/python
+        writer: /home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py
+        output: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke/frontends/aerial05/frontend/submaps
+      diagnostics_path: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke/frontends/aerial05/frontend/native_updates.jsonl
+    publish:
+      map: true
+      scan: true
+      markers: true
+      odometry: true
+      analytics: true
+      tf: true
+    lidar:
+      type: 2
+      rate: 10
+      scan_lines: 16
+      vertical_fov: 30.0
+      min_range: 2.0
+      max_range: 100.0
+      topic: /velodyne/points
+      t_imu_lidar:
+      - -0.02436555
+      - -0.0053221
+      - 0.18020739
+      r_imu_lidar:
+      - 0.99982005
+      - 0.018868
+      - 0.00196755
+      - -0.01884091
+      - 0.99973824
+      - -0.01297939
+      - -0.00221193
+      - 0.01293998
+      - 0.99991383
+    imu:
+      rate: 125
+      acc_noise: 0.018744963
+      gyr_noise: 0.00054259815
+      acc_bias: 0.0006480891
+      gyr_bias: 1.0949571e-05
+      topic: /gnss/imu
+    input:
+      reliable: true
+    cameras:
+      num_cams: 0
+    use_sim_time: true
+    research:
+      enabled: false
+      robot: aerial05
+      python: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/research-venv/bin/python
+      writer: /home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/research/s3e_pipeline/mcap_writer.py
+      output: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke/frontends/aerial05/frontend/export

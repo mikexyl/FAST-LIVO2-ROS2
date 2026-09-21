@@ -1,0 +1,107 @@
+[
+  {
+    "name": "s3e_laboratory_4-carol",
+    "robot": "Carol",
+    "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+    "original_config": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Laboratory_4/20260916T205100Z-cf7e86/Carol.yaml",
+    "truth": "/data/s3e/S3Ev1/S3E_Laboratory_4/carol_gt.txt",
+    "dataset": "S3E",
+    "original_config_sha256": "6674b72b6647968fd552f893b457884e33b791950cf62a00c507d526a8bf727b",
+    "original_imu": {
+      "rate": 100,
+      "acc_noise": 0.011692699862662088,
+      "gyr_noise": 0.010216647894856925,
+      "acc_bias": 0.0002041305895172543,
+      "gyr_bias": 8.45143056189658e-05,
+      "topic": "/Carol/imu/data"
+    },
+    "config": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/configs/s3e_laboratory_4-carol.yaml",
+    "config_sha256": "2172231ec4899ed56a191e0c6d37f5a067f639597c13991cf7166753bc69bad1",
+    "bag_duration_s": 382.019425082,
+    "start_ns": 1662377752637000000
+  },
+  {
+    "name": "s3e_campus_road_1-alpha",
+    "robot": "Alpha",
+    "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+    "original_config": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_1/20260917T010157Z-0d5eb9/Alpha.yaml",
+    "truth": "/data/s3e/S3Ev1/S3E_Campus_Road_1/alpha_gt.txt",
+    "dataset": "S3E",
+    "original_config_sha256": "67e90151df96bab08b63210357edc732e6320ec08fd21893828d8fc870af2262",
+    "original_imu": {
+      "rate": 100,
+      "acc_noise": 0.010919628856399554,
+      "gyr_noise": 0.010451440924866223,
+      "acc_bias": 0.0002185182762911326,
+      "gyr_bias": 8.177000935125718e-05,
+      "topic": "/Alpha/imu/data"
+    },
+    "config": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/configs/s3e_campus_road_1-alpha.yaml",
+    "config_sha256": "16fd4126f32eb6a9c385b123136c0cf5d4ed8154464229cb6e23ad7b53c6a340",
+    "bag_duration_s": 878.127955199,
+    "start_ns": 1660988157366000000
+  },
+  {
+    "name": "s3e_campus_road_2-alpha",
+    "robot": "Alpha",
+    "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+    "original_config": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_2/20260916T222721Z-52eca3/Alpha.yaml",
+    "truth": "/data/s3e/S3Ev2/S3E_Campus_Road_2/alpha_gt.txt",
+    "dataset": "S3E",
+    "original_config_sha256": "67e90151df96bab08b63210357edc732e6320ec08fd21893828d8fc870af2262",
+    "original_imu": {
+      "rate": 100,
+      "acc_noise": 0.010919628856399554,
+      "gyr_noise": 0.010451440924866223,
+      "acc_bias": 0.0002185182762911326,
+      "gyr_bias": 8.177000935125718e-05,
+      "topic": "/Alpha/imu/data"
+    },
+    "config": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/configs/s3e_campus_road_2-alpha.yaml",
+    "config_sha256": "16fd4126f32eb6a9c385b123136c0cf5d4ed8154464229cb6e23ad7b53c6a340",
+    "bag_duration_s": 1594.698258638,
+    "start_ns": 1689769587899089813
+  },
+  {
+    "name": "s3e_campus_road_3-alpha",
+    "robot": "Alpha",
+    "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+    "original_config": "/workspace/.ros2/ellipsoid-cbs148/overnight-20260916/S3E_Campus_Road_3/20260916T225354Z-f86e65/Alpha.yaml",
+    "truth": "/data/s3e/S3Ev2/S3E_Campus_Road_3/alpha_gt.txt",
+    "dataset": "S3E",
+    "original_config_sha256": "67e90151df96bab08b63210357edc732e6320ec08fd21893828d8fc870af2262",
+    "original_imu": {
+      "rate": 100,
+      "acc_noise": 0.010919628856399554,
+      "gyr_noise": 0.010451440924866223,
+      "acc_bias": 0.0002185182762911326,
+      "gyr_bias": 8.177000935125718e-05,
+      "topic": "/Alpha/imu/data"
+    },
+    "config": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/configs/s3e_campus_road_3-alpha.yaml",
+    "config_sha256": "16fd4126f32eb6a9c385b123136c0cf5d4ed8154464229cb6e23ad7b53c6a340",
+    "bag_duration_s": 907.822902202,
+    "start_ns": 1689766861526933670
+  },
+  {
+    "name": "graco-ground01-robot1",
+    "robot": "robot1",
+    "dataset": "GRACO",
+    "bag": "/workspace/.ros2/graco/inputs/sensors/robot1",
+    "original_config": "/workspace/.ros2/graco/runs/ground-01-06-full-20260917/robot1.yaml",
+    "truth": "/workspace/.ros2/graco/inputs/reference/robot1_gt.txt",
+    "original_config_sha256": "d3e3f1b5d23adb751dd3238fffb3f33c56e7e3daf83440f4ae28ed298f11798a",
+    "original_imu": {
+      "rate": 125,
+      "acc_noise": 0.010028108,
+      "gyr_noise": 0.00083723892,
+      "acc_bias": 0.00055367077,
+      "gyr_bias": 1.5212086e-05,
+      "topic": "/gnss/imu"
+    },
+    "config": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/configs/graco-ground01-robot1.yaml",
+    "config_sha256": "1a6af85e67a0cd1923bb61d77fa4a2fc14d05bc79eee45bd184421e0dd131d64",
+    "bag_duration_s": 333.883886051,
+    "start_ns": 1661303300300000000
+  }
+]

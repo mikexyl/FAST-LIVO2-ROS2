@@ -1,0 +1,34 @@
+[
+  {
+    "robot": "aerial05",
+    "key": 0,
+    "native_member_points": 644955,
+    "voxel_025_before_range": 219455,
+    "retained_within_80m": 209483,
+    "range_retained_fraction": 0.9545601603973479
+  },
+  {
+    "robot": "aerial06",
+    "key": 0,
+    "native_member_points": 1034630,
+    "voxel_025_before_range": 386931,
+    "retained_within_80m": 308296,
+    "range_retained_fraction": 0.7967725511783754
+  },
+  {
+    "robot": "aerial07",
+    "key": 0,
+    "native_member_points": 1062385,
+    "voxel_025_before_range": 322136,
+    "retained_within_80m": 261402,
+    "range_retained_fraction": 0.8114647229741475
+  },
+  {
+    "robot": "aerial08",
+    "key": 0,
+    "native_member_points": 887456,
+    "voxel_025_before_range": 306513,
+    "retained_within_80m": 229981,
+    "range_retained_fraction": 0.7503140160449965
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "identical_native_binary": true,
+  "native_binary_sha256": "702e54bec085ad8d0b621fa4ed5ba95161ddd35ef15f7ee783f751fdea253964",
+  "identical_native_estimator_sources": true,
+  "identical_calibration_noise_qos_and_publication": true,
+  "allowed_runtime_differences": [
+    "mapping.submaps",
+    "mapping.diagnostics_path",
+    "research.output"
+  ],
+  "noise": {
+    "rate": 100,
+    "acc_noise": 0.1,
+    "gyr_noise": 0.1,
+    "acc_bias": 0.0001,
+    "gyr_bias": 0.0001,
+    "topic": "/Bob/imu/data"
+  },
+  "input": {
+    "reliable": true
+  },
+  "rate": 1.0,
+  "launcher_threads": 4,
+  "omp_threads": 4,
+  "cpu_quota": 12,
+  "memory_limit_gib": 40,
+  "comparison_runs": [
+    "bob-baseline",
+    "bob-enabled",
+    "bob-enabled-repeat"
+  ],
+  "ground_truth_used_by_estimator": false,
+  "container_image": "sha256:cb89f7676e64520d3c6acfb37be9006b1b1dd52019d928b09f8ed7315ceb3ecc"
+}

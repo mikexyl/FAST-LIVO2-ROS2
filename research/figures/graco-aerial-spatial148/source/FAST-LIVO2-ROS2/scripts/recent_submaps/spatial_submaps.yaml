@@ -1,0 +1,10 @@
+# Initial experimental BEV-oriented settings, not tuned or benchmarked.
+enabled: true
+strategy: spatial
+spatial:
+  radius_m: 40.0
+  overlap_m: 20.0
+  distance_metric: horizontal
+  max_age_s: 120.0
+  min_support_points: 50
+  min_support_ratio: 0.2

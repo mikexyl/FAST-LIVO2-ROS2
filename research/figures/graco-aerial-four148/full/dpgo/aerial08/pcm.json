@@ -1,0 +1,1 @@
+{"compute_s":3.3755e-05,"elapsed_s":0.162209752,"graph_messages":56,"network_cdr_bytes":545,"own_nodes":54,"robot_id":3,"session_id":"8cf4f31ddc8b42428af515c2658ebe65","state":"ready","verdicts":[{"key_from":61,"key_to":53,"reason":"insufficient_support","retained":false,"robot_from":1,"robot_to":3}]}

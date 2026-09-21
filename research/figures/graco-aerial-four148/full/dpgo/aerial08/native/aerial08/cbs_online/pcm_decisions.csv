@@ -1,0 +1,2 @@
+robot_from,robot_to,key_from,key_to,retained,reason,clique_size
+1,3,61,53,0,insufficient_support,1

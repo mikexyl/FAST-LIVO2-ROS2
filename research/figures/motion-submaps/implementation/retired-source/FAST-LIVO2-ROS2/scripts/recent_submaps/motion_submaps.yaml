@@ -1,0 +1,12 @@
+enabled: true
+strategy: motion_overlap
+keyframe_translation_m: 1.0
+keyframe_rotation_deg: 10.0
+keyframe_overlap: 0.6
+overlap_voxel_m: 0.5
+extent_m: 20.0
+max_keyframes: 15
+max_age_s: 30.0
+min_handover_matches: 50
+min_handover_overlap: 0.2
+min_retrieval_keyframes: 3

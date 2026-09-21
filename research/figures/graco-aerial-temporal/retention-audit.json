@@ -1,0 +1,77 @@
+{
+  "diagnostic_only": true,
+  "frontends": {
+    "aerial05": {
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 5.470204925572224,
+        "max_successful_update_gap_s": 0.131662336,
+        "native_poses": 2778,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "validation": {
+        "native_updates": 2778,
+        "snapshots": 60,
+        "completed_snapshots": 58,
+        "inspection_tails": 2,
+        "retrievable_snapshots": 58,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "live_rerun_verified": true,
+      "completed_submaps": 58,
+      "partial_submaps": 2,
+      "max_correspondence_age_s": 9.976012946,
+      "processing_mean_s": 0.019151675995338863,
+      "processing_p95_s": 0.03232404755053722,
+      "peak_mapper_rss_mib": 482.375,
+      "live_rrd_sha256": "fbebab454e61e887ee2a0d7e0cb6e9d62823b15e36dea1b002bccc8c1abab86f",
+      "native_updates_sha256": "b2b2352e588abc8a6dc7106e1653b2bf8ae1af6fa4681e6e9b80f0a9dd292d37"
+    },
+    "aerial08": {
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.567553341668015,
+        "max_successful_update_gap_s": 1.38399887,
+        "native_poses": 2610,
+        "ground_truth_used": false,
+        "passed": false
+      },
+      "validation": {
+        "native_updates": 2610,
+        "snapshots": 56,
+        "completed_snapshots": 54,
+        "inspection_tails": 2,
+        "retrievable_snapshots": 54,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "live_rerun_verified": true,
+      "completed_submaps": 54,
+      "partial_submaps": 2,
+      "max_correspondence_age_s": 9.98803522,
+      "processing_mean_s": 0.020741024668971816,
+      "processing_p95_s": 0.03447198114981793,
+      "peak_mapper_rss_mib": 506.41015625,
+      "live_rrd_sha256": "26f9eb57699cbb4478a56a0c08f9ee692b7a71594099ff954e94f98cb6d6568b",
+      "native_updates_sha256": "97845ea0963d3057d40433b3f9a7eb2d8b6682dde568b5534f2d55f8af8a6f36"
+    }
+  },
+  "descriptor_evidence_memberships": 112,
+  "causal_ranked_events": 224,
+  "same_robot_loops": 1,
+  "all_bulk_geometry_retained": true,
+  "derived_rerun_verified": true,
+  "derived_rerun_sha256": "6d1a2d343a3f33e40a7128d5bff511f621809a54bae6b71bd3e2c6600872fc34",
+  "report_sha256": "6c38f7cc223da27e036696ed2f627b1071bfcf01808bdfa83825ca93f59db951",
+  "frozen_sources_verified": true
+}

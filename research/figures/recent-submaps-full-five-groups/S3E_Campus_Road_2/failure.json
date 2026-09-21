@@ -1,0 +1,5 @@
+{
+  "stage": "evaluation",
+  "error": "RuntimeError('Exit 1: /workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/evaluation.log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/recent_submaps/full_batch.py\", line 236, in run\n    call([PYTHON,SCRIPTS/'rollout_report.py','--work',folder,'--trials',folder/'trials.json'],folder/'evaluation.log',3600)\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/recent_submaps/full_batch.py\", line 161, in call\n    if code:raise RuntimeError(f'Exit {code}: {log}')\nRuntimeError: Exit 1: /workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/evaluation.log\n"
+}

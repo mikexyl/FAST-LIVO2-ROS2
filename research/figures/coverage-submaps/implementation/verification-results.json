@@ -1,0 +1,38 @@
+{
+  "native_ctest": {
+    "passed": 2,
+    "seconds": 3.17,
+    "log": "build/ellipselio/Testing/Temporary/LastTest.log"
+  },
+  "python": {
+    "passed": 62,
+    "seconds": 10.91,
+    "files": [
+      "test_coverage_submaps.py",
+      "test_fixed_evidence.py",
+      "test_spatial_submaps.py",
+      "test_recent_submaps.py",
+      "test_gravity_bev.py",
+      "test_mapclosures.py",
+      "test_pipeline.py"
+    ]
+  },
+  "distributed_integration": {
+    "passed": 6,
+    "seconds": 31.48,
+    "files": [
+      "test_recent_submaps_integration.py"
+    ],
+    "strategies": [
+      "temporal",
+      "spatial",
+      "coverage"
+    ],
+    "includes": "isolated workers and native PCM/CBS/GICP submap endpoints"
+  },
+  "python_syntax": "passed",
+  "git_diff_check": {
+    "ellipselio": "passed",
+    "FAST-LIVO2-ROS2": "passed"
+  }
+}

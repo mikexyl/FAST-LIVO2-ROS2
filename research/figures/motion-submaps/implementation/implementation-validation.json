@@ -1,0 +1,138 @@
+{
+  "checked_utc": "2026-09-19T12:43:57Z",
+  "strategy": "motion_overlap",
+  "smokes": {
+    "smoke-library2-v1": {
+      "poses": 1183,
+      "requested_duration_s": 120.0,
+      "max_speed_m_s": 1.9652848779197856,
+      "max_successful_update_gap_s": 0.203953018,
+      "finite": true,
+      "chronological": true,
+      "events": {
+        "successor_started": 8,
+        "handover_max_age": 3,
+        "handover_keyframes": 8
+      },
+      "snapshots": 13,
+      "completed": 11,
+      "retrievable": 9,
+      "native_updates_sha256": "afe7589144fa317e8c58a674aaeff318539726eda9736e9c06e5b4361179398f",
+      "index_sha256": "16c2b3ec398ed113af61d16e28bae09a4997906bbaeaba65305c834bf7467cb0",
+      "validation": {
+        "native_updates": 1183,
+        "snapshots": 13,
+        "completed_snapshots": 11,
+        "inspection_tails": 2,
+        "retrievable_snapshots": 9,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "rerun_verified": true
+    },
+    "smoke-campus2-v1": {
+      "poses": 1030,
+      "requested_duration_s": 120.0,
+      "max_speed_m_s": 2.072272572170261,
+      "max_successful_update_gap_s": 0.20088768,
+      "finite": true,
+      "chronological": true,
+      "events": {
+        "successor_started": 9,
+        "handover_keyframes": 14
+      },
+      "snapshots": 16,
+      "completed": 14,
+      "retrievable": 14,
+      "native_updates_sha256": "0053319d7f0c4b1fb8ca9da81a7f6556fe0d33bc3e94a55b8df156b371ca7b8d",
+      "index_sha256": "8192759ac4217228a824b9ef054f4dd1a11281c0c78f3874f2bb13d1b33f0887",
+      "validation": {
+        "native_updates": 1030,
+        "snapshots": 16,
+        "completed_snapshots": 14,
+        "inspection_tails": 2,
+        "retrievable_snapshots": 14,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "rerun_verified": true
+    }
+  },
+  "tests": {
+    "motion-submap-python-tests.xml": {
+      "suites": [
+        {
+          "name": "pytest",
+          "errors": "0",
+          "failures": "0",
+          "skipped": "1",
+          "tests": "15",
+          "time": "5.028",
+          "timestamp": "2026-09-19T15:26:52.697717+03:00",
+          "hostname": "mikexyl-Lab-ROG"
+        }
+      ],
+      "sha256": "8846567b9f20da79f441496cb0dfa00489dfd2d86645f00b5e493d0654fdb268"
+    },
+    "motion-six-worker-tests.xml": {
+      "suites": [
+        {
+          "name": "pytest",
+          "errors": "0",
+          "failures": "0",
+          "skipped": "0",
+          "tests": "6",
+          "time": "0.146",
+          "timestamp": "2026-09-19T15:28:52.411357+03:00",
+          "hostname": "mikexyl-Lab-ROG"
+        }
+      ],
+      "sha256": "c8f858197a5e50cbd518b820cd3843f4e2c77577c086f83a86db836d1003462f"
+    },
+    "integration-tests.xml": {
+      "suites": [
+        {
+          "name": "pytest",
+          "errors": "0",
+          "failures": "0",
+          "skipped": "0",
+          "tests": "2",
+          "time": "9.419",
+          "timestamp": "2026-09-19T12:29:48.507730+00:00",
+          "hostname": "v4rl-server-1"
+        }
+      ],
+      "sha256": "7c6c2f4aced3e534865092769d58f94f6c0d56448550ced69113f5d4e3a9d8da"
+    },
+    "native_ctest": {
+      "passed": 2,
+      "log_sha256": "ae2aa66a36ac7d29b8fcd4cb5f9e5da7ef2c39d801a54794ef262915c934e4ee"
+    }
+  },
+  "frozen_sources_verified": 103,
+  "native_ellipsoid_bev_prepared_submaps": 9,
+  "resources": {
+    "NanoCpus": 0,
+    "CpuQuota": 0,
+    "CpusetCpus": "",
+    "Memory": 0,
+    "MemorySwap": 0,
+    "DeviceRequests": [
+      {
+        "Driver": "",
+        "Count": -1,
+        "DeviceIDs": null,
+        "Capabilities": [
+          [
+            "gpu"
+          ]
+        ],
+        "Options": {}
+      }
+    ]
+  }
+}

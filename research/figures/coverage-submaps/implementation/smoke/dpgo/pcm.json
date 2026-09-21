@@ -1,0 +1,1 @@
+{"excluded_loops":0,"proposed_loops":0,"retained_loops":0,"scope":"inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged","session_id":"dd360f36b38942fb8067ac7a84f65e72","settings":{"enabled":true,"minimum_clique_size":2,"probability":0.99,"timeout_s":60.0},"verdicts":[]}

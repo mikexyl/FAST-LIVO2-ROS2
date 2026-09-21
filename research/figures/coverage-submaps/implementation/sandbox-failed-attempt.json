@@ -1,0 +1,6 @@
+{
+  "phase": "failed",
+  "ground_truth_used": false,
+  "error": "RuntimeError('Exit 1: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke/aerial05-prepare.log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke.py\", line 38, in <module>\n    call([sys.executable,'-m','s3e_pipeline.recent_submaps','--source',Path(trial)/'frontend/submaps','--output',output,'--config',W/'config.yaml'],W/f'{robot}-prepare.log',300)\n  File \"/home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/scripts/recent_submaps/graco_aerial.py\", line 64, in call\n    if code:raise RuntimeError(f'Exit {code}: {log}')\nRuntimeError: Exit 1: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke/aerial05-prepare.log\n"
+}

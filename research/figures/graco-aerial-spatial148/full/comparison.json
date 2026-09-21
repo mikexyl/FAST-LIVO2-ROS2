@@ -1,0 +1,951 @@
+{
+  "baseline": "/workspace/.ros2/graco-aerial-gravity148-20260920/full",
+  "spatial": "/workspace/.ros2/graco-aerial-spatial148-20260920/full",
+  "robots": {
+    "aerial05": {
+      "temporal_raw_ate_m": 0.860054989239995,
+      "spatial_raw_ate_m": 0.512076992280841,
+      "temporal_cbs_component_fit_ate_m": 0.8600671738668213,
+      "spatial_cbs_component_fit_ate_m": 0.5120769923127907,
+      "spatial_cbs_independent_ate_m": 0.5120769923127907,
+      "temporal_quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.828663788674171,
+        "max_successful_update_gap_s": 0.192004919,
+        "native_poses": 2747,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "spatial_quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 5.184707231689038,
+        "max_successful_update_gap_s": 0.192002058,
+        "native_poses": 2750,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "temporal_bevs": {
+        "count": 58,
+        "bbox_area_m2": {
+          "min": 4794.5,
+          "median": 12422.5,
+          "max": 19988.0
+        },
+        "aspect_ratio": {
+          "min": 1.14453125,
+          "median": 1.827441119354678,
+          "max": 2.5930232558139537
+        },
+        "features": {
+          "min": 13.0,
+          "median": 71.5,
+          "max": 227.0
+        }
+      },
+      "spatial_bevs": {
+        "count": 23,
+        "bbox_area_m2": {
+          "min": 12848.0,
+          "median": 15295.5,
+          "max": 21812.0
+        },
+        "aspect_ratio": {
+          "min": 1.045774647887324,
+          "median": 1.4902912621359223,
+          "max": 1.6797752808988764
+        },
+        "features": {
+          "min": 52.0,
+          "median": 79.0,
+          "max": 158.0
+        }
+      },
+      "completed_submaps": 23,
+      "partial_submaps": 2,
+      "spatial_extent_m": {
+        "min": 40.02409998670256,
+        "median": 40.104431413473165,
+        "max": 40.40568001729706
+      },
+      "duration_s": {
+        "min": 11.344012022,
+        "median": 18.712022066,
+        "max": 65.858670615
+      },
+      "finish_reasons": {
+        "radius": 23
+      },
+      "event_counts": {
+        "successor_started": 15,
+        "handover_radius": 23
+      },
+      "handovers": [
+        {
+          "stamp_ns": 1661851123143680096,
+          "event": "handover_radius",
+          "step_m": 0.2465012095313275,
+          "dt_s": 0.104000092,
+          "speed_m_s": 2.3702018410842127,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851131799690008,
+          "event": "handover_radius",
+          "step_m": 0.30137477342707764,
+          "dt_s": 0.104001045,
+          "speed_m_s": 2.8978052425057617,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851146007703066,
+          "event": "handover_radius",
+          "step_m": 0.20962581291830767,
+          "dt_s": 0.104000092,
+          "speed_m_s": 2.015631033463967,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851157479716063,
+          "event": "handover_radius",
+          "step_m": 0.22118304834149455,
+          "dt_s": 0.120002985,
+          "speed_m_s": 1.8431462212502008,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851166575726032,
+          "event": "handover_radius",
+          "step_m": 0.25047697049367706,
+          "dt_s": 0.104002952,
+          "speed_m_s": 2.4083640481058373,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851173551728964,
+          "event": "handover_radius",
+          "step_m": 0.2607825466464385,
+          "dt_s": 0.111998081,
+          "speed_m_s": 2.328455490647545,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851186303742886,
+          "event": "handover_radius",
+          "step_m": 0.2816666696556899,
+          "dt_s": 0.096002818,
+          "speed_m_s": 2.9339416855002103,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851192447748899,
+          "event": "handover_radius",
+          "step_m": 0.30740918311027476,
+          "dt_s": 0.104000806,
+          "speed_m_s": 2.955834622188166,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851198943753958,
+          "event": "handover_radius",
+          "step_m": 0.376033943122798,
+          "dt_s": 0.104001999,
+          "speed_m_s": 3.615641494763942,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851204799760103,
+          "event": "handover_radius",
+          "step_m": 0.3806755552281237,
+          "dt_s": 0.096005201,
+          "speed_m_s": 3.965155546397155,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851210391763926,
+          "event": "handover_radius",
+          "step_m": 0.4859619072505783,
+          "dt_s": 0.103997946,
+          "speed_m_s": 4.672802934498133,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851220311775923,
+          "event": "handover_radius",
+          "step_m": 0.18599431749606862,
+          "dt_s": 0.1039989,
+          "speed_m_s": 1.7884258150429342,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851228703780890,
+          "event": "handover_radius",
+          "step_m": 0.28400555892265966,
+          "dt_s": 0.095999003,
+          "speed_m_s": 2.958421963222469,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851244047801018,
+          "event": "handover_radius",
+          "step_m": 0.2346257955694558,
+          "dt_s": 0.112004042,
+          "speed_m_s": 2.094797574979087,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851250271804094,
+          "event": "handover_radius",
+          "step_m": 0.2689443488869507,
+          "dt_s": 0.104000091,
+          "speed_m_s": 2.5860010919312626,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851259647814035,
+          "event": "handover_radius",
+          "step_m": 0.29174169406658834,
+          "dt_s": 0.111999988,
+          "speed_m_s": 2.604836833255628,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851267991825104,
+          "event": "handover_radius",
+          "step_m": 0.2973567665954191,
+          "dt_s": 0.112006188,
+          "speed_m_s": 2.654824451265309,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851276383831024,
+          "event": "handover_radius",
+          "step_m": 0.3189698756177516,
+          "dt_s": 0.112000942,
+          "speed_m_s": 2.84792136496273,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851283743835926,
+          "event": "handover_radius",
+          "step_m": 0.4026981880832167,
+          "dt_s": 0.103996992,
+          "speed_m_s": 3.8722099585651164,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851293967849016,
+          "event": "handover_radius",
+          "step_m": 0.31128722365790573,
+          "dt_s": 0.103997946,
+          "speed_m_s": 2.993205497134585,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851302559859037,
+          "event": "handover_radius",
+          "step_m": 0.14884036130754036,
+          "dt_s": 0.104002952,
+          "speed_m_s": 1.431116698567752,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851315479870081,
+          "event": "handover_radius",
+          "step_m": 0.20353875408466343,
+          "dt_s": 0.111999035,
+          "speed_m_s": 1.8173259625376543,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1661851324455873966,
+          "event": "handover_radius",
+          "step_m": 0.3111765506700887,
+          "dt_s": 0.151998997,
+          "speed_m_s": 2.0472276581541435,
+          "lidar_updated": true
+        }
+      ],
+      "failed_update_count_including_startup": 1,
+      "features": {
+        "min": 27.0,
+        "median": 822.0,
+        "max": 1807.0
+      },
+      "residual": {
+        "min": 0.011750847623316628,
+        "median": 0.10383657291152536,
+        "max": 0.16127295901264116
+      },
+      "peak_mapper_rss_mib": 637.73828125,
+      "processing_mean_s": 0.017620256291067397,
+      "processing_p95_s": 0.035210191365331406
+    },
+    "aerial06": {
+      "temporal_raw_ate_m": 3.5598129499591296,
+      "spatial_raw_ate_m": 2.640933053120382,
+      "temporal_cbs_component_fit_ate_m": 3.601680556307531,
+      "spatial_cbs_component_fit_ate_m": 2.6409330531181805,
+      "spatial_cbs_independent_ate_m": 2.6409330531181805,
+      "temporal_quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.1696042565087765,
+        "max_successful_update_gap_s": 2.656000852,
+        "native_poses": 3103,
+        "ground_truth_used": false,
+        "passed": false
+      },
+      "spatial_quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.115919495029863,
+        "max_successful_update_gap_s": 0.536004067,
+        "native_poses": 3100,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "temporal_bevs": {
+        "count": 64,
+        "bbox_area_m2": {
+          "min": 4793.25,
+          "median": 11820.375,
+          "max": 23861.25
+        },
+        "aspect_ratio": {
+          "min": 1.0396039603960396,
+          "median": 1.9261531470120428,
+          "max": 2.783132530120482
+        },
+        "features": {
+          "min": 4.0,
+          "median": 92.5,
+          "max": 241.0
+        }
+      },
+      "spatial_bevs": {
+        "count": 11,
+        "bbox_area_m2": {
+          "min": 13905.0,
+          "median": 15930.5,
+          "max": 19110.0
+        },
+        "aspect_ratio": {
+          "min": 1.273469387755102,
+          "median": 1.5073891625615763,
+          "max": 1.7166666666666666
+        },
+        "features": {
+          "min": 77.0,
+          "median": 137.0,
+          "max": 298.0
+        }
+      },
+      "completed_submaps": 11,
+      "partial_submaps": 2,
+      "spatial_extent_m": {
+        "min": 40.0030839313929,
+        "median": 40.057725263606365,
+        "max": 60.92197357870244
+      },
+      "duration_s": {
+        "min": 22.92802906,
+        "median": 27.832031012,
+        "max": 86.696100951
+      },
+      "finish_reasons": {
+        "radius": 11
+      },
+      "event_counts": {
+        "successor_started": 9,
+        "handover_radius": 11,
+        "handover_waiting_for_support": 2
+      },
+      "handovers": [
+        {
+          "stamp_ns": 1662002482984954119,
+          "event": "handover_radius",
+          "step_m": 0.19068239422758054,
+          "dt_s": 0.104002238,
+          "speed_m_s": 1.8334451055522532,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002490000956059,
+          "event": "handover_radius",
+          "step_m": 0.13545307217459507,
+          "dt_s": 0.104000092,
+          "speed_m_s": 1.3024322341425916,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002512544984102,
+          "event": "handover_radius",
+          "step_m": 0.12978826968483048,
+          "dt_s": 0.104001999,
+          "speed_m_s": 1.2479401447353957,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002526465002060,
+          "event": "handover_radius",
+          "step_m": 0.16135744230574017,
+          "dt_s": 0.104005098,
+          "speed_m_s": 1.5514378180359982,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002537105009079,
+          "event": "handover_radius",
+          "step_m": 0.29551782982769564,
+          "dt_s": 0.103999138,
+          "speed_m_s": 2.841541146501576,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002552945027113,
+          "event": "handover_radius",
+          "step_m": 0.1227295673617978,
+          "dt_s": 0.103996038,
+          "speed_m_s": 1.180136952542344,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002623913109064,
+          "event": "handover_radius",
+          "step_m": 0.20682383857685668,
+          "dt_s": 0.111999988,
+          "speed_m_s": 1.8466416137192505,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002624249109983,
+          "event": "handover_radius",
+          "step_m": 0.187645638536889,
+          "dt_s": 0.096003055,
+          "speed_m_s": 1.954579867660347,
+          "lidar_updated": false
+        },
+        {
+          "stamp_ns": 1662002649257138968,
+          "event": "handover_radius",
+          "step_m": 0.20715688426702455,
+          "dt_s": 0.104001999,
+          "speed_m_s": 1.9918548322039902,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002660001153946,
+          "event": "handover_radius",
+          "step_m": 0.1889395468610837,
+          "dt_s": 0.104003906,
+          "speed_m_s": 1.8166581826367532,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662002672401165009,
+          "event": "handover_radius",
+          "step_m": 0.19630415511683147,
+          "dt_s": 0.111999989,
+          "speed_m_s": 1.7527158428277299,
+          "lidar_updated": true
+        }
+      ],
+      "failed_update_count_including_startup": 6,
+      "features": {
+        "min": 4.0,
+        "median": 1001.5,
+        "max": 1872.0
+      },
+      "residual": {
+        "min": 0.00571787019725889,
+        "median": 0.09194260931752919,
+        "max": 0.13830918977514672
+      },
+      "peak_mapper_rss_mib": 1010.85546875,
+      "processing_mean_s": 0.018989955406718616,
+      "processing_p95_s": 0.035804479120997705
+    },
+    "aerial07": {
+      "temporal_raw_ate_m": 0.20342788600725312,
+      "spatial_raw_ate_m": 0.21722811574847506,
+      "temporal_cbs_component_fit_ate_m": 0.502354999653095,
+      "spatial_cbs_component_fit_ate_m": 0.2172281157794184,
+      "spatial_cbs_independent_ate_m": 0.2172281157794184,
+      "temporal_quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.089083972933384,
+        "max_successful_update_gap_s": 0.424003124,
+        "native_poses": 3717,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "spatial_quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.428279262202473,
+        "max_successful_update_gap_s": 0.214015876,
+        "native_poses": 3707,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "temporal_bevs": {
+        "count": 77,
+        "bbox_area_m2": {
+          "min": 6798.75,
+          "median": 11982.25,
+          "max": 20698.0
+        },
+        "aspect_ratio": {
+          "min": 1.1284046692607004,
+          "median": 1.9440993788819876,
+          "max": 2.509433962264151
+        },
+        "features": {
+          "min": 24.0,
+          "median": 67.0,
+          "max": 255.0
+        }
+      },
+      "spatial_bevs": {
+        "count": 15,
+        "bbox_area_m2": {
+          "min": 14210.0,
+          "median": 18506.25,
+          "max": 24174.0
+        },
+        "aspect_ratio": {
+          "min": 1.0164473684210527,
+          "median": 1.3404255319148937,
+          "max": 1.7197802197802199
+        },
+        "features": {
+          "min": 42.0,
+          "median": 103.0,
+          "max": 197.0
+        }
+      },
+      "completed_submaps": 15,
+      "partial_submaps": 2,
+      "spatial_extent_m": {
+        "min": 40.012465393105145,
+        "median": 40.06003413502043,
+        "max": 40.19873204279351
+      },
+      "duration_s": {
+        "min": 21.008023977,
+        "median": 34.864039898,
+        "max": 85.701042086
+      },
+      "finish_reasons": {
+        "radius": 15
+      },
+      "event_counts": {
+        "successor_started": 8,
+        "handover_radius": 15
+      },
+      "handovers": [
+        {
+          "stamp_ns": 1662003090289649963,
+          "event": "handover_radius",
+          "step_m": 0.17407379085831493,
+          "dt_s": 0.119998932,
+          "speed_m_s": 1.4506278344070171,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003100529659033,
+          "event": "handover_radius",
+          "step_m": 0.12023311300156239,
+          "dt_s": 0.103996039,
+          "speed_m_s": 1.1561316580678846,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003135361702919,
+          "event": "handover_radius",
+          "step_m": 0.1465374007525102,
+          "dt_s": 0.104000807,
+          "speed_m_s": 1.4090025354563855,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003145665714979,
+          "event": "handover_radius",
+          "step_m": 0.12622716915325816,
+          "dt_s": 0.104000091,
+          "speed_m_s": 1.2137217183132865,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003169161744118,
+          "event": "handover_radius",
+          "step_m": 0.14124261422197334,
+          "dt_s": 0.103998184,
+          "speed_m_s": 1.358125774792119,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003194985774040,
+          "event": "handover_radius",
+          "step_m": 0.18075184989011092,
+          "dt_s": 0.103997946,
+          "speed_m_s": 1.738032882785117,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003206817785025,
+          "event": "handover_radius",
+          "step_m": 0.24254660988613844,
+          "dt_s": 0.104001046,
+          "speed_m_s": 2.3321554851105866,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003215993798018,
+          "event": "handover_radius",
+          "step_m": 0.20261236678788117,
+          "dt_s": 0.104001999,
+          "speed_m_s": 1.9481583886467526,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003229393815041,
+          "event": "handover_radius",
+          "step_m": 0.12477086233805235,
+          "dt_s": 0.111999989,
+          "speed_m_s": 1.1140256660029881,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003273441864014,
+          "event": "handover_radius",
+          "step_m": 0.1401742999147181,
+          "dt_s": 0.104000092,
+          "speed_m_s": 1.3478286145623612,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003285177881956,
+          "event": "handover_radius",
+          "step_m": 0.10811092647828159,
+          "dt_s": 0.103999853,
+          "speed_m_s": 1.0395296085493657,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003302033900023,
+          "event": "handover_radius",
+          "step_m": 0.1642794868443323,
+          "dt_s": 0.103999138,
+          "speed_m_s": 1.579623543075254,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003315185914040,
+          "event": "handover_radius",
+          "step_m": 0.15055405452506815,
+          "dt_s": 0.112000943,
+          "speed_m_s": 1.344221311824742,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003329985933065,
+          "event": "handover_radius",
+          "step_m": 0.1173303555177345,
+          "dt_s": 0.103998184,
+          "speed_m_s": 1.12819619540409,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662003350265954971,
+          "event": "handover_radius",
+          "step_m": 0.1932130625240488,
+          "dt_s": 0.103998899,
+          "speed_m_s": 1.8578375769540483,
+          "lidar_updated": true
+        }
+      ],
+      "failed_update_count_including_startup": 2,
+      "features": {
+        "min": 15.0,
+        "median": 1035.0,
+        "max": 1886.0
+      },
+      "residual": {
+        "min": 0.013071234607578893,
+        "median": 0.08445142070270202,
+        "max": 0.13563348693377214
+      },
+      "peak_mapper_rss_mib": 883.17578125,
+      "processing_mean_s": 0.01888882176364446,
+      "processing_p95_s": 0.03482636178378015
+    },
+    "aerial08": {
+      "temporal_raw_ate_m": 0.16678501644397173,
+      "spatial_raw_ate_m": 0.1128607889516049,
+      "temporal_cbs_component_fit_ate_m": 0.16678501646676458,
+      "spatial_cbs_component_fit_ate_m": 0.11286078896018888,
+      "spatial_cbs_independent_ate_m": 0.11286078896018888,
+      "temporal_quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.734857014579956,
+        "max_successful_update_gap_s": 1.464000225,
+        "native_poses": 2620,
+        "ground_truth_used": false,
+        "passed": false
+      },
+      "spatial_quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.80888596516991,
+        "max_successful_update_gap_s": 0.175998926,
+        "native_poses": 2620,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "temporal_bevs": {
+        "count": 54,
+        "bbox_area_m2": {
+          "min": 7570.25,
+          "median": 12763.25,
+          "max": 21762.0
+        },
+        "aspect_ratio": {
+          "min": 1.118279569892473,
+          "median": 1.8093567251461988,
+          "max": 2.6448598130841123
+        },
+        "features": {
+          "min": 19.0,
+          "median": 91.0,
+          "max": 217.0
+        }
+      },
+      "spatial_bevs": {
+        "count": 15,
+        "bbox_area_m2": {
+          "min": 14600.25,
+          "median": 18486.0,
+          "max": 23095.0
+        },
+        "aspect_ratio": {
+          "min": 1.0402684563758389,
+          "median": 1.2938775510204081,
+          "max": 1.6349206349206349
+        },
+        "features": {
+          "min": 53.0,
+          "median": 93.0,
+          "max": 222.0
+        }
+      },
+      "completed_submaps": 15,
+      "partial_submaps": 2,
+      "spatial_extent_m": {
+        "min": 40.000214081649155,
+        "median": 40.07306103989707,
+        "max": 40.225303473552515
+      },
+      "duration_s": {
+        "min": 15.496016979,
+        "median": 23.24802804,
+        "max": 72.876111287
+      },
+      "finish_reasons": {
+        "radius": 15
+      },
+      "event_counts": {
+        "successor_started": 8,
+        "handover_radius": 15
+      },
+      "handovers": [
+        {
+          "stamp_ns": 1662347566564429998,
+          "event": "handover_radius",
+          "step_m": 0.21356865318019985,
+          "dt_s": 0.104001999,
+          "speed_m_s": 2.053505271376561,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347576964437962,
+          "event": "handover_radius",
+          "step_m": 0.14035511649392313,
+          "dt_s": 0.103996993,
+          "speed_m_s": 1.3496074496492714,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347592924455881,
+          "event": "handover_radius",
+          "step_m": 0.2296090718721827,
+          "dt_s": 0.1039958,
+          "speed_m_s": 2.207868701160842,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347600780463934,
+          "event": "handover_radius",
+          "step_m": 0.25029018069682235,
+          "dt_s": 0.103997946,
+          "speed_m_s": 2.406683884860787,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347609884475946,
+          "event": "handover_radius",
+          "step_m": 0.3550416755244377,
+          "dt_s": 0.104001045,
+          "speed_m_s": 3.413827962252088,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347623956492901,
+          "event": "handover_radius",
+          "step_m": 0.22493974761962052,
+          "dt_s": 0.104001999,
+          "speed_m_s": 2.1628406163579657,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347633468502045,
+          "event": "handover_radius",
+          "step_m": 0.34726959552170394,
+          "dt_s": 0.111999035,
+          "speed_m_s": 3.100648103992181,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347641516514063,
+          "event": "handover_radius",
+          "step_m": 0.14753713207252073,
+          "dt_s": 0.112002134,
+          "speed_m_s": 1.3172707233642595,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347649388523102,
+          "event": "handover_radius",
+          "step_m": 0.24145868124840025,
+          "dt_s": 0.111999989,
+          "speed_m_s": 2.155881294313344,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347665412542105,
+          "event": "handover_radius",
+          "step_m": 0.21178507815916175,
+          "dt_s": 0.112001181,
+          "speed_m_s": 1.8909182587919475,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347673012551069,
+          "event": "handover_radius",
+          "step_m": 0.2181318145977017,
+          "dt_s": 0.104001999,
+          "speed_m_s": 2.0973809801261774,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347683828563929,
+          "event": "handover_radius",
+          "step_m": 0.26410803685303974,
+          "dt_s": 0.104001046,
+          "speed_m_s": 2.539474813099858,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347697956578970,
+          "event": "handover_radius",
+          "step_m": 0.2611995973049584,
+          "dt_s": 0.103997946,
+          "speed_m_s": 2.511584193258571,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347715172600985,
+          "event": "handover_radius",
+          "step_m": 0.11704884863842219,
+          "dt_s": 0.104001046,
+          "speed_m_s": 1.1254583789322867,
+          "lidar_updated": true
+        },
+        {
+          "stamp_ns": 1662347722244611025,
+          "event": "handover_radius",
+          "step_m": 0.34411319391689604,
+          "dt_s": 0.104002953,
+          "speed_m_s": 3.30868676312389,
+          "lidar_updated": true
+        }
+      ],
+      "failed_update_count_including_startup": 1,
+      "features": {
+        "min": 11.0,
+        "median": 962.0,
+        "max": 1904.0
+      },
+      "residual": {
+        "min": 0.031425755470991135,
+        "median": 0.09493775260351889,
+        "max": 0.1588659874039268
+      },
+      "peak_mapper_rss_mib": 750.5234375,
+      "processing_mean_s": 0.018770855248200116,
+      "processing_p95_s": 0.036732373997801875
+    }
+  },
+  "limitations": [
+    "Fresh spatial captures versus retained temporal captures, not repeated matched runs.",
+    "Temporal BEVs used explicitly reconstructed startup gravity; spatial BEVs use actual per-anchor filter gravity.",
+    "Component-wide ATEs have different scopes if connectivity differs; independent raw/CBS fits are labelled separately.",
+    "Image bounding-box area is not a measure of observed surface area or retrieval quality."
+  ],
+  "baseline_components": [
+    [
+      "aerial05"
+    ],
+    [
+      "aerial06",
+      "aerial07"
+    ],
+    [
+      "aerial08"
+    ]
+  ],
+  "spatial_components": [
+    [
+      "aerial05"
+    ],
+    [
+      "aerial06"
+    ],
+    [
+      "aerial07"
+    ],
+    [
+      "aerial08"
+    ]
+  ],
+  "baseline_loops": 5,
+  "spatial_loops": 0,
+  "baseline_pcm_rejected": 0,
+  "spatial_pcm_rejected": 0,
+  "baseline_backend_s": 16.231500028981827,
+  "spatial_backend_s": 14.415155402035452,
+  "full_pipeline_wall_s": 501.788654,
+  "all_images_exact_features": true
+}

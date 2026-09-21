@@ -1,0 +1,9 @@
+{
+  "submaps": 50,
+  "wall_s": 7.405100109999694,
+  "source_index_sha256": "ceb81c0032b7bf0142788882567d33131e5a9151ba0d3631d972849279e1b048",
+  "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/coverage-submaps-20260920/smoke/frontends/aerial05/frontend/submaps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": null
+}

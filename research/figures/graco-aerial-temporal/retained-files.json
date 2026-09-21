@@ -1,0 +1,291 @@
+{
+  "source_root": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920",
+  "files": {
+    "REPORT.md": {
+      "sha256": "5c73a2c57bd8bc1731599191b7c296eb5354ae8684278776d924cde6d49ce47a",
+      "bytes": 2112,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/REPORT.md"
+    },
+    "aerial05-quality.json": {
+      "sha256": "25e87d74ed3960d25abfe7cfe6407eba326db870c68520a43530203ef8175dfc",
+      "bytes": 229,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/aerial05-quality.json"
+    },
+    "aerial05-recording-verification.log": {
+      "sha256": "e3ededa558f9eb8e55ea5dbc352a37efc95553ff1332d5d6ebecfd9f866b75f3",
+      "bytes": 31,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/aerial05-recording-verification.log"
+    },
+    "aerial08-quality.json": {
+      "sha256": "5d899c23e906bf4b2adf7d6845f524e59d088875f1dfe9c9d738fc2eb76ca558",
+      "bytes": 229,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/aerial08-quality.json"
+    },
+    "aerial08-recording-verification.log": {
+      "sha256": "e3ededa558f9eb8e55ea5dbc352a37efc95553ff1332d5d6ebecfd9f866b75f3",
+      "bytes": 31,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/aerial08-recording-verification.log"
+    },
+    "audit.log": {
+      "sha256": "210039d057c8d80743f7b48ec2895767bb18abbe7bc614bc09b7c149bafc5e32",
+      "bytes": 2709,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/audit.log"
+    },
+    "audit_report.py": {
+      "sha256": "df15b35a6ae36a631162350186684a52b17484a6a855c1b62d407d9fe29e42f8",
+      "bytes": 7368,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/audit_report.py"
+    },
+    "calibration-hashes.json": {
+      "sha256": "b439082dabba4ef0e0acd5395af62693323980b93e9d69a918a39a012c278b34",
+      "bytes": 966,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/calibration-hashes.json"
+    },
+    "config.yaml": {
+      "sha256": "25330150a50fd1c3cae1c28625ca710df83dc1a16dcda206ce8dc45a1e3b064d",
+      "bytes": 2911,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/config.yaml"
+    },
+    "configs/aerial05.yaml": {
+      "sha256": "2d2e3241a4e1be93f13353cee5c445485d851a0f374aa956241f34b70ab7271a",
+      "bytes": 981,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/configs/aerial05.yaml"
+    },
+    "configs/aerial08.yaml": {
+      "sha256": "e0084c1befe9e38fd69f2f232b1d77257c7f2d751c167666bb1b40e266ba4675",
+      "bytes": 981,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/configs/aerial08.yaml"
+    },
+    "diagnostic-backend-status.json": {
+      "sha256": "190a925b33a54bbb661fed0d0751f5984e77d30a81bb120fefb7f7854f3e33e6",
+      "bytes": 1707,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/diagnostic-backend-status.json"
+    },
+    "diagnostic-controller.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/diagnostic-controller.log"
+    },
+    "diagnostic_backend.py": {
+      "sha256": "9ea7eb5b403ccb6ef43197382d00f012f979e1a7ce482a6dabd151c26e5f1e40",
+      "bytes": 3758,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/diagnostic_backend.py"
+    },
+    "failure.json": {
+      "sha256": "3206416cc3c813323a76d401139bd960ee56db0154640e28ecb45dfec9d19d42",
+      "bytes": 537,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/failure.json"
+    },
+    "recording-verification.log": {
+      "sha256": "e3ededa558f9eb8e55ea5dbc352a37efc95553ff1332d5d6ebecfd9f866b75f3",
+      "bytes": 31,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/recording-verification.log"
+    },
+    "report/aerial05-cbs.jsonl": {
+      "sha256": "bf5777721be30784a73936be7628f8d49e1fc0b3dae73bc49e0c91996f700438",
+      "bytes": 1029731,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/aerial05-cbs.jsonl"
+    },
+    "report/aerial05-cbs.tum": {
+      "sha256": "59fe0c9355fe9b62fc72760a5f168077543d6cfe9210d8c0b850403fd8ab7c3e",
+      "bytes": 355652,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/aerial05-cbs.tum"
+    },
+    "report/aerial05-raw.tum": {
+      "sha256": "b4f491fe6f8eac766a2abbef9dedb6ba81ac8b0383ec7c030c2b5f53e55dbfd7",
+      "bytes": 358385,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/aerial05-raw.tum"
+    },
+    "report/aerial08-cbs.jsonl": {
+      "sha256": "8fe3aa769c8a2eb91a32fc94c155215149770309ba26de10302fae3171d805df",
+      "bytes": 963119,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/aerial08-cbs.jsonl"
+    },
+    "report/aerial08-cbs.tum": {
+      "sha256": "1454aa18fc5ed146b5e27d3ce710edaf6271920f5ac1288d3ec5f58e6af69ffe",
+      "bytes": 330846,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/aerial08-cbs.tum"
+    },
+    "report/aerial08-raw.tum": {
+      "sha256": "f4b118b82a097391551447ca984953d90008a1cd0384207fd9a0742f153e5f12",
+      "bytes": 333686,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/aerial08-raw.tum"
+    },
+    "report/evo/cbs/README.md": {
+      "sha256": "f52615a1a00ca4ac0cebbf80e1b04b3660fc4fbb0a06bcbbb674bc2fca1fea27",
+      "bytes": 845,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/README.md"
+    },
+    "report/evo/cbs/aerial05-ape.zip": {
+      "sha256": "865e0c6d4d96443cf38d51caff3e5bfeb7369e0d267f722a9ddca5c43fe89441",
+      "bytes": 1230080,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial05-ape.zip"
+    },
+    "report/evo/cbs/aerial05-component-ape.zip": {
+      "sha256": "62ec78bf3d8f77125f26a12f3c9d43ddabd16970318947e98a9095a841f90a47",
+      "bytes": 1761970,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial05-component-ape.zip"
+    },
+    "report/evo/cbs/aerial05-estimate-aligned.tum": {
+      "sha256": "e2aa6007ccd5846a82132d6bed2ce26f2a46d6648df8818c9750a2b06de9898a",
+      "bytes": 561162,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial05-estimate-aligned.tum"
+    },
+    "report/evo/cbs/aerial05-estimate.kitti": {
+      "sha256": "af848d26c0c28e6d347e887170cddc33e5c54317ccdb34c52c0ca08ed2eab918",
+      "bytes": 846307,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial05-estimate.kitti"
+    },
+    "report/evo/cbs/aerial05-reference-matched.tum": {
+      "sha256": "b2d4a7da036a26ccab8e290188873595ba52ac8bb5c93dc10a296b3ba1037c17",
+      "bytes": 555600,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial05-reference-matched.tum"
+    },
+    "report/evo/cbs/aerial05-reference.kitti": {
+      "sha256": "03589bcd87ba98026efa8ccaa6e8eff69f2440768510c689a092dc6f8b00924a",
+      "bytes": 833400,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial05-reference.kitti"
+    },
+    "report/evo/cbs/aerial08-ape.zip": {
+      "sha256": "802fcfa5e465eb7f23d3cee1e689d48b44051ca8519da4d9b406a2c597c08f99",
+      "bytes": 1156513,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial08-ape.zip"
+    },
+    "report/evo/cbs/aerial08-component-ape.zip": {
+      "sha256": "76b77ff797a3a7609c8a484a215c444cbe3a02ef482e55d07cb42b2833f88d64",
+      "bytes": 1656294,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial08-component-ape.zip"
+    },
+    "report/evo/cbs/aerial08-estimate-aligned.tum": {
+      "sha256": "e5fb521a14de2005fd0d1f0cb16d5d52ebf285c627a7620d9ad5224465f6a294",
+      "bytes": 527573,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial08-estimate-aligned.tum"
+    },
+    "report/evo/cbs/aerial08-estimate.kitti": {
+      "sha256": "ca319e9cc17d0c42bed176949fdaaf181701d11af62eb6408aaeb8d8b1f6e7ba",
+      "bytes": 793546,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial08-estimate.kitti"
+    },
+    "report/evo/cbs/aerial08-reference-matched.tum": {
+      "sha256": "af11376920302109452b79f6ef55cdce027753ff7eb4bf24e859997e9f3523fb",
+      "bytes": 522334,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial08-reference-matched.tum"
+    },
+    "report/evo/cbs/aerial08-reference.kitti": {
+      "sha256": "486e6d7f8d093f851ce70ac25ce57e893fecfeed4a783e7af92f400cd8786980",
+      "bytes": 783334,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/aerial08-reference.kitti"
+    },
+    "report/evo/cbs/evaluation.json": {
+      "sha256": "c2b03fc606a958278455a604306634ab07a1fdf35fc3b9ed4609eecd7a33be71",
+      "bytes": 2686,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/cbs/evaluation.json"
+    },
+    "report/evo/raw/README.md": {
+      "sha256": "f52615a1a00ca4ac0cebbf80e1b04b3660fc4fbb0a06bcbbb674bc2fca1fea27",
+      "bytes": 845,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/README.md"
+    },
+    "report/evo/raw/aerial05-ape.zip": {
+      "sha256": "fbf68b6e57032876d62b2ec36481043aa38e05301e69a98f90b559e5c449ed37",
+      "bytes": 1230081,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial05-ape.zip"
+    },
+    "report/evo/raw/aerial05-component-ape.zip": {
+      "sha256": "725ae145328a7ec48c67523722fd68ca1adde53a6884bce6fa11459f807dbace",
+      "bytes": 1761971,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial05-component-ape.zip"
+    },
+    "report/evo/raw/aerial05-estimate-aligned.tum": {
+      "sha256": "ed7bb2463fb8d717c92747888cc860f276c825b8d39e4bc18908fa42b39f2b39",
+      "bytes": 561162,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial05-estimate-aligned.tum"
+    },
+    "report/evo/raw/aerial05-estimate.kitti": {
+      "sha256": "0235069a9722003f35a84cd695d96ebee25707a1fb7576d4f6e59b45e3d0f91c",
+      "bytes": 846853,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial05-estimate.kitti"
+    },
+    "report/evo/raw/aerial05-reference-matched.tum": {
+      "sha256": "b2d4a7da036a26ccab8e290188873595ba52ac8bb5c93dc10a296b3ba1037c17",
+      "bytes": 555600,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial05-reference-matched.tum"
+    },
+    "report/evo/raw/aerial05-reference.kitti": {
+      "sha256": "03589bcd87ba98026efa8ccaa6e8eff69f2440768510c689a092dc6f8b00924a",
+      "bytes": 833400,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial05-reference.kitti"
+    },
+    "report/evo/raw/aerial08-ape.zip": {
+      "sha256": "036d8af46b8b67a55fca676ad257898b8d02ef0d1345025afa852aba45e4dd43",
+      "bytes": 1156560,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial08-ape.zip"
+    },
+    "report/evo/raw/aerial08-component-ape.zip": {
+      "sha256": "e45fc69ade56c8a40d13980d76fcf180836494676088c849b24870d9bb59236b",
+      "bytes": 1656213,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial08-component-ape.zip"
+    },
+    "report/evo/raw/aerial08-estimate-aligned.tum": {
+      "sha256": "f1c437dc1ab18e599cb9c82d4aa5009ac9b01768738e6fb0f2f0e0b2f2bd1d82",
+      "bytes": 527621,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial08-estimate-aligned.tum"
+    },
+    "report/evo/raw/aerial08-estimate.kitti": {
+      "sha256": "59dfcb7394566f4777f5d3a77bd164358fca6de239cf51706686ba142e901f43",
+      "bytes": 794158,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial08-estimate.kitti"
+    },
+    "report/evo/raw/aerial08-reference-matched.tum": {
+      "sha256": "af11376920302109452b79f6ef55cdce027753ff7eb4bf24e859997e9f3523fb",
+      "bytes": 522334,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial08-reference-matched.tum"
+    },
+    "report/evo/raw/aerial08-reference.kitti": {
+      "sha256": "486e6d7f8d093f851ce70ac25ce57e893fecfeed4a783e7af92f400cd8786980",
+      "bytes": 783334,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/aerial08-reference.kitti"
+    },
+    "report/evo/raw/evaluation.json": {
+      "sha256": "46f8c7e3d3a19d623a47560468d051d01881d4b81bb8e83eab7ca9f383ae3ed0",
+      "bytes": 2681,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/evo/raw/evaluation.json"
+    },
+    "report/report.json": {
+      "sha256": "6c38f7cc223da27e036696ed2f627b1071bfcf01808bdfa83825ca93f59db951",
+      "bytes": 20929,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/report.json"
+    },
+    "report/result.rrd": {
+      "sha256": "6d1a2d343a3f33e40a7128d5bff511f621809a54bae6b71bd3e2c6600872fc34",
+      "bytes": 6833829,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/result.rrd"
+    },
+    "report/trajectories-maps.png": {
+      "sha256": "90c19bf3c0dd3bc276c05774d727e59ad79d28925de5b0de57daf6b0f5a79262",
+      "bytes": 1477653,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/report/trajectories-maps.png"
+    },
+    "retention-audit.json": {
+      "sha256": "210039d057c8d80743f7b48ec2895767bb18abbe7bc614bc09b7c149bafc5e32",
+      "bytes": 2709,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/retention-audit.json"
+    },
+    "source-hashes.json": {
+      "sha256": "bf7033e5b010f71cf4068ad801ce2d4d3f55d62587bbc46ab9489277af49bce3",
+      "bytes": 17715,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/source-hashes.json"
+    },
+    "status.json": {
+      "sha256": "315a4d2619fb6fffb808c6a33417d4e5fcc0894be4139ca05bf248f61764e8ec",
+      "bytes": 1260,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/status.json"
+    },
+    "trials.json": {
+      "sha256": "0c286f6b435b5c52c6c925b0a6181a27d73288a6818009a829ebac89e3c44978",
+      "bytes": 235,
+      "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/trials.json"
+    }
+  },
+  "bulk_geometry_retained_at_source": true
+}

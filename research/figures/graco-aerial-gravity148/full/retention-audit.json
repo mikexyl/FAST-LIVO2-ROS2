@@ -1,0 +1,130 @@
+{
+  "frontends": {
+    "aerial05": {
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.828663788674171,
+        "max_successful_update_gap_s": 0.192004919,
+        "native_poses": 2747,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "validation": {
+        "native_updates": 2747,
+        "snapshots": 60,
+        "completed_snapshots": 58,
+        "inspection_tails": 2,
+        "retrievable_snapshots": 58,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "completed_submaps": 58,
+      "partial_submaps": 2,
+      "max_correspondence_age_s": 9.984013796000001,
+      "processing_mean_s": 0.016038563181054556,
+      "processing_p95_s": 0.029934838355984535,
+      "peak_mapper_rss_mib": 483.90625,
+      "live_rrd_sha256": "637d39b64d68d40010a631f56c83285d5be10672fa42bf2caac622f774166173"
+    },
+    "aerial06": {
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.1696042565087765,
+        "max_successful_update_gap_s": 2.656000852,
+        "native_poses": 3103,
+        "ground_truth_used": false,
+        "passed": false
+      },
+      "validation": {
+        "native_updates": 3103,
+        "snapshots": 66,
+        "completed_snapshots": 64,
+        "inspection_tails": 2,
+        "retrievable_snapshots": 64,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "completed_submaps": 64,
+      "partial_submaps": 2,
+      "max_correspondence_age_s": 9.992013932,
+      "processing_mean_s": 0.017619814615643544,
+      "processing_p95_s": 0.031888766109477724,
+      "peak_mapper_rss_mib": 501.62890625,
+      "live_rrd_sha256": "8ad0bb1fdb37dba2777b059417c6b3b5d324d3c4f1f8805b90c7f9d1f5e5d993"
+    },
+    "aerial07": {
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.089083972933384,
+        "max_successful_update_gap_s": 0.424003124,
+        "native_poses": 3717,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "validation": {
+        "native_updates": 3717,
+        "snapshots": 79,
+        "completed_snapshots": 77,
+        "inspection_tails": 2,
+        "retrievable_snapshots": 77,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "completed_submaps": 77,
+      "partial_submaps": 2,
+      "max_correspondence_age_s": 9.990886503,
+      "processing_mean_s": 0.016073800456138387,
+      "processing_p95_s": 0.030500534223392595,
+      "peak_mapper_rss_mib": 501.76171875,
+      "live_rrd_sha256": "87f84df94850d7c1ea20d6d3cb382a9eb604d2ccefe38274a43034ac62ed99e8"
+    },
+    "aerial08": {
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.734857014579956,
+        "max_successful_update_gap_s": 1.464000225,
+        "native_poses": 2620,
+        "ground_truth_used": false,
+        "passed": false
+      },
+      "validation": {
+        "native_updates": 2620,
+        "snapshots": 56,
+        "completed_snapshots": 54,
+        "inspection_tails": 2,
+        "retrievable_snapshots": 54,
+        "finite_chronological": true,
+        "exact_membership": true,
+        "anchor_poses_verified": true,
+        "payload_hashes_verified": true
+      },
+      "completed_submaps": 54,
+      "partial_submaps": 2,
+      "max_correspondence_age_s": 9.980035323000001,
+      "processing_mean_s": 0.017884713852643,
+      "processing_p95_s": 0.03140321761020456,
+      "peak_mapper_rss_mib": 503.30859375,
+      "live_rrd_sha256": "e6715dd30050b0189b983eefdf0e45fbafc37e7ceb72e5090ae950b8f49a9063"
+    }
+  },
+  "descriptor_evidence_memberships": 253,
+  "causal_ranked_events": 1012,
+  "frozen_sources_verified": true,
+  "derived_rerun_verified": true,
+  "derived_rerun_sha256": "6b3c7b872c21f98fe5558cae4a8713d071ada6e6a5f1d07a4aa7f57bd0b2c84a",
+  "all_bulk_geometry_retained": true
+}

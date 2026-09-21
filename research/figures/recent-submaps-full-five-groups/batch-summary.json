@@ -1,0 +1,1896 @@
+{
+  "started_utc": "2026-09-19T09:56:20Z",
+  "finished_utc": "2026-09-19T11:15:29Z",
+  "frontend_workers": 3,
+  "frontend_ros_domains": [
+    90,
+    92,
+    94
+  ],
+  "frozen_sources_verified": true,
+  "groups": [
+    {
+      "name": "S3E_Laboratory_4",
+      "status": "complete",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/frontends/Alpha",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.013401146690116,
+            "max_successful_update_gap_s": 0.1100288,
+            "native_poses": 3798,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Laboratory_4/frontends/Bob",
+          "ros_domain_id": 92,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.1323387931901954,
+            "max_successful_update_gap_s": 0.116728064,
+            "native_poses": 3788,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": true,
+          "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/s3e_laboratory_4-carol",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.3550048593156307,
+            "max_successful_update_gap_s": 0.201016448,
+            "native_poses": 3794,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "raw": {},
+      "cbs": {},
+      "connectivity": {
+        "all_robots_connected": true,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "Alpha",
+          "Bob",
+          "Carol"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "Alpha--Bob": 39,
+          "Alpha--Carol": 16,
+          "Bob--Carol": 25
+        },
+        "measured_components": [
+          [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ]
+        ],
+        "output_frames": {
+          "Alpha": [
+            "Alpha"
+          ],
+          "Bob": [
+            "Alpha"
+          ],
+          "Carol": [
+            "Alpha"
+          ]
+        }
+      },
+      "ground_truth": {
+        "Alpha": {
+          "available": false,
+          "first_stamp_ns": 0,
+          "last_stamp_ns": 1000000000,
+          "matched_samples": 0,
+          "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/alpha_gt.txt",
+          "pose_samples": 3798,
+          "reason": "no_timestamp_overlap_with_sensor_trajectory",
+          "rows": 2
+        },
+        "Bob": {
+          "available": false,
+          "first_stamp_ns": 0,
+          "last_stamp_ns": 1000000000,
+          "matched_samples": 0,
+          "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/bob_gt.txt",
+          "pose_samples": 3788,
+          "reason": "no_timestamp_overlap_with_sensor_trajectory",
+          "rows": 2
+        },
+        "Carol": {
+          "available": false,
+          "first_stamp_ns": 0,
+          "last_stamp_ns": 1000000000,
+          "matched_samples": 0,
+          "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/carol_gt.txt",
+          "pose_samples": 3794,
+          "reason": "no_timestamp_overlap_with_sensor_trajectory",
+          "rows": 2
+        }
+      },
+      "verification_reasons": {
+        "accepted": 84
+      },
+      "runtime_wall_s": 34.71581270697061,
+      "retained_loops": 84,
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 84,
+        "retained_loops": 84,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "00eb88be2e744972bcdfd5790a0fb3ac",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      }
+    },
+    {
+      "name": "S3E_Campus_Road_1",
+      "status": "complete",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": true,
+          "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/s3e_campus_road_1-alpha",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.903870165067737,
+            "max_successful_update_gap_s": 0.101940481,
+            "native_poses": 7129,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_1/frontends/Bob",
+          "ros_domain_id": 92,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.426591635421767,
+            "max_successful_update_gap_s": 0.200804078,
+            "native_poses": 8728,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_1/frontends/Carol",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 3.229519048724678,
+            "max_successful_update_gap_s": 0.200987178,
+            "native_poses": 6992,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "raw": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              -0.7577415004624387,
+              0.6510902683335031,
+              0.04369531963881701,
+              744070.2431405252
+            ],
+            [
+              -0.6519290712199233,
+              -0.7582475963543293,
+              -0.007004906937959195,
+              2553117.2036135965
+            ],
+            [
+              0.02857104435018007,
+              -0.03379415784256064,
+              0.9990203452985591,
+              -5.1028247775214375
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 1.2730516662362268,
+          "per_robot": {
+            "Alpha": {
+              "samples": 466,
+              "statistics": {
+                "max": 8.067036559231052,
+                "mean": 1.2937275206656778,
+                "median": 1.2730516662362268,
+                "min": 0.4424838046770573,
+                "rmse": 1.5096496843456209,
+                "sse": 1062.033650961292,
+                "std": 0.7780175266130394
+              }
+            }
+          },
+          "rmse_m": 1.5096496843456209,
+          "robots": [
+            "Alpha"
+          ],
+          "samples": 466,
+          "scale": 1.0,
+          "statistics": {
+            "max": 8.067036559231052,
+            "mean": 1.2937275206656778,
+            "median": 1.2730516662362268,
+            "min": 0.4424838046770573,
+            "rmse": 1.5096496843456209,
+            "sse": 1062.033650961292,
+            "std": 0.7780175266130394
+          }
+        },
+        "Bob": {
+          "alignment_SE3": [
+            [
+              -0.8873475118105633,
+              0.46088105562279835,
+              -0.014249415834228108,
+              744290.7123042312
+            ],
+            [
+              -0.46093358274592083,
+              -0.887434517895476,
+              0.00045688579944348773,
+              2553074.0806518034
+            ],
+            [
+              -0.012434853461593806,
+              0.006973450769824977,
+              0.999898367537296,
+              2.332243451005007
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 2.950999577491343,
+          "per_robot": {
+            "Bob": {
+              "samples": 853,
+              "statistics": {
+                "max": 14.184998465840126,
+                "mean": 3.362842523527059,
+                "median": 2.950999577491343,
+                "min": 0.7179439906702754,
+                "rmse": 4.215814631598117,
+                "sse": 15160.44833582124,
+                "std": 2.542515126789795
+              }
+            }
+          },
+          "rmse_m": 4.215814631598117,
+          "robots": [
+            "Bob"
+          ],
+          "samples": 853,
+          "scale": 1.0,
+          "statistics": {
+            "max": 14.184998465840126,
+            "mean": 3.362842523527059,
+            "median": 2.950999577491343,
+            "min": 0.7179439906702754,
+            "rmse": 4.215814631598117,
+            "sse": 15160.44833582124,
+            "std": 2.542515126789795
+          }
+        },
+        "Carol": {
+          "alignment_SE3": [
+            [
+              0.009545519285244148,
+              0.9996780617051182,
+              0.023508636861198896,
+              744452.4844983685
+            ],
+            [
+              -0.999895259926035,
+              0.009286542875783661,
+              0.011100869284086868,
+              2553115.0688990606
+            ],
+            [
+              0.010878981524995099,
+              -0.023612138126669478,
+              0.999662000225109,
+              -3.066271709271354
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.7917986340919988,
+          "per_robot": {
+            "Carol": {
+              "samples": 577,
+              "statistics": {
+                "max": 6.012828399942617,
+                "mean": 1.1156482091917133,
+                "median": 0.7917986340919988,
+                "min": 0.04163156939680137,
+                "rmse": 1.5903940029338686,
+                "sse": 1459.436729795744,
+                "std": 1.1334382020627936
+              }
+            }
+          },
+          "rmse_m": 1.5903940029338686,
+          "robots": [
+            "Carol"
+          ],
+          "samples": 577,
+          "scale": 1.0,
+          "statistics": {
+            "max": 6.012828399942617,
+            "mean": 1.1156482091917133,
+            "median": 0.7917986340919988,
+            "min": 0.04163156939680137,
+            "rmse": 1.5903940029338686,
+            "sse": 1459.436729795744,
+            "std": 1.1334382020627936
+          }
+        }
+      },
+      "cbs": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              -0.8376198353194803,
+              0.5459404071745543,
+              0.018495493868732154,
+              744063.9355424201
+            ],
+            [
+              -0.5462025010384808,
+              -0.8365980565915587,
+              -0.042029984136745975,
+              2553107.2859260463
+            ],
+            [
+              -0.007472572426872744,
+              -0.045307433400144925,
+              0.9989451422075272,
+              -0.06540936335683578
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.8793937708034718,
+          "per_robot": {
+            "Alpha": {
+              "samples": 466,
+              "statistics": {
+                "max": 3.2036418265578206,
+                "mean": 1.1362716196633886,
+                "median": 1.103081747974091,
+                "min": 0.13487664235405403,
+                "rmse": 1.2198431947124786,
+                "sse": 693.4161175738373,
+                "std": 0.44373891651948344
+              }
+            },
+            "Bob": {
+              "samples": 853,
+              "statistics": {
+                "max": 13.530975965046956,
+                "mean": 1.1174623339962935,
+                "median": 0.744932678720018,
+                "min": 0.0270422636771492,
+                "rmse": 2.2834857849015258,
+                "sse": 4447.8041523597785,
+                "std": 1.9913777296000106
+              }
+            }
+          },
+          "rmse_m": 1.9742889181481722,
+          "robots": [
+            "Alpha",
+            "Bob"
+          ],
+          "samples": 1319,
+          "scale": 1.0,
+          "statistics": {
+            "max": 13.530975965046956,
+            "mean": 1.1241076161197705,
+            "median": 0.8793937708034718,
+            "min": 0.0270422636771492,
+            "rmse": 1.9742889181481722,
+            "sse": 5141.220269933616,
+            "std": 1.623021503155213
+          }
+        },
+        "Carol": {
+          "alignment_SE3": [
+            [
+              -0.30624140277675665,
+              0.9515765131518324,
+              0.026801918646339226,
+              744452.4421858081
+            ],
+            [
+              -0.9513162079907032,
+              -0.3069452952473604,
+              0.027965302424616218,
+              2553104.1109208665
+            ],
+            [
+              0.034837847802549095,
+              -0.01693296616992006,
+              0.999249517896894,
+              -3.153641178311034
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 0.791798634122776,
+          "per_robot": {
+            "Carol": {
+              "samples": 577,
+              "statistics": {
+                "max": 6.012828399913933,
+                "mean": 1.1156482091966275,
+                "median": 0.791798634122776,
+                "min": 0.04163156939710083,
+                "rmse": 1.5903940029310664,
+                "sse": 1459.4367297906012,
+                "std": 1.1334382020540243
+              }
+            }
+          },
+          "rmse_m": 1.5903940029310664,
+          "robots": [
+            "Carol"
+          ],
+          "samples": 577,
+          "scale": 1.0,
+          "statistics": {
+            "max": 6.012828399913933,
+            "mean": 1.1156482091966275,
+            "median": 0.791798634122776,
+            "min": 0.04163156939710083,
+            "rmse": 1.5903940029310664,
+            "sse": 1459.4367297906012,
+            "std": 1.1334382020540243
+          }
+        }
+      },
+      "connectivity": {
+        "all_robots_connected": false,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "Alpha",
+          "Bob",
+          "Carol"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "Alpha--Bob": 9
+        },
+        "measured_components": [
+          [
+            "Alpha",
+            "Bob"
+          ],
+          [
+            "Carol"
+          ]
+        ],
+        "output_frames": {
+          "Alpha": [
+            "Alpha"
+          ],
+          "Bob": [
+            "Alpha"
+          ],
+          "Carol": [
+            "Carol"
+          ]
+        }
+      },
+      "ground_truth": {
+        "Alpha": {
+          "available": true,
+          "first_stamp_ns": 1660988157745130000,
+          "last_stamp_ns": 1660988806754520000,
+          "matched_samples": 466,
+          "path": "/data/s3e/S3Ev1/S3E_Campus_Road_1/alpha_gt.txt",
+          "pose_samples": 7129,
+          "rows": 470
+        },
+        "Bob": {
+          "available": true,
+          "first_stamp_ns": 1660988158344455000,
+          "last_stamp_ns": 1660989035344973300,
+          "matched_samples": 853,
+          "path": "/data/s3e/S3Ev1/S3E_Campus_Road_1/bob_gt.txt",
+          "pose_samples": 8728,
+          "rows": 858
+        },
+        "Carol": {
+          "available": true,
+          "first_stamp_ns": 1660988157745610000,
+          "last_stamp_ns": 1660988856734950000,
+          "matched_samples": 577,
+          "path": "/data/s3e/S3Ev1/S3E_Campus_Road_1/carol_gt.txt",
+          "pose_samples": 6992,
+          "rows": 583
+        }
+      },
+      "verification_reasons": {
+        "accepted": 12,
+        "high_rmse": 145
+      },
+      "runtime_wall_s": 29.273181758937426,
+      "retained_loops": 12,
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 12,
+        "retained_loops": 12,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "854e202b0f744b72812d7469e1e23c31",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      }
+    },
+    {
+      "name": "S3E_Campus_Road_2",
+      "status": "failed",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": true,
+          "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/s3e_campus_road_2-alpha",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 3.0329012561121553,
+            "max_successful_update_gap_s": 0.210611544,
+            "native_poses": 15704,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/frontends/Bob",
+          "ros_domain_id": 92,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.8189833517254685,
+            "max_successful_update_gap_s": 0.208756067,
+            "native_poses": 15587,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/frontends/Carol",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.5155184157204,
+            "max_successful_update_gap_s": 0.205660184,
+            "native_poses": 15826,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "failure": {
+        "stage": "evaluation",
+        "error": "RuntimeError('Exit 1: /workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/evaluation.log')",
+        "traceback": "Traceback (most recent call last):\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/recent_submaps/full_batch.py\", line 236, in run\n    call([PYTHON,SCRIPTS/'rollout_report.py','--work',folder,'--trials',folder/'trials.json'],folder/'evaluation.log',3600)\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/recent_submaps/full_batch.py\", line 161, in call\n    if code:raise RuntimeError(f'Exit {code}: {log}')\nRuntimeError: Exit 1: /workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_2/evaluation.log\n"
+      }
+    },
+    {
+      "name": "S3E_Campus_Road_3",
+      "status": "complete",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": true,
+          "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/s3e_campus_road_3-alpha",
+          "ros_domain_id": 92,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.1771926729075948,
+            "max_successful_update_gap_s": 0.20457752,
+            "native_poses": 8892,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_3/frontends/Bob",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.710983750503765,
+            "max_successful_update_gap_s": 0.203987027,
+            "native_poses": 8866,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/S3E_Campus_Road_3/frontends/Carol",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.844809403048476,
+            "max_successful_update_gap_s": 0.209177884,
+            "native_poses": 9002,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "raw": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              0.7356816369457168,
+              -0.6761706191950481,
+              0.03957047887321828,
+              2553053.6821653824
+            ],
+            [
+              -0.6767490242165887,
+              -0.7362118518658491,
+              0.0016933381682653608,
+              744237.6809745611
+            ],
+            [
+              0.027987270012727883,
+              -0.028025040760765733,
+              -0.9992153470636808,
+              -7.602864226523531
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 1.805608569518682,
+          "per_robot": {
+            "Alpha": {
+              "samples": 8891,
+              "statistics": {
+                "max": 7.194331272465674,
+                "mean": 2.370253061681679,
+                "median": 1.805608569518682,
+                "min": 0.906741006636099,
+                "rmse": 2.808953116355466,
+                "sse": 70151.9247694705,
+                "std": 1.5073546475437394
+              }
+            }
+          },
+          "rmse_m": 2.808953116355466,
+          "robots": [
+            "Alpha"
+          ],
+          "samples": 8891,
+          "scale": 1.0,
+          "statistics": {
+            "max": 7.194331272465674,
+            "mean": 2.370253061681679,
+            "median": 1.805608569518682,
+            "min": 0.906741006636099,
+            "rmse": 2.808953116355466,
+            "sse": 70151.9247694705,
+            "std": 1.5073546475437394
+          }
+        },
+        "Bob": {
+          "alignment_SE3": [
+            [
+              0.688849817768383,
+              -0.7247311308409162,
+              0.015834031404302444,
+              2553053.507688343
+            ],
+            [
+              -0.7249024981851552,
+              -0.6886382985681302,
+              0.017136565295066145,
+              744241.5495130159
+            ],
+            [
+              -0.0015154818992893081,
+              -0.023282648802003352,
+              -0.9997277737361183,
+              -4.537890805506681
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 2.3300155626549475,
+          "per_robot": {
+            "Bob": {
+              "samples": 8839,
+              "statistics": {
+                "max": 7.139854375981928,
+                "mean": 2.780239236458968,
+                "median": 2.3300155626549475,
+                "min": 1.1104969604050332,
+                "rmse": 3.1978829614224775,
+                "sse": 90391.63958957781,
+                "std": 1.580102915322369
+              }
+            }
+          },
+          "rmse_m": 3.1978829614224775,
+          "robots": [
+            "Bob"
+          ],
+          "samples": 8839,
+          "scale": 1.0,
+          "statistics": {
+            "max": 7.139854375981928,
+            "mean": 2.780239236458968,
+            "median": 2.3300155626549475,
+            "min": 1.1104969604050332,
+            "rmse": 3.1978829614224775,
+            "sse": 90391.63958957781,
+            "std": 1.580102915322369
+          }
+        },
+        "Carol": {
+          "alignment_SE3": [
+            [
+              0.8836648226864489,
+              -0.46501707246364477,
+              0.05381081177484204,
+              2553054.2082726527
+            ],
+            [
+              -0.4666936238890173,
+              -0.8840993988554574,
+              0.02377634044075127,
+              744236.0725832161
+            ],
+            [
+              0.03651770211640492,
+              -0.04612347841131998,
+              -0.9982680412451246,
+              -8.592376732660169
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 1.453790380051259,
+          "per_robot": {
+            "Carol": {
+              "samples": 9002,
+              "statistics": {
+                "max": 7.4419421769884355,
+                "mean": 1.9503133862008017,
+                "median": 1.453790380051259,
+                "min": 0.10262561340642551,
+                "rmse": 2.5207396777784488,
+                "sse": 57199.86496518564,
+                "std": 1.596999129220978
+              }
+            }
+          },
+          "rmse_m": 2.5207396777784488,
+          "robots": [
+            "Carol"
+          ],
+          "samples": 9002,
+          "scale": 1.0,
+          "statistics": {
+            "max": 7.4419421769884355,
+            "mean": 1.9503133862008017,
+            "median": 1.453790380051259,
+            "min": 0.10262561340642551,
+            "rmse": 2.5207396777784488,
+            "sse": 57199.86496518564,
+            "std": 1.596999129220978
+          }
+        }
+      },
+      "cbs": {
+        "Alpha": {
+          "alignment_SE3": [
+            [
+              0.8044325488925503,
+              -0.5935941195536739,
+              0.023114833192867335,
+              2553057.2156384033
+            ],
+            [
+              -0.5929912165696946,
+              -0.8047143296082132,
+              -0.028218164263433185,
+              744233.8858446543
+            ],
+            [
+              0.03535097386817746,
+              0.008992716747658277,
+              -0.9993344983998441,
+              -4.862672362350134
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected",
+          "median_m": 3.273682146184674,
+          "per_robot": {
+            "Alpha": {
+              "samples": 8891,
+              "statistics": {
+                "max": 5.726185563683918,
+                "mean": 2.9582052181577065,
+                "median": 3.0166718140382365,
+                "min": 0.6852921675241117,
+                "rmse": 3.2512177555971316,
+                "sse": 93981.57660731065,
+                "std": 1.3488657388986371
+              }
+            },
+            "Bob": {
+              "samples": 8839,
+              "statistics": {
+                "max": 7.270238840217654,
+                "mean": 3.978708222052749,
+                "median": 3.7601200088002265,
+                "min": 0.991736791568314,
+                "rmse": 4.262575570980053,
+                "sse": 160600.65685461438,
+                "std": 1.529519984206081
+              }
+            },
+            "Carol": {
+              "samples": 9002,
+              "statistics": {
+                "max": 5.486118035385166,
+                "mean": 2.959192195127152,
+                "median": 2.747574532940931,
+                "min": 0.4717830731665318,
+                "rmse": 3.2424641197679853,
+                "sse": 94643.18925898096,
+                "std": 1.3254263918759588
+              }
+            }
+          },
+          "rmse_m": 3.614408206423488,
+          "robots": [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ],
+          "samples": 26732,
+          "scale": 1.0,
+          "statistics": {
+            "max": 7.270238840217654,
+            "mean": 3.2959693517095254,
+            "median": 3.273682146184674,
+            "min": 0.4717830731665318,
+            "rmse": 3.614408206423488,
+            "sse": 349225.42272090603,
+            "std": 1.483419264824663
+          }
+        }
+      },
+      "connectivity": {
+        "all_robots_connected": true,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "Alpha",
+          "Bob",
+          "Carol"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "Alpha--Bob": 42,
+          "Alpha--Carol": 44,
+          "Bob--Carol": 14
+        },
+        "measured_components": [
+          [
+            "Alpha",
+            "Bob",
+            "Carol"
+          ]
+        ],
+        "output_frames": {
+          "Alpha": [
+            "Alpha"
+          ],
+          "Bob": [
+            "Alpha"
+          ],
+          "Carol": [
+            "Alpha"
+          ]
+        }
+      },
+      "ground_truth": {
+        "Alpha": {
+          "available": true,
+          "first_stamp_ns": 1689766875569802522,
+          "last_stamp_ns": 1689767769349791526,
+          "matched_samples": 8891,
+          "path": "/data/s3e/S3Ev2/S3E_Campus_Road_3/alpha_gt.txt",
+          "pose_samples": 8892,
+          "rows": 61352
+        },
+        "Bob": {
+          "available": true,
+          "first_stamp_ns": 1689766875259828329,
+          "last_stamp_ns": 1689767769329849720,
+          "matched_samples": 8839,
+          "path": "/data/s3e/S3Ev2/S3E_Campus_Road_3/bob_gt.txt",
+          "pose_samples": 8866,
+          "rows": 54175
+        },
+        "Carol": {
+          "available": true,
+          "first_stamp_ns": 1689766861539832353,
+          "last_stamp_ns": 1689767769349812269,
+          "matched_samples": 9002,
+          "path": "/data/s3e/S3Ev2/S3E_Campus_Road_3/carol_gt.txt",
+          "pose_samples": 9002,
+          "rows": 63771
+        }
+      },
+      "verification_reasons": {
+        "accepted": 103,
+        "high_rmse": 394
+      },
+      "runtime_wall_s": 107.14396022097208,
+      "retained_loops": 103,
+      "pcm": {
+        "excluded_loops": 0,
+        "proposed_loops": 103,
+        "retained_loops": 103,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "2baabd7f48e146caadc474901d0a8a53",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      }
+    },
+    {
+      "name": "GRACO_ground_01_06",
+      "status": "complete",
+      "frontends": {
+        "robot1": {
+          "status": "complete",
+          "reused": true,
+          "path": "/workspace/.ros2/recent-submaps/failed-frontends-20260918/graco-ground01-robot1",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.242611511807531,
+            "max_successful_update_gap_s": 0.328002215,
+            "native_poses": 3142,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot2": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot2",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 3.0072516451310403,
+            "max_successful_update_gap_s": 0.312000989,
+            "native_poses": 3635,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot3": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot3",
+          "ros_domain_id": 92,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 3.5657562995600856,
+            "max_successful_update_gap_s": 0.319997072,
+            "native_poses": 2794,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot4": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot4",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.1902046654811373,
+            "max_successful_update_gap_s": 0.21600008,
+            "native_poses": 3076,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot5": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot5",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.4829049328342774,
+            "max_successful_update_gap_s": 0.191999912,
+            "native_poses": 4875,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "robot6": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/recent-submaps/full-five-groups-parallel-20260919/GRACO_ground_01_06/frontends/robot6",
+          "ros_domain_id": 90,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.181990198734458,
+            "max_successful_update_gap_s": 0.191996098,
+            "native_poses": 2895,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "raw": {
+        "robot1": {
+          "alignment_SE3": [
+            [
+              -0.5525206287497073,
+              0.8318903589466012,
+              -0.051762781008387465,
+              73.0076783370076
+            ],
+            [
+              -0.8334369100672956,
+              -0.5506535229174958,
+              0.04651467119124009,
+              98.72572263729442
+            ],
+            [
+              0.010191748795288454,
+              0.06884132763279045,
+              0.9975755609808454,
+              0.5447614538207173
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "GRACO RTK/INS T_Base_Imu positions; GT orientations unused; original timestamps; rigid alignment without scale",
+          "median_m": 0.9777283603608503,
+          "per_robot": {
+            "robot1": {
+              "samples": 3142,
+              "statistics": {
+                "max": 19.742082112901098,
+                "mean": 1.6747541226286042,
+                "median": 0.9777283603608503,
+                "min": 0.14064158497930654,
+                "rmse": 3.729304021536889,
+                "sse": 43698.02006003091,
+                "std": 3.332102506494917
+              }
+            }
+          },
+          "rmse_m": 3.729304021536889,
+          "robots": [
+            "robot1"
+          ],
+          "samples": 3142,
+          "scale": 1.0,
+          "statistics": {
+            "max": 19.742082112901098,
+            "mean": 1.6747541226286042,
+            "median": 0.9777283603608503,
+            "min": 0.14064158497930654,
+            "rmse": 3.729304021536889,
+            "sse": 43698.02006003091,
+            "std": 3.332102506494917
+          }
+        },
+        "robot2": {
+          "alignment_SE3": [
+            [
+              -0.8556540655692018,
+              0.5169573863683817,
+              -0.024722070181675757,
+              55.83837347665694
+            ],
+            [
+              -0.5160006972296716,
+              -0.8558129551096522,
+              -0.03643441127529456,
+              98.93090024028591
+            ],
+            [
+              -0.03999250596535514,
+              -0.01841864668362061,
+              0.9990302062104807,
+              -0.04138495774564266
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "GRACO RTK/INS T_Base_Imu positions; GT orientations unused; original timestamps; rigid alignment without scale",
+          "median_m": 1.013975232832491,
+          "per_robot": {
+            "robot2": {
+              "samples": 3635,
+              "statistics": {
+                "max": 10.991136870170799,
+                "mean": 1.4323774557985012,
+                "median": 1.013975232832491,
+                "min": 0.1483978441122973,
+                "rmse": 2.26014818072488,
+                "sse": 18568.56071876154,
+                "std": 1.7483033555290677
+              }
+            }
+          },
+          "rmse_m": 2.26014818072488,
+          "robots": [
+            "robot2"
+          ],
+          "samples": 3635,
+          "scale": 1.0,
+          "statistics": {
+            "max": 10.991136870170799,
+            "mean": 1.4323774557985012,
+            "median": 1.013975232832491,
+            "min": 0.1483978441122973,
+            "rmse": 2.26014818072488,
+            "sse": 18568.56071876154,
+            "std": 1.7483033555290677
+          }
+        },
+        "robot3": {
+          "alignment_SE3": [
+            [
+              -0.641694539362403,
+              0.7573341082307022,
+              -0.12113284716739901,
+              48.456171519546686
+            ],
+            [
+              -0.7663549621245611,
+              -0.639414296889871,
+              0.062043766487005055,
+              70.32197315104042
+            ],
+            [
+              -0.030466213738100746,
+              0.13264390465919956,
+              0.9906954145332586,
+              2.628160392166359
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "GRACO RTK/INS T_Base_Imu positions; GT orientations unused; original timestamps; rigid alignment without scale",
+          "median_m": 4.906350227791861,
+          "per_robot": {
+            "robot3": {
+              "samples": 2794,
+              "statistics": {
+                "max": 35.91934043006099,
+                "mean": 7.753523901520159,
+                "median": 4.906350227791861,
+                "min": 3.397852404136634,
+                "rmse": 10.867895682153732,
+                "sse": 330002.5714235429,
+                "std": 7.615380730254483
+              }
+            }
+          },
+          "rmse_m": 10.867895682153732,
+          "robots": [
+            "robot3"
+          ],
+          "samples": 2794,
+          "scale": 1.0,
+          "statistics": {
+            "max": 35.91934043006099,
+            "mean": 7.753523901520159,
+            "median": 4.906350227791861,
+            "min": 3.397852404136634,
+            "rmse": 10.867895682153732,
+            "sse": 330002.5714235429,
+            "std": 7.615380730254483
+          }
+        },
+        "robot4": {
+          "alignment_SE3": [
+            [
+              -0.6339074615154994,
+              -0.7732075761249672,
+              0.017645805675301468,
+              -142.07897419333153
+            ],
+            [
+              0.7734055410104379,
+              -0.6336724281595736,
+              0.017410425747330278,
+              -81.41417550539614
+            ],
+            [
+              -0.0022802125622966955,
+              0.024683962674265786,
+              0.9996927040932961,
+              -0.3410537018376518
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "GRACO RTK/INS T_Base_Imu positions; GT orientations unused; original timestamps; rigid alignment without scale",
+          "median_m": 0.6984922694126877,
+          "per_robot": {
+            "robot4": {
+              "samples": 3076,
+              "statistics": {
+                "max": 1.8622600475417341,
+                "mean": 0.8180782106432053,
+                "median": 0.6984922694126877,
+                "min": 0.1834960937014065,
+                "rmse": 0.9278700236734181,
+                "sse": 2648.2599938383382,
+                "std": 0.4378251044681208
+              }
+            }
+          },
+          "rmse_m": 0.9278700236734181,
+          "robots": [
+            "robot4"
+          ],
+          "samples": 3076,
+          "scale": 1.0,
+          "statistics": {
+            "max": 1.8622600475417341,
+            "mean": 0.8180782106432053,
+            "median": 0.6984922694126877,
+            "min": 0.1834960937014065,
+            "rmse": 0.9278700236734181,
+            "sse": 2648.2599938383382,
+            "std": 0.4378251044681208
+          }
+        },
+        "robot5": {
+          "alignment_SE3": [
+            [
+              -0.8532455697974842,
+              -0.5207803622589848,
+              0.027564685856470626,
+              -168.64803923542684
+            ],
+            [
+              0.5206713104218377,
+              -0.8536789138999066,
+              -0.01156280529463936,
+              173.27643752585266
+            ],
+            [
+              0.029553073014016374,
+              0.004486228714172932,
+              0.999553144973969,
+              -2.057663764008384
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "GRACO RTK/INS T_Base_Imu positions; GT orientations unused; original timestamps; rigid alignment without scale",
+          "median_m": 0.984786944102104,
+          "per_robot": {
+            "robot5": {
+              "samples": 4875,
+              "statistics": {
+                "max": 2.5211550932319193,
+                "mean": 1.0804367716691776,
+                "median": 0.984786944102104,
+                "min": 0.16863462151479136,
+                "rmse": 1.2587395303973072,
+                "sse": 7724.072876251063,
+                "std": 0.6458185409307465
+              }
+            }
+          },
+          "rmse_m": 1.2587395303973072,
+          "robots": [
+            "robot5"
+          ],
+          "samples": 4875,
+          "scale": 1.0,
+          "statistics": {
+            "max": 2.5211550932319193,
+            "mean": 1.0804367716691776,
+            "median": 0.984786944102104,
+            "min": 0.16863462151479136,
+            "rmse": 1.2587395303973072,
+            "sse": 7724.072876251063,
+            "std": 0.6458185409307465
+          }
+        },
+        "robot6": {
+          "alignment_SE3": [
+            [
+              -0.6200062110376924,
+              -0.7845119900492772,
+              0.011542778851134111,
+              258.3435994093358
+            ],
+            [
+              0.782554478573517,
+              -0.6193861469314297,
+              -0.06300229403734081,
+              228.1853809871424
+            ],
+            [
+              0.05657549239038955,
+              -0.030028960327635634,
+              0.9979466294358765,
+              1.9868853229725354
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "GRACO RTK/INS T_Base_Imu positions; GT orientations unused; original timestamps; rigid alignment without scale",
+          "median_m": 1.0244603176835083,
+          "per_robot": {
+            "robot6": {
+              "samples": 2895,
+              "statistics": {
+                "max": 2.301063080217646,
+                "mean": 1.0453039193490044,
+                "median": 1.0244603176835083,
+                "min": 0.13631490758831064,
+                "rmse": 1.1625233065692726,
+                "sse": 3912.4779689270063,
+                "std": 0.508724045539785
+              }
+            }
+          },
+          "rmse_m": 1.1625233065692726,
+          "robots": [
+            "robot6"
+          ],
+          "samples": 2895,
+          "scale": 1.0,
+          "statistics": {
+            "max": 2.301063080217646,
+            "mean": 1.0453039193490044,
+            "median": 1.0244603176835083,
+            "min": 0.13631490758831064,
+            "rmse": 1.1625233065692726,
+            "sse": 3912.4779689270063,
+            "std": 0.508724045539785
+          }
+        }
+      },
+      "cbs": {
+        "robot1": {
+          "alignment_SE3": [
+            [
+              -0.35701140073122895,
+              0.9324537482840964,
+              -0.055433447113320475,
+              75.58451111659511
+            ],
+            [
+              -0.934013744437217,
+              -0.35554269739770794,
+              0.0347522017940062,
+              99.54848553646795
+            ],
+            [
+              0.012695863511223227,
+              0.06418253374634733,
+              0.9978574133670619,
+              0.08548506677639739
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "GRACO RTK/INS T_Base_Imu positions; GT orientations unused; original timestamps; rigid alignment without scale",
+          "median_m": 2.490700902243402,
+          "per_robot": {
+            "robot1": {
+              "samples": 3142,
+              "statistics": {
+                "max": 20.16047186127827,
+                "mean": 2.8212443467278403,
+                "median": 2.1610842631363623,
+                "min": 1.360912696858129,
+                "rmse": 4.260619575738929,
+                "sse": 57036.34634953143,
+                "std": 3.192719766159563
+              }
+            },
+            "robot2": {
+              "samples": 3635,
+              "statistics": {
+                "max": 12.8962767949884,
+                "mean": 3.5296968977498824,
+                "median": 3.744369924434006,
+                "min": 0.4028699825581241,
+                "rmse": 4.1352570896710255,
+                "sse": 62159.776603546736,
+                "std": 2.154435194590299
+              }
+            },
+            "robot3": {
+              "samples": 2794,
+              "statistics": {
+                "max": 42.07301657720532,
+                "mean": 6.52807764620789,
+                "median": 2.8096732198505885,
+                "min": 0.9072025636355644,
+                "rmse": 12.027454885811315,
+                "sse": 404179.12085845275,
+                "std": 10.101676755633557
+              }
+            },
+            "robot5": {
+              "samples": 4875,
+              "statistics": {
+                "max": 5.8452192649196135,
+                "mean": 2.668557183461501,
+                "median": 2.5685446089092507,
+                "min": 0.885321107629585,
+                "rmse": 2.883551317607222,
+                "sse": 40534.98248121244,
+                "std": 1.0925524060063974
+              }
+            },
+            "robot6": {
+              "samples": 2895,
+              "statistics": {
+                "max": 14.636576276600206,
+                "mean": 4.210873499089061,
+                "median": 2.1827525738761127,
+                "min": 1.538821558755508,
+                "rmse": 5.66430453258689,
+                "sse": 92884.18120067529,
+                "std": 3.788520847580733
+              }
+            }
+          },
+          "rmse_m": 6.154285705181098,
+          "robots": [
+            "robot1",
+            "robot2",
+            "robot3",
+            "robot5",
+            "robot6"
+          ],
+          "samples": 17341,
+          "scale": 1.0,
+          "statistics": {
+            "max": 42.07301657720532,
+            "mean": 3.7560660834716675,
+            "median": 2.490700902243402,
+            "min": 0.4028699825581241,
+            "rmse": 6.154285705181098,
+            "sse": 656794.4074934187,
+            "std": 4.875161547845385
+          }
+        },
+        "robot4": {
+          "alignment_SE3": [
+            [
+              -0.05793838888193718,
+              -0.9982947585636468,
+              0.007121665403252822,
+              -151.9891398959594
+            ],
+            [
+              0.9983121032152434,
+              -0.057907786237198375,
+              0.00443089912584959,
+              -86.27837307532701
+            ],
+            [
+              -0.004010943495235473,
+              0.007366363923766672,
+              0.9999648238887309,
+              -0.28894478102878346
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+          "association_max_diff_s": 0.05,
+          "engine": "evo 1.36.5",
+          "limitation": "GRACO RTK/INS T_Base_Imu positions; GT orientations unused; original timestamps; rigid alignment without scale",
+          "median_m": 0.6984922694591436,
+          "per_robot": {
+            "robot4": {
+              "samples": 3076,
+              "statistics": {
+                "max": 1.862260047611363,
+                "mean": 0.8180782106717596,
+                "median": 0.6984922694591436,
+                "min": 0.18349609369072478,
+                "rmse": 0.9278700237090184,
+                "sse": 2648.259994041554,
+                "std": 0.4378251044902138
+              }
+            }
+          },
+          "rmse_m": 0.9278700237090184,
+          "robots": [
+            "robot4"
+          ],
+          "samples": 3076,
+          "scale": 1.0,
+          "statistics": {
+            "max": 1.862260047611363,
+            "mean": 0.8180782106717596,
+            "median": 0.6984922694591436,
+            "min": 0.18349609369072478,
+            "rmse": 0.9278700237090184,
+            "sse": 2648.259994041554,
+            "std": 0.4378251044902138
+          }
+        }
+      },
+      "connectivity": {
+        "all_robots_connected": false,
+        "common_frame_contract": true,
+        "expected_components": 1,
+        "expected_robots": [
+          "robot1",
+          "robot2",
+          "robot3",
+          "robot4",
+          "robot5",
+          "robot6"
+        ],
+        "ground_truth_used": false,
+        "inter_robot_loop_counts": {
+          "robot1--robot5": 2,
+          "robot1--robot6": 3,
+          "robot2--robot3": 3,
+          "robot2--robot5": 6,
+          "robot3--robot5": 8
+        },
+        "measured_components": [
+          [
+            "robot1",
+            "robot2",
+            "robot3",
+            "robot5",
+            "robot6"
+          ],
+          [
+            "robot4"
+          ]
+        ],
+        "output_frames": {
+          "robot1": [
+            "robot1"
+          ],
+          "robot2": [
+            "robot1"
+          ],
+          "robot3": [
+            "robot1"
+          ],
+          "robot4": [
+            "robot4"
+          ],
+          "robot5": [
+            "robot1"
+          ],
+          "robot6": [
+            "robot1"
+          ]
+        }
+      },
+      "ground_truth": {
+        "robot1": {
+          "available": true,
+          "evaluated_frame": "IMU",
+          "first_stamp_ns": 1661303299865000000,
+          "last_stamp_ns": 1661303634655000000,
+          "matched_samples": 3142,
+          "orientation_used_for_lever_arm": false,
+          "path": "/workspace/.ros2/graco/inputs/reference/robot1_gt.txt",
+          "pose_samples": 3142,
+          "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+          "reference_frame": "IMU",
+          "rows": 66959
+        },
+        "robot2": {
+          "available": true,
+          "evaluated_frame": "IMU",
+          "first_stamp_ns": 1661303704615000000,
+          "last_stamp_ns": 1661304092250000000,
+          "matched_samples": 3635,
+          "orientation_used_for_lever_arm": false,
+          "path": "/workspace/.ros2/graco/inputs/reference/robot2_gt.txt",
+          "pose_samples": 3635,
+          "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+          "reference_frame": "IMU",
+          "rows": 77528
+        },
+        "robot3": {
+          "available": true,
+          "evaluated_frame": "IMU",
+          "first_stamp_ns": 1661304424200000000,
+          "last_stamp_ns": 1661304722155000000,
+          "matched_samples": 2794,
+          "orientation_used_for_lever_arm": false,
+          "path": "/workspace/.ros2/graco/inputs/reference/robot3_gt.txt",
+          "pose_samples": 2794,
+          "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+          "reference_frame": "IMU",
+          "rows": 59592
+        },
+        "robot4": {
+          "available": true,
+          "evaluated_frame": "IMU",
+          "first_stamp_ns": 1661304800100000000,
+          "last_stamp_ns": 1661305129905000000,
+          "matched_samples": 3076,
+          "orientation_used_for_lever_arm": false,
+          "path": "/workspace/.ros2/graco/inputs/reference/robot4_gt.txt",
+          "pose_samples": 3076,
+          "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+          "reference_frame": "IMU",
+          "rows": 65962
+        },
+        "robot5": {
+          "available": true,
+          "evaluated_frame": "IMU",
+          "first_stamp_ns": 1661305279445000000,
+          "last_stamp_ns": 1661305800405000000,
+          "matched_samples": 4875,
+          "orientation_used_for_lever_arm": false,
+          "path": "/workspace/.ros2/graco/inputs/reference/robot5_gt.txt",
+          "pose_samples": 4875,
+          "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+          "reference_frame": "IMU",
+          "rows": 104193
+        },
+        "robot6": {
+          "available": true,
+          "evaluated_frame": "IMU",
+          "first_stamp_ns": 1661306086845000000,
+          "last_stamp_ns": 1661306398210000000,
+          "matched_samples": 2895,
+          "orientation_used_for_lever_arm": false,
+          "path": "/workspace/.ros2/graco/inputs/reference/robot6_gt.txt",
+          "pose_samples": 2895,
+          "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+          "reference_frame": "IMU",
+          "rows": 62274
+        }
+      },
+      "verification_reasons": {
+        "accepted": 24,
+        "high_rmse": 121,
+        "low_overlap": 1
+      },
+      "runtime_wall_s": 28.49021816602908,
+      "retained_loops": 23,
+      "pcm": {
+        "excluded_loops": 1,
+        "proposed_loops": 24,
+        "retained_loops": 23,
+        "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+        "session_id": "6a2b6ba1449b4d4aa25e7c4416dda8d4",
+        "settings": {
+          "enabled": true,
+          "minimum_clique_size": 2,
+          "probability": 0.99,
+          "timeout_s": 60.0
+        }
+      }
+    }
+  ]
+}

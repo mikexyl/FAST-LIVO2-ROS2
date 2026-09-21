@@ -1,0 +1,9 @@
+{
+  "native_poses": 1120,
+  "finite_chronological": true,
+  "max_successful_update_gap_s": 0.31999898,
+  "max_speed_m_s": 4.935991044622429,
+  "smoke_passed": true,
+  "full_sequence": false,
+  "ground_truth_used": false
+}

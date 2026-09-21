@@ -1,0 +1,54 @@
+{
+  "phase": "complete",
+  "started_utc": "2026-09-20T12:24:24.463987+00:00",
+  "original_work": "/workspace/.ros2/graco-aerial-four148-20260920/full",
+  "frontend_reused": true,
+  "gravity_reconstructed": true,
+  "diagnostic_only": true,
+  "updated_utc": "2026-09-20T12:26:43.067407+00:00",
+  "active_robot": "aerial08",
+  "finished_utc": "2026-09-20T12:26:43.067393+00:00",
+  "wall_s": 138.60341864393558,
+  "loops": 5,
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial05",
+      "aerial06",
+      "aerial07",
+      "aerial08"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {
+      "aerial06--aerial07": 4
+    },
+    "measured_components": [
+      [
+        "aerial05"
+      ],
+      [
+        "aerial06",
+        "aerial07"
+      ],
+      [
+        "aerial08"
+      ]
+    ],
+    "output_frames": {
+      "aerial05": [
+        "aerial05"
+      ],
+      "aerial06": [
+        "aerial06"
+      ],
+      "aerial07": [
+        "aerial06"
+      ],
+      "aerial08": [
+        "aerial08"
+      ]
+    }
+  }
+}

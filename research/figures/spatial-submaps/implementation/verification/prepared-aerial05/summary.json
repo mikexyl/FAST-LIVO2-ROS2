@@ -1,0 +1,9 @@
+{
+  "submaps": 6,
+  "wall_s": 6.083412464000503,
+  "source_index_sha256": "b25094c85bbb4b4866163f6627cbd8da74261a4637e8eb7da5424cbdd5c3e5bc",
+  "source": ".ros2/spatial-submaps-20260920/trials/aerial05-spatial-smoke/frontend/submaps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": null
+}

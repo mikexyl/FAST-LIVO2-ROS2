@@ -1,0 +1,81 @@
+"""Prepare native completed submaps for existing MapClosures/PCM/CBS workers."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import zlib
+import time
+import numpy as np
+from .artifacts import canonical, read_jsonl, write_jsonl
+from .backends import pack_array
+from .geometry import voxel_downsample
+
+
+def prepare(source, output, config):
+    import s3e_mapclosures_native as native
+    from .ellipsoid_cuda import SurfaceSampler
+    source, output = Path(source), Path(output)
+    manifest=json.loads((source/'manifest.json').read_text())
+    if not manifest['complete'] or hashlib.sha256((source/'index.jsonl').read_bytes()).hexdigest()!=manifest['index_sha256']:
+        raise ValueError('Unverified submap index')
+    output.mkdir(parents=True,exist_ok=False)
+    store=output/'store'; descriptors=output/'ellipsoid'
+    store.mkdir(); descriptors.mkdir()
+    mc=config['backend']['mapclosures']; rows=[]; timings=[]; started=time.monotonic()
+    sampler=SurfaceSampler()
+    try:
+        for row in read_jsonl(source/'index.jsonl'):
+            if not row['complete'] or not row['retrievable']:continue
+            path=source/row['payload']
+            if path.parent!=source or hashlib.sha256(path.read_bytes()).hexdigest()!=row['sha256']:
+                raise ValueError('Snapshot payload hash mismatch')
+            if row['available_ns']<row['last_member_ns'] or row['stamp_ns']>row['available_ns']:
+                raise ValueError('Noncausal submap')
+            frame_start=time.monotonic();basis_diagnostic=None;sampling=None
+            key=len(rows)
+            with np.load(path,allow_pickle=False) as data:
+                points=data['points']; e=data['ellipsoids']
+                cloud=voxel_downsample(points,.25)
+                cloud=cloud[np.linalg.norm(cloud,axis=1)<=80.]
+                np.savez_compressed(store/f'{key:06d}.npz',cloud=cloud,scan=cloud)
+                basis=e[:,6:].reshape(-1,3,3)
+                if len(e):
+                    if config.get('ellipsoid_basis_roundoff_tolerance') is not None:
+                        from .ellipsoid_bev import normalize_exported_basis
+                        basis,basis_diagnostic=normalize_exported_basis(basis,config['ellipsoid_basis_roundoff_tolerance'])
+                    surface,sampling=sampler.render(e[:,:3],e[:,3:6],basis)
+                    engine=native.MapClosures(mc['density_map_resolution'],mc['density_threshold'],mc['hamming_distance_threshold'])
+                    features=engine.describe(surface)
+                else:
+                    features=dict(ground=np.eye(4),xy=np.empty((0,2)),bits=np.empty((0,32),dtype=np.uint8))
+            packed=dict(mapclosures={k:pack_array(features[k]) for k in ('ground','xy','bits')},
+                        mapclosures_features=len(features['xy']),representation='ellipsoid',
+                        submap_id=row['submap_id'],member_scan_ids=row['member_scan_ids'],payload_sha256=row['sha256'])
+            (descriptors/f'{key:06d}.json.zlib').write_bytes(zlib.compress(canonical(packed)))
+            item=dict(row,keyframe_id=key,T_world_body=np.asarray(row['T_world_imu']).reshape(4,4).tolist(),
+                      body_frame=row['robot_id']+'/imu',world_frame=row['robot_id']+'/odom_ellipselio',
+                      cloud_frame=row['robot_id']+'/imu',image_available=False,camera=None,
+                      submap_start_ns=row['begin_ns'],submap_end_ns=row['stamp_ns'],
+                      submap_points=len(cloud),geometry_preprocessing='causal trailing submap in keyframe IMU frame')
+            rows.append(item)
+            timings.append(dict(keyframe_id=key,submap_id=row['submap_id'],available_ns=row['available_ns'],
+                                runtime_s=time.monotonic()-frame_start,ellipsoids=len(e),features=len(features['xy']),
+                                evidence_points=len(cloud),sampling=sampling,basis_roundoff=basis_diagnostic))
+        write_jsonl(store/'keyframes.jsonl',rows)
+        write_jsonl(output/'timings.jsonl',timings)
+        (output/'summary.json').write_text(json.dumps(dict(submaps=len(rows),wall_s=time.monotonic()-started,
+            source_index_sha256=manifest['index_sha256'],source=str(source),ground_truth_used=False),indent=2)+'\n')
+    finally:
+        sampler.close()
+    if not rows:raise ValueError('No completed retrievable submaps')
+    return rows
+
+
+if __name__=='__main__':
+    import yaml
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--source',required=True,type=Path)
+    parser.add_argument('--output',required=True,type=Path)
+    parser.add_argument('--config',required=True,type=Path)
+    args=parser.parse_args()
+    prepare(args.source,args.output,yaml.safe_load(args.config.read_text()))

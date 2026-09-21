@@ -1,0 +1,12 @@
+{
+  "ellipselio": {
+    "commit": "dba681503308b642dd57e9a0353d5bea1c400d8b",
+    "branch": "dev/multi-robot-lidar-slam-submaps",
+    "dirty": true
+  },
+  "FAST-LIVO2-ROS2": {
+    "commit": "37ce474b82a054928a36cc41517a3d9f884e3e9f",
+    "branch": "dev/multi-robot-lidar-slam-submaps",
+    "dirty": true
+  }
+}

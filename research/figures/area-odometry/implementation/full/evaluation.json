@@ -1,0 +1,87 @@
+{
+  "metrics": {
+    "aerial08": {
+      "samples": 2618,
+      "robots": [
+        "aerial08"
+      ],
+      "rmse_m": 0.13222604827433615,
+      "median_m": 0.08437081309202976,
+      "statistics": {
+        "rmse": 0.13222604827433615,
+        "mean": 0.10833787805531185,
+        "median": 0.08437081309202976,
+        "std": 0.07580654338986478,
+        "min": 0.005732859382349681,
+        "max": 0.39637376316116885,
+        "sse": 45.77239949100283
+      },
+      "per_robot": {
+        "aerial08": {
+          "samples": 2618,
+          "statistics": {
+            "rmse": 0.13222604827433615,
+            "mean": 0.10833787805531185,
+            "median": 0.08437081309202976,
+            "std": 0.07580654338986478,
+            "min": 0.005732859382349681,
+            "max": 0.39637376316116885,
+            "sse": 45.77239949100283
+          }
+        }
+      },
+      "alignment_SE3": [
+        [
+          0.6267550799706119,
+          -0.5421311610120388,
+          0.5597069536737692,
+          47.09716581935086
+        ],
+        [
+          -0.7792125668810952,
+          -0.4382845273015619,
+          0.44803398168288605,
+          100.57390486408296
+        ],
+        [
+          0.002417714955715633,
+          -0.7169382660925446,
+          -0.6971324675171916,
+          -0.7476159334487491
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "scale": 1.0,
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "engine": "evo 1.36.5",
+      "association_max_diff_s": 0.05,
+      "limitation": "GRACO RTK/INS T_Base_Imu positions in base-station ENU; GT orientations unused; original timestamps; rigid alignment without scale"
+    }
+  },
+  "ground_truth": {
+    "aerial08": {
+      "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-aerial-temporal-20260920/reference/aerial08_gt.txt",
+      "available": true,
+      "matched_samples": 2618,
+      "pose_samples": 2618,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "evaluated_frame": "IMU",
+      "orientation_used_for_lever_arm": false,
+      "rows": 55823,
+      "first_stamp_ns": 1662347492045000000,
+      "last_stamp_ns": 1662347771155000000
+    }
+  },
+  "reference_sha256": "120deab4ebeaf4747bc19106a0f67d6690bc3b254e91f7d91157994bdd3e587d",
+  "config": {
+    "ground_truth_format": "graco_imu_enu",
+    "evo_max_diff_s": 0.05,
+    "trajectory_limitation": "GRACO RTK/INS T_Base_Imu positions in base-station ENU; GT orientations unused; original timestamps; rigid alignment without scale"
+  }
+}

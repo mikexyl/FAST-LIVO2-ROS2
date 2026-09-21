@@ -1,0 +1,132 @@
+{
+  "phase": "complete",
+  "started_utc": "2026-09-20T13:42:28.284768+00:00",
+  "host": "v4rl-server-1",
+  "frontend_workers": 4,
+  "robots": {
+    "aerial05": {
+      "status": "complete",
+      "sensor_duration_s": 296.387891899,
+      "ros_domain_id": 200,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 5.184707231689038,
+        "max_successful_update_gap_s": 0.192002058,
+        "native_poses": 2750,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "diagnostic_only": false
+    },
+    "aerial06": {
+      "status": "complete",
+      "sensor_duration_s": 329.245229287,
+      "ros_domain_id": 202,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.115919495029863,
+        "max_successful_update_gap_s": 0.536004067,
+        "native_poses": 3100,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "diagnostic_only": false
+    },
+    "aerial07": {
+      "status": "complete",
+      "sensor_duration_s": 394.38201315,
+      "ros_domain_id": 204,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.428279262202473,
+        "max_successful_update_gap_s": 0.214015876,
+        "native_poses": 3707,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "diagnostic_only": false
+    },
+    "aerial08": {
+      "status": "complete",
+      "sensor_duration_s": 278.192647993,
+      "ros_domain_id": 206,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.80888596516991,
+        "max_successful_update_gap_s": 0.175998926,
+        "native_poses": 2620,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "diagnostic_only": false
+    }
+  },
+  "updated_utc": "2026-09-20T13:50:50.073445+00:00",
+  "diagnostic_only": false,
+  "active_robot": "aerial08",
+  "finished_utc": "2026-09-20T13:50:50.073422+00:00",
+  "frozen_sources_verified": true,
+  "raw_ate": {
+    "aerial05": 0.512076992280841,
+    "aerial06": 2.640933053120382,
+    "aerial07": 0.21722811574847506,
+    "aerial08": 0.1128607889516049
+  },
+  "shared_cbs_ate": {
+    "aerial05": 0.5120769923127907,
+    "aerial06": 2.6409330531181805,
+    "aerial07": 0.2172281157794184,
+    "aerial08": 0.11286078896018888
+  },
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial05",
+      "aerial06",
+      "aerial07",
+      "aerial08"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {},
+    "measured_components": [
+      [
+        "aerial05"
+      ],
+      [
+        "aerial06"
+      ],
+      [
+        "aerial07"
+      ],
+      [
+        "aerial08"
+      ]
+    ],
+    "output_frames": {
+      "aerial05": [
+        "aerial05"
+      ],
+      "aerial06": [
+        "aerial06"
+      ],
+      "aerial07": [
+        "aerial07"
+      ],
+      "aerial08": [
+        "aerial08"
+      ]
+    }
+  },
+  "loops": 0,
+  "pcm_rejected": 0
+}

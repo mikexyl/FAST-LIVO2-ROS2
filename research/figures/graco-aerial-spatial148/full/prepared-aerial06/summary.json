@@ -1,0 +1,9 @@
+{
+  "submaps": 11,
+  "wall_s": 9.955199123942293,
+  "source_index_sha256": "3ff135a98b8275ddea87a0e4efee603187613cf93d145b45dcdd6d49a77f631a",
+  "source": "/workspace/.ros2/graco-aerial-spatial148-20260920/full/frontends/aerial06/frontend/submaps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": null
+}

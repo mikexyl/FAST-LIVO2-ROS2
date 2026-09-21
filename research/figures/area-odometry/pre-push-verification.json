@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-21",
+  "native_source_commit": "682ae80916543d38c0463c168157568649fbfb68",
+  "wrapper_source_commit": "1cde036bf1187568421e16fd8d8afd7e1b296a63",
+  "native_ctest_previously_verified": 3,
+  "python_regressions_previously_verified": 50,
+  "additional_python_tests_passed": 46,
+  "additional_test_wall_s": 48.31,
+  "additional_test_files": [
+    "test_recent_submaps_integration.py",
+    "test_mapclosures.py",
+    "test_pipeline.py",
+    "test_full_submap_batch.py",
+    "test_gravity_bev.py"
+  ],
+  "total_distinct_python_tests_passed": 96,
+  "environment": ".ros2/area-odometry-20260921/env.sh",
+  "python": ".ros2/research-venv/bin/python",
+  "dds_tests_enabled": true
+}

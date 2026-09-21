@@ -1,0 +1,8 @@
+{
+  "phase": "complete",
+  "frontend_gate_passed": false,
+  "ground_truth_used": false,
+  "diagnostic": true,
+  "wall_s": 52.53578005000054,
+  "frozen_sources_verified": true
+}

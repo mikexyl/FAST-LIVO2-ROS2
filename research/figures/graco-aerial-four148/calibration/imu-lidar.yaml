@@ -1,0 +1,17 @@
+# General sensor definitions
+Lidar:
+  rostopic: /velodyne/points
+  rate_hz: 10
+  sensor_type: VLP-16
+
+# Imu-Lidar extrinsics 
+T_Imu_Lidar:
+  cols: 4
+  rows: 4
+  data: [ 0.99982005,  0.018868  ,  0.00196755, -0.02436555,
+         -0.01884091,  0.99973824, -0.01297939, -0.0053221 ,
+         -0.00221193,  0.01293998,  0.99991383,  0.18020739,
+          0.        ,  0.        ,  0.        ,  1.        ]
+
+
+

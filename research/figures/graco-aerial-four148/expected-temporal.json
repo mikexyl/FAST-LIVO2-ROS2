@@ -1,0 +1,26 @@
+{
+  "ellipselio/include/map_processing.h": {
+    "sha256": "503d4bd309d5d355492b544c59ffbf4a8a4e184e3c054e8920a39f1c73d6c379",
+    "matches_temporal_experiment": true
+  },
+  "ellipselio/src/map_processing.cpp": {
+    "sha256": "4ea43113f120a52ef439004897cd6b12fccd78f5f34db220a1daa4bec41f6bd0",
+    "matches_temporal_experiment": true
+  },
+  "ellipselio/src/submaps.cpp": {
+    "sha256": "82094a860265e3043119b7f493d70038c9100280620139d4aa0c595980705848",
+    "matches_temporal_experiment": true
+  },
+  "ellipselio/msg/EllipseLioAnalytics.msg": {
+    "sha256": "a58a3e49b51ba589a510a9619cf0d6d83381c3a4b901c0c232e73ad7ead2c6b8",
+    "matches_temporal_experiment": true
+  },
+  "FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py": {
+    "sha256": "2097c54dea618eac44955d7bec21a69dade3f7be09a5cddb4a04cf52ae803ed1",
+    "matches_temporal_experiment": true
+  },
+  "FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py": {
+    "sha256": "681d178c36293adf02874b1355666af7a4506ae0aee4eb3299551aee929b8894",
+    "matches_temporal_experiment": true
+  }
+}

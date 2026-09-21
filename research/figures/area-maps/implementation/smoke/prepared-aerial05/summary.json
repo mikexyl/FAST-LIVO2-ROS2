@@ -1,0 +1,9 @@
+{
+  "submaps": 13,
+  "wall_s": 18.378715564000004,
+  "source_index_sha256": "c9ee1da65bed8910647c2bbbb927c19dd779586791bd3e2aa7a0ca2837c75b7b",
+  "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/area-maps-20260921/smoke/frontends/aerial05/frontend/area_maps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": null
+}

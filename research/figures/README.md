@@ -10,6 +10,8 @@ truth, per-frame JSONL logs and compressed source/log archives are excluded from
 new commits. Existing tracked artifacts are preserved. A report's link to one
 of these files requires the corresponding retained local artifacts; it is not
 an available GitHub download. Exclusion from Git does not delete local files.
+Frozen source snapshots preserve their original bytes, including whitespace,
+so their recorded hashes remain valid.
 
 Reproduce the processing with the configurations and scripts documented in the
 parent research directory. Evaluation reads ground truth only in its evaluation

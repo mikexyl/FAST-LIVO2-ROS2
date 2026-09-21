@@ -1,0 +1,130 @@
+{
+  "aerial05": {
+    "native_poses": 1106,
+    "finite_chronological": true,
+    "max_successful_update_gap_s": 0.448001862,
+    "max_speed_m_s": 6.088367794397662,
+    "smoke_passed": true,
+    "full_sequence": false,
+    "ground_truth_used": false,
+    "artifact_validation": {
+      "native_updates": 1106,
+      "snapshots": 52,
+      "completed_snapshots": 50,
+      "inspection_tails": 2,
+      "retrievable_snapshots": 50,
+      "finite_chronological": true,
+      "exact_membership": true,
+      "anchor_poses_verified": true,
+      "payload_hashes_verified": true,
+      "area_snapshots": 13,
+      "area_retrievable": 13,
+      "accumulated_area_membership_verified": true,
+      "old_in_area_points_retained": true
+    },
+    "area_snapshots": 13,
+    "retrievable": 13,
+    "radius_m": 80.0,
+    "selected_points": {
+      "min": 8108.0,
+      "median": 156381.0,
+      "max": 246518.0
+    },
+    "last_selected_points": 244613,
+    "last_archive_points": 407837,
+    "last_point_ages": {
+      "max_age_s": 112.539647928,
+      "median_age_s": 30.768028974,
+      "older_than_10_s_fraction": 0.8029908467661163,
+      "older_than_30_s_fraction": 0.5140609861291101,
+      "older_than_60_s_fraction": 0.15368766173506723
+    },
+    "ellipsoids": {
+      "min": 5492.0,
+      "median": 147622.0,
+      "max": 236318.0
+    },
+    "processing_s": {
+      "min": 0.0008369659999516443,
+      "median": 0.03439547849995961,
+      "max": 0.16421356099999684
+    },
+    "mapper_peak_rss_mib": 770.3671875,
+    "live_analytics": 1062,
+    "native_updates": 1106,
+    "features": {
+      "min": 37.0,
+      "median": 74.0,
+      "max": 112.0
+    },
+    "image_aspect": {
+      "min": 1.0332225913621262,
+      "median": 1.213740458015267,
+      "max": 2.1809523809523808
+    }
+  },
+  "aerial08": {
+    "native_poses": 1118,
+    "finite_chronological": true,
+    "max_successful_update_gap_s": 3.320003987,
+    "max_speed_m_s": 3.6011371309809177,
+    "smoke_passed": false,
+    "full_sequence": false,
+    "ground_truth_used": false,
+    "artifact_validation": {
+      "native_updates": 1118,
+      "snapshots": 44,
+      "completed_snapshots": 42,
+      "inspection_tails": 2,
+      "retrievable_snapshots": 42,
+      "finite_chronological": true,
+      "exact_membership": true,
+      "anchor_poses_verified": true,
+      "payload_hashes_verified": true,
+      "area_snapshots": 13,
+      "area_retrievable": 13,
+      "accumulated_area_membership_verified": true,
+      "old_in_area_points_retained": true
+    },
+    "area_snapshots": 13,
+    "retrievable": 13,
+    "radius_m": 80.0,
+    "selected_points": {
+      "min": 27390.0,
+      "median": 146817.0,
+      "max": 213247.0
+    },
+    "last_selected_points": 201490,
+    "last_archive_points": 395054,
+    "last_point_ages": {
+      "max_age_s": 118.74016239,
+      "median_age_s": 19.728019953,
+      "older_than_10_s_fraction": 0.7336393865700531,
+      "older_than_30_s_fraction": 0.37970618889274904,
+      "older_than_60_s_fraction": 0.04005657849024766
+    },
+    "ellipsoids": {
+      "min": 23087.0,
+      "median": 140604.0,
+      "max": 203973.0
+    },
+    "processing_s": {
+      "min": 0.0019468750001578883,
+      "median": 0.04045864949989664,
+      "max": 0.1563919090001491
+    },
+    "mapper_peak_rss_mib": 733.26171875,
+    "live_analytics": 1068,
+    "native_updates": 1118,
+    "features": {
+      "min": 45.0,
+      "median": 120.0,
+      "max": 188.0
+    },
+    "image_aspect": {
+      "min": 1.146067415730337,
+      "median": 1.209125475285171,
+      "max": 2.3252032520325203
+    }
+  }
+}

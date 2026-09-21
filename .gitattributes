@@ -4,3 +4,6 @@ research/adapters/mapclosures/LICENSE* -whitespace
 
 # Historical CSV evidence uses CRLF; preserve its recorded file hashes.
 research/figures/**/*.csv -text whitespace=cr-at-eol
+
+# Recorded source, calibration and test output retain original bytes/whitespace.
+research/figures/** -text -whitespace

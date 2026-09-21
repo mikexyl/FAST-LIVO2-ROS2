@@ -1,0 +1,10 @@
+{
+  "keyframes.ellipselio.aerial05": "/workspace/.ros2/graco-aerial-four148-20260920/full/prepared-aerial05",
+  "descriptors.ellipselio.mapclosures.aerial05": "/workspace/.ros2/graco-aerial-four148-20260920/full/prepared-aerial05/ellipsoid",
+  "keyframes.ellipselio.aerial06": "/workspace/.ros2/graco-aerial-four148-20260920/full/prepared-aerial06",
+  "descriptors.ellipselio.mapclosures.aerial06": "/workspace/.ros2/graco-aerial-four148-20260920/full/prepared-aerial06/ellipsoid",
+  "keyframes.ellipselio.aerial07": "/workspace/.ros2/graco-aerial-four148-20260920/full/prepared-aerial07",
+  "descriptors.ellipselio.mapclosures.aerial07": "/workspace/.ros2/graco-aerial-four148-20260920/full/prepared-aerial07/ellipsoid",
+  "keyframes.ellipselio.aerial08": "/workspace/.ros2/graco-aerial-four148-20260920/full/prepared-aerial08",
+  "descriptors.ellipselio.mapclosures.aerial08": "/workspace/.ros2/graco-aerial-four148-20260920/full/prepared-aerial08/ellipsoid"
+}

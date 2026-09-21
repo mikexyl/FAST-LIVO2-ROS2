@@ -1,0 +1,7 @@
+# General sensor definitions
+rostopic: /gnss/ground_truth
+rate_hz: 200
+sensor_type: RTK
+comment: The topic message contains the pose transformation between the RTK base station frame (East-North-Up) and the vehicle Imu frame, namely T_Base_Imu. 
+
+

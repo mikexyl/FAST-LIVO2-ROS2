@@ -7,6 +7,7 @@ import numpy as np
 
 from .artifacts import digest, file_hash, write_json
 from .backends import pack_array, unpack_array
+from .cbs_bridge import named_pcm_verdicts, native_pair
 from .mixed_pgo import settings
 from .registration import bounded_cloud
 
@@ -66,9 +67,9 @@ class RegistrationExchange:
         if not pcm or pcm['state'] != 'ready': return
         if self.selected is None:
             self.started = time.monotonic()
-            decisions = {((self.robots[v['robot_from']], v['key_from']), (self.robots[v['robot_to']], v['key_to'])):
-                         v['retained'] for v in pcm['verdicts']}
-            self.selected = {k:e for k,e in edges.items() if k[0][0] == k[1][0] or decisions[k]}
+            decisions = named_pcm_verdicts(pcm, self.robots)
+            self.selected = {native_pair(k, self.robots):e for k,e in edges.items()
+                             if k[0][0] == k[1][0] or decisions[k]['retained']}
             self.owned = [k for k in sorted(self.selected) if k[0][0] == self.robot]
             self.needed = {e for pair in self.owned for e in pair}
             for robot, key in sorted(self.needed):

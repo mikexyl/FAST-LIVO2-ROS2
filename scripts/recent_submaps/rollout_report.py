@@ -56,6 +56,7 @@ def report(work,trials):
     gt,status=evaluation_ground_truth(cfg['robots'],Path(cfg['dataset']),corrected,cfg['evaluation'])
     metrics=dict(raw=trajectory_metrics(dict(poses=raw),gt,cfg['evaluation'],out/'evo/raw'),
                  cbs=trajectory_metrics(dict(poses=corrected),gt,cfg['evaluation'],out/'evo/cbs'),
+                 cbs_individual=trajectory_metrics(dict(poses=[dict(r,component=r['robot_id']) for r in corrected]),gt,cfg['evaluation'],out/'evo/cbs-individual'),
                  components=components,ground_truth=status,runtime=read_json(work/'dpgo/summary.json'),
                  pcm=read_json(work/'dpgo/pcm.json'),registration=read_json(work/'dpgo/registration.json'),
                  connectivity=connected, dataset=cfg.get('experiment_name',cfg['dataset']),
@@ -86,7 +87,7 @@ def report(work,trials):
                 points=data['cbs'];points=points[::max(1,len(points)//200000)]
                 axes[1,column].scatter(points[:,0],points[:,1],s=.2,color=colors[robot],alpha=.4,label=robot,rasterized=True)
         axes[0,column].set_title(f'CBS component {group}'+(' and position GT' if reference_files else ': native frame; GT unavailable'))
-        axes[1,column].set_title(f'Component {group}: native member-scan map')
+        axes[1,column].set_title(f'Component {group}: native map in optimized frame')
     for ax in axes.flat:ax.axis('equal');ax.legend();ax.set_xlabel('x [m]');ax.set_ylabel('y [m]')
     fig.savefig(out/'trajectories-maps.png',dpi=170);plt.close(fig)
     metrics['evaluation_wall_s']=time.monotonic()-started;write_json(out/'report.json',metrics)

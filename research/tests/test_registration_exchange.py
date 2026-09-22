@@ -12,12 +12,16 @@ from s3e_pipeline.registration_exchange import RegistrationExchange
 from test_pipeline import scene
 
 
-def network(tmp_path):
-    robots = ['Alpha', 'Bob', 'Carol']; workers = {}; queue = []
+def network(tmp_path, robots=None):
+    robots = robots or ['Alpha', 'Bob', 'Carol']; workers = {}; queue = []
     pairs = [(('Alpha', 0), ('Bob', 0)), (('Bob', 0), ('Carol', 0)),
              (('Alpha', 1), ('Carol', 1))]
     verdicts = [dict(robot_from=robots.index(i[0]), key_from=i[1],
         robot_to=robots.index(j[0]), key_to=j[1], retained=k < 2) for k, (i,j) in enumerate(pairs)]
+    for v in verdicts:
+        if v['robot_from'] > v['robot_to']:
+            v['robot_from'], v['robot_to'] = v['robot_to'], v['robot_from']
+            v['key_from'], v['key_to'] = v['key_to'], v['key_from']
     for robot in robots:
         store = tmp_path/robot; store.mkdir()
         rows = [dict(robot_id=robot, keyframe_id=k, stamp_ns=10+k,
@@ -43,17 +47,25 @@ def drain(workers, queue, pcm, edges):
     raise AssertionError('protocol did not finish')
 
 
-def test_pcm_selection_unique_ownership_and_delayed_evidence(tmp_path):
-    workers, queue, pcm, edges = network(tmp_path)
+@pytest.mark.parametrize('robots', [['Alpha', 'Bob', 'Carol'], ['Bob', 'Carol', 'Alpha']])
+def test_pcm_selection_unique_ownership_and_delayed_evidence(tmp_path, robots):
+    workers, queue, pcm, edges = network(tmp_path, robots)
     for r,w in workers.items(): w.advance(dict(state='waiting'), edges[r])
     assert not queue
     sent = drain(workers, queue, pcm, edges)
     manifests = {r:read_json(w.output/'manifest.json') for r,w in workers.items()}
-    assert [len(m['pairs']) for m in manifests.values()] == [1, 1, 0]
+    pairs = [p for m in manifests.values() for p in m['pairs']]
+    assert len(pairs) == 2
+    assert all(p['i'] < p['j'] and p['i'][0] == robots.index(r)
+               for r,m in manifests.items() for p in m['pairs'])
+    named = {tuple(sorted(((robots[p['i'][0]], p['i'][1]),
+                           (robots[p['j'][0]], p['j'][1])))) for p in pairs}
+    assert named == {(('Alpha', 0), ('Bob', 0)), (('Bob', 0), ('Carol', 0))}
     assert sum(e['kind'] == 'registration_response' for e in sent) == 2
     assert all(e['body']['keys'] == [0] for e in sent if e['kind'] == 'registration_request')
     assert all(len(w.local) == 1 for w in workers.values())
-    assert [len(m['clouds']) for m in manifests.values()] == [2, 2, 0]
+    assert all(len(m['clouds']) == len({tuple(e) for p in m['pairs'] for e in (p['i'], p['j'])})
+               for m in manifests.values())
     assert all(c['key'] == 0 for m in manifests.values() for c in m['clouds'])
     assert all((w.output/c['file']).stat().st_size == c['points']*24
         for w,m in zip(workers.values(), manifests.values()) for c in m['clouds'])

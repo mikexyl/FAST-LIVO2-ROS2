@@ -9,7 +9,10 @@
 
 namespace {
 struct Cell { unsigned key,count; unsigned long long x,y,z; };
-constexpr unsigned local_capacity=1<<19,global_capacity=1<<23;
+#ifndef ELLIPSOID_INITIAL_CAPACITY
+#define ELLIPSOID_INITIAL_CAPACITY (1U<<23)
+#endif
+constexpr unsigned local_capacity=1<<19;
 constexpr double quantization=1e7;
 std::string error;
 void check(cudaError_t code) { if(code!=cudaSuccess) throw std::runtime_error(cudaGetErrorString(code)); }
@@ -43,13 +46,22 @@ __global__ void sample(const double* ellipses,int n,const double* sphere,int sam
   insert(cells,local_capacity,active,size,failed,key,llrint(x*quantization),llrint(y*quantization),llrint(z*quantization));
 }
 __global__ void merge(const Cell* local,const unsigned* active,const unsigned* size,
-                      Cell* global,unsigned* global_active,unsigned* global_size,int* failed) {
+                      Cell* global,unsigned capacity,unsigned* global_active,unsigned* global_size,int* failed) {
   unsigned i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=*size)return;
   Cell cell=local[active[i]];
-  insert(global,global_capacity,global_active,global_size,failed,cell.key,
+  insert(global,capacity,global_active,global_size,failed,cell.key,
       llrint(double(static_cast<long long>(cell.x))/cell.count),
       llrint(double(static_cast<long long>(cell.y))/cell.count),
       llrint(double(static_cast<long long>(cell.z))/cell.count));
+}
+// Preserve each voxel's integer sums/count and active order exactly on growth.
+__global__ void rehash(const Cell* old,const unsigned* active,unsigned n,
+                       Cell* grown,unsigned capacity,unsigned* grown_active) {
+  unsigned i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=n)return;
+  Cell c=old[active[i]];unsigned h=(c.key*2654435761U)&(capacity-1);
+  while(atomicCAS(&grown[h].key,0U,c.key)!=0U)h=(h+1)&(capacity-1);
+  grown[h].count=c.count;grown[h].x=c.x;grown[h].y=c.y;grown[h].z=c.z;
+  grown_active[i]=h;
 }
 __global__ void compact(const Cell* cells,const unsigned* active,unsigned n,double* points) {
   unsigned i=blockIdx.x*blockDim.x+threadIdx.x;if(i>=n)return;Cell c=cells[active[i]];
@@ -61,6 +73,7 @@ struct Sampler {
   Cell *local=nullptr,*global=nullptr;unsigned *local_active=nullptr,*global_active=nullptr,*local_size=nullptr,*global_size=nullptr;
   int* failed=nullptr;double *ellipses=nullptr,*sphere=nullptr,*output=nullptr;
   double voxel,range;int half,sphere_size=0;
+  unsigned global_capacity=ELLIPSOID_INITIAL_CAPACITY;
   Sampler(double v,double r):voxel(v),range(r),half(int(ceil(r/v))) {
     if(v<=0 || r<=0 || 8LL*half*half*half>=0xffffffffLL)throw std::runtime_error("Invalid CUDA voxel domain");
     allocate(local,local_capacity);allocate(global,global_capacity);allocate(local_active,local_capacity);allocate(global_active,global_capacity);
@@ -68,6 +81,23 @@ struct Sampler {
   }
   ~Sampler() {cudaFree(local);cudaFree(global);cudaFree(local_active);cudaFree(global_active);cudaFree(local_size);cudaFree(global_size);
     cudaFree(failed);cudaFree(ellipses);cudaFree(sphere);cudaFree(output);}
+  void ensure_capacity(unsigned occupied,unsigned incoming) {
+    if(size_t(occupied)+incoming<=global_capacity/2)return;
+    unsigned capacity=global_capacity;
+    while(size_t(occupied)+incoming>capacity/2) {
+      if(capacity>=(1U<<30))throw std::runtime_error("CUDA voxel table index range exceeded");
+      capacity*=2;
+    }
+    Cell* cells=nullptr;unsigned* active=nullptr;double* points=nullptr;
+    try {
+      allocate(cells,capacity);allocate(active,capacity);allocate(points,size_t(capacity)*3);
+      check(cudaMemset(cells,0,size_t(capacity)*sizeof(Cell)));
+      if(occupied)rehash<<<(occupied+255)/256,256>>>(global,global_active,occupied,cells,capacity,active);
+      check(cudaGetLastError());check(cudaDeviceSynchronize());
+    } catch(...) {cudaFree(cells);cudaFree(active);cudaFree(points);throw;}
+    cudaFree(global);cudaFree(global_active);cudaFree(output);
+    global=cells;global_active=active;output=points;global_capacity=capacity;
+  }
 };
 }
 extern "C" {
@@ -77,7 +107,7 @@ void* surface_create(double voxel,double range) {
 }
 void surface_destroy(void* p) {delete static_cast<Sampler*>(p);}
 int surface_reset(void* p) {
-  try {auto& s=*static_cast<Sampler*>(p);check(cudaMemset(s.global,0,global_capacity*sizeof(Cell)));
+  try {auto& s=*static_cast<Sampler*>(p);check(cudaMemset(s.global,0,size_t(s.global_capacity)*sizeof(Cell)));
     check(cudaMemset(s.global_size,0,4));check(cudaMemset(s.failed,0,4));return 0;
   }catch(const std::exception& e){error=e.what();return -1;}
 }
@@ -87,14 +117,18 @@ int surface_add(void* p,const double* ellipses,int n,const double* sphere,int co
     check(cudaMemcpy(s.ellipses,ellipses,n*15*sizeof(double),cudaMemcpyHostToDevice));
     if(s.sphere_size!=count){check(cudaMemcpy(s.sphere,sphere,count*3*sizeof(double),cudaMemcpyHostToDevice));s.sphere_size=count;}
     sample<<<(n*count+255)/256,256>>>(s.ellipses,n,s.sphere,count,s.voxel,s.range,s.half,s.local,s.local_active,s.local_size,s.failed);
-    merge<<<(250000+255)/256,256>>>(s.local,s.local_active,s.local_size,s.global,s.global_active,s.global_size,s.failed);
+    unsigned occupied,incoming;
+    check(cudaMemcpy(&occupied,s.global_size,sizeof(unsigned),cudaMemcpyDeviceToHost));
+    check(cudaMemcpy(&incoming,s.local_size,sizeof(unsigned),cudaMemcpyDeviceToHost));
+    s.ensure_capacity(occupied,incoming);
+    merge<<<(250000+255)/256,256>>>(s.local,s.local_active,s.local_size,s.global,s.global_capacity,s.global_active,s.global_size,s.failed);
     check(cudaGetLastError());return 0;
   }catch(const std::exception& e){error=e.what();return -1;}
 }
 int surface_size(void* p) {
   try {auto& s=*static_cast<Sampler*>(p);unsigned size;int failed;
     check(cudaMemcpy(&size,s.global_size,4,cudaMemcpyDeviceToHost));check(cudaMemcpy(&failed,s.failed,4,cudaMemcpyDeviceToHost));
-    if(failed || size>global_capacity/2)throw std::runtime_error("CUDA voxel hash capacity exceeded");return int(size);
+    if(failed || size>s.global_capacity/2)throw std::runtime_error("CUDA voxel hash capacity exceeded");return int(size);
   }catch(const std::exception& e){error=e.what();return -1;}
 }
 int surface_copy(void* p,double* output,int n) {
@@ -102,4 +136,5 @@ int surface_copy(void* p,double* output,int n) {
       check(cudaMemcpy(output,s.output,n*3*sizeof(double),cudaMemcpyDeviceToHost));}return 0;
   }catch(const std::exception& e){error=e.what();return -1;}
 }
+unsigned surface_capacity(void* p) {return static_cast<Sampler*>(p)->global_capacity;}
 }

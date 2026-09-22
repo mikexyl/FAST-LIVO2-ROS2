@@ -52,7 +52,7 @@ def prepare(source, output, config, gravity_path=None):
                 raise ValueError('Snapshot payload hash mismatch')
             if row['available_ns']<row['last_member_ns'] or row['stamp_ns']>row['available_ns']:
                 raise ValueError('Noncausal submap')
-            frame_start=time.monotonic();basis_diagnostic=None;sampling=None
+            frame_start=time.monotonic();basis_diagnostic=None;sampling=None;multilayer=None
             if alignment == 'gravity':
                 from .gravity_bev import submap_gravity
                 ground, projection = submap_gravity(row, sidecar)
@@ -69,21 +69,27 @@ def prepare(source, output, config, gravity_path=None):
                     cloud=cloud[np.linalg.norm(cloud,axis=1)<=80.]
                 np.savez_compressed(store/f'{key:06d}.npz',cloud=cloud,scan=cloud)
                 basis=e[:,6:].reshape(-1,3,3)
+                engine=native.MapClosures(mc['density_map_resolution'],mc['density_threshold'],mc['hamming_distance_threshold'])
+                surface=np.empty((0,3))
                 if len(e):
                     if config.get('ellipsoid_basis_roundoff_tolerance') is not None:
                         from .ellipsoid_bev import normalize_exported_basis
                         basis,basis_diagnostic=normalize_exported_basis(basis,config['ellipsoid_basis_roundoff_tolerance'])
                     surface,sampling=(render_area_surface(e[:,:3],e[:,3:6],basis,ground,row['area_radius_m'])
                         if is_area else sampler.render(e[:,:3],e[:,3:6],basis))
-                    engine=native.MapClosures(mc['density_map_resolution'],mc['density_threshold'],mc['hamming_distance_threshold'])
                     features=engine.describe(surface) if ground is None else engine.describe(surface, ground=ground)
                 else:
                     features=dict(ground=np.eye(4) if ground is None else ground,
                                   xy=np.empty((0,2)),bits=np.empty((0,32),dtype=np.uint8))
+                if mc.get('multilayer',{}).get('enabled',False):
+                    if alignment!='gravity':raise ValueError('Multilayer BEVs require gravity-horizontal projection')
+                    from .multilayer_mapclosures import describe_layers
+                    multilayer=describe_layers(engine,points,surface,features['ground'])
             packed=dict(mapclosures={k:pack_array(features[k]) for k in ('ground','xy','bits')},
                         mapclosures_features=len(features['xy']),representation='ellipsoid',
                         submap_id=row['submap_id'],member_scan_ids=row['member_scan_ids'],payload_sha256=row['sha256'],
                         projection_alignment=projection)
+            if multilayer is not None:packed['mapclosures_multilayer']=multilayer
             (descriptors/f'{key:06d}.json.zlib').write_bytes(zlib.compress(canonical(packed)))
             item=dict(row,keyframe_id=key,T_world_body=np.asarray(row['T_world_imu']).reshape(4,4).tolist(),
                       body_frame=row['robot_id']+'/imu',world_frame=row['robot_id']+'/odom_ellipselio',
@@ -95,7 +101,8 @@ def prepare(source, output, config, gravity_path=None):
             timings.append(dict(keyframe_id=key,submap_id=row['submap_id'],available_ns=row['available_ns'],
                                 runtime_s=time.monotonic()-frame_start,ellipsoids=len(e),features=len(features['xy']),
                                 evidence_points=len(cloud),sampling=sampling,basis_roundoff=basis_diagnostic,
-                                projection_alignment=projection))
+                                projection_alignment=projection,
+                                multilayer=None if multilayer is None else {k:v for k,v in multilayer.items() if k!='layers'}))
         write_jsonl(store/'keyframes.jsonl',rows)
         write_jsonl(output/'timings.jsonl',timings)
         (output/'summary.json').write_text(json.dumps(dict(submaps=len(rows),wall_s=time.monotonic()-started,

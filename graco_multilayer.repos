@@ -1,0 +1,19 @@
+# Versions used by the updated persistent-map / accumulated-area GRACO pipeline.
+# Other workspace dependencies remain in multi_robot_lidar_slam.repos.
+repositories:
+  FAST-LIVO2-ROS2:
+    type: git
+    url: https://github.com/mikexyl/FAST-LIVO2-ROS2.git
+    version: dev/multi-robot-lidar-slam-submaps
+  ellipselio:
+    type: git
+    url: https://github.com/mikexyl/ellipselio.git
+    version: 66b0590aac2d8572fac05291726b74a12990370b
+  cbs:
+    type: git
+    url: https://github.com/mikexyl/cbs.git
+    version: bea1d3552283335f94f7b806276f508bb9d75ab0
+  cbs_ros:
+    type: git
+    url: https://github.com/mikexyl/cbs_ros.git
+    version: 9589bd2d5e37536d1ed5b8178393dc74b420780c

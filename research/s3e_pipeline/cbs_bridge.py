@@ -4,6 +4,24 @@ from scipy.spatial.transform import Rotation
 from .geometry import pose, inv, constraint, canonical_edge, TANGENT_ORDER
 
 
+def named_pcm_verdicts(pcm, robots):
+    """Match native numeric endpoint order to name-canonical Python edges."""
+    result = {}
+    for verdict in pcm['verdicts']:
+        endpoints = ((robots[verdict['robot_from']], verdict['key_from']),
+                     (robots[verdict['robot_to']], verdict['key_to']))
+        key = tuple(sorted(endpoints))
+        if key in result:
+            raise ValueError('Duplicate PCM endpoint verdict')
+        result[key] = verdict
+    return result
+
+
+def native_pair(endpoints, robots):
+    """Order named endpoints by the IDs used for native factor ownership."""
+    return tuple(sorted(endpoints, key=lambda e: (robots.index(e[0]), e[1])))
+
+
 def local_graph(rows, robot, cfg):
     if not rows or any(r['robot_id'] != robot for r in rows):
         raise ValueError('A publisher may load only its own nonempty trajectory')

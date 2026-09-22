@@ -142,6 +142,27 @@ public:
         for (const auto &[id,n]:ranked) out.append(align(id,matches.at(id),f,grounds.at(id)));
         return out;
     }
+    py::list query_correspondences(const py::dict &packet,const std::vector<int> &eligible) {
+        auto f=decode(packet);auto q=matchables(f);Tree::MatchVectorMap matches;
+        tree.match(q,matches,config.hamming_distance_threshold);
+        for (auto p:q) delete p;
+        py::list out;
+        for (int id:eligible) {
+            if (!grounds.count(id)) throw std::invalid_argument("Unindexed local map");
+            auto it=matches.find(id);
+            if (it==matches.end() || it->second.empty()) continue;
+            const auto &ms=it->second;const ssize_t n=ms.size();
+            Array qxy({n,ssize_t(2)}),cxy({n,ssize_t(2)}),distances(n);
+            auto a=qxy.mutable_unchecked<2>(),b=cxy.mutable_unchecked<2>();auto d=distances.mutable_unchecked<1>();
+            for (ssize_t i=0;i<n;++i) {
+                const auto &m=ms[i];a(i,0)=m.object_query.pt.y;a(i,1)=m.object_query.pt.x;
+                b(i,0)=m.object_references[0].pt.y;b(i,1)=m.object_references[0].pt.x;d(i)=m.distance;
+            }
+            py::dict r;r["keyframe_id"]=id;r["query_xy"]=qxy;r["candidate_xy"]=cxy;r["hamming"]=distances;
+            out.append(r);
+        }
+        return out;
+    }
     py::dict pair(const py::dict &query,const py::dict &candidate) {
         auto qf=decode(query),cf=decode(candidate);Tree local;
         local.add(matchables(cf,0),srrg_hbst::SplittingStrategy::SplitEven);
@@ -158,6 +179,7 @@ PYBIND11_MODULE(s3e_mapclosures_native,m) {
         .def(py::init<float,float,int>())
         .def("describe",&Adapter::describe,py::arg("cloud"),py::arg("ground")=py::none())
         .def("add",&Adapter::add)
-        .def("query",&Adapter::query).def("pair",&Adapter::pair);
+        .def("query",&Adapter::query).def("pair",&Adapter::pair)
+        .def("query_correspondences",&Adapter::query_correspondences);
 }
 #endif

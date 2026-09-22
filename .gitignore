@@ -17,3 +17,9 @@ research/figures/**/*.gz
 research/figures/**/*.jsonl
 research/figures/**/*.log
 research/figures/**/*_gt.txt
+research/figures/**/*.bin
+research/figures/**/*.zlib
+research/figures/**/*.so
+# Copied upstream media are not experiment figures. Preserve local snapshots.
+research/figures/**/source/**/Supplementary/
+research/figures/**/source/**/*.gif

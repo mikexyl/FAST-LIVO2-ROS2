@@ -4,8 +4,21 @@ import numpy as np
 import pytest
 from scipy.spatial.transform import Rotation
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from s3e_pipeline.cbs_bridge import local_graph, loop_for_robot
+from s3e_pipeline.cbs_bridge import local_graph, loop_for_robot, named_pcm_verdicts, native_pair
 from s3e_pipeline.geometry import constraint, reverse_constraint, inv, pose
+
+
+def test_pcm_verdicts_and_native_ownership_with_appended_robot():
+    robots = ['aerial05', 'aerial06', 'aerial07', 'aerial08', 'aerial04']
+    verdict = dict(robot_from=3, key_from=11, robot_to=4, key_to=22,
+                   retained=True, reason='singleton_unchecked')
+    named = (('aerial04', 22), ('aerial08', 11))
+    assert named_pcm_verdicts(dict(verdicts=[verdict]), robots) == {named: verdict}
+    assert native_pair(named, robots) == tuple(reversed(named))
+    reverse = dict(verdict, robot_from=4, key_from=22, robot_to=3, key_to=11)
+    assert named_pcm_verdicts(dict(verdicts=[reverse]), robots) == {named: reverse}
+    with pytest.raises(ValueError, match='Duplicate'):
+        named_pcm_verdicts(dict(verdicts=[verdict, reverse]), robots)
 
 
 def test_local_gauge_and_integer_timestamps():

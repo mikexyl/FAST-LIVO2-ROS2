@@ -49,6 +49,13 @@ Retrieval uses snapshot availability times. Graph vertices use snapshot pose
 times. Same-robot candidates retain the 30-second exclusion and are additionally
 rejected if their crops reuse any persistent map-point IDs. Reused stored geometry
 cannot serve as independent loop evidence. Inter-robot retrieval is unaffected.
+The rollout profile permits two MapClosures verification candidates per query
+and sets `dpgo.pcm.minimum_clique_size: 1`. A geometrically verified singleton
+can therefore connect two robots; PCM labels it `singleton_unchecked` because
+there is no second loop for a pairwise consistency test. Candidate sets with
+multiple loops still undergo consistency checks and clique selection, with
+single-vertex cliques permitted. Earlier saved experiments retain their original
+minimum clique size and verification allowance.
 The direct global-area memory grows with the mapped environment. The native
 octree's existing capacity is checked explicitly; the implementation fails rather
 than silently evicting old geometry when that capacity is exceeded. Snapshot
@@ -74,6 +81,25 @@ odometry exports remain in `frontend/submaps`; MapClosures area exports are in
 This accumulates only observations available at that time, in the robot's odometry
 frame. It cannot fill unseen space, and it inherits any accumulated odometry drift.
 It is not an offline crop of a future completed trajectory or a GT-corrected map.
+
+## Vertical initialization for aerial loop verification
+
+Gravity-horizontal BEVs estimate XY translation and yaw. Enable
+`backend.mapclosures.vertical_initialization.enabled: true` to estimate the
+missing vertical translation from the two candidate geometry payloads before
+GICP. This option defaults to false and requires descriptors explicitly marked
+as gravity-horizontal. It uses neither nominal flight heights nor GNSS/GT.
+
+The initializer votes for height differences between horizontal neighbors and
+scores the strongest height hypotheses by symmetric coarse 3D overlap. Defaults
+are 0.8 m voxels, eight XY neighbors within 1 m, 0.5 m height bins, five modal
+hypotheses separated by more than 2 m, and a 1.5 m coarse overlap distance. The
+unchanged seed is also considered. These values govern initialization only;
+evidence preprocessing, GICP acceptance, PCM and CBS retain their settings.
+Missing geometry or horizontal support leaves the seed unchanged for normal
+verification. The verifier logs the original BEV pose, chosen height, hypothesis
+scores, runtime and actual GICP initial pose. No extra file access is needed by
+the isolated worker, and raw odometry and descriptors remain unchanged.
 
 ## Experimental accumulated-area odometry
 

@@ -24,6 +24,10 @@ class MegaLocMapClosures(Backend):
         self.engine=native.MapClosures(self.options['density_map_resolution'],
             self.options['density_threshold'],self.options['hamming_distance_threshold'])
         self.cached={}
+        self.multilayer=None
+        if self.options.get('multilayer',{}).get('enabled',False):
+            from .multilayer_mapclosures import MultilayerMatcher
+            self.multilayer=MultilayerMatcher(self.options)
 
     def describe(self,row,cloud,image):
         xyz=np.asarray(cloud[:,:3],dtype=np.float64)
@@ -50,7 +54,9 @@ class MegaLocMapClosures(Backend):
         qv,qf=self.decode(query)
         for key in sorted(index):
             if key not in self.cached:
-                self.cached[key]=self.decode(index[key]);self.engine.add(key,self.cached[key][1])
+                self.cached[key]=self.decode(index[key])
+                if self.multilayer is not None:self.multilayer.add(key,index[key])
+                else:self.engine.add(key,self.cached[key][1])
         keys=sorted(index)
         visual_scores=dict(zip(keys,map(float,np.stack([self.cached[k][0] for k in keys])@qv))) if self.visual_enabled else dict.fromkeys(keys,0.)
         ranked={}
@@ -64,7 +70,8 @@ class MegaLocMapClosures(Backend):
             r=item(key)
             if r['visual_similarity']>=self.visual_min:
                 r['sources'].append('megaloc');r['branch_scores']['megaloc']=r['visual_similarity'];r['eligible']=True
-        native=self.engine.query(qf,keys,self.options['max_hypotheses_per_query'])
+        native=(self.multilayer.query(query,keys) if self.multilayer is not None else
+                self.engine.query(qf,keys,self.options['max_hypotheses_per_query']))
         for h in native:
             h=native_result(h);r=item(h['keyframe_id']);r['mapclosures_hypothesis']=h
             if self.native_pass(h):
@@ -79,10 +86,15 @@ class MegaLocMapClosures(Backend):
         h=proposal.get('mapclosures_hypothesis')
         # Preserve the HBST database hypothesis. Visual-only proposals use a
         # two-map native HBST match, without a LiDAR retrieval gate on MegaLoc.
-        if h is None or not self.native_pass(h):h=native_result(self.engine.pair(qf,cf))
+        if h is None or not self.native_pass(h):
+            h=(self.multilayer.pair(query['descriptor'],candidate['descriptor']) if self.multilayer is not None else
+               native_result(self.engine.pair(qf,cf)))
         diagnostics=dict(backend=self.name,visual_similarity=float(qv@cv) if self.visual_enabled else None,retrieval_sources=sources,
             selected_branches=proposal.get('selected_branches',[]),
             native=dict(method='MapClosures',hypothesis=h),pose_initializer='MapClosures density-map RANSAC')
+        if self.multilayer is not None:
+            diagnostics['native']['method']='MapClosures multilayer HBST + joint SE(2) consensus'
+            diagnostics['pose_initializer']='Multilayer joint SE(2) consensus'
         for name,payload in [('query',query),('candidate',candidate)]:
             if 'evidence_preprocessing' in payload:
                 diagnostics[name+'_evidence']=payload['evidence_preprocessing']
@@ -95,6 +107,16 @@ class MegaLocMapClosures(Backend):
         if not self.native_pass(h):
             return dict(accepted=False,reason='mapclosures_no_pose',**diagnostics)
         initial=np.asarray(h['T_i_j'])
+        vertical=self.options.get('vertical_initialization',{})
+        if vertical.get('enabled',False):
+            for payload in (query,candidate):
+                if payload['descriptor'].get('projection_alignment',{}).get('projection')!='orthographic gravity-horizontal':
+                    raise ValueError('Vertical initialization requires explicit gravity-horizontal descriptors')
+            from .vertical_initialization import initialize_vertical
+            diagnostics['bev_initial_T_i_j']=initial.tolist()
+            initial,height=initialize_vertical(query['cloud'],candidate['cloud'],initial,qf['ground'],cf['ground'],vertical)
+            diagnostics.update(vertical_initialization=height,
+                               pose_initializer=diagnostics['pose_initializer']+' plus geometric vertical initialization')
         result=refine(query['cloud'],candidate['cloud'],initial,self.cfg['registration'],self.geometry_cache)
         result.update(initial_T_i_j=initial.tolist(),**diagnostics)
         return result

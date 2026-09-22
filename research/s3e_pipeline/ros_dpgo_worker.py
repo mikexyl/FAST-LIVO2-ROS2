@@ -19,7 +19,7 @@ from std_msgs.msg import Bool, String, UInt8MultiArray
 from cbs_ros.msg import Estimate, NodeStats, PcmInputSeal, PcmStatus
 from pose_graph_tools_msgs.msg import PoseGraph
 from .artifacts import canonical, read_json, read_jsonl, write_json, write_jsonl
-from .cbs_bridge import local_graph, loop_for_robot, ros_graph, matrix_pose
+from .cbs_bridge import local_graph, loop_for_robot, ros_graph, matrix_pose, named_pcm_verdicts
 
 
 def reliable(depth=1000, durable=False):
@@ -252,8 +252,7 @@ class Robot(Node):
         proposals = [self.edges[k] for k in sorted(self.edges)]
         retained = proposals
         if pcm_enabled:
-            decisions = {((self.robots[v['robot_from']], v['key_from']),
-                          (self.robots[v['robot_to']], v['key_to'])): v for v in self.pcm_status['verdicts']}
+            decisions = named_pcm_verdicts(self.pcm_status, self.robots)
             expected = {k for k in self.edges if k[0][0] != k[1][0]}
             if set(decisions) != expected: raise ValueError('PCM verdicts do not cover incident inter-robot loops')
             retained = [e for e in proposals if e['i'][0] == e['j'][0] or

@@ -62,7 +62,7 @@ loops:
   verification_queue_size: 2
   worker_timeout_s: 120
   branch_verification_limits:
-    mapclosures: 1
+    mapclosures: 2
 pgo:
   odometry_rotation_sigma_deg: 1.0
   odometry_translation_sigma_m: 0.15
@@ -83,7 +83,7 @@ dpgo:
   pcm:
     enabled: true
     probability: 0.99
-    minimum_clique_size: 2
+    minimum_clique_size: 1
     timeout_s: 60.0
   mode: peers
   settle_iterations: 100

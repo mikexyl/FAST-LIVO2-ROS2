@@ -59,8 +59,8 @@ def test_independent_budgets_and_union_deduplication():
     selected,_=select_branches(both,{'mapclosures':1,'megaloc':1},{},10**9,2*10**9)
     assert len(selected)==1 and selected[0][1]['selected_branches']==['mapclosures','megaloc']
 
-@pytest.mark.parametrize('lidar_only',[False,True])
-def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,lidar_only):
+@pytest.mark.parametrize('lidar_only,multilayer',[(False,False),(True,False),(True,True)])
+def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,lidar_only,multilayer):
     stores={};descs={};rng=np.random.default_rng(12)
     parts=[]
     for axis in range(3):
@@ -75,11 +75,17 @@ def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,lid
         if not lidar_only:(store/'000000.png').write_bytes(b'inspection-only')
         desc=descriptor(features(),np.eye(3)[i])
         if lidar_only:del desc['visual']
+        if multilayer:
+            from s3e_pipeline.multilayer_mapclosures import NAMES,VERSION
+            desc['mapclosures_multilayer']=dict(version=VERSION,terrain=dict(available=True),
+                layers={name:desc['mapclosures'] for name in NAMES})
         write_json(root/'000000.json',desc)
     cfg=dict(CFG['loops'],robots=list(stores));backend=dict(CFG['backend'],read_paths=[native.__file__])
     if lidar_only:
         backend['name']='mapclosures';backend.pop('fusion')
         cfg['branch_verification_limits']={'mapclosures':1}
+    if multilayer:
+        backend=dict(backend,mapclosures=dict(backend['mapclosures'],multilayer={'enabled':True}))
     # Separate empty caches establish cold determinism, then reuse one cache.
     first_backend=dict(backend,verification_cache=str(tmp_path/'cache-first'))
     second_backend=dict(backend,verification_cache=str(tmp_path/'cache-second'))

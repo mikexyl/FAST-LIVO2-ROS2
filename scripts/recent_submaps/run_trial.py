@@ -16,6 +16,7 @@ p.add_argument('--robot',default='Bob')
 p.add_argument('--bag',type=Path,default=Path('/data/s3e/S3Ev2/S3E_Library_2'))
 p.add_argument('--output-root',type=Path,default=root/'.ros2/recent-submaps')
 p.add_argument('--mapping-config',type=Path)
+p.add_argument('--persistent-odometry',action='store_true',help='Disable odometry submapping and area query cropping; area snapshots only feed the backend')
 p.add_argument('--area-maps',action='store_true',help='Use accumulated horizontal area snapshots for MapClosures; temporal odometry by default')
 p.add_argument('--area-odometry',action='store_true',help='Match odometry inside the accumulated horizontal area; implies --area-maps and disables recent-map handovers')
 p.add_argument('--submap-strategy',choices=['temporal','spatial','coverage'],
@@ -24,6 +25,8 @@ p.add_argument('--mapper-executable',type=Path,default=root/'.ros2/recent-submap
 p.add_argument('--mapping-library',type=Path,default=root/'.ros2/recent-submaps/install/ellipselio/lib/libellipselio_mapping.so')
 p.add_argument('name');p.add_argument('--enabled',action='store_true');p.add_argument('--duration',type=float,default=0)
 args=p.parse_args()
+if args.persistent_odometry and (args.area_odometry or args.submap_strategy):
+    p.error('--persistent-odometry conflicts with odometry submap/area selection')
 if args.area_odometry:
     if args.submap_strategy is not None:p.error('--area-odometry cannot be combined with --submap-strategy')
     args.area_maps=True
@@ -43,6 +46,9 @@ if args.area_maps:
     if args.area_odometry:
         m['area_maps']['odometry']=True
         m.setdefault('submaps',{})['enabled']=False
+    elif args.persistent_odometry:
+        m['area_maps']['odometry']=False
+        m.setdefault('submaps',{})['enabled']=False
     elif args.submap_strategy is None:
         args.submap_strategy=m.get('submaps',{}).get('strategy','temporal')
 if args.submap_strategy:
@@ -51,7 +57,10 @@ if args.submap_strategy:
     if args.submap_strategy in ('spatial','coverage'):
         defaults=yaml.safe_load((root/'FAST-LIVO2-ROS2/scripts/recent_submaps'/f'{args.submap_strategy}_submaps.yaml').read_text())
         submaps[args.submap_strategy]=dict(defaults[args.submap_strategy],**submaps.get(args.submap_strategy,{}))
-if args.submap_strategy or args.area_maps:
+if args.persistent_odometry:
+    mapping_params.setdefault('mapping',{}).setdefault('submaps',{})['enabled']=False
+    mapping_params['mapping'].setdefault('area_maps',{})['odometry']=False
+if args.submap_strategy or args.area_maps or args.persistent_odometry:
     config=out/'selected_mapping.yaml'
     config.write_text(yaml.safe_dump(mapping,sort_keys=False))
 provenance={}

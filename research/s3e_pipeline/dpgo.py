@@ -169,7 +169,7 @@ def run(cfg, artifacts, source, out):
             for pair in result['pairs']:
                 i, j = pair['i'], pair['j']
                 if i[0] != robots.index(robot): raise ValueError('Registration factor assigned to wrong owner')
-                pairs.append(((robots[i[0]], i[1]), (robots[j[0]], j[1])))
+                pairs.append(tuple(sorted(((robots[i[0]], i[1]), (robots[j[0]], j[1])))))
         if len(set(pairs)) != len(pairs) or set(pairs) != expected:
             raise ValueError('Native registration pair coverage/ownership mismatch')
         write_json(out/'registration.json', dict(settings=registration,

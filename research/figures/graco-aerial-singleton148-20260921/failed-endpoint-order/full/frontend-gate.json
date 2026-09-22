@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "quality": {
+    "aerial05": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 5.284001744723069,
+      "max_successful_update_gap_s": 0.192002058,
+      "native_poses": 2753,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial06": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.07531202656208,
+      "max_successful_update_gap_s": 0.167996883,
+      "native_poses": 3107,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial07": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.1218964147196515,
+      "max_successful_update_gap_s": 0.15199995,
+      "native_poses": 3713,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial08": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.539622324666119,
+      "max_successful_update_gap_s": 0.135998964,
+      "native_poses": 2623,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial04": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.9104446471868775,
+      "max_successful_update_gap_s": 0.120006085,
+      "native_poses": 2760,
+      "ground_truth_used": false,
+      "passed": true
+    }
+  },
+  "diagnostic_backend": false,
+  "disconnection_is_valid_outcome": true
+}

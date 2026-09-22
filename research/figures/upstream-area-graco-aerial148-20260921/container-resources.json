@@ -1,0 +1,23 @@
+[
+  {
+    "name": "/ellipselio-upstream-area-graco148-20260921",
+    "image": "sha256:cb89f7676e64520d3c6acfb37be9006b1b1dd52019d928b09f8ed7315ceb3ecc",
+    "cpu_quota": 0,
+    "nano_cpus": 0,
+    "cpuset": "",
+    "memory_limit": 0,
+    "gpus": [
+      {
+        "Driver": "",
+        "Count": -1,
+        "DeviceIDs": null,
+        "Capabilities": [
+          [
+            "gpu"
+          ]
+        ],
+        "Options": {}
+      }
+    ]
+  }
+]

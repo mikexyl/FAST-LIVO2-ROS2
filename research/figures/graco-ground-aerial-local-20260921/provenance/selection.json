@@ -1,0 +1,20 @@
+{
+  "robots": [
+    "ground06",
+    "aerial06"
+  ],
+  "bags": {
+    "ground06": "/data/graco/ground-06_ros2",
+    "aerial06": "/data/graco/aerial-06-20m_full_ros2"
+  },
+  "reason": "Official route diagrams show overlapping northeastern street; aerial06 has nominal 20 m altitude.",
+  "route_sources": [
+    "https://github.com/SYSU-RoboticsLab/GrAco/blob/main/doc/sequence-ground.png",
+    "https://github.com/SYSU-RoboticsLab/GrAco/blob/main/doc/sequence-aerial.png"
+  ],
+  "numeric_ground_truth_used_for_selection": false,
+  "selection_is_visual_not_exhaustive_overlap_optimization": true,
+  "thresholds_unchanged": true,
+  "host": "local laptop",
+  "workstation148_used": false
+}

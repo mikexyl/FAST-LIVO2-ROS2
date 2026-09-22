@@ -1,0 +1,82 @@
+{
+  "endpoint_ids": {
+    "aerial06": [
+      7,
+      12,
+      17,
+      22,
+      27,
+      32
+    ],
+    "ground06": [
+      0,
+      5,
+      7,
+      12,
+      17,
+      22,
+      27,
+      30
+    ]
+  },
+  "pair_selection": "fixed Cartesian product before matching or evaluation",
+  "comparisons": [
+    "full",
+    "near",
+    "low",
+    "middle",
+    "high",
+    "upper",
+    "pooled"
+  ],
+  "settings": {
+    "residual_m": 1.5,
+    "duplicate_m": 0.5,
+    "minimum_baseline_m": 0.5,
+    "trials": 688,
+    "seed": 0,
+    "inliers_threshold": 5,
+    "refinement_iterations": 10
+  },
+  "sampling": "uniform layer, then uniform match for each of two draws",
+  "same_layer_matching": true,
+  "full_height_excluded_from_pool": true,
+  "deduplication": "both endpoints within 0.5 m; final one-to-one support within 0.5 m",
+  "controls": "same new rigid fitter on each single layer and full height; native fits retained separately",
+  "ground_truth_used_for_matching": false,
+  "subsequent_evaluation_only": true,
+  "negative_label": "evaluation-only GT horizontal center separation > radius sum + 20 m",
+  "pose_error_reporting": "horizontal translation and yaw; diagnostic 5 m / 5 degree bands, not acceptance gates",
+  "repeats": {
+    "pairs": [
+      [
+        [
+          "aerial06",
+          27
+        ],
+        [
+          "ground06",
+          17
+        ]
+      ],
+      [
+        [
+          "aerial06",
+          17
+        ],
+        [
+          "ground06",
+          7
+        ]
+      ]
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "run_registration": false,
+  "run_pcm": false,
+  "run_cbs": false
+}

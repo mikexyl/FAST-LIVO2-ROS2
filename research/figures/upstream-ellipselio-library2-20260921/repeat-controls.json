@@ -1,0 +1,14 @@
+[
+  {
+    "file": "install/ellipselio/lib/libellipselio_mapping.so",
+    "sha256": "48b74b3f55e8c8092edcabb457050defc00488e9849ef2d2e2b002853e2f94a0"
+  },
+  {
+    "file": "launcher/ellipselio_mapping_mt",
+    "sha256": "6defdb914ba7ca3b96ed6c3338232e55c93cbd6bb58958438daba326a061b3a4"
+  },
+  {
+    "file": "harness/bob.yaml",
+    "sha256": "62762661ec82b5664762333579a84c5e80216d93dcef6cf1291bb1f93294d496"
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "started_utc": "2026-09-21T16:13:18Z",
+  "phase": "complete",
+  "updated_utc": "2026-09-21T16:24:08Z",
+  "reused_frontends": [
+    "aerial05",
+    "aerial06",
+    "aerial07",
+    "aerial08"
+  ],
+  "fresh_frontends": [
+    "aerial04"
+  ],
+  "aerial04_quality": {
+    "full_completion": true,
+    "finite": true,
+    "chronological": true,
+    "max_speed_m_s": 4.9104446471868775,
+    "max_successful_update_gap_s": 0.120006085,
+    "native_poses": 2760,
+    "ground_truth_used": false,
+    "passed": true
+  },
+  "backend_complete": true,
+  "ground_truth_used": false,
+  "raw_ate": {
+    "aerial04": 0.10673089961870652,
+    "aerial05": 0.17750353694010298,
+    "aerial06": 0.06176350035876085,
+    "aerial07": 0.07454558373811623,
+    "aerial08": 0.12746790207223657
+  },
+  "individual_cbs_ate": {
+    "aerial04": 0.10673089961589624,
+    "aerial05": 0.17763210688779563,
+    "aerial06": 0.06164828430268095,
+    "aerial07": 0.07127491851878191,
+    "aerial08": 0.1192979297212091
+  },
+  "shared_component_ate": {
+    "aerial04": 0.10673089961589624,
+    "aerial05": 0.4381263012492908
+  },
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial05",
+      "aerial06",
+      "aerial07",
+      "aerial08",
+      "aerial04"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {
+      "aerial05--aerial07": 10,
+      "aerial06--aerial07": 23,
+      "aerial06--aerial08": 3,
+      "aerial07--aerial08": 15
+    },
+    "measured_components": [
+      [
+        "aerial04"
+      ],
+      [
+        "aerial05",
+        "aerial06",
+        "aerial07",
+        "aerial08"
+      ]
+    ],
+    "output_frames": {
+      "aerial04": [
+        "aerial04"
+      ],
+      "aerial05": [
+        "aerial05"
+      ],
+      "aerial06": [
+        "aerial05"
+      ],
+      "aerial07": [
+        "aerial05"
+      ],
+      "aerial08": [
+        "aerial05"
+      ]
+    }
+  },
+  "loops": 51,
+  "pcm_rejected": 2
+}

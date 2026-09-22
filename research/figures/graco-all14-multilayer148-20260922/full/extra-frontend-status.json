@@ -1,0 +1,51 @@
+{
+  "phase": "complete",
+  "robots": {
+    "aerial01": {
+      "status": "complete",
+      "ros_domain_id": 100,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 5.09933693318949,
+        "max_successful_update_gap_s": 0.272128314,
+        "native_poses": 3712,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial02": {
+      "status": "complete",
+      "ros_domain_id": 102,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 2.7908032059397985,
+        "max_successful_update_gap_s": 0.280423513,
+        "native_poses": 2488,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial03": {
+      "status": "complete",
+      "ros_domain_id": 104,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.2709864423223265,
+        "max_successful_update_gap_s": 0.22400093,
+        "native_poses": 3595,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    }
+  },
+  "updated_utc": "2026-09-22T07:00:09Z",
+  "concurrent_robots": 3,
+  "replay_rate": 1.0,
+  "resource_quotas": false
+}

@@ -1,0 +1,1033 @@
+{
+  "rows": [
+    {
+      "robot": "ground06",
+      "key": 0,
+      "gravity_imu_m_s2": [
+        -0.30926132587138755,
+        -0.14450649331281282,
+        -9.803058517917304
+      ],
+      "projected_gravity_m_s2": [
+        1.1102230246251565e-16,
+        0.0,
+        -9.809000000000017
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.510971932949816
+    },
+    {
+      "robot": "ground06",
+      "key": 1,
+      "gravity_imu_m_s2": [
+        -0.16440541007920675,
+        -0.19739054608513443,
+        -9.80563556499288
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        -2.7755575615628914e-17,
+        -9.809000000000017
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8730840528936632
+    },
+    {
+      "robot": "ground06",
+      "key": 2,
+      "gravity_imu_m_s2": [
+        -0.1759155071561352,
+        -0.12859736509768438,
+        -9.806579294128646
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.809000000000038
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.9405155624929883
+    },
+    {
+      "robot": "ground06",
+      "key": 3,
+      "gravity_imu_m_s2": [
+        -0.14976723487773635,
+        -0.2318868264262137,
+        -9.80511495471053
+      ],
+      "projected_gravity_m_s2": [
+        2.7755575615628914e-17,
+        2.7755575615628914e-17,
+        -9.809000000000053
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8489942926491851
+    },
+    {
+      "robot": "ground06",
+      "key": 4,
+      "gravity_imu_m_s2": [
+        -0.2409175581442089,
+        -0.2549068825894619,
+        -9.80272728435244
+      ],
+      "projected_gravity_m_s2": [
+        2.7755575615628914e-17,
+        -5.551115123125783e-17,
+        -9.809000000000072
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.7185198001474388
+    },
+    {
+      "robot": "ground06",
+      "key": 5,
+      "gravity_imu_m_s2": [
+        -0.2725966510496276,
+        -0.1042933330767388,
+        -9.804656800037066
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        1.3877787807814457e-17,
+        -9.80900000000004
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8035481030381034
+    },
+    {
+      "robot": "ground06",
+      "key": 6,
+      "gravity_imu_m_s2": [
+        -0.298566398807735,
+        -0.1406936833852294,
+        -9.803445536797772
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.809000000000085
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.7838633149095344
+    },
+    {
+      "robot": "ground06",
+      "key": 7,
+      "gravity_imu_m_s2": [
+        -0.24598231882789268,
+        -0.188828296367679,
+        -9.804096978983656
+      ],
+      "projected_gravity_m_s2": [
+        -2.7755575615628914e-17,
+        2.7755575615628914e-17,
+        -9.809000000000077
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8032657211062858
+    },
+    {
+      "robot": "ground06",
+      "key": 8,
+      "gravity_imu_m_s2": [
+        -0.11912576796570915,
+        -0.21357351145511128,
+        -9.805951070988142
+      ],
+      "projected_gravity_m_s2": [
+        -1.3877787807814457e-17,
+        -2.7755575615628914e-17,
+        -9.80900000000011
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.985405198469302
+    },
+    {
+      "robot": "ground06",
+      "key": 9,
+      "gravity_imu_m_s2": [
+        -0.22926114804432754,
+        -0.17837791372164627,
+        -9.80469793751425
+      ],
+      "projected_gravity_m_s2": [
+        -2.7755575615628914e-17,
+        0.0,
+        -9.809000000000125
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8922538049934403
+    },
+    {
+      "robot": "ground06",
+      "key": 10,
+      "gravity_imu_m_s2": [
+        -0.23066164329744,
+        -0.3044484523472369,
+        -9.801560454650952
+      ],
+      "projected_gravity_m_s2": [
+        -2.7755575615628914e-17,
+        0.0,
+        -9.809000000000136
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.1285287090742908
+    },
+    {
+      "robot": "ground06",
+      "key": 11,
+      "gravity_imu_m_s2": [
+        -0.19344402830941446,
+        -0.2360624761325101,
+        -9.804250859462787
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        -2.7755575615628914e-17,
+        -9.809000000000161
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.9766343094479443
+    },
+    {
+      "robot": "ground06",
+      "key": 12,
+      "gravity_imu_m_s2": [
+        -0.2094862159724476,
+        -0.2561792976213525,
+        -9.803416174619548
+      ],
+      "projected_gravity_m_s2": [
+        2.7755575615628914e-17,
+        0.0,
+        -9.809000000000225
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.0589334123894176
+    },
+    {
+      "robot": "ground06",
+      "key": 13,
+      "gravity_imu_m_s2": [
+        -0.21724171378108342,
+        -0.2040388124911284,
+        -9.804471184148328
+      ],
+      "projected_gravity_m_s2": [
+        -5.551115123125783e-17,
+        -2.7755575615628914e-17,
+        -9.809000000000216
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8616252044051331
+    },
+    {
+      "robot": "ground06",
+      "key": 14,
+      "gravity_imu_m_s2": [
+        -0.17547902264753643,
+        -0.26689146417240794,
+        -9.803798093543481
+      ],
+      "projected_gravity_m_s2": [
+        -2.7755575615628914e-17,
+        0.0,
+        -9.809000000000214
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8480946251066552
+    },
+    {
+      "robot": "ground06",
+      "key": 15,
+      "gravity_imu_m_s2": [
+        -0.09118685693932284,
+        -0.21716707032877472,
+        -9.806171751539495
+      ],
+      "projected_gravity_m_s2": [
+        -1.3877787807814457e-17,
+        2.7755575615628914e-17,
+        -9.809000000000244
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.6360478634429743
+    },
+    {
+      "robot": "ground06",
+      "key": 16,
+      "gravity_imu_m_s2": [
+        0.0060178340580066825,
+        -0.3757371141318335,
+        -9.801799141317998
+      ],
+      "projected_gravity_m_s2": [
+        -8.673617379884035e-19,
+        5.551115123125783e-17,
+        -9.80900000000026
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.33254217696253957
+    },
+    {
+      "robot": "ground06",
+      "key": 17,
+      "gravity_imu_m_s2": [
+        0.10036023245253983,
+        -0.10400040583141723,
+        -9.80793519245174
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        1.3877787807814457e-17,
+        -9.809000000000223
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.2675253059865671
+    },
+    {
+      "robot": "ground06",
+      "key": 18,
+      "gravity_imu_m_s2": [
+        -0.1623438929587575,
+        -0.004298704839328232,
+        -9.807655529307679
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.809000000000193
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.23864448158628934
+    },
+    {
+      "robot": "ground06",
+      "key": 19,
+      "gravity_imu_m_s2": [
+        -0.27355722106727776,
+        0.029602045278330782,
+        -9.805140038047497
+      ],
+      "projected_gravity_m_s2": [
+        5.551115123125783e-17,
+        -3.469446951953614e-18,
+        -9.809000000000246
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.12964655137108308
+    },
+    {
+      "robot": "ground06",
+      "key": 20,
+      "gravity_imu_m_s2": [
+        0.05147914829549266,
+        -0.13032213398990256,
+        -9.807999135332732
+      ],
+      "projected_gravity_m_s2": [
+        6.938893903907228e-18,
+        -2.7755575615628914e-17,
+        -9.80900000000023
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.0721154445735444
+    },
+    {
+      "robot": "ground06",
+      "key": 21,
+      "gravity_imu_m_s2": [
+        -0.021318660347004234,
+        -0.06605216989938853,
+        -9.808754438030233
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.809000000000266
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.1125672663612774
+    },
+    {
+      "robot": "ground06",
+      "key": 22,
+      "gravity_imu_m_s2": [
+        -0.013319003800318141,
+        -0.01082458358557381,
+        -9.80898498482557
+      ],
+      "projected_gravity_m_s2": [
+        -3.469446951953614e-18,
+        0.0,
+        -9.80900000000028
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.09279596920997889
+    },
+    {
+      "robot": "ground06",
+      "key": 23,
+      "gravity_imu_m_s2": [
+        -0.10956402069045745,
+        -0.3391012224793046,
+        -9.80252452617637
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        -5.551115123125783e-17,
+        -9.80900000000031
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.06061336306756523
+    },
+    {
+      "robot": "ground06",
+      "key": 24,
+      "gravity_imu_m_s2": [
+        -0.12437091235047225,
+        -0.1629020840779224,
+        -9.806858609522706
+      ],
+      "projected_gravity_m_s2": [
+        -1.3877787807814457e-17,
+        -2.7755575615628914e-17,
+        -9.809000000000276
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.1116644613896774
+    },
+    {
+      "robot": "ground06",
+      "key": 25,
+      "gravity_imu_m_s2": [
+        0.08390986565122736,
+        -0.2344193587548946,
+        -9.805839469351557
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        2.7755575615628914e-17,
+        -9.80900000000028
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.25454991584897735
+    },
+    {
+      "robot": "ground06",
+      "key": 26,
+      "gravity_imu_m_s2": [
+        0.05877726717685729,
+        -0.1723408650433605,
+        -9.807309766653892
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        -2.7755575615628914e-17,
+        -9.80900000000028
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.1588953089613099
+    },
+    {
+      "robot": "ground06",
+      "key": 27,
+      "gravity_imu_m_s2": [
+        0.07816523809579497,
+        -0.12670008999949728,
+        -9.80787022154929
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.809000000000296
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.20932045374102595
+    },
+    {
+      "robot": "ground06",
+      "key": 28,
+      "gravity_imu_m_s2": [
+        0.07852558373840737,
+        -0.19255240433001022,
+        -9.806795516594164
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.809000000000312
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.16640151577629475
+    },
+    {
+      "robot": "ground06",
+      "key": 29,
+      "gravity_imu_m_s2": [
+        0.026605232914359817,
+        -0.1778829992958957,
+        -9.807350855360992
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.809000000000353
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.26848163219455434
+    },
+    {
+      "robot": "ground06",
+      "key": 30,
+      "gravity_imu_m_s2": [
+        0.08284314172034682,
+        -0.19860663746970975,
+        -9.806639251926747
+      ],
+      "projected_gravity_m_s2": [
+        1.3877787807814457e-17,
+        2.7755575615628914e-17,
+        -9.809000000000383
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.28865499722579646
+    },
+    {
+      "robot": "aerial06",
+      "key": 0,
+      "gravity_imu_m_s2": [
+        0.0266203611534735,
+        6.906119255437699,
+        6.96572244537814
+      ],
+      "projected_gravity_m_s2": [
+        -1.734723475976807e-18,
+        0.0,
+        -9.809000000000005
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.6918618294284453
+    },
+    {
+      "robot": "aerial06",
+      "key": 1,
+      "gravity_imu_m_s2": [
+        0.09756026188148238,
+        6.812429513389026,
+        7.056753298820018
+      ],
+      "projected_gravity_m_s2": [
+        4.85722573273506e-17,
+        8.881784197001252e-16,
+        -9.808999999999969
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.1825994121701005
+    },
+    {
+      "robot": "aerial06",
+      "key": 2,
+      "gravity_imu_m_s2": [
+        0.023720495687751475,
+        6.961670618794542,
+        6.910214217627157
+      ],
+      "projected_gravity_m_s2": [
+        1.734723475976807e-18,
+        0.0,
+        -9.808999999999966
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.5884206898449893
+    },
+    {
+      "robot": "aerial06",
+      "key": 3,
+      "gravity_imu_m_s2": [
+        -0.01386345247805143,
+        6.798083234789431,
+        7.071234201860333
+      ],
+      "projected_gravity_m_s2": [
+        8.673617379884035e-19,
+        8.881784197001252e-16,
+        -9.808999999999953
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.644958408077312
+    },
+    {
+      "robot": "aerial06",
+      "key": 4,
+      "gravity_imu_m_s2": [
+        -0.01620044189276637,
+        6.8397912922761135,
+        7.030894226468327
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.808999999999966
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.6984987956156223
+    },
+    {
+      "robot": "aerial06",
+      "key": 5,
+      "gravity_imu_m_s2": [
+        -0.008240431445168617,
+        7.121215208457952,
+        6.745717682360862
+      ],
+      "projected_gravity_m_s2": [
+        2.6020852139652106e-18,
+        -8.881784197001252e-16,
+        -9.808999999999962
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.8251708488431688
+    },
+    {
+      "robot": "aerial06",
+      "key": 6,
+      "gravity_imu_m_s2": [
+        0.05139843274222278,
+        6.639791643948346,
+        7.2199034706888225
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        8.881784197001252e-16,
+        -9.808999999999955
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.6345517501584723
+    },
+    {
+      "robot": "aerial06",
+      "key": 7,
+      "gravity_imu_m_s2": [
+        0.14810079324280057,
+        6.733844640375152,
+        7.130910426749897
+      ],
+      "projected_gravity_m_s2": [
+        -2.7755575615628914e-17,
+        -8.881784197001252e-16,
+        -9.808999999999934
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.7167743593780624
+    },
+    {
+      "robot": "aerial06",
+      "key": 8,
+      "gravity_imu_m_s2": [
+        0.26816876882607094,
+        6.913489604267838,
+        6.95328900615428
+      ],
+      "projected_gravity_m_s2": [
+        -2.7755575615628914e-17,
+        0.0,
+        -9.808999999999955
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.5202565575634923
+    },
+    {
+      "robot": "aerial06",
+      "key": 9,
+      "gravity_imu_m_s2": [
+        -0.24169006194064802,
+        7.062332381555418,
+        6.803052862237077
+      ],
+      "projected_gravity_m_s2": [
+        2.7755575615628914e-17,
+        0.0,
+        -9.808999999999958
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.7297621102547311
+    },
+    {
+      "robot": "aerial06",
+      "key": 10,
+      "gravity_imu_m_s2": [
+        0.3375442408996237,
+        6.934068065665969,
+        6.929736282582892
+      ],
+      "projected_gravity_m_s2": [
+        -8.326672684688674e-17,
+        0.0,
+        -9.80899999999994
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.856883260702208
+    },
+    {
+      "robot": "aerial06",
+      "key": 11,
+      "gravity_imu_m_s2": [
+        -0.18810506071010236,
+        6.98250350883437,
+        6.886635044435728
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        -8.881784197001252e-16,
+        -9.808999999999966
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 1.9188786595759781
+    },
+    {
+      "robot": "aerial06",
+      "key": 12,
+      "gravity_imu_m_s2": [
+        0.2629004451419636,
+        6.974070671026441,
+        6.892728242972611
+      ],
+      "projected_gravity_m_s2": [
+        -5.551115123125783e-17,
+        8.881784197001252e-16,
+        -9.808999999999966
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 2.20964620084796
+    },
+    {
+      "robot": "aerial06",
+      "key": 13,
+      "gravity_imu_m_s2": [
+        0.37738666952740624,
+        6.806519315254252,
+        7.05303871481887
+      ],
+      "projected_gravity_m_s2": [
+        -1.1102230246251565e-16,
+        -8.881784197001252e-16,
+        -9.809000000000003
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 2.5070549173577925
+    },
+    {
+      "robot": "aerial06",
+      "key": 14,
+      "gravity_imu_m_s2": [
+        0.2615423000875707,
+        6.898155621197265,
+        6.9687535220446035
+      ],
+      "projected_gravity_m_s2": [
+        8.326672684688674e-17,
+        8.881784197001252e-16,
+        -9.808999999999978
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 2.4073690575316333
+    },
+    {
+      "robot": "aerial06",
+      "key": 15,
+      "gravity_imu_m_s2": [
+        0.13082429429554307,
+        6.864935783428813,
+        7.0051425890855645
+      ],
+      "projected_gravity_m_s2": [
+        -1.3877787807814457e-17,
+        0.0,
+        -9.808999999999985
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 2.4495193111314526
+    },
+    {
+      "robot": "aerial06",
+      "key": 16,
+      "gravity_imu_m_s2": [
+        0.103151445578475,
+        6.697180152206971,
+        7.166143927396371
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.80899999999999
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8346248993663687
+    },
+    {
+      "robot": "aerial06",
+      "key": 17,
+      "gravity_imu_m_s2": [
+        -0.37513911654514287,
+        7.200369973991588,
+        6.6505957538311895
+      ],
+      "projected_gravity_m_s2": [
+        5.551115123125783e-17,
+        0.0,
+        -9.808999999999969
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.6657296863175663
+    },
+    {
+      "robot": "aerial06",
+      "key": 18,
+      "gravity_imu_m_s2": [
+        -0.26246647663273864,
+        6.785943942348,
+        7.078033424614081
+      ],
+      "projected_gravity_m_s2": [
+        -5.551115123125783e-17,
+        -8.881784197001252e-16,
+        -9.808999999999983
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.6296565955531612
+    },
+    {
+      "robot": "aerial06",
+      "key": 19,
+      "gravity_imu_m_s2": [
+        0.188391631102997,
+        7.0899360509797225,
+        6.7759719883089895
+      ],
+      "projected_gravity_m_s2": [
+        -2.7755575615628914e-17,
+        0.0,
+        -9.808999999999983
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.7306257572408048
+    },
+    {
+      "robot": "aerial06",
+      "key": 20,
+      "gravity_imu_m_s2": [
+        -0.1551179048755922,
+        7.087884916489147,
+        6.778960602200918
+      ],
+      "projected_gravity_m_s2": [
+        -4.163336342344337e-17,
+        0.0,
+        -9.808999999999978
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.7292123469203001
+    },
+    {
+      "robot": "aerial06",
+      "key": 21,
+      "gravity_imu_m_s2": [
+        -0.20210474162693381,
+        6.855333438702125,
+        7.012848074614473
+      ],
+      "projected_gravity_m_s2": [
+        2.7755575615628914e-17,
+        -8.881784197001252e-16,
+        -9.808999999999976
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.762732327210131
+    },
+    {
+      "robot": "aerial06",
+      "key": 22,
+      "gravity_imu_m_s2": [
+        -0.2685840411881347,
+        6.71269975846184,
+        7.147307574574109
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        8.881784197001252e-16,
+        -9.808999999999951
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.747556805187121
+    },
+    {
+      "robot": "aerial06",
+      "key": 23,
+      "gravity_imu_m_s2": [
+        -0.2846603732143239,
+        6.6103099034124915,
+        7.241495180745979
+      ],
+      "projected_gravity_m_s2": [
+        -5.551115123125783e-17,
+        0.0,
+        -9.80899999999995
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.6840398489199487
+    },
+    {
+      "robot": "aerial06",
+      "key": 24,
+      "gravity_imu_m_s2": [
+        -0.22681717900315618,
+        7.041104275833735,
+        6.825531887270343
+      ],
+      "projected_gravity_m_s2": [
+        4.163336342344337e-17,
+        -1.7763568394002505e-15,
+        -9.808999999999966
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.7347717829655632
+    },
+    {
+      "robot": "aerial06",
+      "key": 25,
+      "gravity_imu_m_s2": [
+        -0.3495891842252542,
+        7.079517560214984,
+        6.780464550226583
+      ],
+      "projected_gravity_m_s2": [
+        -2.7755575615628914e-17,
+        0.0,
+        -9.808999999999946
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.7575388538501937
+    },
+    {
+      "robot": "aerial06",
+      "key": 26,
+      "gravity_imu_m_s2": [
+        -0.15446169170391155,
+        6.855082702927267,
+        7.01430422221783
+      ],
+      "projected_gravity_m_s2": [
+        -1.3877787807814457e-17,
+        0.0,
+        -9.808999999999974
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.704185587401633
+    },
+    {
+      "robot": "aerial06",
+      "key": 27,
+      "gravity_imu_m_s2": [
+        -0.3426221164014094,
+        6.578553129805689,
+        7.267855928929529
+      ],
+      "projected_gravity_m_s2": [
+        2.7755575615628914e-17,
+        8.881784197001252e-16,
+        -9.808999999999985
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.6696897302006871
+    },
+    {
+      "robot": "aerial06",
+      "key": 28,
+      "gravity_imu_m_s2": [
+        -0.24372211226488272,
+        6.811687561183234,
+        7.053934582969589
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        0.0,
+        -9.80899999999998
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8213657851094129
+    },
+    {
+      "robot": "aerial06",
+      "key": 29,
+      "gravity_imu_m_s2": [
+        -0.08565840728613305,
+        6.804075794469794,
+        7.064962577421833
+      ],
+      "projected_gravity_m_s2": [
+        2.0816681711721685e-17,
+        -8.881784197001252e-16,
+        -9.808999999999976
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8487039887869925
+    },
+    {
+      "robot": "aerial06",
+      "key": 30,
+      "gravity_imu_m_s2": [
+        0.05505501919244815,
+        6.6559186226721865,
+        7.205011952330602
+      ],
+      "projected_gravity_m_s2": [
+        1.734723475976807e-17,
+        8.881784197001252e-16,
+        -9.808999999999976
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.9256137561946883
+    },
+    {
+      "robot": "aerial06",
+      "key": 31,
+      "gravity_imu_m_s2": [
+        0.012270710201067958,
+        7.0064322517613915,
+        6.864855244733716
+      ],
+      "projected_gravity_m_s2": [
+        -2.6020852139652106e-18,
+        8.881784197001252e-16,
+        -9.808999999999951
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.8246243224933768
+    },
+    {
+      "robot": "aerial06",
+      "key": 32,
+      "gravity_imu_m_s2": [
+        0.00821782737926946,
+        7.01276115281196,
+        6.858395911648955
+      ],
+      "projected_gravity_m_s2": [
+        0.0,
+        8.881784197001252e-16,
+        -9.808999999999923
+      ],
+      "cached_projection_matches_native_gravity": true,
+      "evaluation_only_tilt_error_vs_INS_deg": 0.766670435914128
+    }
+  ],
+  "ground_truth_used_for_images": false,
+  "ground_truth_used_only_to_evaluate_gravity": true,
+  "relative_planar_yaw_deg": -137.577635887283,
+  "all_cached_projections_verified": true,
+  "script_sha256": "e9a7b4ed1e00c85197725889797970eba8b902a2bee0a5a161357f4d9652096a"
+}

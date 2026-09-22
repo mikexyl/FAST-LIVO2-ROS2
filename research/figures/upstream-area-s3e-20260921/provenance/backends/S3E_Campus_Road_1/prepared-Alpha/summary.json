@@ -1,0 +1,9 @@
+{
+  "submaps": 71,
+  "wall_s": 92.41866381710861,
+  "source_index_sha256": "2421fb6555d33c27534afa131160d27c94c7de21c19d1301bfff89859280ee05",
+  "source": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Alpha/frontend/area_maps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": null
+}

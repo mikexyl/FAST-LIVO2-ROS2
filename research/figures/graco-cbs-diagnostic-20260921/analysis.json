@@ -1,0 +1,1922 @@
+{
+  "engine": "evo 1.36.5",
+  "input_base": "/home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/research/figures/graco-aerial-height148-20260921/full",
+  "evaluation_only": true,
+  "fed_back_to_estimation": false,
+  "caveats": [
+    "Loop reference uses raw odometry orientation and independently position-GT-fitted SE3; it is not exact 6-DoF ground truth.",
+    "Loop consistency can localize an error upstream of CBS but cannot identify registration, calibration or dataset reference bias by itself.",
+    "Subset ATE changes evaluation alignment only; no new optimization is run."
+  ],
+  "robots": {
+    "aerial05": {
+      "raw_ate_m": 0.17750353694010298,
+      "cbs_individual_ate_m": 0.17763210688779943,
+      "cbs_shared_ate_m": 0.7844288355281129,
+      "mean_shared_residual_enu_m": [
+        0.6703320683871009,
+        0.34179282923302573,
+        -0.09579857061571281
+      ],
+      "centered_shared_residual_rms_m": 0.1999595255363769,
+      "raw_vs_cbs_shape_evo_rms_m": 0.017399636051809827,
+      "odometry_edge_change_translation_m": {
+        "mean": 3.870045293132801e-05,
+        "median": 1.0888214802094746e-05,
+        "max": 0.00012817323106665163,
+        "min": 6.632816781796455e-16
+      },
+      "odometry_edge_change_rotation_deg": {
+        "mean": 0.0019473366174137298,
+        "median": 0.0010965579095945088,
+        "max": 0.009272333862491863,
+        "min": 2.1348173675287608e-16
+      }
+    },
+    "aerial06": {
+      "raw_ate_m": 0.06176350035876085,
+      "cbs_individual_ate_m": 0.06160206679013232,
+      "cbs_shared_ate_m": 0.25118165630848355,
+      "mean_shared_residual_enu_m": [
+        -0.1442234360807375,
+        -0.14948670403966843,
+        0.05613999121488739
+      ],
+      "centered_shared_residual_rms_m": 0.12959109403306848,
+      "raw_vs_cbs_shape_evo_rms_m": 0.01207831823583683,
+      "odometry_edge_change_translation_m": {
+        "mean": 0.00021748260820407837,
+        "median": 0.0001218658551194097,
+        "max": 0.0009326295205854647,
+        "min": 1.2034954641713208e-14
+      },
+      "odometry_edge_change_rotation_deg": {
+        "mean": 0.0024572414126889583,
+        "median": 0.0013748473075541284,
+        "max": 0.008963566736629194,
+        "min": 1.1235597010229532e-13
+      }
+    },
+    "aerial07": {
+      "raw_ate_m": 0.07454558373811623,
+      "cbs_individual_ate_m": 0.0710704759102099,
+      "cbs_shared_ate_m": 0.2794262716322445,
+      "mean_shared_residual_enu_m": [
+        -0.23731533317821182,
+        -0.08718833296121674,
+        0.039927381229198096
+      ],
+      "centered_shared_residual_rms_m": 0.1120913589017166,
+      "raw_vs_cbs_shape_evo_rms_m": 0.009643171822437261,
+      "odometry_edge_change_translation_m": {
+        "mean": 0.00038183038924031397,
+        "median": 0.0002830145989201196,
+        "max": 0.0012595472937862444,
+        "min": 4.844547007921278e-05
+      },
+      "odometry_edge_change_rotation_deg": {
+        "mean": 0.005489609631251827,
+        "median": 0.0051949926687898,
+        "max": 0.012589278321634038,
+        "min": 0.00018044754901461898
+      }
+    },
+    "aerial08": {
+      "raw_ate_m": 0.12746790207223657,
+      "cbs_individual_ate_m": 0.11929778603718642,
+      "cbs_shared_ate_m": 0.24521097633087957,
+      "mean_shared_residual_enu_m": [
+        -0.1967861747155157,
+        -0.0582425425636766,
+        -0.022471923103615142
+      ],
+      "centered_shared_residual_rms_m": 0.13231191655221838,
+      "raw_vs_cbs_shape_evo_rms_m": 0.029140838711076412,
+      "odometry_edge_change_translation_m": {
+        "mean": 0.00030319099354557286,
+        "median": 0.00026292797178097864,
+        "max": 0.0006098975297840788,
+        "min": 5.019898356800047e-05
+      },
+      "odometry_edge_change_rotation_deg": {
+        "mean": 0.006684178422821945,
+        "median": 0.005185231157424551,
+        "max": 0.019385214420002156,
+        "min": 0.0005313967803331483
+      }
+    }
+  },
+  "pairs": {
+    "aerial05--aerial07": {
+      "count": 10,
+      "cbs_vs_measurement_translation_m": {
+        "mean": 0.07088925868254045,
+        "median": 0.06178471419521179,
+        "max": 0.12953924637713876,
+        "min": 0.0468834670899016
+      },
+      "cbs_vs_measurement_rotation_deg": {
+        "mean": 0.06930410557399307,
+        "median": 0.060614800914665895,
+        "max": 0.1465450537075526,
+        "min": 0.037457111506416826
+      },
+      "measurement_vs_position_aligned_odometry_translation_m": {
+        "mean": 1.0498143348937128,
+        "median": 1.0599235337836261,
+        "max": 1.117114938077512,
+        "min": 0.9229140692124341
+      },
+      "measurement_vs_position_aligned_odometry_rotation_deg": {
+        "mean": 0.11488674171851895,
+        "median": 0.12311075079238579,
+        "max": 0.160267028680915,
+        "min": 0.031583910345289186
+      },
+      "mean_estimated_j_anchor_error_enu_m": [
+        -0.9205593484098316,
+        -0.4529326653348238,
+        0.21457417173802576
+      ]
+    },
+    "aerial06--aerial07": {
+      "count": 23,
+      "cbs_vs_measurement_translation_m": {
+        "mean": 0.0188733205155036,
+        "median": 0.015098879428765278,
+        "max": 0.04496520632772243,
+        "min": 0.0032168312696313852
+      },
+      "cbs_vs_measurement_rotation_deg": {
+        "mean": 0.0502227474476488,
+        "median": 0.048840929927013624,
+        "max": 0.0770867019137388,
+        "min": 0.022973243522888105
+      },
+      "measurement_vs_position_aligned_odometry_translation_m": {
+        "mean": 0.05443798794313953,
+        "median": 0.037514157308519806,
+        "max": 0.1328493385895243,
+        "min": 0.018516367732337186
+      },
+      "measurement_vs_position_aligned_odometry_rotation_deg": {
+        "mean": 0.09852358420906512,
+        "median": 0.09249962690747758,
+        "max": 0.1334434615582047,
+        "min": 0.07505761892521083
+      },
+      "mean_estimated_j_anchor_error_enu_m": [
+        -0.008075445509660995,
+        0.029809244994262137,
+        0.02392634711353922
+      ]
+    },
+    "aerial06--aerial08": {
+      "count": 3,
+      "cbs_vs_measurement_translation_m": {
+        "mean": 0.10148092685765904,
+        "median": 0.06485266536150941,
+        "max": 0.19529374140348624,
+        "min": 0.04429637380798149
+      },
+      "cbs_vs_measurement_rotation_deg": {
+        "mean": 0.1306472697087843,
+        "median": 0.16767850636658946,
+        "max": 0.16993705926931743,
+        "min": 0.054326243490445965
+      },
+      "measurement_vs_position_aligned_odometry_translation_m": {
+        "mean": 0.17046099974042425,
+        "median": 0.13793698992030348,
+        "max": 0.28405998753130546,
+        "min": 0.08938602176966377
+      },
+      "measurement_vs_position_aligned_odometry_rotation_deg": {
+        "mean": 0.1867127865563426,
+        "median": 0.18398215269066762,
+        "max": 0.26428913303294943,
+        "min": 0.11186707394541076
+      },
+      "mean_estimated_j_anchor_error_enu_m": [
+        -0.020334746873172566,
+        0.15942261232480348,
+        -0.0023095848381918436
+      ]
+    },
+    "aerial07--aerial08": {
+      "count": 15,
+      "cbs_vs_measurement_translation_m": {
+        "mean": 0.06417471615202205,
+        "median": 0.050386989105229006,
+        "max": 0.20447793049092897,
+        "min": 0.012332737808178682
+      },
+      "cbs_vs_measurement_rotation_deg": {
+        "mean": 0.07454676288071722,
+        "median": 0.04483005808472688,
+        "max": 0.2551017186027822,
+        "min": 0.014425385343320917
+      },
+      "measurement_vs_position_aligned_odometry_translation_m": {
+        "mean": 0.09340737837580004,
+        "median": 0.10200144524006031,
+        "max": 0.1700939190754388,
+        "min": 0.028193215741789467
+      },
+      "measurement_vs_position_aligned_odometry_rotation_deg": {
+        "mean": 0.11429463766812134,
+        "median": 0.09188744746130707,
+        "max": 0.2889069599954017,
+        "min": 0.06966870892976702
+      },
+      "mean_estimated_j_anchor_error_enu_m": [
+        0.04639561866067036,
+        0.04085750313805621,
+        -0.022634031078432225
+      ]
+    }
+  },
+  "subsets": {
+    "aerial05--aerial06--aerial07--aerial08": {
+      "statistics": {
+        "rmse": 0.4378054624301403,
+        "mean": 0.3680425599345506,
+        "median": 0.2634803915241175,
+        "std": 0.2371039793223464,
+        "min": 0.054551135833557744,
+        "max": 1.3039590448407523,
+        "sse": 2337.6515052990267
+      },
+      "robots": [
+        "aerial05",
+        "aerial06",
+        "aerial07",
+        "aerial08"
+      ],
+      "optimized_again": false,
+      "alignment": "one new rigid alignment of this subset only"
+    },
+    "aerial06--aerial07--aerial08": {
+      "statistics": {
+        "rmse": 0.09522117955092806,
+        "mean": 0.08269187285536095,
+        "median": 0.07255822203417404,
+        "std": 0.04721363361088507,
+        "min": 0.0014038066955314264,
+        "max": 0.3425205382475159,
+        "sse": 85.62037067016676
+      },
+      "robots": [
+        "aerial06",
+        "aerial07",
+        "aerial08"
+      ],
+      "optimized_again": false,
+      "alignment": "one new rigid alignment of this subset only"
+    },
+    "aerial05--aerial06--aerial07": {
+      "statistics": {
+        "rmse": 0.4734679664981007,
+        "mean": 0.4263434616306074,
+        "median": 0.32666667371597835,
+        "std": 0.20592029532000342,
+        "min": 0.09899321317989294,
+        "max": 1.2496402905163504,
+        "sse": 2145.9977451654318
+      },
+      "robots": [
+        "aerial05",
+        "aerial06",
+        "aerial07"
+      ],
+      "optimized_again": false,
+      "alignment": "one new rigid alignment of this subset only"
+    },
+    "aerial05--aerial07": {
+      "statistics": {
+        "rmse": 0.5217877460990038,
+        "mean": 0.506387199641254,
+        "median": 0.4628683596741461,
+        "std": 0.12583503494085904,
+        "min": 0.25880764364570213,
+        "max": 1.1137766590460063,
+        "sse": 1760.4490144967217
+      },
+      "robots": [
+        "aerial05",
+        "aerial07"
+      ],
+      "optimized_again": false,
+      "alignment": "one new rigid alignment of this subset only"
+    }
+  },
+  "loops": [
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial07",
+        20
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.056257097509101475,
+        "rotation_deg": 0.06247700655621237
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.0404740466326197,
+        "rotation_deg": 0.042688822286505335
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.8885836980165323,
+        -0.47729459187161805,
+        0.25533336234114046
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0865352651117146,
+        "rotation_deg": 0.02031909882493678
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.7027809138986274,
+      "verification_rmse_m": 0.26450442941436164
+    },
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial07",
+        25
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.0468834670899016,
+        "rotation_deg": 0.055512346366095235
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.0652367668958482,
+        "rotation_deg": 0.031583910345289186
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.9084575195511917,
+        -0.49864466690033993,
+        0.24655182185363245
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0829581129935282,
+        "rotation_deg": 0.0429436242550873
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.623584255455399,
+      "verification_rmse_m": 0.24434876771552183
+    },
+    {
+      "i": [
+        "aerial05",
+        19
+      ],
+      "j": [
+        "aerial07",
+        26
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.06092695634478826,
+        "rotation_deg": 0.06729110754003062
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.0900772000064298,
+        "rotation_deg": 0.12280611636769381
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.9607236018607779,
+        -0.45555719846853293,
+        0.24030418587816627
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0807863625818002,
+        "rotation_deg": 0.06719986788690353
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.5442920511905369,
+      "verification_rmse_m": 0.26054969856429333
+    },
+    {
+      "i": [
+        "aerial05",
+        19
+      ],
+      "j": [
+        "aerial07",
+        27
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.06264247204563532,
+        "rotation_deg": 0.06085458274094595
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.0751138604004993,
+        "rotation_deg": 0.12341538521707775
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.9501664855876726,
+        -0.4526195974529976,
+        0.21951984537880165
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.074221256797731,
+        "rotation_deg": 0.0773635259126959
+      },
+      "canonicalization_max_abs_error": 3.552713678800501e-15,
+      "verification_overlap": 0.5545729139438297,
+      "verification_rmse_m": 0.258956075089876
+    },
+    {
+      "i": [
+        "aerial05",
+        19
+      ],
+      "j": [
+        "aerial07",
+        28
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.05627989234371474,
+        "rotation_deg": 0.041124441384389705
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.0714843039989357,
+        "rotation_deg": 0.11275489118281033
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.9447893510697796,
+        -0.4610526560145445,
+        0.2070800430419233
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0673795654203324,
+        "rotation_deg": 0.08522311560672226
+      },
+      "canonicalization_max_abs_error": 8.881784197001252e-16,
+      "verification_overlap": 0.5784959133512337,
+      "verification_rmse_m": 0.25350641873007645
+    },
+    {
+      "i": [
+        "aerial05",
+        19
+      ],
+      "j": [
+        "aerial07",
+        29
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.055975004796863674,
+        "rotation_deg": 0.037457111506416826
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.054610300671404,
+        "rotation_deg": 0.11024987983817652
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.9334303741937191,
+        -0.45629732135647316,
+        0.18084075136800237
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0574763220472572,
+        "rotation_deg": 0.09061670874458885
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.6104916035386979,
+      "verification_rmse_m": 0.24484197118233084
+    },
+    {
+      "i": [
+        "aerial05",
+        20
+      ],
+      "j": [
+        "aerial07",
+        24
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.08178628148014984,
+        "rotation_deg": 0.11294926950530232
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.117114938077512,
+        "rotation_deg": 0.160267028680915
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.9902278476912443,
+        -0.441179174211797,
+        0.2697323317583553
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0877661988376348,
+        "rotation_deg": 0.054434774368469385
+      },
+      "canonicalization_max_abs_error": 7.105427357601002e-15,
+      "verification_overlap": 0.3806809835776609,
+      "verification_rmse_m": 0.2768318185226908
+    },
+    {
+      "i": [
+        "aerial05",
+        20
+      ],
+      "j": [
+        "aerial07",
+        30
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.07497877852781891,
+        "rotation_deg": 0.048455117344599244
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.0388237898141088,
+        "rotation_deg": 0.1399773298735348
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.9259316231827484,
+        -0.4499630441974034,
+        0.13906384986021791
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0483853830107053,
+        "rotation_deg": 0.09616168626938394
+      },
+      "canonicalization_max_abs_error": 4.440892098500626e-16,
+      "verification_overlap": 0.6263834672789896,
+      "verification_rmse_m": 0.24775910621335767
+    },
+    {
+      "i": [
+        "aerial05",
+        20
+      ],
+      "j": [
+        "aerial07",
+        31
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.08362339031029192,
+        "rotation_deg": 0.06037501908838584
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 1.0222940732273378,
+        "rotation_deg": 0.156369770980223
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.9163127926316363,
+        -0.4381795287447119,
+        0.1159945637291635
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0408039498655834,
+        "rotation_deg": 0.09767990128516206
+      },
+      "canonicalization_max_abs_error": 3.552713678800501e-15,
+      "verification_overlap": 0.5624974509795037,
+      "verification_rmse_m": 0.24769193008508764
+    },
+    {
+      "i": [
+        "aerial05",
+        26
+      ],
+      "j": [
+        "aerial07",
+        15
+      ],
+      "pair": "aerial05--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.12953924637713876,
+        "rotation_deg": 0.1465450537075526
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.9229140692124341,
+        "rotation_deg": 0.14875428241296373
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.7869701903130135,
+        -0.3985388741298195,
+        0.27132096217085433
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 1.0496998844556853,
+        "rotation_deg": 0.04618471983594124
+      },
+      "canonicalization_max_abs_error": 1.4210854715202004e-14,
+      "verification_overlap": 0.49137042354176286,
+      "verification_rmse_m": 0.26463798011659034
+    },
+    {
+      "i": [
+        "aerial06",
+        1
+      ],
+      "j": [
+        "aerial07",
+        0
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.024667508111244095,
+        "rotation_deg": 0.022973243522888105
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.056223328489391496,
+        "rotation_deg": 0.09331030369062512
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.02785614109436807,
+        0.044854527436896774,
+        -0.019317594005750394
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.035656210715392885,
+        "rotation_deg": 0.11526272977136452
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.5906582900846763,
+      "verification_rmse_m": 0.30363152269475047
+    },
+    {
+      "i": [
+        "aerial06",
+        1
+      ],
+      "j": [
+        "aerial07",
+        1
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.009906518080954666,
+        "rotation_deg": 0.03863649866882831
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.036004926178301096,
+        "rotation_deg": 0.1334434615582047
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.0011018719777453612,
+        0.03150315362925937,
+        -0.017398042954908988
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.030793327036118506,
+        "rotation_deg": 0.11483815879951967
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.9236274242010379,
+      "verification_rmse_m": 0.2624191163815913
+    },
+    {
+      "i": [
+        "aerial06",
+        3
+      ],
+      "j": [
+        "aerial07",
+        2
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.01170580474726655,
+        "rotation_deg": 0.029171183358627478
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.037532154982579134,
+        "rotation_deg": 0.1234586677979894
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.007941961440145917,
+        0.03089611356658395,
+        -0.01977417691333727
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.030161887544653494,
+        "rotation_deg": 0.10935130415405196
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.8679054890238562,
+      "verification_rmse_m": 0.25949699592263015
+    },
+    {
+      "i": [
+        "aerial06",
+        3
+      ],
+      "j": [
+        "aerial07",
+        3
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.006482606208707527,
+        "rotation_deg": 0.03177517985001665
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.03376733539469396,
+        "rotation_deg": 0.12427491082141628
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.006301550576033321,
+        0.025240196400346804,
+        -0.021528025586844635
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.030168928830991905,
+        "rotation_deg": 0.10825061812234012
+      },
+      "canonicalization_max_abs_error": 4.440892098500626e-16,
+      "verification_overlap": 0.9026331321516288,
+      "verification_rmse_m": 0.24819104218024698
+    },
+    {
+      "i": [
+        "aerial06",
+        3
+      ],
+      "j": [
+        "aerial07",
+        4
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.0032168312696313852,
+        "rotation_deg": 0.03315315830419251
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.037514157308519806,
+        "rotation_deg": 0.12095500883167797
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.021629364269841744,
+        0.022630199307002385,
+        -0.020672606975800534
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.03621604308480711,
+        "rotation_deg": 0.10585359799050173
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.8952342128668841,
+      "verification_rmse_m": 0.23747615358589322
+    },
+    {
+      "i": [
+        "aerial06",
+        5
+      ],
+      "j": [
+        "aerial07",
+        5
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.014080464786639822,
+        "rotation_deg": 0.0552237053280851
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.036627290199418225,
+        "rotation_deg": 0.12713784218501673
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.03221974087153967,
+        0.01741479253590228,
+        0.0004143506419040932
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.03399055550078011,
+        "rotation_deg": 0.10399765247164822
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.885460158404818,
+      "verification_rmse_m": 0.2509946456495189
+    },
+    {
+      "i": [
+        "aerial06",
+        5
+      ],
+      "j": [
+        "aerial07",
+        6
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.014368664497604725,
+        "rotation_deg": 0.04632839061742941
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.045047566850786105,
+        "rotation_deg": 0.11352282031858743
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.03131342709282592,
+        0.025796257343500884,
+        0.0195781937355477
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.040713337644392084,
+        "rotation_deg": 0.103872501666298
+      },
+      "canonicalization_max_abs_error": 4.440892098500626e-16,
+      "verification_overlap": 0.8858017662390243,
+      "verification_rmse_m": 0.23597567328095817
+    },
+    {
+      "i": [
+        "aerial06",
+        6
+      ],
+      "j": [
+        "aerial07",
+        7
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.015030622623258525,
+        "rotation_deg": 0.047756827062397374
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.05980638847223338,
+        "rotation_deg": 0.10086700967368473
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.032805432180168737,
+        0.03451667512381107,
+        0.036182963670235324
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.05310017281326459,
+        "rotation_deg": 0.10195689233354271
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.9171911944117552,
+      "verification_rmse_m": 0.24106359110352044
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        8
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.015388622769339938,
+        "rotation_deg": 0.04553234595576175
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.07185460551907043,
+        "rotation_deg": 0.09240827866234634
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.026745082928385955,
+        0.040283937764982625,
+        0.053150627763017155
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.06848708442397118,
+        "rotation_deg": 0.10013379160852016
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.9032782369146005,
+      "verification_rmse_m": 0.242776640318308
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        10
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.014195376113236974,
+        "rotation_deg": 0.04968278162921204
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.09579700780502656,
+        "rotation_deg": 0.09159012631834387
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.024300443838086494,
+        0.05334611807190015,
+        0.0757677162142869
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.09045352820647914,
+        "rotation_deg": 0.09633495161801876
+      },
+      "canonicalization_max_abs_error": 8.881784197001252e-16,
+      "verification_overlap": 0.802893463691923,
+      "verification_rmse_m": 0.23630992454768296
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        13
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.018137525454972863,
+        "rotation_deg": 0.048840929927013624
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.12554049108753712,
+        "rotation_deg": 0.08265619002814423
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.001023637004578859,
+        0.05753333668690175,
+        0.11157635161383439
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.13931119817466128,
+        "rotation_deg": 0.08542484001933372
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.5556887409747292,
+      "verification_rmse_m": 0.2323157979105041
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        14
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.023339650120821995,
+        "rotation_deg": 0.045600989647682194
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.1328493385895243,
+        "rotation_deg": 0.07505761892521083
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.006020737568690038,
+        0.0645056764538694,
+        0.11598152951236784
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.15546166361157138,
+        "rotation_deg": 0.08226835110620642
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.45810554069248965,
+      "verification_rmse_m": 0.23249929475266065
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        32
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.01682753204266256,
+        "rotation_deg": 0.06809860354942607
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.024663317371511735,
+        "rotation_deg": 0.09471475076843706
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.012070407493148139,
+        0.016939740866149577,
+        -0.01325253432763418
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.018163317252552862,
+        "rotation_deg": 0.12430739365755025
+      },
+      "canonicalization_max_abs_error": 7.105427357601002e-15,
+      "verification_overlap": 0.40165018605429437,
+      "verification_rmse_m": 0.23214741324490684
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        33
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.006701366271963303,
+        "rotation_deg": 0.06941207304114284
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.026084232930584504,
+        "rotation_deg": 0.0921758119028562
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.01680608164574693,
+        0.019196926339105858,
+        -0.005424098673895372
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.02260952700544702,
+        "rotation_deg": 0.12728257840083987
+      },
+      "canonicalization_max_abs_error": 3.552713678800501e-15,
+      "verification_overlap": 0.4357928543964536,
+      "verification_rmse_m": 0.23211078891497788
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        39
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.03610825016375107,
+        "rotation_deg": 0.05496417346564754
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.021372689036755304,
+        "rotation_deg": 0.09249962690747758
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.01488858286539596,
+        0.012864769904339823,
+        -0.008343837979756241
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.03129481305706363,
+        "rotation_deg": 0.11987410966098111
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.43789484794113653,
+      "verification_rmse_m": 0.23124790900076445
+    },
+    {
+      "i": [
+        "aerial06",
+        8
+      ],
+      "j": [
+        "aerial07",
+        9
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.018486164178226155,
+        "rotation_deg": 0.040601272056773684
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.08349037365152163,
+        "rotation_deg": 0.08912808798733418
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.021425366926280276,
+        0.04332380217633158,
+        0.06807822199155211
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.08269725638097143,
+        "rotation_deg": 0.0985830743672174
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.8801117524253961,
+      "verification_rmse_m": 0.24603233557658905
+    },
+    {
+      "i": [
+        "aerial06",
+        8
+      ],
+      "j": [
+        "aerial07",
+        34
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.014939282732908428,
+        "rotation_deg": 0.07000146196090491
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.018516367732337186,
+        "rotation_deg": 0.08668181844678126
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.007300510925190906,
+        0.015823445383546186,
+        -0.006259152532491541
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.010921124958813847,
+        "rotation_deg": 0.12995681283994628
+      },
+      "canonicalization_max_abs_error": 7.105427357601002e-15,
+      "verification_overlap": 0.44485415157700664,
+      "verification_rmse_m": 0.23651601269468317
+    },
+    {
+      "i": [
+        "aerial06",
+        8
+      ],
+      "j": [
+        "aerial07",
+        36
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.03529110411476253,
+        "rotation_deg": 0.06528713639481684
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.021696630148514855,
+        "rotation_deg": 0.08449804253790928
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.01639380079347319,
+        0.012836561539558033,
+        -0.006099978949691387
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.029764940586760397,
+        "rotation_deg": 0.12574641045795243
+      },
+      "canonicalization_max_abs_error": 3.552713678800501e-15,
+      "verification_overlap": 0.4380461241090179,
+      "verification_rmse_m": 0.23662234608139052
+    },
+    {
+      "i": [
+        "aerial06",
+        8
+      ],
+      "j": [
+        "aerial07",
+        37
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.03812209649823182,
+        "rotation_deg": 0.062359028233465605
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.022763895593911062,
+        "rotation_deg": 0.08402749512323467
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.01648843954711765,
+        0.014470826774683587,
+        -0.006076304499318064
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.031353776091549546,
+        "rotation_deg": 0.12235211466358746
+      },
+      "canonicalization_max_abs_error": 7.105427357601002e-15,
+      "verification_overlap": 0.43544623980670494,
+      "verification_rmse_m": 0.23642045893162078
+    },
+    {
+      "i": [
+        "aerial06",
+        23
+      ],
+      "j": [
+        "aerial07",
+        11
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.015098879428765278,
+        "rotation_deg": 0.05110355321158036
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.10904574347871486,
+        "rotation_deg": 0.09368944081262359
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.02029471932135607,
+        0.05796585014103073,
+        0.09010581979145016
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.11727570002731502,
+        "rotation_deg": 0.09379258162573464
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.5138035458208824,
+      "verification_rmse_m": 0.26220306860603365
+    },
+    {
+      "i": [
+        "aerial06",
+        23
+      ],
+      "j": [
+        "aerial07",
+        38
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.029674629712562812,
+        "rotation_deg": 0.05816519636233291
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.019705932627848075,
+        "rotation_deg": 0.08778580127309263
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.015168298387699508,
+        0.012409682683212964,
+        -0.002060651107441247
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.016803850628879832,
+        "rotation_deg": 0.11854717887232087
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.45179634052926104,
+      "verification_rmse_m": 0.24932677963072303
+    },
+    {
+      "i": [
+        "aerial06",
+        27
+      ],
+      "j": [
+        "aerial08",
+        19
+      ],
+      "pair": "aerial06--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.19529374140348624,
+        "rotation_deg": 0.16767850636658946
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.28405998753130546,
+        "rotation_deg": 0.26428913303294943
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.05974902520902958,
+        0.27643456162799396,
+        -0.026534197696914674
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.09945669727925396,
+        "rotation_deg": 0.10683214118382982
+      },
+      "canonicalization_max_abs_error": 7.105427357601002e-15,
+      "verification_overlap": 0.327494896151024,
+      "verification_rmse_m": 0.2935763969538984
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial07",
+        12
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.04496520632772243,
+        "rotation_deg": 0.0770867019137388
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.11159071438283216,
+        "rotation_deg": 0.08759083635392718
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.020676925941771174,
+        0.025803102319855498,
+        0.10657932344362919
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.11994720150405026,
+        "rotation_deg": 0.08656683644596705
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.4730208918176177,
+      "verification_rmse_m": 0.25279678605918804
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        5
+      ],
+      "pair": "aerial06--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.04429637380798149,
+        "rotation_deg": 0.16993705926931743
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.08938602176966377,
+        "rotation_deg": 0.18398215269066762
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.03907418705299648,
+        0.07054304290906543,
+        0.038558369943217485
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.046034290860276696,
+        "rotation_deg": 0.09795056565434265
+      },
+      "canonicalization_max_abs_error": 3.552713678800501e-15,
+      "verification_overlap": 0.3212966519901894,
+      "verification_rmse_m": 0.27357125192581744
+    },
+    {
+      "i": [
+        "aerial06",
+        30
+      ],
+      "j": [
+        "aerial08",
+        22
+      ],
+      "pair": "aerial06--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.06485266536150941,
+        "rotation_deg": 0.054326243490445965
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.13793698992030348,
+        "rotation_deg": 0.11186707394541076
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.03781897164250836,
+        0.13129023243735105,
+        -0.01895292676087834
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.08253350252042051,
+        "rotation_deg": 0.07595134920720048
+      },
+      "canonicalization_max_abs_error": 2.220446049250313e-16,
+      "verification_overlap": 0.5442250672106914,
+      "verification_rmse_m": 0.28134868613370734
+    },
+    {
+      "i": [
+        "aerial06",
+        31
+      ],
+      "j": [
+        "aerial07",
+        35
+      ],
+      "pair": "aerial06--aerial07",
+      "cbs_vs_measurement": {
+        "translation_m": 0.00735166560134735,
+        "rotation_deg": 0.043368757233957986
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.024579234860596443,
+        "rotation_deg": 0.0945684858835768
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.014478645426393655,
+        0.005456942419257871,
+        0.019097889740447016
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.017623021462175727,
+        "rotation_deg": 0.12491265405688838
+      },
+      "canonicalization_max_abs_error": 8.881784197001252e-16,
+      "verification_overlap": 0.6292048695225537,
+      "verification_rmse_m": 0.2559144645483186
+    },
+    {
+      "i": [
+        "aerial07",
+        18
+      ],
+      "j": [
+        "aerial08",
+        16
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.20447793049092897,
+        "rotation_deg": 0.2551017186027822
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.1700939190754388,
+        "rotation_deg": 0.2889069599954017
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.1234166611829437,
+        -0.08975168877061179,
+        0.07513257226450065
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.11352826186065794,
+        "rotation_deg": 0.05092382764114389
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.7046662046662047,
+      "verification_rmse_m": 0.30713278072243033
+    },
+    {
+      "i": [
+        "aerial07",
+        25
+      ],
+      "j": [
+        "aerial08",
+        12
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.13607484412483137,
+        "rotation_deg": 0.1718453713698228
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.028193215741789467,
+        "rotation_deg": 0.16513185344444614
+      },
+      "estimated_j_anchor_error_enu_m": [
+        -0.013055488491232836,
+        -0.024173224770447366,
+        0.006329837201313637
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.11395201029220176,
+        "rotation_deg": 0.013346724732028492
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.6986329619519501,
+      "verification_rmse_m": 0.30154645203533753
+    },
+    {
+      "i": [
+        "aerial07",
+        31
+      ],
+      "j": [
+        "aerial08",
+        11
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.058773367212749755,
+        "rotation_deg": 0.047067379375213415
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.11434160041623363,
+        "rotation_deg": 0.06966870892976702
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.03443060232973494,
+        -6.452337733264812e-05,
+        -0.10903454060646212
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.13328458023051337,
+        "rotation_deg": 0.05303571413776871
+      },
+      "canonicalization_max_abs_error": 7.105427357601002e-15,
+      "verification_overlap": 0.42773696827432445,
+      "verification_rmse_m": 0.2890454264606256
+    },
+    {
+      "i": [
+        "aerial07",
+        32
+      ],
+      "j": [
+        "aerial08",
+        23
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.042803581133057315,
+        "rotation_deg": 0.04483005808472688
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.09360451733860646,
+        "rotation_deg": 0.08014140185871771
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.06277256244769092,
+        0.06439610148470365,
+        -0.025972161694998164
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.07367724383201937,
+        "rotation_deg": 0.06439279037020258
+      },
+      "canonicalization_max_abs_error": 3.552713678800501e-15,
+      "verification_overlap": 0.730922462769221,
+      "verification_rmse_m": 0.27511924442172264
+    },
+    {
+      "i": [
+        "aerial07",
+        33
+      ],
+      "j": [
+        "aerial08",
+        7
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.012332737808178682,
+        "rotation_deg": 0.014425385343320917
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.03594825622681203,
+        "rotation_deg": 0.10286695043807605
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.027870927362229736,
+        0.003088088841593617,
+        -0.02249338216090635
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.047421115327956814,
+        "rotation_deg": 0.09328387235338341
+      },
+      "canonicalization_max_abs_error": 3.552713678800501e-15,
+      "verification_overlap": 0.3838142052608168,
+      "verification_rmse_m": 0.29522127580162805
+    },
+    {
+      "i": [
+        "aerial07",
+        33
+      ],
+      "j": [
+        "aerial08",
+        9
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.04709575203464455,
+        "rotation_deg": 0.08405902036300171
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.11263807845954477,
+        "rotation_deg": 0.14896522925839809
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.08361954182380771,
+        -0.02399986876783089,
+        -0.07154799258677613
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.08972062448536912,
+        "rotation_deg": 0.07936279950774695
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.37754917408644384,
+      "verification_rmse_m": 0.28793264492972354
+    },
+    {
+      "i": [
+        "aerial07",
+        33
+      ],
+      "j": [
+        "aerial08",
+        24
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.06379037787216953,
+        "rotation_deg": 0.03859208189320191
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.11353558553920064,
+        "rotation_deg": 0.08597821191896901
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.07607784652628169,
+        0.08391132324550199,
+        -0.00783455696670643
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.06479608299317367,
+        "rotation_deg": 0.07051967952904706
+      },
+      "canonicalization_max_abs_error": 2.220446049250313e-16,
+      "verification_overlap": 0.731561131173619,
+      "verification_rmse_m": 0.27570613595041343
+    },
+    {
+      "i": [
+        "aerial07",
+        33
+      ],
+      "j": [
+        "aerial08",
+        25
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.05982131174504933,
+        "rotation_deg": 0.04071913516274567
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.10807549990101012,
+        "rotation_deg": 0.0858060105271708
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.06628939600128803,
+        0.08482897042279092,
+        -0.009490807851406657
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.06273198038032242,
+        "rotation_deg": 0.07209183896850732
+      },
+      "canonicalization_max_abs_error": 4.440892098500626e-16,
+      "verification_overlap": 0.7404497855112673,
+      "verification_rmse_m": 0.27475349507113545
+    },
+    {
+      "i": [
+        "aerial07",
+        33
+      ],
+      "j": [
+        "aerial08",
+        28
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.049147353574653725,
+        "rotation_deg": 0.04343711896695476
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.0961492638585727,
+        "rotation_deg": 0.08635201914901752
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.04291039168076338,
+        0.08544669717352349,
+        -0.010111437508750765
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.0617960097686279,
+        "rotation_deg": 0.07285406804444966
+      },
+      "canonicalization_max_abs_error": 3.552713678800501e-15,
+      "verification_overlap": 0.73597907132787,
+      "verification_rmse_m": 0.2734225153892526
+    },
+    {
+      "i": [
+        "aerial07",
+        35
+      ],
+      "j": [
+        "aerial08",
+        4
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.04509340251051557,
+        "rotation_deg": 0.12578754236299328
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.05193851857363486,
+        "rotation_deg": 0.1403807964101634
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.013661312330434328,
+        0.050088826630926064,
+        -0.0014448888504468016
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.009284303767998305,
+        "rotation_deg": 0.09115455032957362
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.30472846585507957,
+      "verification_rmse_m": 0.2903246143381618
+    },
+    {
+      "i": [
+        "aerial07",
+        35
+      ],
+      "j": [
+        "aerial08",
+        27
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.050386989105229006,
+        "rotation_deg": 0.04305672373116895
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.10031437657212507,
+        "rotation_deg": 0.09210514744698231
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.045842132932506274,
+        0.08873696674700682,
+        -0.009339364421327545
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.0655087538981253,
+        "rotation_deg": 0.07257157780219615
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.7891125693784306,
+      "verification_rmse_m": 0.2735711130554314
+    },
+    {
+      "i": [
+        "aerial07",
+        36
+      ],
+      "j": [
+        "aerial08",
+        21
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.04328247640659573,
+        "rotation_deg": 0.05537477779877714
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.10513867921113164,
+        "rotation_deg": 0.08229387591828868
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.05075410848183992,
+        0.06782275639191937,
+        -0.06227548517461301
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.09399534457390786,
+        "rotation_deg": 0.05911441448231398
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.6233438270175026,
+      "verification_rmse_m": 0.28043884932639035
+    },
+    {
+      "i": [
+        "aerial07",
+        36
+      ],
+      "j": [
+        "aerial08",
+        26
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.05090453551034898,
+        "rotation_deg": 0.040961618598879375
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.10200144524006031,
+        "rotation_deg": 0.09188744746130707
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.04937493142440985,
+        0.0889255252298824,
+        -0.00765910833617145
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.06507488372578546,
+        "rotation_deg": 0.06964541215788254
+      },
+      "canonicalization_max_abs_error": 0.0,
+      "verification_overlap": 0.7738908530263963,
+      "verification_rmse_m": 0.27443004057094406
+    },
+    {
+      "i": [
+        "aerial07",
+        38
+      ],
+      "j": [
+        "aerial08",
+        6
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.03271043601751327,
+        "rotation_deg": 0.02845097946099024
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.04487951617604326,
+        "rotation_deg": 0.08402215994203427
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.00815739647092073,
+        0.044122561349453804,
+        -0.000909634576746754
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.022175734067909,
+        "rotation_deg": 0.08420437669732274
+      },
+      "canonicalization_max_abs_error": 1.7763568394002505e-15,
+      "verification_overlap": 0.3477742433332956,
+      "verification_rmse_m": 0.29532682322670367
+    },
+    {
+      "i": [
+        "aerial07",
+        38
+      ],
+      "j": [
+        "aerial08",
+        20
+      ],
+      "pair": "aerial07--aerial08",
+      "cbs_vs_measurement": {
+        "translation_m": 0.06592564673386515,
+        "rotation_deg": 0.08449253209617923
+      },
+      "measurement_vs_position_aligned_odometry": {
+        "translation_m": 0.12425820330679664,
+        "rotation_deg": 0.10991279232308031
+      },
+      "estimated_j_anchor_error_enu_m": [
+        0.023811957406437045,
+        0.08948403523976367,
+        -0.08285951490698551
+      ],
+      "optimized_vs_position_aligned_odometry": {
+        "translation_m": 0.10696158894550399,
+        "rotation_deg": 0.053271143895934625
+      },
+      "canonicalization_max_abs_error": 7.105427357601002e-15,
+      "verification_overlap": 0.4876967371165725,
+      "verification_rmse_m": 0.28246672100443443
+    }
+  ],
+  "max_canonicalization_error": 1.4210854715202004e-14,
+  "input_sha256": {
+    "report/report.json": "e857ec3d6c4320ff244d5e47e36f5f3b457787dddf0f81baa16342787a02b2b2",
+    "prepared-aerial05/store/keyframes.jsonl": "d6c4f4c0ba6784e6d3ed3594465f995a12e9f203ae47251e58b5b9ee39853a8d",
+    "prepared-aerial06/store/keyframes.jsonl": "35c6b0358d9233882785db069d51c5b7fb85cd44026f5f5aba78c225335a1671",
+    "prepared-aerial07/store/keyframes.jsonl": "9ac053e926261ce0e8aa9b0f276b1d08198fd9bd6ba20db6fb2ad29a2b7dc902",
+    "prepared-aerial08/store/keyframes.jsonl": "bc9c615dc090ea657d5f5de32995a5061c25fed53aba92b9c6ffdd03d7acc6d1",
+    "dpgo/poses.jsonl": "59a8b1839270dc0a4095f37f975747d5da2379a6d46a7b3cca782a55a0ac9e07",
+    "dpgo/constraints.jsonl": "3b637f191c2f49a06a9955f5241ef28cc65ffd2c9fe60bf58205a7c236bccee4",
+    "report/evo/cbs/aerial05-reference-matched.tum": "46ea37b2b39142540290c05b49cd08fb0ca2882cee6c5930032ab24f8290f68d",
+    "report/evo/cbs/aerial05-estimate-aligned.tum": "7293e7f275f00bdbb1ad0087ec2a545200e72d604e35576bdf1992169be10d21",
+    "report/evo/cbs-individual/aerial05-estimate-aligned.tum": "049d76717fdd409e845824282dbb88646a2da7e0f47ef180eea2857393674c63",
+    "report/evo/raw/aerial05-estimate-aligned.tum": "68fe1ffaa873fe41fa9fe5e886d12bd313aa4740b2f23dfa6a71354417ad51be",
+    "report/evo/cbs/aerial06-reference-matched.tum": "a753b5b801139f0be355eddb4c818328ba7c7cc4eb4cc6217d36b13a3e7378b8",
+    "report/evo/cbs/aerial06-estimate-aligned.tum": "92c1efefb30495064360741496afff12b80377a015e21208dddb7e3a3dc49c69",
+    "report/evo/cbs-individual/aerial06-estimate-aligned.tum": "e8edcecc85ad77acf548d7bc7c9e299162bd2950ae76bc9d2bf20eacb81b4de6",
+    "report/evo/raw/aerial06-estimate-aligned.tum": "86c2729f5acb965dd6d8f852c3e5c84c0f293996ffb0d607ff9a9afd512eb947",
+    "report/evo/cbs/aerial07-reference-matched.tum": "d72df5a1b9c6885e54580862ba335c9e6f7f592dec6fdd0fd74504bf52f20a1e",
+    "report/evo/cbs/aerial07-estimate-aligned.tum": "06d5eb6a6d66f9eab89c6e7b17bf4ee9693892e791c8891e3119d659c2703579",
+    "report/evo/cbs-individual/aerial07-estimate-aligned.tum": "343815f1aa649a749f5fa5e2990d7f37ff6d10c3d68895befdaef17256c35faa",
+    "report/evo/raw/aerial07-estimate-aligned.tum": "5041f52669d647f35df6d1c890ef3929ffedfd834fdb3aeddac4311b722b4a28",
+    "report/evo/cbs/aerial08-reference-matched.tum": "e08439560dad587a58304717125f516cb4d8ab411511498a848f3f573a24d46a",
+    "report/evo/cbs/aerial08-estimate-aligned.tum": "04d3c7a668f05bcdfa11eb1c404ec225d4b609a495a2fe79fa7a1b44b8563b8a",
+    "report/evo/cbs-individual/aerial08-estimate-aligned.tum": "830b5f6adf9d6dcd7f965c0f68702599458d000060233c42da1add5b482c16e8",
+    "report/evo/raw/aerial08-estimate-aligned.tum": "8483bc025d5dd195906b70940f08b46e303bfa25ae872a43cd27a2e9c78b22b4"
+  }
+}

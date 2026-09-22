@@ -1,0 +1,1859 @@
+{
+  "started_utc": "2026-09-21T10:20:44Z",
+  "finished_utc": "2026-09-21T10:55:38Z",
+  "resources": "148: no CPU, memory, or GPU quotas; six concurrent 1x frontends",
+  "upstream_commit": "6506f46f1947b4ef86cfba402f11f10a6ef520ee",
+  "processing_timing_scope": "Native timed undistortion, LiDAR update, map insertion, and area snapshot/export; excludes input synchronization and ROS publication",
+  "estimator_parity": {
+    "ComputeTensorVote": "63bc4dc9585f978a922ea95d01884c135f1fc21a8c938b5ffbcdeab4c0e3d0c3",
+    "ComputeTensorEigen": "55dc7a6347b044f58ea3be963443bfd7c1f4b5e23e30755b2b8f6a3ee1fad826",
+    "TensorVotePass1": "206f61b884cdd62f0edc752fdc485069607aed6177311638db9e3ef66d971319",
+    "TensorVotePass2": "46641368121fc8009b41269e7777b88edbf86bab293cc2c48845268e02d8c543",
+    "MapIncremental": "dcf9f056ac5d447ec7b6a9f18d74601e164b5e65a23de8b1481b469569249d47",
+    "TensorRegistration": "e09f6cf730dcae6046060b59fc967644af5fd0b40bda64f9d32c00bc91ac1d77"
+  },
+  "frozen_sources_verified": true,
+  "groups": {
+    "S3E_Laboratory_4": {
+      "status": "failed",
+      "stage": "failed",
+      "error": "ValueError('One or more frontends failed; see per-robot results')",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "error": null,
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Alpha",
+            "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 30360,
+            "finite": true,
+            "path_length_m": 294.38877137851006,
+            "max_pose_step_m": 0.2739258502547244,
+            "first_pose_stamp_ns": 1662377759972807835,
+            "last_pose_stamp_ns": 1662378134297235525,
+            "analytics_messages": 3286,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 392.735126546002
+          },
+          "native_poses": 3707,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 38.43051713370269,
+          "processing_p95_ms": 108.8873996865004,
+          "processing_max_ms": 170.8865170367062,
+          "snapshot_max_ms": 16.378256026655436,
+          "final_map_points": 85321,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.4758134917022168,
+            "max_successful_update_gap_s": 0.299974143,
+            "native_poses": 3707,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 415.30859375,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Alpha/velodyne_points",
+              "source_messages": 3817,
+              "last_record_ns": 1662378134290818048,
+              "last_header_ns": 1662378134290818048
+            },
+            "imu": {
+              "topic": "/Alpha/imu/data",
+              "source_messages": 38164,
+              "last_record_ns": 1662378134307656110,
+              "last_header_ns": 1662378134307656110
+            },
+            "native_last_scan_end_ns": 1662378134290621184,
+            "tail_shortfall_s": 0.000196864,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 3707
+          },
+          "artifact_validation": {
+            "native_updates": 3707,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 38,
+            "area_retrievable": 38,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": true,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Alpha/recording/live.rrd",
+            "bytes": 250981362,
+            "sha256": "cde8f1d51c00da6d8a71811db8e2c8c6676e0e1ba7e36a912b1c6388f070f559"
+          },
+          "area_snapshots": 38,
+          "retrievable_snapshots": 38,
+          "max_saved_geometry_history_s": 374.802057472,
+          "selected_area_points_min": 1913,
+          "selected_area_points_max": 81960
+        },
+        "Bob": {
+          "status": "failed",
+          "error": "ValueError(\"Bob failed sensor-only frontend stability: {'full_completion': True, 'finite': True, 'chronological': True, 'max_speed_m_s': 602.1124032765102, 'max_successful_update_gap_s': 28.89787136, 'native_poses': 3771, 'ground_truth_used': False, 'passed': False}\")",
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Bob",
+            "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 36912,
+            "finite": true,
+            "path_length_m": 21482.26963255877,
+            "max_pose_step_m": 14.415435758974454,
+            "first_pose_stamp_ns": 1662377756320047588,
+            "last_pose_stamp_ns": 1662378133442241952,
+            "analytics_messages": 3513,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 391.829267879948
+          },
+          "native_poses": 3771,
+          "failed_updates_after_init": 665,
+          "processing_mean_ms": 6.86281364973836,
+          "processing_p95_ms": 21.0545125300996,
+          "processing_max_ms": 73.11790599487722,
+          "snapshot_max_ms": 22.05103007145226,
+          "final_map_points": 596829,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 602.1124032765102,
+            "max_successful_update_gap_s": 28.89787136,
+            "native_poses": 3771,
+            "ground_truth_used": false,
+            "passed": false
+          },
+          "peak_mapper_rss_mib": 788.02734375,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Bob/velodyne_points",
+              "source_messages": 3803,
+              "last_record_ns": 1662378133386876416,
+              "last_header_ns": 1662378133386876416
+            },
+            "imu": {
+              "topic": "/Bob/imu/data",
+              "source_messages": 38036,
+              "last_record_ns": 1662378133442241952,
+              "last_header_ns": 1662378133442241952
+            },
+            "native_last_scan_end_ns": 1662378133384431617,
+            "tail_shortfall_s": 0.002444799,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 3771
+          },
+          "artifact_validation": {
+            "native_updates": 3771,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 579,
+            "area_retrievable": 579,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": true,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Bob/recording/live.rrd",
+            "bytes": 317577436,
+            "sha256": "06550b5f00ae305400d0323f814f5c323485477e9082da3222970724fecd80c5"
+          },
+          "area_snapshots": 579,
+          "retrievable_snapshots": 579,
+          "max_saved_geometry_history_s": 298.099917312,
+          "selected_area_points_min": 624,
+          "selected_area_points_max": 174702
+        },
+        "Carol": {
+          "status": "complete",
+          "error": null,
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Carol",
+            "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 35935,
+            "finite": true,
+            "path_length_m": 231.25357126755455,
+            "max_pose_step_m": 0.17070848962031762,
+            "first_pose_stamp_ns": 1662377754234814026,
+            "last_pose_stamp_ns": 1662378134645906861,
+            "analytics_messages": 3286,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 391.5201590160141
+          },
+          "native_poses": 3796,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 5.810213434481473,
+          "processing_p95_ms": 17.705435486277565,
+          "processing_max_ms": 51.11534905154258,
+          "snapshot_max_ms": 19.418032024987042,
+          "final_map_points": 211920,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.5238521086829113,
+            "max_successful_update_gap_s": 0.201016448,
+            "native_poses": 3796,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 532.46484375,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Carol/velodyne_points",
+              "source_messages": 3817,
+              "last_record_ns": 1662378134610838272,
+              "last_header_ns": 1662378134610838272
+            },
+            "imu": {
+              "topic": "/Carol/imu/data",
+              "source_messages": 38166,
+              "last_record_ns": 1662378134656425082,
+              "last_header_ns": 1662378134656425082
+            },
+            "native_last_scan_end_ns": 1662378134609689601,
+            "tail_shortfall_s": 0.001148671,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 3796
+          },
+          "artifact_validation": {
+            "native_updates": 3796,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 38,
+            "area_retrievable": 38,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": true,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Carol/recording/live.rrd",
+            "bytes": 307110515,
+            "sha256": "fb871e64443cdde9c4b05b1258e29c55291bfeb1ee9651a626c678d8d134d160"
+          },
+          "area_snapshots": 38,
+          "retrievable_snapshots": 38,
+          "max_saved_geometry_history_s": 380.395262722,
+          "selected_area_points_min": 3673,
+          "selected_area_points_max": 206967
+        }
+      },
+      "audit": {
+        "descriptor_evidence_memberships": 0,
+        "causal_ranked_events": 0
+      },
+      "backend_summary": null,
+      "pcm": null,
+      "registration": null,
+      "report": null,
+      "raw_evaluation_after_failure": {
+        "raw": {},
+        "ground_truth": {
+          "Alpha": {
+            "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/alpha_gt.txt",
+            "available": false,
+            "matched_samples": 0,
+            "pose_samples": 3707,
+            "rows": 2,
+            "first_stamp_ns": 0,
+            "last_stamp_ns": 1000000000,
+            "reason": "no_timestamp_overlap_with_sensor_trajectory"
+          },
+          "Bob": {
+            "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/bob_gt.txt",
+            "available": false,
+            "matched_samples": 0,
+            "pose_samples": 3771,
+            "rows": 2,
+            "first_stamp_ns": 0,
+            "last_stamp_ns": 1000000000,
+            "reason": "no_timestamp_overlap_with_sensor_trajectory"
+          },
+          "Carol": {
+            "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/carol_gt.txt",
+            "available": false,
+            "matched_samples": 0,
+            "pose_samples": 3796,
+            "rows": 2,
+            "first_stamp_ns": 0,
+            "last_stamp_ns": 1000000000,
+            "reason": "no_timestamp_overlap_with_sensor_trajectory"
+          }
+        }
+      },
+      "derived_rerun_verified": false
+    },
+    "S3E_Campus_Road_1": {
+      "status": "failed",
+      "stage": "failed",
+      "error": "ValueError('One or more frontends failed; see per-robot results')",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "error": null,
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Alpha",
+            "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 59297,
+            "finite": true,
+            "path_length_m": 1117.2797158016947,
+            "max_pose_step_m": 0.26303274664439297,
+            "first_pose_stamp_ns": 1660988162474725128,
+            "last_pose_stamp_ns": 1660988873692710102,
+            "analytics_messages": 6280,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 755.3303452689433
+          },
+          "native_poses": 6967,
+          "failed_updates_after_init": 1,
+          "processing_mean_ms": 64.97613810972892,
+          "processing_p95_ms": 117.95779969543219,
+          "processing_max_ms": 260.0802279775962,
+          "snapshot_max_ms": 139.00063000619411,
+          "final_map_points": 2117954,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.963636740141265,
+            "max_successful_update_gap_s": 0.299943937,
+            "native_poses": 6967,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 2194.5390625,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Alpha/velodyne_points",
+              "source_messages": 7155,
+              "last_record_ns": 1660988873655742208,
+              "last_header_ns": 1660988873655742208
+            },
+            "imu": {
+              "topic": "/Alpha/imu/data",
+              "source_messages": 71401,
+              "last_record_ns": 1660988873702131000,
+              "last_header_ns": 1660988873702131000
+            },
+            "native_last_scan_end_ns": 1660988873656993280,
+            "tail_shortfall_s": 0.0,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 6967
+          },
+          "artifact_validation": {
+            "native_updates": 6967,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 71,
+            "area_retrievable": 71,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": true,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Alpha/recording/live.rrd",
+            "bytes": 876082722,
+            "sha256": "dc8cfb1ebca74851b6125955ac1fdf48a481dfcc0e10bc4acbdb898da6088571"
+          },
+          "area_snapshots": 71,
+          "retrievable_snapshots": 71,
+          "max_saved_geometry_history_s": 711.204307201,
+          "selected_area_points_min": 71516,
+          "selected_area_points_max": 583129
+        },
+        "Bob": {
+          "status": "complete",
+          "error": null,
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Bob",
+            "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 72928,
+            "finite": true,
+            "path_length_m": 1118.6278944009152,
+            "max_pose_step_m": 0.2163345162218124,
+            "first_pose_stamp_ns": 1660988163028665183,
+            "last_pose_stamp_ns": 1660989035483473824,
+            "analytics_messages": 7861,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 883.5469805781031
+          },
+          "native_poses": 8595,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 53.791351730278635,
+          "processing_p95_ms": 111.53017965843901,
+          "processing_max_ms": 233.7033610092476,
+          "snapshot_max_ms": 145.83027304615825,
+          "final_map_points": 1765349,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.8047442903450743,
+            "max_successful_update_gap_s": 0.299904769,
+            "native_poses": 8595,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 1914.05078125,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Bob/velodyne_points",
+              "source_messages": 8781,
+              "last_record_ns": 1660989035405908329,
+              "last_header_ns": 1660989035405908329
+            },
+            "imu": {
+              "topic": "/Bob/imu/data",
+              "source_messages": 87802,
+              "last_record_ns": 1660989035493955199,
+              "last_header_ns": 1660989035493955199
+            },
+            "native_last_scan_end_ns": 1660989035406104168,
+            "tail_shortfall_s": 0.0,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 8595
+          },
+          "artifact_validation": {
+            "native_updates": 8595,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 87,
+            "area_retrievable": 87,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": true,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Bob/recording/live.rrd",
+            "bytes": 1016945002,
+            "sha256": "18a234a62293014483e26eaeeb47ed60b9faf8329b1999f802e94af5ec8a586b"
+          },
+          "area_snapshots": 87,
+          "retrievable_snapshots": 87,
+          "max_saved_geometry_history_s": 872.396099328,
+          "selected_area_points_min": 12560,
+          "selected_area_points_max": 750055
+        },
+        "Carol": {
+          "status": "failed",
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/Carol-recording-verification.log')",
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Carol",
+            "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 56986,
+            "finite": true,
+            "path_length_m": 1195.6479268752694,
+            "max_pose_step_m": 0.3863555897247795,
+            "first_pose_stamp_ns": 1660988159147412544,
+            "last_pose_stamp_ns": 1660988864718918682,
+            "analytics_messages": 6112,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 740.627740293974
+          },
+          "native_poses": 6684,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 73.31654875182403,
+          "processing_p95_ms": 126.35031897225416,
+          "processing_max_ms": 383.17931699566543,
+          "snapshot_max_ms": 265.8562259748578,
+          "final_map_points": 3380028,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 3.145271176400193,
+            "max_successful_update_gap_s": 0.401180416,
+            "native_poses": 6684,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 3413.90234375,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Carol/velodyne_points",
+              "source_messages": 7074,
+              "last_record_ns": 1660988864715020422,
+              "last_header_ns": 1660988864715020422
+            },
+            "imu": {
+              "topic": "/Carol/imu/data",
+              "source_messages": 70681,
+              "last_record_ns": 1660988864728339019,
+              "last_header_ns": 1660988864728339019
+            },
+            "native_last_scan_end_ns": 1660988864716269189,
+            "tail_shortfall_s": 0.0,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 6684
+          },
+          "artifact_validation": {
+            "native_updates": 6684,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 73,
+            "area_retrievable": 73,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": false,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Carol/recording/live.rrd",
+            "bytes": 918212253,
+            "sha256": "e285c963240041e5b4e7dcea2740cc530722e29d209230ab6586ccc226aa546f"
+          },
+          "area_snapshots": 73,
+          "retrievable_snapshots": 73,
+          "max_saved_geometry_history_s": 705.593969151,
+          "selected_area_points_min": 71170,
+          "selected_area_points_max": 927615
+        }
+      },
+      "audit": {
+        "descriptor_evidence_memberships": 0,
+        "causal_ranked_events": 0
+      },
+      "backend_summary": null,
+      "pcm": null,
+      "registration": null,
+      "report": null,
+      "raw_evaluation_after_failure": {
+        "raw": {
+          "Alpha": {
+            "samples": 455,
+            "robots": [
+              "Alpha"
+            ],
+            "rmse_m": 1.3688057844340544,
+            "median_m": 1.1615032146750615,
+            "statistics": {
+              "rmse": 1.3688057844340544,
+              "mean": 1.217710446500461,
+              "median": 1.1615032146750615,
+              "std": 0.6251484175648014,
+              "min": 0.2074414664086917,
+              "max": 6.477374025076071,
+              "sse": 852.5013203525579
+            },
+            "per_robot": {
+              "Alpha": {
+                "samples": 455,
+                "statistics": {
+                  "rmse": 1.3688057844340544,
+                  "mean": 1.217710446500461,
+                  "median": 1.1615032146750615,
+                  "std": 0.6251484175648014,
+                  "min": 0.2074414664086917,
+                  "max": 6.477374025076071,
+                  "sse": 852.5013203525579
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                -0.7563075324831552,
+                0.6536298157898086,
+                0.027694407735529232,
+                744069.7616674792
+              ],
+              [
+                -0.6542079090310319,
+                -0.7558338299494377,
+                -0.026967262842378895,
+                2553117.328709067
+              ],
+              [
+                0.003305763222906927,
+                -0.038513444594657664,
+                0.9992526139645415,
+                -0.2814190412702131
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          },
+          "Bob": {
+            "samples": 847,
+            "robots": [
+              "Bob"
+            ],
+            "rmse_m": 3.9172168806752907,
+            "median_m": 2.724119465429577,
+            "statistics": {
+              "rmse": 3.9172168806752907,
+              "mean": 3.2686028515607393,
+              "median": 2.724119465429577,
+              "std": 2.1588940430267676,
+              "min": 0.6120889265793651,
+              "max": 9.017284798952984,
+              "sse": 12996.866112439595
+            },
+            "per_robot": {
+              "Bob": {
+                "samples": 847,
+                "statistics": {
+                  "rmse": 3.9172168806752907,
+                  "mean": 3.2686028515607393,
+                  "median": 2.724119465429577,
+                  "std": 2.1588940430267676,
+                  "min": 0.6120889265793651,
+                  "max": 9.017284798952984,
+                  "sse": 12996.866112439595
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                -0.8790765934338058,
+                0.47664956659693636,
+                -0.00543447695441597,
+                744303.2488540233
+              ],
+              [
+                -0.4766802857052222,
+                -0.8790308953865887,
+                0.00897720311900488,
+                2553080.0951175825
+              ],
+              [
+                -0.0004980931672717096,
+                0.010482157163707595,
+                0.9999449366262086,
+                0.21151234157809623
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          },
+          "Carol": {
+            "samples": 539,
+            "robots": [
+              "Carol"
+            ],
+            "rmse_m": 1.0879020109338824,
+            "median_m": 0.474502590805317,
+            "statistics": {
+              "rmse": 1.0879020109338824,
+              "mean": 0.758885497169163,
+              "median": 0.474502590805317,
+              "std": 0.7795021408439474,
+              "min": 0.05307040934476589,
+              "max": 4.487432935117297,
+              "sse": 637.923093327358
+            },
+            "per_robot": {
+              "Carol": {
+                "samples": 539,
+                "statistics": {
+                  "rmse": 1.0879020109338824,
+                  "mean": 0.758885497169163,
+                  "median": 0.474502590805317,
+                  "std": 0.7795021408439474,
+                  "min": 0.05307040934476589,
+                  "max": 4.487432935117297,
+                  "sse": 637.923093327358
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                0.012199374927673633,
+                0.9996729873302774,
+                0.02247428872142396,
+                744452.7359274846
+              ],
+              [
+                -0.9996094237652613,
+                0.011627279624951884,
+                0.02541271902426955,
+                2553116.5034162183
+              ],
+              [
+                0.02514309390384059,
+                -0.02277553008566538,
+                0.9994243843624486,
+                -0.9706947911611425
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          }
+        },
+        "ground_truth": {
+          "Alpha": {
+            "path": "/data/s3e/S3Ev1/S3E_Campus_Road_1/alpha_gt.txt",
+            "available": true,
+            "matched_samples": 455,
+            "pose_samples": 6967,
+            "rows": 470,
+            "first_stamp_ns": 1660988157745130000,
+            "last_stamp_ns": 1660988806754520000
+          },
+          "Bob": {
+            "path": "/data/s3e/S3Ev1/S3E_Campus_Road_1/bob_gt.txt",
+            "available": true,
+            "matched_samples": 847,
+            "pose_samples": 8595,
+            "rows": 858,
+            "first_stamp_ns": 1660988158344455000,
+            "last_stamp_ns": 1660989035344973300
+          },
+          "Carol": {
+            "path": "/data/s3e/S3Ev1/S3E_Campus_Road_1/carol_gt.txt",
+            "available": true,
+            "matched_samples": 539,
+            "pose_samples": 6684,
+            "rows": 583,
+            "first_stamp_ns": 1660988157745610000,
+            "last_stamp_ns": 1660988856734950000
+          }
+        }
+      },
+      "derived_rerun_verified": false
+    },
+    "S3E_Campus_Road_2": {
+      "status": "failed",
+      "stage": "failed",
+      "error": "ValueError('One or more frontends failed; see per-robot results')",
+      "frontends": {
+        "Alpha": {
+          "status": "failed",
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/Alpha-recording-verification.log')",
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Alpha",
+            "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 128528,
+            "finite": true,
+            "path_length_m": 2045.1303701367558,
+            "max_pose_step_m": 0.23252104166654308,
+            "first_pose_stamp_ns": 1689769591851025104,
+            "last_pose_stamp_ns": 1689771171586935997,
+            "analytics_messages": 13718,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 1595.1717871460132
+          },
+          "native_poses": 15449,
+          "failed_updates_after_init": 1,
+          "processing_mean_ms": 59.51885820451563,
+          "processing_p95_ms": 113.6182665824889,
+          "processing_max_ms": 401.4389798976481,
+          "snapshot_max_ms": 224.5503180893138,
+          "final_map_points": 3181031,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 3.451633910243344,
+            "max_successful_update_gap_s": 0.399854578,
+            "native_poses": 15449,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 2727.953125,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Alpha/velodyne_points",
+              "source_messages": 15810,
+              "last_record_ns": 1689771171531391382,
+              "last_header_ns": 1689771171531391382
+            },
+            "imu": {
+              "topic": "/Alpha/imu/data",
+              "source_messages": 158087,
+              "last_record_ns": 1689771171597439527,
+              "last_header_ns": 1689771171597439527
+            },
+            "native_last_scan_end_ns": 1689771171532642454,
+            "tail_shortfall_s": 0.0,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 15449
+          },
+          "artifact_validation": {
+            "native_updates": 15449,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 157,
+            "area_retrievable": 157,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": false,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Alpha/recording/live.rrd",
+            "bytes": 1855447453,
+            "sha256": "8e805453513e1cfa56ea716729bb5c43a564d358d26027acfc751d0cbe25ba1c"
+          },
+          "area_snapshots": 157,
+          "retrievable_snapshots": 157,
+          "max_saved_geometry_history_s": 1579.70062345,
+          "selected_area_points_min": 16097,
+          "selected_area_points_max": 354233
+        },
+        "Bob": {
+          "status": "failed",
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/Bob-recording-verification.log')",
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Bob",
+            "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 126035,
+            "finite": true,
+            "path_length_m": 2019.7222064282876,
+            "max_pose_step_m": 0.21373342869423168,
+            "first_pose_stamp_ns": 1689769604497836351,
+            "last_pose_stamp_ns": 1689771173605989933,
+            "analytics_messages": 13552,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 1600.1313938410021
+          },
+          "native_poses": 15031,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 64.8096649032637,
+          "processing_p95_ms": 120.53263606503606,
+          "processing_max_ms": 623.2347369659692,
+          "snapshot_max_ms": 375.7506790570915,
+          "final_map_points": 6936366,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.013445191782611,
+            "max_successful_update_gap_s": 0.699256285,
+            "native_poses": 15031,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 5712.71484375,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Bob/velodyne_points",
+              "source_messages": 15703,
+              "last_record_ns": 1689771173570146560,
+              "last_header_ns": 1689771173570146560
+            },
+            "imu": {
+              "topic": "/Bob/imu/data",
+              "source_messages": 157026,
+              "last_record_ns": 1689771173615417003,
+              "last_header_ns": 1689771173615417003
+            },
+            "native_last_scan_end_ns": 1689771173569890920,
+            "tail_shortfall_s": 0.00025564,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 15031
+          },
+          "artifact_validation": {
+            "native_updates": 15031,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 156,
+            "area_retrievable": 156,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": false,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Bob/recording/live.rrd",
+            "bytes": 1858086848,
+            "sha256": "902e540864f4b5c4d9d22827777a868217d558aa878b6c4fc7c0fee3d5e6bdcb"
+          },
+          "area_snapshots": 156,
+          "retrievable_snapshots": 156,
+          "max_saved_geometry_history_s": 1569.091147931,
+          "selected_area_points_min": 22060,
+          "selected_area_points_max": 807881
+        },
+        "Carol": {
+          "status": "failed",
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/Carol-frontend.log')",
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Carol",
+            "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 107145,
+            "finite": true,
+            "path_length_m": 1757.9722430957652,
+            "max_pose_step_m": 0.20158083637938176,
+            "first_pose_stamp_ns": 1689769590855857610,
+            "last_pose_stamp_ns": 1689770933780730247,
+            "analytics_messages": 11755,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": -11,
+            "success": false,
+            "error": "EllipseLIO exited during replay",
+            "wall_s": 1347.2711334530031
+          },
+          "native_poses": 12825,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 69.44925659518601,
+          "processing_p95_ms": 122.93109921738504,
+          "processing_max_ms": 510.87065995670855,
+          "snapshot_max_ms": 273.49523396696895,
+          "final_map_points": 7443313,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": false,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.1395460802588073,
+            "max_successful_update_gap_s": 0.500119441,
+            "native_poses": 12825,
+            "ground_truth_used": false,
+            "passed": false
+          },
+          "peak_mapper_rss_mib": 6841.4296875,
+          "sensor_coverage": null,
+          "artifact_validation": null,
+          "live_rerun_verified": false,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Carol/recording/live.rrd",
+            "bytes": 1694661078,
+            "sha256": "d8451711778665ba44b57dc27429f5bb2b1c2a59520741650a2723ce2b041b32"
+          },
+          "area_snapshots": 133,
+          "retrievable_snapshots": 133,
+          "max_saved_geometry_history_s": 1338.298044918,
+          "selected_area_points_min": 15023,
+          "selected_area_points_max": 634070
+        }
+      },
+      "audit": {
+        "descriptor_evidence_memberships": 0,
+        "causal_ranked_events": 0
+      },
+      "backend_summary": null,
+      "pcm": null,
+      "registration": null,
+      "report": null,
+      "raw_evaluation_after_failure": {
+        "raw": {
+          "Alpha": {
+            "samples": 15447,
+            "robots": [
+              "Alpha"
+            ],
+            "rmse_m": 10.463916824061254,
+            "median_m": 6.529702778103415,
+            "statistics": {
+              "rmse": 10.463916824061254,
+              "mean": 8.696176141368257,
+              "median": 6.529702778103415,
+              "std": 5.819800324682081,
+              "min": 2.0022383831667714,
+              "max": 23.74067437226053,
+              "sse": 1691346.9487325721
+            },
+            "per_robot": {
+              "Alpha": {
+                "samples": 15447,
+                "statistics": {
+                  "rmse": 10.463916824061254,
+                  "mean": 8.696176141368257,
+                  "median": 6.529702778103415,
+                  "std": 5.819800324682081,
+                  "min": 2.0022383831667714,
+                  "max": 23.74067437226053,
+                  "sse": 1691346.9487325721
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                0.0850369328767621,
+                0.9950834591351037,
+                0.05077035948887726,
+                2553526.0913952114
+              ],
+              [
+                0.9963661378873222,
+                -0.08467893965722165,
+                -0.009164957721132188,
+                744499.9920175304
+              ],
+              [
+                -0.004820717624437108,
+                0.051365226897633884,
+                -0.9986683003617065,
+                -0.27293507501377756
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          },
+          "Bob": {
+            "samples": 14949,
+            "robots": [
+              "Bob"
+            ],
+            "rmse_m": 14.639598278059314,
+            "median_m": 8.730661238500385,
+            "statistics": {
+              "rmse": 14.639598278059314,
+              "mean": 12.0775732104532,
+              "median": 8.730661238500385,
+              "std": 8.273455329492048,
+              "min": 2.8120442262801495,
+              "max": 34.00514280735969,
+              "sse": 3203837.3564194674
+            },
+            "per_robot": {
+              "Bob": {
+                "samples": 14949,
+                "statistics": {
+                  "rmse": 14.639598278059314,
+                  "mean": 12.0775732104532,
+                  "median": 8.730661238500385,
+                  "std": 8.273455329492048,
+                  "min": 2.8120442262801495,
+                  "max": 34.00514280735969,
+                  "sse": 3203837.3564194674
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                0.04356495338154061,
+                0.9990489312805032,
+                -0.0018242105545134217,
+                2553527.306197357
+              ],
+              [
+                0.9986021346329262,
+                -0.04360002946952325,
+                -0.029879995596033517,
+                744494.2798303732
+              ],
+              [
+                -0.029931113300818858,
+                -0.000519939938575176,
+                -0.9995518286307286,
+                -1.012416079605623
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          },
+          "Carol": {
+            "samples": 12825,
+            "robots": [
+              "Carol"
+            ],
+            "rmse_m": 1.2766218690396491,
+            "median_m": 0.8883111434665724,
+            "statistics": {
+              "rmse": 1.2766218690396491,
+              "mean": 1.0349365448523382,
+              "median": 0.8883111434665724,
+              "std": 0.7474421346428038,
+              "min": 0.40927076376082094,
+              "max": 5.137991766820999,
+              "sse": 20901.715560244433
+            },
+            "per_robot": {
+              "Carol": {
+                "samples": 12825,
+                "statistics": {
+                  "rmse": 1.2766218690396491,
+                  "mean": 1.0349365448523382,
+                  "median": 0.8883111434665724,
+                  "std": 0.7474421346428038,
+                  "min": 0.40927076376082094,
+                  "max": 5.137991766820999,
+                  "sse": 20901.715560244433
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                0.07791284579663535,
+                0.9966552350785781,
+                -0.024656253777363555,
+                2553530.906766306
+              ],
+              [
+                0.9965605604506979,
+                -0.078557961763263,
+                -0.026376049700294446,
+                744514.8030896966
+              ],
+              [
+                -0.02822477305595866,
+                -0.022516416989960646,
+                -0.9993479740069892,
+                -0.8752086197707962
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          }
+        },
+        "ground_truth": {
+          "Alpha": {
+            "path": "/data/s3e/S3Ev2/S3E_Campus_Road_2/alpha_gt.txt",
+            "available": true,
+            "matched_samples": 15447,
+            "pose_samples": 15449,
+            "rows": 111551,
+            "first_stamp_ns": 1689769590701299428,
+            "last_stamp_ns": 1689771171589842319
+          },
+          "Bob": {
+            "path": "/data/s3e/S3Ev2/S3E_Campus_Road_2/bob_gt.txt",
+            "available": true,
+            "matched_samples": 14949,
+            "pose_samples": 15031,
+            "rows": 94504,
+            "first_stamp_ns": 1689769603349815368,
+            "last_stamp_ns": 1689771173609891414
+          },
+          "Carol": {
+            "path": "/data/s3e/S3Ev2/S3E_Campus_Road_2/carol_gt.txt",
+            "available": true,
+            "matched_samples": 12825,
+            "pose_samples": 12825,
+            "rows": 114279,
+            "first_stamp_ns": 1689769587999793291,
+            "last_stamp_ns": 1689771182589862823
+          }
+        }
+      },
+      "derived_rerun_verified": false
+    },
+    "S3E_Campus_Road_3": {
+      "status": "failed",
+      "stage": "failed",
+      "error": "ValueError('One or more frontends failed; see per-robot results')",
+      "frontends": {
+        "Alpha": {
+          "status": "failed",
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/Alpha-recording-verification.log')",
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Alpha",
+            "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 71243,
+            "finite": true,
+            "path_length_m": 1064.6559999878584,
+            "max_pose_step_m": 0.26011829523301233,
+            "first_pose_stamp_ns": 1689766876757772207,
+            "last_pose_stamp_ns": 1689767769331997632,
+            "analytics_messages": 7556,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 918.0302015910856
+          },
+          "native_poses": 8706,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 57.50805002476157,
+          "processing_p95_ms": 113.03348105866462,
+          "processing_max_ms": 564.9177730083466,
+          "snapshot_max_ms": 469.8852259898558,
+          "final_map_points": 2815842,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.2899827928363576,
+            "max_successful_update_gap_s": 0.602073282,
+            "native_poses": 8706,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 2897.171875,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Alpha/velodyne_points",
+              "source_messages": 8939,
+              "last_record_ns": 1689767769341732025,
+              "last_header_ns": 1689767769341732025
+            },
+            "imu": {
+              "topic": "/Alpha/imu/data",
+              "source_messages": 89378,
+              "last_record_ns": 1689767769345647573,
+              "last_header_ns": 1689767769345647573
+            },
+            "native_last_scan_end_ns": 1689767769243784920,
+            "tail_shortfall_s": 0.097947105,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 8706
+          },
+          "artifact_validation": {
+            "native_updates": 8706,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 89,
+            "area_retrievable": 89,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": false,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Alpha/recording/live.rrd",
+            "bytes": 1037438950,
+            "sha256": "833560fe170e31b3c34f3441fa0a46103d2691ec88c92c6d8493ea3f5cc27e83"
+          },
+          "area_snapshots": 89,
+          "retrievable_snapshots": 89,
+          "max_saved_geometry_history_s": 892.501511192,
+          "selected_area_points_min": 64279,
+          "selected_area_points_max": 1171274
+        },
+        "Bob": {
+          "status": "complete",
+          "error": null,
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Bob",
+            "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 72410,
+            "finite": true,
+            "path_length_m": 1099.5370966761564,
+            "max_pose_step_m": 0.3068051485078388,
+            "first_pose_stamp_ns": 1689766877203755855,
+            "last_pose_stamp_ns": 1689767769329137802,
+            "analytics_messages": 8119,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 913.8938008859986
+          },
+          "native_poses": 8768,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 55.42048379472369,
+          "processing_p95_ms": 107.27134061162354,
+          "processing_max_ms": 395.03613498527557,
+          "snapshot_max_ms": 323.32010194659233,
+          "final_map_points": 1892599,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.0832045151277105,
+            "max_successful_update_gap_s": 0.500319317,
+            "native_poses": 8768,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 2053.6796875,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Bob/velodyne_points",
+              "source_messages": 8924,
+              "last_record_ns": 1689767769280357122,
+              "last_header_ns": 1689767769280357122
+            },
+            "imu": {
+              "topic": "/Bob/imu/data",
+              "source_messages": 89410,
+              "last_record_ns": 1689767769339054584,
+              "last_header_ns": 1689767769339054584
+            },
+            "native_last_scan_end_ns": 1689767769281419265,
+            "tail_shortfall_s": 0.0,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 8768
+          },
+          "artifact_validation": {
+            "native_updates": 8768,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 89,
+            "area_retrievable": 89,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": true,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Bob/recording/live.rrd",
+            "bytes": 1050750235,
+            "sha256": "de04675753791be2a261d50d6496b969dd8e0589c51ffcb6e7b0a916f5b73d03"
+          },
+          "area_snapshots": 89,
+          "retrievable_snapshots": 89,
+          "max_saved_geometry_history_s": 892.101126847,
+          "selected_area_points_min": 12693,
+          "selected_area_points_max": 765897
+        },
+        "Carol": {
+          "status": "failed",
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/Carol-recording-verification.log')",
+          "summary": {
+            "frontend": "ellipselio",
+            "robot": "Carol",
+            "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+            "rate": 1.0,
+            "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+            "start_offset_s": 0.0,
+            "requested_duration": 0.0,
+            "research_export_enabled": false,
+            "odometry_messages": 72931,
+            "finite": true,
+            "path_length_m": 1087.6721506455604,
+            "max_pose_step_m": 0.5498205454409958,
+            "first_pose_stamp_ns": 1689766862955929994,
+            "last_pose_stamp_ns": 1689767769331698894,
+            "analytics_messages": 8164,
+            "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+            "export_complete": null,
+            "native_mapper_returncode": 0,
+            "success": true,
+            "error": null,
+            "wall_s": 918.9509619469754
+          },
+          "native_poses": 8825,
+          "failed_updates_after_init": 0,
+          "processing_mean_ms": 61.92025603833358,
+          "processing_p95_ms": 113.2311228197068,
+          "processing_max_ms": 600.8736580843106,
+          "snapshot_max_ms": 435.8893829630688,
+          "final_map_points": 3054614,
+          "odometry_map_source": "persistent_map",
+          "handovers": 0,
+          "correspondence_ages_measured": false,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 3.0434476931299224,
+            "max_successful_update_gap_s": 0.601912958,
+            "native_poses": 8825,
+            "ground_truth_used": false,
+            "passed": true
+          },
+          "peak_mapper_rss_mib": 3013.6171875,
+          "sensor_coverage": {
+            "lidar": {
+              "topic": "/Carol/velodyne_points",
+              "source_messages": 9079,
+              "last_record_ns": 1689767769339428663,
+              "last_header_ns": 1689767769339428663
+            },
+            "imu": {
+              "topic": "/Carol/imu/data",
+              "source_messages": 90781,
+              "last_record_ns": 1689767769341282129,
+              "last_header_ns": 1689767769341282129
+            },
+            "native_last_scan_end_ns": 1689767769240000337,
+            "tail_shortfall_s": 0.099428326,
+            "full_selected_sensor_tail_reached": true,
+            "tolerance_s": 0.2,
+            "native_pose_count": 8825
+          },
+          "artifact_validation": {
+            "native_updates": 8825,
+            "snapshots": 0,
+            "completed_snapshots": 0,
+            "inspection_tails": 0,
+            "retrievable_snapshots": 0,
+            "finite_chronological": true,
+            "exact_membership": true,
+            "anchor_poses_verified": true,
+            "payload_hashes_verified": true,
+            "area_snapshots": 91,
+            "area_retrievable": 91,
+            "accumulated_area_membership_verified": true,
+            "old_in_area_points_retained": true
+          },
+          "live_rerun_verified": false,
+          "live_rerun": {
+            "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Carol/recording/live.rrd",
+            "bytes": 1128806088,
+            "sha256": "2cbd96fa0783a5e58e99ffa248ce5da7a53b6d9d09861bf285405e5c2660981a"
+          },
+          "area_snapshots": 91,
+          "retrievable_snapshots": 91,
+          "max_saved_geometry_history_s": 906.30024386,
+          "selected_area_points_min": 14560,
+          "selected_area_points_max": 1054055
+        }
+      },
+      "audit": {
+        "descriptor_evidence_memberships": 0,
+        "causal_ranked_events": 0
+      },
+      "backend_summary": null,
+      "pcm": null,
+      "registration": null,
+      "report": null,
+      "raw_evaluation_after_failure": {
+        "raw": {
+          "Alpha": {
+            "samples": 8705,
+            "robots": [
+              "Alpha"
+            ],
+            "rmse_m": 2.228933196318521,
+            "median_m": 1.7428276166140286,
+            "statistics": {
+              "rmse": 2.228933196318521,
+              "mean": 2.00727020134049,
+              "median": 1.7428276166140286,
+              "std": 0.9690250422260542,
+              "min": 0.42989389122487376,
+              "max": 4.5457116317298185,
+              "sse": 43247.68650072934
+            },
+            "per_robot": {
+              "Alpha": {
+                "samples": 8705,
+                "statistics": {
+                  "rmse": 2.228933196318521,
+                  "mean": 2.00727020134049,
+                  "median": 1.7428276166140286,
+                  "std": 0.9690250422260542,
+                  "min": 0.42989389122487376,
+                  "max": 4.5457116317298185,
+                  "sse": 43247.68650072934
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                0.7331025481480093,
+                -0.6797069706160195,
+                -0.02364504165549674,
+                2553053.0142504172
+              ],
+              [
+                -0.6800872852046912,
+                -0.7322951189433129,
+                -0.03500204672176813,
+                744238.2824451282
+              ],
+              [
+                0.006475986551081813,
+                0.04174078183016247,
+                -0.9991074860746451,
+                -1.9075071454159973
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          },
+          "Bob": {
+            "samples": 8741,
+            "robots": [
+              "Bob"
+            ],
+            "rmse_m": 3.2144500876283537,
+            "median_m": 2.341618011055292,
+            "statistics": {
+              "rmse": 3.2144500876283537,
+              "mean": 2.809662460638637,
+              "median": 2.341618011055292,
+              "std": 1.5615653118368034,
+              "min": 0.4130463090005222,
+              "max": 6.2700645221332865,
+              "sse": 90318.03774692923
+            },
+            "per_robot": {
+              "Bob": {
+                "samples": 8741,
+                "statistics": {
+                  "rmse": 3.2144500876283537,
+                  "mean": 2.809662460638637,
+                  "median": 2.341618011055292,
+                  "std": 1.5615653118368034,
+                  "min": 0.4130463090005222,
+                  "max": 6.2700645221332865,
+                  "sse": 90318.03774692923
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                0.6848329618407966,
+                -0.7286393516430104,
+                0.009407954805177414,
+                2553052.981322757
+              ],
+              [
+                -0.7282254735366182,
+                -0.6847957731536672,
+                -0.027247178996002024,
+                744241.6471856292
+              ],
+              [
+                0.02629589452235418,
+                0.011808653950626979,
+                -0.9995844544725292,
+                -2.4240328355000145
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          },
+          "Carol": {
+            "samples": 8825,
+            "robots": [
+              "Carol"
+            ],
+            "rmse_m": 0.9616101225247449,
+            "median_m": 0.652364478872942,
+            "statistics": {
+              "rmse": 0.9616101225247449,
+              "mean": 0.7963595279226547,
+              "median": 0.652364478872942,
+              "std": 0.538985649186378,
+              "min": 0.03802262783936472,
+              "max": 4.223875067505538,
+              "sse": 8160.424794823633
+            },
+            "per_robot": {
+              "Carol": {
+                "samples": 8825,
+                "statistics": {
+                  "rmse": 0.9616101225247449,
+                  "mean": 0.7963595279226547,
+                  "median": 0.652364478872942,
+                  "std": 0.538985649186378,
+                  "min": 0.03802262783936472,
+                  "max": 4.223875067505538,
+                  "sse": 8160.424794823633
+                }
+              }
+            },
+            "alignment_SE3": [
+              [
+                0.8849366537379459,
+                -0.4651500599670861,
+                -0.02285914660926254,
+                2553053.6543699563
+              ],
+              [
+                -0.4651680477711819,
+                -0.885209119359061,
+                0.004847920822704027,
+                744235.9315666275
+              ],
+              [
+                -0.022490135700681417,
+                0.006343241771515672,
+                -0.9997269412594587,
+                -2.0547337490650914
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "scale": 1.0,
+            "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+            "engine": "evo 1.36.5",
+            "association_max_diff_s": 0.05,
+            "limitation": "translation APE only; supplied GT orientations unused; antenna lever arm uncorrected"
+          }
+        },
+        "ground_truth": {
+          "Alpha": {
+            "path": "/data/s3e/S3Ev2/S3E_Campus_Road_3/alpha_gt.txt",
+            "available": true,
+            "matched_samples": 8705,
+            "pose_samples": 8706,
+            "rows": 61352,
+            "first_stamp_ns": 1689766875569802522,
+            "last_stamp_ns": 1689767769349791526
+          },
+          "Bob": {
+            "path": "/data/s3e/S3Ev2/S3E_Campus_Road_3/bob_gt.txt",
+            "available": true,
+            "matched_samples": 8741,
+            "pose_samples": 8768,
+            "rows": 54175,
+            "first_stamp_ns": 1689766875259828329,
+            "last_stamp_ns": 1689767769329849720
+          },
+          "Carol": {
+            "path": "/data/s3e/S3Ev2/S3E_Campus_Road_3/carol_gt.txt",
+            "available": true,
+            "matched_samples": 8825,
+            "pose_samples": 8825,
+            "rows": 63771,
+            "first_stamp_ns": 1689766861539832353,
+            "last_stamp_ns": 1689767769349812269
+          }
+        }
+      },
+      "derived_rerun_verified": false
+    }
+  },
+  "all_bulk_geometry_retained": true
+}

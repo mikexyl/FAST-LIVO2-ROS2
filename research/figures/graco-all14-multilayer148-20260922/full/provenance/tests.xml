@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="46" time="6.538" timestamp="2026-09-22T06:36:37.407361+00:00" hostname="v4rl-server-1"><testcase classname="FAST-LIVO2-ROS2.research.tests.test_multilayer_mapclosures" name="test_native_raw_matches_are_eligible_and_in_map_coordinates" time="0.007" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_multilayer_mapclosures" name="test_joint_index_pose_direction_gravity_and_serialization" time="0.854" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_multilayer_mapclosures" name="test_full_height_control_cannot_rescue_empty_layers" time="0.002" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_multilayer_mapclosures" name="test_failed_terrain_records_empty_layers" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_multilayer_mapclosures" name="test_mixed_gravity_and_unavailable_terrain_rejected" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_multilayer_bev" name="test_sparse_ground_survives_dense_roof_and_vertical_origin_change" time="0.191" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_multilayer_bev" name="test_layer_boundaries_are_disjoint_and_missing_support_is_not_fabricated" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_multilayer_bev" name="test_narrow_or_nonfinite_ground_is_rejected" time="0.020" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_ransac" name="test_recovers_shared_rigid_pose_amid_large_bad_layer_and_reversed_endpoints" time="0.557" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_ransac" name="test_repeated_height_features_do_not_inflate_support_and_full_control_is_separate" time="0.356" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_ransac" name="test_many_to_one_support_and_strict_distance_boundary" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_ransac" name="test_empty_nonfinite_and_degenerate_inputs" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_ransac" name="test_proper_rotation_no_scale_and_final_support_is_rechecked" time="0.123" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_ransac" name="test_more_than_five_unique_inliers_gate_is_strict" time="0.102" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_verification" name="test_lift_preserves_metric_level_pose_and_reverse_endpoints" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_verification" name="test_invalid_planar_seed_is_rejected[bad0]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_verification" name="test_invalid_planar_seed_is_rejected[bad1]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_verification" name="test_invalid_planar_seed_is_rejected[bad2]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_verification" name="test_invalid_planar_seed_is_rejected[bad3]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_joint_bev_verification" name="test_invalid_planar_seed_is_rejected[bad4]" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_vertical_initialization" name="test_height_with_tilt_yaw_translation_and_reverse[-17.0]" time="0.007" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_vertical_initialization" name="test_height_with_tilt_yaw_translation_and_reverse[0.0]" time="0.004" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_vertical_initialization" name="test_height_with_tilt_yaw_translation_and_reverse[12.5]" time="0.006" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_vertical_initialization" name="test_missing_geometry_or_horizontal_support_keeps_seed[source0]" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_vertical_initialization" name="test_missing_geometry_or_horizontal_support_keeps_seed[source1]" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_vertical_initialization" name="test_missing_geometry_or_horizontal_support_keeps_seed[source2]" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_vertical_initialization" name="test_one_point_and_invalid_parameters_are_safe" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_vertical_initialization" name="test_runtime_wiring_preserves_disabled_seed_and_requires_provenance" time="0.001"><failure message="AttributeError: 'MegaLocMapClosures' object has no attribute 'multilayer'">monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x75e63db6ccd0&gt;
+
+    def test_runtime_wiring_preserves_disabled_seed_and_requires_provenance(monkeypatch):
+        from s3e_pipeline import mapclosures as module
+        from s3e_pipeline.backends import pack_array
+        backend=object.__new__(module.MegaLocMapClosures)
+        backend.visual_enabled=False;backend.name='mapclosures';backend.options={'inliers_threshold':5}
+        backend.cfg={'registration':{}};backend.geometry_cache=None
+        f=dict(ground=np.eye(4),xy=np.zeros((0,2)),bits=np.zeros((0,32),dtype=np.uint8))
+        descriptor=dict(mapclosures={k:pack_array(v) for k,v in f.items()},
+                        projection_alignment={'projection':'orthographic gravity-horizontal'})
+        source=scene();target=source+[0,0,12]
+        q=dict(descriptor=descriptor,cloud=target);c=dict(descriptor=descriptor,cloud=source)
+        hypothesis=dict(valid_pose=True,inliers=8,T_i_j=np.eye(4).tolist())
+        seen=[]
+        def refine(t,s,seed,*_):seen.append(seed.copy());return dict(accepted=False,reason='sentinel')
+        monkeypatch.setattr(module,'refine',refine)
+&gt;       result=backend.verify(q,c,{'mapclosures_hypothesis':hypothesis})
+
+FAST-LIVO2-ROS2/research/tests/test_vertical_initialization.py:68: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;s3e_pipeline.mapclosures.MegaLocMapClosures object at 0x75e63dbb1660&gt;
+query = {'descriptor': {'mapclosures': {'ground': 'k05VTVBZAQB2AHsnZGVzY3InOiAnPGY4JywgJ2ZvcnRyYW5fb3JkZXInOiBGYWxzZSwgJ3NoYXB...379729, 12.21983765],
+       [-1.94323914,  4.92275848, 12.040158  ],
+       [-8.29677712, -7.95201781, 11.59205633]])}
+candidate = {'descriptor': {'mapclosures': {'ground': 'k05VTVBZAQB2AHsnZGVzY3InOiAnPGY4JywgJ2ZvcnRyYW5fb3JkZXInOiBGYWxzZSwgJ3NoYXB...379729,  0.21983765],
+       [-1.94323914,  4.92275848,  0.040158  ],
+       [-8.29677712, -7.95201781, -0.40794367]])}
+proposal = {'mapclosures_hypothesis': {'valid_pose': True, 'inliers': 8, 'T_i_j': [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], [0.0, 0.0, 0.0, 1.0]]}}
+
+    def verify(self,query,candidate,proposal=None):
+        qv,qf=self.decode(query['descriptor']);cv,cf=self.decode(candidate['descriptor'])
+        proposal=proposal or {};sources=proposal.get('sources',[])
+        h=proposal.get('mapclosures_hypothesis')
+        # Preserve the HBST database hypothesis. Visual-only proposals use a
+        # two-map native HBST match, without a LiDAR retrieval gate on MegaLoc.
+        if h is None or not self.native_pass(h):
+            h=(self.multilayer.pair(query['descriptor'],candidate['descriptor']) if self.multilayer is not None else
+               native_result(self.engine.pair(qf,cf)))
+        diagnostics=dict(backend=self.name,visual_similarity=float(qv@cv) if self.visual_enabled else None,retrieval_sources=sources,
+            selected_branches=proposal.get('selected_branches',[]),
+            native=dict(method='MapClosures',hypothesis=h),pose_initializer='MapClosures density-map RANSAC')
+&gt;       if self.multilayer is not None:
+E       AttributeError: 'MegaLocMapClosures' object has no attribute 'multilayer'
+
+FAST-LIVO2-ROS2/research/s3e_pipeline/mapclosures.py:95: AttributeError</failure></testcase><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_native_pose_direction_ground_frames_and_causal_filter" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_independent_lidar_retrieval_despite_orthogonal_visuals" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_empty_density_features_are_a_reportable_failure" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_independent_budgets_and_union_deduplication" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_native_three_worker_replay_cold_determinism_and_lidar_only[False]" time="2.004" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_native_three_worker_replay_cold_determinism_and_lidar_only[True]" time="1.997" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_mapclosures" name="test_pgo_stage_needs_no_native_backend_and_preserves_inputs" time="0.008"><failure message="FileNotFoundError: [Errno 2] No such file or directory: '/workspace/FAST-LIVO2-ROS2/config/s3e/alpha.yaml'">tmp_path = PosixPath('/workspace/.ros2/graco-all14-multilayer148-20260922/pytest-tmp/test_pgo_stage_needs_no_native0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x75e63d7ead70&gt;
+
+    def test_pgo_stage_needs_no_native_backend_and_preserves_inputs(tmp_path,monkeypatch):
+        import builtins,copy
+        from argparse import Namespace
+        from s3e_pipeline.artifacts import stage_output,stage_path,file_hash
+        from s3e_pipeline.cli import run
+        artifacts={}
+        for robot in CFG['robots']:
+            settings={'robot':robot}
+            with stage_output(tmp_path/'input','keyframes',settings,{},'fixture') as (out,_):
+                (out/'store').mkdir()
+                write_jsonl(out/'store/keyframes.jsonl',[dict(robot_id=robot,keyframe_id=0,stamp_ns=10**9,T_world_body=np.eye(4).tolist())])
+            artifacts[f'keyframes.livo.{robot}']=str(stage_path(tmp_path/'input','keyframes',settings,{},'fixture'))
+        with stage_output(tmp_path/'input','loops',{}, {},'fixture') as (out,_):
+            write_jsonl(out/'constraints.jsonl',[])
+        artifacts['loops.livo.megaloc_mapclosures']=str(stage_path(tmp_path/'input','loops',{}, {},'fixture'))
+        registry=tmp_path/'inputs.json';write_json(registry,dict(artifacts=artifacts))
+        config=copy.deepcopy(CFG);config['output_root']=str(tmp_path/'output')
+        cfg_path=tmp_path/'config.yaml';cfg_path.write_text(yaml.safe_dump(config))
+        before={str(p):(file_hash(p),p.stat().st_mtime_ns) for p in (tmp_path/'input').rglob('*') if p.is_file()}
+        original_import=builtins.__import__
+        def guarded_import(name,*args,**kwargs):
+            if name=='s3e_mapclosures_native':raise AssertionError('PGO imported a descriptor backend')
+            return original_import(name,*args,**kwargs)
+        monkeypatch.setattr(builtins,'__import__',guarded_import)
+        args=Namespace(config=cfg_path,input_run=registry,stage=['pgo'],resume=True)
+&gt;       result=run(args);run(args)
+
+FAST-LIVO2-ROS2/research/tests/test_mapclosures.py:125: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+FAST-LIVO2-ROS2/research/s3e_pipeline/cli.py:120: in run
+    mappings={r:(ellipse_mapping(SOURCE,r) if FRONTEND=='ellipselio' else odometry_mapping(r,overrides.get(r,{}))) for r in robots}
+FAST-LIVO2-ROS2/research/s3e_pipeline/cli.py:120: in &lt;dictcomp&gt;
+    mappings={r:(ellipse_mapping(SOURCE,r) if FRONTEND=='ellipselio' else odometry_mapping(r,overrides.get(r,{}))) for r in robots}
+FAST-LIVO2-ROS2/research/s3e_pipeline/cli.py:31: in odometry_mapping
+    mapping=yaml.safe_load((REPO/f'config/s3e/{robot.lower()}.yaml').read_text())
+/usr/lib/python3.10/pathlib.py:1134: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/workspace/FAST-LIVO2-ROS2/config/s3e/alpha.yaml'), mode = 'r'
+buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+&gt;       return self._accessor.open(self, mode, buffering, encoding, errors,
+                                   newline)
+E       FileNotFoundError: [Errno 2] No such file or directory: '/workspace/FAST-LIVO2-ROS2/config/s3e/alpha.yaml'
+
+/usr/lib/python3.10/pathlib.py:1119: FileNotFoundError</failure></testcase><testcase classname="FAST-LIVO2-ROS2.research.tests.test_cbs_bridge" name="test_pcm_verdicts_and_native_ownership_with_appended_robot" time="0.000" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_cbs_bridge" name="test_local_gauge_and_integer_timestamps" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_cbs_bridge" name="test_reciprocal_covariance_and_incident_only" time="0.001" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_cbs_bridge" name="test_ros_serialization_contract" time="0.047" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_registration_exchange" name="test_pcm_selection_unique_ownership_and_delayed_evidence[robots0]" time="0.008" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_registration_exchange" name="test_pcm_selection_unique_ownership_and_delayed_evidence[robots1]" time="0.008" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_registration_exchange" name="test_invalid_peer_evidence_fails_closed[rejected]" time="0.006" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_registration_exchange" name="test_invalid_peer_evidence_fails_closed[wrong_peer]" time="0.006" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_registration_exchange" name="test_invalid_peer_evidence_fails_closed[configuration]" time="0.006" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_registration_exchange" name="test_invalid_peer_evidence_fails_closed[payload]" time="0.006" /><testcase classname="FAST-LIVO2-ROS2.research.tests.test_registration_exchange" name="test_stale_session_ignored_and_disconnection_times_out" time="0.006" /></testsuite></testsuites>

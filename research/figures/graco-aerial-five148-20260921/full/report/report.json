@@ -1,0 +1,5563 @@
+{
+  "cbs": {
+    "aerial04": {
+      "alignment_SE3": [
+        [
+          0.9997961213405935,
+          0.010339047141205593,
+          -0.017344159147028134,
+          11.408601240411139
+        ],
+        [
+          0.019514444714483152,
+          -0.7153982916897044,
+          0.6984443218288319,
+          -37.06267508190539
+        ],
+        [
+          -0.0051867330556826866,
+          -0.6986403855716213,
+          -0.7154541980088908,
+          23.538558488322547
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.08252233752655594,
+      "per_robot": {
+        "aerial04": {
+          "samples": 2760,
+          "statistics": {
+            "max": 0.3649132256258378,
+            "mean": 0.09302109320402006,
+            "median": 0.08252233752655594,
+            "min": 0.0031372455733515614,
+            "rmse": 0.10673089961589624,
+            "sse": 31.44049841457911,
+            "std": 0.052331263618868674
+          }
+        }
+      },
+      "rmse_m": 0.10673089961589624,
+      "robots": [
+        "aerial04"
+      ],
+      "samples": 2760,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.3649132256258378,
+        "mean": 0.09302109320402006,
+        "median": 0.08252233752655594,
+        "min": 0.0031372455733515614,
+        "rmse": 0.10673089961589624,
+        "sse": 31.44049841457911,
+        "std": 0.052331263618868674
+      }
+    },
+    "aerial05": {
+      "alignment_SE3": [
+        [
+          -0.024279189200882605,
+          0.7102239065868577,
+          -0.7035570506250717,
+          195.52930742891363
+        ],
+        [
+          0.9996795040863402,
+          0.012200764157945333,
+          -0.022181759705898314,
+          136.36538472684137
+        ],
+        [
+          -0.007170082386957877,
+          -0.7038701186060283,
+          -0.7102925073883997,
+          25.57982095286345
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.2639881237056888,
+      "per_robot": {
+        "aerial05": {
+          "samples": 2753,
+          "statistics": {
+            "max": 1.3040314465753986,
+            "mean": 0.7713925882682381,
+            "median": 0.7343353395667439,
+            "min": 0.4147509914696664,
+            "rmse": 0.7847075134516438,
+            "sse": 1695.203472230522,
+            "std": 0.14394219823349438
+          }
+        },
+        "aerial06": {
+          "samples": 3107,
+          "statistics": {
+            "max": 0.4913113102207066,
+            "mean": 0.24652305185831977,
+            "median": 0.24072324060544104,
+            "min": 0.05424455741784489,
+            "rmse": 0.2520001424127084,
+            "sse": 197.30715100811065,
+            "std": 0.05225377190677715
+          }
+        },
+        "aerial07": {
+          "samples": 3713,
+          "statistics": {
+            "max": 0.5365240730429465,
+            "mean": 0.2723241914190895,
+            "median": 0.25590774955829504,
+            "min": 0.14476302544490882,
+            "rmse": 0.2799237426123387,
+            "sse": 290.940661130781,
+            "std": 0.06478299503757108
+          }
+        },
+        "aerial08": {
+          "samples": 2623,
+          "statistics": {
+            "max": 0.5293031098237657,
+            "mean": 0.22619767308565167,
+            "median": 0.1860466323632242,
+            "min": 0.09193241640303139,
+            "rmse": 0.24514165949276634,
+            "sse": 157.62769833308917,
+            "std": 0.09449362893605086
+          }
+        }
+      },
+      "rmse_m": 0.4381263012492908,
+      "robots": [
+        "aerial05",
+        "aerial06",
+        "aerial07",
+        "aerial08"
+      ],
+      "samples": 12196,
+      "scale": 1.0,
+      "statistics": {
+        "max": 1.3040314465753986,
+        "mean": 0.36848533427919,
+        "median": 0.2639881237056888,
+        "min": 0.05424455741784489,
+        "rmse": 0.4381263012492908,
+        "sse": 2341.0789827025033,
+        "std": 0.23700889069302417
+      }
+    }
+  },
+  "cbs_individual": {
+    "aerial04": {
+      "alignment_SE3": [
+        [
+          0.9997961213405935,
+          0.010339047141205593,
+          -0.017344159147028134,
+          11.408601240411139
+        ],
+        [
+          0.019514444714483152,
+          -0.7153982916897044,
+          0.6984443218288319,
+          -37.06267508190539
+        ],
+        [
+          -0.0051867330556826866,
+          -0.6986403855716213,
+          -0.7154541980088908,
+          23.538558488322547
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.08252233752655594,
+      "per_robot": {
+        "aerial04": {
+          "samples": 2760,
+          "statistics": {
+            "max": 0.3649132256258378,
+            "mean": 0.09302109320402006,
+            "median": 0.08252233752655594,
+            "min": 0.0031372455733515614,
+            "rmse": 0.10673089961589624,
+            "sse": 31.44049841457911,
+            "std": 0.052331263618868674
+          }
+        }
+      },
+      "rmse_m": 0.10673089961589624,
+      "robots": [
+        "aerial04"
+      ],
+      "samples": 2760,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.3649132256258378,
+        "mean": 0.09302109320402006,
+        "median": 0.08252233752655594,
+        "min": 0.0031372455733515614,
+        "rmse": 0.10673089961589624,
+        "sse": 31.44049841457911,
+        "std": 0.052331263618868674
+      }
+    },
+    "aerial05": {
+      "alignment_SE3": [
+        [
+          -0.024840646354544568,
+          0.7095259050278768,
+          -0.7042413878657379,
+          194.82854889346874
+        ],
+        [
+          0.9996606657079029,
+          0.012103964800938411,
+          -0.02306615426397534,
+          136.03803481184795
+        ],
+        [
+          -0.007841921009568792,
+          -0.7045753927937523,
+          -0.7095858088662778,
+          25.61002523423778
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.15852240984256546,
+      "per_robot": {
+        "aerial05": {
+          "samples": 2753,
+          "statistics": {
+            "max": 0.5314288382412393,
+            "mean": 0.159192718831125,
+            "median": 0.15852240984256546,
+            "min": 0.0038635492687521264,
+            "rmse": 0.17763210688779563,
+            "sse": 86.86586433903463,
+            "std": 0.07880890602306079
+          }
+        }
+      },
+      "rmse_m": 0.17763210688779563,
+      "robots": [
+        "aerial05"
+      ],
+      "samples": 2753,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.5314288382412393,
+        "mean": 0.159192718831125,
+        "median": 0.15852240984256546,
+        "min": 0.0038635492687521264,
+        "rmse": 0.17763210688779563,
+        "sse": 86.86586433903463,
+        "std": 0.07880890602306079
+      }
+    },
+    "aerial06": {
+      "alignment_SE3": [
+        [
+          -0.025635222333881102,
+          0.709597515588597,
+          -0.7041407538598963,
+          195.66645640634732
+        ],
+        [
+          0.9996359797461458,
+          0.012269668414437218,
+          -0.024028383923259032,
+          136.6531941893014
+        ],
+        [
+          -0.008410907968600945,
+          -0.7045004053281239,
+          -0.7096537433986057,
+          25.429962686956653
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.05162087032146893,
+      "per_robot": {
+        "aerial06": {
+          "samples": 3107,
+          "statistics": {
+            "max": 0.21279849745781407,
+            "mean": 0.05513751347510728,
+            "median": 0.05162087032146893,
+            "min": 0.0022771789192611294,
+            "rmse": 0.06164828430268095,
+            "sse": 11.808187544841202,
+            "std": 0.027574726929682214
+          }
+        }
+      },
+      "rmse_m": 0.06164828430268095,
+      "robots": [
+        "aerial06"
+      ],
+      "samples": 3107,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.21279849745781407,
+        "mean": 0.05513751347510728,
+        "median": 0.05162087032146893,
+        "min": 0.0022771789192611294,
+        "rmse": 0.06164828430268095,
+        "sse": 11.808187544841202,
+        "std": 0.027574726929682214
+      }
+    },
+    "aerial07": {
+      "alignment_SE3": [
+        [
+          -0.02508637367467064,
+          0.708838763100695,
+          -0.7049243092571935,
+          195.71815935245448
+        ],
+        [
+          0.9996601974855631,
+          0.012791494996701513,
+          -0.02271271051358397,
+          136.5411835448541
+        ],
+        [
+          -0.007082613852196336,
+          -0.7052545537475288,
+          -0.7089187901300084,
+          25.32436524072016
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.05688124854245872,
+      "per_robot": {
+        "aerial07": {
+          "samples": 3713,
+          "statistics": {
+            "max": 0.21663198200202038,
+            "mean": 0.06273318638369711,
+            "median": 0.05688124854245872,
+            "min": 0.004658477231487055,
+            "rmse": 0.07127491851878191,
+            "sse": 18.862463318606473,
+            "std": 0.03383284404254716
+          }
+        }
+      },
+      "rmse_m": 0.07127491851878191,
+      "robots": [
+        "aerial07"
+      ],
+      "samples": 3713,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.21663198200202038,
+        "mean": 0.06273318638369711,
+        "median": 0.05688124854245872,
+        "min": 0.004658477231487055,
+        "rmse": 0.07127491851878191,
+        "sse": 18.862463318606473,
+        "std": 0.03383284404254716
+      }
+    },
+    "aerial08": {
+      "alignment_SE3": [
+        [
+          -0.02470413076454598,
+          0.7092796912405172,
+          -0.704494162869306,
+          195.70472766306318
+        ],
+        [
+          0.9996690286899482,
+          0.012466336335598335,
+          -0.022503856035427372,
+          136.47322806051972
+        ],
+        [
+          -0.007179066879734436,
+          -0.7048169337155032,
+          -0.7093529100149041,
+          25.43987049025886
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.08581327479380614,
+      "per_robot": {
+        "aerial08": {
+          "samples": 2623,
+          "statistics": {
+            "max": 0.32723011876422947,
+            "mean": 0.10380862898266141,
+            "median": 0.08581327479380614,
+            "min": 0.005513598474425005,
+            "rmse": 0.1192979297212091,
+            "sse": 37.33052560181565,
+            "std": 0.058785751543266845
+          }
+        }
+      },
+      "rmse_m": 0.1192979297212091,
+      "robots": [
+        "aerial08"
+      ],
+      "samples": 2623,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.32723011876422947,
+        "mean": 0.10380862898266141,
+        "median": 0.08581327479380614,
+        "min": 0.005513598474425005,
+        "rmse": 0.1192979297212091,
+        "sse": 37.33052560181565,
+        "std": 0.058785751543266845
+      }
+    }
+  },
+  "components": {
+    "aerial04": "aerial04",
+    "aerial05": "aerial05",
+    "aerial06": "aerial05",
+    "aerial07": "aerial05",
+    "aerial08": "aerial05"
+  },
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial05",
+      "aerial06",
+      "aerial07",
+      "aerial08",
+      "aerial04"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {
+      "aerial05--aerial07": 10,
+      "aerial06--aerial07": 23,
+      "aerial06--aerial08": 3,
+      "aerial07--aerial08": 15
+    },
+    "measured_components": [
+      [
+        "aerial04"
+      ],
+      [
+        "aerial05",
+        "aerial06",
+        "aerial07",
+        "aerial08"
+      ]
+    ],
+    "output_frames": {
+      "aerial04": [
+        "aerial04"
+      ],
+      "aerial05": [
+        "aerial05"
+      ],
+      "aerial06": [
+        "aerial05"
+      ],
+      "aerial07": [
+        "aerial05"
+      ],
+      "aerial08": [
+        "aerial05"
+      ]
+    }
+  },
+  "dataset": "GRACO aerial 04\u201308: five robots, persistent EllipseLIO and area MapClosures with runtime height initialization",
+  "evaluation_wall_s": 58.90920235402882,
+  "ground_truth": {
+    "aerial04": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1661679675599999904,
+      "last_stamp_ns": 1661679968099999904,
+      "matched_samples": 2760,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-five148-20260921/full/reference/aerial04_gt.txt",
+      "pose_samples": 2760,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 58501
+    },
+    "aerial05": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1661851055674999952,
+      "last_stamp_ns": 1661851352954999923,
+      "matched_samples": 2753,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-five148-20260921/full/reference/aerial05_gt.txt",
+      "pose_samples": 2753,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 59457
+    },
+    "aerial06": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1662002400450000047,
+      "last_stamp_ns": 1662002730615000009,
+      "matched_samples": 3107,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-five148-20260921/full/reference/aerial06_gt.txt",
+      "pose_samples": 3107,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 66034
+    },
+    "aerial07": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1662003002799999952,
+      "last_stamp_ns": 1662003398154999971,
+      "matched_samples": 3713,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-five148-20260921/full/reference/aerial07_gt.txt",
+      "pose_samples": 3713,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 79072
+    },
+    "aerial08": {
+      "available": true,
+      "evaluated_frame": "IMU",
+      "first_stamp_ns": 1662347492045000076,
+      "last_stamp_ns": 1662347771154999971,
+      "matched_samples": 2623,
+      "orientation_used_for_lever_arm": false,
+      "path": "/workspace/.ros2/graco-aerial-five148-20260921/full/reference/aerial08_gt.txt",
+      "pose_samples": 2623,
+      "reference": "GRACO RTK/INS T_Base_Imu in shared base-station ENU coordinates",
+      "reference_frame": "IMU",
+      "rows": 55823
+    }
+  },
+  "map_source": "all stored native accumulated-map representatives in each horizontal area; any earlier scan; not full-resolution raw geometry",
+  "pcm": {
+    "excluded_loops": 2,
+    "proposed_loops": 53,
+    "retained_loops": 51,
+    "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+    "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+    "settings": {
+      "enabled": true,
+      "minimum_clique_size": 2,
+      "probability": 0.99,
+      "timeout_s": 60.0
+    },
+    "verdicts": [
+      {
+        "key_from": 16,
+        "key_to": 20,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 16,
+        "key_to": 25,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 16,
+        "key_to": 18,
+        "reason": "insufficient_support",
+        "retained": false,
+        "robot_from": 0,
+        "robot_to": 3
+      },
+      {
+        "key_from": 19,
+        "key_to": 26,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 19,
+        "key_to": 27,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 19,
+        "key_to": 28,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 19,
+        "key_to": 29,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 20,
+        "key_to": 24,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 20,
+        "key_to": 30,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 20,
+        "key_to": 31,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 26,
+        "key_to": 15,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 0,
+        "robot_to": 2
+      },
+      {
+        "key_from": 28,
+        "key_to": 14,
+        "reason": "insufficient_support",
+        "retained": false,
+        "robot_from": 0,
+        "robot_to": 1
+      },
+      {
+        "key_from": 1,
+        "key_to": 0,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 1,
+        "key_to": 1,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 3,
+        "key_to": 2,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 3,
+        "key_to": 3,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 3,
+        "key_to": 4,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 5,
+        "key_to": 5,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 5,
+        "key_to": 6,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 6,
+        "key_to": 7,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 7,
+        "key_to": 8,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 7,
+        "key_to": 10,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 7,
+        "key_to": 13,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 7,
+        "key_to": 14,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 7,
+        "key_to": 32,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 7,
+        "key_to": 33,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 7,
+        "key_to": 39,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 8,
+        "key_to": 9,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 8,
+        "key_to": 34,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 8,
+        "key_to": 36,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 8,
+        "key_to": 37,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 23,
+        "key_to": 11,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 23,
+        "key_to": 38,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 27,
+        "key_to": 19,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 3
+      },
+      {
+        "key_from": 28,
+        "key_to": 12,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 28,
+        "key_to": 5,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 3
+      },
+      {
+        "key_from": 30,
+        "key_to": 22,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 3
+      },
+      {
+        "key_from": 31,
+        "key_to": 35,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 1,
+        "robot_to": 2
+      },
+      {
+        "key_from": 18,
+        "key_to": 16,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 25,
+        "key_to": 12,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 31,
+        "key_to": 11,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 32,
+        "key_to": 23,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 33,
+        "key_to": 7,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 33,
+        "key_to": 9,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 33,
+        "key_to": 24,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 33,
+        "key_to": 25,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 33,
+        "key_to": 28,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 35,
+        "key_to": 4,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 35,
+        "key_to": 27,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 36,
+        "key_to": 21,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 36,
+        "key_to": 26,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 38,
+        "key_to": 6,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      },
+      {
+        "key_from": 38,
+        "key_to": 20,
+        "reason": "retained_clique",
+        "retained": true,
+        "robot_from": 2,
+        "robot_to": 3
+      }
+    ]
+  },
+  "raw": {
+    "aerial04": {
+      "alignment_SE3": [
+        [
+          0.9997388456357704,
+          0.018088064635488836,
+          -0.01396647574008518,
+          11.483936592065254
+        ],
+        [
+          0.02262853821512418,
+          -0.6981774590077744,
+          0.7155670373848243,
+          -36.96973669679632
+        ],
+        [
+          0.0031921442797356106,
+          -0.7156962048601281,
+          -0.69840443337919,
+          22.500831577082437
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.08252233751273626,
+      "per_robot": {
+        "aerial04": {
+          "samples": 2760,
+          "statistics": {
+            "max": 0.36491322565251505,
+            "mean": 0.09302109320447358,
+            "median": 0.08252233751273626,
+            "min": 0.0031372455629138487,
+            "rmse": 0.10673089961870652,
+            "sse": 31.44049841623481,
+            "std": 0.05233126362379425
+          }
+        }
+      },
+      "rmse_m": 0.10673089961870652,
+      "robots": [
+        "aerial04"
+      ],
+      "samples": 2760,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.36491322565251505,
+        "mean": 0.09302109320447358,
+        "median": 0.08252233751273626,
+        "min": 0.0031372455629138487,
+        "rmse": 0.10673089961870652,
+        "sse": 31.44049841623481,
+        "std": 0.05233126362379425
+      }
+    },
+    "aerial05": {
+      "alignment_SE3": [
+        [
+          -0.014660820456549232,
+          0.7117629860578977,
+          -0.7022666957940457,
+          194.97749616456179
+        ],
+        [
+          0.9998272393097118,
+          0.018461244790428735,
+          -0.0021619378133674004,
+          136.29664079574047
+        ],
+        [
+          0.01142593006550554,
+          -0.7021770674970333,
+          -0.711910678388381,
+          20.370990186495693
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.15868850635259737,
+      "per_robot": {
+        "aerial05": {
+          "samples": 2753,
+          "statistics": {
+            "max": 0.5382407068948346,
+            "mean": 0.15928570228100858,
+            "median": 0.15868850635259737,
+            "min": 0.005303438452617563,
+            "rmse": 0.17750353694010298,
+            "sse": 86.74016298905663,
+            "std": 0.07832988366576582
+          }
+        }
+      },
+      "rmse_m": 0.17750353694010298,
+      "robots": [
+        "aerial05"
+      ],
+      "samples": 2753,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.5382407068948346,
+        "mean": 0.15928570228100858,
+        "median": 0.15868850635259737,
+        "min": 0.005303438452617563,
+        "rmse": 0.17750353694010298,
+        "sse": 86.74016298905663,
+        "std": 0.07832988366576582
+      }
+    },
+    "aerial06": {
+      "alignment_SE3": [
+        [
+          -0.6197893177434732,
+          0.5694526795552306,
+          -0.5399859695940704,
+          47.96593777420205
+        ],
+        [
+          0.7847672835514431,
+          0.44865995419070165,
+          -0.4276032696003235,
+          99.59928887448358
+        ],
+        [
+          -0.0012297472787838881,
+          -0.6887872612446936,
+          -0.7249624793523213,
+          -0.7267924550988596
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.05051740700492503,
+      "per_robot": {
+        "aerial06": {
+          "samples": 3107,
+          "statistics": {
+            "max": 0.20067404117482834,
+            "mean": 0.05465927542050194,
+            "median": 0.05051740700492503,
+            "min": 0.0025925806064919974,
+            "rmse": 0.06176350035876085,
+            "sse": 11.852366037192589,
+            "std": 0.028759234813749226
+          }
+        }
+      },
+      "rmse_m": 0.06176350035876085,
+      "robots": [
+        "aerial06"
+      ],
+      "samples": 3107,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.20067404117482834,
+        "mean": 0.05465927542050194,
+        "median": 0.05051740700492503,
+        "min": 0.0025925806064919974,
+        "rmse": 0.06176350035876085,
+        "sse": 11.852366037192589,
+        "std": 0.028759234813749226
+      }
+    },
+    "aerial07": {
+      "alignment_SE3": [
+        [
+          -0.6272967073887998,
+          0.5801329083267014,
+          -0.5195619785700002,
+          49.781028247324
+        ],
+        [
+          0.7787765877391486,
+          0.46521166300563416,
+          -0.4208148464501935,
+          97.14015095855677
+        ],
+        [
+          -0.0024222486531574328,
+          -0.6685984723882762,
+          -0.7436196712241595,
+          -0.6935494015809311
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.060664284187434234,
+      "per_robot": {
+        "aerial07": {
+          "samples": 3713,
+          "statistics": {
+            "max": 0.21669653258638066,
+            "mean": 0.06658710820029694,
+            "median": 0.060664284187434234,
+            "min": 0.0033084979391942377,
+            "rmse": 0.07454558373811623,
+            "sse": 20.633304575682182,
+            "std": 0.03351419216359612
+          }
+        }
+      },
+      "rmse_m": 0.07454558373811623,
+      "robots": [
+        "aerial07"
+      ],
+      "samples": 3713,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.21669653258638066,
+        "mean": 0.06658710820029694,
+        "median": 0.060664284187434234,
+        "min": 0.0033084979391942377,
+        "rmse": 0.07454558373811623,
+        "sse": 20.633304575682182,
+        "std": 0.03351419216359612
+      }
+    },
+    "aerial08": {
+      "alignment_SE3": [
+        [
+          0.6254800567723526,
+          -0.5411346390343938,
+          0.5620925199797364,
+          47.05793183826647
+        ],
+        [
+          -0.780239707304708,
+          -0.4345719540357416,
+          0.44985910673300883,
+          100.57367531032622
+        ],
+        [
+          0.0008352994181665963,
+          -0.7199448028860775,
+          -0.6940308228545828,
+          -0.7332493189888218
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "alignment_scope": "one shared SE(3) alignment per connected component; scale fixed to 1",
+      "association_max_diff_s": 0.05,
+      "engine": "evo 1.36.5",
+      "limitation": "GRACO RTK/INS T_Base_Imu positions; original timestamps; rigid alignment without scale",
+      "median_m": 0.09484814433549739,
+      "per_robot": {
+        "aerial08": {
+          "samples": 2623,
+          "statistics": {
+            "max": 0.35057401048695247,
+            "mean": 0.11110864266002832,
+            "median": 0.09484814433549739,
+            "min": 0.0065125539581534775,
+            "rmse": 0.12746790207223657,
+            "sse": 42.618677271962994,
+            "std": 0.06247347905266221
+          }
+        }
+      },
+      "rmse_m": 0.12746790207223657,
+      "robots": [
+        "aerial08"
+      ],
+      "samples": 2623,
+      "scale": 1.0,
+      "statistics": {
+        "max": 0.35057401048695247,
+        "mean": 0.11110864266002832,
+        "median": 0.09484814433549739,
+        "min": 0.0065125539581534775,
+        "rmse": 0.12746790207223657,
+        "sse": 42.618677271962994,
+        "std": 0.06247347905266221
+      }
+    }
+  },
+  "registration": {
+    "network_cdr_bytes": 9583947,
+    "ownership": "one binary GICP factor per geometrically supported PCM-retained loop, on its canonical first robot",
+    "registration_factor_count": 51,
+    "robots": {
+      "aerial04": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [],
+        "preparation_s": 4.1478e-05,
+        "registration_factor_count": 0,
+        "robot_id": 4,
+        "schema_version": 1,
+        "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": null,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      },
+      "aerial05": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [
+          {
+            "accepted": true,
+            "final_error": 0.06859816577137678,
+            "final_quality": {
+              "condition": 6011.213566287707,
+              "inliers": 6051,
+              "observability": 0.14319521419622563,
+              "overlap": 0.692889041566472,
+              "rmse_m": 0.9030544758717719,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              16
+            ],
+            "information_scale": 1.283071661519262e-06,
+            "initial_error_at_measurement": 0.07022697513361251,
+            "initial_quality": {
+              "condition": 6026.808743389904,
+              "inliers": 6055,
+              "observability": 0.14311953984459608,
+              "overlap": 0.6933470743158135,
+              "rmse_m": 0.9034215779645753,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              20
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.04621850652900722,
+            "final_quality": {
+              "condition": 8719.429726487275,
+              "inliers": 5740,
+              "observability": 0.11779889026563878,
+              "overlap": 0.5931590368915987,
+              "rmse_m": 0.9032964187675839,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              16
+            ],
+            "information_scale": 9.059196441602388e-07,
+            "initial_error_at_measurement": 0.046219559692160406,
+            "initial_quality": {
+              "condition": 8716.610005651135,
+              "inliers": 5741,
+              "observability": 0.11775980522903542,
+              "overlap": 0.5932623747029038,
+              "rmse_m": 0.9034447846513279,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              25
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.05223633197853654,
+            "final_quality": {
+              "condition": 4150.123841107938,
+              "inliers": 5833,
+              "observability": 0.18952140327930536,
+              "overlap": 0.5834166833366673,
+              "rmse_m": 0.7905939150505792,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              19
+            ],
+            "information_scale": 1.2642760373584856e-06,
+            "initial_error_at_measurement": 0.05241030614687951,
+            "initial_quality": {
+              "condition": 4153.153917034442,
+              "inliers": 5834,
+              "observability": 0.18939110944598464,
+              "overlap": 0.5835167033406682,
+              "rmse_m": 0.790868848409763,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              26
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.05451354781519732,
+            "final_quality": {
+              "condition": 3960.5678592852964,
+              "inliers": 6166,
+              "observability": 0.18430539684728686,
+              "overlap": 0.604569075399549,
+              "rmse_m": 0.7935119383329743,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              19
+            ],
+            "information_scale": 1.2767817515923036e-06,
+            "initial_error_at_measurement": 0.05489824694326124,
+            "initial_quality": {
+              "condition": 3959.630917758601,
+              "inliers": 6165,
+              "observability": 0.18447529921410508,
+              "overlap": 0.6044710265712325,
+              "rmse_m": 0.7931937167842051,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              27
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06217842891795638,
+            "final_quality": {
+              "condition": 3616.0529043129877,
+              "inliers": 6739,
+              "observability": 0.20216039154131626,
+              "overlap": 0.6338412340105343,
+              "rmse_m": 0.7987295803368292,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              19
+            ],
+            "information_scale": 1.2531109803030721e-06,
+            "initial_error_at_measurement": 0.06184557626916619,
+            "initial_quality": {
+              "condition": 3612.514410107017,
+              "inliers": 6736,
+              "observability": 0.20233176332482175,
+              "overlap": 0.6335590669676449,
+              "rmse_m": 0.7983263970486038,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              28
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06311819993549027,
+            "final_quality": {
+              "condition": 4712.800735289938,
+              "inliers": 7107,
+              "observability": 0.18325573860408986,
+              "overlap": 0.6656364147232369,
+              "rmse_m": 0.7968854603687213,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              19
+            ],
+            "information_scale": 1.32689045488301e-06,
+            "initial_error_at_measurement": 0.06316679693415894,
+            "initial_quality": {
+              "condition": 4719.900418170478,
+              "inliers": 7111,
+              "observability": 0.1831979213887579,
+              "overlap": 0.666011051793575,
+              "rmse_m": 0.7973333250889915,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              29
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.041841876943286525,
+            "final_quality": {
+              "condition": 10105.897151424177,
+              "inliers": 3682,
+              "observability": 0.10457415033812632,
+              "overlap": 0.41571638252229876,
+              "rmse_m": 0.8931282598157125,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              20
+            ],
+            "information_scale": 1.4650878923693753e-06,
+            "initial_error_at_measurement": 0.04195150949253573,
+            "initial_quality": {
+              "condition": 10131.920808236508,
+              "inliers": 3684,
+              "observability": 0.10431860075443819,
+              "overlap": 0.41594219261600995,
+              "rmse_m": 0.8939991629951273,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              24
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06253826521153481,
+            "final_quality": {
+              "condition": 5030.866313464422,
+              "inliers": 6618,
+              "observability": 0.1683171631293932,
+              "overlap": 0.6347592557068866,
+              "rmse_m": 0.8974932098390593,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              20
+            ],
+            "information_scale": 1.1746858434102623e-06,
+            "initial_error_at_measurement": 0.06259512652759998,
+            "initial_quality": {
+              "condition": 5035.451642609518,
+              "inliers": 6619,
+              "observability": 0.16804192269144572,
+              "overlap": 0.6348551697678879,
+              "rmse_m": 0.8973680935381396,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              30
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.08175642955020614,
+            "final_quality": {
+              "condition": 6341.130966025554,
+              "inliers": 6064,
+              "observability": 0.14266562108316677,
+              "overlap": 0.5546003292482166,
+              "rmse_m": 0.9494748109757599,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              20
+            ],
+            "information_scale": 1.7065706595312204e-06,
+            "initial_error_at_measurement": 0.08156706154050018,
+            "initial_quality": {
+              "condition": 6338.470714343291,
+              "inliers": 6063,
+              "observability": 0.1428595574989032,
+              "overlap": 0.5545088714102798,
+              "rmse_m": 0.9508051235287736,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              31
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.04593451287662048,
+            "final_quality": {
+              "condition": 10700.689663551213,
+              "inliers": 4312,
+              "observability": 0.09169221879610225,
+              "overlap": 0.44044462573934323,
+              "rmse_m": 0.9134473899668727,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              0,
+              26
+            ],
+            "information_scale": 1.7687251504930618e-06,
+            "initial_error_at_measurement": 0.04657569623647479,
+            "initial_quality": {
+              "condition": 10709.811561991188,
+              "inliers": 4306,
+              "observability": 0.09171898058636989,
+              "overlap": 0.4405466041199266,
+              "rmse_m": 0.912689357137164,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              15
+            ],
+            "linearizations": 162,
+            "reason": "accepted"
+          }
+        ],
+        "preparation_s": 0.159736967,
+        "registration_factor_count": 10,
+        "robot_id": 0,
+        "schema_version": 1,
+        "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": null,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      },
+      "aerial06": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [
+          {
+            "accepted": true,
+            "final_error": 0.020682059675707357,
+            "final_quality": {
+              "condition": 5683.983538975279,
+              "inliers": 9194,
+              "observability": 0.15170680784134055,
+              "overlap": 0.7052972472819801,
+              "rmse_m": 0.5341065575296428,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              1
+            ],
+            "information_scale": 1.0816649229222247e-06,
+            "initial_error_at_measurement": 0.020469449472387838,
+            "initial_quality": {
+              "condition": 5685.717982490865,
+              "inliers": 9199,
+              "observability": 0.15157234635040956,
+              "overlap": 0.7052972472819801,
+              "rmse_m": 0.5346267822164689,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              0
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.015713099717386263,
+            "final_quality": {
+              "condition": 7477.500033138021,
+              "inliers": 11411,
+              "observability": 0.13776475149550516,
+              "overlap": 0.9701596113809854,
+              "rmse_m": 0.5255475098258889,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              1
+            ],
+            "information_scale": 4.666385015147324e-07,
+            "initial_error_at_measurement": 0.015886247881579815,
+            "initial_quality": {
+              "condition": 7480.102050345742,
+              "inliers": 11412,
+              "observability": 0.13773617735933394,
+              "overlap": 0.9701596113809854,
+              "rmse_m": 0.5257670643289636,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              1
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.016191767245696244,
+            "final_quality": {
+              "condition": 7995.993191696325,
+              "inliers": 8908,
+              "observability": 0.14431706617950704,
+              "overlap": 0.9059173732635757,
+              "rmse_m": 0.505337779924456,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              3
+            ],
+            "information_scale": 5.54343052961493e-07,
+            "initial_error_at_measurement": 0.016235002060065496,
+            "initial_quality": {
+              "condition": 8011.6148313772555,
+              "inliers": 8908,
+              "observability": 0.14415179897840175,
+              "overlap": 0.9060075771243009,
+              "rmse_m": 0.505252133196287,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              2
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.01615676592749952,
+            "final_quality": {
+              "condition": 8011.725381482675,
+              "inliers": 9639,
+              "observability": 0.14396556222792137,
+              "overlap": 0.9251307955980516,
+              "rmse_m": 0.5103176748627305,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              3
+            ],
+            "information_scale": 4.972377063378847e-07,
+            "initial_error_at_measurement": 0.016267550668886042,
+            "initial_quality": {
+              "condition": 8016.937329002914,
+              "inliers": 9639,
+              "observability": 0.14388295644613308,
+              "overlap": 0.9251307955980516,
+              "rmse_m": 0.5105316733308201,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              3
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.0183293880793098,
+            "final_quality": {
+              "condition": 9128.940819533758,
+              "inliers": 10809,
+              "observability": 0.1285299373266184,
+              "overlap": 0.9119979750253122,
+              "rmse_m": 0.5366102488474629,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              3
+            ],
+            "information_scale": 4.3111820524966234e-07,
+            "initial_error_at_measurement": 0.01833429471931535,
+            "initial_quality": {
+              "condition": 9121.054151718969,
+              "inliers": 10809,
+              "observability": 0.12860097401017956,
+              "overlap": 0.9119979750253122,
+              "rmse_m": 0.5368821460228662,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              4
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.019712248681707907,
+            "final_quality": {
+              "condition": 8272.893041222218,
+              "inliers": 8954,
+              "observability": 0.1355877116722216,
+              "overlap": 0.9054679384266692,
+              "rmse_m": 0.6077803856115672,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              5
+            ],
+            "information_scale": 4.612455143359983e-07,
+            "initial_error_at_measurement": 0.019821806745551306,
+            "initial_quality": {
+              "condition": 8271.441076178426,
+              "inliers": 8954,
+              "observability": 0.1356702044979209,
+              "overlap": 0.9059401265464161,
+              "rmse_m": 0.6078797343643593,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              5
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.02308736112907813,
+            "final_quality": {
+              "condition": 7962.85489092233,
+              "inliers": 9505,
+              "observability": 0.13657999157775186,
+              "overlap": 0.8956841311722579,
+              "rmse_m": 0.63255076878771,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              5
+            ],
+            "information_scale": 4.781492324652556e-07,
+            "initial_error_at_measurement": 0.02327639598734327,
+            "initial_quality": {
+              "condition": 7962.928676634665,
+              "inliers": 9505,
+              "observability": 0.13663711211625684,
+              "overlap": 0.8956841311722579,
+              "rmse_m": 0.6322161740129659,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              6
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.028705027126864974,
+            "final_quality": {
+              "condition": 6209.311732980771,
+              "inliers": 7875,
+              "observability": 0.1554110507463637,
+              "overlap": 0.9166569665929462,
+              "rmse_m": 0.7180740962280658,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              6
+            ],
+            "information_scale": 6.227088539861072e-07,
+            "initial_error_at_measurement": 0.02863548544514011,
+            "initial_quality": {
+              "condition": 6218.143258555646,
+              "inliers": 7877,
+              "observability": 0.15530726645387566,
+              "overlap": 0.9168897683622396,
+              "rmse_m": 0.7189723892748182,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              7
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.027918884870441498,
+            "final_quality": {
+              "condition": 5655.686882085169,
+              "inliers": 8877,
+              "observability": 0.1643221255367629,
+              "overlap": 0.8859281437125749,
+              "rmse_m": 0.7466437014401033,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              7
+            ],
+            "information_scale": 5.492317227591891e-07,
+            "initial_error_at_measurement": 0.027997945162027797,
+            "initial_quality": {
+              "condition": 5662.387575998336,
+              "inliers": 8877,
+              "observability": 0.16418652125956654,
+              "overlap": 0.8859281437125749,
+              "rmse_m": 0.7467972175218576,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              8
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.04784350931500305,
+            "final_quality": {
+              "condition": 5490.521179924557,
+              "inliers": 8739,
+              "observability": 0.1663633514984492,
+              "overlap": 0.7956842392788855,
+              "rmse_m": 0.7623717199630432,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              7
+            ],
+            "information_scale": 9.5077617146369e-07,
+            "initial_error_at_measurement": 0.04796710506390016,
+            "initial_quality": {
+              "condition": 5487.3241974164785,
+              "inliers": 8737,
+              "observability": 0.16636188799489718,
+              "overlap": 0.7955021396703997,
+              "rmse_m": 0.7623583355689039,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              10
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.07750093129013272,
+            "final_quality": {
+              "condition": 12793.649265830527,
+              "inliers": 6234,
+              "observability": 0.10078487706895684,
+              "overlap": 0.5344650205761317,
+              "rmse_m": 0.7858217843560316,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              7
+            ],
+            "information_scale": 2.4174211892868765e-06,
+            "initial_error_at_measurement": 0.07823230594337803,
+            "initial_quality": {
+              "condition": 12795.347900484037,
+              "inliers": 6230,
+              "observability": 0.10066512354151846,
+              "overlap": 0.534122085048011,
+              "rmse_m": 0.7860779191678285,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              13
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.0927903983682598,
+            "final_quality": {
+              "condition": 20188.815054576593,
+              "inliers": 3531,
+              "observability": 0.07614928126415495,
+              "overlap": 0.42241894963512383,
+              "rmse_m": 0.7989290031295314,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              7
+            ],
+            "information_scale": 4.89259197111496e-06,
+            "initial_error_at_measurement": 0.09196194202991592,
+            "initial_quality": {
+              "condition": 20247.18466197899,
+              "inliers": 3527,
+              "observability": 0.07611670506026574,
+              "overlap": 0.42194042349563343,
+              "rmse_m": 0.7997800027815279,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              14
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.019901780827730794,
+            "final_quality": {
+              "condition": 13687.430275541868,
+              "inliers": 2905,
+              "observability": 0.09564065454053769,
+              "overlap": 0.36996943453897096,
+              "rmse_m": 0.7817999124863869,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              7
+            ],
+            "information_scale": 1.6028876392927349e-06,
+            "initial_error_at_measurement": 0.019953107723232406,
+            "initial_quality": {
+              "condition": 13708.94795685669,
+              "inliers": 2904,
+              "observability": 0.09554757316043673,
+              "overlap": 0.36984207845135,
+              "rmse_m": 0.7815466172485889,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              32
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.026759581809402702,
+            "final_quality": {
+              "condition": 8701.552344725696,
+              "inliers": 3490,
+              "observability": 0.11963959320999612,
+              "overlap": 0.4270680372001958,
+              "rmse_m": 0.7919693493258214,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              7
+            ],
+            "information_scale": 1.530239119628238e-06,
+            "initial_error_at_measurement": 0.02696910534138503,
+            "initial_quality": {
+              "condition": 8648.602261115035,
+              "inliers": 3490,
+              "observability": 0.12008099866513842,
+              "overlap": 0.4270680372001958,
+              "rmse_m": 0.7920861579672854,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              33
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.031659224673244515,
+            "final_quality": {
+              "condition": 8632.169112134125,
+              "inliers": 3452,
+              "observability": 0.11629614734731966,
+              "overlap": 0.4295135000622123,
+              "rmse_m": 0.7843994620309312,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              7
+            ],
+            "information_scale": 1.6965834321833268e-06,
+            "initial_error_at_measurement": 0.03209003547531606,
+            "initial_quality": {
+              "condition": 8624.448645979344,
+              "inliers": 3451,
+              "observability": 0.11646406324235146,
+              "overlap": 0.42938907552569366,
+              "rmse_m": 0.7840188469665428,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              39
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.028890201057049772,
+            "final_quality": {
+              "condition": 5551.779717108047,
+              "inliers": 9329,
+              "observability": 0.1656875130710355,
+              "overlap": 0.864997681965693,
+              "rmse_m": 0.7552215477937505,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              8
+            ],
+            "information_scale": 5.803457803538098e-07,
+            "initial_error_at_measurement": 0.028985567251289566,
+            "initial_quality": {
+              "condition": 5547.165605417489,
+              "inliers": 9330,
+              "observability": 0.165747181023067,
+              "overlap": 0.8650904033379694,
+              "rmse_m": 0.755431563820617,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              9
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.024202026172314747,
+            "final_quality": {
+              "condition": 9645.500548752741,
+              "inliers": 3397,
+              "observability": 0.10560391935769445,
+              "overlap": 0.42478429411029134,
+              "rmse_m": 0.777563823451821,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              8
+            ],
+            "information_scale": 1.449916809766316e-06,
+            "initial_error_at_measurement": 0.02340360379658754,
+            "initial_quality": {
+              "condition": 9630.117776276415,
+              "inliers": 3395,
+              "observability": 0.1057547898836776,
+              "overlap": 0.4245342003251219,
+              "rmse_m": 0.7770360410803374,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              34
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.02658385267012521,
+            "final_quality": {
+              "condition": 10019.878952909661,
+              "inliers": 3395,
+              "observability": 0.10202848064403396,
+              "overlap": 0.4216343765524093,
+              "rmse_m": 0.7837181106507941,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              8
+            ],
+            "information_scale": 1.5480389748161948e-06,
+            "initial_error_at_measurement": 0.02655695158333125,
+            "initial_quality": {
+              "condition": 10028.20061842468,
+              "inliers": 3394,
+              "observability": 0.10193288869448329,
+              "overlap": 0.4215101838052658,
+              "rmse_m": 0.7836417520946006,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              36
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.03028123577369929,
+            "final_quality": {
+              "condition": 10082.612975245822,
+              "inliers": 3359,
+              "observability": 0.1027814820177722,
+              "overlap": 0.4176821686147724,
+              "rmse_m": 0.7846344608327243,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              8
+            ],
+            "information_scale": 1.6324684701651295e-06,
+            "initial_error_at_measurement": 0.030363062084266836,
+            "initial_quality": {
+              "condition": 10094.208792485848,
+              "inliers": 3358,
+              "observability": 0.10260446000528005,
+              "overlap": 0.41755782143745335,
+              "rmse_m": 0.7842982441349826,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              37
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.05735593788286939,
+            "final_quality": {
+              "condition": 4964.999548382045,
+              "inliers": 8653,
+              "observability": 0.17558228617990246,
+              "overlap": 0.5174968755579361,
+              "rmse_m": 0.891016829854495,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              23
+            ],
+            "information_scale": 1.141282596191955e-06,
+            "initial_error_at_measurement": 0.05756838698525729,
+            "initial_quality": {
+              "condition": 4955.159179264436,
+              "inliers": 8658,
+              "observability": 0.17567466718856492,
+              "overlap": 0.5176754151044456,
+              "rmse_m": 0.8918046896605925,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              11
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.03969293847741736,
+            "final_quality": {
+              "condition": 9488.498945475549,
+              "inliers": 3395,
+              "observability": 0.10893400582412785,
+              "overlap": 0.42231620848364226,
+              "rmse_m": 0.8974301014105899,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              23
+            ],
+            "information_scale": 1.6127386480303632e-06,
+            "initial_error_at_measurement": 0.039404122974550246,
+            "initial_quality": {
+              "condition": 9521.943636514905,
+              "inliers": 3393,
+              "observability": 0.10856015816709758,
+              "overlap": 0.42206742132105984,
+              "rmse_m": 0.8969723066465883,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              38
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.05564247354813547,
+            "final_quality": {
+              "condition": 11033.923503602966,
+              "inliers": 3405,
+              "observability": 0.08912720809329511,
+              "overlap": 0.33746283448959363,
+              "rmse_m": 0.9042873298907123,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              27
+            ],
+            "information_scale": 2.767717082201776e-06,
+            "initial_error_at_measurement": 0.055844686890614226,
+            "initial_quality": {
+              "condition": 10992.139423491151,
+              "inliers": 3407,
+              "observability": 0.08933934216527056,
+              "overlap": 0.33766105054509415,
+              "rmse_m": 0.9048699804705437,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              19
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.027756124143501718,
+            "final_quality": {
+              "condition": 11243.367202773798,
+              "inliers": 6039,
+              "observability": 0.09491739130022273,
+              "overlap": 0.4406147091108672,
+              "rmse_m": 0.8877554997521815,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              28
+            ],
+            "information_scale": 8.867162033218199e-07,
+            "initial_error_at_measurement": 0.027916236810049722,
+            "initial_quality": {
+              "condition": 11236.556156901965,
+              "inliers": 6042,
+              "observability": 0.09498034907590303,
+              "overlap": 0.4406147091108672,
+              "rmse_m": 0.88831272210652,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              12
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.039047446445872006,
+            "final_quality": {
+              "condition": 7678.369692287838,
+              "inliers": 5010,
+              "observability": 0.14234559074521896,
+              "overlap": 0.3680570801317234,
+              "rmse_m": 0.8987001861112431,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              28
+            ],
+            "information_scale": 1.1930251488189532e-06,
+            "initial_error_at_measurement": 0.03893520317888669,
+            "initial_quality": {
+              "condition": 7688.939461074009,
+              "inliers": 5004,
+              "observability": 0.14224171457044543,
+              "overlap": 0.3676180021953897,
+              "rmse_m": 0.898170209453036,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              5
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06409132451811929,
+            "final_quality": {
+              "condition": 4532.887584626174,
+              "inliers": 6372,
+              "observability": 0.1832488631674394,
+              "overlap": 0.565947242206235,
+              "rmse_m": 0.9086794648748311,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              30
+            ],
+            "information_scale": 1.3227100120557711e-06,
+            "initial_error_at_measurement": 0.06405401109936444,
+            "initial_quality": {
+              "condition": 4547.484457856311,
+              "inliers": 6372,
+              "observability": 0.18288123444942614,
+              "overlap": 0.565947242206235,
+              "rmse_m": 0.909021994429582,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              22
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.056222163218316065,
+            "final_quality": {
+              "condition": 5478.434924195465,
+              "inliers": 4978,
+              "observability": 0.17818181759676466,
+              "overlap": 0.6216283716283716,
+              "rmse_m": 0.9004705566841179,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              1,
+              31
+            ],
+            "information_scale": 1.389047658822015e-06,
+            "initial_error_at_measurement": 0.05598293669869693,
+            "initial_quality": {
+              "condition": 5475.709972932948,
+              "inliers": 4977,
+              "observability": 0.17830812745216063,
+              "overlap": 0.6215034965034965,
+              "rmse_m": 0.9004679271711151,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              2,
+              35
+            ],
+            "linearizations": 298,
+            "reason": "accepted"
+          }
+        ],
+        "preparation_s": 0.419219172,
+        "registration_factor_count": 26,
+        "robot_id": 1,
+        "schema_version": 1,
+        "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": null,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      },
+      "aerial07": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [
+          {
+            "accepted": true,
+            "final_error": 0.07811863423655735,
+            "final_quality": {
+              "condition": 5060.668490173667,
+              "inliers": 7146,
+              "observability": 0.16172004328637707,
+              "overlap": 0.7372330547818013,
+              "rmse_m": 0.9164439140668632,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              18
+            ],
+            "information_scale": 1.2219441314893223e-06,
+            "initial_error_at_measurement": 0.07746276065105005,
+            "initial_quality": {
+              "condition": 5041.387159995615,
+              "inliers": 7151,
+              "observability": 0.16233540516942566,
+              "overlap": 0.737585747926692,
+              "rmse_m": 0.9165222642864891,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              16
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.025779631578640865,
+            "final_quality": {
+              "condition": 7587.564683267976,
+              "inliers": 6718,
+              "observability": 0.12926102851932134,
+              "overlap": 0.7195411801178051,
+              "rmse_m": 0.8919810629123195,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              25
+            ],
+            "information_scale": 5.538296661865171e-07,
+            "initial_error_at_measurement": 0.025662027638928466,
+            "initial_quality": {
+              "condition": 7593.558277470752,
+              "inliers": 6714,
+              "observability": 0.1292414500721218,
+              "overlap": 0.7199545313630258,
+              "rmse_m": 0.891570483766875,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              12
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.04092510565383196,
+            "final_quality": {
+              "condition": 19377.57589538289,
+              "inliers": 4296,
+              "observability": 0.0712590746157757,
+              "overlap": 0.39893908907993414,
+              "rmse_m": 0.9013647727825773,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              31
+            ],
+            "information_scale": 1.439968260458955e-06,
+            "initial_error_at_measurement": 0.040967528635468944,
+            "initial_quality": {
+              "condition": 19401.33928389952,
+              "inliers": 4294,
+              "observability": 0.07119041678884565,
+              "overlap": 0.3992134625937443,
+              "rmse_m": 0.9013799095950508,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              11
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.05722963095118717,
+            "final_quality": {
+              "condition": 6221.876026333638,
+              "inliers": 7564,
+              "observability": 0.16533757117039932,
+              "overlap": 0.6357370986720458,
+              "rmse_m": 1.013325723654686,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              32
+            ],
+            "information_scale": 9.60357487635257e-07,
+            "initial_error_at_measurement": 0.05723289770048909,
+            "initial_quality": {
+              "condition": 6207.310245680549,
+              "inliers": 7562,
+              "observability": 0.16563293819730826,
+              "overlap": 0.635569003193814,
+              "rmse_m": 1.0132760842105568,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              23
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.05865375809091393,
+            "final_quality": {
+              "condition": 4469.726910977809,
+              "inliers": 6842,
+              "observability": 0.16430358917952032,
+              "overlap": 0.41348507097405773,
+              "rmse_m": 1.0141066699992034,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              33
+            ],
+            "information_scale": 1.4676628593088936e-06,
+            "initial_error_at_measurement": 0.058832469540848135,
+            "initial_quality": {
+              "condition": 4488.88821950836,
+              "inliers": 6854,
+              "observability": 0.1641443633294158,
+              "overlap": 0.4136074400391581,
+              "rmse_m": 1.0152250460287122,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              7
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.05102597998222902,
+            "final_quality": {
+              "condition": 7713.584613841571,
+              "inliers": 6242,
+              "observability": 0.10281358390535127,
+              "overlap": 0.37395986294664707,
+              "rmse_m": 1.0089054098196073,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              33
+            ],
+            "information_scale": 1.369637989968979e-06,
+            "initial_error_at_measurement": 0.05090235491111733,
+            "initial_quality": {
+              "condition": 7747.3511429157925,
+              "inliers": 6219,
+              "observability": 0.1024055080182488,
+              "overlap": 0.372858541360744,
+              "rmse_m": 1.0072318522109014,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              9
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.05912415274213328,
+            "final_quality": {
+              "condition": 6803.720786777067,
+              "inliers": 8043,
+              "observability": 0.16100620633353988,
+              "overlap": 0.6912169130285322,
+              "rmse_m": 1.011098316313844,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              33
+            ],
+            "information_scale": 9.11177714870232e-07,
+            "initial_error_at_measurement": 0.05890470389501945,
+            "initial_quality": {
+              "condition": 6801.10592436473,
+              "inliers": 8042,
+              "observability": 0.16095226764197343,
+              "overlap": 0.6911309728429014,
+              "rmse_m": 1.01109910912669,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              24
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06244706595401924,
+            "final_quality": {
+              "condition": 6356.924966321575,
+              "inliers": 8191,
+              "observability": 0.16766495443057247,
+              "overlap": 0.6917490076851617,
+              "rmse_m": 1.0102681543590726,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              33
+            ],
+            "information_scale": 9.038326365978725e-07,
+            "initial_error_at_measurement": 0.06277499055008952,
+            "initial_quality": {
+              "condition": 6340.45386485595,
+              "inliers": 8190,
+              "observability": 0.16792509416754733,
+              "overlap": 0.6916645553585001,
+              "rmse_m": 1.010244475412954,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              25
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06596964039961697,
+            "final_quality": {
+              "condition": 6418.129284969407,
+              "inliers": 8170,
+              "observability": 0.16765670239340905,
+              "overlap": 0.6874211190576357,
+              "rmse_m": 1.0148453614509643,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              33
+            ],
+            "information_scale": 9.525674747663535e-07,
+            "initial_error_at_measurement": 0.06579681548558654,
+            "initial_quality": {
+              "condition": 6422.852354593591,
+              "inliers": 8168,
+              "observability": 0.167732803512561,
+              "overlap": 0.6872528397139251,
+              "rmse_m": 1.014703568676683,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              28
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.047662831424079635,
+            "final_quality": {
+              "condition": 6453.257572133985,
+              "inliers": 8797,
+              "observability": 0.1587124436896391,
+              "overlap": 0.37037962037962036,
+              "rmse_m": 1.0184390102530123,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              35
+            ],
+            "information_scale": 9.51267047898582e-07,
+            "initial_error_at_measurement": 0.04767692525620514,
+            "initial_quality": {
+              "condition": 6454.630549969272,
+              "inliers": 8796,
+              "observability": 0.15866350909724392,
+              "overlap": 0.37012987012987014,
+              "rmse_m": 1.0179609718504687,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              4
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06661570846267229,
+            "final_quality": {
+              "condition": 6366.531360565029,
+              "inliers": 8474,
+              "observability": 0.17788255714420995,
+              "overlap": 0.7104888069086945,
+              "rmse_m": 1.0099050932605436,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              35
+            ],
+            "information_scale": 9.342215218530031e-07,
+            "initial_error_at_measurement": 0.06668165688110529,
+            "initial_quality": {
+              "condition": 6372.638154659292,
+              "inliers": 8474,
+              "observability": 0.17767832882830842,
+              "overlap": 0.7104888069086945,
+              "rmse_m": 1.009938506756686,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              27
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06678181119034139,
+            "final_quality": {
+              "condition": 6240.245878251764,
+              "inliers": 6281,
+              "observability": 0.14963709236549785,
+              "overlap": 0.5565076999503229,
+              "rmse_m": 1.013040157756831,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              36
+            ],
+            "information_scale": 1.298482155480324e-06,
+            "initial_error_at_measurement": 0.06708761167915656,
+            "initial_quality": {
+              "condition": 6221.360811555727,
+              "inliers": 6277,
+              "observability": 0.15002943163495044,
+              "overlap": 0.5562593144560357,
+              "rmse_m": 1.0128472516618094,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              21
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.06645915710442313,
+            "final_quality": {
+              "condition": 6159.858354238907,
+              "inliers": 8402,
+              "observability": 0.17613627599112824,
+              "overlap": 0.7143342968882843,
+              "rmse_m": 1.0126012994699536,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              36
+            ],
+            "information_scale": 8.922582219418012e-07,
+            "initial_error_at_measurement": 0.06664410078262473,
+            "initial_quality": {
+              "condition": 6150.090682545641,
+              "inliers": 8393,
+              "observability": 0.17628141858082402,
+              "overlap": 0.7135691208978064,
+              "rmse_m": 1.0120839136922613,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              26
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.07270701500705715,
+            "final_quality": {
+              "condition": 6500.628690620294,
+              "inliers": 6121,
+              "observability": 0.14779610915218147,
+              "overlap": 0.37504664759298423,
+              "rmse_m": 1.020722676693482,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              38
+            ],
+            "information_scale": 1.6933541386160632e-06,
+            "initial_error_at_measurement": 0.07279652256205893,
+            "initial_quality": {
+              "condition": 6508.848216878417,
+              "inliers": 6124,
+              "observability": 0.14762092167940344,
+              "overlap": 0.3752954347555666,
+              "rmse_m": 1.0208838275394423,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              6
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          },
+          {
+            "accepted": true,
+            "final_error": 0.07660399672467318,
+            "final_quality": {
+              "condition": 9003.988273251298,
+              "inliers": 4966,
+              "observability": 0.11667499324768067,
+              "overlap": 0.43550192810051,
+              "rmse_m": 1.0140215279945262,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "final_quality_reason": "accepted",
+            "i": [
+              2,
+              38
+            ],
+            "information_scale": 2.3324463809918794e-06,
+            "initial_error_at_measurement": 0.0766590489957552,
+            "initial_quality": {
+              "condition": 9006.625508702331,
+              "inliers": 4965,
+              "observability": 0.11662216225311835,
+              "overlap": 0.4353775345192188,
+              "rmse_m": 1.0141071881470418,
+              "source_extent_rank": 3,
+              "target_extent_rank": 3
+            },
+            "j": [
+              3,
+              20
+            ],
+            "linearizations": 399,
+            "reason": "accepted"
+          }
+        ],
+        "preparation_s": 0.266018378,
+        "registration_factor_count": 15,
+        "robot_id": 2,
+        "schema_version": 1,
+        "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": null,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      },
+      "aerial08": {
+        "final": true,
+        "gtsam": "4.3a2",
+        "gtsam_points": "1.2.2",
+        "initialization": "verified loop measurement; no centralized warm start",
+        "pairs": [],
+        "preparation_s": 3.1164e-05,
+        "registration_factor_count": 0,
+        "robot_id": 3,
+        "schema_version": 1,
+        "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+        "settings": {
+          "correspondence_m": 1.5,
+          "covariance_neighbors": 20,
+          "enabled": true,
+          "factor": "gicp",
+          "max_condition": 1000000.0,
+          "max_information_ratio": 1.0,
+          "max_iterations": 30,
+          "max_points": 12000,
+          "max_range_m": null,
+          "min_inliers": 100,
+          "min_observability": 0.0001,
+          "min_overlap": 0.3,
+          "num_threads": 2,
+          "timeout_s": 60.0,
+          "voxel_m": 0.5
+        },
+        "success": true,
+        "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+      }
+    },
+    "settings": {
+      "correspondence_m": 1.5,
+      "covariance_neighbors": 20,
+      "enabled": true,
+      "factor": "gicp",
+      "max_condition": 1000000.0,
+      "max_information_ratio": 1.0,
+      "max_iterations": 30,
+      "max_points": 12000,
+      "max_range_m": null,
+      "min_inliers": 100,
+      "min_observability": 0.0001,
+      "min_overlap": 0.3,
+      "num_threads": 2,
+      "timeout_s": 60.0,
+      "voxel_m": 0.5
+    }
+  },
+  "runtime": {
+    "backend": "CBS SE(3)",
+    "byte_scope": "serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission",
+    "cbs_network_cdr_bytes": 136925,
+    "keyframes": 168,
+    "loop_network_cdr_bytes": 199100130,
+    "loops": 51,
+    "memory_sampling_interval_s": 0.2,
+    "mode": "peers",
+    "pcm_enabled": true,
+    "pcm_network_cdr_bytes": 66418,
+    "proposed_loops": 53,
+    "registration_enabled": true,
+    "registration_network_cdr_bytes": 9583947,
+    "robots": {
+      "aerial04": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 0,
+          "bandwidth_sent_bytes": 0,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 33,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 33,
+          "residual": 3.960662918929436e-26,
+          "residual_abs_change": 1.617949294999977e-26,
+          "residual_rel_change": 7.286595842066253e-11,
+          "residual_signed_change": -1.617949294999977e-26,
+          "result_logmap_change": 5.494209988531592e-14,
+          "robot_id": 4,
+          "robot_name": "aerial04"
+        },
+        "detection_s": 133.17537123896182,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 11998860,
+        "loops": 0,
+        "max_rss_kib": 287880,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 0,
+        "poses": 32,
+        "proposed_loops": 0,
+        "reference_available": false,
+        "reference_robot_id": 4,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [],
+          "preparation_s": 4.1478e-05,
+          "registration_factor_count": 0,
+          "robot_id": 4,
+          "schema_version": 1,
+          "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": null,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 691,
+        "robot": "aerial04",
+        "verifier_max_rss_kib": 0,
+        "wall_s": 148.61923715297598
+      },
+      "aerial05": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 12652,
+          "bandwidth_sent_bytes": 2831,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 48,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 48,
+          "residual": 0.5812016036356008,
+          "residual_abs_change": 8.881784197001252e-16,
+          "residual_rel_change": 1.5281761339684638e-15,
+          "residual_signed_change": -8.881784197001252e-16,
+          "result_logmap_change": 3.406489583399406e-14,
+          "robot_id": 0,
+          "robot_name": "aerial05"
+        },
+        "detection_s": 133.17752359597944,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 36872908,
+        "loops": 10,
+        "max_rss_kib": 373720,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 6084,
+        "poses": 34,
+        "proposed_loops": 12,
+        "reference_available": true,
+        "reference_robot_id": 0,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [
+            {
+              "accepted": true,
+              "final_error": 0.06859816577137678,
+              "final_quality": {
+                "condition": 6011.213566287707,
+                "inliers": 6051,
+                "observability": 0.14319521419622563,
+                "overlap": 0.692889041566472,
+                "rmse_m": 0.9030544758717719,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                16
+              ],
+              "information_scale": 1.283071661519262e-06,
+              "initial_error_at_measurement": 0.07022697513361251,
+              "initial_quality": {
+                "condition": 6026.808743389904,
+                "inliers": 6055,
+                "observability": 0.14311953984459608,
+                "overlap": 0.6933470743158135,
+                "rmse_m": 0.9034215779645753,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                20
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.04621850652900722,
+              "final_quality": {
+                "condition": 8719.429726487275,
+                "inliers": 5740,
+                "observability": 0.11779889026563878,
+                "overlap": 0.5931590368915987,
+                "rmse_m": 0.9032964187675839,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                16
+              ],
+              "information_scale": 9.059196441602388e-07,
+              "initial_error_at_measurement": 0.046219559692160406,
+              "initial_quality": {
+                "condition": 8716.610005651135,
+                "inliers": 5741,
+                "observability": 0.11775980522903542,
+                "overlap": 0.5932623747029038,
+                "rmse_m": 0.9034447846513279,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                25
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.05223633197853654,
+              "final_quality": {
+                "condition": 4150.123841107938,
+                "inliers": 5833,
+                "observability": 0.18952140327930536,
+                "overlap": 0.5834166833366673,
+                "rmse_m": 0.7905939150505792,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                19
+              ],
+              "information_scale": 1.2642760373584856e-06,
+              "initial_error_at_measurement": 0.05241030614687951,
+              "initial_quality": {
+                "condition": 4153.153917034442,
+                "inliers": 5834,
+                "observability": 0.18939110944598464,
+                "overlap": 0.5835167033406682,
+                "rmse_m": 0.790868848409763,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                26
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.05451354781519732,
+              "final_quality": {
+                "condition": 3960.5678592852964,
+                "inliers": 6166,
+                "observability": 0.18430539684728686,
+                "overlap": 0.604569075399549,
+                "rmse_m": 0.7935119383329743,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                19
+              ],
+              "information_scale": 1.2767817515923036e-06,
+              "initial_error_at_measurement": 0.05489824694326124,
+              "initial_quality": {
+                "condition": 3959.630917758601,
+                "inliers": 6165,
+                "observability": 0.18447529921410508,
+                "overlap": 0.6044710265712325,
+                "rmse_m": 0.7931937167842051,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                27
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06217842891795638,
+              "final_quality": {
+                "condition": 3616.0529043129877,
+                "inliers": 6739,
+                "observability": 0.20216039154131626,
+                "overlap": 0.6338412340105343,
+                "rmse_m": 0.7987295803368292,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                19
+              ],
+              "information_scale": 1.2531109803030721e-06,
+              "initial_error_at_measurement": 0.06184557626916619,
+              "initial_quality": {
+                "condition": 3612.514410107017,
+                "inliers": 6736,
+                "observability": 0.20233176332482175,
+                "overlap": 0.6335590669676449,
+                "rmse_m": 0.7983263970486038,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                28
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06311819993549027,
+              "final_quality": {
+                "condition": 4712.800735289938,
+                "inliers": 7107,
+                "observability": 0.18325573860408986,
+                "overlap": 0.6656364147232369,
+                "rmse_m": 0.7968854603687213,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                19
+              ],
+              "information_scale": 1.32689045488301e-06,
+              "initial_error_at_measurement": 0.06316679693415894,
+              "initial_quality": {
+                "condition": 4719.900418170478,
+                "inliers": 7111,
+                "observability": 0.1831979213887579,
+                "overlap": 0.666011051793575,
+                "rmse_m": 0.7973333250889915,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                29
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.041841876943286525,
+              "final_quality": {
+                "condition": 10105.897151424177,
+                "inliers": 3682,
+                "observability": 0.10457415033812632,
+                "overlap": 0.41571638252229876,
+                "rmse_m": 0.8931282598157125,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                20
+              ],
+              "information_scale": 1.4650878923693753e-06,
+              "initial_error_at_measurement": 0.04195150949253573,
+              "initial_quality": {
+                "condition": 10131.920808236508,
+                "inliers": 3684,
+                "observability": 0.10431860075443819,
+                "overlap": 0.41594219261600995,
+                "rmse_m": 0.8939991629951273,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                24
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06253826521153481,
+              "final_quality": {
+                "condition": 5030.866313464422,
+                "inliers": 6618,
+                "observability": 0.1683171631293932,
+                "overlap": 0.6347592557068866,
+                "rmse_m": 0.8974932098390593,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                20
+              ],
+              "information_scale": 1.1746858434102623e-06,
+              "initial_error_at_measurement": 0.06259512652759998,
+              "initial_quality": {
+                "condition": 5035.451642609518,
+                "inliers": 6619,
+                "observability": 0.16804192269144572,
+                "overlap": 0.6348551697678879,
+                "rmse_m": 0.8973680935381396,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                30
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.08175642955020614,
+              "final_quality": {
+                "condition": 6341.130966025554,
+                "inliers": 6064,
+                "observability": 0.14266562108316677,
+                "overlap": 0.5546003292482166,
+                "rmse_m": 0.9494748109757599,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                20
+              ],
+              "information_scale": 1.7065706595312204e-06,
+              "initial_error_at_measurement": 0.08156706154050018,
+              "initial_quality": {
+                "condition": 6338.470714343291,
+                "inliers": 6063,
+                "observability": 0.1428595574989032,
+                "overlap": 0.5545088714102798,
+                "rmse_m": 0.9508051235287736,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                31
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.04593451287662048,
+              "final_quality": {
+                "condition": 10700.689663551213,
+                "inliers": 4312,
+                "observability": 0.09169221879610225,
+                "overlap": 0.44044462573934323,
+                "rmse_m": 0.9134473899668727,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                0,
+                26
+              ],
+              "information_scale": 1.7687251504930618e-06,
+              "initial_error_at_measurement": 0.04657569623647479,
+              "initial_quality": {
+                "condition": 10709.811561991188,
+                "inliers": 4306,
+                "observability": 0.09171898058636989,
+                "overlap": 0.4405466041199266,
+                "rmse_m": 0.912689357137164,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                15
+              ],
+              "linearizations": 162,
+              "reason": "accepted"
+            }
+          ],
+          "preparation_s": 0.159736967,
+          "registration_factor_count": 10,
+          "robot_id": 0,
+          "schema_version": 1,
+          "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": null,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 892,
+        "robot": "aerial05",
+        "verifier_max_rss_kib": 0,
+        "wall_s": 148.88616048695985
+      },
+      "aerial06": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 28264,
+          "bandwidth_sent_bytes": 7592,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 63,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 63,
+          "residual": 0.937544200795396,
+          "residual_abs_change": 1.887379141862766e-15,
+          "residual_rel_change": 2.0131095048761975e-15,
+          "residual_signed_change": 1.887379141862766e-15,
+          "result_logmap_change": 2.4013078601316222e-14,
+          "robot_id": 1,
+          "robot_name": "aerial06"
+        },
+        "detection_s": 133.15039319207426,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 57663638,
+        "loops": 26,
+        "max_rss_kib": 363604,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 14251,
+        "poses": 33,
+        "proposed_loops": 27,
+        "reference_available": true,
+        "reference_robot_id": 0,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [
+            {
+              "accepted": true,
+              "final_error": 0.020682059675707357,
+              "final_quality": {
+                "condition": 5683.983538975279,
+                "inliers": 9194,
+                "observability": 0.15170680784134055,
+                "overlap": 0.7052972472819801,
+                "rmse_m": 0.5341065575296428,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                1
+              ],
+              "information_scale": 1.0816649229222247e-06,
+              "initial_error_at_measurement": 0.020469449472387838,
+              "initial_quality": {
+                "condition": 5685.717982490865,
+                "inliers": 9199,
+                "observability": 0.15157234635040956,
+                "overlap": 0.7052972472819801,
+                "rmse_m": 0.5346267822164689,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                0
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.015713099717386263,
+              "final_quality": {
+                "condition": 7477.500033138021,
+                "inliers": 11411,
+                "observability": 0.13776475149550516,
+                "overlap": 0.9701596113809854,
+                "rmse_m": 0.5255475098258889,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                1
+              ],
+              "information_scale": 4.666385015147324e-07,
+              "initial_error_at_measurement": 0.015886247881579815,
+              "initial_quality": {
+                "condition": 7480.102050345742,
+                "inliers": 11412,
+                "observability": 0.13773617735933394,
+                "overlap": 0.9701596113809854,
+                "rmse_m": 0.5257670643289636,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                1
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.016191767245696244,
+              "final_quality": {
+                "condition": 7995.993191696325,
+                "inliers": 8908,
+                "observability": 0.14431706617950704,
+                "overlap": 0.9059173732635757,
+                "rmse_m": 0.505337779924456,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                3
+              ],
+              "information_scale": 5.54343052961493e-07,
+              "initial_error_at_measurement": 0.016235002060065496,
+              "initial_quality": {
+                "condition": 8011.6148313772555,
+                "inliers": 8908,
+                "observability": 0.14415179897840175,
+                "overlap": 0.9060075771243009,
+                "rmse_m": 0.505252133196287,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                2
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.01615676592749952,
+              "final_quality": {
+                "condition": 8011.725381482675,
+                "inliers": 9639,
+                "observability": 0.14396556222792137,
+                "overlap": 0.9251307955980516,
+                "rmse_m": 0.5103176748627305,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                3
+              ],
+              "information_scale": 4.972377063378847e-07,
+              "initial_error_at_measurement": 0.016267550668886042,
+              "initial_quality": {
+                "condition": 8016.937329002914,
+                "inliers": 9639,
+                "observability": 0.14388295644613308,
+                "overlap": 0.9251307955980516,
+                "rmse_m": 0.5105316733308201,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                3
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.0183293880793098,
+              "final_quality": {
+                "condition": 9128.940819533758,
+                "inliers": 10809,
+                "observability": 0.1285299373266184,
+                "overlap": 0.9119979750253122,
+                "rmse_m": 0.5366102488474629,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                3
+              ],
+              "information_scale": 4.3111820524966234e-07,
+              "initial_error_at_measurement": 0.01833429471931535,
+              "initial_quality": {
+                "condition": 9121.054151718969,
+                "inliers": 10809,
+                "observability": 0.12860097401017956,
+                "overlap": 0.9119979750253122,
+                "rmse_m": 0.5368821460228662,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                4
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.019712248681707907,
+              "final_quality": {
+                "condition": 8272.893041222218,
+                "inliers": 8954,
+                "observability": 0.1355877116722216,
+                "overlap": 0.9054679384266692,
+                "rmse_m": 0.6077803856115672,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                5
+              ],
+              "information_scale": 4.612455143359983e-07,
+              "initial_error_at_measurement": 0.019821806745551306,
+              "initial_quality": {
+                "condition": 8271.441076178426,
+                "inliers": 8954,
+                "observability": 0.1356702044979209,
+                "overlap": 0.9059401265464161,
+                "rmse_m": 0.6078797343643593,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                5
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.02308736112907813,
+              "final_quality": {
+                "condition": 7962.85489092233,
+                "inliers": 9505,
+                "observability": 0.13657999157775186,
+                "overlap": 0.8956841311722579,
+                "rmse_m": 0.63255076878771,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                5
+              ],
+              "information_scale": 4.781492324652556e-07,
+              "initial_error_at_measurement": 0.02327639598734327,
+              "initial_quality": {
+                "condition": 7962.928676634665,
+                "inliers": 9505,
+                "observability": 0.13663711211625684,
+                "overlap": 0.8956841311722579,
+                "rmse_m": 0.6322161740129659,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                6
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.028705027126864974,
+              "final_quality": {
+                "condition": 6209.311732980771,
+                "inliers": 7875,
+                "observability": 0.1554110507463637,
+                "overlap": 0.9166569665929462,
+                "rmse_m": 0.7180740962280658,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                6
+              ],
+              "information_scale": 6.227088539861072e-07,
+              "initial_error_at_measurement": 0.02863548544514011,
+              "initial_quality": {
+                "condition": 6218.143258555646,
+                "inliers": 7877,
+                "observability": 0.15530726645387566,
+                "overlap": 0.9168897683622396,
+                "rmse_m": 0.7189723892748182,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                7
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.027918884870441498,
+              "final_quality": {
+                "condition": 5655.686882085169,
+                "inliers": 8877,
+                "observability": 0.1643221255367629,
+                "overlap": 0.8859281437125749,
+                "rmse_m": 0.7466437014401033,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                7
+              ],
+              "information_scale": 5.492317227591891e-07,
+              "initial_error_at_measurement": 0.027997945162027797,
+              "initial_quality": {
+                "condition": 5662.387575998336,
+                "inliers": 8877,
+                "observability": 0.16418652125956654,
+                "overlap": 0.8859281437125749,
+                "rmse_m": 0.7467972175218576,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                8
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.04784350931500305,
+              "final_quality": {
+                "condition": 5490.521179924557,
+                "inliers": 8739,
+                "observability": 0.1663633514984492,
+                "overlap": 0.7956842392788855,
+                "rmse_m": 0.7623717199630432,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                7
+              ],
+              "information_scale": 9.5077617146369e-07,
+              "initial_error_at_measurement": 0.04796710506390016,
+              "initial_quality": {
+                "condition": 5487.3241974164785,
+                "inliers": 8737,
+                "observability": 0.16636188799489718,
+                "overlap": 0.7955021396703997,
+                "rmse_m": 0.7623583355689039,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                10
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.07750093129013272,
+              "final_quality": {
+                "condition": 12793.649265830527,
+                "inliers": 6234,
+                "observability": 0.10078487706895684,
+                "overlap": 0.5344650205761317,
+                "rmse_m": 0.7858217843560316,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                7
+              ],
+              "information_scale": 2.4174211892868765e-06,
+              "initial_error_at_measurement": 0.07823230594337803,
+              "initial_quality": {
+                "condition": 12795.347900484037,
+                "inliers": 6230,
+                "observability": 0.10066512354151846,
+                "overlap": 0.534122085048011,
+                "rmse_m": 0.7860779191678285,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                13
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.0927903983682598,
+              "final_quality": {
+                "condition": 20188.815054576593,
+                "inliers": 3531,
+                "observability": 0.07614928126415495,
+                "overlap": 0.42241894963512383,
+                "rmse_m": 0.7989290031295314,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                7
+              ],
+              "information_scale": 4.89259197111496e-06,
+              "initial_error_at_measurement": 0.09196194202991592,
+              "initial_quality": {
+                "condition": 20247.18466197899,
+                "inliers": 3527,
+                "observability": 0.07611670506026574,
+                "overlap": 0.42194042349563343,
+                "rmse_m": 0.7997800027815279,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                14
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.019901780827730794,
+              "final_quality": {
+                "condition": 13687.430275541868,
+                "inliers": 2905,
+                "observability": 0.09564065454053769,
+                "overlap": 0.36996943453897096,
+                "rmse_m": 0.7817999124863869,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                7
+              ],
+              "information_scale": 1.6028876392927349e-06,
+              "initial_error_at_measurement": 0.019953107723232406,
+              "initial_quality": {
+                "condition": 13708.94795685669,
+                "inliers": 2904,
+                "observability": 0.09554757316043673,
+                "overlap": 0.36984207845135,
+                "rmse_m": 0.7815466172485889,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                32
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.026759581809402702,
+              "final_quality": {
+                "condition": 8701.552344725696,
+                "inliers": 3490,
+                "observability": 0.11963959320999612,
+                "overlap": 0.4270680372001958,
+                "rmse_m": 0.7919693493258214,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                7
+              ],
+              "information_scale": 1.530239119628238e-06,
+              "initial_error_at_measurement": 0.02696910534138503,
+              "initial_quality": {
+                "condition": 8648.602261115035,
+                "inliers": 3490,
+                "observability": 0.12008099866513842,
+                "overlap": 0.4270680372001958,
+                "rmse_m": 0.7920861579672854,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                33
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.031659224673244515,
+              "final_quality": {
+                "condition": 8632.169112134125,
+                "inliers": 3452,
+                "observability": 0.11629614734731966,
+                "overlap": 0.4295135000622123,
+                "rmse_m": 0.7843994620309312,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                7
+              ],
+              "information_scale": 1.6965834321833268e-06,
+              "initial_error_at_measurement": 0.03209003547531606,
+              "initial_quality": {
+                "condition": 8624.448645979344,
+                "inliers": 3451,
+                "observability": 0.11646406324235146,
+                "overlap": 0.42938907552569366,
+                "rmse_m": 0.7840188469665428,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                39
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.028890201057049772,
+              "final_quality": {
+                "condition": 5551.779717108047,
+                "inliers": 9329,
+                "observability": 0.1656875130710355,
+                "overlap": 0.864997681965693,
+                "rmse_m": 0.7552215477937505,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                8
+              ],
+              "information_scale": 5.803457803538098e-07,
+              "initial_error_at_measurement": 0.028985567251289566,
+              "initial_quality": {
+                "condition": 5547.165605417489,
+                "inliers": 9330,
+                "observability": 0.165747181023067,
+                "overlap": 0.8650904033379694,
+                "rmse_m": 0.755431563820617,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                9
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.024202026172314747,
+              "final_quality": {
+                "condition": 9645.500548752741,
+                "inliers": 3397,
+                "observability": 0.10560391935769445,
+                "overlap": 0.42478429411029134,
+                "rmse_m": 0.777563823451821,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                8
+              ],
+              "information_scale": 1.449916809766316e-06,
+              "initial_error_at_measurement": 0.02340360379658754,
+              "initial_quality": {
+                "condition": 9630.117776276415,
+                "inliers": 3395,
+                "observability": 0.1057547898836776,
+                "overlap": 0.4245342003251219,
+                "rmse_m": 0.7770360410803374,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                34
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.02658385267012521,
+              "final_quality": {
+                "condition": 10019.878952909661,
+                "inliers": 3395,
+                "observability": 0.10202848064403396,
+                "overlap": 0.4216343765524093,
+                "rmse_m": 0.7837181106507941,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                8
+              ],
+              "information_scale": 1.5480389748161948e-06,
+              "initial_error_at_measurement": 0.02655695158333125,
+              "initial_quality": {
+                "condition": 10028.20061842468,
+                "inliers": 3394,
+                "observability": 0.10193288869448329,
+                "overlap": 0.4215101838052658,
+                "rmse_m": 0.7836417520946006,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                36
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.03028123577369929,
+              "final_quality": {
+                "condition": 10082.612975245822,
+                "inliers": 3359,
+                "observability": 0.1027814820177722,
+                "overlap": 0.4176821686147724,
+                "rmse_m": 0.7846344608327243,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                8
+              ],
+              "information_scale": 1.6324684701651295e-06,
+              "initial_error_at_measurement": 0.030363062084266836,
+              "initial_quality": {
+                "condition": 10094.208792485848,
+                "inliers": 3358,
+                "observability": 0.10260446000528005,
+                "overlap": 0.41755782143745335,
+                "rmse_m": 0.7842982441349826,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                37
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.05735593788286939,
+              "final_quality": {
+                "condition": 4964.999548382045,
+                "inliers": 8653,
+                "observability": 0.17558228617990246,
+                "overlap": 0.5174968755579361,
+                "rmse_m": 0.891016829854495,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                23
+              ],
+              "information_scale": 1.141282596191955e-06,
+              "initial_error_at_measurement": 0.05756838698525729,
+              "initial_quality": {
+                "condition": 4955.159179264436,
+                "inliers": 8658,
+                "observability": 0.17567466718856492,
+                "overlap": 0.5176754151044456,
+                "rmse_m": 0.8918046896605925,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                11
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.03969293847741736,
+              "final_quality": {
+                "condition": 9488.498945475549,
+                "inliers": 3395,
+                "observability": 0.10893400582412785,
+                "overlap": 0.42231620848364226,
+                "rmse_m": 0.8974301014105899,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                23
+              ],
+              "information_scale": 1.6127386480303632e-06,
+              "initial_error_at_measurement": 0.039404122974550246,
+              "initial_quality": {
+                "condition": 9521.943636514905,
+                "inliers": 3393,
+                "observability": 0.10856015816709758,
+                "overlap": 0.42206742132105984,
+                "rmse_m": 0.8969723066465883,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                38
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.05564247354813547,
+              "final_quality": {
+                "condition": 11033.923503602966,
+                "inliers": 3405,
+                "observability": 0.08912720809329511,
+                "overlap": 0.33746283448959363,
+                "rmse_m": 0.9042873298907123,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                27
+              ],
+              "information_scale": 2.767717082201776e-06,
+              "initial_error_at_measurement": 0.055844686890614226,
+              "initial_quality": {
+                "condition": 10992.139423491151,
+                "inliers": 3407,
+                "observability": 0.08933934216527056,
+                "overlap": 0.33766105054509415,
+                "rmse_m": 0.9048699804705437,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                19
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.027756124143501718,
+              "final_quality": {
+                "condition": 11243.367202773798,
+                "inliers": 6039,
+                "observability": 0.09491739130022273,
+                "overlap": 0.4406147091108672,
+                "rmse_m": 0.8877554997521815,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                28
+              ],
+              "information_scale": 8.867162033218199e-07,
+              "initial_error_at_measurement": 0.027916236810049722,
+              "initial_quality": {
+                "condition": 11236.556156901965,
+                "inliers": 6042,
+                "observability": 0.09498034907590303,
+                "overlap": 0.4406147091108672,
+                "rmse_m": 0.88831272210652,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                12
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.039047446445872006,
+              "final_quality": {
+                "condition": 7678.369692287838,
+                "inliers": 5010,
+                "observability": 0.14234559074521896,
+                "overlap": 0.3680570801317234,
+                "rmse_m": 0.8987001861112431,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                28
+              ],
+              "information_scale": 1.1930251488189532e-06,
+              "initial_error_at_measurement": 0.03893520317888669,
+              "initial_quality": {
+                "condition": 7688.939461074009,
+                "inliers": 5004,
+                "observability": 0.14224171457044543,
+                "overlap": 0.3676180021953897,
+                "rmse_m": 0.898170209453036,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                5
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06409132451811929,
+              "final_quality": {
+                "condition": 4532.887584626174,
+                "inliers": 6372,
+                "observability": 0.1832488631674394,
+                "overlap": 0.565947242206235,
+                "rmse_m": 0.9086794648748311,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                30
+              ],
+              "information_scale": 1.3227100120557711e-06,
+              "initial_error_at_measurement": 0.06405401109936444,
+              "initial_quality": {
+                "condition": 4547.484457856311,
+                "inliers": 6372,
+                "observability": 0.18288123444942614,
+                "overlap": 0.565947242206235,
+                "rmse_m": 0.909021994429582,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                22
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.056222163218316065,
+              "final_quality": {
+                "condition": 5478.434924195465,
+                "inliers": 4978,
+                "observability": 0.17818181759676466,
+                "overlap": 0.6216283716283716,
+                "rmse_m": 0.9004705566841179,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                1,
+                31
+              ],
+              "information_scale": 1.389047658822015e-06,
+              "initial_error_at_measurement": 0.05598293669869693,
+              "initial_quality": {
+                "condition": 5475.709972932948,
+                "inliers": 4977,
+                "observability": 0.17830812745216063,
+                "overlap": 0.6215034965034965,
+                "rmse_m": 0.9004679271711151,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                2,
+                35
+              ],
+              "linearizations": 298,
+              "reason": "accepted"
+            }
+          ],
+          "preparation_s": 0.419219172,
+          "registration_factor_count": 26,
+          "robot_id": 1,
+          "schema_version": 1,
+          "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": null,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 1098,
+        "robot": "aerial06",
+        "verifier_max_rss_kib": 281724,
+        "wall_s": 154.0863123590825
+      },
+      "aerial07": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 47148,
+          "bandwidth_sent_bytes": 9432,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 59,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 59,
+          "residual": 0.9084556316030495,
+          "residual_abs_change": 1.1102230246251565e-15,
+          "residual_rel_change": 1.2220993365037235e-15,
+          "residual_signed_change": 1.1102230246251565e-15,
+          "result_logmap_change": 2.4842471085857092e-14,
+          "robot_id": 2,
+          "robot_name": "aerial07"
+        },
+        "detection_s": 133.18026128807105,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 79064570,
+        "loops": 48,
+        "max_rss_kib": 587964,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 32528,
+        "poses": 40,
+        "proposed_loops": 48,
+        "reference_available": true,
+        "reference_robot_id": 0,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [
+            {
+              "accepted": true,
+              "final_error": 0.07811863423655735,
+              "final_quality": {
+                "condition": 5060.668490173667,
+                "inliers": 7146,
+                "observability": 0.16172004328637707,
+                "overlap": 0.7372330547818013,
+                "rmse_m": 0.9164439140668632,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                18
+              ],
+              "information_scale": 1.2219441314893223e-06,
+              "initial_error_at_measurement": 0.07746276065105005,
+              "initial_quality": {
+                "condition": 5041.387159995615,
+                "inliers": 7151,
+                "observability": 0.16233540516942566,
+                "overlap": 0.737585747926692,
+                "rmse_m": 0.9165222642864891,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                16
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.025779631578640865,
+              "final_quality": {
+                "condition": 7587.564683267976,
+                "inliers": 6718,
+                "observability": 0.12926102851932134,
+                "overlap": 0.7195411801178051,
+                "rmse_m": 0.8919810629123195,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                25
+              ],
+              "information_scale": 5.538296661865171e-07,
+              "initial_error_at_measurement": 0.025662027638928466,
+              "initial_quality": {
+                "condition": 7593.558277470752,
+                "inliers": 6714,
+                "observability": 0.1292414500721218,
+                "overlap": 0.7199545313630258,
+                "rmse_m": 0.891570483766875,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                12
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.04092510565383196,
+              "final_quality": {
+                "condition": 19377.57589538289,
+                "inliers": 4296,
+                "observability": 0.0712590746157757,
+                "overlap": 0.39893908907993414,
+                "rmse_m": 0.9013647727825773,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                31
+              ],
+              "information_scale": 1.439968260458955e-06,
+              "initial_error_at_measurement": 0.040967528635468944,
+              "initial_quality": {
+                "condition": 19401.33928389952,
+                "inliers": 4294,
+                "observability": 0.07119041678884565,
+                "overlap": 0.3992134625937443,
+                "rmse_m": 0.9013799095950508,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                11
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.05722963095118717,
+              "final_quality": {
+                "condition": 6221.876026333638,
+                "inliers": 7564,
+                "observability": 0.16533757117039932,
+                "overlap": 0.6357370986720458,
+                "rmse_m": 1.013325723654686,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                32
+              ],
+              "information_scale": 9.60357487635257e-07,
+              "initial_error_at_measurement": 0.05723289770048909,
+              "initial_quality": {
+                "condition": 6207.310245680549,
+                "inliers": 7562,
+                "observability": 0.16563293819730826,
+                "overlap": 0.635569003193814,
+                "rmse_m": 1.0132760842105568,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                23
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.05865375809091393,
+              "final_quality": {
+                "condition": 4469.726910977809,
+                "inliers": 6842,
+                "observability": 0.16430358917952032,
+                "overlap": 0.41348507097405773,
+                "rmse_m": 1.0141066699992034,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                33
+              ],
+              "information_scale": 1.4676628593088936e-06,
+              "initial_error_at_measurement": 0.058832469540848135,
+              "initial_quality": {
+                "condition": 4488.88821950836,
+                "inliers": 6854,
+                "observability": 0.1641443633294158,
+                "overlap": 0.4136074400391581,
+                "rmse_m": 1.0152250460287122,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                7
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.05102597998222902,
+              "final_quality": {
+                "condition": 7713.584613841571,
+                "inliers": 6242,
+                "observability": 0.10281358390535127,
+                "overlap": 0.37395986294664707,
+                "rmse_m": 1.0089054098196073,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                33
+              ],
+              "information_scale": 1.369637989968979e-06,
+              "initial_error_at_measurement": 0.05090235491111733,
+              "initial_quality": {
+                "condition": 7747.3511429157925,
+                "inliers": 6219,
+                "observability": 0.1024055080182488,
+                "overlap": 0.372858541360744,
+                "rmse_m": 1.0072318522109014,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                9
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.05912415274213328,
+              "final_quality": {
+                "condition": 6803.720786777067,
+                "inliers": 8043,
+                "observability": 0.16100620633353988,
+                "overlap": 0.6912169130285322,
+                "rmse_m": 1.011098316313844,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                33
+              ],
+              "information_scale": 9.11177714870232e-07,
+              "initial_error_at_measurement": 0.05890470389501945,
+              "initial_quality": {
+                "condition": 6801.10592436473,
+                "inliers": 8042,
+                "observability": 0.16095226764197343,
+                "overlap": 0.6911309728429014,
+                "rmse_m": 1.01109910912669,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                24
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06244706595401924,
+              "final_quality": {
+                "condition": 6356.924966321575,
+                "inliers": 8191,
+                "observability": 0.16766495443057247,
+                "overlap": 0.6917490076851617,
+                "rmse_m": 1.0102681543590726,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                33
+              ],
+              "information_scale": 9.038326365978725e-07,
+              "initial_error_at_measurement": 0.06277499055008952,
+              "initial_quality": {
+                "condition": 6340.45386485595,
+                "inliers": 8190,
+                "observability": 0.16792509416754733,
+                "overlap": 0.6916645553585001,
+                "rmse_m": 1.010244475412954,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                25
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06596964039961697,
+              "final_quality": {
+                "condition": 6418.129284969407,
+                "inliers": 8170,
+                "observability": 0.16765670239340905,
+                "overlap": 0.6874211190576357,
+                "rmse_m": 1.0148453614509643,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                33
+              ],
+              "information_scale": 9.525674747663535e-07,
+              "initial_error_at_measurement": 0.06579681548558654,
+              "initial_quality": {
+                "condition": 6422.852354593591,
+                "inliers": 8168,
+                "observability": 0.167732803512561,
+                "overlap": 0.6872528397139251,
+                "rmse_m": 1.014703568676683,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                28
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.047662831424079635,
+              "final_quality": {
+                "condition": 6453.257572133985,
+                "inliers": 8797,
+                "observability": 0.1587124436896391,
+                "overlap": 0.37037962037962036,
+                "rmse_m": 1.0184390102530123,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                35
+              ],
+              "information_scale": 9.51267047898582e-07,
+              "initial_error_at_measurement": 0.04767692525620514,
+              "initial_quality": {
+                "condition": 6454.630549969272,
+                "inliers": 8796,
+                "observability": 0.15866350909724392,
+                "overlap": 0.37012987012987014,
+                "rmse_m": 1.0179609718504687,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                4
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06661570846267229,
+              "final_quality": {
+                "condition": 6366.531360565029,
+                "inliers": 8474,
+                "observability": 0.17788255714420995,
+                "overlap": 0.7104888069086945,
+                "rmse_m": 1.0099050932605436,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                35
+              ],
+              "information_scale": 9.342215218530031e-07,
+              "initial_error_at_measurement": 0.06668165688110529,
+              "initial_quality": {
+                "condition": 6372.638154659292,
+                "inliers": 8474,
+                "observability": 0.17767832882830842,
+                "overlap": 0.7104888069086945,
+                "rmse_m": 1.009938506756686,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                27
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06678181119034139,
+              "final_quality": {
+                "condition": 6240.245878251764,
+                "inliers": 6281,
+                "observability": 0.14963709236549785,
+                "overlap": 0.5565076999503229,
+                "rmse_m": 1.013040157756831,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                36
+              ],
+              "information_scale": 1.298482155480324e-06,
+              "initial_error_at_measurement": 0.06708761167915656,
+              "initial_quality": {
+                "condition": 6221.360811555727,
+                "inliers": 6277,
+                "observability": 0.15002943163495044,
+                "overlap": 0.5562593144560357,
+                "rmse_m": 1.0128472516618094,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                21
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.06645915710442313,
+              "final_quality": {
+                "condition": 6159.858354238907,
+                "inliers": 8402,
+                "observability": 0.17613627599112824,
+                "overlap": 0.7143342968882843,
+                "rmse_m": 1.0126012994699536,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                36
+              ],
+              "information_scale": 8.922582219418012e-07,
+              "initial_error_at_measurement": 0.06664410078262473,
+              "initial_quality": {
+                "condition": 6150.090682545641,
+                "inliers": 8393,
+                "observability": 0.17628141858082402,
+                "overlap": 0.7135691208978064,
+                "rmse_m": 1.0120839136922613,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                26
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.07270701500705715,
+              "final_quality": {
+                "condition": 6500.628690620294,
+                "inliers": 6121,
+                "observability": 0.14779610915218147,
+                "overlap": 0.37504664759298423,
+                "rmse_m": 1.020722676693482,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                38
+              ],
+              "information_scale": 1.6933541386160632e-06,
+              "initial_error_at_measurement": 0.07279652256205893,
+              "initial_quality": {
+                "condition": 6508.848216878417,
+                "inliers": 6124,
+                "observability": 0.14762092167940344,
+                "overlap": 0.3752954347555666,
+                "rmse_m": 1.0208838275394423,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                6
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            },
+            {
+              "accepted": true,
+              "final_error": 0.07660399672467318,
+              "final_quality": {
+                "condition": 9003.988273251298,
+                "inliers": 4966,
+                "observability": 0.11667499324768067,
+                "overlap": 0.43550192810051,
+                "rmse_m": 1.0140215279945262,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "final_quality_reason": "accepted",
+              "i": [
+                2,
+                38
+              ],
+              "information_scale": 2.3324463809918794e-06,
+              "initial_error_at_measurement": 0.0766590489957552,
+              "initial_quality": {
+                "condition": 9006.625508702331,
+                "inliers": 4965,
+                "observability": 0.11662216225311835,
+                "overlap": 0.4353775345192188,
+                "rmse_m": 1.0141071881470418,
+                "source_extent_rank": 3,
+                "target_extent_rank": 3
+              },
+              "j": [
+                3,
+                20
+              ],
+              "linearizations": 399,
+              "reason": "accepted"
+            }
+          ],
+          "preparation_s": 0.266018378,
+          "registration_factor_count": 15,
+          "robot_id": 2,
+          "schema_version": 1,
+          "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": null,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 5966546,
+        "robot": "aerial07",
+        "verifier_max_rss_kib": 428280,
+        "wall_s": 154.352454091073
+      },
+      "aerial08": {
+        "cbs_last_stats": {
+          "bandwidth_recv_bytes": 24552,
+          "bandwidth_sent_bytes": 4454,
+          "belief_stage": "pose",
+          "iteration": 100,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 33,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 33,
+          "residual": 0.01024377927638854,
+          "residual_abs_change": 1.6306400674181987e-16,
+          "residual_rel_change": 1.5918344425643045e-14,
+          "residual_signed_change": -1.6306400674181987e-16,
+          "result_logmap_change": 2.210468119933398e-14,
+          "robot_id": 3,
+          "robot_name": "aerial08"
+        },
+        "detection_s": 133.17705509404186,
+        "finished": true,
+        "iterations": 100,
+        "loop_network_cdr_bytes": 13500154,
+        "loops": 18,
+        "max_rss_kib": 471932,
+        "pcm_enabled": true,
+        "pcm_network_cdr_bytes": 13555,
+        "poses": 29,
+        "proposed_loops": 19,
+        "reference_available": true,
+        "reference_robot_id": 0,
+        "registration": {
+          "final": true,
+          "gtsam": "4.3a2",
+          "gtsam_points": "1.2.2",
+          "initialization": "verified loop measurement; no centralized warm start",
+          "pairs": [],
+          "preparation_s": 3.1164e-05,
+          "registration_factor_count": 0,
+          "robot_id": 3,
+          "schema_version": 1,
+          "session_id": "cee384cc21a04c56a9770c9f9db5c299",
+          "settings": {
+            "correspondence_m": 1.5,
+            "covariance_neighbors": 20,
+            "enabled": true,
+            "factor": "gicp",
+            "max_condition": 1000000.0,
+            "max_information_ratio": 1.0,
+            "max_iterations": 30,
+            "max_points": 12000,
+            "max_range_m": null,
+            "min_inliers": 100,
+            "min_observability": 0.0001,
+            "min_overlap": 0.3,
+            "num_threads": 2,
+            "timeout_s": 60.0,
+            "voxel_m": 0.5
+          },
+          "success": true,
+          "upstream_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46"
+        },
+        "registration_network_cdr_bytes": 3614720,
+        "robot": "aerial08",
+        "verifier_max_rss_kib": 373880,
+        "wall_s": 152.89464895206038
+      }
+    },
+    "sampled_peak_rss_kib": {
+      "aerial04-cbs": 92132,
+      "aerial04-frontend": 289388,
+      "aerial05-cbs": 142868,
+      "aerial05-frontend": 375808,
+      "aerial06-cbs": 212468,
+      "aerial06-frontend": 365152,
+      "aerial07-cbs": 175508,
+      "aerial07-frontend": 589804,
+      "aerial08-cbs": 95408,
+      "aerial08-frontend": 474096
+    },
+    "shared_reference": false,
+    "termination": "fixed local settling budget after peer input completion; convergence reported separately",
+    "transport": "ROS2 Fast DDS",
+    "wall_s": 155.48221359297168
+  },
+  "verification_reasons": {
+    "accepted": 53,
+    "low_overlap": 1
+  },
+  "reused_frontends": [
+    "aerial05",
+    "aerial06",
+    "aerial07",
+    "aerial08"
+  ],
+  "fresh_frontends": [
+    "aerial04"
+  ],
+  "frontend_quality": {
+    "passed": true,
+    "quality": {
+      "aerial05": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 5.284001744723069,
+        "max_successful_update_gap_s": 0.192002058,
+        "native_poses": 2753,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "aerial06": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.07531202656208,
+        "max_successful_update_gap_s": 0.167996883,
+        "native_poses": 3107,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "aerial07": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.1218964147196515,
+        "max_successful_update_gap_s": 0.15199995,
+        "native_poses": 3713,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "aerial08": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.539622324666119,
+        "max_successful_update_gap_s": 0.135998964,
+        "native_poses": 2623,
+        "ground_truth_used": false,
+        "passed": true
+      },
+      "aerial04": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.9104446471868775,
+        "max_successful_update_gap_s": 0.120006085,
+        "native_poses": 2760,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "diagnostic_backend": false,
+    "disconnection_is_valid_outcome": true
+  },
+  "disconnection_is_valid_outcome": true
+}

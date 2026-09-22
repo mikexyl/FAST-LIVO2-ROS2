@@ -1,0 +1,22 @@
+{
+  "all_connected": true,
+  "loops": 51,
+  "pcm_rejected": 2,
+  "a5_geometric_attempts": 12,
+  "a5_geometric_accepted": 12,
+  "a5_retained_loops": 10,
+  "height_initializations": 54,
+  "height_runtime_mean_s": 0.7064805246320449,
+  "height_runtime_p95_s": 1.4827467718743714,
+  "height_nonzero": 52,
+  "backend_wall_s": 150.64192460500635,
+  "individual_cbs_ate": {
+    "aerial05": 0.17763210688779943,
+    "aerial06": 0.06160206679013232,
+    "aerial07": 0.0710704759102099,
+    "aerial08": 0.11929778603718642
+  },
+  "shared_cbs_ate": {
+    "aerial05": 0.4378054624301339
+  }
+}

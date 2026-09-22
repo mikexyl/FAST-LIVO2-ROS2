@@ -1,0 +1,97 @@
+{
+  "bands": [
+    {
+      "id": "near",
+      "label": "Near terrain: \u22120.5\u20132 m",
+      "minimum_m": -0.5,
+      "maximum_m": 2.0
+    },
+    {
+      "id": "low",
+      "label": "Low structures: 2\u20135 m",
+      "minimum_m": 2.0,
+      "maximum_m": 5.0
+    },
+    {
+      "id": "middle",
+      "label": "Middle structures: 5\u201310 m",
+      "minimum_m": 5.0,
+      "maximum_m": 10.0
+    },
+    {
+      "id": "high",
+      "label": "High structures: 10\u201320 m",
+      "minimum_m": 10.0,
+      "maximum_m": 20.0
+    },
+    {
+      "id": "upper",
+      "label": "Upper structures: \u226520 m",
+      "minimum_m": 20.0,
+      "maximum_m": null
+    }
+  ],
+  "terrain_settings": {
+    "cell_m": 4.0,
+    "minimum_cell_points": 20,
+    "quantile": 0.1,
+    "trials": 600,
+    "seed": 0,
+    "tolerance_m": 0.35,
+    "max_slope_deg": 12.0,
+    "minimum_support": 30,
+    "minimum_fraction": 0.15,
+    "minimum_minor_spread_m": 8.0
+  },
+  "pairs": [
+    [
+      [
+        "aerial06",
+        27
+      ],
+      [
+        "ground06",
+        17
+      ]
+    ],
+    [
+      [
+        "aerial06",
+        17
+      ],
+      [
+        "ground06",
+        7
+      ]
+    ]
+  ],
+  "ground_truth_used": false,
+  "density_normalization": "unchanged native linear counts; independently normalized per layer",
+  "sampling": "exact original native ellipsoid surface sampling; slice sampled surfaces, not ellipsoid centers",
+  "matching": "native ORB + self-pruning + two-map HBST + native RANSAC; same layer matched to same layer",
+  "thresholds": {
+    "projection_alignment": "gravity",
+    "upstream_commit": "1710f15db000a579324e3ba045cd64a0b4d706da",
+    "density_map_resolution": 0.5,
+    "density_threshold": 0.05,
+    "hamming_distance_threshold": 50,
+    "inliers_threshold": 5,
+    "max_hypotheses_per_query": 20,
+    "max_range_m": null,
+    "local_map": "Persistent native map cropped by horizontal radius around drone; all ages and heights; snapshot IMU frame",
+    "vertical_initialization": {
+      "enabled": true,
+      "voxel_m": 0.8,
+      "xy_neighbors": 8,
+      "xy_radius_m": 1.0,
+      "histogram_bin_m": 0.5,
+      "peak_separation_m": 2.0,
+      "modal_peaks": 5,
+      "coarse_inlier_m": 1.5
+    }
+  },
+  "selection": "two previously discussed candidates; positive-pair visual diagnostic, not retrieval benchmark",
+  "bands_fixed_before_matching": true,
+  "pooled_inlier_counts": false,
+  "run_full_pipeline": false
+}

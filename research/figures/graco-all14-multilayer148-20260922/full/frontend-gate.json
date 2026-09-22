@@ -1,0 +1,145 @@
+{
+  "passed": true,
+  "quality": {
+    "aerial01": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 5.09933693318949,
+      "max_successful_update_gap_s": 0.272128314,
+      "native_poses": 3712,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial02": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.7908032059397985,
+      "max_successful_update_gap_s": 0.280423513,
+      "native_poses": 2488,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial03": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.2709864423223265,
+      "max_successful_update_gap_s": 0.22400093,
+      "native_poses": 3595,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial04": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 5.31527189168208,
+      "max_successful_update_gap_s": 0.26286533,
+      "native_poses": 2626,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial05": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.842902855595386,
+      "max_successful_update_gap_s": 0.219837228,
+      "native_poses": 2638,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial06": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.984489589203302,
+      "max_successful_update_gap_s": 0.184002876,
+      "native_poses": 3095,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial07": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.4460719196079705,
+      "max_successful_update_gap_s": 0.1863093,
+      "native_poses": 3712,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "aerial08": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.653382410303381,
+      "max_successful_update_gap_s": 0.224662809,
+      "native_poses": 2510,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "ground01": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 1.9916273001432931,
+      "max_successful_update_gap_s": 0.320001126,
+      "native_poses": 3093,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "ground02": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.008344334398957,
+      "max_successful_update_gap_s": 0.332107348,
+      "native_poses": 3630,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "ground03": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 1.9945691200232032,
+      "max_successful_update_gap_s": 0.337471207,
+      "native_poses": 2740,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "ground04": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 1.8670318781309754,
+      "max_successful_update_gap_s": 0.21600008,
+      "native_poses": 3063,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "ground05": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.4987567872248686,
+      "max_successful_update_gap_s": 0.200020521,
+      "native_poses": 4830,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "ground06": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.0668133117236023,
+      "max_successful_update_gap_s": 0.200000048,
+      "native_poses": 2872,
+      "ground_truth_used": false,
+      "passed": true
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "forced_initial_capacity": 16,
+  "final_capacity": 65536,
+  "batches": 21,
+  "final_voxels": 22877,
+  "bitwise_centroid_equality": true,
+  "reset_reuse_verified": true
+}

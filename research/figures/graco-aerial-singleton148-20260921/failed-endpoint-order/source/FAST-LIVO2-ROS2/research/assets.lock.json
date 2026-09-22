@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "repositories": {
+    "megaloc": {
+      "url": "https://github.com/gmberton/MegaLoc",
+      "commit": "5fe0dd697c4a70ba3e23607f6716ab3c606b16db"
+    },
+    "mapclosures": {
+      "url": "https://github.com/PRBonn/MapClosures.git",
+      "commit": "1710f15db000a579324e3ba045cd64a0b4d706da"
+    },
+    "mapclosures-hbst": {
+      "url": "https://gitlab.com/saurabh1002/srrg_hbst.git",
+      "commit": "6b0ce9f91da6e503b98aa45b22b3e2754f26c83d"
+    },
+    "mapclosures-sophus": {
+      "url": "https://github.com/strasdat/Sophus.git",
+      "commit": "d0b7315a0d90fc6143defa54596a3a95d9fa10ec"
+    }
+  },
+  "checkpoints": {
+    ".ros2/research-models/megaloc/model.safetensors": "d4f9f2bcb60018f91eb6a8e061ed054fd55654e10c2569cf13841ea986ffb4f8"
+  },
+  "checkpoint_urls": {
+    "megaloc/model.safetensors": "https://huggingface.co/gberton/MegaLoc/resolve/main/model.safetensors"
+  }
+}

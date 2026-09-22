@@ -1,0 +1,66 @@
+/**:
+  ros__parameters:
+    mapping:
+      map_resolution: 0.1
+      pub_map_n_secs: 10
+      namespace: ground06
+      submaps:
+        enabled: false
+      area_maps:
+        enabled: true
+        radius_m: 80.0
+        snapshot_step_m: 20.0
+        snapshot_interval_s: 10.0
+        odometry: false
+        robot: ground06
+        python: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/.ros2/research-venv/bin/python
+        writer: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py
+        output: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/frontends/ground06/frontend/area_maps
+      diagnostics_path: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/frontends/ground06/frontend/native_updates.jsonl
+    publish:
+      map: true
+      scan: true
+      markers: true
+      odometry: true
+      analytics: true
+      tf: true
+    lidar:
+      type: 2
+      rate: 10
+      scan_lines: 16
+      vertical_fov: 30.0
+      min_range: 2.0
+      max_range: 100.0
+      topic: /velodyne/points
+      t_imu_lidar:
+      - -0.01192777
+      - -0.01973063
+      - 0.12260907
+      r_imu_lidar:
+      - 0.99991642
+      - 0.01018984
+      - 0.00795779
+      - -0.01025064
+      - 0.99991829
+      - 0.0076374
+      - -0.00787932
+      - -0.00771833
+      - 0.99993917
+    imu:
+      rate: 125
+      acc_noise: 0.010028108
+      gyr_noise: 0.00083723892
+      acc_bias: 0.00055367077
+      gyr_bias: 1.5212086e-05
+      topic: /gnss/imu
+    input:
+      reliable: true
+    cameras:
+      num_cams: 0
+    use_sim_time: true
+    research:
+      enabled: false
+      robot: ground06
+      python: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/.ros2/research-venv/bin/python
+      writer: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/FAST-LIVO2-ROS2/research/s3e_pipeline/mcap_writer.py
+      output: /home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/frontends/ground06/frontend/export

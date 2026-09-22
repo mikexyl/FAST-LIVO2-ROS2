@@ -1,0 +1,66 @@
+{
+  "verified": true,
+  "experiment_inputs_unchanged": true,
+  "files": {
+    "figures/graco-cbs-diagnostic-20260921/aerial05--aerial06--aerial07--aerial08-subset-ape.zip": {
+      "bytes": 7485594,
+      "sha256": "ed349ee355f052ced9a3ec47a387358718bf1b683f8f89f733737b9702d565a5"
+    },
+    "figures/graco-cbs-diagnostic-20260921/aerial05--aerial06--aerial07-subset-ape.zip": {
+      "bytes": 5875964,
+      "sha256": "2ec9322bd8b049f7ec65dad3ced0c69f634ee44767333825e2ea9b1a74cbc16a"
+    },
+    "figures/graco-cbs-diagnostic-20260921/aerial05--aerial07-subset-ape.zip": {
+      "bytes": 3969255,
+      "sha256": "8024607da9bee7bf8beea3c1423716af516f29a6a7fbad3011585ffc13476bd0"
+    },
+    "figures/graco-cbs-diagnostic-20260921/aerial05-raw-vs-cbs-shape.zip": {
+      "bytes": 1224694,
+      "sha256": "d78be4934b4b26d2c249ee938d6060424ecfa0cba6a02928eb0a40c60afcfc39"
+    },
+    "figures/graco-cbs-diagnostic-20260921/aerial06--aerial07--aerial08-subset-ape.zip": {
+      "bytes": 5797157,
+      "sha256": "835c70cf71c349df569cc7ce0472a3586f8814569c8141b8ce31a996a56f49b9"
+    },
+    "figures/graco-cbs-diagnostic-20260921/aerial06-raw-vs-cbs-shape.zip": {
+      "bytes": 1382403,
+      "sha256": "8710ddde86491322cf34031341b51668ab3f2eb0b566a94af7a4e24d191c409b"
+    },
+    "figures/graco-cbs-diagnostic-20260921/aerial07-raw-vs-cbs-shape.zip": {
+      "bytes": 1652545,
+      "sha256": "c47ed32cf13ca71c2dca88e0cc7c3ae65f4173dfd84e700c8f83f4b94e47b3e6"
+    },
+    "figures/graco-cbs-diagnostic-20260921/aerial08-raw-vs-cbs-shape.zip": {
+      "bytes": 1167646,
+      "sha256": "56d7e517dd09844d06af9647aba9379c65cce80c597240fd40eaed5734192d8c"
+    },
+    "figures/graco-cbs-diagnostic-20260921/analysis.json": {
+      "bytes": 57813,
+      "sha256": "5afb631a02de81cef166dfaf56d0dcde76dd698cfaecae7d870fb251ee00c68f"
+    },
+    "figures/graco-cbs-diagnostic-20260921/analyze.py": {
+      "bytes": 8652,
+      "sha256": "4b6f5d27f9a04d5d1c163f7e03ff497742f3a1b696e8c63c68e23772212642c4"
+    },
+    "figures/graco-cbs-diagnostic-20260921/cbs-error-diagnosis.png": {
+      "bytes": 137546,
+      "sha256": "757d9c7f2c9aa8b0b6c285cdd90eb7a699e75493fdcc467ffaf52e3c8ecdae42"
+    },
+    "figures/graco-cbs-diagnostic-20260921/check_geometry.py": {
+      "bytes": 4235,
+      "sha256": "7a98be42b2f4a6be992f21cc8ea6001c588fc2ba590973091f40e840e691d550"
+    },
+    "figures/graco-cbs-diagnostic-20260921/geometry-checks.json": {
+      "bytes": 8682,
+      "sha256": "e3e2de165572b84c1859bab5b20ed6288e1b65b1859d2cff73801a9f877e2670"
+    },
+    "RESULTS-GRACO-CBS-DIAGNOSTIC.md": {
+      "bytes": 5819,
+      "sha256": "f67f30389a5612a628bbce9580889eac5c77436d57de6c4de31c105b8a5a9bad"
+    },
+    "RESULTS-UPSTREAM-AREA-GRACO-AERIAL.md": {
+      "bytes": 6589,
+      "sha256": "7e938a6e170d955dbb10d1ddfec73bab7626fb998859c966e38cb0024ca957e7"
+    }
+  }
+}

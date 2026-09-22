@@ -1,0 +1,91 @@
+{
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "ground06",
+      "aerial06"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {},
+    "measured_components": [
+      [
+        "aerial06"
+      ],
+      [
+        "ground06"
+      ]
+    ],
+    "output_frames": {
+      "aerial06": [
+        "aerial06"
+      ],
+      "ground06": [
+        "ground06"
+      ]
+    }
+  },
+  "verification_outcomes": {},
+  "candidate_entries": 315,
+  "eligible_candidate_entries": 0,
+  "rejection_events": {
+    "retrieval_threshold": 476
+  },
+  "loops": 0,
+  "proposed_loops": 0,
+  "pcm_rejected": 0,
+  "frontend": {
+    "ground06": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 1.8878639596072442,
+      "max_successful_update_gap_s": 0.120002985,
+      "native_poses": 2903,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 22.697096144333653,
+      "processing_p95_ms": 35.07316950001496,
+      "peak_mapper_rss_mib": 1341.6953125,
+      "snapshots": 31,
+      "odometry_map_source": "persistent_map"
+    },
+    "aerial06": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.073559926919945,
+      "max_successful_update_gap_s": 0.199995303,
+      "native_poses": 3092,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 1,
+      "processing_mean_ms": 14.00750195633958,
+      "processing_p95_ms": 25.844350400041083,
+      "peak_mapper_rss_mib": 1002.2109375,
+      "snapshots": 33,
+      "odometry_map_source": "persistent_map"
+    }
+  },
+  "backend_wall_s": 15.020241328000111,
+  "retrieval_inliers_histogram": {
+    "0": 234,
+    "2": 68,
+    "3": 6,
+    "5": 2,
+    "1": 1,
+    "4": 4
+  },
+  "retrieval_max_inliers": 5,
+  "retrieval_gate": "valid pose and strictly more than 5 MapClosures RANSAC inliers",
+  "verification_attempts": 0,
+  "evaluation_only_route_overlap": {
+    "ground_truth_used": true,
+    "minimum_horizontal_path_distance_m": 0.6735166367655716,
+    "aerial_samples_within_20m_of_ground_path_fraction": 1.0,
+    "median_vertical_separation_for_those_samples_m": 18.75745,
+    "limitation": "Path proximity does not establish common observed surfaces; no simultaneity requirement."
+  }
+}

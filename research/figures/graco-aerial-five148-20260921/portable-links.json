@@ -1,0 +1,22 @@
+{
+  "prepared-aerial05": {
+    "before": "/workspace/.ros2/upstream-area-graco-aerial148-20260921/full/prepared-aerial05",
+    "after": "../../upstream-area-graco-aerial148-20260921/full/prepared-aerial05",
+    "payload_changed": false
+  },
+  "prepared-aerial06": {
+    "before": "/workspace/.ros2/upstream-area-graco-aerial148-20260921/full/prepared-aerial06",
+    "after": "../../upstream-area-graco-aerial148-20260921/full/prepared-aerial06",
+    "payload_changed": false
+  },
+  "prepared-aerial07": {
+    "before": "/workspace/.ros2/upstream-area-graco-aerial148-20260921/full/prepared-aerial07",
+    "after": "../../upstream-area-graco-aerial148-20260921/full/prepared-aerial07",
+    "payload_changed": false
+  },
+  "prepared-aerial08": {
+    "before": "/workspace/.ros2/upstream-area-graco-aerial148-20260921/full/prepared-aerial08",
+    "after": "../../upstream-area-graco-aerial148-20260921/full/prepared-aerial08",
+    "payload_changed": false
+  }
+}

@@ -1,0 +1,15 @@
+# Experimental observed-scene profile; areas count occupied horizontal cells.
+enabled: true
+strategy: coverage
+coverage:
+  cell_size_m: 1.0
+  start_area_m2: 2000.0
+  target_area_m2: 4000.0
+  start_new_area_m2: 1000.0
+  new_area_m2: 2000.0
+  min_shared_area_m2: 1000.0
+  min_overlap_ratio: 0.25
+  max_displacement_m: 80.0
+  max_age_s: 120.0
+  min_support_points: 50
+  min_support_ratio: 0.2

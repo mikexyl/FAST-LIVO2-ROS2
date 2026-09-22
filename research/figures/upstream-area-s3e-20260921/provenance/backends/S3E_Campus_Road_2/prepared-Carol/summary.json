@@ -1,0 +1,9 @@
+{
+  "submaps": 159,
+  "wall_s": 324.21639660198707,
+  "source_index_sha256": "00b87f6e30bee0ba520ebf7589d72e5e38e0acc8e6ada62fcf5dce6ea758e728",
+  "source": "/workspace/.ros2/upstream-area-s3e-20260921/capacity-run/frontends/Carol/frontend/area_maps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": null
+}

@@ -1,0 +1,19 @@
+{
+  "lidar": {
+    "topic": "/Bob/velodyne_points",
+    "source_messages": 8924,
+    "last_record_ns": 1689767769280357122,
+    "last_header_ns": 1689767769280357122
+  },
+  "imu": {
+    "topic": "/Bob/imu/data",
+    "source_messages": 89410,
+    "last_record_ns": 1689767769339054584,
+    "last_header_ns": 1689767769339054584
+  },
+  "native_last_scan_end_ns": 1689767769281419265,
+  "tail_shortfall_s": 0.0,
+  "full_selected_sensor_tail_reached": true,
+  "tolerance_s": 0.2,
+  "native_pose_count": 8768
+}

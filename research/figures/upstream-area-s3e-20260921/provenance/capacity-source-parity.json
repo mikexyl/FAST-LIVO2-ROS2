@@ -1,0 +1,16 @@
+{
+  "changed_files": [
+    "CMakeLists.txt",
+    "include/ioctree/ioctree.h"
+  ],
+  "identical_files": 28,
+  "estimator_source_files_identical": true,
+  "change": "Stable blocks for octree leaf storage; test build registration",
+  "sanitizer_test": {
+    "command": "/tmp/upstream-area-octree-growth-test",
+    "exit_code": 0,
+    "address_sanitizer": true,
+    "undefined_behavior_sanitizer": true,
+    "leak_sanitizer": true
+  }
+}

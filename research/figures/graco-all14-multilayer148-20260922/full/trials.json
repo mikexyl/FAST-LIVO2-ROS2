@@ -1,0 +1,16 @@
+{
+  "aerial01": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/aerial01",
+  "aerial02": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/aerial02",
+  "aerial03": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/aerial03",
+  "aerial04": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/aerial04",
+  "aerial05": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/aerial05",
+  "aerial06": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/aerial06",
+  "aerial07": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/aerial07",
+  "aerial08": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/aerial08",
+  "ground01": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/ground01",
+  "ground02": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/ground02",
+  "ground03": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/ground03",
+  "ground04": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/ground04",
+  "ground05": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/ground05",
+  "ground06": "/workspace/.ros2/graco-all14-multilayer148-20260922/full/frontends/ground06"
+}

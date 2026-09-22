@@ -1,0 +1,11 @@
+{
+  "local_artifacts_verified": 1736,
+  "html_relative_links_verified": 13,
+  "unique_robot_rows": 14,
+  "browser_preview": "Not performed: browser URL policy blocked the local file URL. No workaround attempted.",
+  "static_figures_visually_inspected": [
+    "diagnostics/ate-comparison.png",
+    "diagnostics/components-map-topdown.png",
+    "gallery/images/aerial01-0024.png"
+  ]
+}

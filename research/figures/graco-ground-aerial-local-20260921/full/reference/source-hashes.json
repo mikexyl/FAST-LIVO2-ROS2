@@ -1,0 +1,14 @@
+{
+  "ground06": {
+    "source": "/data/graco/ground-06.txt",
+    "sha256": "99b13bc984bc8ebb06ee76cdc9b5dd21f2b54eeba810e632bb20f775e97a2562",
+    "evaluation_only": true,
+    "backend_completed_before_reference_access": true
+  },
+  "aerial06": {
+    "source": "/data/graco/aerial-06-20m.txt",
+    "sha256": "17de18be612d1b7046c14ece92be21496ad425bf83cc93889e94e68e467fdf6b",
+    "evaluation_only": true,
+    "backend_completed_before_reference_access": true
+  }
+}

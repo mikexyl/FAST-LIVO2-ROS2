@@ -1,0 +1,35 @@
+{
+  "descriptor_evidence_memberships": 504,
+  "submaps": {
+    "aerial01": 49,
+    "aerial02": 28,
+    "aerial03": 40,
+    "aerial04": 32,
+    "aerial05": 34,
+    "aerial06": 33,
+    "aerial07": 40,
+    "aerial08": 29,
+    "ground01": 34,
+    "ground02": 39,
+    "ground03": 30,
+    "ground04": 33,
+    "ground05": 52,
+    "ground06": 31
+  },
+  "terrain_unavailable": {
+    "aerial01": 1,
+    "aerial02": 1,
+    "aerial03": 1,
+    "aerial04": 3,
+    "aerial05": 2,
+    "aerial06": 1,
+    "aerial07": 0,
+    "aerial08": 1,
+    "ground01": 0,
+    "ground02": 0,
+    "ground03": 0,
+    "ground04": 0,
+    "ground05": 0,
+    "ground06": 0
+  }
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "name": "S3E_Laboratory_4",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4",
+    "dataset": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/configs/Alpha.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "5f04c10ff82133ef73e4926680d03db3c2482cb64820e054ef2354f509183907",
+        "calibration_sha256": "11ca40997233b6c84cb48572110f700fca31ce3f46c3b8be234126737078a6be"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/configs/Bob.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "ee1b31a0bc650173eb4cd0e9fe5bf58377094b5d2347312db81fd87b3716ee76",
+        "calibration_sha256": "192d5da1cbf3f2e30c5c8210dc241efe6abd954abf89bdba8d6f88176c070f96"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Laboratory_4",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/configs/Carol.yaml",
+        "duration_s": 382.019425082,
+        "config_sha256": "bf428ef59d2b3677fc368a913ea46b76d75227da7f06a99f0070debdc1677be2",
+        "calibration_sha256": "eef73c62c9c0afd3d4d9dbe8e0cc32d5c2d33d8791a849aa1987e96353df0479"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_1",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1",
+    "dataset": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/configs/Alpha.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "5f04c10ff82133ef73e4926680d03db3c2482cb64820e054ef2354f509183907",
+        "calibration_sha256": "11ca40997233b6c84cb48572110f700fca31ce3f46c3b8be234126737078a6be"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/configs/Bob.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "ee1b31a0bc650173eb4cd0e9fe5bf58377094b5d2347312db81fd87b3716ee76",
+        "calibration_sha256": "192d5da1cbf3f2e30c5c8210dc241efe6abd954abf89bdba8d6f88176c070f96"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev1/S3E_Campus_Road_1",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/configs/Carol.yaml",
+        "duration_s": 878.127955199,
+        "config_sha256": "bf428ef59d2b3677fc368a913ea46b76d75227da7f06a99f0070debdc1677be2",
+        "calibration_sha256": "eef73c62c9c0afd3d4d9dbe8e0cc32d5c2d33d8791a849aa1987e96353df0479"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_2",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2",
+    "dataset": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/configs/Alpha.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "5f04c10ff82133ef73e4926680d03db3c2482cb64820e054ef2354f509183907",
+        "calibration_sha256": "11ca40997233b6c84cb48572110f700fca31ce3f46c3b8be234126737078a6be"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/configs/Bob.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "ee1b31a0bc650173eb4cd0e9fe5bf58377094b5d2347312db81fd87b3716ee76",
+        "calibration_sha256": "192d5da1cbf3f2e30c5c8210dc241efe6abd954abf89bdba8d6f88176c070f96"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_2",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/configs/Carol.yaml",
+        "duration_s": 1594.698258638,
+        "config_sha256": "bf428ef59d2b3677fc368a913ea46b76d75227da7f06a99f0070debdc1677be2",
+        "calibration_sha256": "eef73c62c9c0afd3d4d9dbe8e0cc32d5c2d33d8791a849aa1987e96353df0479"
+      }
+    }
+  },
+  {
+    "name": "S3E_Campus_Road_3",
+    "robots": [
+      "Alpha",
+      "Bob",
+      "Carol"
+    ],
+    "folder": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3",
+    "dataset": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+    "graco": false,
+    "trials": {
+      "Alpha": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Alpha",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/configs/Alpha.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "5f04c10ff82133ef73e4926680d03db3c2482cb64820e054ef2354f509183907",
+        "calibration_sha256": "11ca40997233b6c84cb48572110f700fca31ce3f46c3b8be234126737078a6be"
+      },
+      "Bob": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Bob",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/configs/Bob.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "ee1b31a0bc650173eb4cd0e9fe5bf58377094b5d2347312db81fd87b3716ee76",
+        "calibration_sha256": "192d5da1cbf3f2e30c5c8210dc241efe6abd954abf89bdba8d6f88176c070f96"
+      },
+      "Carol": {
+        "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Carol",
+        "reused": false,
+        "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+        "config": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/configs/Carol.yaml",
+        "duration_s": 907.822902202,
+        "config_sha256": "bf428ef59d2b3677fc368a913ea46b76d75227da7f06a99f0070debdc1677be2",
+        "calibration_sha256": "eef73c62c9c0afd3d4d9dbe8e0cc32d5c2d33d8791a849aa1987e96353df0479"
+      }
+    }
+  }
+]

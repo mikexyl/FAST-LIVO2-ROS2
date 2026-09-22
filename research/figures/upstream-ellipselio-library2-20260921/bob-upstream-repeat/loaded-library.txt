@@ -1,0 +1,6 @@
+79bd07fce000-79bd0807f000 r--p 00000000 103:01 153228323                 /workspace/.ros2/upstream-ellipselio-20260921/install/ellipselio/lib/libellipselio_mapping.so
+79bd0807f000-79bd08166000 r-xp 000b1000 103:01 153228323                 /workspace/.ros2/upstream-ellipselio-20260921/install/ellipselio/lib/libellipselio_mapping.so
+79bd08166000-79bd08193000 r--p 00198000 103:01 153228323                 /workspace/.ros2/upstream-ellipselio-20260921/install/ellipselio/lib/libellipselio_mapping.so
+79bd08193000-79bd08194000 ---p 001c5000 103:01 153228323                 /workspace/.ros2/upstream-ellipselio-20260921/install/ellipselio/lib/libellipselio_mapping.so
+79bd08194000-79bd0819a000 r--p 001c5000 103:01 153228323                 /workspace/.ros2/upstream-ellipselio-20260921/install/ellipselio/lib/libellipselio_mapping.so
+79bd0819a000-79bd0819c000 rw-p 001cb000 103:01 153228323                 /workspace/.ros2/upstream-ellipselio-20260921/install/ellipselio/lib/libellipselio_mapping.so

@@ -1,0 +1,15 @@
+{
+  "query": [
+    "aerial08",
+    11
+  ],
+  "candidate": [
+    "aerial04",
+    22
+  ],
+  "translation_discrepancy_m": 0.34584316191263076,
+  "rotation_discrepancy_deg": 0.25601961939028034,
+  "evaluation_only": true,
+  "fed_back_to_estimation": false,
+  "reference": "Relative anchors after independent position-GT alignment of raw odometry; not exact six-DoF ground truth"
+}

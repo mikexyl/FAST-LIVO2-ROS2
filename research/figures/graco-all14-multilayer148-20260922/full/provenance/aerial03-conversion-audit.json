@@ -1,0 +1,13 @@
+{
+  "counts": {
+    "/velodyne/points": 3924,
+    "/gnss/imu": 49063
+  },
+  "all_sensor_measurements_equal": true,
+  "record_header_point_times_unchanged": true,
+  "conversion": "ROS1 serialization to ROS2 CDR; no filtering within messages or time rebasing",
+  "ground_truth_used": false,
+  "source": "/data3/graco/aerial-03-20m.bag",
+  "source_bytes": 30224973747,
+  "source_sha256": "cc6a74ce0cad6d6ac84bca944c0bcfd752378746dc9e35e3e787513557fa8abe"
+}

@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "verified_utc": "2026-09-21T14:36:49Z",
+  "copied_files_verified": 541,
+  "copied_bytes": 430585941,
+  "full_native_poses": 12196,
+  "all_raw_cbs_trajectories_finite_chronological": true,
+  "all_native_updates_persistent_map_zero_handovers": true,
+  "all_post_initialization_lidar_updates_successful": true,
+  "gallery_images_verified": 136,
+  "evo_version": "1.36.5",
+  "association_max_diff_s": 0.05,
+  "scale": 1,
+  "derived_rerun_matches_remote_verified_hash": true,
+  "container_resource_limits_absent": true,
+  "map_point_counts": {
+    "aerial05": {
+      "raw": 789362,
+      "cbs": 789231
+    },
+    "aerial06": {
+      "raw": 592090,
+      "cbs": 612845
+    },
+    "aerial07": {
+      "raw": 726223,
+      "cbs": 807186
+    },
+    "aerial08": {
+      "raw": 670996,
+      "cbs": 851482
+    }
+  },
+  "report_links_verified": true,
+  "main_report_sha256": "74049167df4519a6f217f77ad5e018525fd75677b6893360434ee87a49d28265",
+  "remote_artifact_audit_sha256": "85f836eb9969a0342973ba52d5a2cb4051ee223f02c259f3321c94daa63c9ce2",
+  "retained_manifest_sha256": "e643dc926384be0ab661a6515e63816bbd5587f07c103b5e5a400da282cc5d31"
+}

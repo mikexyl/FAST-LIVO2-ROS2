@@ -1,0 +1,8 @@
+{
+  "verified": true,
+  "files": 965,
+  "bytes": 760401228,
+  "remote_root": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-five148-20260921",
+  "local_root": "/home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/research/figures/graco-aerial-five148-20260921",
+  "manifest_sha256": "85a826e795066636368483c16fc1b6defd33b05c095df2046847f80f36cefa94"
+}

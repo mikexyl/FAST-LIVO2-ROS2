@@ -1,0 +1,857 @@
+{
+  "passed": true,
+  "pairs": 14,
+  "ground_truth_used": false,
+  "results": [
+    {
+      "query": [
+        "aerial06",
+        14
+      ],
+      "candidate": [
+        "aerial05",
+        28
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 0.0,
+        "target_points": 43902,
+        "source_points": 77952,
+        "status": "estimated",
+        "correction_m": 12.0,
+        "output_level_dz_m": 12.0,
+        "runtime_s": 1.8688137929420918,
+        "height_vote_pairs": 233114,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.05472598522167488
+          },
+          {
+            "correction_m": 6.5,
+            "coarse_symmetric_overlap": 0.16267703201970443
+          },
+          {
+            "correction_m": 9.5,
+            "coarse_symmetric_overlap": 0.22357348111658457
+          },
+          {
+            "correction_m": 12.0,
+            "coarse_symmetric_overlap": 0.3389778325123153
+          },
+          {
+            "correction_m": 14.5,
+            "coarse_symmetric_overlap": 0.269691605090312
+          },
+          {
+            "correction_m": 17.0,
+            "coarse_symmetric_overlap": 0.17025862068965517
+          }
+        ],
+        "coarse_symmetric_overlap": 0.3389778325123153
+      },
+      "overlap": 0.30057236057205855,
+      "rmse_m": 0.2634006877274547
+    },
+    {
+      "query": [
+        "aerial07",
+        15
+      ],
+      "candidate": [
+        "aerial05",
+        26
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 7.105427357601002e-15,
+        "target_points": 60427,
+        "source_points": 65085,
+        "status": "estimated",
+        "correction_m": 9.5,
+        "output_level_dz_m": 9.500000000000007,
+        "runtime_s": 1.4596084470394999,
+        "height_vote_pairs": 282790,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.14058285203634138
+          },
+          {
+            "correction_m": 4.5,
+            "coarse_symmetric_overlap": 0.29008555778046236
+          },
+          {
+            "correction_m": 7.0,
+            "coarse_symmetric_overlap": 0.36443112852423754
+          },
+          {
+            "correction_m": 9.5,
+            "coarse_symmetric_overlap": 0.5307981869862487
+          },
+          {
+            "correction_m": 12.0,
+            "coarse_symmetric_overlap": 0.36493815779365446
+          },
+          {
+            "correction_m": 14.5,
+            "coarse_symmetric_overlap": 0.2456633632941538
+          }
+        ],
+        "coarse_symmetric_overlap": 0.5307981869862487
+      },
+      "overlap": 0.49137042354176286,
+      "rmse_m": 0.26463798011659034
+    },
+    {
+      "query": [
+        "aerial07",
+        20
+      ],
+      "candidate": [
+        "aerial05",
+        16
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 0.0,
+        "target_points": 62698,
+        "source_points": 49213,
+        "status": "estimated",
+        "correction_m": 10.0,
+        "output_level_dz_m": 10.0,
+        "runtime_s": 0.6161038459977135,
+        "height_vote_pairs": 327390,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.13311429391687135
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.3331685221219178
+          },
+          {
+            "correction_m": 7.5,
+            "coarse_symmetric_overlap": 0.5167150467319531
+          },
+          {
+            "correction_m": 10.0,
+            "coarse_symmetric_overlap": 0.8107276149159462
+          },
+          {
+            "correction_m": 12.5,
+            "coarse_symmetric_overlap": 0.46345975948196116
+          },
+          {
+            "correction_m": 15.0,
+            "coarse_symmetric_overlap": 0.28407128197833903
+          }
+        ],
+        "coarse_symmetric_overlap": 0.8107276149159462
+      },
+      "overlap": 0.7027809138986274,
+      "rmse_m": 0.26450442941436164
+    },
+    {
+      "query": [
+        "aerial07",
+        24
+      ],
+      "candidate": [
+        "aerial05",
+        20
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": -8.881784197001252e-16,
+        "target_points": 62043,
+        "source_points": 50551,
+        "status": "estimated",
+        "correction_m": 9.5,
+        "output_level_dz_m": 9.5,
+        "runtime_s": 1.2585929710185155,
+        "height_vote_pairs": 221655,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.10025305030382155
+          },
+          {
+            "correction_m": 4.0,
+            "coarse_symmetric_overlap": 0.16422481182405751
+          },
+          {
+            "correction_m": 7.0,
+            "coarse_symmetric_overlap": 0.24910142965362733
+          },
+          {
+            "correction_m": 9.5,
+            "coarse_symmetric_overlap": 0.4324903695823864
+          },
+          {
+            "correction_m": 12.0,
+            "coarse_symmetric_overlap": 0.27640507390035945
+          },
+          {
+            "correction_m": 14.5,
+            "coarse_symmetric_overlap": 0.2017955289073707
+          }
+        ],
+        "coarse_symmetric_overlap": 0.4324903695823864
+      },
+      "overlap": 0.3806809835776609,
+      "rmse_m": 0.2768318185226908
+    },
+    {
+      "query": [
+        "aerial07",
+        25
+      ],
+      "candidate": [
+        "aerial05",
+        16
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": -4.440892098500626e-16,
+        "target_points": 69116,
+        "source_points": 49213,
+        "status": "estimated",
+        "correction_m": 10.0,
+        "output_level_dz_m": 10.0,
+        "runtime_s": 4.138519266969524,
+        "height_vote_pairs": 261948,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.09824063892586377
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.25460096070374444
+          },
+          {
+            "correction_m": 7.5,
+            "coarse_symmetric_overlap": 0.4015423346258464
+          },
+          {
+            "correction_m": 10.0,
+            "coarse_symmetric_overlap": 0.7086745372157763
+          },
+          {
+            "correction_m": 12.5,
+            "coarse_symmetric_overlap": 0.367266624225939
+          },
+          {
+            "correction_m": 15.0,
+            "coarse_symmetric_overlap": 0.22902485115721455
+          }
+        ],
+        "coarse_symmetric_overlap": 0.7086745372157763
+      },
+      "overlap": 0.623584255455399,
+      "rmse_m": 0.24434876771552183
+    },
+    {
+      "query": [
+        "aerial07",
+        26
+      ],
+      "candidate": [
+        "aerial05",
+        19
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": -3.552713678800501e-15,
+        "target_points": 72708,
+        "source_points": 48424,
+        "status": "estimated",
+        "correction_m": 10.0,
+        "output_level_dz_m": 9.999999999999996,
+        "runtime_s": 1.2593001320492476,
+        "height_vote_pairs": 301695,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.142570281124498
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.278181218022776
+          },
+          {
+            "correction_m": 7.5,
+            "coarse_symmetric_overlap": 0.4086207845078946
+          },
+          {
+            "correction_m": 10.0,
+            "coarse_symmetric_overlap": 0.6255570226109919
+          },
+          {
+            "correction_m": 12.5,
+            "coarse_symmetric_overlap": 0.3638801782472355
+          },
+          {
+            "correction_m": 15.0,
+            "coarse_symmetric_overlap": 0.2658854596468064
+          }
+        ],
+        "coarse_symmetric_overlap": 0.6255570226109919
+      },
+      "overlap": 0.5442920511905369,
+      "rmse_m": 0.26054969856429333
+    },
+    {
+      "query": [
+        "aerial07",
+        27
+      ],
+      "candidate": [
+        "aerial05",
+        19
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 0.0,
+        "target_points": 72983,
+        "source_points": 48424,
+        "status": "estimated",
+        "correction_m": 10.0,
+        "output_level_dz_m": 10.0,
+        "runtime_s": 1.4126113670645282,
+        "height_vote_pairs": 317143,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.14434868394009565
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.2883137168929751
+          },
+          {
+            "correction_m": 7.5,
+            "coarse_symmetric_overlap": 0.41553512461806175
+          },
+          {
+            "correction_m": 10.0,
+            "coarse_symmetric_overlap": 0.660359261745886
+          },
+          {
+            "correction_m": 12.5,
+            "coarse_symmetric_overlap": 0.40275132565117905
+          },
+          {
+            "correction_m": 15.0,
+            "coarse_symmetric_overlap": 0.28849184056561117
+          }
+        ],
+        "coarse_symmetric_overlap": 0.660359261745886
+      },
+      "overlap": 0.5545729139438297,
+      "rmse_m": 0.258956075089876
+    },
+    {
+      "query": [
+        "aerial07",
+        28
+      ],
+      "candidate": [
+        "aerial05",
+        19
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 0.0,
+        "target_points": 77583,
+        "source_points": 48424,
+        "status": "estimated",
+        "correction_m": 10.0,
+        "output_level_dz_m": 10.0,
+        "runtime_s": 1.4237513160333037,
+        "height_vote_pairs": 343534,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.157508732583169
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.31028704742018226
+          },
+          {
+            "correction_m": 7.5,
+            "coarse_symmetric_overlap": 0.4414240233040743
+          },
+          {
+            "correction_m": 10.0,
+            "coarse_symmetric_overlap": 0.6886689094260341
+          },
+          {
+            "correction_m": 12.5,
+            "coarse_symmetric_overlap": 0.42283747728239435
+          },
+          {
+            "correction_m": 15.0,
+            "coarse_symmetric_overlap": 0.30745137465681915
+          }
+        ],
+        "coarse_symmetric_overlap": 0.6886689094260341
+      },
+      "overlap": 0.5784959133512337,
+      "rmse_m": 0.25350641873007645
+    },
+    {
+      "query": [
+        "aerial07",
+        29
+      ],
+      "candidate": [
+        "aerial05",
+        19
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 4.440892098500626e-16,
+        "target_points": 80390,
+        "source_points": 48424,
+        "status": "estimated",
+        "correction_m": 10.0,
+        "output_level_dz_m": 10.0,
+        "runtime_s": 1.7875540480017662,
+        "height_vote_pairs": 348772,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.17284488120412986
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.33699465107600446
+          },
+          {
+            "correction_m": 7.5,
+            "coarse_symmetric_overlap": 0.48289588257245925
+          },
+          {
+            "correction_m": 10.0,
+            "coarse_symmetric_overlap": 0.7182360990172907
+          },
+          {
+            "correction_m": 12.5,
+            "coarse_symmetric_overlap": 0.43490483891031223
+          },
+          {
+            "correction_m": 15.0,
+            "coarse_symmetric_overlap": 0.3277895260604553
+          }
+        ],
+        "coarse_symmetric_overlap": 0.7182360990172907
+      },
+      "overlap": 0.6104916035386979,
+      "rmse_m": 0.24484197118233084
+    },
+    {
+      "query": [
+        "aerial07",
+        30
+      ],
+      "candidate": [
+        "aerial05",
+        20
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 0.0,
+        "target_points": 76127,
+        "source_points": 50551,
+        "status": "estimated",
+        "correction_m": 10.0,
+        "output_level_dz_m": 10.0,
+        "runtime_s": 1.3829185731010512,
+        "height_vote_pairs": 346927,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.17025496867077383
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.3379615642281976
+          },
+          {
+            "correction_m": 7.5,
+            "coarse_symmetric_overlap": 0.4735376410471974
+          },
+          {
+            "correction_m": 10.0,
+            "coarse_symmetric_overlap": 0.7240269549568484
+          },
+          {
+            "correction_m": 12.5,
+            "coarse_symmetric_overlap": 0.44735770488788473
+          },
+          {
+            "correction_m": 15.0,
+            "coarse_symmetric_overlap": 0.33771198129441593
+          }
+        ],
+        "coarse_symmetric_overlap": 0.7240269549568484
+      },
+      "overlap": 0.6263834672789896,
+      "rmse_m": 0.24775910621335767
+    },
+    {
+      "query": [
+        "aerial07",
+        31
+      ],
+      "candidate": [
+        "aerial05",
+        20
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 0.0,
+        "target_points": 78763,
+        "source_points": 50551,
+        "status": "estimated",
+        "correction_m": 10.0,
+        "output_level_dz_m": 10.0,
+        "runtime_s": 1.4621139999944717,
+        "height_vote_pairs": 315456,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.1455632720947653
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.29760166575676394
+          },
+          {
+            "correction_m": 7.5,
+            "coarse_symmetric_overlap": 0.4140903723829717
+          },
+          {
+            "correction_m": 10.0,
+            "coarse_symmetric_overlap": 0.6474486751393421
+          },
+          {
+            "correction_m": 12.5,
+            "coarse_symmetric_overlap": 0.3913893579472595
+          },
+          {
+            "correction_m": 15.0,
+            "coarse_symmetric_overlap": 0.29809682211190536
+          }
+        ],
+        "coarse_symmetric_overlap": 0.6474486751393421
+      },
+      "overlap": 0.5624974509795037,
+      "rmse_m": 0.24769193008508764
+    },
+    {
+      "query": [
+        "aerial08",
+        18
+      ],
+      "candidate": [
+        "aerial05",
+        16
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 3.552713678800501e-15,
+        "target_points": 74608,
+        "source_points": 49213,
+        "status": "estimated",
+        "correction_m": 7.0,
+        "output_level_dz_m": 7.0000000000000036,
+        "runtime_s": 2.0515564730158076,
+        "height_vote_pairs": 226273,
+        "hypotheses": [
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.1599560368861248
+          },
+          {
+            "correction_m": 1.5,
+            "coarse_symmetric_overlap": 0.21436039030666953
+          },
+          {
+            "correction_m": 4.0,
+            "coarse_symmetric_overlap": 0.3214266566588033
+          },
+          {
+            "correction_m": 7.0,
+            "coarse_symmetric_overlap": 0.5257076989062835
+          },
+          {
+            "correction_m": 9.5,
+            "coarse_symmetric_overlap": 0.3138269354492816
+          },
+          {
+            "correction_m": 12.0,
+            "coarse_symmetric_overlap": 0.21656879279865077
+          }
+        ],
+        "coarse_symmetric_overlap": 0.5257076989062835
+      },
+      "overlap": 0.44990637626884794,
+      "rmse_m": 0.2662979383759869
+    },
+    {
+      "query": [
+        "aerial07",
+        0
+      ],
+      "candidate": [
+        "aerial06",
+        1
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": -5.551115123125783e-17,
+        "target_points": 8617,
+        "source_points": 15033,
+        "status": "estimated",
+        "correction_m": 4.5,
+        "output_level_dz_m": 4.5,
+        "runtime_s": 0.5168435119558126,
+        "height_vote_pairs": 70752,
+        "hypotheses": [
+          {
+            "correction_m": -0.5,
+            "coarse_symmetric_overlap": 0.26634736912126655
+          },
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.2837091731523981
+          },
+          {
+            "correction_m": 2.0,
+            "coarse_symmetric_overlap": 0.335129382026209
+          },
+          {
+            "correction_m": 4.5,
+            "coarse_symmetric_overlap": 0.6522317568017029
+          },
+          {
+            "correction_m": 7.0,
+            "coarse_symmetric_overlap": 0.3987228098183995
+          },
+          {
+            "correction_m": 9.5,
+            "coarse_symmetric_overlap": 0.28237876671323087
+          }
+        ],
+        "coarse_symmetric_overlap": 0.6522317568017029
+      },
+      "overlap": 0.5906582900846763,
+      "rmse_m": 0.30363152269475047
+    },
+    {
+      "query": [
+        "aerial07",
+        1
+      ],
+      "candidate": [
+        "aerial06",
+        1
+      ],
+      "accepted": true,
+      "height": {
+        "method": "XY-neighbor height voting and symmetric coarse 3D overlap",
+        "settings": {
+          "voxel_m": 0.8,
+          "xy_neighbors": 8,
+          "xy_radius_m": 1.0,
+          "histogram_bin_m": 0.5,
+          "peak_separation_m": 2.0,
+          "modal_peaks": 5,
+          "coarse_inlier_m": 1.5
+        },
+        "ground_truth_used": false,
+        "input_level_dz_m": 0.0,
+        "target_points": 14333,
+        "source_points": 15033,
+        "status": "estimated",
+        "correction_m": 0.0,
+        "output_level_dz_m": 0.0,
+        "runtime_s": 0.2914812979288399,
+        "height_vote_pairs": 100337,
+        "hypotheses": [
+          {
+            "correction_m": -5.0,
+            "coarse_symmetric_overlap": 0.3448413490321293
+          },
+          {
+            "correction_m": -2.5,
+            "coarse_symmetric_overlap": 0.46231623761059004
+          },
+          {
+            "correction_m": 0.0,
+            "coarse_symmetric_overlap": 0.9776491718219916
+          },
+          {
+            "correction_m": 2.5,
+            "coarse_symmetric_overlap": 0.5118258564152655
+          },
+          {
+            "correction_m": 5.0,
+            "coarse_symmetric_overlap": 0.3540780018139957
+          }
+        ],
+        "coarse_symmetric_overlap": 0.9776491718219916
+      },
+      "overlap": 0.9236274242010379,
+      "rmse_m": 0.2624191163815913
+    }
+  ]
+}

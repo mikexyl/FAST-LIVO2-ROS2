@@ -1,0 +1,7632 @@
+{
+  "evaluation_only": true,
+  "graph_unchanged": true,
+  "graph_sha256": {
+    "poses.jsonl": "9884e28f81393ab33dca2436ebfecdb0af8727600cd41a7cd00ec9e89265f227",
+    "constraints.jsonl": "30482aece09a04e6d7b9530ff1fd24fc513a359bfcf5bae86746a811b27f7ca5",
+    "proposed-constraints.jsonl": "30482aece09a04e6d7b9530ff1fd24fc513a359bfcf5bae86746a811b27f7ca5"
+  },
+  "ground_truth_for_estimation": false,
+  "interpolation_max_bracket_s": 0.05,
+  "summary": {
+    "proposed": {
+      "count": 541,
+      "translation_error_m": {
+        "median": 0.8663697239332624,
+        "p95": 2.287907162707301,
+        "maximum": 2.96036588620745
+      },
+      "rotation_error_deg": {
+        "median": 0.9395669164532119,
+        "p95": 2.2805180322838807,
+        "maximum": 2.655172607420591
+      }
+    },
+    "retained": {
+      "count": 541,
+      "translation_error_m": {
+        "median": 0.8663697239332624,
+        "p95": 2.287907162707301,
+        "maximum": 2.96036588620745
+      },
+      "rotation_error_deg": {
+        "median": 0.9395669164532119,
+        "p95": 2.2805180322838807,
+        "maximum": 2.655172607420591
+      }
+    }
+  },
+  "references": {
+    "aerial01": "726d53308b8f872111b58a66f1e58519f11a035e41d2cc2b9700a542b4eae2e1",
+    "aerial02": "a731432c129a5d65da7081ed17d9e9040eb46a181ab3bf6fc41c624a692cbdaf",
+    "aerial03": "d9d6e58ea27be53850cb4cbb80d81aecb2ea9436a98db37d3b2b475ed7940f30",
+    "aerial04": "a750d8aa26661c6540e58d812a36d06bf152d5e59ac8610f5d5f8fa86deafe4c",
+    "aerial05": "edf2089b9c409c5e19513e9e80454e13bbd1dc430f20ded339dd8ddde6ad34d2",
+    "aerial06": "17de18be612d1b7046c14ece92be21496ad425bf83cc93889e94e68e467fdf6b",
+    "aerial07": "18c0ed3556afcefa2aaefb8e2e56fa46a128477666c6beae3a033db72d06a028",
+    "aerial08": "120deab4ebeaf4747bc19106a0f67d6690bc3b254e91f7d91157994bdd3e587d",
+    "ground01": "d2daf54fbb44245a56b3e15c145c2e40330d459d9ae632eab8320c5b7b66bd7c",
+    "ground02": "789a40a5c43c1b787e8b16b2840dbe124ee974fb776fe6bf3d8be7a086b3953b",
+    "ground03": "239e69d39c037dd685c38ee69bc177e087227ca9a24e8064d9ec17867fcab29d",
+    "ground04": "a419ea1cfa1b5ed9104a8793acb82bd8f7344acb6a87c96b15264604acb8aaa6",
+    "ground05": "b093201f48a67bd325e44fbdfd398583769a6f9e086f4e5edd5dedba62320585",
+    "ground06": "99b13bc984bc8ebb06ee76cdc9b5dd21f2b54eeba810e632bb20f775e97a2562"
+  },
+  "records": [
+    {
+      "i": [
+        "aerial01",
+        2
+      ],
+      "j": [
+        "ground05",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.8803332653465461,
+      "rotation_error_deg": 1.5659490923688784
+    },
+    {
+      "i": [
+        "aerial01",
+        4
+      ],
+      "j": [
+        "ground05",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0547399679946752,
+      "rotation_error_deg": 1.6939965320850554
+    },
+    {
+      "i": [
+        "aerial01",
+        5
+      ],
+      "j": [
+        "ground04",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.1562741267954344,
+      "rotation_error_deg": 1.779408633871553
+    },
+    {
+      "i": [
+        "aerial01",
+        5
+      ],
+      "j": [
+        "ground05",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.3752893047259334,
+      "rotation_error_deg": 1.6041957411522607
+    },
+    {
+      "i": [
+        "aerial01",
+        6
+      ],
+      "j": [
+        "ground04",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.8031580129571219,
+      "rotation_error_deg": 1.586756863968248
+    },
+    {
+      "i": [
+        "aerial01",
+        6
+      ],
+      "j": [
+        "ground05",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2709081389522403,
+      "rotation_error_deg": 1.5319833988195455
+    },
+    {
+      "i": [
+        "aerial01",
+        7
+      ],
+      "j": [
+        "ground04",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.041415188357133,
+      "rotation_error_deg": 1.5330575004413391
+    },
+    {
+      "i": [
+        "aerial01",
+        12
+      ],
+      "j": [
+        "ground04",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.9117166658395705,
+      "rotation_error_deg": 1.1202799154102887
+    },
+    {
+      "i": [
+        "aerial01",
+        13
+      ],
+      "j": [
+        "ground04",
+        31
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.8859031266263591,
+      "rotation_error_deg": 1.4562909419740073
+    },
+    {
+      "i": [
+        "aerial01",
+        13
+      ],
+      "j": [
+        "ground05",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4803562449175007,
+      "rotation_error_deg": 1.07492433114855
+    },
+    {
+      "i": [
+        "aerial01",
+        14
+      ],
+      "j": [
+        "ground04",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7083388114639896,
+      "rotation_error_deg": 1.4444546020945792
+    },
+    {
+      "i": [
+        "aerial01",
+        14
+      ],
+      "j": [
+        "ground05",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2968427732550871,
+      "rotation_error_deg": 1.2037264004332169
+    },
+    {
+      "i": [
+        "aerial01",
+        15
+      ],
+      "j": [
+        "ground04",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0929942169253537,
+      "rotation_error_deg": 1.1962883569927676
+    },
+    {
+      "i": [
+        "aerial01",
+        15
+      ],
+      "j": [
+        "ground05",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7085576525341698,
+      "rotation_error_deg": 1.0435932075376255
+    },
+    {
+      "i": [
+        "aerial01",
+        16
+      ],
+      "j": [
+        "ground04",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5826712146881627,
+      "rotation_error_deg": 1.156315659825625
+    },
+    {
+      "i": [
+        "aerial01",
+        16
+      ],
+      "j": [
+        "ground05",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7145695689856725,
+      "rotation_error_deg": 0.986635810158465
+    },
+    {
+      "i": [
+        "aerial01",
+        17
+      ],
+      "j": [
+        "ground04",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0891382001347722,
+      "rotation_error_deg": 0.638109081374506
+    },
+    {
+      "i": [
+        "aerial01",
+        17
+      ],
+      "j": [
+        "ground05",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6625789382068108,
+      "rotation_error_deg": 0.48436713180003543
+    },
+    {
+      "i": [
+        "aerial01",
+        18
+      ],
+      "j": [
+        "ground04",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4134440418847711,
+      "rotation_error_deg": 0.8189743366419445
+    },
+    {
+      "i": [
+        "aerial01",
+        18
+      ],
+      "j": [
+        "ground05",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5022987439521273,
+      "rotation_error_deg": 0.594289528737018
+    },
+    {
+      "i": [
+        "aerial01",
+        19
+      ],
+      "j": [
+        "ground04",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5405719298764669,
+      "rotation_error_deg": 0.6327525464338398
+    },
+    {
+      "i": [
+        "aerial01",
+        19
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6399693609368019,
+      "rotation_error_deg": 0.704849306418521
+    },
+    {
+      "i": [
+        "aerial01",
+        20
+      ],
+      "j": [
+        "ground04",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6953048077399083,
+      "rotation_error_deg": 0.7196913120018364
+    },
+    {
+      "i": [
+        "aerial01",
+        20
+      ],
+      "j": [
+        "ground05",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5903081884826253,
+      "rotation_error_deg": 0.8397864998220502
+    },
+    {
+      "i": [
+        "aerial01",
+        22
+      ],
+      "j": [
+        "ground05",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.610569519999,
+      "rotation_error_deg": 1.0157054746510572
+    },
+    {
+      "i": [
+        "aerial01",
+        23
+      ],
+      "j": [
+        "ground04",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5726521051065968,
+      "rotation_error_deg": 0.8095647299360239
+    },
+    {
+      "i": [
+        "aerial01",
+        23
+      ],
+      "j": [
+        "ground05",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5446924316834887,
+      "rotation_error_deg": 1.05784109794639
+    },
+    {
+      "i": [
+        "aerial01",
+        24
+      ],
+      "j": [
+        "ground04",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7197370950556181,
+      "rotation_error_deg": 1.0677269323911864
+    },
+    {
+      "i": [
+        "aerial01",
+        24
+      ],
+      "j": [
+        "ground05",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7084047012668226,
+      "rotation_error_deg": 1.1912224217555791
+    },
+    {
+      "i": [
+        "aerial01",
+        25
+      ],
+      "j": [
+        "ground04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7735344833658968,
+      "rotation_error_deg": 1.0325055374828565
+    },
+    {
+      "i": [
+        "aerial01",
+        25
+      ],
+      "j": [
+        "ground05",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7626593532243731,
+      "rotation_error_deg": 1.1021956089589182
+    },
+    {
+      "i": [
+        "aerial01",
+        26
+      ],
+      "j": [
+        "ground04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.236551936164092,
+      "rotation_error_deg": 1.253017923433164
+    },
+    {
+      "i": [
+        "aerial01",
+        26
+      ],
+      "j": [
+        "ground05",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.80912499216666,
+      "rotation_error_deg": 1.428389276742225
+    },
+    {
+      "i": [
+        "aerial01",
+        27
+      ],
+      "j": [
+        "ground04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.250247270198374,
+      "rotation_error_deg": 1.5271088864401874
+    },
+    {
+      "i": [
+        "aerial01",
+        27
+      ],
+      "j": [
+        "ground05",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6168341323564732,
+      "rotation_error_deg": 1.79045432862979
+    },
+    {
+      "i": [
+        "aerial01",
+        28
+      ],
+      "j": [
+        "ground04",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3174215448000227,
+      "rotation_error_deg": 1.8904531966437434
+    },
+    {
+      "i": [
+        "aerial01",
+        28
+      ],
+      "j": [
+        "ground05",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2346001057621097,
+      "rotation_error_deg": 2.039906616648507
+    },
+    {
+      "i": [
+        "aerial01",
+        29
+      ],
+      "j": [
+        "ground04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.7346532460606556,
+      "rotation_error_deg": 1.7621990249835464
+    },
+    {
+      "i": [
+        "aerial01",
+        29
+      ],
+      "j": [
+        "ground05",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6015663998376837,
+      "rotation_error_deg": 1.929969194140851
+    },
+    {
+      "i": [
+        "aerial01",
+        30
+      ],
+      "j": [
+        "ground04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.1874053051149196,
+      "rotation_error_deg": 1.7434796612122823
+    },
+    {
+      "i": [
+        "aerial01",
+        30
+      ],
+      "j": [
+        "ground05",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.1039568901081498,
+      "rotation_error_deg": 2.021797806792126
+    },
+    {
+      "i": [
+        "aerial01",
+        31
+      ],
+      "j": [
+        "ground04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.3577894626260052,
+      "rotation_error_deg": 1.8300780652038942
+    },
+    {
+      "i": [
+        "aerial01",
+        31
+      ],
+      "j": [
+        "ground05",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2158925421098623,
+      "rotation_error_deg": 2.0489005326946756
+    },
+    {
+      "i": [
+        "aerial01",
+        32
+      ],
+      "j": [
+        "ground04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.8792720712156704,
+      "rotation_error_deg": 1.75847418580429
+    },
+    {
+      "i": [
+        "aerial01",
+        32
+      ],
+      "j": [
+        "ground05",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.0403762745053324,
+      "rotation_error_deg": 1.8119758834550497
+    },
+    {
+      "i": [
+        "aerial01",
+        33
+      ],
+      "j": [
+        "ground04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6041362759047924,
+      "rotation_error_deg": 1.6712510188577154
+    },
+    {
+      "i": [
+        "aerial01",
+        33
+      ],
+      "j": [
+        "ground05",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.088700380366623,
+      "rotation_error_deg": 1.7131105344890842
+    },
+    {
+      "i": [
+        "aerial01",
+        34
+      ],
+      "j": [
+        "ground04",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7112102533543916,
+      "rotation_error_deg": 1.8816778847806532
+    },
+    {
+      "i": [
+        "aerial01",
+        38
+      ],
+      "j": [
+        "ground04",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.6014887590414584,
+      "rotation_error_deg": 2.5064993031381984
+    },
+    {
+      "i": [
+        "aerial01",
+        38
+      ],
+      "j": [
+        "ground05",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4973133460305907,
+      "rotation_error_deg": 2.51971828873204
+    },
+    {
+      "i": [
+        "aerial01",
+        39
+      ],
+      "j": [
+        "ground04",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.770547783680563,
+      "rotation_error_deg": 2.4361711244577235
+    },
+    {
+      "i": [
+        "aerial01",
+        39
+      ],
+      "j": [
+        "ground05",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.022635048382519,
+      "rotation_error_deg": 2.535490547089104
+    },
+    {
+      "i": [
+        "aerial01",
+        40
+      ],
+      "j": [
+        "ground04",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.5025181133508303,
+      "rotation_error_deg": 2.36168361655576
+    },
+    {
+      "i": [
+        "aerial01",
+        40
+      ],
+      "j": [
+        "ground05",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.006853180250443,
+      "rotation_error_deg": 2.5231595530681536
+    },
+    {
+      "i": [
+        "aerial01",
+        41
+      ],
+      "j": [
+        "ground04",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6406290855047534,
+      "rotation_error_deg": 2.415902483493808
+    },
+    {
+      "i": [
+        "aerial01",
+        41
+      ],
+      "j": [
+        "ground05",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4683146172068082,
+      "rotation_error_deg": 2.4208953916389193
+    },
+    {
+      "i": [
+        "aerial01",
+        42
+      ],
+      "j": [
+        "aerial02",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.6601100022811438,
+      "rotation_error_deg": 2.60877998053917
+    },
+    {
+      "i": [
+        "aerial01",
+        42
+      ],
+      "j": [
+        "ground05",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2274600573185321,
+      "rotation_error_deg": 2.410990090934226
+    },
+    {
+      "i": [
+        "aerial01",
+        43
+      ],
+      "j": [
+        "ground04",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.2619481121642706,
+      "rotation_error_deg": 2.382508845441711
+    },
+    {
+      "i": [
+        "aerial01",
+        43
+      ],
+      "j": [
+        "ground05",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.9528669600123071,
+      "rotation_error_deg": 2.450036219936884
+    },
+    {
+      "i": [
+        "aerial01",
+        44
+      ],
+      "j": [
+        "aerial02",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.5558489854478847,
+      "rotation_error_deg": 2.2805180322838807
+    },
+    {
+      "i": [
+        "aerial01",
+        44
+      ],
+      "j": [
+        "aerial02",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.7326315264594414,
+      "rotation_error_deg": 2.131770873141088
+    },
+    {
+      "i": [
+        "aerial01",
+        44
+      ],
+      "j": [
+        "aerial02",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.96036588620745,
+      "rotation_error_deg": 2.1466414669285174
+    },
+    {
+      "i": [
+        "aerial01",
+        44
+      ],
+      "j": [
+        "aerial02",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.9298138649070378,
+      "rotation_error_deg": 2.0653016091364496
+    },
+    {
+      "i": [
+        "aerial01",
+        44
+      ],
+      "j": [
+        "ground05",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.3925972915694547,
+      "rotation_error_deg": 2.4743092270741878
+    },
+    {
+      "i": [
+        "aerial01",
+        45
+      ],
+      "j": [
+        "aerial02",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.4034818581595663,
+      "rotation_error_deg": 2.145328264910637
+    },
+    {
+      "i": [
+        "aerial01",
+        45
+      ],
+      "j": [
+        "aerial02",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.248789195895311,
+      "rotation_error_deg": 2.1932349095764683
+    },
+    {
+      "i": [
+        "aerial01",
+        45
+      ],
+      "j": [
+        "aerial02",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.4746057257840803,
+      "rotation_error_deg": 1.9115799261846267
+    },
+    {
+      "i": [
+        "aerial01",
+        45
+      ],
+      "j": [
+        "aerial02",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.3719022486905608,
+      "rotation_error_deg": 2.1143420774391246
+    },
+    {
+      "i": [
+        "aerial01",
+        45
+      ],
+      "j": [
+        "aerial02",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.4026279712925961,
+      "rotation_error_deg": 2.01424362363569
+    },
+    {
+      "i": [
+        "aerial01",
+        45
+      ],
+      "j": [
+        "ground04",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.8627964299626742,
+      "rotation_error_deg": 2.1566491674567985
+    },
+    {
+      "i": [
+        "aerial01",
+        45
+      ],
+      "j": [
+        "ground05",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.45407540016198666,
+      "rotation_error_deg": 2.1827402095095123
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.49790477540674966,
+      "rotation_error_deg": 2.1773931172597396
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.832484201284159,
+      "rotation_error_deg": 2.240487376120156
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.747224615481344,
+      "rotation_error_deg": 2.173393848799961
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.100737466557912,
+      "rotation_error_deg": 2.1070437297756826
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.9570424434741084,
+      "rotation_error_deg": 2.158524639787585
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.22854890232226932,
+      "rotation_error_deg": 1.9969035548362415
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.45830661609537,
+      "rotation_error_deg": 2.1034344632417916
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5281456775244963,
+      "rotation_error_deg": 2.0892964663549316
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "aerial02",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.6204613017328688,
+      "rotation_error_deg": 2.244198265654439
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "ground04",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.740151237702986,
+      "rotation_error_deg": 2.22362469911968
+    },
+    {
+      "i": [
+        "aerial01",
+        46
+      ],
+      "j": [
+        "ground05",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5241667727405555,
+      "rotation_error_deg": 2.3594706393780913
+    },
+    {
+      "i": [
+        "aerial01",
+        47
+      ],
+      "j": [
+        "aerial02",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.9941279795507618,
+      "rotation_error_deg": 2.00087117980087
+    },
+    {
+      "i": [
+        "aerial01",
+        47
+      ],
+      "j": [
+        "aerial02",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5434556083674666,
+      "rotation_error_deg": 2.1362066548953567
+    },
+    {
+      "i": [
+        "aerial01",
+        47
+      ],
+      "j": [
+        "ground04",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.083288542572116,
+      "rotation_error_deg": 2.086454806888004
+    },
+    {
+      "i": [
+        "aerial01",
+        47
+      ],
+      "j": [
+        "ground05",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.46018925976867026,
+      "rotation_error_deg": 2.1311136874753753
+    },
+    {
+      "i": [
+        "aerial01",
+        48
+      ],
+      "j": [
+        "aerial02",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.28403197230547533,
+      "rotation_error_deg": 2.1978231396051076
+    },
+    {
+      "i": [
+        "aerial01",
+        48
+      ],
+      "j": [
+        "aerial02",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.1159770858376836,
+      "rotation_error_deg": 2.0063493854118244
+    },
+    {
+      "i": [
+        "aerial01",
+        48
+      ],
+      "j": [
+        "ground04",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0944089572686284,
+      "rotation_error_deg": 2.0825538843026257
+    },
+    {
+      "i": [
+        "aerial01",
+        48
+      ],
+      "j": [
+        "ground05",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5055668459594236,
+      "rotation_error_deg": 2.2386898319642774
+    },
+    {
+      "i": [
+        "aerial02",
+        2
+      ],
+      "j": [
+        "ground05",
+        0
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5003248140287636,
+      "rotation_error_deg": 0.7683442847753699
+    },
+    {
+      "i": [
+        "aerial02",
+        3
+      ],
+      "j": [
+        "ground04",
+        31
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0736716362968755,
+      "rotation_error_deg": 0.6738056861032374
+    },
+    {
+      "i": [
+        "aerial02",
+        4
+      ],
+      "j": [
+        "ground04",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5627770729117435,
+      "rotation_error_deg": 0.8329619272221972
+    },
+    {
+      "i": [
+        "aerial02",
+        5
+      ],
+      "j": [
+        "ground04",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0204580253254767,
+      "rotation_error_deg": 1.2168064723144774
+    },
+    {
+      "i": [
+        "aerial02",
+        6
+      ],
+      "j": [
+        "ground04",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3500744001814303,
+      "rotation_error_deg": 0.777598200937286
+    },
+    {
+      "i": [
+        "aerial02",
+        7
+      ],
+      "j": [
+        "ground04",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5287201576851068,
+      "rotation_error_deg": 0.7550162593225506
+    },
+    {
+      "i": [
+        "aerial02",
+        8
+      ],
+      "j": [
+        "ground05",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.33093800981867977,
+      "rotation_error_deg": 0.7203510346267736
+    },
+    {
+      "i": [
+        "aerial02",
+        9
+      ],
+      "j": [
+        "ground05",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.2428585943376184,
+      "rotation_error_deg": 0.661485077275154
+    },
+    {
+      "i": [
+        "aerial02",
+        10
+      ],
+      "j": [
+        "ground05",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.48679468140684806,
+      "rotation_error_deg": 0.8959015301362568
+    },
+    {
+      "i": [
+        "aerial02",
+        11
+      ],
+      "j": [
+        "ground05",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.32853258947624403,
+      "rotation_error_deg": 0.8367628034155624
+    },
+    {
+      "i": [
+        "aerial02",
+        12
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.37413452797254476,
+      "rotation_error_deg": 0.9352041004924758
+    },
+    {
+      "i": [
+        "aerial02",
+        13
+      ],
+      "j": [
+        "ground05",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.31882600185663384,
+      "rotation_error_deg": 0.9733919509217159
+    },
+    {
+      "i": [
+        "aerial02",
+        14
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3953822259184374,
+      "rotation_error_deg": 0.5943991825994326
+    },
+    {
+      "i": [
+        "aerial02",
+        15
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.31685879335280964,
+      "rotation_error_deg": 0.6331588661993545
+    },
+    {
+      "i": [
+        "aerial02",
+        16
+      ],
+      "j": [
+        "ground04",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.19949390447582968,
+      "rotation_error_deg": 0.39642275737172394
+    },
+    {
+      "i": [
+        "aerial02",
+        17
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.4805044803050615,
+      "rotation_error_deg": 0.7173823839125827
+    },
+    {
+      "i": [
+        "aerial02",
+        18
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.4727591394316559,
+      "rotation_error_deg": 0.7856668537244019
+    },
+    {
+      "i": [
+        "aerial02",
+        19
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3425966368293601,
+      "rotation_error_deg": 0.8362376800615721
+    },
+    {
+      "i": [
+        "aerial02",
+        20
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.47444486172217365,
+      "rotation_error_deg": 0.9092799095934891
+    },
+    {
+      "i": [
+        "aerial02",
+        21
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5944492279855854,
+      "rotation_error_deg": 0.8511892515129411
+    },
+    {
+      "i": [
+        "aerial02",
+        22
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.8764066388934375,
+      "rotation_error_deg": 0.8915996211114846
+    },
+    {
+      "i": [
+        "aerial02",
+        23
+      ],
+      "j": [
+        "ground04",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3112059177553791,
+      "rotation_error_deg": 0.5943832016909979
+    },
+    {
+      "i": [
+        "aerial02",
+        24
+      ],
+      "j": [
+        "ground05",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6309651624866492,
+      "rotation_error_deg": 0.7693071744798986
+    },
+    {
+      "i": [
+        "aerial02",
+        25
+      ],
+      "j": [
+        "ground04",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.09990047837411509,
+      "rotation_error_deg": 0.5766812416338075
+    },
+    {
+      "i": [
+        "aerial02",
+        26
+      ],
+      "j": [
+        "ground04",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.11082745984961585,
+      "rotation_error_deg": 0.7428724492539527
+    },
+    {
+      "i": [
+        "aerial02",
+        27
+      ],
+      "j": [
+        "ground04",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.21983002883125252,
+      "rotation_error_deg": 0.5536378113692586
+    },
+    {
+      "i": [
+        "aerial03",
+        1
+      ],
+      "j": [
+        "ground04",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.7096696630491037,
+      "rotation_error_deg": 2.107622776210495
+    },
+    {
+      "i": [
+        "aerial03",
+        3
+      ],
+      "j": [
+        "ground04",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6840772905084236,
+      "rotation_error_deg": 2.098875570433675
+    },
+    {
+      "i": [
+        "aerial03",
+        4
+      ],
+      "j": [
+        "ground02",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6484478414199524,
+      "rotation_error_deg": 1.639484787441009
+    },
+    {
+      "i": [
+        "aerial03",
+        4
+      ],
+      "j": [
+        "ground03",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6997532461494793,
+      "rotation_error_deg": 1.7996335595918824
+    },
+    {
+      "i": [
+        "aerial03",
+        5
+      ],
+      "j": [
+        "ground02",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5514546517665737,
+      "rotation_error_deg": 1.4530396767754101
+    },
+    {
+      "i": [
+        "aerial03",
+        5
+      ],
+      "j": [
+        "ground03",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.7390526683522443,
+      "rotation_error_deg": 1.732969538199046
+    },
+    {
+      "i": [
+        "aerial03",
+        6
+      ],
+      "j": [
+        "ground02",
+        34
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.8101364352050104,
+      "rotation_error_deg": 1.6110027900098365
+    },
+    {
+      "i": [
+        "aerial03",
+        6
+      ],
+      "j": [
+        "ground03",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.3707276023650687,
+      "rotation_error_deg": 1.6098770386017536
+    },
+    {
+      "i": [
+        "aerial03",
+        7
+      ],
+      "j": [
+        "ground03",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.1233217977975123,
+      "rotation_error_deg": 1.8765737601237753
+    },
+    {
+      "i": [
+        "aerial03",
+        7
+      ],
+      "j": [
+        "ground04",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6177293177683782,
+      "rotation_error_deg": 2.179438241373206
+    },
+    {
+      "i": [
+        "aerial03",
+        8
+      ],
+      "j": [
+        "ground03",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.342490124316738,
+      "rotation_error_deg": 1.6639454978567594
+    },
+    {
+      "i": [
+        "aerial03",
+        8
+      ],
+      "j": [
+        "ground05",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3709272800023376,
+      "rotation_error_deg": 1.52753033060004
+    },
+    {
+      "i": [
+        "aerial03",
+        9
+      ],
+      "j": [
+        "ground03",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.8291447875812328,
+      "rotation_error_deg": 1.4282523328480474
+    },
+    {
+      "i": [
+        "aerial03",
+        9
+      ],
+      "j": [
+        "ground05",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5190599716770609,
+      "rotation_error_deg": 1.3850697307560127
+    },
+    {
+      "i": [
+        "aerial03",
+        10
+      ],
+      "j": [
+        "ground03",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.0387570246925075,
+      "rotation_error_deg": 1.4797090718951362
+    },
+    {
+      "i": [
+        "aerial03",
+        10
+      ],
+      "j": [
+        "ground05",
+        35
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7669371389337698,
+      "rotation_error_deg": 1.236407308261284
+    },
+    {
+      "i": [
+        "aerial03",
+        11
+      ],
+      "j": [
+        "aerial04",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8766136101807159,
+      "rotation_error_deg": 2.655172607420591
+    },
+    {
+      "i": [
+        "aerial03",
+        11
+      ],
+      "j": [
+        "ground03",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.854730931614657,
+      "rotation_error_deg": 1.3902592372688667
+    },
+    {
+      "i": [
+        "aerial03",
+        11
+      ],
+      "j": [
+        "ground05",
+        37
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.8902990172774081,
+      "rotation_error_deg": 1.2125796959682458
+    },
+    {
+      "i": [
+        "aerial03",
+        13
+      ],
+      "j": [
+        "aerial04",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.1045453046726739,
+      "rotation_error_deg": 2.4468995191955343
+    },
+    {
+      "i": [
+        "aerial03",
+        13
+      ],
+      "j": [
+        "aerial04",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.0061609910607625,
+      "rotation_error_deg": 2.4907850205817663
+    },
+    {
+      "i": [
+        "aerial03",
+        13
+      ],
+      "j": [
+        "aerial04",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7055848812223724,
+      "rotation_error_deg": 2.4169088931163483
+    },
+    {
+      "i": [
+        "aerial03",
+        13
+      ],
+      "j": [
+        "ground03",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.9200854648710204,
+      "rotation_error_deg": 1.2501800430237222
+    },
+    {
+      "i": [
+        "aerial03",
+        13
+      ],
+      "j": [
+        "ground05",
+        39
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7228184653697522,
+      "rotation_error_deg": 0.9051231273927255
+    },
+    {
+      "i": [
+        "aerial03",
+        14
+      ],
+      "j": [
+        "aerial04",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8208444116237946,
+      "rotation_error_deg": 2.4167998101823267
+    },
+    {
+      "i": [
+        "aerial03",
+        14
+      ],
+      "j": [
+        "aerial04",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7273758164625203,
+      "rotation_error_deg": 2.3321212821270705
+    },
+    {
+      "i": [
+        "aerial03",
+        14
+      ],
+      "j": [
+        "ground03",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.8066336843800908,
+      "rotation_error_deg": 1.2195122286914903
+    },
+    {
+      "i": [
+        "aerial03",
+        14
+      ],
+      "j": [
+        "ground05",
+        39
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6764499010018517,
+      "rotation_error_deg": 1.02249915513996
+    },
+    {
+      "i": [
+        "aerial03",
+        15
+      ],
+      "j": [
+        "ground03",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.1970627005118273,
+      "rotation_error_deg": 1.1456089020889593
+    },
+    {
+      "i": [
+        "aerial03",
+        15
+      ],
+      "j": [
+        "ground05",
+        40
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5398169242359935,
+      "rotation_error_deg": 0.8623185656334608
+    },
+    {
+      "i": [
+        "aerial03",
+        16
+      ],
+      "j": [
+        "ground03",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.1023337652294363,
+      "rotation_error_deg": 0.9990026657513933
+    },
+    {
+      "i": [
+        "aerial03",
+        16
+      ],
+      "j": [
+        "ground05",
+        42
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.49616603563630607,
+      "rotation_error_deg": 0.6861696188576482
+    },
+    {
+      "i": [
+        "aerial03",
+        17
+      ],
+      "j": [
+        "ground03",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.282243372007099,
+      "rotation_error_deg": 1.005153496505726
+    },
+    {
+      "i": [
+        "aerial03",
+        18
+      ],
+      "j": [
+        "ground03",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2937779292154084,
+      "rotation_error_deg": 0.9927151162958061
+    },
+    {
+      "i": [
+        "aerial03",
+        18
+      ],
+      "j": [
+        "ground05",
+        40
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0491909350513473,
+      "rotation_error_deg": 0.7852572573901505
+    },
+    {
+      "i": [
+        "aerial03",
+        19
+      ],
+      "j": [
+        "ground03",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.383064514468561,
+      "rotation_error_deg": 0.7941021941954627
+    },
+    {
+      "i": [
+        "aerial03",
+        19
+      ],
+      "j": [
+        "ground05",
+        42
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.4726472319050053,
+      "rotation_error_deg": 0.7509908344372492
+    },
+    {
+      "i": [
+        "aerial03",
+        20
+      ],
+      "j": [
+        "aerial04",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.14269031395862555,
+      "rotation_error_deg": 2.1189168446780227
+    },
+    {
+      "i": [
+        "aerial03",
+        20
+      ],
+      "j": [
+        "aerial04",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.45240962053974043,
+      "rotation_error_deg": 2.266491987047041
+    },
+    {
+      "i": [
+        "aerial03",
+        20
+      ],
+      "j": [
+        "ground03",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2381488479211264,
+      "rotation_error_deg": 0.759030227853672
+    },
+    {
+      "i": [
+        "aerial03",
+        20
+      ],
+      "j": [
+        "ground05",
+        42
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.34620314143404185,
+      "rotation_error_deg": 0.8578614555482742
+    },
+    {
+      "i": [
+        "aerial03",
+        21
+      ],
+      "j": [
+        "ground03",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.3988700992747078,
+      "rotation_error_deg": 0.6294159856292566
+    },
+    {
+      "i": [
+        "aerial03",
+        21
+      ],
+      "j": [
+        "ground05",
+        39
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7411201670647225,
+      "rotation_error_deg": 0.9395669164532119
+    },
+    {
+      "i": [
+        "aerial03",
+        22
+      ],
+      "j": [
+        "ground05",
+        39
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5110539796094244,
+      "rotation_error_deg": 1.0072291501021542
+    },
+    {
+      "i": [
+        "aerial03",
+        23
+      ],
+      "j": [
+        "ground03",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.9488589488541253,
+      "rotation_error_deg": 0.6602503260874669
+    },
+    {
+      "i": [
+        "aerial03",
+        23
+      ],
+      "j": [
+        "ground05",
+        39
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.4262090982978647,
+      "rotation_error_deg": 0.9614339960034717
+    },
+    {
+      "i": [
+        "aerial03",
+        24
+      ],
+      "j": [
+        "ground05",
+        36
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7427202831045334,
+      "rotation_error_deg": 1.0620430243398085
+    },
+    {
+      "i": [
+        "aerial03",
+        25
+      ],
+      "j": [
+        "ground03",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6271867709450902,
+      "rotation_error_deg": 0.8826549009775229
+    },
+    {
+      "i": [
+        "aerial03",
+        25
+      ],
+      "j": [
+        "ground05",
+        34
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6442250151776509,
+      "rotation_error_deg": 1.0533121299725379
+    },
+    {
+      "i": [
+        "aerial03",
+        26
+      ],
+      "j": [
+        "ground03",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.2736170604222368,
+      "rotation_error_deg": 0.9186315820029989
+    },
+    {
+      "i": [
+        "aerial03",
+        26
+      ],
+      "j": [
+        "ground05",
+        35
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7505211987402468,
+      "rotation_error_deg": 1.0265435071863258
+    },
+    {
+      "i": [
+        "aerial03",
+        27
+      ],
+      "j": [
+        "ground03",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.1806593260656313,
+      "rotation_error_deg": 1.0219213867897414
+    },
+    {
+      "i": [
+        "aerial03",
+        28
+      ],
+      "j": [
+        "ground03",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.1754094110468896,
+      "rotation_error_deg": 1.4868363045630237
+    },
+    {
+      "i": [
+        "aerial03",
+        28
+      ],
+      "j": [
+        "ground05",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6458725884624139,
+      "rotation_error_deg": 1.5587410514157705
+    },
+    {
+      "i": [
+        "aerial03",
+        29
+      ],
+      "j": [
+        "ground03",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.3217392458995605,
+      "rotation_error_deg": 1.485373998805191
+    },
+    {
+      "i": [
+        "aerial03",
+        29
+      ],
+      "j": [
+        "ground05",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.025152893206101,
+      "rotation_error_deg": 1.4783396989377107
+    },
+    {
+      "i": [
+        "aerial03",
+        30
+      ],
+      "j": [
+        "ground02",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6069891128833833,
+      "rotation_error_deg": 2.0804259892203603
+    },
+    {
+      "i": [
+        "aerial03",
+        30
+      ],
+      "j": [
+        "ground03",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.9515178249348515,
+      "rotation_error_deg": 1.8216594407289588
+    },
+    {
+      "i": [
+        "aerial03",
+        31
+      ],
+      "j": [
+        "ground02",
+        34
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.554861650064489,
+      "rotation_error_deg": 1.9806759745505362
+    },
+    {
+      "i": [
+        "aerial03",
+        31
+      ],
+      "j": [
+        "ground03",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4927560433228422,
+      "rotation_error_deg": 1.9658068509623963
+    },
+    {
+      "i": [
+        "aerial03",
+        32
+      ],
+      "j": [
+        "ground02",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6314617920780037,
+      "rotation_error_deg": 2.061465845830899
+    },
+    {
+      "i": [
+        "aerial03",
+        32
+      ],
+      "j": [
+        "ground03",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5384475690562442,
+      "rotation_error_deg": 1.8547828577010101
+    },
+    {
+      "i": [
+        "aerial03",
+        33
+      ],
+      "j": [
+        "ground02",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.619776596885613,
+      "rotation_error_deg": 2.011082742952535
+    },
+    {
+      "i": [
+        "aerial03",
+        33
+      ],
+      "j": [
+        "ground03",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4602378213555862,
+      "rotation_error_deg": 1.8950007001676425
+    },
+    {
+      "i": [
+        "aerial03",
+        34
+      ],
+      "j": [
+        "ground02",
+        34
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4262652308794161,
+      "rotation_error_deg": 1.8084315266977746
+    },
+    {
+      "i": [
+        "aerial03",
+        34
+      ],
+      "j": [
+        "ground03",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.688610470926653,
+      "rotation_error_deg": 1.73162375775116
+    },
+    {
+      "i": [
+        "aerial03",
+        35
+      ],
+      "j": [
+        "ground02",
+        37
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.7580049153627204,
+      "rotation_error_deg": 1.8218009264837332
+    },
+    {
+      "i": [
+        "aerial03",
+        35
+      ],
+      "j": [
+        "ground03",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.7018938945194608,
+      "rotation_error_deg": 1.763475612979431
+    },
+    {
+      "i": [
+        "aerial03",
+        36
+      ],
+      "j": [
+        "ground02",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4672108461624749,
+      "rotation_error_deg": 2.0248101226067576
+    },
+    {
+      "i": [
+        "aerial03",
+        36
+      ],
+      "j": [
+        "ground03",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5488957902410498,
+      "rotation_error_deg": 1.9561864808439853
+    },
+    {
+      "i": [
+        "aerial03",
+        37
+      ],
+      "j": [
+        "ground02",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4825788447869683,
+      "rotation_error_deg": 1.9720707446797034
+    },
+    {
+      "i": [
+        "aerial03",
+        37
+      ],
+      "j": [
+        "ground03",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6126012944312509,
+      "rotation_error_deg": 1.9046721572034588
+    },
+    {
+      "i": [
+        "aerial03",
+        38
+      ],
+      "j": [
+        "ground02",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5035974672165113,
+      "rotation_error_deg": 1.9140056215297747
+    },
+    {
+      "i": [
+        "aerial03",
+        38
+      ],
+      "j": [
+        "ground03",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.8330393318579625,
+      "rotation_error_deg": 1.7876758848086056
+    },
+    {
+      "i": [
+        "aerial03",
+        39
+      ],
+      "j": [
+        "ground02",
+        34
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2874482675246695,
+      "rotation_error_deg": 1.868321103367587
+    },
+    {
+      "i": [
+        "aerial03",
+        39
+      ],
+      "j": [
+        "ground03",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.3242466587741764,
+      "rotation_error_deg": 1.8420757174647275
+    },
+    {
+      "i": [
+        "aerial04",
+        20
+      ],
+      "j": [
+        "aerial05",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.4216005645114187,
+      "rotation_error_deg": 1.984084090985784
+    },
+    {
+      "i": [
+        "aerial04",
+        20
+      ],
+      "j": [
+        "aerial05",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.8378093595542833,
+      "rotation_error_deg": 1.7732431622279599
+    },
+    {
+      "i": [
+        "aerial04",
+        21
+      ],
+      "j": [
+        "aerial05",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.6724654324256982,
+      "rotation_error_deg": 2.4075647439995818
+    },
+    {
+      "i": [
+        "aerial04",
+        21
+      ],
+      "j": [
+        "aerial05",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.648036709047747,
+      "rotation_error_deg": 2.3427951503461073
+    },
+    {
+      "i": [
+        "aerial04",
+        22
+      ],
+      "j": [
+        "aerial05",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.3721313464508116,
+      "rotation_error_deg": 2.4363203425790148
+    },
+    {
+      "i": [
+        "aerial04",
+        22
+      ],
+      "j": [
+        "aerial05",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.879844834627894,
+      "rotation_error_deg": 2.4111113103794977
+    },
+    {
+      "i": [
+        "aerial04",
+        22
+      ],
+      "j": [
+        "aerial07",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.5610541268927631,
+      "rotation_error_deg": 2.454056451948252
+    },
+    {
+      "i": [
+        "aerial04",
+        22
+      ],
+      "j": [
+        "aerial08",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.6166169238853965,
+      "rotation_error_deg": 2.3944504127672106
+    },
+    {
+      "i": [
+        "aerial05",
+        14
+      ],
+      "j": [
+        "aerial07",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.9626349595147584,
+      "rotation_error_deg": 0.9152984255650606
+    },
+    {
+      "i": [
+        "aerial05",
+        14
+      ],
+      "j": [
+        "aerial08",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.2328643781738176,
+      "rotation_error_deg": 1.659103482435151
+    },
+    {
+      "i": [
+        "aerial05",
+        14
+      ],
+      "j": [
+        "ground01",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.35222477991633,
+      "rotation_error_deg": 0.6937086499932384
+    },
+    {
+      "i": [
+        "aerial05",
+        15
+      ],
+      "j": [
+        "aerial07",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.9526073481512278,
+      "rotation_error_deg": 0.4002351075176434
+    },
+    {
+      "i": [
+        "aerial05",
+        15
+      ],
+      "j": [
+        "aerial07",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8921926183371383,
+      "rotation_error_deg": 0.38478857645980247
+    },
+    {
+      "i": [
+        "aerial05",
+        15
+      ],
+      "j": [
+        "aerial07",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8047217363504318,
+      "rotation_error_deg": 0.4354011214276951
+    },
+    {
+      "i": [
+        "aerial05",
+        15
+      ],
+      "j": [
+        "aerial08",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.0960590748239627,
+      "rotation_error_deg": 1.482903311714592
+    },
+    {
+      "i": [
+        "aerial05",
+        15
+      ],
+      "j": [
+        "aerial08",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.2915559714665181,
+      "rotation_error_deg": 1.3231213214314885
+    },
+    {
+      "i": [
+        "aerial05",
+        15
+      ],
+      "j": [
+        "ground01",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.1535437025377764,
+      "rotation_error_deg": 0.4247550591102083
+    },
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial07",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.6594439272363285,
+      "rotation_error_deg": 0.44108035026033904
+    },
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial07",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.6934715149215209,
+      "rotation_error_deg": 0.2767464303389404
+    },
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial07",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7232221023139728,
+      "rotation_error_deg": 0.2345207701850758
+    },
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial07",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7057496384202667,
+      "rotation_error_deg": 0.20225711470740868
+    },
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial08",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8790122342903601,
+      "rotation_error_deg": 1.4830830061214797
+    },
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial08",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.9383512235471206,
+      "rotation_error_deg": 1.6059901918725314
+    },
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "ground01",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.9895371669633104,
+      "rotation_error_deg": 0.5683212362938832
+    },
+    {
+      "i": [
+        "aerial05",
+        17
+      ],
+      "j": [
+        "aerial07",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7596645291092633,
+      "rotation_error_deg": 0.31817404484160683
+    },
+    {
+      "i": [
+        "aerial05",
+        17
+      ],
+      "j": [
+        "ground01",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.801300572317078,
+      "rotation_error_deg": 0.5743460404243832
+    },
+    {
+      "i": [
+        "aerial05",
+        18
+      ],
+      "j": [
+        "aerial07",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8763874410822855,
+      "rotation_error_deg": 0.4839583350597876
+    },
+    {
+      "i": [
+        "aerial05",
+        18
+      ],
+      "j": [
+        "aerial07",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7930970560898557,
+      "rotation_error_deg": 0.5231565568314798
+    },
+    {
+      "i": [
+        "aerial05",
+        18
+      ],
+      "j": [
+        "aerial07",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7619318744646095,
+      "rotation_error_deg": 0.7613097379256514
+    },
+    {
+      "i": [
+        "aerial05",
+        18
+      ],
+      "j": [
+        "ground01",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.0713870876709004,
+      "rotation_error_deg": 0.5763801519550237
+    },
+    {
+      "i": [
+        "aerial05",
+        19
+      ],
+      "j": [
+        "aerial07",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.866899528958735,
+      "rotation_error_deg": 0.5049352834884894
+    },
+    {
+      "i": [
+        "aerial05",
+        19
+      ],
+      "j": [
+        "aerial08",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.163840777018512,
+      "rotation_error_deg": 1.4405160982152092
+    },
+    {
+      "i": [
+        "aerial05",
+        19
+      ],
+      "j": [
+        "aerial08",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.4163199014550596,
+      "rotation_error_deg": 1.2382355570121617
+    },
+    {
+      "i": [
+        "aerial05",
+        19
+      ],
+      "j": [
+        "ground01",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.288771894860596,
+      "rotation_error_deg": 0.6043439428041256
+    },
+    {
+      "i": [
+        "aerial05",
+        20
+      ],
+      "j": [
+        "aerial07",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.0178815056109216,
+      "rotation_error_deg": 0.38930405717010014
+    },
+    {
+      "i": [
+        "aerial05",
+        20
+      ],
+      "j": [
+        "aerial07",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.9768033998155954,
+      "rotation_error_deg": 0.49961095809305367
+    },
+    {
+      "i": [
+        "aerial05",
+        20
+      ],
+      "j": [
+        "aerial08",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.9677215922010413,
+      "rotation_error_deg": 1.3705754754739616
+    },
+    {
+      "i": [
+        "aerial05",
+        20
+      ],
+      "j": [
+        "aerial08",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.0624270158529263,
+      "rotation_error_deg": 0.962132232968576
+    },
+    {
+      "i": [
+        "aerial05",
+        20
+      ],
+      "j": [
+        "ground01",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5259847875392112,
+      "rotation_error_deg": 0.6627940932681043
+    },
+    {
+      "i": [
+        "aerial05",
+        21
+      ],
+      "j": [
+        "aerial07",
+        31
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.0539462339638415,
+      "rotation_error_deg": 0.4648299736435747
+    },
+    {
+      "i": [
+        "aerial05",
+        22
+      ],
+      "j": [
+        "aerial07",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8481646595067407,
+      "rotation_error_deg": 0.22796464312773246
+    },
+    {
+      "i": [
+        "aerial05",
+        22
+      ],
+      "j": [
+        "aerial08",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.260692571627834,
+      "rotation_error_deg": 1.0901917689414764
+    },
+    {
+      "i": [
+        "aerial05",
+        22
+      ],
+      "j": [
+        "ground01",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.1775676466741885,
+      "rotation_error_deg": 0.9820554593629647
+    },
+    {
+      "i": [
+        "aerial05",
+        23
+      ],
+      "j": [
+        "ground01",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0143226543709996,
+      "rotation_error_deg": 1.029118137481651
+    },
+    {
+      "i": [
+        "aerial05",
+        24
+      ],
+      "j": [
+        "aerial08",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.422599288388417,
+      "rotation_error_deg": 1.2935670698687383
+    },
+    {
+      "i": [
+        "aerial05",
+        24
+      ],
+      "j": [
+        "ground01",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.5621402846736065,
+      "rotation_error_deg": 1.6760832917375754
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial06",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.0200432726963298,
+      "rotation_error_deg": 1.3522599522869285
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial06",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.9034171751945652,
+      "rotation_error_deg": 1.3082915039785463
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial06",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7702714685137347,
+      "rotation_error_deg": 1.2519579490805388
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial07",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.4056160747063093,
+      "rotation_error_deg": 2.2311550884393414
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial07",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.280014322967844,
+      "rotation_error_deg": 2.1779910464872385
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial07",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.326356635778493,
+      "rotation_error_deg": 1.8749545563134635
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial07",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.3568705272119521,
+      "rotation_error_deg": 1.9510866664624462
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial07",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.868106726764979,
+      "rotation_error_deg": 2.1016395399758445
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial07",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.2872694525418757,
+      "rotation_error_deg": 2.0495017600757373
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial07",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.659016882121637,
+      "rotation_error_deg": 2.176651998971367
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial07",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.797277652257057,
+      "rotation_error_deg": 2.2532649293113267
+    },
+    {
+      "i": [
+        "aerial05",
+        25
+      ],
+      "j": [
+        "aerial08",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.4272789760970563,
+      "rotation_error_deg": 1.6559903523909145
+    },
+    {
+      "i": [
+        "aerial05",
+        26
+      ],
+      "j": [
+        "aerial06",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8517493274099734,
+      "rotation_error_deg": 1.3421321071786458
+    },
+    {
+      "i": [
+        "aerial05",
+        26
+      ],
+      "j": [
+        "aerial06",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7131652141760952,
+      "rotation_error_deg": 1.903343708720983
+    },
+    {
+      "i": [
+        "aerial05",
+        26
+      ],
+      "j": [
+        "aerial07",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 2.256095275991154,
+      "rotation_error_deg": 2.421276359182706
+    },
+    {
+      "i": [
+        "aerial05",
+        27
+      ],
+      "j": [
+        "aerial06",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.6610474910060168,
+      "rotation_error_deg": 1.6199028314288018
+    },
+    {
+      "i": [
+        "aerial05",
+        27
+      ],
+      "j": [
+        "aerial06",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.0608211573491406,
+      "rotation_error_deg": 2.0373987389306936
+    },
+    {
+      "i": [
+        "aerial05",
+        27
+      ],
+      "j": [
+        "aerial06",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5911929810243937,
+      "rotation_error_deg": 1.9293679338022716
+    },
+    {
+      "i": [
+        "aerial05",
+        27
+      ],
+      "j": [
+        "aerial06",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.4889033208776454,
+      "rotation_error_deg": 1.9296310932455254
+    },
+    {
+      "i": [
+        "aerial05",
+        28
+      ],
+      "j": [
+        "aerial06",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5772819932400041,
+      "rotation_error_deg": 1.907641089585249
+    },
+    {
+      "i": [
+        "aerial05",
+        28
+      ],
+      "j": [
+        "aerial06",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7239960538650978,
+      "rotation_error_deg": 1.6577713984798355
+    },
+    {
+      "i": [
+        "aerial05",
+        28
+      ],
+      "j": [
+        "aerial06",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8910842713867235,
+      "rotation_error_deg": 1.785824481274561
+    },
+    {
+      "i": [
+        "aerial06",
+        1
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.16138645921416847,
+      "rotation_error_deg": 0.8465679648709789
+    },
+    {
+      "i": [
+        "aerial06",
+        1
+      ],
+      "j": [
+        "ground03",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3280485349980649,
+      "rotation_error_deg": 0.6446500162898124
+    },
+    {
+      "i": [
+        "aerial06",
+        2
+      ],
+      "j": [
+        "aerial07",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.08673011964477767,
+      "rotation_error_deg": 0.5907123070234811
+    },
+    {
+      "i": [
+        "aerial06",
+        2
+      ],
+      "j": [
+        "aerial08",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.0858505238119849,
+      "rotation_error_deg": 1.507038626402505
+    },
+    {
+      "i": [
+        "aerial06",
+        2
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.18801566690829594,
+      "rotation_error_deg": 0.6098764268735258
+    },
+    {
+      "i": [
+        "aerial06",
+        3
+      ],
+      "j": [
+        "aerial07",
+        0
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.1621228438455058,
+      "rotation_error_deg": 0.4083809176620879
+    },
+    {
+      "i": [
+        "aerial06",
+        3
+      ],
+      "j": [
+        "aerial07",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.11257263689197494,
+      "rotation_error_deg": 0.345491733083734
+    },
+    {
+      "i": [
+        "aerial06",
+        3
+      ],
+      "j": [
+        "aerial07",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.033728570304488205,
+      "rotation_error_deg": 0.39298933131410263
+    },
+    {
+      "i": [
+        "aerial06",
+        3
+      ],
+      "j": [
+        "aerial07",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.09048917947467261,
+      "rotation_error_deg": 0.34370453033623677
+    },
+    {
+      "i": [
+        "aerial06",
+        3
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.26943294690018654,
+      "rotation_error_deg": 0.7604437371173637
+    },
+    {
+      "i": [
+        "aerial06",
+        4
+      ],
+      "j": [
+        "aerial07",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.10731035187694692,
+      "rotation_error_deg": 0.2821645321718918
+    },
+    {
+      "i": [
+        "aerial06",
+        4
+      ],
+      "j": [
+        "aerial08",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.13671491154889842,
+      "rotation_error_deg": 1.7573444209070535
+    },
+    {
+      "i": [
+        "aerial06",
+        4
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.31279915194668123,
+      "rotation_error_deg": 0.8420351494265044
+    },
+    {
+      "i": [
+        "aerial06",
+        5
+      ],
+      "j": [
+        "aerial07",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.07696375641792962,
+      "rotation_error_deg": 0.2774312141017272
+    },
+    {
+      "i": [
+        "aerial06",
+        5
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.412938172433631,
+      "rotation_error_deg": 0.7995181733920617
+    },
+    {
+      "i": [
+        "aerial06",
+        5
+      ],
+      "j": [
+        "ground05",
+        49
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.4187585690732684,
+      "rotation_error_deg": 0.836478292961
+    },
+    {
+      "i": [
+        "aerial06",
+        6
+      ],
+      "j": [
+        "aerial07",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.07997151965251768,
+      "rotation_error_deg": 0.6077491091341618
+    },
+    {
+      "i": [
+        "aerial06",
+        6
+      ],
+      "j": [
+        "ground01",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5924663225427431,
+      "rotation_error_deg": 1.01327143819952
+    },
+    {
+      "i": [
+        "aerial06",
+        6
+      ],
+      "j": [
+        "ground05",
+        49
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6212466750440012,
+      "rotation_error_deg": 1.08355176632763
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.08269548048610564,
+      "rotation_error_deg": 0.9184463163656976
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.11527337401265432,
+      "rotation_error_deg": 0.6348425362712301
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "aerial07",
+        31
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.772143879706764,
+      "rotation_error_deg": 0.7933351208314559
+    },
+    {
+      "i": [
+        "aerial06",
+        7
+      ],
+      "j": [
+        "ground01",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6021202870878577,
+      "rotation_error_deg": 0.9122651474301001
+    },
+    {
+      "i": [
+        "aerial06",
+        8
+      ],
+      "j": [
+        "aerial07",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.1963858324422995,
+      "rotation_error_deg": 0.8756691448658345
+    },
+    {
+      "i": [
+        "aerial06",
+        8
+      ],
+      "j": [
+        "aerial07",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.1377349467447253,
+      "rotation_error_deg": 1.1272617712360946
+    },
+    {
+      "i": [
+        "aerial06",
+        8
+      ],
+      "j": [
+        "aerial07",
+        34
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.8663697239332624,
+      "rotation_error_deg": 0.24500453988385204
+    },
+    {
+      "i": [
+        "aerial06",
+        8
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.49312427864385516,
+      "rotation_error_deg": 0.8619783572166863
+    },
+    {
+      "i": [
+        "aerial06",
+        9
+      ],
+      "j": [
+        "aerial07",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.32859345830474945,
+      "rotation_error_deg": 1.1204286333815865
+    },
+    {
+      "i": [
+        "aerial06",
+        9
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.49868666206838885,
+      "rotation_error_deg": 0.7821845647166341
+    },
+    {
+      "i": [
+        "aerial06",
+        10
+      ],
+      "j": [
+        "aerial07",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.1372910191973034,
+      "rotation_error_deg": 1.6041170521199233
+    },
+    {
+      "i": [
+        "aerial06",
+        10
+      ],
+      "j": [
+        "ground06",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7451480340370692,
+      "rotation_error_deg": 1.158840364443384
+    },
+    {
+      "i": [
+        "aerial06",
+        11
+      ],
+      "j": [
+        "ground06",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6032327511738251,
+      "rotation_error_deg": 1.04903799346246
+    },
+    {
+      "i": [
+        "aerial06",
+        12
+      ],
+      "j": [
+        "ground06",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.5339613203987204,
+      "rotation_error_deg": 1.0807890321169442
+    },
+    {
+      "i": [
+        "aerial06",
+        13
+      ],
+      "j": [
+        "ground06",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7039268471887108,
+      "rotation_error_deg": 1.0860884463093494
+    },
+    {
+      "i": [
+        "aerial06",
+        14
+      ],
+      "j": [
+        "ground06",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0258715493517536,
+      "rotation_error_deg": 1.4217063041880986
+    },
+    {
+      "i": [
+        "aerial06",
+        15
+      ],
+      "j": [
+        "ground06",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0811157842541501,
+      "rotation_error_deg": 1.4023697435899019
+    },
+    {
+      "i": [
+        "aerial06",
+        16
+      ],
+      "j": [
+        "ground06",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.7088645873450716,
+      "rotation_error_deg": 1.2439436293565111
+    },
+    {
+      "i": [
+        "aerial06",
+        17
+      ],
+      "j": [
+        "ground06",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.2334243867255945,
+      "rotation_error_deg": 1.1575736473670175
+    },
+    {
+      "i": [
+        "aerial06",
+        18
+      ],
+      "j": [
+        "ground06",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.205311683352063,
+      "rotation_error_deg": 1.307393141036401
+    },
+    {
+      "i": [
+        "aerial06",
+        22
+      ],
+      "j": [
+        "ground06",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.2201182152841568,
+      "rotation_error_deg": 1.2870311907780012
+    },
+    {
+      "i": [
+        "aerial06",
+        23
+      ],
+      "j": [
+        "ground01",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.7164758401972757,
+      "rotation_error_deg": 1.4917302832712396
+    },
+    {
+      "i": [
+        "aerial06",
+        23
+      ],
+      "j": [
+        "ground06",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4622918114140033,
+      "rotation_error_deg": 1.3009359270353327
+    },
+    {
+      "i": [
+        "aerial06",
+        24
+      ],
+      "j": [
+        "ground01",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.16501762412639304,
+      "rotation_error_deg": 1.8061189201016021
+    },
+    {
+      "i": [
+        "aerial06",
+        24
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.514900167984937,
+      "rotation_error_deg": 1.2152451305801253
+    },
+    {
+      "i": [
+        "aerial06",
+        25
+      ],
+      "j": [
+        "ground01",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.8730436150606861,
+      "rotation_error_deg": 1.2258847396246273
+    },
+    {
+      "i": [
+        "aerial06",
+        25
+      ],
+      "j": [
+        "ground06",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.110451835086243,
+      "rotation_error_deg": 1.0434651576922307
+    },
+    {
+      "i": [
+        "aerial06",
+        26
+      ],
+      "j": [
+        "aerial07",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.632451449319311,
+      "rotation_error_deg": 1.8501424291606736
+    },
+    {
+      "i": [
+        "aerial06",
+        26
+      ],
+      "j": [
+        "aerial07",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.7942704952011006,
+      "rotation_error_deg": 1.9560664449353398
+    },
+    {
+      "i": [
+        "aerial06",
+        26
+      ],
+      "j": [
+        "ground01",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.7671874758233447,
+      "rotation_error_deg": 1.3179937102618666
+    },
+    {
+      "i": [
+        "aerial06",
+        26
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0320576082319206,
+      "rotation_error_deg": 1.1038193895089463
+    },
+    {
+      "i": [
+        "aerial06",
+        27
+      ],
+      "j": [
+        "aerial08",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.1682916624964343,
+      "rotation_error_deg": 1.2621868727319447
+    },
+    {
+      "i": [
+        "aerial06",
+        27
+      ],
+      "j": [
+        "ground01",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.4409719394195419,
+      "rotation_error_deg": 1.4916628390731788
+    },
+    {
+      "i": [
+        "aerial06",
+        27
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.980010866704774,
+      "rotation_error_deg": 1.1031486109917708
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial07",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.32192085775878226,
+      "rotation_error_deg": 1.5129250305607356
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial07",
+        35
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.07168875045336241,
+      "rotation_error_deg": 1.540598835467015
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial07",
+        36
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.09057021478765626,
+      "rotation_error_deg": 1.652824431086671
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial07",
+        38
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.1068618440350256,
+      "rotation_error_deg": 1.679378508301641
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial07",
+        39
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.1089519556705047,
+      "rotation_error_deg": 1.6615788936033817
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.41430936928213613,
+      "rotation_error_deg": 1.3721071530510047
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 1.3950613516064216,
+      "rotation_error_deg": 0.7352224975808128
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.9309043065455691,
+      "rotation_error_deg": 0.6640915648532408
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.17502970590820663,
+      "rotation_error_deg": 0.509454387923734
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.26335328041741324,
+      "rotation_error_deg": 0.5287214009183431
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.3683451936824072,
+      "rotation_error_deg": 0.46713186159849657
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.40066013916446724,
+      "rotation_error_deg": 0.48050138170161
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "aerial08",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.42858892402571425,
+      "rotation_error_deg": 0.6129900367688643
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "ground01",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.49662678577437075,
+      "rotation_error_deg": 1.3199900256417028
+    },
+    {
+      "i": [
+        "aerial06",
+        28
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0273958900074318,
+      "rotation_error_deg": 1.0876663849139108
+    },
+    {
+      "i": [
+        "aerial06",
+        29
+      ],
+      "j": [
+        "aerial07",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5277629582899521,
+      "rotation_error_deg": 1.6865979663078532
+    },
+    {
+      "i": [
+        "aerial06",
+        29
+      ],
+      "j": [
+        "aerial07",
+        37
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.0773819137454118,
+      "rotation_error_deg": 1.6777712197397432
+    },
+    {
+      "i": [
+        "aerial06",
+        29
+      ],
+      "j": [
+        "aerial08",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.07088867622887407,
+      "rotation_error_deg": 1.235229317187106
+    },
+    {
+      "i": [
+        "aerial06",
+        29
+      ],
+      "j": [
+        "aerial08",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.16439953595973994,
+      "rotation_error_deg": 0.3667605151996629
+    },
+    {
+      "i": [
+        "aerial06",
+        29
+      ],
+      "j": [
+        "ground01",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.4471460319653133,
+      "rotation_error_deg": 1.3060022806936649
+    },
+    {
+      "i": [
+        "aerial06",
+        29
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0071139141505314,
+      "rotation_error_deg": 1.0873590654142564
+    },
+    {
+      "i": [
+        "aerial06",
+        30
+      ],
+      "j": [
+        "ground01",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.15695234892883964,
+      "rotation_error_deg": 1.4642575648555833
+    },
+    {
+      "i": [
+        "aerial06",
+        30
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0285742223787044,
+      "rotation_error_deg": 1.1230648586453265
+    },
+    {
+      "i": [
+        "aerial06",
+        31
+      ],
+      "j": [
+        "ground01",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.38681606142118513,
+      "rotation_error_deg": 1.260236511528022
+    },
+    {
+      "i": [
+        "aerial06",
+        31
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0035801663967967,
+      "rotation_error_deg": 1.0543875641583385
+    },
+    {
+      "i": [
+        "aerial06",
+        32
+      ],
+      "j": [
+        "ground01",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3706968999929427,
+      "rotation_error_deg": 1.2617371431191846
+    },
+    {
+      "i": [
+        "aerial06",
+        32
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.000571936281262,
+      "rotation_error_deg": 1.0644297373999405
+    },
+    {
+      "i": [
+        "aerial07",
+        2
+      ],
+      "j": [
+        "ground02",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.2085106069236351,
+      "rotation_error_deg": 1.120363532200152
+    },
+    {
+      "i": [
+        "aerial07",
+        3
+      ],
+      "j": [
+        "ground03",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3681755866091491,
+      "rotation_error_deg": 0.83949528500572
+    },
+    {
+      "i": [
+        "aerial07",
+        4
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.4314665323902003,
+      "rotation_error_deg": 1.0398950419034387
+    },
+    {
+      "i": [
+        "aerial07",
+        5
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.49309325718469604,
+      "rotation_error_deg": 1.0605649023804806
+    },
+    {
+      "i": [
+        "aerial07",
+        6
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.6103025304625935,
+      "rotation_error_deg": 1.0101878620512048
+    },
+    {
+      "i": [
+        "aerial07",
+        16
+      ],
+      "j": [
+        "aerial08",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.6990914792675423,
+      "rotation_error_deg": 1.5543397375665873
+    },
+    {
+      "i": [
+        "aerial07",
+        16
+      ],
+      "j": [
+        "ground01",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.287907162707301,
+      "rotation_error_deg": 0.681108262624404
+    },
+    {
+      "i": [
+        "aerial07",
+        17
+      ],
+      "j": [
+        "aerial08",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.4112718388137669,
+      "rotation_error_deg": 1.629491485597078
+    },
+    {
+      "i": [
+        "aerial07",
+        17
+      ],
+      "j": [
+        "aerial08",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.6897035076553082,
+      "rotation_error_deg": 1.4668157176049232
+    },
+    {
+      "i": [
+        "aerial07",
+        17
+      ],
+      "j": [
+        "ground01",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.525480806252699,
+      "rotation_error_deg": 0.6751484136014637
+    },
+    {
+      "i": [
+        "aerial07",
+        18
+      ],
+      "j": [
+        "aerial08",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.3454340927850997,
+      "rotation_error_deg": 1.6195705794748458
+    },
+    {
+      "i": [
+        "aerial07",
+        18
+      ],
+      "j": [
+        "ground01",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.6217217090081364,
+      "rotation_error_deg": 0.9042569929808102
+    },
+    {
+      "i": [
+        "aerial07",
+        19
+      ],
+      "j": [
+        "ground01",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.245464648228227,
+      "rotation_error_deg": 0.7064250918084409
+    },
+    {
+      "i": [
+        "aerial07",
+        20
+      ],
+      "j": [
+        "aerial08",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5049632021836734,
+      "rotation_error_deg": 1.6191205158010127
+    },
+    {
+      "i": [
+        "aerial07",
+        20
+      ],
+      "j": [
+        "ground01",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.33406738892688,
+      "rotation_error_deg": 0.6737338940077481
+    },
+    {
+      "i": [
+        "aerial07",
+        21
+      ],
+      "j": [
+        "ground01",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.610042256246277,
+      "rotation_error_deg": 0.2765391074027764
+    },
+    {
+      "i": [
+        "aerial07",
+        22
+      ],
+      "j": [
+        "aerial08",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.714937939523214,
+      "rotation_error_deg": 1.536224245222164
+    },
+    {
+      "i": [
+        "aerial07",
+        22
+      ],
+      "j": [
+        "ground01",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.4719515814743063,
+      "rotation_error_deg": 0.3973023765795714
+    },
+    {
+      "i": [
+        "aerial07",
+        23
+      ],
+      "j": [
+        "ground01",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.2373321833010054,
+      "rotation_error_deg": 0.4225720081922223
+    },
+    {
+      "i": [
+        "aerial07",
+        24
+      ],
+      "j": [
+        "ground01",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.458474598769003,
+      "rotation_error_deg": 0.43804768295769075
+    },
+    {
+      "i": [
+        "aerial07",
+        25
+      ],
+      "j": [
+        "aerial08",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.3121600203595598,
+      "rotation_error_deg": 1.3184028757601114
+    },
+    {
+      "i": [
+        "aerial07",
+        25
+      ],
+      "j": [
+        "aerial08",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.45323786280948447,
+      "rotation_error_deg": 1.3395471601570046
+    },
+    {
+      "i": [
+        "aerial07",
+        25
+      ],
+      "j": [
+        "ground01",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.4594606338155023,
+      "rotation_error_deg": 0.7433455556646462
+    },
+    {
+      "i": [
+        "aerial07",
+        26
+      ],
+      "j": [
+        "ground01",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.099427944802288,
+      "rotation_error_deg": 0.6379685584441565
+    },
+    {
+      "i": [
+        "aerial07",
+        28
+      ],
+      "j": [
+        "ground01",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 2.0132722397820126,
+      "rotation_error_deg": 0.8879838569561964
+    },
+    {
+      "i": [
+        "aerial07",
+        29
+      ],
+      "j": [
+        "aerial08",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5193808633710437,
+      "rotation_error_deg": 1.2027609999507967
+    },
+    {
+      "i": [
+        "aerial07",
+        29
+      ],
+      "j": [
+        "ground01",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.4013396944032208,
+      "rotation_error_deg": 0.668520834426026
+    },
+    {
+      "i": [
+        "aerial07",
+        30
+      ],
+      "j": [
+        "aerial08",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.15809716976132476,
+      "rotation_error_deg": 1.319433356058545
+    },
+    {
+      "i": [
+        "aerial07",
+        31
+      ],
+      "j": [
+        "aerial08",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.43908709582978434,
+      "rotation_error_deg": 1.1688210824371512
+    },
+    {
+      "i": [
+        "aerial07",
+        31
+      ],
+      "j": [
+        "aerial08",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.45310060306705524,
+      "rotation_error_deg": 1.3674995537740302
+    },
+    {
+      "i": [
+        "aerial07",
+        31
+      ],
+      "j": [
+        "aerial08",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.7655887156649405,
+      "rotation_error_deg": 0.9648180151433163
+    },
+    {
+      "i": [
+        "aerial07",
+        32
+      ],
+      "j": [
+        "aerial08",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5703160274939436,
+      "rotation_error_deg": 1.20331605092804
+    },
+    {
+      "i": [
+        "aerial07",
+        32
+      ],
+      "j": [
+        "ground01",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.549841849239889,
+      "rotation_error_deg": 0.7668292570347256
+    },
+    {
+      "i": [
+        "aerial07",
+        34
+      ],
+      "j": [
+        "aerial08",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.6223070410204484,
+      "rotation_error_deg": 1.1047590510437328
+    },
+    {
+      "i": [
+        "aerial07",
+        34
+      ],
+      "j": [
+        "aerial08",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.42028577285956253,
+      "rotation_error_deg": 1.1925664093818145
+    },
+    {
+      "i": [
+        "aerial07",
+        34
+      ],
+      "j": [
+        "aerial08",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.16235473455219612,
+      "rotation_error_deg": 1.1752973497320132
+    },
+    {
+      "i": [
+        "aerial07",
+        34
+      ],
+      "j": [
+        "ground01",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.3297908977818612,
+      "rotation_error_deg": 0.8199404485106582
+    },
+    {
+      "i": [
+        "aerial07",
+        35
+      ],
+      "j": [
+        "aerial08",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.3915025439645282,
+      "rotation_error_deg": 1.4821293694623972
+    },
+    {
+      "i": [
+        "aerial07",
+        35
+      ],
+      "j": [
+        "ground01",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.29052613662921895,
+      "rotation_error_deg": 0.8515488259984895
+    },
+    {
+      "i": [
+        "aerial07",
+        36
+      ],
+      "j": [
+        "aerial08",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.4694148826018361,
+      "rotation_error_deg": 1.480669944053533
+    },
+    {
+      "i": [
+        "aerial07",
+        36
+      ],
+      "j": [
+        "ground01",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.25477239659421463,
+      "rotation_error_deg": 1.067460747464736
+    },
+    {
+      "i": [
+        "aerial07",
+        37
+      ],
+      "j": [
+        "aerial08",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5047475330148679,
+      "rotation_error_deg": 1.2722685145888726
+    },
+    {
+      "i": [
+        "aerial07",
+        37
+      ],
+      "j": [
+        "aerial08",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5124728430747673,
+      "rotation_error_deg": 1.3668684935170026
+    },
+    {
+      "i": [
+        "aerial07",
+        37
+      ],
+      "j": [
+        "aerial08",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.5643560332721073,
+      "rotation_error_deg": 1.3777964576140507
+    },
+    {
+      "i": [
+        "aerial07",
+        37
+      ],
+      "j": [
+        "aerial08",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.2156902700872293,
+      "rotation_error_deg": 1.3888609148408895
+    },
+    {
+      "i": [
+        "aerial07",
+        37
+      ],
+      "j": [
+        "aerial08",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "aerial-aerial",
+      "translation_error_m": 0.2325897723178326,
+      "rotation_error_deg": 1.349089436683038
+    },
+    {
+      "i": [
+        "aerial07",
+        37
+      ],
+      "j": [
+        "ground01",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.229761355421864,
+      "rotation_error_deg": 0.9680956615982678
+    },
+    {
+      "i": [
+        "aerial07",
+        38
+      ],
+      "j": [
+        "ground01",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.29656875261736726,
+      "rotation_error_deg": 0.9145783107934073
+    },
+    {
+      "i": [
+        "aerial07",
+        39
+      ],
+      "j": [
+        "ground01",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.22831833610881705,
+      "rotation_error_deg": 0.9385881699765274
+    },
+    {
+      "i": [
+        "aerial08",
+        1
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.23791903853602492,
+      "rotation_error_deg": 0.7982314097228279
+    },
+    {
+      "i": [
+        "aerial08",
+        3
+      ],
+      "j": [
+        "ground02",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 0.309238839624912,
+      "rotation_error_deg": 0.7085563927696933
+    },
+    {
+      "i": [
+        "aerial08",
+        6
+      ],
+      "j": [
+        "ground03",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0280815514253798,
+      "rotation_error_deg": 0.40653417063351593
+    },
+    {
+      "i": [
+        "aerial08",
+        7
+      ],
+      "j": [
+        "ground03",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "aerial-ground",
+      "translation_error_m": 1.0229644247967726,
+      "rotation_error_deg": 0.6525994911877921
+    },
+    {
+      "i": [
+        "ground01",
+        0
+      ],
+      "j": [
+        "ground03",
+        0
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.09886137554076228,
+      "rotation_error_deg": 0.46112889181888406
+    },
+    {
+      "i": [
+        "ground01",
+        4
+      ],
+      "j": [
+        "ground06",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8544420781816898,
+      "rotation_error_deg": 0.4050412600373859
+    },
+    {
+      "i": [
+        "ground01",
+        4
+      ],
+      "j": [
+        "ground06",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.899499288136662,
+      "rotation_error_deg": 0.49407243729199235
+    },
+    {
+      "i": [
+        "ground01",
+        4
+      ],
+      "j": [
+        "ground06",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7733640450136385,
+      "rotation_error_deg": 0.5266689223273175
+    },
+    {
+      "i": [
+        "ground01",
+        4
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7176391676153413,
+      "rotation_error_deg": 0.5450106716115778
+    },
+    {
+      "i": [
+        "ground01",
+        4
+      ],
+      "j": [
+        "ground06",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6735722090229715,
+      "rotation_error_deg": 0.630439456925848
+    },
+    {
+      "i": [
+        "ground01",
+        5
+      ],
+      "j": [
+        "ground06",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6647008359743144,
+      "rotation_error_deg": 0.4691744632042689
+    },
+    {
+      "i": [
+        "ground01",
+        21
+      ],
+      "j": [
+        "ground06",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.6891129430824134,
+      "rotation_error_deg": 0.6865020864225698
+    },
+    {
+      "i": [
+        "ground01",
+        22
+      ],
+      "j": [
+        "ground06",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.4626780368941288,
+      "rotation_error_deg": 0.6806502382980737
+    },
+    {
+      "i": [
+        "ground01",
+        23
+      ],
+      "j": [
+        "ground06",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.4438196243240704,
+      "rotation_error_deg": 0.7451004845235525
+    },
+    {
+      "i": [
+        "ground01",
+        25
+      ],
+      "j": [
+        "ground06",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.28255210028432354,
+      "rotation_error_deg": 0.7909485827069501
+    },
+    {
+      "i": [
+        "ground01",
+        25
+      ],
+      "j": [
+        "ground06",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.21767007300665675,
+      "rotation_error_deg": 0.7067886441033634
+    },
+    {
+      "i": [
+        "ground01",
+        26
+      ],
+      "j": [
+        "ground05",
+        45
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.054611914690772305,
+      "rotation_error_deg": 0.24611788418042074
+    },
+    {
+      "i": [
+        "ground01",
+        26
+      ],
+      "j": [
+        "ground06",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6807966983082381,
+      "rotation_error_deg": 0.523104222061805
+    },
+    {
+      "i": [
+        "ground01",
+        26
+      ],
+      "j": [
+        "ground06",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.5462729373506088,
+      "rotation_error_deg": 0.36593130037042276
+    },
+    {
+      "i": [
+        "ground01",
+        26
+      ],
+      "j": [
+        "ground06",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.46085278983142164,
+      "rotation_error_deg": 0.36178113179985455
+    },
+    {
+      "i": [
+        "ground01",
+        26
+      ],
+      "j": [
+        "ground06",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.3591943977149408,
+      "rotation_error_deg": 0.39889563439779835
+    },
+    {
+      "i": [
+        "ground01",
+        26
+      ],
+      "j": [
+        "ground06",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.3195186228297356,
+      "rotation_error_deg": 0.4161339360585877
+    },
+    {
+      "i": [
+        "ground01",
+        27
+      ],
+      "j": [
+        "ground03",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.0279240232791302,
+      "rotation_error_deg": 0.31077512428281096
+    },
+    {
+      "i": [
+        "ground01",
+        28
+      ],
+      "j": [
+        "ground03",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.5296484806594638,
+      "rotation_error_deg": 0.36069535355006593
+    },
+    {
+      "i": [
+        "ground01",
+        28
+      ],
+      "j": [
+        "ground03",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.9277743747331496,
+      "rotation_error_deg": 0.2945361594136294
+    },
+    {
+      "i": [
+        "ground01",
+        28
+      ],
+      "j": [
+        "ground05",
+        47
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.09972119870586384,
+      "rotation_error_deg": 0.17227773632876284
+    },
+    {
+      "i": [
+        "ground01",
+        28
+      ],
+      "j": [
+        "ground05",
+        48
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.04108842818873419,
+      "rotation_error_deg": 0.23586895302176072
+    },
+    {
+      "i": [
+        "ground01",
+        28
+      ],
+      "j": [
+        "ground06",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.9332748777655209,
+      "rotation_error_deg": 0.5364609377615761
+    },
+    {
+      "i": [
+        "ground01",
+        29
+      ],
+      "j": [
+        "ground03",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.9739307138987228,
+      "rotation_error_deg": 0.2420885609785864
+    },
+    {
+      "i": [
+        "ground01",
+        29
+      ],
+      "j": [
+        "ground03",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.93262046577978,
+      "rotation_error_deg": 0.3191186996969216
+    },
+    {
+      "i": [
+        "ground01",
+        29
+      ],
+      "j": [
+        "ground03",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8334514606270506,
+      "rotation_error_deg": 0.41420856183565175
+    },
+    {
+      "i": [
+        "ground01",
+        29
+      ],
+      "j": [
+        "ground05",
+        46
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.0947566866168946,
+      "rotation_error_deg": 0.21802005481083347
+    },
+    {
+      "i": [
+        "ground01",
+        29
+      ],
+      "j": [
+        "ground06",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.919932089174717,
+      "rotation_error_deg": 0.46947566744503233
+    },
+    {
+      "i": [
+        "ground01",
+        30
+      ],
+      "j": [
+        "ground02",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.10534510116678973,
+      "rotation_error_deg": 0.3853101089704382
+    },
+    {
+      "i": [
+        "ground01",
+        30
+      ],
+      "j": [
+        "ground02",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.03838341703875026,
+      "rotation_error_deg": 0.1171497970671804
+    },
+    {
+      "i": [
+        "ground01",
+        30
+      ],
+      "j": [
+        "ground02",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.02415047732586382,
+      "rotation_error_deg": 0.24052521374869706
+    },
+    {
+      "i": [
+        "ground01",
+        30
+      ],
+      "j": [
+        "ground02",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.059491524029661944,
+      "rotation_error_deg": 0.2329722774532161
+    },
+    {
+      "i": [
+        "ground01",
+        30
+      ],
+      "j": [
+        "ground02",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.1263175057401482,
+      "rotation_error_deg": 0.320317096654639
+    },
+    {
+      "i": [
+        "ground01",
+        30
+      ],
+      "j": [
+        "ground02",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7148470222706076,
+      "rotation_error_deg": 0.15498414377478517
+    },
+    {
+      "i": [
+        "ground01",
+        30
+      ],
+      "j": [
+        "ground03",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.070958982170784,
+      "rotation_error_deg": 0.17779693291735493
+    },
+    {
+      "i": [
+        "ground01",
+        30
+      ],
+      "j": [
+        "ground05",
+        50
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.05894134230007112,
+      "rotation_error_deg": 0.372311241632588
+    },
+    {
+      "i": [
+        "ground01",
+        32
+      ],
+      "j": [
+        "ground02",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.3749553656472439,
+      "rotation_error_deg": 0.2069157632384939
+    },
+    {
+      "i": [
+        "ground01",
+        33
+      ],
+      "j": [
+        "ground03",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.2402790516542277,
+      "rotation_error_deg": 0.2581455922117214
+    },
+    {
+      "i": [
+        "ground02",
+        1
+      ],
+      "j": [
+        "ground03",
+        0
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.04129880794406164,
+      "rotation_error_deg": 0.5165984884548457
+    },
+    {
+      "i": [
+        "ground02",
+        1
+      ],
+      "j": [
+        "ground03",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.4020525925998201,
+      "rotation_error_deg": 0.2448284042376618
+    },
+    {
+      "i": [
+        "ground02",
+        1
+      ],
+      "j": [
+        "ground03",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7414192381506155,
+      "rotation_error_deg": 0.5108799374710938
+    },
+    {
+      "i": [
+        "ground02",
+        2
+      ],
+      "j": [
+        "ground03",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.21202076382263782,
+      "rotation_error_deg": 0.29022725357702567
+    },
+    {
+      "i": [
+        "ground02",
+        2
+      ],
+      "j": [
+        "ground03",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.9100085572169971,
+      "rotation_error_deg": 0.37217767618438663
+    },
+    {
+      "i": [
+        "ground02",
+        2
+      ],
+      "j": [
+        "ground03",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8154702332662624,
+      "rotation_error_deg": 0.2873531694579258
+    },
+    {
+      "i": [
+        "ground02",
+        2
+      ],
+      "j": [
+        "ground03",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7627836985655898,
+      "rotation_error_deg": 0.42042327770171756
+    },
+    {
+      "i": [
+        "ground02",
+        2
+      ],
+      "j": [
+        "ground03",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6867467116201933,
+      "rotation_error_deg": 0.4624928769950539
+    },
+    {
+      "i": [
+        "ground02",
+        2
+      ],
+      "j": [
+        "ground05",
+        49
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.013085742238439696,
+      "rotation_error_deg": 0.40453513669067603
+    },
+    {
+      "i": [
+        "ground02",
+        2
+      ],
+      "j": [
+        "ground05",
+        51
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.056097224835018944,
+      "rotation_error_deg": 0.3759950358923753
+    },
+    {
+      "i": [
+        "ground02",
+        3
+      ],
+      "j": [
+        "ground05",
+        50
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.07790843234504864,
+      "rotation_error_deg": 0.4195398352577163
+    },
+    {
+      "i": [
+        "ground02",
+        25
+      ],
+      "j": [
+        "ground05",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.3909410403520703,
+      "rotation_error_deg": 0.29242800727627116
+    },
+    {
+      "i": [
+        "ground02",
+        26
+      ],
+      "j": [
+        "ground04",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 2.581027594120689,
+      "rotation_error_deg": 0.5258188193988441
+    },
+    {
+      "i": [
+        "ground02",
+        27
+      ],
+      "j": [
+        "ground04",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 2.617135916263428,
+      "rotation_error_deg": 0.5374258488366866
+    },
+    {
+      "i": [
+        "ground02",
+        27
+      ],
+      "j": [
+        "ground04",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 2.260941766543355,
+      "rotation_error_deg": 0.5789064345839678
+    },
+    {
+      "i": [
+        "ground02",
+        27
+      ],
+      "j": [
+        "ground05",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.2802506003489311,
+      "rotation_error_deg": 0.5264549855792847
+    },
+    {
+      "i": [
+        "ground02",
+        27
+      ],
+      "j": [
+        "ground05",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.4697762123743479,
+      "rotation_error_deg": 0.440547483255479
+    },
+    {
+      "i": [
+        "ground02",
+        27
+      ],
+      "j": [
+        "ground05",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.5647089305068247,
+      "rotation_error_deg": 0.4445262078389272
+    },
+    {
+      "i": [
+        "ground02",
+        28
+      ],
+      "j": [
+        "ground05",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.555840094365274,
+      "rotation_error_deg": 0.4333248376718776
+    },
+    {
+      "i": [
+        "ground02",
+        29
+      ],
+      "j": [
+        "ground04",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 2.1922097344476623,
+      "rotation_error_deg": 0.670759111257734
+    },
+    {
+      "i": [
+        "ground02",
+        29
+      ],
+      "j": [
+        "ground04",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 2.5245813047283887,
+      "rotation_error_deg": 0.6893178319350108
+    },
+    {
+      "i": [
+        "ground02",
+        30
+      ],
+      "j": [
+        "ground04",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.6188835412811733,
+      "rotation_error_deg": 0.6292043046048102
+    },
+    {
+      "i": [
+        "ground02",
+        30
+      ],
+      "j": [
+        "ground04",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.9203983821698476,
+      "rotation_error_deg": 0.5558431766115959
+    },
+    {
+      "i": [
+        "ground02",
+        30
+      ],
+      "j": [
+        "ground05",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.5211573176804503,
+      "rotation_error_deg": 0.3159086446824397
+    },
+    {
+      "i": [
+        "ground02",
+        30
+      ],
+      "j": [
+        "ground05",
+        31
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.5805995177663978,
+      "rotation_error_deg": 0.3127726809643369
+    },
+    {
+      "i": [
+        "ground02",
+        31
+      ],
+      "j": [
+        "ground03",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7686463541540907,
+      "rotation_error_deg": 0.4157946844711865
+    },
+    {
+      "i": [
+        "ground02",
+        31
+      ],
+      "j": [
+        "ground03",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7273033003071308,
+      "rotation_error_deg": 0.3175988366783679
+    },
+    {
+      "i": [
+        "ground02",
+        31
+      ],
+      "j": [
+        "ground04",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.4466999515534038,
+      "rotation_error_deg": 0.6963578945920678
+    },
+    {
+      "i": [
+        "ground02",
+        31
+      ],
+      "j": [
+        "ground04",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.5440276951405305,
+      "rotation_error_deg": 0.6129646540389111
+    },
+    {
+      "i": [
+        "ground02",
+        31
+      ],
+      "j": [
+        "ground05",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.500738046844221,
+      "rotation_error_deg": 0.30412409646728183
+    },
+    {
+      "i": [
+        "ground02",
+        31
+      ],
+      "j": [
+        "ground05",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.3910771521697727,
+      "rotation_error_deg": 0.3865792414843482
+    },
+    {
+      "i": [
+        "ground02",
+        32
+      ],
+      "j": [
+        "ground03",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8785582073670656,
+      "rotation_error_deg": 0.34217882351959733
+    },
+    {
+      "i": [
+        "ground02",
+        33
+      ],
+      "j": [
+        "ground03",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8104639888890067,
+      "rotation_error_deg": 0.2659296804612854
+    },
+    {
+      "i": [
+        "ground02",
+        33
+      ],
+      "j": [
+        "ground04",
+        0
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.5001356339078717,
+      "rotation_error_deg": 0.6628800560688235
+    },
+    {
+      "i": [
+        "ground02",
+        34
+      ],
+      "j": [
+        "ground03",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8796120822385727,
+      "rotation_error_deg": 0.15001929148676493
+    },
+    {
+      "i": [
+        "ground02",
+        35
+      ],
+      "j": [
+        "ground03",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7950632999861749,
+      "rotation_error_deg": 0.20395228551408223
+    },
+    {
+      "i": [
+        "ground02",
+        35
+      ],
+      "j": [
+        "ground03",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.071701167799368,
+      "rotation_error_deg": 0.144604202603991
+    },
+    {
+      "i": [
+        "ground02",
+        35
+      ],
+      "j": [
+        "ground03",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.085605947947206,
+      "rotation_error_deg": 0.1439049166034807
+    },
+    {
+      "i": [
+        "ground02",
+        36
+      ],
+      "j": [
+        "ground03",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.0197575569020592,
+      "rotation_error_deg": 0.19931879888498072
+    },
+    {
+      "i": [
+        "ground02",
+        37
+      ],
+      "j": [
+        "ground03",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8702855470787357,
+      "rotation_error_deg": 0.055079129933833716
+    },
+    {
+      "i": [
+        "ground03",
+        1
+      ],
+      "j": [
+        "ground06",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7603584694143924,
+      "rotation_error_deg": 0.516675988605999
+    },
+    {
+      "i": [
+        "ground03",
+        2
+      ],
+      "j": [
+        "ground06",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.44540531399415145,
+      "rotation_error_deg": 0.2970095004148606
+    },
+    {
+      "i": [
+        "ground03",
+        3
+      ],
+      "j": [
+        "ground06",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.1378838959684464,
+      "rotation_error_deg": 0.30867997194558155
+    },
+    {
+      "i": [
+        "ground03",
+        4
+      ],
+      "j": [
+        "ground05",
+        49
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.1707141238511212,
+      "rotation_error_deg": 0.2672058390633869
+    },
+    {
+      "i": [
+        "ground03",
+        4
+      ],
+      "j": [
+        "ground05",
+        51
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.204366227333218,
+      "rotation_error_deg": 0.35057740177510105
+    },
+    {
+      "i": [
+        "ground03",
+        4
+      ],
+      "j": [
+        "ground06",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.21370762824143696,
+      "rotation_error_deg": 0.2990339830840793
+    },
+    {
+      "i": [
+        "ground03",
+        5
+      ],
+      "j": [
+        "ground05",
+        48
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.034592261553777,
+      "rotation_error_deg": 0.5232505256308669
+    },
+    {
+      "i": [
+        "ground03",
+        5
+      ],
+      "j": [
+        "ground06",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.26210240234476445,
+      "rotation_error_deg": 0.4172452920046712
+    },
+    {
+      "i": [
+        "ground03",
+        5
+      ],
+      "j": [
+        "ground06",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6188965021089807,
+      "rotation_error_deg": 0.3090917711059665
+    },
+    {
+      "i": [
+        "ground03",
+        5
+      ],
+      "j": [
+        "ground06",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6935114923325535,
+      "rotation_error_deg": 0.30502907052374806
+    },
+    {
+      "i": [
+        "ground03",
+        6
+      ],
+      "j": [
+        "ground05",
+        47
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.0819484989680217,
+      "rotation_error_deg": 0.45665489382654184
+    },
+    {
+      "i": [
+        "ground03",
+        6
+      ],
+      "j": [
+        "ground06",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.47772949872938036,
+      "rotation_error_deg": 0.35733638572279386
+    },
+    {
+      "i": [
+        "ground03",
+        6
+      ],
+      "j": [
+        "ground06",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.5966937399010631,
+      "rotation_error_deg": 0.3231509143696901
+    },
+    {
+      "i": [
+        "ground03",
+        8
+      ],
+      "j": [
+        "ground05",
+        46
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.1796677846530172,
+      "rotation_error_deg": 0.3904273136883258
+    },
+    {
+      "i": [
+        "ground03",
+        10
+      ],
+      "j": [
+        "ground05",
+        44
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.1073483949350413,
+      "rotation_error_deg": 0.3735125436934859
+    },
+    {
+      "i": [
+        "ground03",
+        10
+      ],
+      "j": [
+        "ground05",
+        45
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.200357207580508,
+      "rotation_error_deg": 0.42407059232655764
+    },
+    {
+      "i": [
+        "ground03",
+        11
+      ],
+      "j": [
+        "ground05",
+        43
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.9558291143126167,
+      "rotation_error_deg": 0.3507594008215917
+    },
+    {
+      "i": [
+        "ground03",
+        12
+      ],
+      "j": [
+        "ground05",
+        41
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7573842619586479,
+      "rotation_error_deg": 0.34733845784117967
+    },
+    {
+      "i": [
+        "ground03",
+        13
+      ],
+      "j": [
+        "ground05",
+        42
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.0804315021553774,
+      "rotation_error_deg": 0.41298007529100855
+    },
+    {
+      "i": [
+        "ground03",
+        14
+      ],
+      "j": [
+        "ground05",
+        40
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.9027629539121949,
+      "rotation_error_deg": 0.2862555317697996
+    },
+    {
+      "i": [
+        "ground03",
+        16
+      ],
+      "j": [
+        "ground05",
+        38
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8319051018196362,
+      "rotation_error_deg": 0.12908707929192115
+    },
+    {
+      "i": [
+        "ground03",
+        16
+      ],
+      "j": [
+        "ground05",
+        39
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8987912713859303,
+      "rotation_error_deg": 0.21130962626784786
+    },
+    {
+      "i": [
+        "ground03",
+        18
+      ],
+      "j": [
+        "ground05",
+        36
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.1148036523186344,
+      "rotation_error_deg": 0.19621594305423398
+    },
+    {
+      "i": [
+        "ground03",
+        18
+      ],
+      "j": [
+        "ground05",
+        37
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.1002420894699976,
+      "rotation_error_deg": 0.20189275944991983
+    },
+    {
+      "i": [
+        "ground03",
+        19
+      ],
+      "j": [
+        "ground05",
+        35
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.375793362072037,
+      "rotation_error_deg": 0.2482448424940129
+    },
+    {
+      "i": [
+        "ground03",
+        21
+      ],
+      "j": [
+        "ground04",
+        0
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.4623343887928726,
+      "rotation_error_deg": 0.7572152334664254
+    },
+    {
+      "i": [
+        "ground03",
+        21
+      ],
+      "j": [
+        "ground05",
+        34
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.4634441941794807,
+      "rotation_error_deg": 0.21779684901059512
+    },
+    {
+      "i": [
+        "ground03",
+        22
+      ],
+      "j": [
+        "ground04",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.4310080963492258,
+      "rotation_error_deg": 0.3079146211450501
+    },
+    {
+      "i": [
+        "ground03",
+        22
+      ],
+      "j": [
+        "ground04",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.5093719279704054,
+      "rotation_error_deg": 0.20795540426476292
+    },
+    {
+      "i": [
+        "ground03",
+        22
+      ],
+      "j": [
+        "ground05",
+        32
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.7399456007526581,
+      "rotation_error_deg": 0.21886994448887692
+    },
+    {
+      "i": [
+        "ground03",
+        22
+      ],
+      "j": [
+        "ground05",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.6365110334096507,
+      "rotation_error_deg": 0.2374756710204486
+    },
+    {
+      "i": [
+        "ground03",
+        24
+      ],
+      "j": [
+        "ground04",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.65784140229944,
+      "rotation_error_deg": 0.39449861225562505
+    },
+    {
+      "i": [
+        "ground03",
+        24
+      ],
+      "j": [
+        "ground04",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.918498708255374,
+      "rotation_error_deg": 0.2791617501600608
+    },
+    {
+      "i": [
+        "ground03",
+        24
+      ],
+      "j": [
+        "ground04",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 2.19002192843666,
+      "rotation_error_deg": 0.4550177211698533
+    },
+    {
+      "i": [
+        "ground04",
+        4
+      ],
+      "j": [
+        "ground05",
+        30
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.44017030451884065,
+      "rotation_error_deg": 0.2807077953842268
+    },
+    {
+      "i": [
+        "ground04",
+        4
+      ],
+      "j": [
+        "ground05",
+        31
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.4154702852643741,
+      "rotation_error_deg": 0.28981941142400686
+    },
+    {
+      "i": [
+        "ground04",
+        4
+      ],
+      "j": [
+        "ground05",
+        33
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6512741364338067,
+      "rotation_error_deg": 0.3282933255644042
+    },
+    {
+      "i": [
+        "ground04",
+        5
+      ],
+      "j": [
+        "ground05",
+        34
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7925483003861559,
+      "rotation_error_deg": 0.40762661955670265
+    },
+    {
+      "i": [
+        "ground04",
+        6
+      ],
+      "j": [
+        "ground05",
+        27
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.871113803439164,
+      "rotation_error_deg": 0.1952436910183735
+    },
+    {
+      "i": [
+        "ground04",
+        6
+      ],
+      "j": [
+        "ground05",
+        29
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.627878968862351,
+      "rotation_error_deg": 0.318713065673045
+    },
+    {
+      "i": [
+        "ground04",
+        7
+      ],
+      "j": [
+        "ground05",
+        28
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.8694747209264279,
+      "rotation_error_deg": 0.25558346933700576
+    },
+    {
+      "i": [
+        "ground04",
+        8
+      ],
+      "j": [
+        "ground05",
+        26
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 1.0320215056061677,
+      "rotation_error_deg": 0.366310308508571
+    },
+    {
+      "i": [
+        "ground04",
+        9
+      ],
+      "j": [
+        "ground05",
+        23
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.7882931256451882,
+      "rotation_error_deg": 0.17580831301085062
+    },
+    {
+      "i": [
+        "ground04",
+        9
+      ],
+      "j": [
+        "ground05",
+        24
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.9978294854795494,
+      "rotation_error_deg": 0.08638092181560963
+    },
+    {
+      "i": [
+        "ground04",
+        10
+      ],
+      "j": [
+        "ground05",
+        22
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.5890067195204862,
+      "rotation_error_deg": 0.20075622784895403
+    },
+    {
+      "i": [
+        "ground04",
+        11
+      ],
+      "j": [
+        "ground05",
+        19
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6659180766171082,
+      "rotation_error_deg": 0.4227590548439563
+    },
+    {
+      "i": [
+        "ground04",
+        12
+      ],
+      "j": [
+        "ground05",
+        21
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6111676554094833,
+      "rotation_error_deg": 0.30861347182810944
+    },
+    {
+      "i": [
+        "ground04",
+        12
+      ],
+      "j": [
+        "ground05",
+        25
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.5995619490931465,
+      "rotation_error_deg": 0.3920973714588415
+    },
+    {
+      "i": [
+        "ground04",
+        13
+      ],
+      "j": [
+        "ground05",
+        20
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6932685091063987,
+      "rotation_error_deg": 0.31719509414351105
+    },
+    {
+      "i": [
+        "ground04",
+        15
+      ],
+      "j": [
+        "ground05",
+        17
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6748125060507687,
+      "rotation_error_deg": 0.4437232373488881
+    },
+    {
+      "i": [
+        "ground04",
+        15
+      ],
+      "j": [
+        "ground05",
+        18
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6390863214734666,
+      "rotation_error_deg": 0.36495959802504374
+    },
+    {
+      "i": [
+        "ground04",
+        16
+      ],
+      "j": [
+        "ground05",
+        16
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.6257728976529442,
+      "rotation_error_deg": 0.31985508007594876
+    },
+    {
+      "i": [
+        "ground04",
+        17
+      ],
+      "j": [
+        "ground05",
+        14
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.3709062141255341,
+      "rotation_error_deg": 0.21262107461295243
+    },
+    {
+      "i": [
+        "ground04",
+        17
+      ],
+      "j": [
+        "ground05",
+        15
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.5428673218121486,
+      "rotation_error_deg": 0.2520782292801247
+    },
+    {
+      "i": [
+        "ground04",
+        19
+      ],
+      "j": [
+        "ground05",
+        13
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.2321632360972124,
+      "rotation_error_deg": 0.1903650019233677
+    },
+    {
+      "i": [
+        "ground04",
+        20
+      ],
+      "j": [
+        "ground05",
+        11
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.21888653987044632,
+      "rotation_error_deg": 0.21750709692946613
+    },
+    {
+      "i": [
+        "ground04",
+        20
+      ],
+      "j": [
+        "ground05",
+        12
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.24960456141600157,
+      "rotation_error_deg": 0.2250579469558056
+    },
+    {
+      "i": [
+        "ground04",
+        21
+      ],
+      "j": [
+        "ground05",
+        10
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.31677427420227267,
+      "rotation_error_deg": 0.20813238223706218
+    },
+    {
+      "i": [
+        "ground04",
+        24
+      ],
+      "j": [
+        "ground05",
+        8
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.4597600116930485,
+      "rotation_error_deg": 0.17060526328396186
+    },
+    {
+      "i": [
+        "ground04",
+        24
+      ],
+      "j": [
+        "ground05",
+        9
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.44963989177878344,
+      "rotation_error_deg": 0.20163688430181465
+    },
+    {
+      "i": [
+        "ground04",
+        25
+      ],
+      "j": [
+        "ground05",
+        7
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.24311372578702253,
+      "rotation_error_deg": 0.3015105228879515
+    },
+    {
+      "i": [
+        "ground04",
+        27
+      ],
+      "j": [
+        "ground05",
+        1
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.1787357683173324,
+      "rotation_error_deg": 0.17248780331138786
+    },
+    {
+      "i": [
+        "ground04",
+        27
+      ],
+      "j": [
+        "ground05",
+        2
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.23546591073184542,
+      "rotation_error_deg": 0.12973851709821652
+    },
+    {
+      "i": [
+        "ground04",
+        27
+      ],
+      "j": [
+        "ground05",
+        3
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.24195894090745806,
+      "rotation_error_deg": 0.17705919295865294
+    },
+    {
+      "i": [
+        "ground04",
+        27
+      ],
+      "j": [
+        "ground05",
+        4
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.2635054113130741,
+      "rotation_error_deg": 0.1938891970677235
+    },
+    {
+      "i": [
+        "ground04",
+        27
+      ],
+      "j": [
+        "ground05",
+        5
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.23905264641595844,
+      "rotation_error_deg": 0.2693586411105833
+    },
+    {
+      "i": [
+        "ground04",
+        27
+      ],
+      "j": [
+        "ground05",
+        6
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.24741185415132164,
+      "rotation_error_deg": 0.24187702064678815
+    },
+    {
+      "i": [
+        "ground04",
+        29
+      ],
+      "j": [
+        "ground05",
+        0
+      ],
+      "pcm_retained": true,
+      "category": "ground-ground",
+      "translation_error_m": 0.2566014484522898,
+      "rotation_error_deg": 0.3016942245533566
+    }
+  ],
+  "skipped": []
+}

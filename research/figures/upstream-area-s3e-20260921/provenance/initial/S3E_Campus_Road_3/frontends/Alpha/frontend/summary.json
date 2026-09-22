@@ -1,0 +1,23 @@
+{
+  "frontend": "ellipselio",
+  "robot": "Alpha",
+  "bag": "/data/s3e/S3Ev2/S3E_Campus_Road_3",
+  "rate": 1.0,
+  "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/launcher/ellipselio_mapping_mt",
+  "start_offset_s": 0.0,
+  "requested_duration": 0.0,
+  "research_export_enabled": false,
+  "odometry_messages": 71243,
+  "finite": true,
+  "path_length_m": 1064.6559999878584,
+  "max_pose_step_m": 0.26011829523301233,
+  "first_pose_stamp_ns": 1689766876757772207,
+  "last_pose_stamp_ns": 1689767769331997632,
+  "analytics_messages": 7556,
+  "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+  "export_complete": null,
+  "native_mapper_returncode": 0,
+  "success": true,
+  "error": null,
+  "wall_s": 918.0302015910856
+}

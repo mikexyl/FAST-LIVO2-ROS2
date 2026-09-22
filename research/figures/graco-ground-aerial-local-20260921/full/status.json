@@ -1,0 +1,55 @@
+{
+  "host": "mikexyl-Lab-ROG",
+  "robots": [
+    "ground06",
+    "aerial06"
+  ],
+  "workstation148_used": false,
+  "phase": "complete",
+  "updated_utc": "2026-09-21T18:23:48Z",
+  "replay_rate": 1.0,
+  "concurrent_robots": 2,
+  "backend_complete": true,
+  "wall_s": 508.67026159399995,
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "ground06",
+      "aerial06"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {},
+    "measured_components": [
+      [
+        "aerial06"
+      ],
+      [
+        "ground06"
+      ]
+    ],
+    "output_frames": {
+      "aerial06": [
+        "aerial06"
+      ],
+      "ground06": [
+        "ground06"
+      ]
+    }
+  },
+  "loops": 0,
+  "pcm_rejected": 0,
+  "raw_ate": {
+    "aerial06": 0.062393859167893265,
+    "ground06": 0.43436830643278224
+  },
+  "cbs_individual_ate": {
+    "aerial06": 0.06239385915786745,
+    "ground06": 0.4343683064406506
+  },
+  "cbs_shared_ate": {
+    "aerial06": 0.06239385915786745,
+    "ground06": 0.4343683064406506
+  }
+}

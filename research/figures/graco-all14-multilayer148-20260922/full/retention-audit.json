@@ -1,0 +1,503 @@
+{
+  "complete": true,
+  "verified_utc": "2026-09-22T07:37:38Z",
+  "robots": [
+    "aerial01",
+    "aerial02",
+    "aerial03",
+    "aerial04",
+    "aerial05",
+    "aerial06",
+    "aerial07",
+    "aerial08",
+    "ground01",
+    "ground02",
+    "ground03",
+    "ground04",
+    "ground05",
+    "ground06"
+  ],
+  "sensor_files_rehashed": 42,
+  "source_hashes_unchanged": true,
+  "calibration_hashes_unchanged": true,
+  "frontend_estimator_sources_and_binaries_and_selected_configs_unchanged": true,
+  "descriptor_evidence_memberships": 504,
+  "gallery_images_and_descriptors_rehashed": 504,
+  "cached_orb_reproduced": true,
+  "live_recordings_verified": 14,
+  "result_recording_verified": true,
+  "gravity_level_recording_verified": true,
+  "latest_tests_passed": 47,
+  "test_runs": [
+    {
+      "file": "tests.xml",
+      "sha256": "a0691cfbe24b46160620ac4344a65b034efb68d579f604eb93c10caa7d803b3d",
+      "tests": 46,
+      "failures": 2
+    },
+    {
+      "file": "tests-fixed.xml",
+      "sha256": "ff1a2edea99962748997c05f9bc33103dbfb47a09403cee87a821ffefb1bbe30",
+      "tests": 15,
+      "failures": 0
+    },
+    {
+      "file": "tests-distributed.xml",
+      "sha256": "1a65b607ccd1c6c16daabefd8349338d96d74c4ab1b08f0ad6b056346879c809",
+      "tests": 8,
+      "failures": 0
+    }
+  ],
+  "synthetic_14_worker_preflight": {
+    "loops": 53,
+    "passed": true,
+    "pcm": {
+      "excluded_loops": 0,
+      "proposed_loops": 53,
+      "retained_loops": 53,
+      "scope": "inter-robot measurement PCM; intra-robot loops pass geometric verification unchanged",
+      "session_id": "b5f41b80dc8d4d91bb713aa18b060397",
+      "settings": {
+        "enabled": true,
+        "minimum_clique_size": 1,
+        "probability": 0.99,
+        "timeout_s": 60.0
+      },
+      "verdicts": [
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 1
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 1
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 2
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 2
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 3
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 3
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 4
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 4
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 5
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 5
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 6
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 6
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 7
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 7
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 8
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 8
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 9
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 9
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 10
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 10
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 11
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 11
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 12
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 12
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 13
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 13
+        },
+        {
+          "key_from": 1,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 1
+        },
+        {
+          "key_from": 1,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 0,
+          "robot_to": 2
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 2
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 2
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 3
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 3
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 4
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 4
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 5
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 5
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 6
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 6
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 7
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 7
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 8
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 8
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 9
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 9
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 10
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 10
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 11
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 11
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 12
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 12
+        },
+        {
+          "key_from": 0,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 13
+        },
+        {
+          "key_from": 0,
+          "key_to": 1,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 13
+        },
+        {
+          "key_from": 1,
+          "key_to": 0,
+          "reason": "retained_clique",
+          "retained": true,
+          "robot_from": 1,
+          "robot_to": 2
+        }
+      ]
+    },
+    "poses": 28,
+    "registration_factor_count": 53,
+    "robots": 14,
+    "wall_s": 36.99655012600124
+  },
+  "ground_truth_for_estimation": false,
+  "ground_truth_available_for_evaluation": 14,
+  "bulk_geometry_retained": true,
+  "previous_experiments_preserved": true,
+  "retained_remote_root": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-all14-multilayer148-20260922"
+}

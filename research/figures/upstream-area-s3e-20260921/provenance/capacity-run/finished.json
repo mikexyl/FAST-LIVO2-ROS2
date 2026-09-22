@@ -1,0 +1,16 @@
+{
+  "quality": {
+    "full_completion": true,
+    "finite": true,
+    "chronological": true,
+    "max_speed_m_s": 2.2193578071577136,
+    "max_successful_update_gap_s": 0.300653769,
+    "native_poses": 15820,
+    "ground_truth_used": false,
+    "passed": true
+  },
+  "recording_data_verified": true,
+  "recording_footer_verified": false,
+  "library_sha256": "6bf162b6a7849d2bfcaf3eb1863bf5a3e014a56c710e281cb1c2e6886039b314",
+  "initial_failure_preserved": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Carol"
+}

@@ -1,0 +1,75 @@
+{
+  "all_connected": true,
+  "components": {
+    "aerial04": "aerial05",
+    "aerial05": "aerial05",
+    "aerial06": "aerial05",
+    "aerial07": "aerial05",
+    "aerial08": "aerial05"
+  },
+  "aerial04_verifications": 1,
+  "aerial04_retained_loops": 1,
+  "aerial04_verification_results": [
+    {
+      "query": [
+        "aerial08",
+        11
+      ],
+      "candidate": [
+        "aerial04",
+        22
+      ],
+      "accepted": true,
+      "reason": "accepted",
+      "overlap": 0.5048178597864016,
+      "rmse_m": 0.29962198517291916
+    }
+  ],
+  "pairs": {
+    "aerial04--aerial08": 1,
+    "aerial05--aerial07": 16,
+    "aerial05--aerial08": 2,
+    "aerial05--aerial06": 1,
+    "aerial06--aerial07": 23,
+    "aerial06--aerial08": 10,
+    "aerial07--aerial08": 18
+  },
+  "loops": 71,
+  "proposed_loops": 71,
+  "pcm_excluded": 0,
+  "backend_wall_s": 234.7330126259476,
+  "raw_ate": {
+    "aerial04": 0.10673089961870652,
+    "aerial05": 0.17750353694010298,
+    "aerial06": 0.06176350035876085,
+    "aerial07": 0.07454558373811623,
+    "aerial08": 0.12746790207223657
+  },
+  "individual_cbs_ate": {
+    "aerial04": 0.10674166095217802,
+    "aerial05": 0.18074381301834214,
+    "aerial06": 0.06164537173687065,
+    "aerial07": 0.07116855261946455,
+    "aerial08": 0.11873407314774295
+  },
+  "shared_cbs_ate": {
+    "aerial04": 0.23948418740907482,
+    "aerial05": 0.7660948350145649,
+    "aerial06": 0.24265510028833712,
+    "aerial07": 0.3279575826254381,
+    "aerial08": 0.26126285462641163
+  },
+  "shared_components": {
+    "aerial05": 0.4117308178301173
+  },
+  "changed_settings": {
+    "pcm_minimum_clique_size": [
+      2,
+      1
+    ],
+    "verification_candidates_per_query": [
+      1,
+      2
+    ]
+  }
+}

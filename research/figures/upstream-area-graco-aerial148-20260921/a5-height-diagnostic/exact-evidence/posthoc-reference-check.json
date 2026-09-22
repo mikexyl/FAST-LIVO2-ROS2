@@ -1,0 +1,169 @@
+{
+  "scope": "Evaluation only after initializer/refinement. Reference is the relative anchor pose after independently SE3-aligning raw trajectories to GT positions; not exact six-DOF ground truth.",
+  "fed_back_to_estimation": false,
+  "results": [
+    {
+      "query": [
+        "aerial06",
+        14
+      ],
+      "candidate": [
+        "aerial05",
+        28
+      ],
+      "reference_level_dz_m": 13.077688308309888,
+      "translation_error_m": 1.0331181040694706,
+      "rotation_error_deg": 0.16591898682148234
+    },
+    {
+      "query": [
+        "aerial07",
+        15
+      ],
+      "candidate": [
+        "aerial05",
+        26
+      ],
+      "reference_level_dz_m": 9.91831664847577,
+      "translation_error_m": 1.1078039770089485,
+      "rotation_error_deg": 0.14875428241297614
+    },
+    {
+      "query": [
+        "aerial07",
+        20
+      ],
+      "candidate": [
+        "aerial05",
+        16
+      ],
+      "reference_level_dz_m": 10.280411749172606,
+      "translation_error_m": 1.045278531348992,
+      "rotation_error_deg": 0.0426888222865051
+    },
+    {
+      "query": [
+        "aerial07",
+        24
+      ],
+      "candidate": [
+        "aerial05",
+        20
+      ],
+      "reference_level_dz_m": 9.987720395970774,
+      "translation_error_m": 1.0020986300519363,
+      "rotation_error_deg": 0.16026702868092418
+    },
+    {
+      "query": [
+        "aerial07",
+        25
+      ],
+      "candidate": [
+        "aerial05",
+        16
+      ],
+      "reference_level_dz_m": 10.211000279459306,
+      "translation_error_m": 1.0716929679129155,
+      "rotation_error_deg": 0.03158391034528866
+    },
+    {
+      "query": [
+        "aerial07",
+        26
+      ],
+      "candidate": [
+        "aerial05",
+        19
+      ],
+      "reference_level_dz_m": 10.11258347219172,
+      "translation_error_m": 1.0528935589097739,
+      "rotation_error_deg": 0.12280611636770701
+    },
+    {
+      "query": [
+        "aerial07",
+        27
+      ],
+      "candidate": [
+        "aerial05",
+        19
+      ],
+      "reference_level_dz_m": 10.340911227837832,
+      "translation_error_m": 1.059112059930715,
+      "rotation_error_deg": 0.12341538521708337
+    },
+    {
+      "query": [
+        "aerial07",
+        28
+      ],
+      "candidate": [
+        "aerial05",
+        19
+      ],
+      "reference_level_dz_m": 10.338058122770114,
+      "translation_error_m": 1.0723673491456864,
+      "rotation_error_deg": 0.11275489118281466
+    },
+    {
+      "query": [
+        "aerial07",
+        29
+      ],
+      "candidate": [
+        "aerial05",
+        19
+      ],
+      "reference_level_dz_m": 10.171706565153777,
+      "translation_error_m": 1.0717758062847438,
+      "rotation_error_deg": 0.11024987983818085
+    },
+    {
+      "query": [
+        "aerial07",
+        30
+      ],
+      "candidate": [
+        "aerial05",
+        20
+      ],
+      "reference_level_dz_m": 10.330630785943583,
+      "translation_error_m": 1.0553776277911913,
+      "rotation_error_deg": 0.13997732987353817
+    },
+    {
+      "query": [
+        "aerial07",
+        31
+      ],
+      "candidate": [
+        "aerial05",
+        20
+      ],
+      "reference_level_dz_m": 10.320019447936499,
+      "translation_error_m": 1.0525535758812024,
+      "rotation_error_deg": 0.15636977098022317
+    },
+    {
+      "query": [
+        "aerial08",
+        18
+      ],
+      "candidate": [
+        "aerial05",
+        16
+      ],
+      "reference_level_dz_m": 7.226468328196875,
+      "translation_error_m": 0.9118337516625351,
+      "rotation_error_deg": 0.1516529400003509
+    }
+  ],
+  "geometric_consistency_without_gt": {
+    "pair": "aerial05--aerial07",
+    "loops": 10,
+    "max_pairwise_odom_frame_translation_disagreement_m": 0.45323292544452015,
+    "max_pairwise_odom_frame_rotation_disagreement_deg": 0.26655965736422293,
+    "pcm_rerun": false
+  }
+}

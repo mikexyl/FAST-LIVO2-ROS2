@@ -1,0 +1,11 @@
+{
+  "aerial04": {
+    "source": "/data/graco/aerial-04-40m.bag",
+    "source_sha256": "158987c96d7c91061d6090df6c7330290f1d60574ccdc2b711fbc86352bf5bc0",
+    "topic": "/gnss/ground_truth",
+    "rows": 58501,
+    "output_sha256": "67b70d4c9b79fd89b0fd0c0218c3831a846dc23b8058c7caa47a81d35484e1c0",
+    "evaluation_only": true,
+    "backend_completed_before_reference_access": true
+  }
+}

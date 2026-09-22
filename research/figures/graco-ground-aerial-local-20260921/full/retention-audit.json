@@ -1,0 +1,32 @@
+{
+  "frozen_sources_verified": true,
+  "input_bags_unchanged": true,
+  "descriptor_evidence_memberships": 64,
+  "causal_ranked_events": 128,
+  "graph_anchors_verified": true,
+  "derived_rerun_verified": true,
+  "live_rerun_verified": true,
+  "derived_rerun_sha256": "9fbff4142c209c01a29c800f7d58f4fc4e97052e319fae5c8f94b3e229e5f945",
+  "bulk_geometry_retained": true,
+  "ground_truth_estimation": false,
+  "selection": {
+    "robots": [
+      "ground06",
+      "aerial06"
+    ],
+    "bags": {
+      "ground06": "/data/graco/ground-06_ros2",
+      "aerial06": "/data/graco/aerial-06-20m_full_ros2"
+    },
+    "reason": "Official route diagrams show overlapping northeastern street; aerial06 has nominal 20 m altitude.",
+    "route_sources": [
+      "https://github.com/SYSU-RoboticsLab/GrAco/blob/main/doc/sequence-ground.png",
+      "https://github.com/SYSU-RoboticsLab/GrAco/blob/main/doc/sequence-aerial.png"
+    ],
+    "numeric_ground_truth_used_for_selection": false,
+    "selection_is_visual_not_exhaustive_overlap_optimization": true,
+    "thresholds_unchanged": true,
+    "host": "local laptop",
+    "workstation148_used": false
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "native_commit": "1710f15db000a579324e3ba045cd64a0b4d706da",
+  "ground_truth_used_for_replay": false,
+  "matches_replayed_without_changing_thresholds": true,
+  "results": [
+    {
+      "query": [
+        "aerial06",
+        27
+      ],
+      "candidate": [
+        "ground06",
+        17
+      ],
+      "exact_native_replay": true,
+      "query_features": 130,
+      "candidate_features": 241,
+      "matches": 7,
+      "inliers": 5,
+      "inlier_indices": [
+        0,
+        1,
+        2,
+        5,
+        6
+      ],
+      "xy_residuals_m": [
+        0.1684789206600843,
+        0.11883640261531149,
+        0.5006010806474841,
+        53.45171249846415,
+        79.81627021619137,
+        0.9449529560766811,
+        0.3259528954365727
+      ],
+      "hamming": [
+        34.0,
+        15.0,
+        39.0,
+        25.0,
+        46.0,
+        42.0,
+        35.0
+      ],
+      "evaluation_only": {
+        "ground_truth_used": true,
+        "planar_translation_error_m": 0.4652920586763574,
+        "yaw_error_deg": 0.7917371812948482,
+        "reference_vertical_translation_m": -18.42883054050043,
+        "limitation": "GT evaluates the frozen 2D hypothesis only; no 3D verification or pipeline rerun."
+      }
+    },
+    {
+      "query": [
+        "aerial06",
+        17
+      ],
+      "candidate": [
+        "ground06",
+        7
+      ],
+      "exact_native_replay": true,
+      "query_features": 163,
+      "candidate_features": 245,
+      "matches": 5,
+      "inliers": 5,
+      "inlier_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "xy_residuals_m": [
+        0.30328859643222666,
+        0.3117541617091177,
+        0.21310149183083912,
+        0.33101364921931364,
+        0.2058915011044908
+      ],
+      "hamming": [
+        49.0,
+        47.0,
+        41.0,
+        42.0,
+        49.0
+      ],
+      "evaluation_only": {
+        "ground_truth_used": true,
+        "planar_translation_error_m": 0.8312652740581917,
+        "yaw_error_deg": 0.8140121527547254,
+        "reference_vertical_translation_m": -19.07280163253941,
+        "limitation": "GT evaluates the frozen 2D hypothesis only; no 3D verification or pipeline rerun."
+      }
+    }
+  ],
+  "script_sha256": "74b9f5c9e9871d4290030cc2c4a76604b0a7d7948398bdeafb746e0173c84150"
+}

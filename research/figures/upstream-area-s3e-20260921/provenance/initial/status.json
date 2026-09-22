@@ -1,0 +1,183 @@
+{
+  "pid": 4083,
+  "started_utc": "2026-09-21T10:20:44Z",
+  "frontend_workers": 6,
+  "frontend_ros_domains": [
+    90,
+    92,
+    94,
+    96,
+    98,
+    100
+  ],
+  "phase": "finished",
+  "groups": [
+    {
+      "name": "S3E_Laboratory_4",
+      "status": "failed",
+      "stage": "failed",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Alpha",
+          "ros_domain_id": 94,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.4758134917022168,
+            "max_successful_update_gap_s": 0.299974143,
+            "native_poses": 3707,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "failed",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Bob",
+          "ros_domain_id": 90,
+          "error": "ValueError(\"Bob failed sensor-only frontend stability: {'full_completion': True, 'finite': True, 'chronological': True, 'max_speed_m_s': 602.1124032765102, 'max_successful_update_gap_s': 28.89787136, 'native_poses': 3771, 'ground_truth_used': False, 'passed': False}\")"
+        },
+        "Carol": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Laboratory_4/frontends/Carol",
+          "ros_domain_id": 92,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.5238521086829113,
+            "max_successful_update_gap_s": 0.201016448,
+            "native_poses": 3796,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        }
+      },
+      "failed_stage": "frontends",
+      "error": "ValueError('One or more frontends failed; see per-robot results')"
+    },
+    {
+      "name": "S3E_Campus_Road_1",
+      "status": "failed",
+      "stage": "failed",
+      "frontends": {
+        "Alpha": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Alpha",
+          "ros_domain_id": 98,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.963636740141265,
+            "max_successful_update_gap_s": 0.299943937,
+            "native_poses": 6967,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Bob",
+          "ros_domain_id": 96,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 1.8047442903450743,
+            "max_successful_update_gap_s": 0.299904769,
+            "native_poses": 8595,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "failed",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/frontends/Carol",
+          "ros_domain_id": 100,
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_1/Carol-recording-verification.log')"
+        }
+      },
+      "failed_stage": "frontends",
+      "error": "ValueError('One or more frontends failed; see per-robot results')"
+    },
+    {
+      "name": "S3E_Campus_Road_2",
+      "status": "failed",
+      "stage": "failed",
+      "frontends": {
+        "Alpha": {
+          "status": "failed",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Alpha",
+          "ros_domain_id": 90,
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/Alpha-recording-verification.log')"
+        },
+        "Bob": {
+          "status": "failed",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Bob",
+          "ros_domain_id": 92,
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/Bob-recording-verification.log')"
+        },
+        "Carol": {
+          "status": "failed",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/frontends/Carol",
+          "ros_domain_id": 94,
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_2/Carol-frontend.log')"
+        }
+      },
+      "failed_stage": "frontends",
+      "error": "ValueError('One or more frontends failed; see per-robot results')"
+    },
+    {
+      "name": "S3E_Campus_Road_3",
+      "status": "failed",
+      "stage": "failed",
+      "frontends": {
+        "Alpha": {
+          "status": "failed",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Alpha",
+          "ros_domain_id": 96,
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/Alpha-recording-verification.log')"
+        },
+        "Bob": {
+          "status": "complete",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Bob",
+          "ros_domain_id": 98,
+          "quality": {
+            "full_completion": true,
+            "finite": true,
+            "chronological": true,
+            "max_speed_m_s": 2.0832045151277105,
+            "max_successful_update_gap_s": 0.500319317,
+            "native_poses": 8768,
+            "ground_truth_used": false,
+            "passed": true
+          }
+        },
+        "Carol": {
+          "status": "failed",
+          "reused": false,
+          "path": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Carol",
+          "ros_domain_id": 100,
+          "error": "RuntimeError('Exit 1: /workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/Carol-recording-verification.log')"
+        }
+      },
+      "failed_stage": "frontends",
+      "error": "ValueError('One or more frontends failed; see per-robot results')"
+    }
+  ],
+  "updated_utc": "2026-09-21T10:55:38Z",
+  "finished_utc": "2026-09-21T10:55:38Z"
+}

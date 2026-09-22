@@ -1,0 +1,20 @@
+{
+  "ground06": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/inputs/ground06",
+    "sha256": {
+      "SENSORS.json": "45063b67e2ec1dfd9491079e091d6db1fef427295458030b7c9ede3ed8f8348e",
+      "metadata.yaml": "dd3a7faadfb79bf521cf1199b14ccfbce3c446778b0ce35f107bc5a74bce4e09",
+      "sensors.db3": "d4e6eb33f3444a591057c6c9166c947d0163fcbbdab398d9ef3f09e8ab1f782b"
+    },
+    "sensor_duration_s": 310.416219646
+  },
+  "aerial06": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/inputs/aerial06",
+    "sha256": {
+      "SENSORS.json": "b1f1dd384f6e712b6c5ca0beb417a4014ddf2959a4b55b8e4d6530629f19eab9",
+      "metadata.yaml": "699ab5e7338efed096fb4f708c6526bdee5b8e4c8408b77a87b28dc4ebe46b1f",
+      "sensors.db3": "2133d3ecedbcdd4688b83ff9a2085b600f23d77caa8fa5c1debb8a4de7c23092"
+    },
+    "sensor_duration_s": 329.245229287
+  }
+}

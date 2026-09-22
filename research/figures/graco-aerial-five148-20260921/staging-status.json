@@ -1,0 +1,12 @@
+{
+  "phase": "complete",
+  "source": "/data/graco/aerial-04-40m.bag",
+  "ground_truth_used": false,
+  "started_utc": "2026-09-21T16:09:08Z",
+  "counts": {
+    "/velodyne/points": 2915,
+    "/gnss/imu": 36431
+  },
+  "source_sha256": "158987c96d7c91061d6090df6c7330290f1d60574ccdc2b711fbc86352bf5bc0",
+  "finished_utc": "2026-09-21T16:11:13Z"
+}

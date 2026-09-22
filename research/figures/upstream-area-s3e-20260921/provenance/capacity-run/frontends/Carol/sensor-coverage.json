@@ -1,0 +1,19 @@
+{
+  "lidar": {
+    "topic": "/Carol/velodyne_points",
+    "source_messages": 15947,
+    "last_record_ns": 1689771182538197994,
+    "last_header_ns": 1689771182538197994
+  },
+  "imu": {
+    "topic": "/Carol/imu/data",
+    "source_messages": 159292,
+    "last_record_ns": 1689771182592495441,
+    "last_header_ns": 1689771182592495441
+  },
+  "native_last_scan_end_ns": 1689771182539442153,
+  "tail_shortfall_s": 0.0,
+  "full_selected_sensor_tail_reached": true,
+  "tolerance_s": 0.2,
+  "native_pose_count": 15820
+}

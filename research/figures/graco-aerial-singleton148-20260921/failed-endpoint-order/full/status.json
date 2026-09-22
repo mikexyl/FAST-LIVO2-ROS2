@@ -1,0 +1,11 @@
+{
+  "started_utc": "2026-09-21T16:30:22Z",
+  "frontend_replayed": false,
+  "phase": "failed",
+  "updated_utc": "2026-09-21T16:33:45Z",
+  "pcm_minimum_clique_size": 1,
+  "verification_candidates_per_query": 2,
+  "failed_stage": "distributed_pcm_cbs",
+  "error": "RuntimeError('Exit 1: /workspace/.ros2/graco-aerial-singleton148-20260921/full/backend.log')",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/.ros2/graco-aerial-singleton148-20260921/run.py\", line 58, in <module>\n    call([PYTHON,SCRIPTS/'upstream_area_batch.py','backend','--work',WORK],WORK/'backend.log',cfg['dpgo']['timeout_s']+120)\n  File \"/workspace/FAST-LIVO2-ROS2/scripts/recent_submaps/upstream_area_batch.py\", line 142, in call\n    if code:raise RuntimeError(f'Exit {code}: {log}')\nRuntimeError: Exit 1: /workspace/.ros2/graco-aerial-singleton148-20260921/full/backend.log\n"
+}

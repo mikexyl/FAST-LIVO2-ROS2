@@ -5,13 +5,17 @@ metrics, audit scripts and textual provenance. Full run artifacts remain in the
 local experiment directories and on workstation 148 at the paths documented in
 each report.
 
-Rerun recordings, point arrays, trajectories, evo ZIP archives, dataset ground
+Rerun recordings, point arrays, binary registration clouds, compressed descriptor
+payloads, compiled shared libraries, trajectories, evo ZIP archives, dataset ground
 truth, per-frame JSONL logs and compressed source/log archives are excluded from
 new commits. Existing tracked artifacts are preserved. A report's link to one
 of these files requires the corresponding retained local artifacts; it is not
 an available GitHub download. Exclusion from Git does not delete local files.
 Frozen source snapshots preserve their original bytes, including whitespace,
 so their recorded hashes remain valid.
+Copied upstream supplementary papers and GIFs remain local with those snapshots;
+they are not new experiment figures. Hash manifests describe the complete retained
+run, including files intentionally excluded from Git.
 
 Reproduce the processing with the configurations and scripts documented in the
 parent research directory. Evaluation reads ground truth only in its evaluation

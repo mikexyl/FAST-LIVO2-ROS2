@@ -1,0 +1,200 @@
+{
+  "image": "sha256:cb89f7676e64520d3c6acfb37be9006b1b1dd52019d928b09f8ed7315ceb3ecc",
+  "host_config": {
+    "Binds": [
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-s3e-20260921/mapclosures-binding:/opt/upstream-area-mapclosures:ro",
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921:/workspace/.ros2/upstream-area-graco-aerial148-20260921:ro",
+      "/data3/mikexyl/swarm_s3e_ws/src:/workspace",
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-five148-20260921/source/FAST-LIVO2-ROS2:/workspace/FAST-LIVO2-ROS2:ro",
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-s3e-20260921/capacity-source/ellipselio:/workspace/ellipselio:ro",
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921:/workspace/.ros2/graco-aerial-height148-20260921:ro",
+      "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-s3e-20260921/capacity-cuda/libellipsoid_surface.so:/workspace/.ros2/ellipsoid-cuda/libellipsoid_surface.so:ro"
+    ],
+    "ContainerIDFile": "",
+    "LogConfig": {
+      "Type": "json-file",
+      "Config": {}
+    },
+    "NetworkMode": "host",
+    "PortBindings": {},
+    "RestartPolicy": {
+      "Name": "no",
+      "MaximumRetryCount": 0
+    },
+    "AutoRemove": false,
+    "VolumeDriver": "",
+    "VolumesFrom": null,
+    "ConsoleSize": [
+      0,
+      0
+    ],
+    "CapAdd": null,
+    "CapDrop": null,
+    "CgroupnsMode": "private",
+    "Dns": null,
+    "DnsOptions": [],
+    "DnsSearch": [],
+    "ExtraHosts": null,
+    "GroupAdd": null,
+    "IpcMode": "host",
+    "Cgroup": "",
+    "Links": null,
+    "OomScoreAdj": 0,
+    "PidMode": "",
+    "Privileged": false,
+    "PublishAllPorts": false,
+    "ReadonlyRootfs": false,
+    "SecurityOpt": [
+      "label=disable"
+    ],
+    "UTSMode": "",
+    "UsernsMode": "",
+    "ShmSize": 67108864,
+    "Runtime": "runc",
+    "Isolation": "",
+    "CpuShares": 0,
+    "Memory": 0,
+    "NanoCpus": 0,
+    "CgroupParent": "",
+    "BlkioWeight": 0,
+    "BlkioWeightDevice": [],
+    "BlkioDeviceReadBps": [],
+    "BlkioDeviceWriteBps": [],
+    "BlkioDeviceReadIOps": [],
+    "BlkioDeviceWriteIOps": [],
+    "CpuPeriod": 0,
+    "CpuQuota": 0,
+    "CpuRealtimePeriod": 0,
+    "CpuRealtimeRuntime": 0,
+    "CpusetCpus": "",
+    "CpusetMems": "",
+    "Devices": [],
+    "DeviceCgroupRules": null,
+    "DeviceRequests": [
+      {
+        "Driver": "",
+        "Count": -1,
+        "DeviceIDs": null,
+        "Capabilities": [
+          [
+            "gpu"
+          ]
+        ],
+        "Options": {}
+      }
+    ],
+    "MemoryReservation": 0,
+    "MemorySwap": 0,
+    "MemorySwappiness": null,
+    "OomKillDisable": null,
+    "PidsLimit": null,
+    "Ulimits": [],
+    "CpuCount": 0,
+    "CpuPercent": 0,
+    "IOMaximumIOps": 0,
+    "IOMaximumBandwidth": 0,
+    "MaskedPaths": [
+      "/proc/acpi",
+      "/proc/asound",
+      "/proc/interrupts",
+      "/proc/kcore",
+      "/proc/keys",
+      "/proc/latency_stats",
+      "/proc/sched_debug",
+      "/proc/scsi",
+      "/proc/timer_list",
+      "/proc/timer_stats",
+      "/sys/devices/virtual/powercap",
+      "/sys/firmware",
+      "/sys/devices/system/cpu/cpu0/thermal_throttle",
+      "/sys/devices/system/cpu/cpu1/thermal_throttle",
+      "/sys/devices/system/cpu/cpu2/thermal_throttle",
+      "/sys/devices/system/cpu/cpu3/thermal_throttle",
+      "/sys/devices/system/cpu/cpu4/thermal_throttle",
+      "/sys/devices/system/cpu/cpu5/thermal_throttle",
+      "/sys/devices/system/cpu/cpu6/thermal_throttle",
+      "/sys/devices/system/cpu/cpu7/thermal_throttle",
+      "/sys/devices/system/cpu/cpu8/thermal_throttle",
+      "/sys/devices/system/cpu/cpu9/thermal_throttle",
+      "/sys/devices/system/cpu/cpu10/thermal_throttle",
+      "/sys/devices/system/cpu/cpu11/thermal_throttle",
+      "/sys/devices/system/cpu/cpu12/thermal_throttle",
+      "/sys/devices/system/cpu/cpu13/thermal_throttle",
+      "/sys/devices/system/cpu/cpu14/thermal_throttle",
+      "/sys/devices/system/cpu/cpu15/thermal_throttle",
+      "/sys/devices/system/cpu/cpu16/thermal_throttle",
+      "/sys/devices/system/cpu/cpu17/thermal_throttle",
+      "/sys/devices/system/cpu/cpu18/thermal_throttle",
+      "/sys/devices/system/cpu/cpu19/thermal_throttle",
+      "/sys/devices/system/cpu/cpu20/thermal_throttle",
+      "/sys/devices/system/cpu/cpu21/thermal_throttle",
+      "/sys/devices/system/cpu/cpu22/thermal_throttle",
+      "/sys/devices/system/cpu/cpu23/thermal_throttle"
+    ],
+    "ReadonlyPaths": [
+      "/proc/bus",
+      "/proc/fs",
+      "/proc/irq",
+      "/proc/sys",
+      "/proc/sysrq-trigger"
+    ]
+  },
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-s3e-20260921/capacity-source/ellipselio",
+      "Destination": "/workspace/ellipselio",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921",
+      "Destination": "/workspace/.ros2/graco-aerial-height148-20260921",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-s3e-20260921/capacity-cuda/libellipsoid_surface.so",
+      "Destination": "/workspace/.ros2/ellipsoid-cuda/libellipsoid_surface.so",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-s3e-20260921/mapclosures-binding",
+      "Destination": "/opt/upstream-area-mapclosures",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921",
+      "Destination": "/workspace/.ros2/upstream-area-graco-aerial148-20260921",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src",
+      "Destination": "/workspace",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-five148-20260921/source/FAST-LIVO2-ROS2",
+      "Destination": "/workspace/FAST-LIVO2-ROS2",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ]
+}

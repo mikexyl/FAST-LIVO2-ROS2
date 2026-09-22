@@ -1,0 +1,9 @@
+{
+  "submaps": 34,
+  "wall_s": 34.223624192061834,
+  "source_index_sha256": "7ab072990720c400d3cf698541b5468fffb24f794650264e417e0f37008c8c17",
+  "source": "/workspace/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial05/frontend/area_maps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": null
+}

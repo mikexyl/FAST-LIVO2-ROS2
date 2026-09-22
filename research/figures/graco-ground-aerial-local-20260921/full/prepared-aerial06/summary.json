@@ -1,0 +1,9 @@
+{
+  "submaps": 33,
+  "wall_s": 50.00755359599998,
+  "source_index_sha256": "5116b6b334e5d62382363c0b8c0b2b55b2aa1beb9018924fb38c56137077d84d",
+  "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/frontends/aerial06/frontend/area_maps",
+  "ground_truth_used": false,
+  "projection_alignment": "gravity",
+  "gravity_sidecar_sha256": null
+}

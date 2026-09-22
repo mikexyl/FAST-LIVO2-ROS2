@@ -1,0 +1,23 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7344d08..aaa1ebd 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,3 +1,18 @@
++# Bag replay needs the upstream message interfaces, without the hardware SDK.
++cmake_minimum_required(VERSION 3.14)
++option(LIVOX_BUILD_MESSAGES_ONLY "Build only the Livox ROS 2 messages" OFF)
++if(LIVOX_BUILD_MESSAGES_ONLY)
++  project(livox_ros_driver2)
++  find_package(ament_cmake REQUIRED)
++  find_package(rosidl_default_generators REQUIRED)
++  find_package(std_msgs REQUIRED)
++  rosidl_generate_interfaces(${PROJECT_NAME}
++    "msg/CustomPoint.msg" "msg/CustomMsg.msg" DEPENDENCIES std_msgs)
++  ament_export_dependencies(rosidl_default_runtime)
++  ament_package()
++  return()
++endif()
++
+ # judge which cmake codes to use 
+ if(ROS_EDITION STREQUAL "ROS1")
+ 

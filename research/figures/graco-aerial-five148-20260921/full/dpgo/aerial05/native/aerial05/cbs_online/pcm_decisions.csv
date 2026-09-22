@@ -1,0 +1,13 @@
+robot_from,robot_to,key_from,key_to,retained,reason,clique_size
+0,1,28,14,0,insufficient_support,1
+0,2,16,20,1,retained_clique,10
+0,2,16,25,1,retained_clique,10
+0,2,19,26,1,retained_clique,10
+0,2,19,27,1,retained_clique,10
+0,2,19,28,1,retained_clique,10
+0,2,19,29,1,retained_clique,10
+0,2,20,24,1,retained_clique,10
+0,2,20,30,1,retained_clique,10
+0,2,20,31,1,retained_clique,10
+0,2,26,15,1,retained_clique,10
+0,3,16,18,0,insufficient_support,1

@@ -1,0 +1,121 @@
+{
+  "phase": "complete",
+  "started_utc": "2026-09-21T15:05:30Z",
+  "frontend_replayed": false,
+  "frontend_source": "/workspace/.ros2/upstream-area-graco-aerial148-20260921/full",
+  "backend_rerun": true,
+  "robots": {
+    "aerial05": {
+      "status": "reused_verified_capture",
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 5.284001744723069,
+        "max_successful_update_gap_s": 0.192002058,
+        "native_poses": 2753,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial06": {
+      "status": "reused_verified_capture",
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.07531202656208,
+        "max_successful_update_gap_s": 0.167996883,
+        "native_poses": 3107,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial07": {
+      "status": "reused_verified_capture",
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.1218964147196515,
+        "max_successful_update_gap_s": 0.15199995,
+        "native_poses": 3713,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial08": {
+      "status": "reused_verified_capture",
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.539622324666119,
+        "max_successful_update_gap_s": 0.135998964,
+        "native_poses": 2623,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    }
+  },
+  "updated_utc": "2026-09-21T15:09:12Z",
+  "finished_utc": "2026-09-21T15:09:12Z",
+  "wall_s": 222.69855309999548,
+  "raw_ate": {
+    "aerial05": 0.17750353694010298,
+    "aerial06": 0.06176350035876085,
+    "aerial07": 0.07454558373811623,
+    "aerial08": 0.12746790207223657
+  },
+  "individual_cbs_ate": {
+    "aerial05": 0.17763210688779943,
+    "aerial06": 0.06160206679013232,
+    "aerial07": 0.0710704759102099,
+    "aerial08": 0.11929778603718642
+  },
+  "shared_cbs_ate": {
+    "aerial05": 0.4378054624301339
+  },
+  "connectivity": {
+    "all_robots_connected": true,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial05",
+      "aerial06",
+      "aerial07",
+      "aerial08"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {
+      "aerial05--aerial07": 10,
+      "aerial06--aerial07": 23,
+      "aerial06--aerial08": 3,
+      "aerial07--aerial08": 15
+    },
+    "measured_components": [
+      [
+        "aerial05",
+        "aerial06",
+        "aerial07",
+        "aerial08"
+      ]
+    ],
+    "output_frames": {
+      "aerial05": [
+        "aerial05"
+      ],
+      "aerial06": [
+        "aerial05"
+      ],
+      "aerial07": [
+        "aerial05"
+      ],
+      "aerial08": [
+        "aerial05"
+      ]
+    }
+  },
+  "loops": 51,
+  "pcm_rejected": 2
+}

@@ -1,0 +1,1 @@
+The first singleton run stopped because native numeric robot order differed from Python name order for A04/A08. No evaluation or successful result was produced. Full logs, configuration and original frozen source are preserved.

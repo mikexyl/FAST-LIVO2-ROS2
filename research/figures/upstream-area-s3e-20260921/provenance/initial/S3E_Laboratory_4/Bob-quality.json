@@ -1,0 +1,10 @@
+{
+  "full_completion": true,
+  "finite": true,
+  "chronological": true,
+  "max_speed_m_s": 602.1124032765102,
+  "max_successful_update_gap_s": 28.89787136,
+  "native_poses": 3771,
+  "ground_truth_used": false,
+  "passed": false
+}

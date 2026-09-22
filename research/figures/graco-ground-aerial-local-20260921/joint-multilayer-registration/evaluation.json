@@ -1,0 +1,654 @@
+{
+  "ground_truth_used_only_for_evaluation": true,
+  "ground_truth_used_for_registration": false,
+  "thresholds_and_acceptance_unchanged": true,
+  "summary_sha256": "e7537f853c2d28bc4c18d212470d3cf4bb75fa04988ca2d32544e9fe63468d78",
+  "ground_truth_sha256": {
+    "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/reference/aerial06_gt.txt": "17de18be612d1b7046c14ece92be21496ad425bf83cc93889e94e68e467fdf6b",
+    "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/reference/ground06_gt.txt": "99b13bc984bc8ebb06ee76cdc9b5dd21f2b54eeba810e632bb20f775e97a2562"
+  },
+  "evaluator_sha256": "e5cb4b475f4e64c60f8cac661e43dfb8ae1cd78b614005a32a97acfd4265e46f",
+  "interpolation_source_sha256": "99f52ee620f7c69f87fef46be23b11bcd18dc94167cbcc1cfc0593887d7c1e6b",
+  "gt_interpolation_max_bracket_s": 0.05,
+  "pairs": [
+    {
+      "id": "aerial06-7__ground06-12",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 18.3862510410346,
+          "rotation_deg": 2.557427988041613,
+          "horizontal_translation_m": 0.35531877857351196,
+          "vertical_translation_error_m": 18.382817409459822,
+          "yaw_error_deg": 0.11445513315119192
+        },
+        "height_seed": {
+          "translation_m": 1.6557569162027455,
+          "rotation_deg": 2.557427988041613,
+          "horizontal_translation_m": 0.3553187785735124,
+          "vertical_translation_error_m": -1.6171825905401818,
+          "yaw_error_deg": 0.11445513315119192
+        },
+        "gicp": {
+          "translation_m": 1.4412660482801283,
+          "rotation_deg": 0.6555947569586775,
+          "horizontal_translation_m": 0.4048764976414792,
+          "vertical_translation_error_m": -1.3832291363265092,
+          "yaw_error_deg": 0.09500818841634188
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-7__ground06-12",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.27244048630153606,
+        "aerial_to_ground_overlap": 0.22366166834454865,
+        "symmetric_overlap": 0.22366166834454865,
+        "rmse_m": 0.304492998842693,
+        "zero_height_initial_overlap": 0.0006066635929044626,
+        "with_height_initial_overlap": 0.33248804872721976,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-7__ground06-17",
+      "accepted": true,
+      "errors": {
+        "bev": {
+          "translation_m": 20.6092215882932,
+          "rotation_deg": 1.905080488775241,
+          "horizontal_translation_m": 0.7540912701214658,
+          "vertical_translation_error_m": 20.59542087046771,
+          "yaw_error_deg": 0.13675213960321328
+        },
+        "height_seed": {
+          "translation_m": 0.8557674425488014,
+          "rotation_deg": 1.905080488775241,
+          "horizontal_translation_m": 0.7540912701214728,
+          "vertical_translation_error_m": -0.40457912953230135,
+          "yaw_error_deg": 0.13675213960321328
+        },
+        "gicp": {
+          "translation_m": 0.6174538418430651,
+          "rotation_deg": 0.7244850063760379,
+          "horizontal_translation_m": 0.40208166171617,
+          "vertical_translation_error_m": -0.46859319683316514,
+          "yaw_error_deg": 0.18368515865548068
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-7__ground06-17",
+        "accepted": true,
+        "reason": "accepted",
+        "ground_to_aerial_overlap": 0.6254976759689636,
+        "aerial_to_ground_overlap": 0.5216005227927021,
+        "symmetric_overlap": 0.5216005227927021,
+        "rmse_m": 0.2919216376327952,
+        "zero_height_initial_overlap": 0.007240606655432307,
+        "with_height_initial_overlap": 0.7351067572822726,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-12__ground06-7",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 18.805073449580103,
+          "rotation_deg": 3.009901653717972,
+          "horizontal_translation_m": 1.1238948436674199,
+          "vertical_translation_error_m": 18.771458329721753,
+          "yaw_error_deg": 1.328572091722307
+        },
+        "height_seed": {
+          "translation_m": 1.6650688439918246,
+          "rotation_deg": 3.009901653717972,
+          "horizontal_translation_m": 1.1238948436674234,
+          "vertical_translation_error_m": -1.228541670278247,
+          "yaw_error_deg": 1.328572091722307
+        },
+        "gicp": {
+          "translation_m": 1.072316826705855,
+          "rotation_deg": 1.3147192192674695,
+          "horizontal_translation_m": 0.5806701499222445,
+          "vertical_translation_error_m": -0.9014907397337986,
+          "yaw_error_deg": 0.8876726616935224
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-12__ground06-7",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.16121402309079413,
+        "aerial_to_ground_overlap": 0.10965733008882939,
+        "symmetric_overlap": 0.10965733008882939,
+        "rmse_m": 0.325678395804837,
+        "zero_height_initial_overlap": 0.002564342755438983,
+        "with_height_initial_overlap": 0.21444462658954122,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-12__ground06-12",
+      "accepted": true,
+      "errors": {
+        "bev": {
+          "translation_m": 21.14058220093286,
+          "rotation_deg": 2.9234205371150277,
+          "horizontal_translation_m": 0.6671839362572168,
+          "vertical_translation_error_m": 21.130051618242675,
+          "yaw_error_deg": 0.4464122198723031
+        },
+        "height_seed": {
+          "translation_m": 1.312307534342669,
+          "rotation_deg": 2.9234205371150277,
+          "horizontal_translation_m": 0.6671839362572125,
+          "vertical_translation_error_m": 1.1300516182426712,
+          "yaw_error_deg": 0.4464122198723031
+        },
+        "gicp": {
+          "translation_m": 0.5687426944447576,
+          "rotation_deg": 1.1758368359177915,
+          "horizontal_translation_m": 0.5610003248493526,
+          "vertical_translation_error_m": -0.09352479886750942,
+          "yaw_error_deg": 0.41568749410092964
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-12__ground06-12",
+        "accepted": true,
+        "reason": "accepted",
+        "ground_to_aerial_overlap": 0.6799606881991798,
+        "aerial_to_ground_overlap": 0.386145277841468,
+        "symmetric_overlap": 0.386145277841468,
+        "rmse_m": 0.29453975500415774,
+        "zero_height_initial_overlap": 0.0433521803489529,
+        "with_height_initial_overlap": 0.7765779320051445,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-12__ground06-17",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 23.975145200036334,
+          "rotation_deg": 2.4058358802710895,
+          "horizontal_translation_m": 1.4011565389855953,
+          "vertical_translation_error_m": 23.934166952624082,
+          "yaw_error_deg": 0.5233803870467747
+        },
+        "height_seed": {
+          "translation_m": 2.808631054444381,
+          "rotation_deg": 2.4058358802710895,
+          "horizontal_translation_m": 1.401156538985596,
+          "vertical_translation_error_m": 2.434166952624089,
+          "yaw_error_deg": 0.5233803870467747
+        },
+        "gicp": {
+          "translation_m": 1.7239538228425864,
+          "rotation_deg": 0.9541153641532695,
+          "horizontal_translation_m": 1.362206334042108,
+          "vertical_translation_error_m": 1.05660337250508,
+          "yaw_error_deg": 0.28504115190939633
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-12__ground06-17",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.2747541712190515,
+        "aerial_to_ground_overlap": 0.18950023298299595,
+        "symmetric_overlap": 0.18950023298299595,
+        "rmse_m": 0.2872619414605234,
+        "zero_height_initial_overlap": 0.027230977204125848,
+        "with_height_initial_overlap": 0.3214755282309587,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-17__ground06-5",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 19.613631761021352,
+          "rotation_deg": 1.7383407990487516,
+          "horizontal_translation_m": 0.588874954399162,
+          "vertical_translation_error_m": 19.604789648068834,
+          "yaw_error_deg": 1.5443280892693865
+        },
+        "height_seed": {
+          "translation_m": 0.7092002074112602,
+          "rotation_deg": 1.7383407990487516,
+          "horizontal_translation_m": 0.5888749543991625,
+          "vertical_translation_error_m": -0.39521035193116916,
+          "yaw_error_deg": 1.5443280892693865
+        },
+        "gicp": {
+          "translation_m": 0.19933559848358523,
+          "rotation_deg": 1.3893396264565587,
+          "horizontal_translation_m": 0.10816489110582188,
+          "vertical_translation_error_m": -0.16743666610057417,
+          "yaw_error_deg": 1.3435897590368162
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-17__ground06-5",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.3266279819471309,
+        "aerial_to_ground_overlap": 0.1872417804281264,
+        "symmetric_overlap": 0.1872417804281264,
+        "rmse_m": 0.32844569197628676,
+        "zero_height_initial_overlap": 0.026316355039759296,
+        "with_height_initial_overlap": 0.4652052439286482,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-17__ground06-7",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 19.111550874624015,
+          "rotation_deg": 1.417707699261776,
+          "horizontal_translation_m": 1.216394448525619,
+          "vertical_translation_error_m": 19.07280161326432,
+          "yaw_error_deg": 1.0447423579189465
+        },
+        "height_seed": {
+          "translation_m": 1.529481056688575,
+          "rotation_deg": 1.417707699261776,
+          "horizontal_translation_m": 1.2163944485256182,
+          "vertical_translation_error_m": -0.9271983867356823,
+          "yaw_error_deg": 1.0447423579189465
+        },
+        "gicp": {
+          "translation_m": 1.0768741115552738,
+          "rotation_deg": 1.352710983225508,
+          "horizontal_translation_m": 0.7207318944825285,
+          "vertical_translation_error_m": -0.8001271076607708,
+          "yaw_error_deg": 1.2294615905830069
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-17__ground06-7",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.528559050139341,
+        "aerial_to_ground_overlap": 0.2937519220227033,
+        "symmetric_overlap": 0.2937519220227033,
+        "rmse_m": 0.30692677362062126,
+        "zero_height_initial_overlap": 0.04934310671881221,
+        "with_height_initial_overlap": 0.6778178496990703,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-17__ground06-12",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 17.906765551250583,
+          "rotation_deg": 1.6836400434999637,
+          "horizontal_translation_m": 2.6779599784149357,
+          "vertical_translation_error_m": 17.705388526136964,
+          "yaw_error_deg": 1.2283323929684413
+        },
+        "height_seed": {
+          "translation_m": 3.5265721971875217,
+          "rotation_deg": 1.6836400434999637,
+          "horizontal_translation_m": 2.6779599784149375,
+          "vertical_translation_error_m": -2.2946114738630357,
+          "yaw_error_deg": 1.2283323929684413
+        },
+        "gicp": {
+          "translation_m": 2.8896002143633814,
+          "rotation_deg": 1.0939371183871252,
+          "horizontal_translation_m": 1.8236852651511173,
+          "vertical_translation_error_m": -2.2414195172969187,
+          "yaw_error_deg": 0.9392407659134592
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-17__ground06-12",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.49034191560096096,
+        "aerial_to_ground_overlap": 0.23972135684774906,
+        "symmetric_overlap": 0.23972135684774906,
+        "rmse_m": 0.2914360913577479,
+        "zero_height_initial_overlap": 0.043619112329830866,
+        "with_height_initial_overlap": 0.5592952995704822,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-22__ground06-7",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 20.027922303510433,
+          "rotation_deg": 1.4019714321700343,
+          "horizontal_translation_m": 0.5819797834299036,
+          "vertical_translation_error_m": 20.019464811206355,
+          "yaw_error_deg": 1.090137866052817
+        },
+        "height_seed": {
+          "translation_m": 0.582305201072785,
+          "rotation_deg": 1.4019714321700343,
+          "horizontal_translation_m": 0.5819797834299032,
+          "vertical_translation_error_m": 0.019464811206354682,
+          "yaw_error_deg": 1.090137866052817
+        },
+        "gicp": {
+          "translation_m": 1.2928366666134192,
+          "rotation_deg": 1.3987218552982261,
+          "horizontal_translation_m": 1.2555045005388408,
+          "vertical_translation_error_m": 0.30843977640184406,
+          "yaw_error_deg": 1.1105147917551752
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-22__ground06-7",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.2251703707173134,
+        "aerial_to_ground_overlap": 0.10664299721659919,
+        "symmetric_overlap": 0.10664299721659919,
+        "rmse_m": 0.276281776955312,
+        "zero_height_initial_overlap": 0.02064354464766633,
+        "with_height_initial_overlap": 0.254841806983443,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-22__ground06-12",
+      "accepted": true,
+      "errors": {
+        "bev": {
+          "translation_m": 18.51489243521885,
+          "rotation_deg": 1.4895706885754898,
+          "horizontal_translation_m": 0.6397037260512801,
+          "vertical_translation_error_m": 18.503838008116055,
+          "yaw_error_deg": 1.057049083636065
+        },
+        "height_seed": {
+          "translation_m": 1.6271820927855696,
+          "rotation_deg": 1.4895706885754898,
+          "horizontal_translation_m": 0.6397037260512801,
+          "vertical_translation_error_m": -1.4961619918839446,
+          "yaw_error_deg": 1.057049083636065
+        },
+        "gicp": {
+          "translation_m": 1.2630254734856112,
+          "rotation_deg": 1.221663684391243,
+          "horizontal_translation_m": 0.2577492282945835,
+          "vertical_translation_error_m": -1.2364459883015932,
+          "yaw_error_deg": 0.9989313467548454
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-22__ground06-12",
+        "accepted": true,
+        "reason": "accepted",
+        "ground_to_aerial_overlap": 0.8504210245334757,
+        "aerial_to_ground_overlap": 0.32753589954453444,
+        "symmetric_overlap": 0.32753589954453444,
+        "rmse_m": 0.2690305560768135,
+        "zero_height_initial_overlap": 0.07682787740542114,
+        "with_height_initial_overlap": 0.92849862894028,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-22__ground06-17",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 17.930330560177698,
+          "rotation_deg": 1.1315480345252615,
+          "horizontal_translation_m": 1.8632151474993994,
+          "vertical_translation_error_m": 17.833260591136188,
+          "yaw_error_deg": 0.8806829056131974
+        },
+        "height_seed": {
+          "translation_m": 2.857679189796276,
+          "rotation_deg": 1.1315480345252615,
+          "horizontal_translation_m": 1.8632151474993983,
+          "vertical_translation_error_m": -2.1667394088638154,
+          "yaw_error_deg": 0.8806829056131974
+        },
+        "gicp": {
+          "translation_m": 2.6318185912470855,
+          "rotation_deg": 1.2735061273852604,
+          "horizontal_translation_m": 1.6392001009682822,
+          "vertical_translation_error_m": -2.0590027018484847,
+          "yaw_error_deg": 1.0015533484775472
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-22__ground06-17",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.6286735430825355,
+        "aerial_to_ground_overlap": 0.2590618674089069,
+        "symmetric_overlap": 0.2590618674089069,
+        "rmse_m": 0.27742193268357757,
+        "zero_height_initial_overlap": 0.04155478602248106,
+        "with_height_initial_overlap": 0.7209310938686321,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-27__ground06-12",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 19.03406424684375,
+          "rotation_deg": 1.2339257428321877,
+          "horizontal_translation_m": 0.8280404212058593,
+          "vertical_translation_error_m": 19.016044562784998,
+          "yaw_error_deg": 0.9936959602391464
+        },
+        "height_seed": {
+          "translation_m": 0.959095305149986,
+          "rotation_deg": 1.2339257428321877,
+          "horizontal_translation_m": 0.8280404212058584,
+          "vertical_translation_error_m": -0.4839554372150019,
+          "yaw_error_deg": 0.9936959602391464
+        },
+        "gicp": {
+          "translation_m": 1.635852711333752,
+          "rotation_deg": 1.119980602372018,
+          "horizontal_translation_m": 1.6012802366512076,
+          "vertical_translation_error_m": -0.33453803503973134,
+          "yaw_error_deg": 0.8347555405359267
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-27__ground06-12",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.2986968866024412,
+        "aerial_to_ground_overlap": 0.19845489497712196,
+        "symmetric_overlap": 0.19845489497712196,
+        "rmse_m": 0.25430291668078153,
+        "zero_height_initial_overlap": 0.028913586837826688,
+        "with_height_initial_overlap": 0.32370355990196314,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-27__ground06-17",
+      "accepted": true,
+      "errors": {
+        "bev": {
+          "translation_m": 18.43782452293516,
+          "rotation_deg": 0.9418194893794293,
+          "horizontal_translation_m": 0.5758136934636765,
+          "vertical_translation_error_m": 18.428830991925906,
+          "yaw_error_deg": 0.7834027561503307
+        },
+        "height_seed": {
+          "translation_m": 1.2161268245700023,
+          "rotation_deg": 0.9418194893794293,
+          "horizontal_translation_m": 0.5758136934636765,
+          "vertical_translation_error_m": -1.0711690080740937,
+          "yaw_error_deg": 0.7834027561503307
+        },
+        "gicp": {
+          "translation_m": 1.0622749882337734,
+          "rotation_deg": 1.0672605875282986,
+          "horizontal_translation_m": 0.24402554897716308,
+          "vertical_translation_error_m": -1.0338663753471522,
+          "yaw_error_deg": 0.8081425676078261
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-27__ground06-17",
+        "accepted": true,
+        "reason": "accepted",
+        "ground_to_aerial_overlap": 0.7847447269495009,
+        "aerial_to_ground_overlap": 0.48019208300950633,
+        "symmetric_overlap": 0.48019208300950633,
+        "rmse_m": 0.2662707502129535,
+        "zero_height_initial_overlap": 0.052795318605211014,
+        "with_height_initial_overlap": 0.8823447713931224,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-32__ground06-12",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 1.054938149445746,
+          "rotation_deg": 0.8690330504123651,
+          "horizontal_translation_m": 0.6698356007671095,
+          "vertical_translation_error_m": -0.8149937221236669,
+          "yaw_error_deg": 0.18501730002386527
+        },
+        "height_seed": {
+          "translation_m": 0.7402031998258015,
+          "rotation_deg": 0.8690330504123651,
+          "horizontal_translation_m": 0.6698356007671108,
+          "vertical_translation_error_m": -0.31499372212366694,
+          "yaw_error_deg": 0.18501730002386527
+        },
+        "gicp": {
+          "translation_m": 1.4081774729263816,
+          "rotation_deg": 1.0754100376766769,
+          "horizontal_translation_m": 1.392135205912723,
+          "vertical_translation_error_m": -0.21195132392998062,
+          "yaw_error_deg": 0.7304026438602352
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-32__ground06-12",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.28634521585090633,
+        "aerial_to_ground_overlap": 0.1842681332242883,
+        "symmetric_overlap": 0.1842681332242883,
+        "rmse_m": 0.2508236290420023,
+        "zero_height_initial_overlap": 0.3094590987405664,
+        "with_height_initial_overlap": 0.3095561649154311,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-32__ground06-17",
+      "accepted": true,
+      "errors": {
+        "bev": {
+          "translation_m": 1.727398597246411,
+          "rotation_deg": 0.8428852749915762,
+          "horizontal_translation_m": 0.7960155564455821,
+          "vertical_translation_error_m": -1.533057450869177,
+          "yaw_error_deg": 0.5316702363742495
+        },
+        "height_seed": {
+          "translation_m": 1.3041658111220717,
+          "rotation_deg": 0.8428852749915762,
+          "horizontal_translation_m": 0.7960155564455821,
+          "vertical_translation_error_m": -1.0330574508691768,
+          "yaw_error_deg": 0.5316702363742495
+        },
+        "gicp": {
+          "translation_m": 1.1169330579521846,
+          "rotation_deg": 1.0012985570337896,
+          "horizontal_translation_m": 0.42856678073583077,
+          "vertical_translation_error_m": -1.0314407255854041,
+          "yaw_error_deg": 0.6068371016438099
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-32__ground06-17",
+        "accepted": true,
+        "reason": "accepted",
+        "ground_to_aerial_overlap": 0.7845225088424288,
+        "aerial_to_ground_overlap": 0.464771764521516,
+        "symmetric_overlap": 0.464771764521516,
+        "rmse_m": 0.26352397154933316,
+        "zero_height_initial_overlap": 0.8743541786263217,
+        "with_height_initial_overlap": 0.873335678968908,
+        "residuals_exactly_reproduced": true
+      }
+    },
+    {
+      "id": "aerial06-32__ground06-22",
+      "accepted": false,
+      "errors": {
+        "bev": {
+          "translation_m": 2.993545735605527,
+          "rotation_deg": 1.686351526639988,
+          "horizontal_translation_m": 2.8228166445277094,
+          "vertical_translation_error_m": -0.9965050238405215,
+          "yaw_error_deg": 1.5452472107673465
+        },
+        "height_seed": {
+          "translation_m": 2.993545735605527,
+          "rotation_deg": 1.686351526639988,
+          "horizontal_translation_m": 2.8228166445277094,
+          "vertical_translation_error_m": -0.9965050238405215,
+          "yaw_error_deg": 1.5452472107673465
+        },
+        "gicp": {
+          "translation_m": 1.8396949352511218,
+          "rotation_deg": 0.9154532292765132,
+          "horizontal_translation_m": 1.55841130895427,
+          "vertical_translation_error_m": -0.9776664292651596,
+          "yaw_error_deg": 0.6762779584567257
+        }
+      },
+      "geometric_audit": {
+        "id": "aerial06-32__ground06-22",
+        "accepted": false,
+        "reason": "low_overlap",
+        "ground_to_aerial_overlap": 0.3088390665945676,
+        "aerial_to_ground_overlap": 0.14446343482029608,
+        "symmetric_overlap": 0.14446343482029608,
+        "rmse_m": 0.29297652744501235,
+        "zero_height_initial_overlap": 0.41554843808493824,
+        "with_height_initial_overlap": 0.41554843808493824,
+        "residuals_exactly_reproduced": true
+      }
+    }
+  ],
+  "accepted": 5,
+  "accepted_translation_error_m": {
+    "minimum": 0.5687426944447576,
+    "median": 1.0622749882337734,
+    "maximum": 1.2630254734856112
+  },
+  "accepted_rotation_error_deg": {
+    "minimum": 0.7244850063760379,
+    "median": 1.0672605875282986,
+    "maximum": 1.221663684391243
+  },
+  "error_metric": "relative transform error in original RTK/INS IMU frames; no trajectory alignment, not ATE",
+  "residuals_exactly_reproduced": true,
+  "pcm_run": false,
+  "cbs_run": false
+}

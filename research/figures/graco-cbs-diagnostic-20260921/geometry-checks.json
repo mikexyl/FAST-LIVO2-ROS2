@@ -1,0 +1,183 @@
+{
+  "passed": true,
+  "evaluation_only": true,
+  "ground_truth_fed_to_estimator": false,
+  "runtime_outputs_modified": false,
+  "snapshot_checks": [
+    {
+      "robot": "aerial05",
+      "keys": [
+        16,
+        17
+      ],
+      "shared_point_ids": 126359,
+      "shared_world_point_rms_m": 8.555140979261563e-06,
+      "shared_world_point_max_m": 2.6179142815108187e-05,
+      "descriptor_evidence_points": 163273,
+      "evidence_to_native_max_m": 0.0,
+      "evidence_cloud_equals_scan": true
+    },
+    {
+      "robot": "aerial06",
+      "keys": [
+        1,
+        2
+      ],
+      "shared_point_ids": 53752,
+      "shared_world_point_rms_m": 2.767162798676683e-06,
+      "shared_world_point_max_m": 1.441280204442495e-05,
+      "descriptor_evidence_points": 53854,
+      "evidence_to_native_max_m": 0.0,
+      "evidence_cloud_equals_scan": true
+    },
+    {
+      "robot": "aerial07",
+      "keys": [
+        20,
+        21
+      ],
+      "shared_point_ids": 199271,
+      "shared_world_point_rms_m": 4.3059778743095185e-06,
+      "shared_world_point_max_m": 2.119774263111394e-05,
+      "descriptor_evidence_points": 250443,
+      "evidence_to_native_max_m": 0.0,
+      "evidence_cloud_equals_scan": true
+    },
+    {
+      "robot": "aerial08",
+      "keys": [
+        16,
+        17
+      ],
+      "shared_point_ids": 222757,
+      "shared_world_point_rms_m": 7.4326487737316726e-06,
+      "shared_world_point_max_m": 2.3498517412769515e-05,
+      "descriptor_evidence_points": 235900,
+      "evidence_to_native_max_m": 0.0,
+      "evidence_cloud_equals_scan": true
+    }
+  ],
+  "geometry_comparisons": [
+    {
+      "i": [
+        "aerial05",
+        16
+      ],
+      "j": [
+        "aerial07",
+        20
+      ],
+      "loop_measurement": {
+        "forward_inliers": 118261,
+        "reverse_inliers": 95914,
+        "overlap": 0.7027214926614772,
+        "forward_inlier_rmse_m": 0.29843849736113853,
+        "truncated_symmetric_rms_1_5m": 0.6680344894586498
+      },
+      "position_aligned_odometry_reference": {
+        "forward_inliers": 95935,
+        "reverse_inliers": 80223,
+        "overlap": 0.5700576386000357,
+        "forward_inlier_rmse_m": 0.371309580837783,
+        "truncated_symmetric_rms_1_5m": 0.7638637813152329
+      }
+    },
+    {
+      "i": [
+        "aerial06",
+        1
+      ],
+      "j": [
+        "aerial07",
+        0
+      ],
+      "loop_measurement": {
+        "forward_inliers": 16203,
+        "reverse_inliers": 21606,
+        "overlap": 0.5901666211417645,
+        "forward_inlier_rmse_m": 0.2653747812098089,
+        "truncated_symmetric_rms_1_5m": 0.6887896309276842
+      },
+      "position_aligned_odometry_reference": {
+        "forward_inliers": 16216,
+        "reverse_inliers": 21587,
+        "overlap": 0.5896476372575798,
+        "forward_inlier_rmse_m": 0.26813128187950475,
+        "truncated_symmetric_rms_1_5m": 0.6901988843515249
+      }
+    },
+    {
+      "i": [
+        "aerial06",
+        27
+      ],
+      "j": [
+        "aerial08",
+        19
+      ],
+      "loop_measurement": {
+        "forward_inliers": 65668,
+        "reverse_inliers": 72613,
+        "overlap": 0.32778276929220324,
+        "forward_inlier_rmse_m": 0.28459930585608983,
+        "truncated_symmetric_rms_1_5m": 1.1790015170434134
+      },
+      "position_aligned_odometry_reference": {
+        "forward_inliers": 64869,
+        "reverse_inliers": 71789,
+        "overlap": 0.3237945492662474,
+        "forward_inlier_rmse_m": 0.2917817619921735,
+        "truncated_symmetric_rms_1_5m": 1.1818704002084914
+      }
+    },
+    {
+      "i": [
+        "aerial07",
+        18
+      ],
+      "j": [
+        "aerial08",
+        16
+      ],
+      "loop_measurement": {
+        "forward_inliers": 118105,
+        "reverse_inliers": 128098,
+        "overlap": 0.704543579533267,
+        "forward_inlier_rmse_m": 0.3002016968001906,
+        "truncated_symmetric_rms_1_5m": 0.7119624736896359
+      },
+      "position_aligned_odometry_reference": {
+        "forward_inliers": 116270,
+        "reverse_inliers": 126839,
+        "overlap": 0.6976190345237244,
+        "forward_inlier_rmse_m": 0.31361494727736605,
+        "truncated_symmetric_rms_1_5m": 0.7211515651891376
+      }
+    }
+  ],
+  "input_sha256": {
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/report/report.json": "e857ec3d6c4320ff244d5e47e36f5f3b457787dddf0f81baa16342787a02b2b2",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial05/store/keyframes.jsonl": "d6c4f4c0ba6784e6d3ed3594465f995a12e9f203ae47251e58b5b9ee39853a8d",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial06/store/keyframes.jsonl": "35c6b0358d9233882785db069d51c5b7fb85cd44026f5f5aba78c225335a1671",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial07/store/keyframes.jsonl": "9ac053e926261ce0e8aa9b0f276b1d08198fd9bd6ba20db6fb2ad29a2b7dc902",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial08/store/keyframes.jsonl": "bc9c615dc090ea657d5f5de32995a5061c25fed53aba92b9c6ffdd03d7acc6d1",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial05/frontend/area_maps/submap-000016.npz": "ff8b5b65ee767aaf6b9d5d371a962d3e88d1dfa6e40e2fef036d7285fa2ad361",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial05/frontend/area_maps/submap-000017.npz": "96dca1b1467430a6bc2d90db08b08e4cb26903bb51a2cad74a9498e59d95381a",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial05/store/000016.npz": "f3aff2fcf4be7ed59e2397b4c24d8009b0a86fe19d7052a663b27ea705675ab6",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial06/frontend/area_maps/submap-000001.npz": "529c2e4200640267c3dc41dc830dbd42938a66093bcb0cddb4ed7bb24adf6b0d",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial06/frontend/area_maps/submap-000002.npz": "5076f267cf42d979a3f146da91342f2fab229913540b8b5a7cb31f76425a679d",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial06/store/000001.npz": "70f9326f31fba52f4a426478d5a48c070c30ab54781a85d4245361cfa91f0452",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial07/frontend/area_maps/submap-000020.npz": "d45e17b36f4ec63e843fd472a8639b195cf7d8fc959191f80275a6626829209c",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial07/frontend/area_maps/submap-000021.npz": "ab78513345171522091cef2b30770ec7a69ccd05b62f18453f622ea190bd3652",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial07/store/000020.npz": "f022fbcfc11ea976b70ec409066014cd66b60a939567a5586889ea01cae0e25e",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial08/frontend/area_maps/submap-000016.npz": "fd54259b1a16cb7eb4fd84103194143595737579bea79d8124199c185dc3dca6",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/upstream-area-graco-aerial148-20260921/full/frontends/aerial08/frontend/area_maps/submap-000017.npz": "7d60681dd91edf879e9180c6d3bc2281f5055e74cdedb213d30f383869b0e461",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial08/store/000016.npz": "3dc809e25ef999fb47d933e7fe13b39e00044a262a50eff528d77f292ce8796d",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/dpgo/constraints.jsonl": "3b637f191c2f49a06a9955f5241ef28cc65ffd2c9fe60bf58205a7c236bccee4",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial07/store/000000.npz": "ebb29a59bcc351e6b7ef6000be2d6f4758286571c791efa17678d1254cad2607",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial06/store/000027.npz": "1c81d00308760e39f1aed9e3be07a4e8450011475d6c0f4a573c28ed3e50a3c6",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial08/store/000019.npz": "2e1a873484dc77d0029568dc355c54cd6f2c35fd14f0354caa5e4c4af06911d0",
+    "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-height148-20260921/full/prepared-aerial07/store/000018.npz": "baef24b6054f892bfa22d5e45039305351ebf601b4d89610bd87308a17f2a5d8"
+  },
+  "caveat": "Four representative pairs; static nearest-neighbor quality evaluation at two fixed poses, no optimizer or GT-derived correction."
+}

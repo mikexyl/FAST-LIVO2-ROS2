@@ -1,0 +1,100 @@
+{
+  "aerial04": {
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+  },
+  "aerial05": {
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+  },
+  "aerial06": {
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+  },
+  "aerial07": {
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+  },
+  "aerial08": {
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+  },
+  "ground01": {
+    "/workspace/.ros2/graco/inputs/calibration/imu-lidar.yaml": "ecd1d58946b40349876e9c73a09a15741099446960116f9f4d91fc5f85453668",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-imu.yaml": "def10c7e64518eaa7a8750d60303601bbbcbaef3cd284ff0810bc14c23c1c74c",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-lidar.yaml": "d3481856fbda78c0fb06762db8eafec970c2b075f5002d3999b6809e2719607b",
+    "/workspace/.ros2/graco/inputs/calibration/stereo.yaml": "ad18ca756eba1f93edd92ff2eaa579e3e4f1569370e499dab2234333292b3a6c",
+    "/workspace/.ros2/graco/inputs/calibration/imu.yaml": "46879b9bc79fe8f38a080b167300e0256894504ca4a0f73c68ae100193b725db"
+  },
+  "ground02": {
+    "/workspace/.ros2/graco/inputs/calibration/imu-lidar.yaml": "ecd1d58946b40349876e9c73a09a15741099446960116f9f4d91fc5f85453668",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-imu.yaml": "def10c7e64518eaa7a8750d60303601bbbcbaef3cd284ff0810bc14c23c1c74c",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-lidar.yaml": "d3481856fbda78c0fb06762db8eafec970c2b075f5002d3999b6809e2719607b",
+    "/workspace/.ros2/graco/inputs/calibration/stereo.yaml": "ad18ca756eba1f93edd92ff2eaa579e3e4f1569370e499dab2234333292b3a6c",
+    "/workspace/.ros2/graco/inputs/calibration/imu.yaml": "46879b9bc79fe8f38a080b167300e0256894504ca4a0f73c68ae100193b725db"
+  },
+  "ground03": {
+    "/workspace/.ros2/graco/inputs/calibration/imu-lidar.yaml": "ecd1d58946b40349876e9c73a09a15741099446960116f9f4d91fc5f85453668",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-imu.yaml": "def10c7e64518eaa7a8750d60303601bbbcbaef3cd284ff0810bc14c23c1c74c",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-lidar.yaml": "d3481856fbda78c0fb06762db8eafec970c2b075f5002d3999b6809e2719607b",
+    "/workspace/.ros2/graco/inputs/calibration/stereo.yaml": "ad18ca756eba1f93edd92ff2eaa579e3e4f1569370e499dab2234333292b3a6c",
+    "/workspace/.ros2/graco/inputs/calibration/imu.yaml": "46879b9bc79fe8f38a080b167300e0256894504ca4a0f73c68ae100193b725db"
+  },
+  "ground04": {
+    "/workspace/.ros2/graco/inputs/calibration/imu-lidar.yaml": "ecd1d58946b40349876e9c73a09a15741099446960116f9f4d91fc5f85453668",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-imu.yaml": "def10c7e64518eaa7a8750d60303601bbbcbaef3cd284ff0810bc14c23c1c74c",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-lidar.yaml": "d3481856fbda78c0fb06762db8eafec970c2b075f5002d3999b6809e2719607b",
+    "/workspace/.ros2/graco/inputs/calibration/stereo.yaml": "ad18ca756eba1f93edd92ff2eaa579e3e4f1569370e499dab2234333292b3a6c",
+    "/workspace/.ros2/graco/inputs/calibration/imu.yaml": "46879b9bc79fe8f38a080b167300e0256894504ca4a0f73c68ae100193b725db"
+  },
+  "ground05": {
+    "/workspace/.ros2/graco/inputs/calibration/imu-lidar.yaml": "ecd1d58946b40349876e9c73a09a15741099446960116f9f4d91fc5f85453668",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-imu.yaml": "def10c7e64518eaa7a8750d60303601bbbcbaef3cd284ff0810bc14c23c1c74c",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-lidar.yaml": "d3481856fbda78c0fb06762db8eafec970c2b075f5002d3999b6809e2719607b",
+    "/workspace/.ros2/graco/inputs/calibration/stereo.yaml": "ad18ca756eba1f93edd92ff2eaa579e3e4f1569370e499dab2234333292b3a6c",
+    "/workspace/.ros2/graco/inputs/calibration/imu.yaml": "46879b9bc79fe8f38a080b167300e0256894504ca4a0f73c68ae100193b725db"
+  },
+  "ground06": {
+    "/workspace/.ros2/graco/inputs/calibration/imu-lidar.yaml": "ecd1d58946b40349876e9c73a09a15741099446960116f9f4d91fc5f85453668",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-imu.yaml": "def10c7e64518eaa7a8750d60303601bbbcbaef3cd284ff0810bc14c23c1c74c",
+    "/workspace/.ros2/graco/inputs/calibration/stereo-lidar.yaml": "d3481856fbda78c0fb06762db8eafec970c2b075f5002d3999b6809e2719607b",
+    "/workspace/.ros2/graco/inputs/calibration/stereo.yaml": "ad18ca756eba1f93edd92ff2eaa579e3e4f1569370e499dab2234333292b3a6c",
+    "/workspace/.ros2/graco/inputs/calibration/imu.yaml": "46879b9bc79fe8f38a080b167300e0256894504ca4a0f73c68ae100193b725db"
+  },
+  "aerial01": {
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+  },
+  "aerial02": {
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+  },
+  "aerial03": {
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu-lidar.yaml": "ff5a0c9ad9e1678e2b83d9790d3d26e6da080805e20503686b8f025c56678d76",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-imu.yaml": "a0bcf6582bfe6c92824f02656d8a2a53fb964825554ada6856ea7c9981da05e1",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo-lidar.yaml": "b847917f1f829e004daa7ecad411acd8fdcc30d0e1568db63430adfc4197c99a",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/stereo.yaml": "2a79f36b811d905e807de5540965497ff85def63632d166c2c9a3c6b8004307e",
+    "/workspace/.ros2/graco-aerial-four148-20260920/calibration/imu.yaml": "52cf3f88c2a579bb672a637ef905d2ea0a742c9c866c36f2206b5912c8008e04"
+  }
+}

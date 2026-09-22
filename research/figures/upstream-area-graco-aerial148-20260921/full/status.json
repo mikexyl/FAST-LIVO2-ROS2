@@ -1,0 +1,125 @@
+{
+  "phase": "complete",
+  "started_utc": "2026-09-21T14:20:07Z",
+  "frontend_workers": 4,
+  "robots": {
+    "aerial05": {
+      "status": "complete",
+      "ros_domain_id": 224,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 5.284001744723069,
+        "max_successful_update_gap_s": 0.192002058,
+        "native_poses": 2753,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial06": {
+      "status": "complete",
+      "ros_domain_id": 226,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.07531202656208,
+        "max_successful_update_gap_s": 0.167996883,
+        "native_poses": 3107,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial07": {
+      "status": "complete",
+      "ros_domain_id": 228,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 3.1218964147196515,
+        "max_successful_update_gap_s": 0.15199995,
+        "native_poses": 3713,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    },
+    "aerial08": {
+      "status": "complete",
+      "ros_domain_id": 230,
+      "quality": {
+        "full_completion": true,
+        "finite": true,
+        "chronological": true,
+        "max_speed_m_s": 4.539622324666119,
+        "max_successful_update_gap_s": 0.135998964,
+        "native_poses": 2623,
+        "ground_truth_used": false,
+        "passed": true
+      }
+    }
+  },
+  "updated_utc": "2026-09-21T14:32:33Z",
+  "diagnostic_only": false,
+  "finished_utc": "2026-09-21T14:32:33Z",
+  "wall_s": 754.3885298009263,
+  "raw_ate": {
+    "aerial05": 0.17750353694010298,
+    "aerial06": 0.06176350035876085,
+    "aerial07": 0.07454558373811623,
+    "aerial08": 0.12746790207223657
+  },
+  "individual_cbs_ate": {
+    "aerial05": 0.17750353694592375,
+    "aerial06": 0.06152902642903215,
+    "aerial07": 0.07112017562191116,
+    "aerial08": 0.11957629469289777
+  },
+  "shared_cbs_ate": {
+    "aerial05": 0.17750353694592375,
+    "aerial06": 0.1023393811270894
+  },
+  "connectivity": {
+    "all_robots_connected": false,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial05",
+      "aerial06",
+      "aerial07",
+      "aerial08"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {
+      "aerial06--aerial07": 15,
+      "aerial07--aerial08": 8
+    },
+    "measured_components": [
+      [
+        "aerial05"
+      ],
+      [
+        "aerial06",
+        "aerial07",
+        "aerial08"
+      ]
+    ],
+    "output_frames": {
+      "aerial05": [
+        "aerial05"
+      ],
+      "aerial06": [
+        "aerial06"
+      ],
+      "aerial07": [
+        "aerial06"
+      ],
+      "aerial08": [
+        "aerial06"
+      ]
+    }
+  },
+  "loops": 23,
+  "pcm_rejected": 1
+}

@@ -1,0 +1,37 @@
+{
+  "evaluation_only": true,
+  "ground_truth_accessed_after_all_registration_runs": true,
+  "estimation_ground_truth_used": false,
+  "reference_sha256": {
+    "ground06": "99b13bc984bc8ebb06ee76cdc9b5dd21f2b54eeba810e632bb20f775e97a2562",
+    "aerial06": "17de18be612d1b7046c14ece92be21496ad425bf83cc93889e94e68e467fdf6b"
+  },
+  "results": [
+    {
+      "query": [
+        "aerial06",
+        27
+      ],
+      "candidate": [
+        "ground06",
+        17
+      ],
+      "accepted": true,
+      "post_registration_translation_error_m": 1.0622298741009262,
+      "post_registration_rotation_error_deg": 1.0674103429875461
+    },
+    {
+      "query": [
+        "aerial06",
+        17
+      ],
+      "candidate": [
+        "ground06",
+        7
+      ],
+      "accepted": false,
+      "post_registration_translation_error_m": 1.0768967915524945,
+      "post_registration_rotation_error_deg": 1.3522829328565458
+    }
+  ]
+}

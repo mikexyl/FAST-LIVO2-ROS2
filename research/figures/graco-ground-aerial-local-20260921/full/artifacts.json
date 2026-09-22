@@ -1,0 +1,6 @@
+{
+  "keyframes.ellipselio.ground06": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/prepared-ground06",
+  "descriptors.ellipselio.mapclosures.ground06": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/prepared-ground06/ellipsoid",
+  "keyframes.ellipselio.aerial06": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/prepared-aerial06",
+  "descriptors.ellipselio.mapclosures.aerial06": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/graco-ground-aerial-local-20260921/source/output/prepared-aerial06/ellipsoid"
+}

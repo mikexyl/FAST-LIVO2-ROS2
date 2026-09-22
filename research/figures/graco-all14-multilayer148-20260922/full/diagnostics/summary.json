@@ -1,0 +1,599 @@
+{
+  "frontend": {
+    "aerial01": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 5.09933693318949,
+      "max_successful_update_gap_s": 0.272128314,
+      "native_poses": 3712,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 39.137013320778976,
+      "processing_p95_ms": 98.85194427915845,
+      "mapper_observed_wall_s": 412.637978038,
+      "native_pose_sensor_span_s": 407.696417093,
+      "peak_mapper_rss_mib": 1388.4140625,
+      "snapshots": 49,
+      "odometry_map_source": "persistent_map"
+    },
+    "aerial02": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.7908032059397985,
+      "max_successful_update_gap_s": 0.280423513,
+      "native_poses": 2488,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 51.82497432105239,
+      "processing_p95_ms": 105.98416607826948,
+      "mapper_observed_wall_s": 281.453952912,
+      "native_pose_sensor_span_s": 275.600340128,
+      "peak_mapper_rss_mib": 849.86328125,
+      "snapshots": 28,
+      "odometry_map_source": "persistent_map"
+    },
+    "aerial03": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.2709864423223265,
+      "max_successful_update_gap_s": 0.22400093,
+      "native_poses": 3595,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 1,
+      "processing_mean_ms": 41.15077163875155,
+      "processing_p95_ms": 100.8860306581482,
+      "mapper_observed_wall_s": 402.679010211,
+      "native_pose_sensor_span_s": 391.296395063,
+      "peak_mapper_rss_mib": 1216.921875,
+      "snapshots": 40,
+      "odometry_map_source": "persistent_map"
+    },
+    "aerial04": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 5.31527189168208,
+      "max_successful_update_gap_s": 0.26286533,
+      "native_poses": 2626,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 46.37855080404813,
+      "processing_p95_ms": 107.11510450346395,
+      "mapper_observed_wall_s": 301.493993047,
+      "native_pose_sensor_span_s": 290.296300173,
+      "peak_mapper_rss_mib": 875.421875,
+      "snapshots": 32,
+      "odometry_map_source": "persistent_map"
+    },
+    "aerial05": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.842902855595386,
+      "max_successful_update_gap_s": 0.219837228,
+      "native_poses": 2638,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 48.57907482049371,
+      "processing_p95_ms": 108.6221503384877,
+      "mapper_observed_wall_s": 306.49493703,
+      "native_pose_sensor_span_s": 295.104285956,
+      "peak_mapper_rss_mib": 1144.76171875,
+      "snapshots": 34,
+      "odometry_map_source": "persistent_map"
+    },
+    "aerial06": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.984489589203302,
+      "max_successful_update_gap_s": 0.184002876,
+      "native_poses": 3095,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 15.891649672552425,
+      "processing_p95_ms": 37.30070282472297,
+      "mapper_observed_wall_s": 332.473953216,
+      "native_pose_sensor_span_s": 328.000373125,
+      "peak_mapper_rss_mib": 967.7109375,
+      "snapshots": 33,
+      "odometry_map_source": "persistent_map"
+    },
+    "aerial07": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.4460719196079705,
+      "max_successful_update_gap_s": 0.1863093,
+      "native_poses": 3712,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 13.941202261243046,
+      "processing_p95_ms": 31.817272264743224,
+      "mapper_observed_wall_s": 401.560984625,
+      "native_pose_sensor_span_s": 393.104464054,
+      "peak_mapper_rss_mib": 1191.875,
+      "snapshots": 40,
+      "odometry_map_source": "persistent_map"
+    },
+    "aerial08": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 4.653382410303381,
+      "max_successful_update_gap_s": 0.224662809,
+      "native_poses": 2510,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 52.56717290077173,
+      "processing_p95_ms": 108.82880678982468,
+      "mapper_observed_wall_s": 282.44641283,
+      "native_pose_sensor_span_s": 276.896324158,
+      "peak_mapper_rss_mib": 1063.4140625,
+      "snapshots": 29,
+      "odometry_map_source": "persistent_map"
+    },
+    "ground01": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 1.9916273001432931,
+      "max_successful_update_gap_s": 0.320001126,
+      "native_poses": 3093,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 2,
+      "processing_mean_ms": 21.38769276814419,
+      "processing_p95_ms": 37.524210219271474,
+      "mapper_observed_wall_s": 341.437992642,
+      "native_pose_sensor_span_s": 332.576529026,
+      "peak_mapper_rss_mib": 1244.21875,
+      "snapshots": 34,
+      "odometry_map_source": "persistent_map"
+    },
+    "ground02": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.008344334398957,
+      "max_successful_update_gap_s": 0.332107348,
+      "native_poses": 3630,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 2,
+      "processing_mean_ms": 21.160785469852552,
+      "processing_p95_ms": 37.375931517453836,
+      "mapper_observed_wall_s": 391.541034676,
+      "native_pose_sensor_span_s": 385.400613069,
+      "peak_mapper_rss_mib": 1341.41015625,
+      "snapshots": 39,
+      "odometry_map_source": "persistent_map"
+    },
+    "ground03": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 1.9945691200232032,
+      "max_successful_update_gap_s": 0.337471207,
+      "native_poses": 2740,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 2,
+      "processing_mean_ms": 27.338887282339584,
+      "processing_p95_ms": 86.27880437998095,
+      "mapper_observed_wall_s": 301.4271696,
+      "native_pose_sensor_span_s": 295.568467856,
+      "peak_mapper_rss_mib": 911.6953125,
+      "snapshots": 30,
+      "odometry_map_source": "persistent_map"
+    },
+    "ground04": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 1.8670318781309754,
+      "max_successful_update_gap_s": 0.21600008,
+      "native_poses": 3063,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 1,
+      "processing_mean_ms": 25.33223378142738,
+      "processing_p95_ms": 44.654575432650745,
+      "mapper_observed_wall_s": 331.467084728,
+      "native_pose_sensor_span_s": 327.440511942,
+      "peak_mapper_rss_mib": 1564.08984375,
+      "snapshots": 33,
+      "odometry_map_source": "persistent_map"
+    },
+    "ground05": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.4987567872248686,
+      "max_successful_update_gap_s": 0.200020521,
+      "native_poses": 4830,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 21.67580916621485,
+      "processing_p95_ms": 40.78677488723771,
+      "mapper_observed_wall_s": 523.705001241,
+      "native_pose_sensor_span_s": 518.792804957,
+      "peak_mapper_rss_mib": 1453.0703125,
+      "snapshots": 52,
+      "odometry_map_source": "persistent_map"
+    },
+    "ground06": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.0668133117236023,
+      "max_successful_update_gap_s": 0.200000048,
+      "native_poses": 2872,
+      "ground_truth_used": false,
+      "passed": true,
+      "failed_updates_after_init": 0,
+      "processing_mean_ms": 23.030328339946387,
+      "processing_p95_ms": 41.819259291514754,
+      "mapper_observed_wall_s": 314.403763528,
+      "native_pose_sensor_span_s": 309.192475081,
+      "peak_mapper_rss_mib": 1278.29296875,
+      "snapshots": 31,
+      "odometry_map_source": "persistent_map"
+    }
+  },
+  "loop_categories": {
+    "proposed": {
+      "aerial\u2013ground": 243,
+      "aerial\u2013aerial": 151,
+      "ground\u2013ground": 147
+    },
+    "retained": {
+      "aerial\u2013ground": 243,
+      "aerial\u2013aerial": 151,
+      "ground\u2013ground": 147
+    }
+  },
+  "loop_pairs": {
+    "aerial01 \u2194 ground05": 35,
+    "aerial01 \u2194 ground04": 33,
+    "aerial01 \u2194 aerial02": 23,
+    "aerial02 \u2194 ground05": 16,
+    "aerial02 \u2194 ground04": 10,
+    "aerial03 \u2194 ground04": 3,
+    "aerial03 \u2194 ground02": 13,
+    "aerial03 \u2194 ground03": 33,
+    "aerial03 \u2194 ground05": 19,
+    "aerial03 \u2194 aerial04": 8,
+    "aerial04 \u2194 aerial05": 6,
+    "aerial04 \u2194 aerial07": 1,
+    "aerial04 \u2194 aerial08": 1,
+    "aerial05 \u2194 aerial07": 26,
+    "aerial05 \u2194 aerial08": 12,
+    "aerial05 \u2194 ground01": 10,
+    "aerial05 \u2194 aerial06": 12,
+    "aerial06 \u2194 ground02": 5,
+    "aerial06 \u2194 ground03": 1,
+    "aerial06 \u2194 aerial07": 25,
+    "aerial06 \u2194 aerial08": 13,
+    "aerial06 \u2194 ground05": 2,
+    "aerial06 \u2194 ground01": 12,
+    "aerial06 \u2194 ground06": 22,
+    "aerial07 \u2194 ground02": 4,
+    "aerial07 \u2194 ground03": 1,
+    "aerial07 \u2194 aerial08": 24,
+    "aerial07 \u2194 ground01": 20,
+    "aerial08 \u2194 ground02": 2,
+    "aerial08 \u2194 ground03": 2,
+    "ground01 \u2194 ground03": 9,
+    "ground01 \u2194 ground06": 18,
+    "ground01 \u2194 ground05": 5,
+    "ground01 \u2194 ground02": 7,
+    "ground02 \u2194 ground03": 18,
+    "ground02 \u2194 ground05": 12,
+    "ground02 \u2194 ground04": 10,
+    "ground03 \u2194 ground06": 9,
+    "ground03 \u2194 ground05": 19,
+    "ground03 \u2194 ground04": 6,
+    "ground04 \u2194 ground05": 34
+  },
+  "connectivity": {
+    "all_robots_connected": true,
+    "common_frame_contract": true,
+    "expected_components": 1,
+    "expected_robots": [
+      "aerial01",
+      "aerial02",
+      "aerial03",
+      "aerial04",
+      "aerial05",
+      "aerial06",
+      "aerial07",
+      "aerial08",
+      "ground01",
+      "ground02",
+      "ground03",
+      "ground04",
+      "ground05",
+      "ground06"
+    ],
+    "ground_truth_used": false,
+    "inter_robot_loop_counts": {
+      "aerial01--aerial02": 23,
+      "aerial01--ground04": 33,
+      "aerial01--ground05": 35,
+      "aerial02--ground04": 10,
+      "aerial02--ground05": 16,
+      "aerial03--aerial04": 8,
+      "aerial03--ground02": 13,
+      "aerial03--ground03": 33,
+      "aerial03--ground04": 3,
+      "aerial03--ground05": 19,
+      "aerial04--aerial05": 6,
+      "aerial04--aerial07": 1,
+      "aerial04--aerial08": 1,
+      "aerial05--aerial06": 12,
+      "aerial05--aerial07": 26,
+      "aerial05--aerial08": 12,
+      "aerial05--ground01": 10,
+      "aerial06--aerial07": 25,
+      "aerial06--aerial08": 13,
+      "aerial06--ground01": 12,
+      "aerial06--ground02": 5,
+      "aerial06--ground03": 1,
+      "aerial06--ground05": 2,
+      "aerial06--ground06": 22,
+      "aerial07--aerial08": 24,
+      "aerial07--ground01": 20,
+      "aerial07--ground02": 4,
+      "aerial07--ground03": 1,
+      "aerial08--ground02": 2,
+      "aerial08--ground03": 2,
+      "ground01--ground02": 7,
+      "ground01--ground03": 9,
+      "ground01--ground05": 5,
+      "ground01--ground06": 18,
+      "ground02--ground03": 18,
+      "ground02--ground04": 10,
+      "ground02--ground05": 12,
+      "ground03--ground04": 6,
+      "ground03--ground05": 19,
+      "ground03--ground06": 9,
+      "ground04--ground05": 34
+    },
+    "measured_components": [
+      [
+        "aerial01",
+        "aerial02",
+        "aerial03",
+        "aerial04",
+        "aerial05",
+        "aerial06",
+        "aerial07",
+        "aerial08",
+        "ground01",
+        "ground02",
+        "ground03",
+        "ground04",
+        "ground05",
+        "ground06"
+      ]
+    ],
+    "output_frames": {
+      "aerial01": [
+        "aerial01"
+      ],
+      "aerial02": [
+        "aerial01"
+      ],
+      "aerial03": [
+        "aerial01"
+      ],
+      "aerial04": [
+        "aerial01"
+      ],
+      "aerial05": [
+        "aerial01"
+      ],
+      "aerial06": [
+        "aerial01"
+      ],
+      "aerial07": [
+        "aerial01"
+      ],
+      "aerial08": [
+        "aerial01"
+      ],
+      "ground01": [
+        "aerial01"
+      ],
+      "ground02": [
+        "aerial01"
+      ],
+      "ground03": [
+        "aerial01"
+      ],
+      "ground04": [
+        "aerial01"
+      ],
+      "ground05": [
+        "aerial01"
+      ],
+      "ground06": [
+        "aerial01"
+      ]
+    }
+  },
+  "verification_reasons": {
+    "low_overlap": 116,
+    "accepted": 541,
+    "high_rmse": 1
+  },
+  "verification_attempts": 658,
+  "rejected_verifications": 117,
+  "pcm_rejected": 0,
+  "backend_wall_s": 1588.3565132139483,
+  "descriptor_audit": {
+    "descriptor_evidence_memberships": 504,
+    "submaps": {
+      "aerial01": 49,
+      "aerial02": 28,
+      "aerial03": 40,
+      "aerial04": 32,
+      "aerial05": 34,
+      "aerial06": 33,
+      "aerial07": 40,
+      "aerial08": 29,
+      "ground01": 34,
+      "ground02": 39,
+      "ground03": 30,
+      "ground04": 33,
+      "ground05": 52,
+      "ground06": 31
+    },
+    "terrain_unavailable": {
+      "aerial01": 1,
+      "aerial02": 1,
+      "aerial03": 1,
+      "aerial04": 3,
+      "aerial05": 2,
+      "aerial06": 1,
+      "aerial07": 0,
+      "aerial08": 1,
+      "ground01": 0,
+      "ground02": 0,
+      "ground03": 0,
+      "ground04": 0,
+      "ground05": 0,
+      "ground06": 0
+    }
+  },
+  "registration_factors": 540,
+  "skipped_registration_factors": [
+    {
+      "owner": "aerial01",
+      "accepted": false,
+      "i": [
+        0,
+        18
+      ],
+      "initial_quality": {
+        "condition": 23051.650955784953,
+        "inliers": 3764,
+        "observability": 0.060436699370477784,
+        "overlap": 0.2975642608598047,
+        "rmse_m": 0.9286933990964993,
+        "source_extent_rank": 3,
+        "target_extent_rank": 3
+      },
+      "j": [
+        11,
+        28
+      ],
+      "reason": "low_overlap"
+    }
+  ],
+  "network_cdr_bytes": {
+    "cbs_network_cdr_bytes": 4897849,
+    "loop_network_cdr_bytes": 2484910753,
+    "pcm_network_cdr_bytes": 684786,
+    "registration_network_cdr_bytes": 74380094
+  },
+  "convergence": {
+    "aerial01": {
+      "samples": 100,
+      "final_pose_change": 4.277535597175765e-07,
+      "last_10_max_pose_change": 4.277535919672791e-07,
+      "last_10_received_beliefs": 0
+    },
+    "aerial02": {
+      "samples": 100,
+      "final_pose_change": 8.278543485780212e-14,
+      "last_10_max_pose_change": 1.460886688482398e-13,
+      "last_10_received_beliefs": 0
+    },
+    "aerial03": {
+      "samples": 100,
+      "final_pose_change": 1.1723206377857096e-13,
+      "last_10_max_pose_change": 2.5233805762879967e-13,
+      "last_10_received_beliefs": 0
+    },
+    "aerial04": {
+      "samples": 100,
+      "final_pose_change": 6.615034736003368e-14,
+      "last_10_max_pose_change": 8.066464292870462e-14,
+      "last_10_received_beliefs": 0
+    },
+    "aerial05": {
+      "samples": 100,
+      "final_pose_change": 1.722724084863643e-05,
+      "last_10_max_pose_change": 1.7227240876066356e-05,
+      "last_10_received_beliefs": 0
+    },
+    "aerial06": {
+      "samples": 100,
+      "final_pose_change": 6.7499293508828314e-06,
+      "last_10_max_pose_change": 6.7499293508828314e-06,
+      "last_10_received_beliefs": 0
+    },
+    "aerial07": {
+      "samples": 100,
+      "final_pose_change": 9.009812848075281e-05,
+      "last_10_max_pose_change": 9.009812850641196e-05,
+      "last_10_received_beliefs": 0
+    },
+    "aerial08": {
+      "samples": 100,
+      "final_pose_change": 7.729823069633687e-14,
+      "last_10_max_pose_change": 7.729823069633687e-14,
+      "last_10_received_beliefs": 0
+    },
+    "ground01": {
+      "samples": 100,
+      "final_pose_change": 3.090471828115058e-14,
+      "last_10_max_pose_change": 4.4889570956918104e-14,
+      "last_10_received_beliefs": 0
+    },
+    "ground02": {
+      "samples": 100,
+      "final_pose_change": 2.709988883727128e-13,
+      "last_10_max_pose_change": 6.099897604799527e-13,
+      "last_10_received_beliefs": 0
+    },
+    "ground03": {
+      "samples": 100,
+      "final_pose_change": 5.2318429182378725e-14,
+      "last_10_max_pose_change": 2.98197993568281e-13,
+      "last_10_received_beliefs": 0
+    },
+    "ground04": {
+      "samples": 100,
+      "final_pose_change": 1.3184593396573032e-13,
+      "last_10_max_pose_change": 2.1027963739452403e-13,
+      "last_10_received_beliefs": 0
+    },
+    "ground05": {
+      "samples": 100,
+      "final_pose_change": 5.2004036762378174e-14,
+      "last_10_max_pose_change": 1.7096347633860386e-13,
+      "last_10_received_beliefs": 0
+    },
+    "ground06": {
+      "samples": 100,
+      "final_pose_change": 1.1488508737642298e-13,
+      "last_10_max_pose_change": 2.2626330878036276e-13,
+      "last_10_received_beliefs": 0
+    }
+  }
+}

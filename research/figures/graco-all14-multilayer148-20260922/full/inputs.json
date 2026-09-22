@@ -1,0 +1,128 @@
+{
+  "aerial04": {
+    "path": "/workspace/.ros2/graco-aerial-five148-20260921/inputs/aerial04",
+    "sha256": {
+      "SENSORS.json": "2c94fab50d7af1b8a1346db96e618d50df76cbf1e696e1ad1bd679c934bfb7dd",
+      "metadata.yaml": "27edea6e0fb7e3deaf4af624e3d756c3439c6aa1638f49e740467c89607cdd55",
+      "sensors.db3": "fed97b658229abae87b98a4995f3ade3bacfbdeeef1f075de86c08e92bd85d35"
+    },
+    "sensor_duration_s": 291.515106763
+  },
+  "aerial05": {
+    "path": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial05",
+    "sha256": {
+      "SENSORS.json": "200116050284c98c5e184013b0c7c88d6a3af050fa88ba3dca33db21e0c538cf",
+      "metadata.yaml": "e7e85cacf1afbaa1592c777a96a5ab14d51ade0a7a1cb955db5f9197dd1f1b9f",
+      "sensors.db3": "504c6718dc32a5fac7ef037dfb0708de967b8e5a43d9b5c8a4f5c12891445141"
+    },
+    "sensor_duration_s": 296.387891899
+  },
+  "aerial06": {
+    "path": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial06",
+    "sha256": {
+      "SENSORS.json": "103a0b16bd3cdcdb6ea7872e55957fb2ff0fc2b76dabd1fa4fe9b8afab1babfb",
+      "metadata.yaml": "699ab5e7338efed096fb4f708c6526bdee5b8e4c8408b77a87b28dc4ebe46b1f",
+      "sensors.db3": "2133d3ecedbcdd4688b83ff9a2085b600f23d77caa8fa5c1debb8a4de7c23092"
+    },
+    "sensor_duration_s": 329.245229287
+  },
+  "aerial07": {
+    "path": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial07",
+    "sha256": {
+      "SENSORS.json": "44eaa100ded39a0e71321fe19c403856847df422f2f32cb5a7cac97c50ecfafd",
+      "metadata.yaml": "b5894513ef4e8ac2104671c042784b3418255b9c56a0a9c14f14f83b101247f9",
+      "sensors.db3": "2c70cca1fa0b6fc63adbc0bd979c6fc32c6101a2a7cd6d00c393fb84b2c4a9f9"
+    },
+    "sensor_duration_s": 394.38201315
+  },
+  "aerial08": {
+    "path": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial08",
+    "sha256": {
+      "SENSORS.json": "8833a0188eebf39144e9c3b92b178b967aa3dee55cfde4761932bb20b3741a29",
+      "metadata.yaml": "9254bd56cc3fd962196b7d1ad336216c39921a0bd81dce29f76b0e855c2eceb6",
+      "sensors.db3": "4937e2137b2ecb4d442046c5996ed2c7a4aeddb13c8b2452925958249dc7383b"
+    },
+    "sensor_duration_s": 278.192647993
+  },
+  "ground01": {
+    "path": "/workspace/.ros2/graco/inputs/sensors/robot1",
+    "sha256": {
+      "SENSORS.json": "e789fd21faea082f8d549ae1e67c009f1c70e3fcdfa0a09df3b2eae72ab50235",
+      "metadata.yaml": "f54b87072116c449881f394ed44072289131f5e194cf29e35ec775f3810e98f3",
+      "sensors.db3": "98c36bf75fddea9a069b5e0aeb54ad50cc5568d141c176f81f6d1c1608811f11"
+    },
+    "sensor_duration_s": 333.883886051
+  },
+  "ground02": {
+    "path": "/workspace/.ros2/graco/inputs/sensors/robot2",
+    "sha256": {
+      "SENSORS.json": "6ff17f2face74e16a990274115620e3b5a712d747697ecb501178ecf6a9a63f5",
+      "metadata.yaml": "f631e8e9d62e20611b37757ceb4be6163b5111235fa9260764b7cbcdd812b4b8",
+      "sensors.db3": "387078b4777cb51c3bbfb05fec946ba7c4d722a0fa1a9a4186dd9858e158c1f3"
+    },
+    "sensor_duration_s": 386.66059463
+  },
+  "ground03": {
+    "path": "/workspace/.ros2/graco/inputs/sensors/robot3",
+    "sha256": {
+      "SENSORS.json": "02b743a5d0a42ecad6c87bbd5a5db27e820a314b34e65b4fde2c5180a96c5545",
+      "metadata.yaml": "ebd84ee21a35fcc624efd5b47145e250269831e89bb292b89218c7b1924282a2",
+      "sensors.db3": "bd16aeb3ce6daa3cc3b285368febef0dc72183c2d927fa382a7c07ee7ff60e3d"
+    },
+    "sensor_duration_s": 296.973590586
+  },
+  "ground04": {
+    "path": "/workspace/.ros2/graco/inputs/sensors/robot4",
+    "sha256": {
+      "SENSORS.json": "c3605a6c31e31dd6e5282d9de9a9aa3aa78eed7f48a5cee83c7dd99147a2904a",
+      "metadata.yaml": "e5eff3ede626222e7fa39fcc654354b9f08a5df4c2a78929b8e4e3f2fc8ca85a",
+      "sensors.db3": "a4454faf8f767ea266220641f30d4a23d6bf31f989a0bb255c9c03b5dc41c466"
+    },
+    "sensor_duration_s": 328.858244015
+  },
+  "ground05": {
+    "path": "/workspace/.ros2/graco/inputs/sensors/robot5",
+    "sha256": {
+      "SENSORS.json": "735e2739115c265630beba50a4bfdf9388c7522252f040fc50396bd307008879",
+      "metadata.yaml": "899aed2b6dbf0fb795ebc4547c0062a72702dc9539fa55a67dfc04b27f504e66",
+      "sensors.db3": "315afc60de3ebfebbd0375253e514f27dce6776b5618801d324059d600816afe"
+    },
+    "sensor_duration_s": 520.031295016
+  },
+  "ground06": {
+    "path": "/workspace/.ros2/graco/inputs/sensors/robot6",
+    "sha256": {
+      "SENSORS.json": "45063b67e2ec1dfd9491079e091d6db1fef427295458030b7c9ede3ed8f8348e",
+      "metadata.yaml": "24e625f2ac3328ebf246aceabdd102a553cdeed61d3600f4c1344840043aa957",
+      "sensors.db3": "d4e6eb33f3444a591057c6c9166c947d0163fcbbdab398d9ef3f09e8ab1f782b"
+    },
+    "sensor_duration_s": 310.416219646
+  },
+  "aerial01": {
+    "path": "/workspace/.ros2/graco-all14-multilayer148-20260922/inputs/aerial01",
+    "sha256": {
+      "SENSORS.json": "a2ec81e24fe6ef6dea2a20e58845df89dfd8085fa328403f4d02b76ba36342a4",
+      "metadata.yaml": "cb9cef62f49b243df5cbac40770add009448c2d4b4dc41dfe145a978f72cea0b",
+      "sensors.db3": "a4096a87c2600fa79a7ed8edd784443efd7db672829ebfa0ce509b1975cd1f31"
+    },
+    "sensor_duration_s": 408.932167312
+  },
+  "aerial02": {
+    "path": "/workspace/.ros2/graco-all14-multilayer148-20260922/inputs/aerial02",
+    "sha256": {
+      "SENSORS.json": "626fcfdfe2d1a4d42cd3fad8d74df82d1121ac897ed558d28360c1104676e50a",
+      "metadata.yaml": "77702639af0476107af1b14d352dbeee19d773aa8bd19b1f8d7843089a392bcd",
+      "sensors.db3": "b8c40b628dea23f1a6842708a6febd741e79dbcbba0320285d1a80b549b82452"
+    },
+    "sensor_duration_s": 276.888117702
+  },
+  "aerial03": {
+    "path": "/workspace/.ros2/graco-all14-multilayer148-20260922/inputs/aerial03",
+    "sha256": {
+      "SENSORS.json": "5449524c6350767724fdbc490b6f1a2f6af89da18f487f999aee2bf2c486f989",
+      "metadata.yaml": "a844773161c4bcb1be04f3c3f0a5df1be2fd89a97a442ba888f20c673c07568f",
+      "sensors.db3": "349263ca7caab97f8f5c1f988495674d13ce841c70516afcd52f39447f8ad5ca"
+    },
+    "sensor_duration_s": 392.529973782
+  }
+}

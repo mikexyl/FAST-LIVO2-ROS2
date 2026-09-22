@@ -1,0 +1,64 @@
+{
+  "ground_truth_for_estimation": false,
+  "evaluation_only": true,
+  "backend_completed_utc": "2026-09-22T07:30:18Z",
+  "copied_utc": "2026-09-22T07:31:34Z",
+  "files": {
+    "aerial01": {
+      "source": "/data/graco/aerial-01-40m.txt",
+      "sha256": "726d53308b8f872111b58a66f1e58519f11a035e41d2cc2b9700a542b4eae2e1"
+    },
+    "aerial02": {
+      "source": "/data/graco/aerial-02-20m.txt",
+      "sha256": "a731432c129a5d65da7081ed17d9e9040eb46a181ab3bf6fc41c624a692cbdaf"
+    },
+    "aerial03": {
+      "source": "/data/graco/aerial-03-20m.txt",
+      "sha256": "d9d6e58ea27be53850cb4cbb80d81aecb2ea9436a98db37d3b2b475ed7940f30"
+    },
+    "aerial04": {
+      "source": "/data/graco/aerial-04-40m.txt",
+      "sha256": "a750d8aa26661c6540e58d812a36d06bf152d5e59ac8610f5d5f8fa86deafe4c"
+    },
+    "aerial05": {
+      "source": "/data/graco/aerial-05-40m.txt",
+      "sha256": "edf2089b9c409c5e19513e9e80454e13bbd1dc430f20ded339dd8ddde6ad34d2"
+    },
+    "aerial06": {
+      "source": "/data/graco/aerial-06-20m.txt",
+      "sha256": "17de18be612d1b7046c14ece92be21496ad425bf83cc93889e94e68e467fdf6b"
+    },
+    "aerial07": {
+      "source": "/data/graco/aerial-07-25m.txt",
+      "sha256": "18c0ed3556afcefa2aaefb8e2e56fa46a128477666c6beae3a033db72d06a028"
+    },
+    "aerial08": {
+      "source": "/data/graco/aerial-08-25m.txt",
+      "sha256": "120deab4ebeaf4747bc19106a0f67d6690bc3b254e91f7d91157994bdd3e587d"
+    },
+    "ground01": {
+      "source": "/data/graco/ground-01.txt",
+      "sha256": "d2daf54fbb44245a56b3e15c145c2e40330d459d9ae632eab8320c5b7b66bd7c"
+    },
+    "ground02": {
+      "source": "/data/graco/ground-02.txt",
+      "sha256": "789a40a5c43c1b787e8b16b2840dbe124ee974fb776fe6bf3d8be7a086b3953b"
+    },
+    "ground03": {
+      "source": "/data/graco/ground-03.txt",
+      "sha256": "239e69d39c037dd685c38ee69bc177e087227ca9a24e8064d9ec17867fcab29d"
+    },
+    "ground04": {
+      "source": "/data/graco/ground-04.txt",
+      "sha256": "a419ea1cfa1b5ed9104a8793acb82bd8f7344acb6a87c96b15264604acb8aaa6"
+    },
+    "ground05": {
+      "source": "/data/graco/ground-05.txt",
+      "sha256": "b093201f48a67bd325e44fbdfd398583769a6f9e086f4e5edd5dedba62320585"
+    },
+    "ground06": {
+      "source": "/data/graco/ground-06.txt",
+      "sha256": "99b13bc984bc8ebb06ee76cdc9b5dd21f2b54eeba810e632bb20f775e97a2562"
+    }
+  }
+}

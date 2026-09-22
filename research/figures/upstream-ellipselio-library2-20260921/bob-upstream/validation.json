@@ -1,0 +1,13 @@
+{
+  "native_rows_contiguous": true,
+  "finite_chronological": true,
+  "unit_quaternions": true,
+  "all_post_initialization_updates_valid": true,
+  "exact_native_trajectory_evaluated": true,
+  "evo_association_and_alignment_verified": true,
+  "correct_isolated_library_loaded": true,
+  "native_rows": 4849,
+  "evo_matched_samples": 4828,
+  "recorded_tf_rows": 4846,
+  "recording_limitation": "Best-effort output can miss states and late map chunks. Evaluation uses every native state before ROS publication."
+}

@@ -1,0 +1,385 @@
+{
+  "robot": "Bob",
+  "capture": "live ROS subscriptions during a fresh EllipseLIO replay",
+  "complete": true,
+  "wall_s": 885.6771181829972,
+  "counts": {
+    "raw_imu": 86306,
+    "imu_propagated_odometry": 72655,
+    "post_lidar_tf": 7793,
+    "native_scan": 7856,
+    "native_analytics": 7856,
+    "native_map_chunk": 7021,
+    "native_ellipsoid_marker": 15936
+  },
+  "rejected": {},
+  "first_stamp_ns": {
+    "raw_imu": 1660988157478079316,
+    "imu_propagated_odometry": 1660988163028665183,
+    "post_lidar_tf": 1660988163019254361,
+    "native_scan": 1660988163019254361,
+    "native_analytics": 1660988163019254361,
+    "native_map_chunk": 1660988167418219169,
+    "native_ellipsoid_marker": 1660988167418219169
+  },
+  "last_stamp_ns": {
+    "raw_imu": 1660989035493955199,
+    "imu_propagated_odometry": 1660989035483473824,
+    "post_lidar_tf": 1660989035413465182,
+    "native_scan": 1660989035413465182,
+    "native_analytics": 1660989035413465182,
+    "native_map_chunk": 1660989028513804231,
+    "native_ellipsoid_marker": 1660989028513804231
+  },
+  "first_motion_violation": null,
+  "maximum_scan_pose_speed_m_s": 1.8047442903450743,
+  "clock_ns": 1660989035492666381,
+  "map_snapshots": [
+    {
+      "stamp_ns": 1660988167418219169,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988177418754857,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988187518359893,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988197618357278,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988207617760564,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988217718404484,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988227817923478,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988237817432504,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988248019697594,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988258119858848,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988268219864628,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988278418889577,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988288519060629,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988298618615016,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988308718089746,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988318818204411,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988328918314539,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988339018041141,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988349110680739,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988359210359594,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988369310419866,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988379410079602,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988389510159326,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988399709445586,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988409809744367,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988419818576184,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988429919054283,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988440018967528,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988450211123391,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988460210495920,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988470410283096,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988480510993632,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988490710671779,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988500910595953,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988511009952222,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988521219641410,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988531409782154,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988541609400449,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988551711990210,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988561810990051,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988571911130876,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988582111015793,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988592311173735,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988602411145041,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988612511089294,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988622810931057,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988633010835821,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988643210821324,
+      "received_chunks": 99
+    },
+    {
+      "stamp_ns": 1660988653409535064,
+      "received_chunks": 97
+    },
+    {
+      "stamp_ns": 1660988663712270173,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988673812187703,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988683911231688,
+      "received_chunks": 100
+    },
+    {
+      "stamp_ns": 1660988694111581701,
+      "received_chunks": 66
+    },
+    {
+      "stamp_ns": 1660988704311307442,
+      "received_chunks": 76
+    },
+    {
+      "stamp_ns": 1660988714511320823,
+      "received_chunks": 51
+    },
+    {
+      "stamp_ns": 1660988724710943826,
+      "received_chunks": 62
+    },
+    {
+      "stamp_ns": 1660988734910863401,
+      "received_chunks": 60
+    },
+    {
+      "stamp_ns": 1660988745011313366,
+      "received_chunks": 63
+    },
+    {
+      "stamp_ns": 1660988755210331522,
+      "received_chunks": 67
+    },
+    {
+      "stamp_ns": 1660988765513756301,
+      "received_chunks": 68
+    },
+    {
+      "stamp_ns": 1660988775713611880,
+      "received_chunks": 49
+    },
+    {
+      "stamp_ns": 1660988785813312656,
+      "received_chunks": 49
+    },
+    {
+      "stamp_ns": 1660988795911839410,
+      "received_chunks": 49
+    },
+    {
+      "stamp_ns": 1660988806011642125,
+      "received_chunks": 57
+    },
+    {
+      "stamp_ns": 1660988816112171816,
+      "received_chunks": 56
+    },
+    {
+      "stamp_ns": 1660988826312171973,
+      "received_chunks": 58
+    },
+    {
+      "stamp_ns": 1660988836412084399,
+      "received_chunks": 51
+    },
+    {
+      "stamp_ns": 1660988846411900947,
+      "received_chunks": 53
+    },
+    {
+      "stamp_ns": 1660988856611239662,
+      "received_chunks": 58
+    },
+    {
+      "stamp_ns": 1660988866613681115,
+      "received_chunks": 53
+    },
+    {
+      "stamp_ns": 1660988876813923426,
+      "received_chunks": 49
+    },
+    {
+      "stamp_ns": 1660988886913254190,
+      "received_chunks": 59
+    },
+    {
+      "stamp_ns": 1660988897013999631,
+      "received_chunks": 46
+    },
+    {
+      "stamp_ns": 1660988907113540212,
+      "received_chunks": 52
+    },
+    {
+      "stamp_ns": 1660988917312413349,
+      "received_chunks": 49
+    },
+    {
+      "stamp_ns": 1660988927412614411,
+      "received_chunks": 39
+    },
+    {
+      "stamp_ns": 1660988937512681771,
+      "received_chunks": 52
+    },
+    {
+      "stamp_ns": 1660988947612735490,
+      "received_chunks": 51
+    },
+    {
+      "stamp_ns": 1660988957812550821,
+      "received_chunks": 42
+    },
+    {
+      "stamp_ns": 1660988967814150856,
+      "received_chunks": 49
+    },
+    {
+      "stamp_ns": 1660988978014691089,
+      "received_chunks": 56
+    },
+    {
+      "stamp_ns": 1660988988113744691,
+      "received_chunks": 51
+    },
+    {
+      "stamp_ns": 1660988998214277798,
+      "received_chunks": 42
+    },
+    {
+      "stamp_ns": 1660989008313514609,
+      "received_chunks": 47
+    },
+    {
+      "stamp_ns": 1660989018413760761,
+      "received_chunks": 51
+    },
+    {
+      "stamp_ns": 1660989028513804231,
+      "received_chunks": 44
+    }
+  ],
+  "recording_bytes": 1016945002,
+  "error": null
+}

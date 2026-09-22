@@ -1,0 +1,107 @@
+# Source: /data/s3e/Calibration/alpha.yaml
+# T_imu_lidar = Tic @ inv(Tlc); T_camera_lidar = inv(Tlc).
+# Point time is seconds relative to the adapted scan START header.
+/**:
+  ros__parameters:
+    common:
+      img_topic: /Alpha/left_camera/image
+      lid_topic: /Alpha/velodyne_points_start
+      imu_topic: /Alpha/imu/data
+      img_en: 1
+      lidar_en: 1
+      ros_driver_bug_fix: false
+    extrin_calib:
+      extrinsic_T:
+      - 0.010326832848403855
+      - -0.04426058354594917
+      - 0.13948061773042034
+      extrinsic_R:
+      - 0.9999529729273665
+      - 0.009666233370133497
+      - -0.0007898133885799862
+      - -0.009686315560413173
+      - 0.9994570046958946
+      - -0.03149392150315918
+      - 0.00048495975982069776
+      - 0.031500094967529306
+      - 0.9995036351695359
+      Rcl:
+      - 0.016401767702498446
+      - -0.9990532525791884
+      - 0.040293678501435753
+      - -0.010112948899872784
+      - -0.040462795913874215
+      - -0.999129866639658
+      - 0.9998143379051843
+      - 0.01598000806557854
+      - -0.010767035870758196
+      Pcl:
+      - 0.1996782658153719
+      - -0.11725276313345519
+      - -0.13334689970504834
+    time_offset:
+      imu_time_offset: 0.0
+      img_time_offset: 0.0
+      exposure_time_init: 0.0
+    preprocess:
+      point_filter_num: 1
+      filter_size_surf: 0.2
+      lidar_type: 2
+      scan_line: 16
+      blind: 1.0
+      velodyne_time_scale: 1000.0
+    vio:
+      max_iterations: 5
+      outlier_threshold: 1000
+      img_point_cov: 1000
+      patch_size: 8
+      patch_pyrimid_level: 4
+      normal_en: true
+      raycast_en: false
+      inverse_composition_en: false
+      exposure_estimate_en: true
+      inv_expo_cov: 0.1
+    imu:
+      imu_en: true
+      imu_int_frame: 30
+      acc_cov: 0.5
+      gyr_cov: 0.3
+    lio:
+      max_iterations: 5
+      dept_err: 0.02
+      beam_err: 0.05
+      min_eigen_value: 0.0025
+      voxel_size: 2.0
+      max_layer: 2
+      max_points_num: 50
+      layer_init_num:
+      - 5
+      - 5
+      - 5
+      - 5
+      - 5
+    local_map:
+      map_sliding_en: true
+      half_map_size: 100
+      sliding_thresh: 8.0
+    uav:
+      imu_rate_odom: false
+      gravity_align_en: true
+    publish:
+      dense_map_en: false
+      pub_effect_point_en: false
+      pub_plane_en: false
+      pub_scan_num: 1
+      blind_rgb_points: 0.0
+    evo:
+      seq_name: S3E_Square_1_alpha
+      pose_output_en: true
+    pcd_save:
+      pcd_save_en: false
+      type: 0
+      colmap_output_en: false
+      filter_size_pcd: 0.15
+      interval: -1
+    image_save:
+      img_save_en: false
+      interval: 1

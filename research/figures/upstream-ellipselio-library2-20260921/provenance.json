@@ -1,0 +1,30 @@
+{
+  "upstream_repository": "https://github.com/v4rl-ucy/ellipselio",
+  "upstream_commit": "6506f46f1947b4ef86cfba402f11f10a6ef520ee",
+  "upstream_commit_time": "2026-09-18T18:00:03+03:00",
+  "isolated_source": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/upstream-ellipselio-20260921/source/ellipselio",
+  "instrumentation_patch_sha256": "5e572f3aba062880960898b788baf125d0746912c14d207da796b823bca67883",
+  "estimator_modified": false,
+  "adapter": [
+    "Declare optional input.reliable and select ROS reliable QoS (100 LiDAR / 1000 IMU queue depths)",
+    "Observe iEKF return status without changing state or covariance",
+    "Write completed-scan pose, timestamps, feature count, residual, processing time, map size"
+  ],
+  "launcher": "Four-thread MultiThreadedExecutor, unchanged from prior experiments",
+  "omp_threads": 4,
+  "container_cpu_quota": 0,
+  "container_memory_quota": 0,
+  "calibration": "S3E Library2 Bob; identical to guarded baseline",
+  "imu_noise": {
+    "acc": 0.1,
+    "gyr": 0.1,
+    "acc_bias": 0.0001,
+    "gyr_bias": 0.0001
+  },
+  "optimization": "Upstream -Ofast preserved; historical guarded baseline was -O3",
+  "mode": "Upstream persistent map; no temporal/area submapping or loop/CBS backend",
+  "research_deskew_export": false,
+  "replay_rate": 1.0,
+  "ground_truth": "Evaluation only",
+  "scope": "Latest version trial against historical evidence; not attribution of individual algorithm changes"
+}

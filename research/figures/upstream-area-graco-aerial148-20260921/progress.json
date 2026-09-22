@@ -1,0 +1,49 @@
+{
+  "phase": "frontends",
+  "robots": {
+    "aerial05": {
+      "status": "complete",
+      "poses": 2753,
+      "sensor_elapsed_s": 295.10352666,
+      "points": 924719,
+      "features": 66,
+      "last_update_success": true,
+      "failed_after_init": 0,
+      "max_update_gap_s": 0.192002058,
+      "pose_finite": true
+    },
+    "aerial06": {
+      "status": "complete",
+      "poses": 3107,
+      "sensor_elapsed_s": 328.000435524,
+      "points": 715566,
+      "features": 616,
+      "last_update_success": true,
+      "failed_after_init": 0,
+      "max_update_gap_s": 0.167996883,
+      "pose_finite": true
+    },
+    "aerial07": {
+      "status": "recording",
+      "poses": 3565,
+      "sensor_elapsed_s": 378.199738622,
+      "points": 849404,
+      "features": 615,
+      "last_update_success": true,
+      "failed_after_init": 0,
+      "max_update_gap_s": 0.15199995,
+      "pose_finite": true
+    },
+    "aerial08": {
+      "status": "complete",
+      "poses": 2623,
+      "sensor_elapsed_s": 276.900079924,
+      "points": 788417,
+      "features": 636,
+      "last_update_success": true,
+      "failed_after_init": 0,
+      "max_update_gap_s": 0.135998964,
+      "pose_finite": true
+    }
+  }
+}

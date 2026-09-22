@@ -1,0 +1,8 @@
+{
+  "verified": true,
+  "files": 1343,
+  "bytes": 485058551,
+  "remote_root": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921",
+  "local_root": "/home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/research/figures/graco-aerial-singleton148-20260921",
+  "manifest_sha256": "a010c7be64d1d24ef2bc5b579e88f0988b473ae316b00a09a589f50478906487"
+}

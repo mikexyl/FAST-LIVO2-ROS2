@@ -1,0 +1,200 @@
+{
+  "ground_truth_used": false,
+  "visualization_voxel_m": 0.8,
+  "verification_voxel_m": 0.4,
+  "frozen_verification_sha256": "e7537f853c2d28bc4c18d212470d3cf4bb75fa04988ca2d32544e9fe63468d78",
+  "maps": [
+    {
+      "robot": "aerial06",
+      "key": 7,
+      "path": "visual_geometry/aerial06-000007.npz",
+      "points": 45580,
+      "sha256": "c72720e9ed96e15ed13c4c82469967491648367d1131c15996f3daaebdf222de"
+    },
+    {
+      "robot": "aerial06",
+      "key": 12,
+      "path": "visual_geometry/aerial06-000012.npz",
+      "points": 53511,
+      "sha256": "1903cab73931830fbf31234f8e5a2bd3b9110cd45a5b1f117576207aaeec6f95"
+    },
+    {
+      "robot": "aerial06",
+      "key": 17,
+      "path": "visual_geometry/aerial06-000017.npz",
+      "points": 58261,
+      "sha256": "4903f13593cca7e8ea16a121c422a88290934187f5f9560570dd4439eb6337e5"
+    },
+    {
+      "robot": "aerial06",
+      "key": 22,
+      "path": "visual_geometry/aerial06-000022.npz",
+      "points": 92194,
+      "sha256": "70740134bd26e10ce1e1e9d837fcc7824a2cd7b434c73ba7589e44ea1ae0462e"
+    },
+    {
+      "robot": "aerial06",
+      "key": 27,
+      "path": "visual_geometry/aerial06-000027.npz",
+      "points": 70829,
+      "sha256": "09931da26cd17b8aa5d767526d7e6649a6feefbc85c989b856ec952af34cb3cd"
+    },
+    {
+      "robot": "aerial06",
+      "key": 32,
+      "path": "visual_geometry/aerial06-000032.npz",
+      "points": 74129,
+      "sha256": "4e9a9412e039840884ea3f427e6015679d34c7798a1b7f2efe053a9f17ab0f47"
+    },
+    {
+      "robot": "ground06",
+      "key": 5,
+      "path": "visual_geometry/ground06-000005.npz",
+      "points": 32091,
+      "sha256": "ce2ad7cef49ccb5a9a65014cbdfe78500206683cbd913080e18bb693c97862fa"
+    },
+    {
+      "robot": "ground06",
+      "key": 7,
+      "path": "visual_geometry/ground06-000007.npz",
+      "points": 29580,
+      "sha256": "636311f5c66caa1f3afdfe7c055c67625570744182c93a274daa6456bbadf4d2"
+    },
+    {
+      "robot": "ground06",
+      "key": 12,
+      "path": "visual_geometry/ground06-000012.npz",
+      "points": 29942,
+      "sha256": "dc7060daccd6431f85bd525330c1ac880b1352c2565797a28f5ff64e163753d5"
+    },
+    {
+      "robot": "ground06",
+      "key": 17,
+      "path": "visual_geometry/ground06-000017.npz",
+      "points": 39780,
+      "sha256": "e3558411d4d0969fa9987df09a906aec836a220cab85192f46415d184ddc907e"
+    },
+    {
+      "robot": "ground06",
+      "key": 22,
+      "path": "visual_geometry/ground06-000022.npz",
+      "points": 42614,
+      "sha256": "05103d0d8d9467b56700bc938c9eb54492119a784019db7fda39c1db7577044c"
+    }
+  ],
+  "views": [
+    {
+      "id": "aerial06-7__ground06-12",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-7__ground06-12.png",
+      "sha256": "22738ceda99fe3f572873ae1d3b6f2ce9ad3896661c719f95eaf435525e6fa02"
+    },
+    {
+      "id": "aerial06-7__ground06-17",
+      "accepted": true,
+      "reason": "accepted",
+      "path": "views/aerial06-7__ground06-17.png",
+      "sha256": "c0832a9878c9f444a062e8d641b9b9fdd8a30f6070af431b814af979b0d7530c"
+    },
+    {
+      "id": "aerial06-12__ground06-7",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-12__ground06-7.png",
+      "sha256": "7afc87db848c4b2bda81ad9bc7d67cd165866fb3de237b8fc6e5761f4b0bd2fc"
+    },
+    {
+      "id": "aerial06-12__ground06-12",
+      "accepted": true,
+      "reason": "accepted",
+      "path": "views/aerial06-12__ground06-12.png",
+      "sha256": "e8cc9f6e68b2f85133c3cbba349155238373309876b0372754aab3957055263f"
+    },
+    {
+      "id": "aerial06-12__ground06-17",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-12__ground06-17.png",
+      "sha256": "b807535a409269dbe42a71187459d83fdce95ff3b42dbc7990fba1b3ea1e68ca"
+    },
+    {
+      "id": "aerial06-17__ground06-5",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-17__ground06-5.png",
+      "sha256": "631b7b1cee3a64174c33425d8d52e81bc1882d3d243ad9aeab29a8e29a15f906"
+    },
+    {
+      "id": "aerial06-17__ground06-7",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-17__ground06-7.png",
+      "sha256": "00fefefee4de06aea287e9b5d170f307b40cc0b3f7978583e6fe76f936352a45"
+    },
+    {
+      "id": "aerial06-17__ground06-12",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-17__ground06-12.png",
+      "sha256": "1fadeeba649fc2713a72b33258124b223451b3b0ed3791bcafed79f6f9064d42"
+    },
+    {
+      "id": "aerial06-22__ground06-7",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-22__ground06-7.png",
+      "sha256": "5eb6545d3f83e08e3d0b7d882de8f9e311457af3f14cd7819790dd49675853a8"
+    },
+    {
+      "id": "aerial06-22__ground06-12",
+      "accepted": true,
+      "reason": "accepted",
+      "path": "views/aerial06-22__ground06-12.png",
+      "sha256": "06253a599685f9003008f4fe7755381a6b7917ebad1f156ea08c4c8d2d5eae72"
+    },
+    {
+      "id": "aerial06-22__ground06-17",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-22__ground06-17.png",
+      "sha256": "7b7a24ab85144b7e76a4c39dec928168dcf18f1665aaea3008706b3d53dd016f"
+    },
+    {
+      "id": "aerial06-27__ground06-12",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-27__ground06-12.png",
+      "sha256": "1e3bca42ba78a9163c82c6a86ae2e0ba098f3297548e9c921d84181ada4ad3ea"
+    },
+    {
+      "id": "aerial06-27__ground06-17",
+      "accepted": true,
+      "reason": "accepted",
+      "path": "views/aerial06-27__ground06-17.png",
+      "sha256": "9ff64a74ebb8b9f0b6a2cc44289f0c72981ffb1102a549ceb216f883dd1b2ed0"
+    },
+    {
+      "id": "aerial06-32__ground06-12",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-32__ground06-12.png",
+      "sha256": "85e55e9d7205de5992425444a6a93bc69095359a1197a10d6b872f806fcae599"
+    },
+    {
+      "id": "aerial06-32__ground06-17",
+      "accepted": true,
+      "reason": "accepted",
+      "path": "views/aerial06-32__ground06-17.png",
+      "sha256": "0adeb38d9a293227aaf9ac9ef786e092f30b50e81799bc943d4b8711f0d55f77"
+    },
+    {
+      "id": "aerial06-32__ground06-22",
+      "accepted": false,
+      "reason": "low_overlap",
+      "path": "views/aerial06-32__ground06-22.png",
+      "sha256": "10b15a2ce0e8b162584da4e45b396de39de770ac6a4be06f4132022382845bf1"
+    }
+  ],
+  "script_sha256": "5a7fa1be8d570a06c528ebea8fab2478302d0489e761f9bfcc58ac6d58abe92b"
+}

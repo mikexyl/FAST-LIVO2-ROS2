@@ -1,0 +1,35 @@
+{
+  "raw": {},
+  "ground_truth": {
+    "Alpha": {
+      "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/alpha_gt.txt",
+      "available": false,
+      "matched_samples": 0,
+      "pose_samples": 3707,
+      "rows": 2,
+      "first_stamp_ns": 0,
+      "last_stamp_ns": 1000000000,
+      "reason": "no_timestamp_overlap_with_sensor_trajectory"
+    },
+    "Bob": {
+      "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/bob_gt.txt",
+      "available": false,
+      "matched_samples": 0,
+      "pose_samples": 3771,
+      "rows": 2,
+      "first_stamp_ns": 0,
+      "last_stamp_ns": 1000000000,
+      "reason": "no_timestamp_overlap_with_sensor_trajectory"
+    },
+    "Carol": {
+      "path": "/data/s3e/S3Ev1/S3E_Laboratory_4/carol_gt.txt",
+      "available": false,
+      "matched_samples": 0,
+      "pose_samples": 3796,
+      "rows": 2,
+      "first_stamp_ns": 0,
+      "last_stamp_ns": 1000000000,
+      "reason": "no_timestamp_overlap_with_sensor_trajectory"
+    }
+  }
+}

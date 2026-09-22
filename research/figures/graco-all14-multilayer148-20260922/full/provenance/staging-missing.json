@@ -1,0 +1,26 @@
+{
+  "aerial01": {
+    "phase": "complete",
+    "counts": {
+      "/velodyne/points": 4089,
+      "/gnss/imu": 51117
+    },
+    "source_sha256": "6910c42d9049131633feff4153a0048ea736187476dbbe45dbe705112a5f84ce"
+  },
+  "aerial02": {
+    "phase": "complete",
+    "counts": {
+      "/velodyne/points": 2769,
+      "/gnss/imu": 34600
+    },
+    "source_sha256": "54ec5c5199eb27494d90e5a73b4d9847a555fc2ab49283cdac22b8ed75bca9e1"
+  },
+  "aerial03": {
+    "phase": "complete",
+    "counts": {
+      "/velodyne/points": 3924,
+      "/gnss/imu": 49063
+    },
+    "source_sha256": "cc6a74ce0cad6d6ac84bca944c0bcfd752378746dc9e35e3e787513557fa8abe"
+  }
+}

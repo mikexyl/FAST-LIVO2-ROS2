@@ -1,0 +1,14 @@
+{
+  "bob-upstream": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/upstream-ellipselio-20260921/bob-upstream/recording/live.rrd",
+    "bytes": 516578739,
+    "sha256": "43bcc949a2cb775653917870d0959db85b440a65c2718cab06a7b8288b0749e2",
+    "verified": true
+  },
+  "bob-upstream-repeat": {
+    "path": "/home/mikexyl/workspaces/fast_livo2_ws/src/.ros2/upstream-ellipselio-20260921/bob-upstream-repeat/recording/live.rrd",
+    "bytes": 519222632,
+    "sha256": "19f8597c868ac14fd2e29f8600ea1cdd2e172ea0d2edd68a0b38c9a44685b547",
+    "verified": true
+  }
+}

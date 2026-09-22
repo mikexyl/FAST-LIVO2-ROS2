@@ -1,0 +1,6 @@
+781a87375000-781a87432000 r--p 00000000 103:01 153233618                 /workspace/.ros2/upstream-area-s3e-20260921/capacity-run/install/ellipselio/lib/libellipselio_mapping.so
+781a87432000-781a87537000 r-xp 000bd000 103:01 153233618                 /workspace/.ros2/upstream-area-s3e-20260921/capacity-run/install/ellipselio/lib/libellipselio_mapping.so
+781a87537000-781a87569000 r--p 001c2000 103:01 153233618                 /workspace/.ros2/upstream-area-s3e-20260921/capacity-run/install/ellipselio/lib/libellipselio_mapping.so
+781a87569000-781a8756a000 ---p 001f4000 103:01 153233618                 /workspace/.ros2/upstream-area-s3e-20260921/capacity-run/install/ellipselio/lib/libellipselio_mapping.so
+781a8756a000-781a87570000 r--p 001f4000 103:01 153233618                 /workspace/.ros2/upstream-area-s3e-20260921/capacity-run/install/ellipselio/lib/libellipselio_mapping.so
+781a87570000-781a87572000 rw-p 001fa000 103:01 153233618                 /workspace/.ros2/upstream-area-s3e-20260921/capacity-run/install/ellipselio/lib/libellipselio_mapping.so

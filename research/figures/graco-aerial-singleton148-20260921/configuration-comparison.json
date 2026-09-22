@@ -1,0 +1,12 @@
+{
+  "geometric_thresholds_unchanged": true,
+  "odometry_and_evidence_unchanged": true,
+  "pcm_minimum_clique_size": [
+    2,
+    1
+  ],
+  "mapclosures_verification_candidates": [
+    1,
+    2
+  ]
+}

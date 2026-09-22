@@ -1,0 +1,94 @@
+{
+  "aerial05": {
+    "path": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial05",
+    "sha256": {
+      "metadata.yaml": "e7e85cacf1afbaa1592c777a96a5ab14d51ade0a7a1cb955db5f9197dd1f1b9f",
+      "COMPLETE.json": "70de3eb4912783965870287b61d31e88aa1c4aa10b227ed2687cf50465144799",
+      "sensors.db3": "504c6718dc32a5fac7ef037dfb0708de967b8e5a43d9b5c8a4f5c12891445141",
+      "SENSORS.json": "200116050284c98c5e184013b0c7c88d6a3af050fa88ba3dca33db21e0c538cf"
+    },
+    "sensor_duration_s": 296.387891899,
+    "conversion_audit": {
+      "counts": {
+        "/velodyne/points": 2963,
+        "/gnss/imu": 37040
+      },
+      "all_sensor_measurements_equal": true,
+      "record_header_point_times_unchanged": true,
+      "conversion": "ROS1 serialization to ROS2 CDR; no filtering within messages or time rebasing",
+      "ground_truth_used": false,
+      "source": "/data/graco/aerial-05-40m.bag",
+      "source_sha256": "d704884eb3b55dbf7db8691777919e84dce3eb989817545c41e3a7548a78136d"
+    },
+    "reuse_scope": "Previously validated sensor conversion only; odometry and backend captures are fresh"
+  },
+  "aerial06": {
+    "path": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial06",
+    "sha256": {
+      "metadata.yaml": "699ab5e7338efed096fb4f708c6526bdee5b8e4c8408b77a87b28dc4ebe46b1f",
+      "COMPLETE.json": "9d4d8e1d92be3544336b52726393cdddd46cef2dc0d4e01611b2e3268b140e13",
+      "sensors.db3": "2133d3ecedbcdd4688b83ff9a2085b600f23d77caa8fa5c1debb8a4de7c23092",
+      "SENSORS.json": "103a0b16bd3cdcdb6ea7872e55957fb2ff0fc2b76dabd1fa4fe9b8afab1babfb"
+    },
+    "sensor_duration_s": 329.245229287,
+    "conversion_audit": {
+      "counts": {
+        "/velodyne/points": 3290,
+        "/gnss/imu": 41149
+      },
+      "all_sensor_measurements_equal": true,
+      "record_header_point_times_unchanged": true,
+      "conversion": "ROS1 serialization to ROS2 CDR; no filtering within messages or time rebasing",
+      "ground_truth_used": false,
+      "source": "/data/graco/aerial-06-20m.bag",
+      "source_sha256": "7ffcc94a580fc75c5440b575200f7bfcb57e603e4defdd591619fc06b54f1d67"
+    },
+    "reuse_scope": "Previously validated sensor conversion only; odometry and backend captures are fresh"
+  },
+  "aerial07": {
+    "path": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial07",
+    "sha256": {
+      "metadata.yaml": "b5894513ef4e8ac2104671c042784b3418255b9c56a0a9c14f14f83b101247f9",
+      "COMPLETE.json": "d62b90bf5fe5a735373c2f463563d2f695a9e93cdc0182e2e6c39df3b8af6b84",
+      "sensors.db3": "2c70cca1fa0b6fc63adbc0bd979c6fc32c6101a2a7cd6d00c393fb84b2c4a9f9",
+      "SENSORS.json": "44eaa100ded39a0e71321fe19c403856847df422f2f32cb5a7cac97c50ecfafd"
+    },
+    "sensor_duration_s": 394.38201315,
+    "conversion_audit": {
+      "counts": {
+        "/velodyne/points": 3943,
+        "/gnss/imu": 49287
+      },
+      "all_sensor_measurements_equal": true,
+      "record_header_point_times_unchanged": true,
+      "conversion": "ROS1 serialization to ROS2 CDR; no filtering within messages or time rebasing",
+      "ground_truth_used": false,
+      "source": "/data/graco/aerial-07-25m.bag",
+      "source_sha256": "74195f07f2a9d2d3da3c2162388344ce818a593e53867bf904818beb75218d90"
+    },
+    "reuse_scope": "Previously validated sensor conversion only; odometry and backend captures are fresh"
+  },
+  "aerial08": {
+    "path": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial08",
+    "sha256": {
+      "metadata.yaml": "9254bd56cc3fd962196b7d1ad336216c39921a0bd81dce29f76b0e855c2eceb6",
+      "COMPLETE.json": "13bc5c0b9a1e30bf409935457d1750b0485bd7f906045a11408ebde363ff3d9b",
+      "sensors.db3": "4937e2137b2ecb4d442046c5996ed2c7a4aeddb13c8b2452925958249dc7383b",
+      "SENSORS.json": "8833a0188eebf39144e9c3b92b178b967aa3dee55cfde4761932bb20b3741a29"
+    },
+    "sensor_duration_s": 278.192647993,
+    "conversion_audit": {
+      "counts": {
+        "/velodyne/points": 2780,
+        "/gnss/imu": 34769
+      },
+      "all_sensor_measurements_equal": true,
+      "record_header_point_times_unchanged": true,
+      "conversion": "ROS1 serialization to ROS2 CDR; no filtering within messages or time rebasing",
+      "ground_truth_used": false,
+      "source": "/data/graco/aerial-08-25m.bag",
+      "source_sha256": "713308b903f6952a2a7a290de75c0e7ceedce46350fd3ae47610f879687a3464"
+    },
+    "reuse_scope": "Previously validated sensor conversion only; odometry and backend captures are fresh"
+  }
+}

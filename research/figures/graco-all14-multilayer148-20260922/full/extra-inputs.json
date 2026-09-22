@@ -1,0 +1,29 @@
+{
+  "aerial01": {
+    "path": "/workspace/.ros2/graco-all14-multilayer148-20260922/inputs/aerial01",
+    "sha256": {
+      "SENSORS.json": "a2ec81e24fe6ef6dea2a20e58845df89dfd8085fa328403f4d02b76ba36342a4",
+      "metadata.yaml": "cb9cef62f49b243df5cbac40770add009448c2d4b4dc41dfe145a978f72cea0b",
+      "sensors.db3": "a4096a87c2600fa79a7ed8edd784443efd7db672829ebfa0ce509b1975cd1f31"
+    },
+    "sensor_duration_s": 408.932167312
+  },
+  "aerial02": {
+    "path": "/workspace/.ros2/graco-all14-multilayer148-20260922/inputs/aerial02",
+    "sha256": {
+      "SENSORS.json": "626fcfdfe2d1a4d42cd3fad8d74df82d1121ac897ed558d28360c1104676e50a",
+      "metadata.yaml": "77702639af0476107af1b14d352dbeee19d773aa8bd19b1f8d7843089a392bcd",
+      "sensors.db3": "b8c40b628dea23f1a6842708a6febd741e79dbcbba0320285d1a80b549b82452"
+    },
+    "sensor_duration_s": 276.888117702
+  },
+  "aerial03": {
+    "path": "/workspace/.ros2/graco-all14-multilayer148-20260922/inputs/aerial03",
+    "sha256": {
+      "SENSORS.json": "5449524c6350767724fdbc490b6f1a2f6af89da18f487f999aee2bf2c486f989",
+      "metadata.yaml": "a844773161c4bcb1be04f3c3f0a5df1be2fd89a97a442ba888f20c673c07568f",
+      "sensors.db3": "349263ca7caab97f8f5c1f988495674d13ce841c70516afcd52f39447f8ad5ca"
+    },
+    "sensor_duration_s": 392.529973782
+  }
+}

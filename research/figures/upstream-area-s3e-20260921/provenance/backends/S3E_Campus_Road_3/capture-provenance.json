@@ -1,0 +1,64 @@
+{
+  "cuda_storage_growth": {
+    "passed": true,
+    "forced_initial_capacity": 16,
+    "final_capacity": 65536,
+    "batches": 21,
+    "final_voxels": 22877,
+    "bitwise_centroid_equality": true,
+    "reset_reuse_verified": true
+  },
+  "cuda_source_sha256": "3875aa54a522bdcc2b44b9ab4409cf8b4e17eb56f250bbac6436ccb6484bd44c",
+  "original_batch": "/workspace/.ros2/upstream-area-s3e-20260921/full",
+  "trials": {
+    "Alpha": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Alpha",
+    "Bob": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Bob",
+    "Carol": "/workspace/.ros2/upstream-area-s3e-20260921/full/S3E_Campus_Road_3/frontends/Carol"
+  },
+  "quality": {
+    "Alpha": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.2899827928363576,
+      "max_successful_update_gap_s": 0.602073282,
+      "native_poses": 8706,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "Bob": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 2.0832045151277105,
+      "max_successful_update_gap_s": 0.500319317,
+      "native_poses": 8768,
+      "ground_truth_used": false,
+      "passed": true
+    },
+    "Carol": {
+      "full_completion": true,
+      "finite": true,
+      "chronological": true,
+      "max_speed_m_s": 3.0434476931299224,
+      "max_successful_update_gap_s": 0.601912958,
+      "native_poses": 8825,
+      "ground_truth_used": false,
+      "passed": true
+    }
+  },
+  "reason": "Resume geometrically valid captures after live recording footer-format failures; Road 2 Carol is a separate octree-storage-growth rerun",
+  "estimator_thresholds_changed": false,
+  "backend_thresholds_changed": false,
+  "ground_truth_used": false,
+  "configs": {
+    "Alpha": "93378523b6d3cc8928ae639aba69ff6f910812a842d4dd1d152d928100c07879",
+    "Bob": "d30b3dd0e4b6bc50f51b417454dcb4b8b55ade6650b6bedb2ba6770d2212bf42",
+    "Carol": "730b540d9132cbd2acbdba167be9d3d871e36cc0b0c8c1cdf66195abe32fa1fe"
+  },
+  "source_indices": {
+    "Alpha": "0d37ab049bced5a39e13a4332da89e8d589b44cceb1c8ccb70e18cd91a367ea0",
+    "Bob": "4f96ab5041a37f5f8b5d40a50c0e28080bc85d06dc213c551eea087841dbe1ce",
+    "Carol": "4b95fcbfd552b12176aee7bdb590da9d884b3bc03f9cc02f7fb4f7c0ab528825"
+  }
+}

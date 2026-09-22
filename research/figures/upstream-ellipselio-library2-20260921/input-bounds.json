@@ -1,0 +1,16 @@
+{
+  "/Bob/velodyne_points": {
+    "messages": 4872,
+    "first_record_stamp_ns": 1689768348005415201,
+    "first_header_stamp_ns": 1689768348005415201,
+    "last_record_stamp_ns": 1689768835077076673,
+    "last_header_stamp_ns": 1689768835077076673
+  },
+  "/Bob/imu/data": {
+    "messages": 48710,
+    "first_record_stamp_ns": 1689768348002558946,
+    "first_header_stamp_ns": 1689768348002558946,
+    "last_record_stamp_ns": 1689768835096611022,
+    "last_header_stamp_ns": 1689768835096611022
+  }
+}

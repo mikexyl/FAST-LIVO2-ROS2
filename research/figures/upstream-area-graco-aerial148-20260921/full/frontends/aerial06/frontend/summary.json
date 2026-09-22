@@ -1,0 +1,23 @@
+{
+  "frontend": "ellipselio",
+  "robot": "aerial06",
+  "bag": "/workspace/.ros2/graco-aerial-four148-20260920/inputs/aerial06",
+  "rate": 1.0,
+  "mapper_executable": "/workspace/.ros2/upstream-area-s3e-20260921/capacity-run/launcher/ellipselio_mapping_mt",
+  "start_offset_s": 0.0,
+  "requested_duration": 0.0,
+  "research_export_enabled": false,
+  "odometry_messages": 31888,
+  "finite": true,
+  "path_length_m": 453.90137794149086,
+  "max_pose_step_m": 0.1836798861477233,
+  "first_pose_stamp_ns": 1662002402096860886,
+  "last_pose_stamp_ns": 1662002730137233019,
+  "analytics_messages": 3060,
+  "analytics_time_policy": "Native message has no header; capture records latest observed /clock and odometry stamp, not an exact scan association",
+  "export_complete": null,
+  "native_mapper_returncode": 0,
+  "success": true,
+  "error": null,
+  "wall_s": 333.81872180395294
+}

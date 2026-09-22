@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -eo pipefail
+cd /workspace
+source /opt/ros/humble/setup.bash
+source .ros2/cbs-underlay/setup.bash
+source .ros2/dpgo-install/setup.bash
+source .ros2/upstream-area-s3e-20260921/capacity-run/install/ellipselio/share/ellipselio/local_setup.bash
+export CBS_UNDERLAY=/workspace/.ros2/cbs-underlay
+export LD_LIBRARY_PATH="/workspace/.ros2/swarm/native/lib:/usr/local/cuda/lib64:${LD_LIBRARY_PATH:-}"
+export PYTHONPATH="/opt/upstream-area-mapclosures:/workspace/FAST-LIVO2-ROS2/research:${PYTHONPATH:-}"
+export OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+export PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1
+export ROS_LOCALHOST_ONLY=1 RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+export ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-222}
+export ROS_LOG_DIR=/tmp/graco-height-logs
+export MPLCONFIGDIR=/workspace/.ros2/matplotlib
+exec "$@"

@@ -1,0 +1,9353 @@
+[
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      3
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 3,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 3,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      7
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 7,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 7,
+      "matches": 6,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9599586260068862,
+          0.28012735796644933,
+          0.0028459925699541285,
+          29.399891732888143
+        ],
+        [
+          0.19210779579190332,
+          0.6656536905212137,
+          -0.7211100880527638,
+          20.0407426848647
+        ],
+        [
+          -0.20389710922656032,
+          -0.6916891119673818,
+          -0.6928146514291011,
+          -19.981616519528572
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 8,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 9,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9998089516462737,
+          0.0033027842495442768,
+          -0.019265301040473914,
+          -93.32054785455287
+        ],
+        [
+          -0.011211883446831786,
+          -0.7104493706119227,
+          -0.7036589980002369,
+          -42.02651095957188
+        ],
+        [
+          -0.016011054854499204,
+          0.7037405654169183,
+          -0.7102766099972055,
+          42.02354106973038
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 18,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 22,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      0
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.6670443982839005,
+          -0.7447276448027215,
+          0.020796773419452488,
+          -7.771955958050086
+        ],
+        [
+          -0.524295945595614,
+          -0.4890723644399445,
+          -0.697081045340585,
+          16.79253828396217
+        ],
+        [
+          0.5293066522820864,
+          0.45408034245903334,
+          -0.7166906657981651,
+          -16.619149072309803
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 25,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      0
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 0,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 0,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      1
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 1,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 1,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      3
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 3,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 3,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 16,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 21,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.06448617150191499,
+          -0.997598384731755,
+          0.025278379410469197,
+          10.873374525531196
+        ],
+        [
+          -0.7252270936628291,
+          0.02944936227579988,
+          -0.6878796389477707,
+          -1.979265396406066
+        ],
+        [
+          0.6854831845511548,
+          -0.06269129000222218,
+          -0.7253844538280825,
+          1.7604125026075814
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      1
+    ],
+    "candidate": [
+      "ground06",
+      30
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 30,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 30,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      2
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      2
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      2
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      2
+    ],
+    "candidate": [
+      "ground06",
+      30
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 30,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 30,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      7
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 7,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 7,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 6,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 21,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      26
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 26,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 26,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      3
+    ],
+    "candidate": [
+      "ground06",
+      29
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 29,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 29,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9971866754923988,
+          0.07090452182831491,
+          0.02431631149487099,
+          -26.062839303436466
+        ],
+        [
+          0.03206294292877156,
+          0.6966972445840701,
+          -0.7166483915280288,
+          -0.9298912879721306
+        ],
+        [
+          -0.06775471873725045,
+          -0.7138525745371117,
+          -0.6970106167882766,
+          0.8445629573241482
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 4,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      5
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 5,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.31605929995750853,
+          -0.9485173025780741,
+          0.020529140760983805,
+          -8.406358373198685
+        ],
+        [
+          -0.6994776937283934,
+          0.21834786538833006,
+          -0.6804815689324492,
+          32.25816298982635
+        ],
+        [
+          0.6409660481544851,
+          -0.22943220434449543,
+          -0.7324775687506397,
+          -31.400741062476463
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 5,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      6
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 6,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 6,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      7
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 7,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 7,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.7617997704062232,
+          0.6470445788345267,
+          -0.03153447018542417,
+          -71.82376032120084
+        ],
+        [
+          0.4501015688315638,
+          -0.563682188433555,
+          -0.6925828240565336,
+          -6.8193235269562305
+        ],
+        [
+          -0.46590738086489947,
+          0.5134157218508293,
+          -0.7206487417681386,
+          6.468476350003322
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 12,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 16,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.37710265306720525,
+          0.9261411982937003,
+          0.007487981889893138,
+          52.09642564907986
+        ],
+        [
+          0.6517729345622529,
+          0.2711131360815327,
+          -0.7083005782971981,
+          -13.871378902672582
+        ],
+        [
+          -0.6580164365893785,
+          -0.26222156331458446,
+          -0.7058712495286031,
+          13.614387965980372
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 18,
+      "matches": 9,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      20
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 20,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 20,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 22,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      4
+    ],
+    "candidate": [
+      "ground06",
+      26
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 26,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 26,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      5
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 5,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.5143202069635219,
+          -0.8575872648410457,
+          -0.004336806596396254,
+          -33.8563593009117
+        ],
+        [
+          -0.6093381824981137,
+          -0.3618701602607935,
+          -0.7055189341631616,
+          31.262730848521525
+        ],
+        [
+          0.6034746921444976,
+          0.36550522608477454,
+          -0.708677801011025,
+          -33.044315798613155
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 5,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 9,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9948925131328333,
+          0.09903617264769585,
+          0.01951214543639574,
+          31.232744683139057
+        ],
+        [
+          0.051607318231042976,
+          0.6651920309470217,
+          -0.7448867341210853,
+          -13.689438974925185
+        ],
+        [
+          -0.08675005485436385,
+          -0.7400752654101287,
+          -0.6669055626630299,
+          14.489609099782566
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 17,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9798492692956409,
+          -0.19915213396803852,
+          -0.015291729685536302,
+          -21.878349451843132
+        ],
+        [
+          -0.14835289566646362,
+          -0.6743709564206231,
+          -0.7233361815115497,
+          -22.778623149021737
+        ],
+        [
+          0.13374164575095682,
+          0.7110290012877893,
+          -0.6903266846352637,
+          24.0198594408189
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 18,
+      "matches": 6,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      20
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 20,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 20,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9934161452828921,
+          0.11453994352790277,
+          0.002227920084815799,
+          9.723374410328784
+        ],
+        [
+          0.07657395782366087,
+          0.6783470902544533,
+          -0.7307404834320709,
+          5.629331109306443
+        ],
+        [
+          -0.08521027681271602,
+          -0.7257587935946358,
+          -0.6826517283692753,
+          -5.930807571951732
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 21,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9943342812982061,
+          0.10543486957108447,
+          -0.01352129112579378,
+          -48.68088666319407
+        ],
+        [
+          0.06404838378356846,
+          -0.6957722012143014,
+          -0.7154011801444825,
+          18.01074088972596
+        ],
+        [
+          -0.08483596860938636,
+          0.7104819014555784,
+          -0.6985830846321525,
+          -19.072768755973478
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 24,
+      "matches": 6,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.10298624691466265,
+          -0.9943996470060774,
+          0.023731308025918767,
+          0.3994573106139743
+        ],
+        [
+          -0.677878169036565,
+          0.05270554383041952,
+          -0.7332825605407334,
+          -11.239163567051644
+        ],
+        [
+          0.7279251478621046,
+          -0.09160495447151656,
+          -0.679509758153777,
+          11.865274829676208
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 25,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      26
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 26,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 26,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      5
+    ],
+    "candidate": [
+      "ground06",
+      30
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 30,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.7551919789908949,
+          -0.6551833958790366,
+          0.020488841651723367,
+          -7.1776221123093045
+        ],
+        [
+          -0.44415934487293407,
+          -0.5344441261830956,
+          -0.719091059845993,
+          -10.442824423556733
+        ],
+        [
+          0.48208666360921243,
+          0.5339514900745207,
+          -0.6946137451975285,
+          11.015351798020518
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 30,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      6
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      6
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9609777975117654,
+          -0.2760018108412047,
+          -0.018565373732085073,
+          -1.0001447495111457
+        ],
+        [
+          -0.2205492965467598,
+          -0.7239353796229536,
+          -0.6536631960902337,
+          22.99289623246393
+        ],
+        [
+          0.1669720949205749,
+          0.6322503986100332,
+          -0.7565578318775693,
+          -21.13832061902687
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      6
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      6
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9859294196933531,
+          -0.16715277358488684,
+          0.0017690862069616505,
+          -8.11668586826408
+        ],
+        [
+          -0.12607738982513222,
+          -0.75051723087509,
+          -0.6487128624703447,
+          -15.893716635737139
+        ],
+        [
+          0.10976188390333753,
+          0.6393620542716516,
+          -0.7610312033021535,
+          14.674455451110335
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 3,
+      "keyframe_id": 16,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      6
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.496159770276504,
+          -0.8681841489137656,
+          0.009042451771909595,
+          -18.95702020299771
+        ],
+        [
+          -0.6338786794290789,
+          -0.36933398512552523,
+          -0.6795514897316798,
+          -19.97935193559096
+        ],
+        [
+          0.5933155165040046,
+          0.3314342936483471,
+          -0.7335720870299027,
+          18.50898640180676
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      6
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9607553258003272,
+          -0.27659944918632084,
+          -0.02102257491676914,
+          -25.623559721590983
+        ],
+        [
+          -0.21817293875379312,
+          -0.7066570188868232,
+          -0.6730798068977567,
+          -11.129487845860988
+        ],
+        [
+          0.1713177537263457,
+          0.6512515661154389,
+          -0.7392710090963578,
+          10.417658839441945
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      6
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.37594904870201573,
+          -0.9266385547710265,
+          0.0018170283191911614,
+          -64.25239094866102
+        ],
+        [
+          -0.6821996383842892,
+          0.2754489714905901,
+          -0.6772972150342278,
+          -35.59570946185454
+        ],
+        [
+          0.6271092139080676,
+          -0.25586881974292874,
+          -0.7357072657755706,
+          33.19304301129009
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 21,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      6
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9907038221865604,
+          -0.13562901957869494,
+          0.010521680144469372,
+          -6.50797745352268
+        ],
+        [
+          -0.10408118741305199,
+          0.7059110083386384,
+          -0.700611700396886,
+          -50.40697521945984
+        ],
+        [
+          0.087595908189993,
+          -0.695193798414837,
+          -0.7134651634900764,
+          46.403156781866244
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      5
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 5,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 5,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      6
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 6,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 6,
+      "matches": 6,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 9,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.985456698948502,
+          -0.16659715946470913,
+          -0.03347358594193885,
+          -5.802802736112838
+        ],
+        [
+          -0.14600162702525968,
+          -0.7293312473416886,
+          -0.6684006706736563,
+          1.7124312386054112
+        ],
+        [
+          0.08694032093050419,
+          0.6635671165069189,
+          -0.7430478197849678,
+          -1.4965615315838718
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 13,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      15
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 15,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 15,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 16,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9485417501793053,
+          -0.31592433007609677,
+          -0.021456137414505225,
+          53.74757351611075
+        ],
+        [
+          -0.21267214296585382,
+          0.6858043913969839,
+          -0.6960193218201087,
+          35.42211193439464
+        ],
+        [
+          0.23460415122732187,
+          -0.6556402629541465,
+          -0.7177024019886835,
+          -34.56600099030368
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 17,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.6707162025331622,
+          -0.741704983847644,
+          -0.003673226791253323,
+          42.92029532609147
+        ],
+        [
+          -0.5436606592327934,
+          0.49498353823027347,
+          -0.6778085160896136,
+          -5.5746720481957075
+        ],
+        [
+          0.5045521412718992,
+          -0.452620165057419,
+          -0.7352292995530959,
+          4.372856177327507
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 18,
+      "matches": 8,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 7,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      20
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 20,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 20,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 21,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 22,
+      "matches": 6,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9357889106127294,
+          -0.35248006526156883,
+          0.007544426249969059,
+          11.034040555526751
+        ],
+        [
+          -0.2542915640631964,
+          0.6599799595460081,
+          -0.7069386489957548,
+          -59.763565364713074
+        ],
+        [
+          0.24420261100269652,
+          -0.6634638321648363,
+          -0.7072346344662539,
+          56.20662582696523
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 23,
+      "matches": 10,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      27
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 27,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 27,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      28
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 28,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 28,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      7
+    ],
+    "candidate": [
+      "ground06",
+      30
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 30,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 30,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      8
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      8
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 16,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      8
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9998536131961181,
+          -0.0001814191384046291,
+          -0.01710904046881629,
+          -90.21626619614607
+        ],
+        [
+          -0.012063824460524477,
+          -0.7165683653031557,
+          -0.6974125335740309,
+          -73.96031972429009
+        ],
+        [
+          -0.012133273179691637,
+          0.6975168420431576,
+          -0.7164656577590357,
+          77.01637111619125
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      8
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 21,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      8
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 22,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      8
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      8
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      8
+    ],
+    "candidate": [
+      "ground06",
+      27
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 27,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 27,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      0
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 0,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 0,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      10
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 10,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 10,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      15
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 15,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 15,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.827161139550917,
+          -0.5619647975685041,
+          -0.00012454163300564328,
+          -6.143365159952089
+        ],
+        [
+          -0.39524398118905923,
+          -0.5816056709263852,
+          -0.7109972143968581,
+          -74.80381075767609
+        ],
+        [
+          0.3994829715402782,
+          0.5881584904088859,
+          -0.7031948134118238,
+          77.43649731076984
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 19,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.07642854705665496,
+          -0.9952717682850444,
+          0.059939840253120893,
+          5.529182236734058
+        ],
+        [
+          -0.7010778437971457,
+          0.01089668786523143,
+          -0.7130014860645891,
+          -25.022985023291536
+        ],
+        [
+          0.708977104095438,
+          -0.09651616159135573,
+          -0.6985958033227208,
+          26.17310043242766
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      9
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      0
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 0,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 0,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.820612182645921,
+          -0.5700995054217549,
+          -0.03977687281534706,
+          -62.02125731751484
+        ],
+        [
+          -0.43961377004363844,
+          -0.5852503067406561,
+          -0.6813382505393243,
+          12.1637177609352
+        ],
+        [
+          0.36515117264102637,
+          0.576600929914129,
+          -0.730887124487116,
+          -9.15029462583816
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 4,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9943210507886668,
+          0.08902459025538659,
+          -0.058311836606152634,
+          -0.8234824827137066
+        ],
+        [
+          0.023905316687307138,
+          -0.7207668490101568,
+          -0.6927652453768518,
+          -26.804161844212324
+        ],
+        [
+          -0.10370238084345831,
+          0.6874371038122911,
+          -0.7188018117044278,
+          26.861028594732833
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 13,
+      "matches": 6,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      15
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 15,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.8418467355884843,
+          0.5369941371706387,
+          -0.054142131684803654,
+          6.068989350626883
+        ],
+        [
+          0.3534744409093774,
+          -0.6243740587134875,
+          -0.6965722176698191,
+          -43.550945676990295
+        ],
+        [
+          -0.40786013951208383,
+          0.5672691878200402,
+          -0.7154409655220866,
+          43.2825517471485
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 15,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 21,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      10
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      11
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      11
+    ],
+    "candidate": [
+      "ground06",
+      10
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 10,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9999905843141422,
+          -0.00013472528187910158,
+          -0.004337410766673218,
+          -78.9854725790972
+        ],
+        [
+          -0.0030896284403628474,
+          -0.7239677568955397,
+          -0.6898268921778429,
+          31.57378202273954
+        ],
+        [
+          -0.0030472084209865295,
+          0.689833797972192,
+          -0.723961356493632,
+          -34.17076835889437
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 10,
+      "matches": 6,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      11
+    ],
+    "candidate": [
+      "ground06",
+      11
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 11,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 11,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      11
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      11
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 16,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      11
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 22,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      11
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      11
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      12
+    ],
+    "candidate": [
+      "ground06",
+      10
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 10,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 10,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      13
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      13
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 9,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      13
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.05266756207530255,
+          -0.9985484331388685,
+          -0.011276284004707003,
+          2.527628286122166
+        ],
+        [
+          -0.7318699503757599,
+          0.0462794023046056,
+          -0.6798710117804045,
+          8.13458437313316
+        ],
+        [
+          0.679405993233815,
+          -0.027554375301195325,
+          -0.7332450155028223,
+          -7.985508254713385
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      13
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      13
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.7036889449981307,
+          0.7099895647793042,
+          -0.027141971039551432,
+          -39.4954124937579
+        ],
+        [
+          0.5185170922562709,
+          0.4870486362198622,
+          -0.7027970197677804,
+          -23.49929323278555
+        ],
+        [
+          -0.4857590902139859,
+          -0.508624069289752,
+          -0.7108724656459934,
+          24.791220144450776
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      13
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      3
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 3,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 3,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      5
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 5,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 5,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      6
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 6,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 6,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      7
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 7,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 7,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.6657525105825574,
+          0.7440848303760549,
+          -0.05577956487155021,
+          32.67613087706992
+        ],
+        [
+          0.5005556677948918,
+          -0.5007962660049232,
+          -0.70614950498739,
+          -21.067223221324657
+        ],
+        [
+          -0.5533693324457291,
+          0.4422000284483978,
+          -0.7058622505480827,
+          19.627440320132973
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 9,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      11
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 11,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 11,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 22,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      14
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9969099376213317,
+          -0.0710495616467703,
+          -0.03350426930458728,
+          2.692981485707248
+        ],
+        [
+          -0.02520064934085322,
+          0.6932435668774168,
+          -0.7202626494938328,
+          -15.778705930556953
+        ],
+        [
+          0.07440096467541182,
+          -0.7171926636357056,
+          -0.6928918961010367,
+          15.517788094548255
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 25,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      15
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      15
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      15
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 9,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      15
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      15
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 22,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      15
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      15
+    ],
+    "candidate": [
+      "ground06",
+      26
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 26,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9843830746532451,
+          -0.17598597464188276,
+          -0.004347305552839955,
+          -3.676321638315396
+        ],
+        [
+          -0.13062292829825486,
+          -0.7136425560750307,
+          -0.6882237664898572,
+          -47.70231885916375
+        ],
+        [
+          0.11801530807065716,
+          0.678043685088242,
+          -0.725485456899685,
+          46.81622161177889
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 26,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      0
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 0,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 0,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      3
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 3,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 3,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.5062869556053344,
+          -0.8623392746305318,
+          -0.006670383315059246,
+          -45.863881217268535
+        ],
+        [
+          -0.6492974527200207,
+          -0.37609499288477494,
+          -0.6610335651222964,
+          -12.57759295953673
+        ],
+        [
+          0.5675265072885797,
+          0.33900373413384205,
+          -0.7503266833640777,
+          12.414672727745707
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 9,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 16,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9024117125176155,
+          0.43083507257763715,
+          -0.005851610722404332,
+          20.673898910635103
+        ],
+        [
+          0.31530683992697217,
+          -0.6695644120895511,
+          -0.672506575996429,
+          -5.503076219722904
+        ],
+        [
+          -0.2936574497714833,
+          0.6050327580389312,
+          -0.7400680130187447,
+          4.845360437667158
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 17,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      26
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 26,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 26,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      16
+    ],
+    "candidate": [
+      "ground06",
+      27
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 27,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 27,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      5
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 5,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9776842452274158,
+          -0.1989201301838915,
+          0.06755959178179036,
+          5.030293292896688
+        ],
+        [
+          -0.18341221372112398,
+          0.6514223171250836,
+          -0.7362125539606776,
+          -6.487264484512725
+        ],
+        [
+          0.10243767125435463,
+          -0.7321746694327868,
+          -0.6733697178734533,
+          7.307279826997768
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 5,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      6
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 6,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9899284304848456,
+          -0.12294958450598284,
+          0.07017907229094075,
+          1.5852250680077151
+        ],
+        [
+          -0.13432682001057444,
+          0.659232932529298,
+          -0.7398433929519604,
+          4.201805901396278
+        ],
+        [
+          0.04469908213439765,
+          -0.741818940401651,
+          -0.6691088489309598,
+          -4.459732363124117
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 6,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      7
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 7,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9882641364609495,
+          -0.1378969630272638,
+          0.06571471808470017,
+          1.5351400644099327
+        ],
+        [
+          -0.14066439336888192,
+          0.6537889332210686,
+          -0.7434874304491109,
+          12.514629268477929
+        ],
+        [
+          0.05956110327435703,
+          -0.7440056843771521,
+          -0.6655133481690858,
+          -13.462563813365346
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 5,
+      "keyframe_id": 7,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9996591827537641,
+          0.0005684515505363736,
+          0.026099716452705354,
+          -74.94513120888934
+        ],
+        [
+          0.01917726586881996,
+          -0.6943352928852755,
+          -0.7193960894581756,
+          -66.9043769436003
+        ],
+        [
+          0.01771301244490952,
+          0.719651428065528,
+          -0.6941095527893079,
+          68.2076363310664
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 1,
+      "keyframe_id": 8,
+      "matches": 6,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.20476309001025125,
+          -0.9769200195655457,
+          0.06082230134997959,
+          -52.10357968718888
+        ],
+        [
+          -0.6867301767436675,
+          0.09910467077195484,
+          -0.7201249395631244,
+          9.296307507397076
+        ],
+        [
+          0.6974766958967628,
+          -0.1892235175744188,
+          -0.6911734363223883,
+          -13.003789058766051
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 9,
+      "matches": 6,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      11
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 11,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 11,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.26815168328311983,
+          -0.9608865054746556,
+          0.06922281668015416,
+          -21.63160909909931
+        ],
+        [
+          -0.6740676282137582,
+          0.13580287507152264,
+          -0.7260787916724926,
+          12.487737075781673
+        ],
+        [
+          0.6882786553037281,
+          -0.24136011004101984,
+          -0.6841182572730232,
+          -14.74021177034754
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 14,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      20
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 20,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 20,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      17
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      11
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 11,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 11,
+      "matches": 6,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9278218964628356,
+          -0.37085243932123585,
+          0.04018702145713944,
+          -90.55854961732365
+        ],
+        [
+          -0.24380146038056763,
+          -0.6844168418406544,
+          -0.687120393032522,
+          -26.70029863803373
+        ],
+        [
+          0.2823249481721552,
+          0.6277276916421278,
+          -0.7254312984599135,
+          22.240379058848617
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 17,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      20
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 20,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 20,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      18
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.2907403307379152,
+          -0.9547222147350071,
+          0.06305198469430856,
+          4.322603911995687
+        ],
+        [
+          -0.7036449657052953,
+          0.16869537820753597,
+          -0.6902359246004303,
+          -25.430604363312423
+        ],
+        [
+          0.6483469922194457,
+          -0.24504563261339735,
+          -0.720832030099314,
+          24.541448708629115
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 23,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      0
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 0,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 0,
+      "matches": 6,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      1
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 1,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9842038754416009,
+          0.17692762870130227,
+          -0.006272620494479839,
+          30.915527405503514
+        ],
+        [
+          0.12385922994757742,
+          0.6628168542616562,
+          -0.7384664575073642,
+          22.58896994441221
+        ],
+        [
+          -0.12649752061810057,
+          -0.7275784713065778,
+          -0.6742610365197271,
+          -24.495169000711787
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 1,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      10
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 10,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 10,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 6,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 6,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 7,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      19
+    ],
+    "candidate": [
+      "ground06",
+      26
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 26,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 26,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      20
+    ],
+    "candidate": [
+      "ground06",
+      10
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 10,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9928406076927144,
+          -0.11157056509073414,
+          0.04265602796434466,
+          5.904907455179055
+        ],
+        [
+          -0.10632608495774007,
+          0.6627843157919674,
+          -0.7412231205229183,
+          13.486527105057151
+        ],
+        [
+          0.05442693610630814,
+          -0.7404518618691609,
+          -0.6699020442427178,
+          -13.966004632050371
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 10,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      20
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      10
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 10,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 10,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9999997167317034,
+          -1.966220919135905e-05,
+          -0.0007524293391584988,
+          -9.747930219666925
+        ],
+        [
+          -0.0005261505218701282,
+          -0.7331085066083733,
+          -0.6801114913777511,
+          21.13355846045907
+        ],
+        [
+          -0.0005382398547419034,
+          0.6801116946148168,
+          -0.7331083092872572,
+          -20.939808099189044
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.976610843810455,
+          -0.213158500309472,
+          0.028190663306270715,
+          -6.697399852396
+        ],
+        [
+          -0.16676073157850554,
+          0.6681366777700205,
+          -0.72510981114714,
+          57.12295596401824
+        ],
+        [
+          0.13572810377822395,
+          -0.7128512001562851,
+          -0.6880559921114787,
+          -56.03293871812362
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 16,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9998147700224832,
+          2.1239162464363266e-05,
+          0.019246433274427554,
+          61.736891391223864
+        ],
+        [
+          0.01345384982782967,
+          -0.7158627955456631,
+          -0.6981113463326306,
+          50.05194752622319
+        ],
+        [
+          0.013762978227811803,
+          0.6982409738066407,
+          -0.7157304820446414,
+          -47.148529035171705
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 22,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9999554860717492,
+          0.0003262044190240323,
+          0.009429711856097311,
+          61.736891391223864
+        ],
+        [
+          0.006595598011793396,
+          -0.7388306826718041,
+          -0.6738588282641867,
+          38.96802202191395
+        ],
+        [
+          0.006747144720460644,
+          0.673891026749424,
+          -0.7387999459290238,
+          -36.313558088513695
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      21
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      3
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 3,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 3,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      11
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 11,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 11,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.1018930136345233,
+          -0.9937397189178044,
+          0.045816861717477356,
+          13.387787559949144
+        ],
+        [
+          -0.7382469397133214,
+          -0.10640626074656415,
+          -0.6660849522980158,
+          12.38493087693457
+        ],
+        [
+          0.6667902742065087,
+          0.034045245176056435,
+          -0.7444673609396932,
+          -11.128746817011793
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 13,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9489974784202363,
+          -0.31082362367242905,
+          0.05284374058649742,
+          3.5268383551199265
+        ],
+        [
+          -0.2576267873237577,
+          0.6678635018963927,
+          -0.698274144794096,
+          28.189671636360604
+        ],
+        [
+          0.18174769436026464,
+          -0.6762743657731133,
+          -0.7138772708196421,
+          -26.343003644655692
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 14,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 16,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 8,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      22
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9993245564232571,
+          -0.006844427471344881,
+          0.03610518996002703,
+          -40.473665214611444
+        ],
+        [
+          0.018979596280646036,
+          -0.7451878023146942,
+          -0.6665845139263435,
+          22.306986685206166
+        ],
+        [
+          0.03146753651755765,
+          0.6668195356271329,
+          -0.7445545655299756,
+          -22.471494758416256
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 25,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      0
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 0,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 0,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      3
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 3,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 3,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      11
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 11,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 11,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9976301581540377,
+          -0.0449701479880469,
+          0.052074497899479495,
+          6.281835361530483
+        ],
+        [
+          -0.06847680486654738,
+          0.7227231596288597,
+          -0.6877369858683964,
+          6.2531875918227415
+        ],
+        [
+          -0.0067078116266431256,
+          -0.6896730532114557,
+          -0.7240898320907222,
+          -5.461208946570592
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 13,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.982413108997158,
+          -0.18332118842781092,
+          0.035465830653648486,
+          -4.509134723190669
+        ],
+        [
+          -0.15517063610548745,
+          0.6959049044311172,
+          -0.7011693359519767,
+          34.05087946695289
+        ],
+        [
+          0.10385835046425794,
+          -0.6943412027685903,
+          -0.7121121661485014,
+          -31.260179297690485
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 3,
+      "keyframe_id": 16,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.8488095415322352,
+          0.528493397718231,
+          0.01473400054554993,
+          -2.273045087973262
+        ],
+        [
+          0.38061810561338083,
+          0.6301757228758073,
+          -0.6767631904715528,
+          45.67967837802846
+        ],
+        [
+          -0.36694988742758566,
+          -0.5688350260542976,
+          -0.7360533222876511,
+          -41.78748568867816
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 3,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      23
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      0
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 0,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 0,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.9425464952980129,
+          -0.3339627909598686,
+          0.008657855145935752,
+          -37.248587783974585
+        ],
+        [
+          -0.2345047802503289,
+          -0.6798585697977985,
+          -0.6948379905504858,
+          28.00279850441827
+        ],
+        [
+          0.23793615160621942,
+          0.6528868043748375,
+          -0.719114183167065,
+          -30.12501403315741
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 4,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9875128566927212,
+          -0.15494389652089577,
+          0.02847361581365896,
+          -2.225129542851068
+        ],
+        [
+          -0.12451391705066107,
+          0.656921153509876,
+          -0.7436066719253902,
+          21.740995434041885
+        ],
+        [
+          0.09651239468214948,
+          -0.7378665102863635,
+          -0.6680107564033239,
+          -22.501589041548183
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 16,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      24
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.37327415569477235,
+          0.9277183735208686,
+          -0.0022414553641075877,
+          -7.016399258008829
+        ],
+        [
+          0.6456663295237846,
+          0.2580520506507294,
+          -0.718696131946066,
+          19.267307367490673
+        ],
+        [
+          -0.6661691944315937,
+          -0.26971792411100126,
+          -0.6953206783949502,
+          -20.108991129538683
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 25,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      0
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 0,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 0,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 9,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 13,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 16,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.7899404869971453,
+          0.6102865006711403,
+          0.05953498216417104,
+          12.717908920670999
+        ],
+        [
+          0.38185606291275315,
+          0.5655731825030575,
+          -0.7309671144792598,
+          39.402184484057244
+        ],
+        [
+          -0.4797707517340811,
+          -0.5546867244958532,
+          -0.679810755614073,
+          -40.48430775320729
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      25
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      26
+    ],
+    "candidate": [
+      "ground06",
+      2
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 2,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 2,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      26
+    ],
+    "candidate": [
+      "ground06",
+      3
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 3,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 3,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      26
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      26
+    ],
+    "candidate": [
+      "ground06",
+      13
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 13,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9261902087834228,
+          -0.3744724260112997,
+          0.044069255847258175,
+          1.7333840479622424
+        ],
+        [
+          -0.2940560489213741,
+          0.6442019065457357,
+          -0.7060700699616075,
+          -39.672928201652205
+        ],
+        [
+          0.2360142733956358,
+          -0.666914016766817,
+          -0.7067693803451587,
+          38.8105415302285
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 13,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      26
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      26
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      4
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 4,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 4,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      6
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 6,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 6,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      7
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 7,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 7,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      9
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 9,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 9,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      15
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 15,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9229000601942243,
+          -0.3815161211163336,
+          0.051970455278398074,
+          5.990481233730285
+        ],
+        [
+          -0.31168532680569605,
+          0.6609929223028415,
+          -0.6825984278619283,
+          -17.949547579957493
+        ],
+        [
+          0.2260702013701129,
+          -0.6461685584999447,
+          -0.7289433846730348,
+          16.529568684912487
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 15,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9983937410676165,
+          -0.04373333780023882,
+          0.03601850860127538,
+          3.1069745490975995
+        ],
+        [
+          -0.05644784389016088,
+          0.7133437106861016,
+          -0.6985373228001034,
+          -7.341380192426526
+        ],
+        [
+          0.004855792125078346,
+          -0.6994484581364336,
+          -0.7146665486038954,
+          6.791573514978625
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 3,
+      "keyframe_id": 16,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.7380603912916768,
+          0.6744313370688612,
+          0.02022944353868516,
+          9.740475271904165
+        ],
+        [
+          0.48966786930885836,
+          0.5560106701026618,
+          -0.6716230434540731,
+          2.3744236549836866
+        ],
+        [
+          -0.46421141366073665,
+          -0.48579265773732816,
+          -0.7406168085559519,
+          -1.690040368806724
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 5,
+      "keyframe_id": 17,
+      "matches": 7,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 21,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      24
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 24,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 24,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      25
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 25,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 25,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      27
+    ],
+    "candidate": [
+      "ground06",
+      26
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 26,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 26,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      28
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      28
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 14,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      28
+    ],
+    "candidate": [
+      "ground06",
+      15
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 15,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9257163158892332,
+          -0.3759031277312379,
+          0.04178685269720707,
+          11.0629495437248
+        ],
+        [
+          -0.29351963921038887,
+          0.6443340518093505,
+          -0.706172677945521,
+          -18.01437179477109
+        ],
+        [
+          0.23852782624731364,
+          -0.6659808317367834,
+          -0.7068054950726638,
+          17.777958702709647
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 15,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      28
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9997063263858069,
+          0.0009282715001737381,
+          0.024215682856712575,
+          9.49706707436073
+        ],
+        [
+          -0.016833702950295897,
+          0.6922220799489552,
+          -0.7214881970456092,
+          -9.187594198939145
+        ],
+        [
+          -0.017432367285487013,
+          -0.7216839546111334,
+          -0.6920031663422209,
+          9.200208140075583
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 16,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      28
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      28
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      28
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.8691714998229388,
+          -0.4934600854351684,
+          0.032218751959984616,
+          -17.213610736852953
+        ],
+        [
+          -0.34840276076698834,
+          -0.6573018250009118,
+          -0.6682588025162193,
+          -37.2208585383093
+        ],
+        [
+          0.3509364902450065,
+          0.5696064035215778,
+          -0.7432308691663242,
+          35.34786417717278
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 23,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      8
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 8,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 8,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      14
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 14,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.07652507776651307,
+          -0.9963722833890412,
+          0.03723151040365898,
+          -28.508485847098555
+        ],
+        [
+          -0.7309177910030143,
+          0.03066120545874077,
+          -0.681776410031244,
+          55.039940072482366
+        ],
+        [
+          0.6781615554335881,
+          -0.0793861661369632,
+          -0.7306125795234921,
+          -53.353136883224686
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 14,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.2791857475283431,
+          0.9598221861514149,
+          -0.028225685971452103,
+          15.314911704933298
+        ],
+        [
+          0.6903731847255651,
+          0.18020632023700464,
+          -0.7006500895300869,
+          -60.20052145514277
+        ],
+        [
+          -0.6674130536548719,
+          -0.2150977757164329,
+          -0.7129465356483066,
+          58.16319014979456
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 16,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          0.8573260002118681,
+          -0.5142616067883189,
+          0.022959293199429895,
+          -81.35286363521186
+        ],
+        [
+          -0.3582706403718223,
+          -0.628111401518738,
+          -0.6907374432660585,
+          32.68235718712889
+        ],
+        [
+          0.36964074127223195,
+          0.5839615287548179,
+          -0.722741070734223,
+          -32.46185519839086
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 17,
+      "matches": 6,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9995596110072903,
+          -0.015530489873083463,
+          0.0252861212378735,
+          21.422418940598753
+        ],
+        [
+          -0.028729665723500115,
+          0.7197954738312217,
+          -0.693591437490042,
+          16.367963888555597
+        ],
+        [
+          -0.007429020821772373,
+          -0.6940124492661419,
+          -0.7199246696101201,
+          -15.503812711231694
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 3,
+      "keyframe_id": 18,
+      "matches": 7,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 4,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      22
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 22,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 22,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      29
+    ],
+    "candidate": [
+      "ground06",
+      23
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 23,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 23,
+      "matches": 5,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      30
+    ],
+    "candidate": [
+      "ground06",
+      12
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 12,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 12,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      30
+    ],
+    "candidate": [
+      "ground06",
+      15
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 15,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 15,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      30
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9940116672691462,
+          0.10873972118544212,
+          0.01079251450425215,
+          21.999592489642964
+        ],
+        [
+          0.07241585187176718,
+          0.729474719517142,
+          -0.6801636405917867,
+          11.265072815157387
+        ],
+        [
+          -0.08183367112930015,
+          -0.6753090452688305,
+          -0.7329808617198693,
+          -10.57466613893156
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 3,
+      "keyframe_id": 18,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      30
+    ],
+    "candidate": [
+      "ground06",
+      19
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 19,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 19,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      30
+    ],
+    "candidate": [
+      "ground06",
+      21
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 21,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.008579191720401759,
+          0.9998872094723773,
+          -0.012327441055063035,
+          5.606283511431774
+        ],
+        [
+          0.7330714891406225,
+          -0.0020955644061384396,
+          -0.6801483664752636,
+          23.13830398385227
+        ],
+        [
+          -0.680097485128841,
+          -0.014872018805837668,
+          -0.7329708273717749,
+          -21.417774661647336
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 21,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      31
+    ],
+    "candidate": [
+      "ground06",
+      7
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 7,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 7,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      31
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9974594539144354,
+          -0.07123122476151686,
+          0.0008662653693708759,
+          9.433917875586408
+        ],
+        [
+          -0.04850857652926528,
+          0.6702655928261354,
+          -0.7405342349118865,
+          -8.56218407032405
+        ],
+        [
+          0.05216853265926041,
+          -0.7386948948601194,
+          -0.67201807751561,
+          8.721903027664872
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 4,
+      "keyframe_id": 16,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      31
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9997326515391786,
+          0.01734512327276908,
+          0.015289609056346706,
+          21.677136786492444
+        ],
+        [
+          0.0012041930979169932,
+          0.6994193717696628,
+          -0.7147104954541474,
+          14.076037429114798
+        ],
+        [
+          -0.023090590408787814,
+          -0.7145010070615594,
+          -0.699253269954879,
+          -14.405081091798353
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 4,
+      "keyframe_id": 18,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      31
+    ],
+    "candidate": [
+      "ground06",
+      20
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 20,
+    "mapclosures_hypothesis": {
+      "inliers": 0,
+      "keyframe_id": 20,
+      "matches": 3,
+      "valid_pose": false
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      32
+    ],
+    "candidate": [
+      "ground06",
+      16
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 16,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9974601378201849,
+          -0.07121542847559321,
+          0.0012791429846875438,
+          9.43392194646566
+        ],
+        [
+          -0.04875510589866728,
+          0.6695632507794835,
+          -0.7411531507417479,
+          -8.551352789884195
+        ],
+        [
+          0.051925072061070346,
+          -0.7393330886364061,
+          -0.6713347681587813,
+          8.732518372860305
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 4,
+      "keyframe_id": 16,
+      "matches": 5,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      32
+    ],
+    "candidate": [
+      "ground06",
+      17
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 17,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.7575295489997267,
+          0.652616608851571,
+          -0.015509488816413291,
+          15.38513490226836
+        ],
+        [
+          0.4641400235425518,
+          0.521743103422287,
+          -0.7157919897408747,
+          0.7048992883275726
+        ],
+        [
+          -0.45904577216023934,
+          -0.5494321576704047,
+          -0.6981413060258312,
+          -0.7391994854148203
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 2,
+      "keyframe_id": 17,
+      "matches": 3,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  },
+  {
+    "query": [
+      "aerial06",
+      32
+    ],
+    "candidate": [
+      "ground06",
+      18
+    ],
+    "branch_scores": {},
+    "eligible": false,
+    "keyframe_id": 18,
+    "mapclosures_hypothesis": {
+      "T_i_j": [
+        [
+          -0.9938590386917403,
+          0.10955334575955081,
+          0.015565206186171058,
+          22.069360416345592
+        ],
+        [
+          0.06534664817400705,
+          0.6946069076591913,
+          -0.7164154237623295,
+          10.729943521985703
+        ],
+        [
+          -0.08929740636296359,
+          -0.7109988103119609,
+          -0.6975002974564413,
+          -10.997891382882425
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "inliers": 4,
+      "keyframe_id": 18,
+      "matches": 4,
+      "valid_pose": true
+    },
+    "rejection_reason": "retrieval_threshold",
+    "score": 0.0,
+    "sources": [],
+    "visual_similarity": null
+  }
+]

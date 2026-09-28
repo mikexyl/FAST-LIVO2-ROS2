@@ -5,7 +5,8 @@ import pytest
 
 
 @pytest.mark.parametrize('strategy',['temporal','spatial','coverage','area'])
-def test_submap_three_worker_retrieval_is_causal(tmp_path,monkeypatch,strategy):
+@pytest.mark.parametrize('multilayer',[False,True])
+def test_submap_three_worker_retrieval_is_causal(tmp_path,monkeypatch,strategy,multilayer):
     import test_mapclosures as fixture
     original_rows=fixture.write_jsonl;original_json=fixture.write_json
     def rows(path,values):
@@ -27,7 +28,7 @@ def test_submap_three_worker_retrieval_is_causal(tmp_path,monkeypatch,strategy):
             cfg['backend']['evidence']['max_range_m']=None
             cfg['backend']['registration']['max_range_m']=None
         monkeypatch.setattr(fixture,'CFG',cfg)
-    fixture.test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,True)
+    fixture.test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,True,multilayer)
     events=fixture.read_jsonl(tmp_path/'first/events.jsonl')
     assert all(e['query_stamp_ns']>=6*10**9 for e in events if 'query_stamp_ns' in e)
 

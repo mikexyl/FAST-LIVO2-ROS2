@@ -16,6 +16,7 @@ p.add_argument('--robot',default='Bob')
 p.add_argument('--bag',type=Path,default=Path('/data/s3e/S3Ev2/S3E_Library_2'))
 p.add_argument('--output-root',type=Path,default=root/'.ros2/recent-submaps')
 p.add_argument('--mapping-config',type=Path)
+p.add_argument('--start-barrier',type=Path)
 p.add_argument('--persistent-odometry',action='store_true',help='Disable odometry submapping and area query cropping; area snapshots only feed the backend')
 p.add_argument('--area-maps',action='store_true',help='Use accumulated horizontal area snapshots for MapClosures; temporal odometry by default')
 p.add_argument('--area-odometry',action='store_true',help='Match odometry inside the accumulated horizontal area; implies --area-maps and disables recent-map handovers')
@@ -72,7 +73,7 @@ for path in (config,root/'ellipselio/CMakeLists.txt',root/'FAST-LIVO2-ROS2/scrip
              root/'FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py',
              root/'FAST-LIVO2-ROS2/research/s3e_pipeline/submap_writer.py',
              args.mapping_library,args.mapper_executable):
-    provenance[str(path.relative_to(root))]=hashlib.sha256(path.read_bytes()).hexdigest()
+    provenance[str(path.relative_to(root)) if path.is_relative_to(root) else str(path)]=hashlib.sha256(path.read_bytes()).hexdigest()
 (out/'source-hashes.json').write_text(json.dumps(provenance,indent=2)+'\n')
 recorder=None
 try:
@@ -91,6 +92,7 @@ try:
             '--output',str(out/'frontend'),'--rate','1','--no-research-export',
             '--mapper-executable',str(args.mapper_executable)]
         if args.duration:command+=['--duration',str(args.duration)]
+        if args.start_barrier:command+=['--start-barrier',str(args.start_barrier)]
         with (out/'trial.log').open('w') as trial_log, (out/'memory.jsonl').open('w') as memory:
             trial=subprocess.Popen(command,stdout=trial_log,stderr=subprocess.STDOUT)
             while trial.poll() is None:

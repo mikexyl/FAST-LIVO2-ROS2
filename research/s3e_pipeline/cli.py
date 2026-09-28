@@ -50,11 +50,14 @@ def code_hash(stage):
     names=['cli.py','artifacts.py','frontends.py']
     names+=dict(odometry=['mcap_writer.py'],keyframes=['data.py','geometry.py'],
         descriptors=['backends.py','mapclosures.py','data.py','model_worker.py'],
-        loops=['backends.py','mapclosures.py','registration.py','geometry.py','data.py','distributed.py','verification.py','isolation.py'],
+        loops=['backends.py','mapclosures.py','registration.py','ellipsoid_registration.py','geometry.py','data.py','distributed.py','verification.py','isolation.py'],
         pgo=['pgo.py','mixed_pgo.py','registration.py','geometry.py'],evaluate=['evaluation.py','evo_evaluation.py','visualize.py','data.py','geometry.py'],
-        dpgo=['dpgo.py','ros_dpgo_worker.py','registration_exchange.py','mixed_pgo.py','cbs_bridge.py','distributed.py','verification.py','isolation.py','backends.py','mapclosures.py','registration.py','geometry.py','data.py'],
+        dpgo=['dpgo.py','ros_dpgo_worker.py','registration_exchange.py','mixed_pgo.py','cbs_bridge.py','distributed.py','verification.py','isolation.py','backends.py','mapclosures.py','registration.py','ellipsoid_registration.py','geometry.py','data.py'],
         dpgo_evaluate=['dpgo_evaluation.py','dpgo_visualize.py','evaluation.py','evo_evaluation.py','visualize.py','cbs_bridge.py','geometry.py','data.py'],
         inspect=['mapclosures_inspection.py','mapclosures_rerun.py','backends.py','registration.py','geometry.py'])[stage]
+    if stage in ('descriptors','loops','dpgo','inspect'):
+        names+=['ellipsoid_backend.py','ellipsoid_raster.py','vertical_initialization.py',
+                'multilayer_mapclosures.py','multilayer_bev.py','joint_bev_ransac.py','joint_bev_verification.py']
     hashes={name:file_hash(Path(__file__).with_name(name)) for name in names}
     if stage=='odometry':
         for p in [*sorted((REPO/'src').glob('*.cpp')),*sorted((REPO/'include').rglob('*.h')),
@@ -70,7 +73,8 @@ def code_hash(stage):
 
 def verification_code_hash():
     return digest({p:file_hash(Path(__file__).with_name(p)) for p in
-        ['backends.py','mapclosures.py','registration.py','geometry.py','artifacts.py']})
+        ['backends.py','mapclosures.py','registration.py','ellipsoid_registration.py','geometry.py','artifacts.py',
+         'ellipsoid_backend.py','vertical_initialization.py','multilayer_mapclosures.py','joint_bev_ransac.py','joint_bev_verification.py']})
 
 
 def selected_inputs(artifacts,robots,METHOD,FRONTEND='livo'):
@@ -280,6 +284,8 @@ def run(args):
             from .pgo import optimize
             from .mixed_pgo import settings as registration_settings, native_provenance, refine_graph
             registration=registration_settings(cfg['pgo'].get('registration_factors',{}))
+            if backend['registration'].get('method','point_gicp')=='ellipsoid' and registration['enabled']:
+                raise ValueError('Ellipsoid loop registration cannot add point GICP PGO factors')
             provenance=native_provenance(SOURCE) if registration['enabled'] else None
             loop,lh=get(LOOPS);rows=[];hashes={};stores={}
             for robot in robots:
@@ -309,7 +315,7 @@ def run(args):
                         raise ValueError('DDS descriptor/keyframe mismatch')
                     if dm['config']['preprocessing']!=cfg['backend']['mapclosures'] or dm['config']['native_binary_sha256']!=file_hash(native.__file__):
                         raise ValueError('DDS descriptor preprocessing or native binary mismatch')
-            provenance=native_provenance(SOURCE)
+            provenance=native_provenance(SOURCE, cfg['dpgo'])
             settings=dict(dpgo=cfg['dpgo'],backend=cfg['backend'],loops=cfg['loops'],pgo=cfg['pgo'],native=provenance)
             execute(stage,'dpgo',settings,inputs,lambda out:run_dpgo(cfg,artifacts,SOURCE,out))
         elif stage=='dpgo_evaluate':

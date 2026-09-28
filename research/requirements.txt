@@ -6,3 +6,4 @@ mcap==1.4.0
 rosbags==0.11.5
 evo==1.36.5
 PyYAML>=5.4
+psutil>=5.9.0

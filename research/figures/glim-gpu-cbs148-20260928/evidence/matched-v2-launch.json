@@ -1,0 +1,17 @@
+{
+  "pid": 1246668,
+  "command": [
+    "docker",
+    "exec",
+    "-u",
+    "0",
+    "ellipsoid-gpu148-unlimited-20260926",
+    "bash",
+    "/workspace/.ros2/gpu-cbs148-20260928/run-env.sh",
+    "/workspace/.ros2/research-venv/bin/python",
+    "scripts/communication_benchmark/gpu_frozen.py",
+    "--output",
+    "/workspace/.ros2/gpu-cbs148-20260928/matched-v2"
+  ],
+  "started": 1790600596.9281154
+}

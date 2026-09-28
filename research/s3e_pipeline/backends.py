@@ -57,6 +57,7 @@ def pack_payload(payload):
     result=dict(row=payload['row'],cloud=pack_array(payload['cloud']),
         image=base64.b64encode(payload['image']).decode(),descriptor=payload['descriptor'])
     if 'evidence_preprocessing' in payload:result['evidence_preprocessing']=payload['evidence_preprocessing']
+    if 'ellipsoids' in payload:result['ellipsoids']=pack_array(payload['ellipsoids'])
     return result
 
 
@@ -64,6 +65,7 @@ def unpack_payload(value):
     result=dict(row=value['row'],cloud=unpack_array(value['cloud']),
         image=base64.b64decode(value['image'],validate=True),descriptor=value['descriptor'])
     if 'evidence_preprocessing' in value:result['evidence_preprocessing']=value['evidence_preprocessing']
+    if 'ellipsoids' in value:result['ellipsoids']=unpack_array(value['ellipsoids'])
     return result
 
 

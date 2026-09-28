@@ -15,7 +15,7 @@ DEFAULTS = dict(voxel_m=.8, xy_neighbors=8, xy_radius_m=1., histogram_bin_m=.5,
                 peak_separation_m=2., modal_peaks=5, coarse_inlier_m=1.5)
 
 
-def initialize_vertical(target, source, initial, target_ground, source_ground, options=None):
+def initialize_vertical(target, source, initial, target_ground, source_ground, options=None, *, primitive_centers=False):
     """Return T_target_source and diagnostics without modifying input geometry.
 
     The returned transform preserves rotation and leveled XY translation. A
@@ -40,7 +40,7 @@ def initialize_vertical(target, source, initial, target_ground, source_ground, o
     if not np.allclose(level[2, :3], [0, 0, 1], atol=1e-5):
         raise ValueError('Vertical initialization requires a gravity-planar pose')
     diagnostic = dict(method='XY-neighbor height voting and symmetric coarse 3D overlap',
-                      settings=cfg, ground_truth_used=False, input_level_dz_m=float(level[2, 3]))
+                      settings=cfg, ground_truth_used=False, geometry='native ellipsoid centers' if primitive_centers else 'point cloud', input_level_dz_m=float(level[2, 3]))
 
     def finish(correction, status, **values):
         adjusted = initial.copy()
@@ -55,6 +55,10 @@ def initialize_vertical(target, source, initial, target_ground, source_ground, o
         if points.ndim != 2 or points.shape[1] != 3:
             raise ValueError('Vertical initialization requires Nx3 geometry')
         points = points[np.isfinite(points).all(axis=1)]
+        if primitive_centers:
+            centers=transform(ground,points)
+            _,indices=np.unique(np.floor(centers/cfg['voxel_m']).astype(np.int64),axis=0,return_index=True)
+            return centers[np.sort(indices)]
         return bounded_cloud(transform(ground, points), cfg['voxel_m'],
                              max_points=None, max_range=None)[0]
 

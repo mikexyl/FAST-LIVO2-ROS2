@@ -7,6 +7,7 @@ find_package(OpenMP REQUIRED)
 find_package(Boost REQUIRED COMPONENTS filesystem)
 find_package(nlohmann_json REQUIRED)
 find_package(TBB REQUIRED)
+find_package(OpenSSL REQUIRED)
 if(NOT EXISTS "${GTSAM_POINTS_SOURCE_DIR}/src/gtsam_points/factors/integrated_gicp_factor.cpp")
   message(FATAL_ERROR "Set GTSAM_POINTS_SOURCE_DIR to the pinned upstream checkout")
 endif()
@@ -14,14 +15,26 @@ endif()
 # upstream extended ISAM2/LM optimizers depend on a different GTSAM development
 # API; this adapter uses installed GTSAM's ordinary batch LM instead.
 set(GTSAM_POINTS_GIT_HASH "9d32e7dbecf6015560d84b4901d6b0a6f483ec46")
-execute_process(COMMAND git -C "${GTSAM_POINTS_SOURCE_DIR}" rev-parse HEAD
+file(REAL_PATH "${GTSAM_POINTS_SOURCE_DIR}" points_real_directory)
+execute_process(COMMAND git -c "safe.directory=${points_real_directory}" -C "${GTSAM_POINTS_SOURCE_DIR}" rev-parse HEAD
   OUTPUT_VARIABLE points_revision OUTPUT_STRIP_TRAILING_WHITESPACE COMMAND_ERROR_IS_FATAL ANY)
-execute_process(COMMAND git -C "${GTSAM_POINTS_SOURCE_DIR}" status --porcelain
+execute_process(COMMAND git -c "safe.directory=${points_real_directory}" -C "${GTSAM_POINTS_SOURCE_DIR}" status --porcelain
   OUTPUT_VARIABLE points_changes OUTPUT_STRIP_TRAILING_WHITESPACE COMMAND_ERROR_IS_FATAL ANY)
 if(NOT points_revision STREQUAL GTSAM_POINTS_GIT_HASH OR NOT points_changes STREQUAL "")
   message(FATAL_ERROR "Expected a clean pinned upstream gtsam_points v1.2.2 checkout")
 endif()
 set(GTSAM_POINTS_USE_OPENMP 1)
+option(S3E_REGISTRATION_CUDA "Build GLIM's native CUDA VGICP factor path" OFF)
+if(S3E_REGISTRATION_CUDA)
+  enable_language(CUDA)
+  find_package(CUDAToolkit REQUIRED)
+  set(CMAKE_CUDA_STANDARD 17)
+  set(GTSAM_POINTS_USE_CUDA 1)
+  set(GTSAM_POINTS_CUDA_VERSION ${CUDAToolkit_VERSION})
+  set(GTSAM_POINTS_CUDA_VERSION_MAJOR ${CUDAToolkit_VERSION_MAJOR})
+  set(GTSAM_POINTS_CUDA_VERSION_MINOR ${CUDAToolkit_VERSION_MINOR})
+  set(GTSAM_POINTS_CUDA_VERSION_PATCH ${CUDAToolkit_VERSION_PATCH})
+endif()
 configure_file("${GTSAM_POINTS_SOURCE_DIR}/include/gtsam_points/config.hpp.in"
                "${CMAKE_CURRENT_BINARY_DIR}/include/gtsam_points/config.hpp")
 set(points_sources
@@ -34,8 +47,23 @@ add_library(s3e_gtsam_points STATIC ${points_sources})
 target_include_directories(s3e_gtsam_points PUBLIC compat
   "${GTSAM_POINTS_SOURCE_DIR}/include" "${GTSAM_POINTS_SOURCE_DIR}/thirdparty/nanoflann/include"
   "${CMAKE_CURRENT_BINARY_DIR}/include")
-target_link_libraries(s3e_gtsam_points PUBLIC gtsam Eigen3::Eigen OpenMP::OpenMP_CXX Boost::filesystem)
+target_link_libraries(s3e_gtsam_points PUBLIC gtsam Eigen3::Eigen OpenMP::OpenMP_CXX Boost::filesystem OpenSSL::Crypto)
 target_include_directories(s3e_gtsam_points PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}")
+if(S3E_REGISTRATION_CUDA)
+  set(gpu_sources
+    cuda/check_error.cu cuda/cuda_memory.cu cuda/cuda_stream.cu cuda/cuda_buffer.cu
+    cuda/cuda_device_sync.cu cuda/cuda_device_prop.cu cuda/cuda_graph.cu cuda/cuda_graph_exec.cu
+    cuda/nonlinear_factor_set_gpu.cpp cuda/stream_roundrobin.cu cuda/stream_temp_buffer_roundrobin.cu
+    types/point_cloud.cu types/point_cloud_gpu.cu types/gaussian_voxelmap_gpu.cu types/gaussian_voxelmap_gpu_funcs.cu
+    factors/integrated_vgicp_derivatives.cu factors/integrated_vgicp_derivatives_inliers.cu
+    factors/integrated_vgicp_derivatives_compute.cu factors/integrated_vgicp_derivatives_linearize.cu
+    factors/integrated_vgicp_factor_gpu.cpp types/offloadable.cpp)
+  list(TRANSFORM gpu_sources PREPEND "${GTSAM_POINTS_SOURCE_DIR}/src/gtsam_points/")
+  target_sources(s3e_gtsam_points PRIVATE ${gpu_sources} vgicp_gpu_factor.cpp)
+  target_link_libraries(s3e_gtsam_points PUBLIC CUDA::cudart)
+  target_compile_options(s3e_gtsam_points PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:--expt-relaxed-constexpr>)
+  target_compile_definitions(s3e_gtsam_points PUBLIC S3E_REGISTRATION_CUDA)
+endif()
 option(S3E_BUILD_CENTRALIZED_PGO "Build the batch adapter executable" ON)
 if(S3E_BUILD_CENTRALIZED_PGO)
 add_executable(s3e_mixed_pgo mixed_pgo.cpp)

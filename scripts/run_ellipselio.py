@@ -24,6 +24,7 @@ def main():
     p.add_argument('--mapping-config',required=True,type=Path);p.add_argument('--rate',type=float,default=1.)
     p.add_argument('--mapper-executable',type=Path,help='Optional isolated launcher; the default native executable is unchanged')
     p.add_argument('--no-research-export',action='store_true',help='Run native ROS publishers only, without synchronized research export or its completion service')
+    p.add_argument('--start-barrier',type=Path,help='Wait for this file after sensor subscribers are ready')
     p.add_argument('--start-offset',type=float,default=0.);p.add_argument('--duration',type=float,default=0.)
     args=p.parse_args()
     if not re.fullmatch(r'[A-Za-z][A-Za-z0-9_]*',args.robot):p.error('Invalid robot identifier')
@@ -102,6 +103,14 @@ def main():
                 ns=start_ns-60*10**9+round((time.monotonic()-begin)*1e9)
                 msg=Clock();msg.clock.sec,msg.clock.nanosec=divmod(ns,10**9);clock_pub.publish(msg)
                 rclpy.spin_once(node,timeout_sec=.05)
+            if args.start_barrier:
+                (out/'READY').write_text(str(time.time_ns())+'\n')
+                deadline=time.monotonic()+180
+                while not args.start_barrier.exists():
+                    if mapper.poll() is not None or time.monotonic()>deadline:
+                        raise RuntimeError('Online start barrier failed')
+                    rclpy.spin_once(node,timeout_sec=.05)
+            stats['playback_started_wall_ns']=time.time_ns()
             player=subprocess.Popen(['ros2','bag','play',str(args.bag),'--clock','100','--rate',str(args.rate),
                 '--start-offset',str(args.start_offset),'--read-ahead-queue-size','1000','--disable-keyboard-controls',
                 '--topics',params['lidar']['topic'],params['imu']['topic']],

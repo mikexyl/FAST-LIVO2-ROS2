@@ -105,11 +105,27 @@ def keyframes(export, output, cfg, camera_config):
 
 class LocalStore:
     """One worker's capability: validated local integer IDs, never remote filesystem paths."""
-    def __init__(self, root, robot):
+    def __init__(self, root, robot, streaming=False):
         self.root=Path(root).resolve(); self.robot=robot
-        self.rows=read_jsonl(self.root/'keyframes.jsonl')
+        self.tail=None
+        if streaming:
+            from .online_io import JsonlTail
+            self.tail=JsonlTail(self.root/'keyframes.jsonl'); self.rows=[]
+            self.refresh()
+        else: self.rows=read_jsonl(self.root/'keyframes.jsonl')
         if any(r['robot_id']!=robot or r['keyframe_id']!=i for i,r in enumerate(self.rows)):
             raise ValueError('Robot store identity mismatch')
+
+    def refresh(self):
+        if self.tail is None: raise ValueError('Cannot refresh a frozen store')
+        additions=self.tail.read()
+        for row in additions:
+            if row['robot_id']!=self.robot or row['keyframe_id']!=len(self.rows):
+                raise ValueError('Robot store identity mismatch')
+            if self.rows and row['available_ns']<=self.rows[-1]['available_ns']:
+                raise ValueError('Nonchronological live availability')
+            self.rows.append(row)
+        return additions
 
     def row(self,key):
         if type(key) is not int or not 0 <= key < len(self.rows):
@@ -121,3 +137,10 @@ class LocalStore:
         with np.load(self.root/f'{key:06d}.npz',allow_pickle=False) as f:
             cloud=f['cloud']
         return row,cloud,b'' if row.get('image_available') is False else (self.root/f'{key:06d}.png').read_bytes()
+
+    def ellipsoids(self,key):
+        self.row(key)
+        with np.load(self.root/f'{key:06d}.npz',allow_pickle=False) as f:
+            if 'ellipsoids' not in f:
+                raise ValueError('Ellipsoid registration requires prepared native ellipsoids')
+            return f['ellipsoids']

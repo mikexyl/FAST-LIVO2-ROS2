@@ -22,6 +22,8 @@ class RegistrationExchange:
         self.requested = set(); self.needed = set(); self.ready = set()
         self.announced = False; self.published = False; self.pending = []
         self.source_records = {}
+        self.ellipsoid = self.cfg['factor']=='ellipsoid'
+        self.expected = {}
 
     def send(self, peer, kind, **body):
         self.send_message(dict(src=self.robot, dst=peer, kind='registration_'+kind,
@@ -47,20 +49,37 @@ class RegistrationExchange:
                 row.get('geometry_preprocessing') not in ('causal trailing submap in keyframe IMU frame',
                     'causal completed native submap in anchor IMU frame','causal accumulated area map in snapshot IMU frame')):
                 raise ValueError('Invalid registration submap coordinates or time')
-            if row.get('strategy')=='area' and self.cfg['max_range_m'] is not None:
+            if not self.ellipsoid and row.get('strategy')=='area' and self.cfg['max_range_m'] is not None:
                 raise ValueError('Area registration geometry must not have a 3D range crop')
             path = self.store/f'{key:06d}.npz'
             with np.load(path, allow_pickle=False) as data:
-                cloud, voxel = bounded_cloud(data['cloud'], self.cfg['voxel_m'], self.cfg['max_points'], self.cfg['max_range_m'])
+                if self.ellipsoid:
+                    from .ellipsoid_backend import prepared_evidence
+                    cloud=prepared_evidence(data,row,self.cfg);voxel=self.cfg['ellipsoid_voxel_m']
+                else:cloud, voxel = bounded_cloud(data['cloud'], self.cfg['voxel_m'], self.cfg['max_points'], self.cfg['max_range_m'])
             cloud = np.asarray(cloud, dtype='<f8')
-            if len(cloud) < self.cfg['covariance_neighbors']: raise ValueError('Insufficient submap points')
+            if len(cloud) < (3 if self.ellipsoid else self.cfg['covariance_neighbors']): raise ValueError('Insufficient submap points')
             payload = dict(robot=self.robot, key=key, stamp_ns=row['stamp_ns'], cloud_frame=row['cloud_frame'],
                 points=len(cloud), cloud=pack_array(cloud), effective_voxel_m=voxel,
                 payload_sha256=hashlib.sha256(cloud.tobytes()).hexdigest())
+            if self.ellipsoid:
+                payload.update(schema_version=2,geometry_type='native_ellipsoids_v1',
+                               evidence_sha256=row['ellipsoid_evidence_sha256'])
+                self.validate_endpoint(payload)
             self.local[key] = payload
             self.source_records[key] = dict(source_npz=str(path), source_sha256=file_hash(path),
                                            **{k:v for k,v in payload.items() if k != 'cloud'})
         return self.local[key]
+
+    def validate_endpoint(self,payload):
+        endpoint=(payload['robot'],payload['key'])
+        expected=self.expected.get(endpoint)
+        if (payload.get('schema_version')!=2 or payload.get('geometry_type')!='native_ellipsoids_v1' or
+            payload['cloud_frame']!=payload['robot']+'/imu' or
+            payload.get('evidence_sha256')!=payload['payload_sha256']):
+            raise ValueError('Invalid ellipsoid payload type/frame/hash')
+        if expected is not None and any(payload[k]!=expected[k] for k in ('stamp_ns','cloud_frame','payload_sha256')):
+            raise ValueError('Ellipsoid evidence differs from verified loop endpoint')
 
     def advance(self, pcm, edges):
         if self.published: return
@@ -70,6 +89,15 @@ class RegistrationExchange:
             decisions = named_pcm_verdicts(pcm, self.robots)
             self.selected = {native_pair(k, self.robots):e for k,e in edges.items()
                              if k[0][0] == k[1][0] or decisions[k]['retained']}
+            if self.ellipsoid:
+                for edge in self.selected.values():
+                    evidence=edge.get('diagnostics',{}).get('ellipsoid_endpoints',[])
+                    if len(evidence)!=2:raise ValueError('Verified loop lacks primitive endpoint provenance')
+                    for meta in evidence:
+                        endpoint=(meta['robot'],meta['key'])
+                        if endpoint in self.expected and self.expected[endpoint]!=meta:
+                            raise ValueError('Changed verified endpoint evidence')
+                        self.expected[endpoint]=meta
             self.owned = [k for k in sorted(self.selected) if k[0][0] == self.robot]
             self.needed = {e for pair in self.owned for e in pair}
             for robot, key in sorted(self.needed):
@@ -91,12 +119,16 @@ class RegistrationExchange:
                 if endpoint not in self.requested or payload['robot'] != peer:
                     raise ValueError('Unrequested or misidentified registration cloud')
                 cloud = unpack_array(payload['cloud'])
-                if (cloud.dtype != np.dtype('<f8') or cloud.shape != (payload['points'], 3) or
-                    not self.cfg['covariance_neighbors'] <= len(cloud) <= self.cfg['max_points'] or
+                if (cloud.dtype != np.dtype('<f8') or cloud.shape != (payload['points'], 15 if self.ellipsoid else 3) or
+                    not (3 if self.ellipsoid else self.cfg['covariance_neighbors']) <= len(cloud) <= self.cfg['ellipsoid_max_count' if self.ellipsoid else 'max_points'] or
                     not np.isfinite(cloud).all() or type(payload['stamp_ns']) is not int or
                     not payload['cloud_frame'].startswith(peer+'/') or
                     hashlib.sha256(cloud.tobytes()).hexdigest() != payload['payload_sha256']):
                     raise ValueError('Invalid serialized registration cloud')
+                if self.ellipsoid:
+                    from .ellipsoid_registration import validate,projectors
+                    projectors(validate(cloud));self.validate_endpoint(payload)
+                    if endpoint not in self.expected:raise ValueError('Missing verified endpoint metadata')
                 if endpoint in self.clouds and self.clouds[endpoint] != payload:
                     raise ValueError('Changed duplicate registration cloud')
                 self.clouds[endpoint] = payload
@@ -118,7 +150,7 @@ class RegistrationExchange:
             unpack_array(payload['cloud']).tofile(self.output/filename)
             native_clouds.append(dict(endpoint=[self.robots.index(endpoint[0]), endpoint[1]], file=filename,
                                       **{k:v for k,v in payload.items() if k != 'cloud'}))
-        spec = dict(schema_version=1, session_id=self.session, robot_id=self.robots.index(self.robot),
+        spec = dict(schema_version=2 if self.ellipsoid else 1, session_id=self.session, robot_id=self.robots.index(self.robot),
             settings=self.cfg, pairs=[dict(i=[self.robots.index(i[0]), i[1]], j=[self.robots.index(j[0]), j[1]]) for i,j in self.owned],
             clouds=native_clouds)
         write_json(self.output/'transport.json', dict(sources=list(self.source_records.values()),

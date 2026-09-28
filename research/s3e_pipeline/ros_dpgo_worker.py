@@ -19,6 +19,7 @@ from std_msgs.msg import Bool, String, UInt8MultiArray
 from cbs_ros.msg import Estimate, NodeStats, PcmInputSeal, PcmStatus
 from pose_graph_tools_msgs.msg import PoseGraph
 from .artifacts import canonical, read_json, read_jsonl, write_json, write_jsonl
+from .online_io import atomic_json
 from .cbs_bridge import local_graph, loop_for_robot, ros_graph, matrix_pose, named_pcm_verdicts
 
 
@@ -214,9 +215,14 @@ class Robot(Node):
         now = time.monotonic()
         if now-self.last_progress > 5:
             self.last_progress = now
-            write_json(self.output/'progress.json', dict(robot=self.robot, observed=self.next_index,
+            atomic_json(self.output/'progress.json', dict(robot=self.robot, observed=self.next_index,
                 total=len(self.rows), loops=len(self.edges), input_complete=self.input_complete,
-                iteration=None if not self.last_estimate else self.last_estimate.iteration, wall_s=now-self.start))
+                iteration=None if not self.last_estimate else self.last_estimate.iteration, wall_s=now-self.start,
+                active_query=self.query, waiting_replies=sorted(self.remaining_replies),
+                waiting_payloads=sorted(self.payloads), mailbox_size=len(self.mailbox),
+                pending_verifications=0 if self.worker is None else len(self.worker.pending),
+                peer_watermarks=self.statuses,
+                query_elapsed_s=None if self.query is None else now-self.query_wall_start[self.query]))
 
     def statistics(self, msg):
         self.stats.append({name: getattr(msg, name) for name in msg.get_fields_and_field_types() if name != 'header'})

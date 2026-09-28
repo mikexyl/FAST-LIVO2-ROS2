@@ -26,6 +26,7 @@ BASE=ROOT/'.ros2/upstream-area-s3e-20260921'
 LIBRARY=BASE/'install/ellipselio/lib/libellipselio_mapping.so'
 LAUNCHER=BASE/'launcher/ellipselio_mapping_mt'
 STOP=threading.Event()
+DEFAULT_CONFIG=Path(__file__).resolve().parents[2]/'research/configs/default_pipeline.yaml'
 sys.path.insert(0,str(ROOT/'FAST-LIVO2-ROS2/research'))
 
 
@@ -50,16 +51,18 @@ def sources():
            ROOT/'.ros2/dpgo-install/cbs/lib/libcbs.so',ROOT/'.ros2/dpgo-install/cbs_ros/lib/cbs_ros/cbs_ros_node',
            ROOT/'FAST-LIVO2-ROS2/scripts/run_ellipselio.py',ROOT/'FAST-LIVO2-ROS2/scripts/ellipselio_live_rerun.py',
            ROOT/'ellipselio/CMakeLists.txt',Path(s3e_mapclosures_native.__file__),Path(s3e_mapclosures_inspection.__file__),
-           ROOT/'.ros2/ellipsoid-cuda/libellipsoid_surface.so']
+           DEFAULT_CONFIG]
+    sampler=ROOT/'.ros2/ellipsoid-cuda/libellipsoid_surface.so'
+    if sampler.exists():paths.append(sampler) # Only explicit ellipsoid modes need this library.
     for folder in (SCRIPTS,ROOT/'FAST-LIVO2-ROS2/research/s3e_pipeline',ROOT/'ellipselio/src',ROOT/'ellipselio/include',ROOT/'ellipselio/msg'):
         paths += [p for p in folder.rglob('*') if p.suffix in ('.py','.cpp','.h','.hpp','.yaml','.msg','.sh') and p.is_file()]
     return {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p):sha(p) for p in sorted(set(paths))}
 
 
-def prepare(work):
+def prepare(work, backend_config=DEFAULT_CONFIG):
     import cv2
     work.mkdir(parents=True,exist_ok=False)
-    template=yaml.safe_load((SCRIPTS/'area_rollout.yaml').read_text())
+    template=yaml.safe_load(backend_config.read_text())
     groups=[]
     for name,version in [('S3E_Laboratory_4','S3Ev1'),('S3E_Campus_Road_1','S3Ev1'),
                          ('S3E_Campus_Road_2','S3Ev2'),('S3E_Campus_Road_3','S3Ev2')]:
@@ -84,6 +87,7 @@ def prepare(work):
             params.pop('research',None);params.pop('use_sim_time',None)
             params['mapping']['submaps']=dict(enabled=False)
             params['mapping']['area_maps']=dict(yaml.safe_load((SCRIPTS/'area_maps.yaml').read_text()),odometry=False)
+            params['mapping'].update(copy.deepcopy(cfg['odometry'].get('native_mapping',{})))
             params['publish']=dict(map=True,scan=True,markers=True,odometry=True,analytics=True,tf=True)
             params['input']=dict(reliable=True)
             config_path=folder/'configs'/f'{robot}.yaml';config_path.write_text(yaml.safe_dump(config,sort_keys=False))
@@ -234,8 +238,10 @@ def run(work,workers=6):
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('stage',choices=['prepare','run','backend']);parser.add_argument('--work',type=Path,required=True)
     parser.add_argument('--workers',type=int,default=6)
+    parser.add_argument('--backend-config',type=Path,default=DEFAULT_CONFIG,
+                        help='Profile for new runs; defaults to point-cloud multilayer PCM/CBS/GICP')
     args=parser.parse_args()
-    if args.stage=='prepare':print(json.dumps(prepare(args.work),indent=2))
+    if args.stage=='prepare':print(json.dumps(prepare(args.work,args.backend_config),indent=2))
     elif args.stage=='run':run(args.work,args.workers)
     else:
         from s3e_pipeline.dpgo import run as backend

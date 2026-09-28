@@ -10,6 +10,7 @@
 #include <set>
 #include <map>
 #include <cstring>
+#include <chrono>
 
 namespace py = pybind11;
 using Array = py::array_t<double, py::array::c_style | py::array::forcecast>;
@@ -67,7 +68,8 @@ public:
         cv::setNumThreads(1);
         orb=cv::ORB::create(500,1.f,1,31,0,2,cv::ORB::HARRIS_SCORE,31,35);
     }
-    py::dict describe(Array cloud, py::object ground=py::none()) {
+    py::dict describe(Array cloud, py::object ground=py::none(), bool include_image=false) {
+        const auto start=std::chrono::steady_clock::now();
         if (cloud.ndim()!=2 || cloud.shape(1)!=3 || cloud.shape(0)<30)
             throw std::invalid_argument("MapClosures needs a nonempty Nx3 local map");
         auto x=cloud.unchecked<2>();std::vector<Eigen::Vector3d> points;points.reserve(cloud.shape(0));
@@ -89,18 +91,46 @@ public:
             (f.ground.row(3)-Eigen::RowVector4d(0,0,0,1)).norm()>1e-9)
             throw std::invalid_argument("Ground alignment must be a rigid transform");
         const auto density=map_closures::GenerateDensityMap(points,f.ground,config.density_map_resolution,config.density_threshold);
+        const double density_s=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
+        auto result=extract(density.grid,density.lower_bound,f.ground);
+        result["density_generation_s"]=density_s;
+        if(include_image) {
+            Bytes image({ssize_t(density.grid.rows),ssize_t(density.grid.cols)});
+            std::memcpy(image.mutable_data(),density.grid.data,density.grid.total());
+            result["image"]=image;result["lower_bound"]=density.lower_bound;
+        }
+        return result;
+    }
+    py::dict describe_image(Bytes image, const Eigen::Vector2i& lower, double resolution,
+                            const Eigen::Matrix4d& ground) {
+        if (image.ndim()!=2 || image.shape(0)<1 || image.shape(1)<1 ||
+            image.shape(0)>16384 || image.shape(1)>16384 || !std::isfinite(resolution) ||
+            std::abs(resolution-config.density_map_resolution)>1e-6)
+            throw std::invalid_argument("Invalid raster dimensions or resolution");
+        const auto R=ground.block<3,3>(0,0);
+        if (!ground.allFinite() || (R.transpose()*R-Eigen::Matrix3d::Identity()).norm()>1e-6 ||
+            std::abs(R.determinant()-1)>1e-6 ||
+            (ground.row(3)-Eigen::RowVector4d(0,0,0,1)).norm()>1e-9)
+            throw std::invalid_argument("Invalid raster gravity transform");
+        cv::Mat grid(int(image.shape(0)),int(image.shape(1)),CV_8U,const_cast<uint8_t*>(image.data()));
+        return extract(grid,lower,ground);
+    }
+    py::dict extract(const cv::Mat& grid, const Eigen::Vector2i& lower, const Eigen::Matrix4d& ground) {
+        const auto start=std::chrono::steady_clock::now();
+        Features f; f.ground=ground;
         std::vector<cv::KeyPoint> keypoints;cv::Mat descriptors;
-        orb->detectAndCompute(density.grid,cv::noArray(),keypoints,descriptors);
+        orb->detectAndCompute(grid,cv::noArray(),keypoints,descriptors);
         if (descriptors.rows>=2) {
             std::vector<std::vector<cv::DMatch>> self;
             cv::BFMatcher(cv::NORM_HAMMING).knnMatch(descriptors,descriptors,self,2);
             for (const auto &m:self) if (m.size()==2 && m[1].distance>35) {
                 const int i=m[0].queryIdx;auto key=keypoints[i];
-                key.pt.x+=float(density.lower_bound.y());key.pt.y+=float(density.lower_bound.x());
+                key.pt.x+=float(lower.y());key.pt.y+=float(lower.x());
                 f.points.push_back(key);f.descriptors.push_back(descriptors.row(i));
             }
         }
-        auto result=encode(f);result["density_rows"]=density.grid.rows;result["density_cols"]=density.grid.cols;
+        auto result=encode(f);result["density_rows"]=grid.rows;result["density_cols"]=grid.cols;
+        result["feature_extraction_s"]=std::chrono::duration<double>(std::chrono::steady_clock::now()-start).count();
         return result;
     }
     void add(int id,const py::dict &packet) {
@@ -177,7 +207,8 @@ PYBIND11_MODULE(s3e_mapclosures_native,m) {
     m.attr("upstream_commit")="1710f15db000a579324e3ba045cd64a0b4d706da";
     py::class_<Adapter>(m,"MapClosures")
         .def(py::init<float,float,int>())
-        .def("describe",&Adapter::describe,py::arg("cloud"),py::arg("ground")=py::none())
+        .def("describe",&Adapter::describe,py::arg("cloud"),py::arg("ground")=py::none(),py::arg("include_image")=false)
+        .def("describe_image",&Adapter::describe_image,py::arg("image"),py::arg("lower_bound"),py::arg("resolution"),py::arg("ground"))
         .def("add",&Adapter::add)
         .def("query",&Adapter::query).def("pair",&Adapter::pair)
         .def("query_correspondences",&Adapter::query_correspondences);

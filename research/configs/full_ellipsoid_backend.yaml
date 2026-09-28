@@ -1,0 +1,29 @@
+# Merge these opt-in fields into an existing accumulated-area experiment config.
+# New evaluations default to points; this profile explicitly selects ellipsoids.
+descriptor_branches:
+- ellipsoid
+backend:
+  ellipsoid_only: true
+  registration:
+    method: ellipsoid
+    ellipsoid_voxel_m: 0.4
+    ellipsoid_max_count: 50000
+  mapclosures:
+    representation: ellipsoid
+    renderer: geometric_coverage # sampled_surface is the matched control
+    raster_device: cuda         # cpu is the geometric reference
+    retrieval_channels: fullheight_and_layers
+    projection_alignment: gravity
+    multilayer:
+      enabled: true
+dpgo:
+  registration_factors:
+    enabled: true               # false is the pose-only matched control
+    factor: ellipsoid
+    ellipsoid_voxel_m: 0.4
+    ellipsoid_max_count: 50000
+    correspondence_m: 1.5
+    huber_m: 0.6
+    max_rmse_m: 0.35
+    max_range_m: null
+    max_information_ratio: 1.0

@@ -1,0 +1,13 @@
+{
+  "native_passed": 8,
+  "native_skipped": 1,
+  "python_passed": 22,
+  "isolated_gpu_dds_passed": 2,
+  "deployed_gpu_dds_passed": 2,
+  "matched_solves_completed": 8,
+  "unchanged_measured_and_deployed_binaries": true,
+  "all_final_geometry_checks_passed": true,
+  "graphical_comparison_inspected": true,
+  "latex_build": "passed_without_warnings",
+  "gpu_default": "vgicp_gpu"
+}

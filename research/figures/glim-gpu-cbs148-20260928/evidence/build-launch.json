@@ -1,0 +1,15 @@
+{
+  "pid": 1233165,
+  "command": [
+    "docker",
+    "exec",
+    "-u",
+    "0",
+    "ellipsoid-gpu148-unlimited-20260926",
+    "bash",
+    "-lc",
+    "export CMAKE_PREFIX_PATH=/workspace/.ros2/swarm/native:${CMAKE_PREFIX_PATH:-}\nexport PATH=/usr/local/cuda/bin:$PATH\nexport CBS_UNDERLAY=/workspace/.ros2/cbs-underlay\nexport S3E_REGISTRATION_FACTORS=ON S3E_REGISTRATION_CUDA=ON S3E_CUDA_ARCHITECTURES=120 CMAKE_BUILD_PARALLEL_LEVEL=8\nexport LD_LIBRARY_PATH=/workspace/.ros2/swarm/native/lib:${LD_LIBRARY_PATH:-}\nbash /workspace/.ros2/gpu-cbs148-20260928/source/FAST-LIVO2-ROS2/scripts/build_dpgo.sh"
+  ],
+  "time": 1790599629.8064404,
+  "restarted": 1790599703.6987803
+}

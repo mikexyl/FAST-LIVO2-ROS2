@@ -19,26 +19,41 @@ from .registration import bounded_cloud
 DEFAULTS = dict(enabled=False, factor='gicp', voxel_m=.5, max_points=12000,
     max_range_m=80., covariance_neighbors=20, correspondence_m=1.5,
     min_inliers=100, min_overlap=.3, min_observability=1e-4, max_condition=1e6,
-    max_information_ratio=1., max_iterations=30, num_threads=4, timeout_s=180.)
+    max_information_ratio=1., max_iterations=30, num_threads=4, timeout_s=180.,
+    ellipsoid_voxel_m=.4, ellipsoid_max_count=50000, huber_m=.6, max_rmse_m=.35)
+GPU_DEFAULTS = dict(gpu_voxel_m=.5, gpu_voxel_max_m=1., gpu_distance_min_m=5.,
+                   gpu_distance_max_m=20., gpu_voxel_levels=2, gpu_voxel_scaling=2.)
 
 
 def settings(cfg):
-    if not isinstance(cfg, dict) or set(cfg) - set(DEFAULTS):
+    if not isinstance(cfg, dict) or set(cfg) - (set(DEFAULTS) | set(GPU_DEFAULTS)):
         raise ValueError('Unknown registration_factors settings')
     value = dict(DEFAULTS, **cfg)
-    if type(value['enabled']) is not bool or value['factor'] != 'gicp':
-        raise ValueError('Expected boolean enabled and factor: gicp')
-    for key in ('max_points', 'covariance_neighbors', 'min_inliers', 'max_iterations', 'num_threads'):
+    if type(value['enabled']) is not bool or value['factor'] not in ('gicp','ellipsoid','vgicp_gpu'):
+        raise ValueError('Expected boolean enabled and factor: gicp or ellipsoid')
+    for key in ('max_points', 'covariance_neighbors', 'min_inliers', 'max_iterations', 'num_threads', 'ellipsoid_max_count'):
         if type(value[key]) is not int or value[key] < 1:
             raise ValueError(f'Expected positive integer {key}')
     for key in ('voxel_m', 'max_range_m', 'correspondence_m', 'min_overlap',
-                'min_observability', 'max_condition', 'max_information_ratio', 'timeout_s'):
+                'min_observability', 'max_condition', 'max_information_ratio', 'timeout_s', 'ellipsoid_voxel_m', 'huber_m', 'max_rmse_m'):
         if key=='max_range_m' and value[key] is None:continue
         if type(value[key]) not in (int, float) or not math.isfinite(value[key]) or value[key] <= 0:
             raise ValueError(f'Expected finite positive {key}')
     if (value['min_overlap'] > 1 or value['num_threads'] > 64 or
             not 3 <= value['covariance_neighbors'] <= value['min_inliers'] <= value['max_points'] <= 1000000):
         raise ValueError('Invalid registration point or thread bounds')
+    if value['factor']=='ellipsoid' and (value['ellipsoid_voxel_m']!=.4 or value['ellipsoid_max_count']!=50000):
+        raise ValueError('Initial ellipsoid policy is fixed at 0.4 m / 50000 original primitives')
+    if value['factor']=='vgicp_gpu':
+        value=dict(GPU_DEFAULTS, **value)
+        for key in set(GPU_DEFAULTS)-{'gpu_voxel_levels'}:
+            if type(value[key]) not in (int,float) or not math.isfinite(value[key]) or value[key]<=0:
+                raise ValueError('Invalid GPU geometry setting '+key)
+        if (type(value['gpu_voxel_levels']) is not int or not 1<=value['gpu_voxel_levels']<=4
+            or value['gpu_voxel_max_m']<value['gpu_voxel_m']
+            or value['gpu_distance_max_m']<=value['gpu_distance_min_m'] or value['gpu_voxel_scaling']<=1):
+            raise ValueError('Invalid GPU voxel levels/resolution/distance interval')
+    elif set(cfg)&set(GPU_DEFAULTS):raise ValueError('GPU settings require factor: vgicp_gpu')
     return value
 
 
@@ -90,6 +105,7 @@ def refine_graph(graph, stores, cfg, source, output, provenance=None):
     import gtsam
     start = time.monotonic(); cfg = settings(cfg); output = Path(output)
     if not cfg['enabled']: return graph
+    if cfg['factor']=='vgicp_gpu':raise ValueError('vgicp_gpu is supported by distributed CBS; use its native adapter')
     provenance = provenance or native_provenance(source)
     selected = [f for f in graph['factors'] if f['kind'] == 'loop' and f['solver_weight'] > 0]
     endpoints = sorted({tuple(f[e]) for f in selected for e in ('i', 'j')})

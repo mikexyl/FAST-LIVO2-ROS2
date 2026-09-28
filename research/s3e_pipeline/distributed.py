@@ -7,6 +7,7 @@ import multiprocessing as mp
 from pathlib import Path
 import resource
 import time
+import numpy as np
 
 from .artifacts import canonical, digest, read_json, read_jsonl, write_json, write_jsonl
 from .backends import create, pack_payload, unpack_payload
@@ -39,12 +40,39 @@ def eligible_observation(row, query, same_robot, exclusion_ns):
     return True
 
 
+def channel_priority(ranked,limit):
+    """Reserve at most one endpoint per retrieval channel, sharing one budget."""
+    chosen=[];endpoints=set()
+    def add(pair):
+        endpoint=(pair[0],pair[1]['keyframe_id'])
+        if endpoint not in endpoints and len(chosen)<limit:
+            endpoints.add(endpoint);chosen.append(pair)
+    channels=sorted({c for _,item in ranked for c in item.get('channel_scores',{})})
+    for channel in channels:
+        eligible=[p for p in ranked if channel in p[1].get('channel_scores',{})]
+        if eligible:add(min(eligible,key=lambda p:(-p[1]['channel_scores'][channel],p[0],p[1]['keyframe_id'])))
+    for pair in ranked:add(pair)
+    return chosen
+
+
 def select_branches(candidates,limits,last,stamp,cooldown_ns):
     """Independent raw-score budgets; coalesce a pair selected by both branches."""
     chosen={};rejected=[]
     for branch,limit in limits.items():
         ranked=sorted(((r,x) for r,x in candidates if branch in x.get('sources',[])),
                       key=lambda p:(-p[1]['branch_scores'][branch],p[0],p[1]['keyframe_id']))
+        if branch=='mapclosures' and any(x.get('channel_scores') for _,x in ranked):
+            eligible=[p for p in ranked if stamp-last.get((p[0],branch),-10**30)>=cooldown_ns]
+            selected_pairs=channel_priority(eligible,limit)
+            selected_keys={(r,x['keyframe_id']) for r,x in selected_pairs}
+            for robot,item in ranked:
+                endpoint=(robot,item['keyframe_id'])
+                if endpoint in selected_keys:
+                    selected=chosen.setdefault(endpoint,dict(item,selected_branches=[]))
+                    selected['selected_branches'].append(branch)
+                else:rejected.append(dict(type='rejection',reason='verification_budget_or_cooldown',branch=branch,candidate=list(endpoint)))
+            for robot,_ in selected_pairs:last[robot,branch]=stamp
+            continue
         count=0
         for robot,item in ranked:
             endpoint=(robot,item['keyframe_id']);reason=None
@@ -60,7 +88,7 @@ def select_branches(candidates,limits,last,stamp,cooldown_ns):
 
 class Worker:
     def __init__(self,robot,store,descriptors,backend,cfg):
-        self.robot=robot; self.store=LocalStore(store,robot);self.descriptors=Path(descriptors)
+        self.robot=robot; self.store=LocalStore(store,robot,streaming=cfg.get('online',False));self.descriptors=Path(descriptors)
         self.backend=create(backend);self.cfg=cfg;self.index={};self.seen=set();self.requested=set()
         self.backend_name=backend['name']
         self.backend_config=backend;self.verifier=None;self.pending=deque();self.completed=[]
@@ -111,6 +139,21 @@ class Worker:
 
     def payload(self,key):
         if key not in self.seen:raise ValueError('Future payload requested')
+        if self.backend_config['registration'].get('method','point_gicp')=='ellipsoid':
+            from .ellipsoid_registration import bounded_ellipsoids
+            row=self.store.row(key);opts=self.backend_config['registration']
+            source=self.store.ellipsoids(key)
+            if self.backend_config.get('ellipsoid_only',False):
+                from .ellipsoid_backend import prepared_evidence
+                selected=prepared_evidence({'ellipsoids':source},row,opts)
+            else:
+                selected=bounded_ellipsoids(source,opts.get('ellipsoid_voxel_m',.4),opts.get('ellipsoid_max_count',50000))
+            return dict(row=row,cloud=np.empty((0,3)),image=b'',descriptor=self.descriptor(key),
+                        ellipsoids=selected,evidence_preprocessing=dict(
+                            input_ellipsoids=len(source),output_ellipsoids=len(selected),
+                            ellipsoid_source='same native fitted primitives as BEV',
+                            ellipsoid_voxel_m=opts.get('ellipsoid_voxel_m',.4),
+                            ellipsoid_max_count=opts.get('ellipsoid_max_count',50000)))
         row,cloud,image=self.store.payload(key)
         # Geometry is requested only for selected descriptor proposals.
         from .registration import bounded_cloud

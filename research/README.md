@@ -1,4 +1,16 @@
-# MegaLoc + MapClosures on S3E Square 1
+# Multi-robot LiDAR SLAM research
+
+**Default for new evaluations (updated 2026-09-28):** updated EllipseLIO, accumulated-area
+point-cloud BEVs, multilayer MapClosures, PCM/CBS with live GPU VGICP registration
+factors, and per-submap map alignment. See the
+[default pipeline and usage](DEFAULT-PIPELINE.md) and
+[configuration](configs/default_pipeline.yaml). Ellipsoid modes remain explicit
+alternatives; the experiment descriptions below retain their historical settings.
+
+See [GLIM GPU CBS configuration](GLIM-GPU-CBS.md) and the
+[matched CPU/GPU validation report](figures/glim-gpu-cbs148-20260928/index.html).
+
+## MegaLoc + MapClosures on S3E Square 1
 
 See [multi-robot LiDAR SLAM development](DEVELOPMENT.md) for the published
 repository branches, workspace manifest, and validation status.

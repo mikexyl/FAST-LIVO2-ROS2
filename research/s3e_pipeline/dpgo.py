@@ -10,23 +10,33 @@ import time
 import uuid
 from .artifacts import digest, file_hash, read_json, read_jsonl, write_json, write_jsonl
 from .mixed_pgo import settings as registration_settings
+from .online_io import atomic_json
 
 
-def native_provenance(source):
+def native_overlay(source, settings=None):
+    gpu = (settings or {}).get('registration_factors', {}).get('factor') == 'vgicp_gpu'
+    return Path(os.environ.get('CBS_OVERLAY', Path(source) / ('.ros2/dpgo-gpu-install' if gpu else '.ros2/dpgo-install')))
+
+
+def native_provenance(source, settings=None):
     result = {}
     for name in ('cbs', 'cbs_ros'):
         root = source/name
-        git = lambda *args: subprocess.check_output(['git', '-C', str(root), *args]).decode().strip()
+        git = lambda *args: subprocess.check_output(['git', '-c', f'safe.directory={root}', '-C', str(root), *args]).decode().strip()
         files = git('ls-files', '--cached', '--others', '--exclude-standard').splitlines()
         result[name] = dict(branch=git('branch', '--show-current'), commit=git('rev-parse', 'HEAD'),
             sources={p: file_hash(root/p) for p in sorted(set(files)) if (root/p).is_file()})
-    for relative in ('.ros2/dpgo-install/cbs/lib/libcbs.so',
-                     '.ros2/dpgo-install/cbs_ros/lib/cbs_ros/cbs_ros_node',
-                     'FAST-LIVO2-ROS2/scripts/run_dpgo_ros.sh'):
-        result[relative] = file_hash(source/relative)
-    underlay = Path(os.environ.get('CBS_UNDERLAY', '/home/mikexyl/workspaces/sb_slam_ros2_ws/install'))
-    result['gtsam_library'] = dict(path=str((underlay/'gtsam/lib/libgtsam.so').resolve()),
-                                  sha256=file_hash(underlay/'gtsam/lib/libgtsam.so'))
+    overlay=native_overlay(source, settings)
+    for path in (overlay/'cbs/lib/libcbs.so',overlay/'cbs_ros/lib/cbs_ros/cbs_ros_node',
+                 source/'FAST-LIVO2-ROS2/scripts/run_dpgo_ros.sh'):
+        result[str(path)] = file_hash(path)
+    linked=subprocess.check_output(['bash', str(source/'FAST-LIVO2-ROS2/scripts/run_dpgo_ros.sh'),
+        'ldd', str(overlay/'cbs_ros/lib/cbs_ros/cbs_ros_node')], text=True,
+        env=dict(os.environ, CBS_OVERLAY=str(overlay)))
+    gtsam_paths=[Path(line.split('=>',1)[1].split()[0]).resolve() for line in linked.splitlines()
+                 if line.strip().startswith('libgtsam.so') and '=>' in line]
+    if len(gtsam_paths)!=1:raise ValueError('Cannot identify the native CBS GTSAM library')
+    result['gtsam_library'] = dict(path=str(gtsam_paths[0]),sha256=file_hash(gtsam_paths[0]))
     adapter = source/'FAST-LIVO2-ROS2/research/adapters/gtsam_points'
     result['registration_adapter_sources'] = {str(p.relative_to(adapter)):file_hash(p)
         for p in sorted(adapter.rglob('*')) if p.is_file()}
@@ -37,7 +47,7 @@ def native_provenance(source):
 def run(cfg, artifacts, source, out):
     robots = cfg['robots']; settings = cfg['dpgo']; method = cfg['backend']['name']
     out = Path(out).resolve(); source = Path(source).resolve(); start = time.monotonic()
-    overlay = source/'.ros2/dpgo-install'
+    overlay = native_overlay(source, settings)
     underlay = Path(os.environ.get('CBS_UNDERLAY', '/home/mikexyl/workspaces/sb_slam_ros2_ws/install'))
     wrapper = source/'FAST-LIVO2-ROS2/scripts/run_dpgo_ros.sh'
     native = overlay/'cbs_ros/lib/cbs_ros/cbs_ros_node'
@@ -59,10 +69,23 @@ def run(cfg, artifacts, source, out):
             raise ValueError('PCM timeout_s must be finite and positive')
     pcm_session = uuid.uuid4().hex if pcm_enabled else ''
     registration = registration_settings(settings.get('registration_factors', {}))
+    if registration['enabled']:
+        verifier=cfg['backend'].get('registration',{})
+        is_ellipsoid=verifier.get('method','point_gicp')=='ellipsoid'
+        if is_ellipsoid!=(registration['factor']=='ellipsoid'):
+            raise ValueError('Verification and CBS registration evidence types must match')
+        if is_ellipsoid:
+            if not cfg['backend'].get('ellipsoid_only',False):
+                raise ValueError('Ellipsoid CBS requires immutable prepared ellipsoid-only evidence')
+            for a,b,default in [('ellipsoid_voxel_m','ellipsoid_voxel_m',.4),
+                                ('ellipsoid_max_count','ellipsoid_max_count',50000),
+                                ('correspondence_m','correspondence_m',1.5),('inlier_m','huber_m',.6)]:
+                if verifier.get(a,default)!=registration[b]:
+                    raise ValueError('Verification/CBS primitive policy or residual mismatch')
     if registration['enabled'] and not pcm_enabled:
         raise ValueError('CBS registration factors require the immutable PCM gate')
-    processes = []; logs = []; observers = {}; peak_rss = {}
-    env = dict(os.environ, ROS_DOMAIN_ID=str(settings['ros_domain_id']),
+    processes = []; logs = []; observers = {}; peak_rss = {}; simultaneous_peak_rss = 0
+    env = dict(os.environ, ROS_DOMAIN_ID=str(settings['ros_domain_id']), CBS_OVERLAY=str(overlay),
         PYTHONPATH=str(Path(__file__).resolve().parents[1])+os.pathsep+os.environ.get('PYTHONPATH', ''),
         PYTHONDONTWRITEBYTECODE='1', ROS_LOCALHOST_ONLY='1' if settings.get('localhost_only', True) else '0')
     def launch(name, command):
@@ -123,11 +146,21 @@ def run(cfg, artifacts, source, out):
                     rss = next(int(line.split()[1]) for line in status_text.splitlines() if line.startswith('VmRSS:'))
                     peak_rss[name] = max(peak_rss.get(name, 0), rss)
                 except (FileNotFoundError, ProcessLookupError, StopIteration): pass
+            import psutil
+            tree={}
+            for _,process in processes:
+                try:
+                    parent=psutil.Process(process.pid)
+                    for member in [parent,*parent.children(recursive=True)]:
+                        try:tree[member.pid]=member.memory_info().rss//1024
+                        except (psutil.NoSuchProcess,psutil.AccessDenied):pass
+                except (psutil.NoSuchProcess,psutil.AccessDenied):pass
+            simultaneous_peak_rss=max(simultaneous_peak_rss,sum(tree.values()))
             now = time.monotonic()
             if now > deadline: raise TimeoutError(f'CBS run exceeded {settings["timeout_s"]} seconds')
             if now-last_progress > 10:
                 status = {r: read_json(out/r/'progress.json') for r in robots if (out/r/'progress.json').exists()}
-                write_json(out/'progress.json', dict(wall_s=now-start, robots=status))
+                atomic_json(out/'progress.json', dict(wall_s=now-start, robots=status))
                 print(f'CBS/DDS {now-start:.1f}s: '+', '.join(f'{r} {s["observed"]}/{s["total"]} keys, '
                     f'{s["loops"]} incident loops, iteration {s["iteration"]}' for r, s in status.items()), flush=True)
                 last_progress = now
@@ -161,6 +194,10 @@ def run(cfg, artifacts, source, out):
                     raise ValueError('PCM endpoint decisions disagree')
                 pcm_decisions[key] = decision
     constraints = [unique[k] for k in sorted(unique)]
+    frames = {r: {p['component'] for p in poses if p['robot_id'] == r} for r in robots}
+    if any(len(f) != 1 for f in frames.values()) or any(
+            frames[e['i'][0]] != frames[e['j'][0]] for e in constraints):
+        raise ValueError('CBS failed common-frame contract for retained loops')
     if registration['enabled']:
         pairs = []; expected = {(tuple(e['i']), tuple(e['j'])) for e in unique.values()}
         for robot in robots:
@@ -176,7 +213,7 @@ def run(cfg, artifacts, source, out):
             robots={r:summaries[r]['registration'] for r in robots},
             registration_factor_count=sum(summaries[r]['registration']['registration_factor_count'] for r in robots),
             network_cdr_bytes=sum(s['registration_network_cdr_bytes'] for s in summaries.values()),
-            ownership='one binary GICP factor per geometrically supported PCM-retained loop, on its canonical first robot'))
+            ownership='one binary '+registration['factor']+' factor per geometrically supported PCM-retained loop, on its canonical first robot'))
         # Exchanges are reproducible from original NPZs + the retained manifests.
         # Do not retain a second copy of the temporary transport clouds.
         if not settings.get('retain_registration_transport', False):
@@ -203,5 +240,7 @@ def run(cfg, artifacts, source, out):
             s['cbs_last_stats']['bandwidth_recv_bytes'] for s in summaries.values()),
         loop_network_cdr_bytes=sum(s['loop_network_cdr_bytes'] for s in summaries.values()),
         sampled_peak_rss_kib=peak_rss, memory_sampling_interval_s=.2,
+        simultaneous_process_tree_peak_rss_kib=simultaneous_peak_rss,
+        memory_scope='simultaneous sum of RSS across unique native/worker/verifier PIDs; shared pages may be counted per process',
         byte_scope='serialized CDR messages per directed recipient; excludes RTPS, discovery and retransmission',
         termination='fixed local settling budget after peer input completion; convergence reported separately'))

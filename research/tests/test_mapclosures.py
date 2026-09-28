@@ -80,7 +80,7 @@ def test_native_three_worker_replay_cold_determinism_and_lidar_only(tmp_path,lid
             desc['mapclosures_multilayer']=dict(version=VERSION,terrain=dict(available=True),
                 layers={name:desc['mapclosures'] for name in NAMES})
         write_json(root/'000000.json',desc)
-    cfg=dict(CFG['loops'],robots=list(stores));backend=dict(CFG['backend'],read_paths=[native.__file__])
+    cfg=dict(CFG['loops'],robots=list(stores));backend=dict(CFG['backend'],read_paths=[str(Path(native.__file__).parent)])
     if lidar_only:
         backend['name']='mapclosures';backend.pop('fusion')
         cfg['branch_verification_limits']={'mapclosures':1}

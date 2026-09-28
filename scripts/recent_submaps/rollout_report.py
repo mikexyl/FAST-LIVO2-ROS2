@@ -47,7 +47,8 @@ def report(work,trials):
         write_jsonl(out/f'{robot}-cbs.jsonl',track)
         before=[];after=[]
         for key,opt in zip(keys,optimized):
-            with np.load(work/f'prepared-{robot}/store'/f"{key['keyframe_id']:06d}.npz") as data:points=data['cloud']
+            with np.load(work/f'prepared-{robot}/store'/f"{key['keyframe_id']:06d}.npz") as data:
+                points=data['ellipsoids'][:,:3] if cfg['backend'].get('ellipsoid_only',False) else data['cloud']
             before.append(transform(pose(key['T_world_body']),points));after.append(transform(pose(opt['T_world_body']),points))
             if len(before)>=20:
                 before=[voxel_downsample(np.concatenate(before),.25)];after=[voxel_downsample(np.concatenate(after),.25)]
@@ -58,7 +59,7 @@ def report(work,trials):
                  cbs=trajectory_metrics(dict(poses=corrected),gt,cfg['evaluation'],out/'evo/cbs'),
                  cbs_individual=trajectory_metrics(dict(poses=[dict(r,component=r['robot_id']) for r in corrected]),gt,cfg['evaluation'],out/'evo/cbs-individual'),
                  components=components,ground_truth=status,runtime=read_json(work/'dpgo/summary.json'),
-                 pcm=read_json(work/'dpgo/pcm.json'),registration=read_json(work/'dpgo/registration.json'),
+                 pcm=read_json(work/'dpgo/pcm.json'),registration=(read_json(work/'dpgo/registration.json') if (work/'dpgo/registration.json').exists() else dict(enabled=False,registration_factor_count=0)),
                  connectivity=connected, dataset=cfg.get('experiment_name',cfg['dataset']),
                  map_source=cfg.get('map_source','native processed member scans in completed submaps; not full-resolution raw geometry'))
     events=[e for robot in cfg['robots'] for e in read_jsonl(work/f'dpgo/{robot}/events.jsonl') if e.get('type')=='verification']

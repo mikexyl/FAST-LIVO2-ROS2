@@ -1,0 +1,4245 @@
+{
+  "config": {
+    "candidate_spacing_fraction": 0.25,
+    "cell_size_m": 0.5,
+    "coverage_target": 0.95,
+    "grid_origin_xy": [
+      0.0,
+      0.0
+    ],
+    "overlap_target": 0.3,
+    "overlap_tolerance": 0.1,
+    "radius_m": 80.0,
+    "refinement_max_iterations": 100,
+    "solver_time_limit_s": 10.0
+  },
+  "final": {
+    "available_ns": 1661851352383902073,
+    "current_process_rss_bytes": 1067925504,
+    "elapsed_sensor_s": 285.08827614800003,
+    "keyframe_id": 33,
+    "native_unique_points": 887047,
+    "new_circles": [],
+    "planner": {
+      "added_cells": 0,
+      "candidate_count": 0,
+      "cell_memberships": 322277,
+      "circle_count": 7,
+      "coverage": 0.9940812951518844,
+      "coverage_before": 0.9940812951518844,
+      "covered_cells": 182736,
+      "intersecting_pairs": [
+        {
+          "center_distance_m": 93.62198260036057,
+          "circle_overlap_fraction": 0.30000003265689434,
+          "i": 0,
+          "j": 1,
+          "shared_cells": 18931,
+          "shared_occupied_fraction": 0.464450441609421
+        },
+        {
+          "center_distance_m": 98.39500409142515,
+          "circle_overlap_fraction": 0.2696182980859337,
+          "i": 0,
+          "j": 2,
+          "shared_cells": 18486,
+          "shared_occupied_fraction": 0.3503193162652315
+        },
+        {
+          "center_distance_m": 157.13925987896246,
+          "circle_overlap_fraction": 0.002862221928547253,
+          "i": 0,
+          "j": 3,
+          "shared_cells": 213,
+          "shared_occupied_fraction": 0.004036460800848983
+        },
+        {
+          "center_distance_m": 93.51362189166335,
+          "circle_overlap_fraction": 0.3006995175417474,
+          "i": 0,
+          "j": 6,
+          "shared_cells": 16300,
+          "shared_occupied_fraction": 0.35528237319906714
+        },
+        {
+          "center_distance_m": 93.62170168257057,
+          "circle_overlap_fraction": 0.3000018454795519,
+          "i": 1,
+          "j": 2,
+          "shared_cells": 19561,
+          "shared_occupied_fraction": 0.47990677134445536
+        },
+        {
+          "center_distance_m": 93.62260828344226,
+          "circle_overlap_fraction": 0.29999599500015633,
+          "i": 2,
+          "j": 3,
+          "shared_cells": 19593,
+          "shared_occupied_fraction": 0.3629005371365068
+        },
+        {
+          "center_distance_m": 146.51029612106626,
+          "circle_overlap_fraction": 0.029012660551765816,
+          "i": 2,
+          "j": 6,
+          "shared_cells": 1974,
+          "shared_occupied_fraction": 0.043026221146929965
+        },
+        {
+          "center_distance_m": 93.62195122410934,
+          "circle_overlap_fraction": 0.3000002351344222,
+          "i": 3,
+          "j": 4,
+          "shared_cells": 17105,
+          "shared_occupied_fraction": 0.6030106465486851
+        },
+        {
+          "center_distance_m": 111.16027871499189,
+          "circle_overlap_fraction": 0.192909617862222,
+          "i": 3,
+          "j": 5,
+          "shared_cells": 12107,
+          "shared_occupied_fraction": 0.2653181977559607
+        },
+        {
+          "center_distance_m": 145.6357960016856,
+          "circle_overlap_fraction": 0.03185222112804912,
+          "i": 3,
+          "j": 6,
+          "shared_cells": 2266,
+          "shared_occupied_fraction": 0.049390788814054364
+        },
+        {
+          "center_distance_m": 93.6219887665397,
+          "circle_overlap_fraction": 0.29999999286525164,
+          "i": 4,
+          "j": 5,
+          "shared_cells": 15881,
+          "shared_occupied_fraction": 0.5598603962490305
+        },
+        {
+          "center_distance_m": 93.51362827299624,
+          "circle_overlap_fraction": 0.30069947633687866,
+          "i": 5,
+          "j": 6,
+          "shared_cells": 17127,
+          "shared_occupied_fraction": 0.3753287166900421
+        }
+      ],
+      "mean_memberships_per_covered_cell": 1.7636207424919008,
+      "nearest_neighbor_overlap": [
+        {
+          "circle_id": 0,
+          "isolated": false,
+          "neighbor_id": 6,
+          "overlap_fraction": 0.3006995175417474
+        },
+        {
+          "circle_id": 1,
+          "isolated": false,
+          "neighbor_id": 2,
+          "overlap_fraction": 0.3000018454795519
+        },
+        {
+          "circle_id": 2,
+          "isolated": false,
+          "neighbor_id": 1,
+          "overlap_fraction": 0.3000018454795519
+        },
+        {
+          "circle_id": 3,
+          "isolated": false,
+          "neighbor_id": 4,
+          "overlap_fraction": 0.3000002351344222
+        },
+        {
+          "circle_id": 4,
+          "isolated": false,
+          "neighbor_id": 3,
+          "overlap_fraction": 0.3000002351344222
+        },
+        {
+          "circle_id": 5,
+          "isolated": false,
+          "neighbor_id": 6,
+          "overlap_fraction": 0.30069947633687866
+        },
+        {
+          "circle_id": 6,
+          "isolated": false,
+          "neighbor_id": 0,
+          "overlap_fraction": 0.3006995175417474
+        }
+      ],
+      "nearest_overlap_in_band_fraction": 1.0,
+      "nearest_overlap_median": 0.3000018454795519,
+      "occupied_cells": 183824,
+      "point_coverage": {
+        "coverage": 0.9963034653180722,
+        "covered_points": 883768,
+        "points": 887047
+      },
+      "pruned_circles": 0,
+      "refinement": null,
+      "required_newly_covered_cells": 0,
+      "solver": null,
+      "update_id": 33,
+      "wall_s": 0.12461343499307986
+    },
+    "planner_core_array_bytes": 2941312,
+    "trajectory_centered": {
+      "audit_wall_s": 1.315645120004774,
+      "cell_memberships": 1873129,
+      "circle_count": 34,
+      "coverage": 0.998612803551223,
+      "covered_cells": 183569,
+      "intersecting_pairs": [
+        {
+          "center_distance_m": 1.6818723783699978,
+          "circle_overlap_fraction": 0.9866163313486481,
+          "i": 0,
+          "j": 1,
+          "shared_cells": 52714,
+          "shared_occupied_fraction": 0.9899900463875899
+        },
+        {
+          "center_distance_m": 0.4014895918628807,
+          "circle_overlap_fraction": 0.9968050506956663,
+          "i": 0,
+          "j": 2,
+          "shared_cells": 53402,
+          "shared_occupied_fraction": 0.9979070897335277
+        },
+        {
+          "center_distance_m": 3.58703161731493,
+          "circle_overlap_fraction": 0.9714577006715857,
+          "i": 0,
+          "j": 3,
+          "shared_cells": 52161,
+          "shared_occupied_fraction": 0.974716896513062
+        },
+        {
+          "center_distance_m": 18.23504768546201,
+          "circle_overlap_fraction": 0.8552048534607958,
+          "i": 0,
+          "j": 4,
+          "shared_cells": 46686,
+          "shared_occupied_fraction": 0.8919755445166221
+        },
+        {
+          "center_distance_m": 31.044312475736316,
+          "circle_overlap_fraction": 0.7545161313733264,
+          "i": 0,
+          "j": 5,
+          "shared_cells": 42690,
+          "shared_occupied_fraction": 0.804000226001469
+        },
+        {
+          "center_distance_m": 48.19841091463176,
+          "circle_overlap_fraction": 0.6223317948033082,
+          "i": 0,
+          "j": 6,
+          "shared_cells": 36859,
+          "shared_occupied_fraction": 0.6887730313562807
+        },
+        {
+          "center_distance_m": 66.02748387995011,
+          "circle_overlap_fraction": 0.48988951103158734,
+          "i": 0,
+          "j": 7,
+          "shared_cells": 30810,
+          "shared_occupied_fraction": 0.5757371902679672
+        },
+        {
+          "center_distance_m": 68.25847303648219,
+          "circle_overlap_fraction": 0.47377491353333495,
+          "i": 0,
+          "j": 8,
+          "shared_cells": 30337,
+          "shared_occupied_fraction": 0.5668983817318832
+        },
+        {
+          "center_distance_m": 73.5035399173896,
+          "circle_overlap_fraction": 0.4363577969492591,
+          "i": 0,
+          "j": 9,
+          "shared_cells": 28538,
+          "shared_occupied_fraction": 0.5332810105766715
+        },
+        {
+          "center_distance_m": 79.06027466210251,
+          "circle_overlap_fraction": 0.3974910535080388,
+          "i": 0,
+          "j": 10,
+          "shared_cells": 26570,
+          "shared_occupied_fraction": 0.49650558732294353
+        },
+        {
+          "center_distance_m": 91.00321491278564,
+          "circle_overlap_fraction": 0.3170208190955682,
+          "i": 0,
+          "j": 11,
+          "shared_cells": 21549,
+          "shared_occupied_fraction": 0.40267967260903686
+        },
+        {
+          "center_distance_m": 97.04374913537933,
+          "circle_overlap_fraction": 0.27813270068107443,
+          "i": 0,
+          "j": 12,
+          "shared_cells": 18872,
+          "shared_occupied_fraction": 0.35265537990058676
+        },
+        {
+          "center_distance_m": 110.4718296946238,
+          "circle_overlap_fraction": 0.19686136901551227,
+          "i": 0,
+          "j": 13,
+          "shared_cells": 13571,
+          "shared_occupied_fraction": 0.2535971895204993
+        },
+        {
+          "center_distance_m": 125.8787407836513,
+          "circle_overlap_fraction": 0.11436326408409482,
+          "i": 0,
+          "j": 14,
+          "shared_cells": 7941,
+          "shared_occupied_fraction": 0.1483910752326494
+        },
+        {
+          "center_distance_m": 142.85595466968272,
+          "circle_overlap_fraction": 0.04142071515504749,
+          "i": 0,
+          "j": 15,
+          "shared_cells": 2950,
+          "shared_occupied_fraction": 0.05512576148297642
+        },
+        {
+          "center_distance_m": 157.9093939659272,
+          "circle_overlap_fraction": 0.0017894071053924212,
+          "i": 0,
+          "j": 16,
+          "shared_cells": 136,
+          "shared_occupied_fraction": 0.002541391037859252
+        },
+        {
+          "center_distance_m": 144.4200454687836,
+          "circle_overlap_fraction": 0.035938167272494284,
+          "i": 0,
+          "j": 22,
+          "shared_cells": 2330,
+          "shared_occupied_fraction": 0.04354000822214747
+        },
+        {
+          "center_distance_m": 124.74689936870712,
+          "circle_overlap_fraction": 0.1199633516093711,
+          "i": 0,
+          "j": 23,
+          "shared_cells": 7174,
+          "shared_occupied_fraction": 0.13405837724707553
+        },
+        {
+          "center_distance_m": 105.7636898099314,
+          "circle_overlap_fraction": 0.2244759575026281,
+          "i": 0,
+          "j": 24,
+          "shared_cells": 13506,
+          "shared_occupied_fraction": 0.25238255409799304
+        },
+        {
+          "center_distance_m": 86.97068722002643,
+          "circle_overlap_fraction": 0.3436882259067469,
+          "i": 0,
+          "j": 25,
+          "shared_cells": 19964,
+          "shared_occupied_fraction": 0.3730612549986919
+        },
+        {
+          "center_distance_m": 68.9724181861955,
+          "circle_overlap_fraction": 0.4686424763415564,
+          "i": 0,
+          "j": 26,
+          "shared_cells": 25996,
+          "shared_occupied_fraction": 0.4857794222072729
+        },
+        {
+          "center_distance_m": 52.508087158932625,
+          "circle_overlap_fraction": 0.5897802862485519,
+          "i": 0,
+          "j": 27,
+          "shared_cells": 32631,
+          "shared_occupied_fraction": 0.6140456521330047
+        },
+        {
+          "center_distance_m": 34.47246990595322,
+          "circle_overlap_fraction": 0.7278141749427818,
+          "i": 0,
+          "j": 28,
+          "shared_cells": 39992,
+          "shared_occupied_fraction": 0.7473184587210824
+        },
+        {
+          "center_distance_m": 17.49781160542152,
+          "circle_overlap_fraction": 0.8610348952415849,
+          "i": 0,
+          "j": 29,
+          "shared_cells": 46975,
+          "shared_occupied_fraction": 0.8778076764958702
+        },
+        {
+          "center_distance_m": 1.6625218036576879,
+          "circle_overlap_fraction": 0.9867703099193174,
+          "i": 0,
+          "j": 30,
+          "shared_cells": 52732,
+          "shared_occupied_fraction": 0.9893062174027241
+        },
+        {
+          "center_distance_m": 0.9998183896059349,
+          "circle_overlap_fraction": 0.9920437498353333,
+          "i": 0,
+          "j": 31,
+          "shared_cells": 53005,
+          "shared_occupied_fraction": 0.994483949042196
+        },
+        {
+          "center_distance_m": 1.2788423058401706,
+          "circle_overlap_fraction": 0.9898234046358,
+          "i": 0,
+          "j": 32,
+          "shared_cells": 52885,
+          "shared_occupied_fraction": 0.992474571181924
+        },
+        {
+          "center_distance_m": 1.3277724548036063,
+          "circle_overlap_fraction": 0.9894340438016995,
+          "i": 0,
+          "j": 33,
+          "shared_cells": 52876,
+          "shared_occupied_fraction": 0.9918589382854999
+        },
+        {
+          "center_distance_m": 2.0769961928766083,
+          "circle_overlap_fraction": 0.9834722536687128,
+          "i": 1,
+          "j": 2,
+          "shared_cells": 52603,
+          "shared_occupied_fraction": 0.9879054219017034
+        },
+        {
+          "center_distance_m": 2.272137158749688,
+          "circle_overlap_fraction": 0.9819195147271294,
+          "i": 1,
+          "j": 3,
+          "shared_cells": 52586,
+          "shared_occupied_fraction": 0.9875861550885496
+        },
+        {
+          "center_distance_m": 16.558010929345716,
+          "circle_overlap_fraction": 0.8684711073903054,
+          "i": 1,
+          "j": 4,
+          "shared_cells": 47219,
+          "shared_occupied_fraction": 0.9021589606419564
+        },
+        {
+          "center_distance_m": 29.38523086473104,
+          "circle_overlap_fraction": 0.767481072938092,
+          "i": 1,
+          "j": 5,
+          "shared_cells": 43223,
+          "shared_occupied_fraction": 0.8140384579166431
+        },
+        {
+          "center_distance_m": 46.67922269436578,
+          "circle_overlap_fraction": 0.6338774641217894,
+          "i": 1,
+          "j": 6,
+          "shared_cells": 37376,
+          "shared_occupied_fraction": 0.7019362593197739
+        },
+        {
+          "center_distance_m": 64.64714856371818,
+          "circle_overlap_fraction": 0.49991622851847733,
+          "i": 1,
+          "j": 7,
+          "shared_cells": 31307,
+          "shared_occupied_fraction": 0.5879580070238699
+        },
+        {
+          "center_distance_m": 67.15955536113272,
+          "circle_overlap_fraction": 0.48169817156307887,
+          "i": 1,
+          "j": 8,
+          "shared_cells": 30723,
+          "shared_occupied_fraction": 0.5769902529719985
+        },
+        {
+          "center_distance_m": 72.70976089366935,
+          "circle_overlap_fraction": 0.4419765463324,
+          "i": 1,
+          "j": 9,
+          "shared_cells": 28871,
+          "shared_occupied_fraction": 0.5422089507390088
+        },
+        {
+          "center_distance_m": 78.66388165440415,
+          "circle_overlap_fraction": 0.4002356688572925,
+          "i": 1,
+          "j": 10,
+          "shared_cells": 26732,
+          "shared_occupied_fraction": 0.5020376734839521
+        },
+        {
+          "center_distance_m": 90.93437390911862,
+          "circle_overlap_fraction": 0.31747148004861203,
+          "i": 1,
+          "j": 11,
+          "shared_cells": 21536,
+          "shared_occupied_fraction": 0.4044547110635341
+        },
+        {
+          "center_distance_m": 97.24174478181241,
+          "circle_overlap_fraction": 0.27688074036462934,
+          "i": 1,
+          "j": 12,
+          "shared_cells": 18782,
+          "shared_occupied_fraction": 0.35273348733261967
+        },
+        {
+          "center_distance_m": 110.91070148945943,
+          "circle_overlap_fraction": 0.19433959379802276,
+          "i": 1,
+          "j": 13,
+          "shared_cells": 13386,
+          "shared_occupied_fraction": 0.2513944447574511
+        },
+        {
+          "center_distance_m": 126.49310295452027,
+          "circle_overlap_fraction": 0.11135742545505063,
+          "i": 1,
+          "j": 14,
+          "shared_cells": 7716,
+          "shared_occupied_fraction": 0.14490957237027438
+        },
+        {
+          "center_distance_m": 143.5927989079675,
+          "circle_overlap_fraction": 0.03880700447993635,
+          "i": 1,
+          "j": 15,
+          "shared_cells": 2758,
+          "shared_occupied_fraction": 0.051796345334009425
+        },
+        {
+          "center_distance_m": 158.7780411046998,
+          "circle_overlap_fraction": 0.0008002775464785761,
+          "i": 1,
+          "j": 16,
+          "shared_cells": 64,
+          "shared_occupied_fraction": 0.0012019456495201608
+        },
+        {
+          "center_distance_m": 145.87080629563624,
+          "circle_overlap_fraction": 0.031080787813439332,
+          "i": 1,
+          "j": 22,
+          "shared_cells": 1965,
+          "shared_occupied_fraction": 0.03690348752042369
+        },
+        {
+          "center_distance_m": 126.22217712292216,
+          "circle_overlap_fraction": 0.1126799928624634,
+          "i": 1,
+          "j": 23,
+          "shared_cells": 6711,
+          "shared_occupied_fraction": 0.1260352695926531
+        },
+        {
+          "center_distance_m": 107.28273883583537,
+          "circle_overlap_fraction": 0.2154563663817065,
+          "i": 1,
+          "j": 24,
+          "shared_cells": 12930,
+          "shared_occupied_fraction": 0.24283058200462
+        },
+        {
+          "center_distance_m": 88.5393065204176,
+          "circle_overlap_fraction": 0.3332506591064113,
+          "i": 1,
+          "j": 25,
+          "shared_cells": 19290,
+          "shared_occupied_fraction": 0.36227393092568594
+        },
+        {
+          "center_distance_m": 70.60041373920542,
+          "circle_overlap_fraction": 0.4569846211986852,
+          "i": 1,
+          "j": 26,
+          "shared_cells": 25244,
+          "shared_occupied_fraction": 0.4740924371326084
+        },
+        {
+          "center_distance_m": 54.18656165263245,
+          "circle_overlap_fraction": 0.5771877892354892,
+          "i": 1,
+          "j": 27,
+          "shared_cells": 31849,
+          "shared_occupied_fraction": 0.5993300841158428
+        },
+        {
+          "center_distance_m": 36.154041527835126,
+          "circle_overlap_fraction": 0.7147627083373994,
+          "i": 1,
+          "j": 28,
+          "shared_cells": 39205,
+          "shared_occupied_fraction": 0.7362856123349673
+        },
+        {
+          "center_distance_m": 19.178628932616895,
+          "circle_overlap_fraction": 0.8477475817906092,
+          "i": 1,
+          "j": 29,
+          "shared_cells": 46181,
+          "shared_occupied_fraction": 0.8672976881326647
+        },
+        {
+          "center_distance_m": 3.1838882574903105,
+          "circle_overlap_fraction": 0.9746650945167271,
+          "i": 1,
+          "j": 30,
+          "shared_cells": 51983,
+          "shared_occupied_fraction": 0.9762615734219768
+        },
+        {
+          "center_distance_m": 2.4718539588318156,
+          "circle_overlap_fraction": 0.980330393689917,
+          "i": 1,
+          "j": 31,
+          "shared_cells": 52274,
+          "shared_occupied_fraction": 0.9817266700471388
+        },
+        {
+          "center_distance_m": 2.75148328978439,
+          "circle_overlap_fraction": 0.9781054709217726,
+          "i": 1,
+          "j": 32,
+          "shared_cells": 52153,
+          "shared_occupied_fraction": 0.9794542415535148
+        },
+        {
+          "center_distance_m": 2.83363845926584,
+          "circle_overlap_fraction": 0.9774518004476713,
+          "i": 1,
+          "j": 33,
+          "shared_cells": 52135,
+          "shared_occupied_fraction": 0.9791161943395872
+        },
+        {
+          "center_distance_m": 3.9007893298389447,
+          "circle_overlap_fraction": 0.9689615801639501,
+          "i": 2,
+          "j": 3,
+          "shared_cells": 52075,
+          "shared_occupied_fraction": 0.9714216426959166
+        },
+        {
+          "center_distance_m": 18.622232699952175,
+          "circle_overlap_fraction": 0.8521442393990262,
+          "i": 2,
+          "j": 4,
+          "shared_cells": 46576,
+          "shared_occupied_fraction": 0.8898739014138326
+        },
+        {
+          "center_distance_m": 31.42056859255806,
+          "circle_overlap_fraction": 0.7515795798155096,
+          "i": 2,
+          "j": 5,
+          "shared_cells": 42580,
+          "shared_occupied_fraction": 0.8019285458688815
+        },
+        {
+          "center_distance_m": 48.52239300538912,
+          "circle_overlap_fraction": 0.6198742140761415,
+          "i": 2,
+          "j": 6,
+          "shared_cells": 36755,
+          "shared_occupied_fraction": 0.6856380696550823
+        },
+        {
+          "center_distance_m": 66.30806219107285,
+          "circle_overlap_fraction": 0.4878566132503332,
+          "i": 2,
+          "j": 7,
+          "shared_cells": 30712,
+          "shared_occupied_fraction": 0.5729102542578395
+        },
+        {
+          "center_distance_m": 68.45991068183511,
+          "circle_overlap_fraction": 0.47232559298200555,
+          "i": 2,
+          "j": 8,
+          "shared_cells": 30269,
+          "shared_occupied_fraction": 0.5646464081183428
+        },
+        {
+          "center_distance_m": 73.62443549837063,
+          "circle_overlap_fraction": 0.4355034567033604,
+          "i": 2,
+          "j": 9,
+          "shared_cells": 28483,
+          "shared_occupied_fraction": 0.5313298636372116
+        },
+        {
+          "center_distance_m": 79.0813201127917,
+          "circle_overlap_fraction": 0.397345459239426,
+          "i": 2,
+          "j": 10,
+          "shared_cells": 26564,
+          "shared_occupied_fraction": 0.4955322998862089
+        },
+        {
+          "center_distance_m": 90.94480273164379,
+          "circle_overlap_fraction": 0.3174031983050814,
+          "i": 2,
+          "j": 11,
+          "shared_cells": 21582,
+          "shared_occupied_fraction": 0.402596675807264
+        },
+        {
+          "center_distance_m": 96.92288210906717,
+          "circle_overlap_fraction": 0.2788976949884399,
+          "i": 2,
+          "j": 12,
+          "shared_cells": 18922,
+          "shared_occupied_fraction": 0.3529762904098345
+        },
+        {
+          "center_distance_m": 110.29597104147311,
+          "circle_overlap_fraction": 0.19787442988637904,
+          "i": 2,
+          "j": 13,
+          "shared_cells": 13642,
+          "shared_occupied_fraction": 0.25448169082395955
+        },
+        {
+          "center_distance_m": 125.6638628203349,
+          "circle_overlap_fraction": 0.11542024295645952,
+          "i": 2,
+          "j": 14,
+          "shared_cells": 8013,
+          "shared_occupied_fraction": 0.14947674743970005
+        },
+        {
+          "center_distance_m": 142.61443418386878,
+          "circle_overlap_fraction": 0.04228914639935614,
+          "i": 2,
+          "j": 15,
+          "shared_cells": 3014,
+          "shared_occupied_fraction": 0.05622400059693697
+        },
+        {
+          "center_distance_m": 157.63998125904226,
+          "circle_overlap_fraction": 0.002145674502227555,
+          "i": 2,
+          "j": 16,
+          "shared_cells": 161,
+          "shared_occupied_fraction": 0.003003339116160203
+        },
+        {
+          "center_distance_m": 144.04093596676157,
+          "circle_overlap_fraction": 0.037244164902501854,
+          "i": 2,
+          "j": 22,
+          "shared_cells": 2429,
+          "shared_occupied_fraction": 0.04531124666554741
+        },
+        {
+          "center_distance_m": 124.36408692685862,
+          "circle_overlap_fraction": 0.12187546431105993,
+          "i": 2,
+          "j": 23,
+          "shared_cells": 7296,
+          "shared_occupied_fraction": 0.13610162851866361
+        },
+        {
+          "center_distance_m": 105.37459787522548,
+          "circle_overlap_fraction": 0.22680262024713793,
+          "i": 2,
+          "j": 24,
+          "shared_cells": 13664,
+          "shared_occupied_fraction": 0.2548920849889007
+        },
+        {
+          "center_distance_m": 86.57530036192232,
+          "circle_overlap_fraction": 0.34633170948021863,
+          "i": 2,
+          "j": 25,
+          "shared_cells": 20140,
+          "shared_occupied_fraction": 0.3756972037233943
+        },
+        {
+          "center_distance_m": 68.57161877361384,
+          "circle_overlap_fraction": 0.47152227777665323,
+          "i": 2,
+          "j": 26,
+          "shared_cells": 26186,
+          "shared_occupied_fraction": 0.488480981961311
+        },
+        {
+          "center_distance_m": 52.11021254101698,
+          "circle_overlap_fraction": 0.5927724820276726,
+          "i": 2,
+          "j": 27,
+          "shared_cells": 32825,
+          "shared_occupied_fraction": 0.6176963173444233
+        },
+        {
+          "center_distance_m": 34.08057012242435,
+          "circle_overlap_fraction": 0.7308604100028833,
+          "i": 2,
+          "j": 28,
+          "shared_cells": 40187,
+          "shared_occupied_fraction": 0.7496595593859011
+        },
+        {
+          "center_distance_m": 17.10765595190491,
+          "circle_overlap_fraction": 0.8641214464739515,
+          "i": 2,
+          "j": 29,
+          "shared_cells": 47174,
+          "shared_occupied_fraction": 0.879997015315164
+        },
+        {
+          "center_distance_m": 1.4194814669275053,
+          "circle_overlap_fraction": 0.9887042735767987,
+          "i": 2,
+          "j": 30,
+          "shared_cells": 52888,
+          "shared_occupied_fraction": 0.9922329368503996
+        },
+        {
+          "center_distance_m": 0.86200771483375,
+          "circle_overlap_fraction": 0.9931403937444658,
+          "i": 2,
+          "j": 31,
+          "shared_cells": 53129,
+          "shared_occupied_fraction": 0.9968104467250792
+        },
+        {
+          "center_distance_m": 1.0998083164137116,
+          "circle_overlap_fraction": 0.9912480724206855,
+          "i": 2,
+          "j": 32,
+          "shared_cells": 53023,
+          "shared_occupied_fraction": 0.9950643696280449
+        },
+        {
+          "center_distance_m": 1.1197007070627376,
+          "circle_overlap_fraction": 0.9910897776134328,
+          "i": 2,
+          "j": 33,
+          "shared_cells": 53021,
+          "shared_occupied_fraction": 0.9945788782592384
+        },
+        {
+          "center_distance_m": 15.062378895523956,
+          "circle_overlap_fraction": 0.880314676655375,
+          "i": 3,
+          "j": 4,
+          "shared_cells": 48059,
+          "shared_occupied_fraction": 0.9182078716087123
+        },
+        {
+          "center_distance_m": 27.701071644619347,
+          "circle_overlap_fraction": 0.7806681380635937,
+          "i": 3,
+          "j": 5,
+          "shared_cells": 44086,
+          "shared_occupied_fraction": 0.8302917302295798
+        },
+        {
+          "center_distance_m": 44.621888507336024,
+          "circle_overlap_fraction": 0.6495685653252682,
+          "i": 3,
+          "j": 6,
+          "shared_cells": 38347,
+          "shared_occupied_fraction": 0.7137645416472778
+        },
+        {
+          "center_distance_m": 62.45622834486053,
+          "circle_overlap_fraction": 0.5159165321810542,
+          "i": 3,
+          "j": 7,
+          "shared_cells": 32298,
+          "shared_occupied_fraction": 0.601172638436482
+        },
+        {
+          "center_distance_m": 64.88755606594522,
+          "circle_overlap_fraction": 0.4981668747074396,
+          "i": 3,
+          "j": 8,
+          "shared_cells": 31767,
+          "shared_occupied_fraction": 0.5912889716147045
+        },
+        {
+          "center_distance_m": 70.48934659818394,
+          "circle_overlap_fraction": 0.4577779186786131,
+          "i": 3,
+          "j": 9,
+          "shared_cells": 29934,
+          "shared_occupied_fraction": 0.5571707771056306
+        },
+        {
+          "center_distance_m": 76.63897180179166,
+          "circle_overlap_fraction": 0.414324311060022,
+          "i": 3,
+          "j": 10,
+          "shared_cells": 27714,
+          "shared_occupied_fraction": 0.5158492322010237
+        },
+        {
+          "center_distance_m": 89.15040214184782,
+          "circle_overlap_fraction": 0.3292063321145046,
+          "i": 3,
+          "j": 11,
+          "shared_cells": 22342,
+          "shared_occupied_fraction": 0.4158585388552815
+        },
+        {
+          "center_distance_m": 95.7033206549146,
+          "circle_overlap_fraction": 0.28664733823061106,
+          "i": 3,
+          "j": 12,
+          "shared_cells": 19534,
+          "shared_occupied_fraction": 0.3635923685435086
+        },
+        {
+          "center_distance_m": 109.62925016778023,
+          "circle_overlap_fraction": 0.20172843430474705,
+          "i": 3,
+          "j": 13,
+          "shared_cells": 13961,
+          "shared_occupied_fraction": 0.2598604001861331
+        },
+        {
+          "center_distance_m": 125.42189299163458,
+          "circle_overlap_fraction": 0.11661397336553554,
+          "i": 3,
+          "j": 14,
+          "shared_cells": 8117,
+          "shared_occupied_fraction": 0.15108422522103304
+        },
+        {
+          "center_distance_m": 142.68088140135225,
+          "circle_overlap_fraction": 0.042049652426133906,
+          "i": 3,
+          "j": 15,
+          "shared_cells": 3000,
+          "shared_occupied_fraction": 0.05583992554676594
+        },
+        {
+          "center_distance_m": 158.05263266048698,
+          "circle_overlap_fraction": 0.0016089081206580422,
+          "i": 3,
+          "j": 16,
+          "shared_cells": 121,
+          "shared_occupied_fraction": 0.0022522103303862263
+        },
+        {
+          "center_distance_m": 146.25955747217677,
+          "circle_overlap_fraction": 0.02981810102499729,
+          "i": 3,
+          "j": 22,
+          "shared_cells": 1860,
+          "shared_occupied_fraction": 0.034620753838994885
+        },
+        {
+          "center_distance_m": 126.6801004104651,
+          "circle_overlap_fraction": 0.11044731534235848,
+          "i": 3,
+          "j": 23,
+          "shared_cells": 6582,
+          "shared_occupied_fraction": 0.12251279664960446
+        },
+        {
+          "center_distance_m": 107.87064152985674,
+          "circle_overlap_fraction": 0.21199329736194197,
+          "i": 3,
+          "j": 24,
+          "shared_cells": 12753,
+          "shared_occupied_fraction": 0.237375523499302
+        },
+        {
+          "center_distance_m": 89.29324853916872,
+          "circle_overlap_fraction": 0.3282627447210846,
+          "i": 3,
+          "j": 25,
+          "shared_cells": 19004,
+          "shared_occupied_fraction": 0.3537273150302466
+        },
+        {
+          "center_distance_m": 71.59974317583793,
+          "circle_overlap_fraction": 0.44986054636283485,
+          "i": 3,
+          "j": 26,
+          "shared_cells": 24817,
+          "shared_occupied_fraction": 0.46192647743136345
+        },
+        {
+          "center_distance_m": 55.55409419404344,
+          "circle_overlap_fraction": 0.5669652919669748,
+          "i": 3,
+          "j": 27,
+          "shared_cells": 31308,
+          "shared_occupied_fraction": 0.5891496208200824
+        },
+        {
+          "center_distance_m": 37.67493740962906,
+          "circle_overlap_fraction": 0.7029863743066821,
+          "i": 3,
+          "j": 28,
+          "shared_cells": 38676,
+          "shared_occupied_fraction": 0.7198883201489065
+        },
+        {
+          "center_distance_m": 20.756130459818028,
+          "circle_overlap_fraction": 0.8352924126105733,
+          "i": 3,
+          "j": 29,
+          "shared_cells": 45680,
+          "shared_occupied_fraction": 0.8502559329920893
+        },
+        {
+          "center_distance_m": 5.242359017838813,
+          "circle_overlap_fraction": 0.9582900977749214,
+          "i": 3,
+          "j": 30,
+          "shared_cells": 51382,
+          "shared_occupied_fraction": 0.9639788375670707
+        },
+        {
+          "center_distance_m": 4.548078818254068,
+          "circle_overlap_fraction": 0.9638124132862453,
+          "i": 3,
+          "j": 31,
+          "shared_cells": 51669,
+          "shared_occupied_fraction": 0.9694178127169365
+        },
+        {
+          "center_distance_m": 4.835462000877484,
+          "circle_overlap_fraction": 0.9615264743315007,
+          "i": 3,
+          "j": 32,
+          "shared_cells": 51548,
+          "shared_occupied_fraction": 0.9673835529032015
+        },
+        {
+          "center_distance_m": 4.898631623404782,
+          "circle_overlap_fraction": 0.9610240190777843,
+          "i": 3,
+          "j": 33,
+          "shared_cells": 51531,
+          "shared_occupied_fraction": 0.9666291502532358
+        },
+        {
+          "center_distance_m": 12.979289273857917,
+          "circle_overlap_fraction": 0.89682748937881,
+          "i": 4,
+          "j": 5,
+          "shared_cells": 48344,
+          "shared_occupied_fraction": 0.9236530378295759
+        },
+        {
+          "center_distance_m": 31.82376111716398,
+          "circle_overlap_fraction": 0.748434364401191,
+          "i": 4,
+          "j": 6,
+          "shared_cells": 42269,
+          "shared_occupied_fraction": 0.807585021016431
+        },
+        {
+          "center_distance_m": 51.11478761765349,
+          "circle_overlap_fraction": 0.6002703545040771,
+          "i": 4,
+          "j": 7,
+          "shared_cells": 36036,
+          "shared_occupied_fraction": 0.688498280473825
+        },
+        {
+          "center_distance_m": 56.71806110983081,
+          "circle_overlap_fraction": 0.5582915692036222,
+          "i": 4,
+          "j": 8,
+          "shared_cells": 34727,
+          "shared_occupied_fraction": 0.6634887275506305
+        },
+        {
+          "center_distance_m": 65.42108964236115,
+          "circle_overlap_fraction": 0.49428911819908034,
+          "i": 4,
+          "j": 9,
+          "shared_cells": 32037,
+          "shared_occupied_fraction": 0.6120940007642338
+        },
+        {
+          "center_distance_m": 75.3296349405202,
+          "circle_overlap_fraction": 0.4234937191605543,
+          "i": 4,
+          "j": 10,
+          "shared_cells": 28081,
+          "shared_occupied_fraction": 0.5365112724493695
+        },
+        {
+          "center_distance_m": 90.6020221339946,
+          "circle_overlap_fraction": 0.3196494758274031,
+          "i": 4,
+          "j": 11,
+          "shared_cells": 21653,
+          "shared_occupied_fraction": 0.4136988918609094
+        },
+        {
+          "center_distance_m": 99.40509066923855,
+          "circle_overlap_fraction": 0.2632998071565125,
+          "i": 4,
+          "j": 12,
+          "shared_cells": 17923,
+          "shared_occupied_fraction": 0.34243408482995796
+        },
+        {
+          "center_distance_m": 115.2181406457936,
+          "circle_overlap_fraction": 0.17008909883632498,
+          "i": 4,
+          "j": 13,
+          "shared_cells": 11694,
+          "shared_occupied_fraction": 0.22342376767290792
+        },
+        {
+          "center_distance_m": 132.343167015055,
+          "circle_overlap_fraction": 0.08399699665138942,
+          "i": 4,
+          "j": 14,
+          "shared_cells": 5714,
+          "shared_occupied_fraction": 0.10917080626671762
+        },
+        {
+          "center_distance_m": 150.50968202613996,
+          "circle_overlap_fraction": 0.017185922714703417,
+          "i": 4,
+          "j": 15,
+          "shared_cells": 1180,
+          "shared_occupied_fraction": 0.02254489873901414
+        },
+        {
+          "center_distance_m": 159.74938203296284,
+          "circle_overlap_fraction": 7.439951799183118e-05,
+          "i": 4,
+          "j": 22,
+          "shared_cells": 4,
+          "shared_occupied_fraction": 7.642338555598012e-05
+        },
+        {
+          "center_distance_m": 140.38819083702396,
+          "circle_overlap_fraction": 0.05055683268682227,
+          "i": 4,
+          "j": 23,
+          "shared_cells": 2927,
+          "shared_occupied_fraction": 0.05592281238058846
+        },
+        {
+          "center_distance_m": 121.93084414711156,
+          "circle_overlap_fraction": 0.1342369429168922,
+          "i": 4,
+          "j": 24,
+          "shared_cells": 8497,
+          "shared_occupied_fraction": 0.1623423767672908
+        },
+        {
+          "center_distance_m": 103.72847890653362,
+          "circle_overlap_fraction": 0.23671836720300296,
+          "i": 4,
+          "j": 25,
+          "shared_cells": 14181,
+          "shared_occupied_fraction": 0.27094000764233855
+        },
+        {
+          "center_distance_m": 86.42997105623753,
+          "circle_overlap_fraction": 0.347304613478904,
+          "i": 4,
+          "j": 26,
+          "shared_cells": 19593,
+          "shared_occupied_fraction": 0.3743408482995797
+        },
+        {
+          "center_distance_m": 70.61646973743586,
+          "circle_overlap_fraction": 0.4568699661140612,
+          "i": 4,
+          "j": 27,
+          "shared_cells": 25998,
+          "shared_occupied_fraction": 0.49671379442109287
+        },
+        {
+          "center_distance_m": 52.690829947688194,
+          "circle_overlap_fraction": 0.5884068937077364,
+          "i": 4,
+          "j": 28,
+          "shared_cells": 33301,
+          "shared_occupied_fraction": 0.6362437905999235
+        },
+        {
+          "center_distance_m": 35.727332322415215,
+          "circle_overlap_fraction": 0.7180715731335948,
+          "i": 4,
+          "j": 29,
+          "shared_cells": 40199,
+          "shared_occupied_fraction": 0.7680359189912113
+        },
+        {
+          "center_distance_m": 19.67169151530544,
+          "circle_overlap_fraction": 0.843852940243525,
+          "i": 4,
+          "j": 30,
+          "shared_cells": 46006,
+          "shared_occupied_fraction": 0.8789835689721055
+        },
+        {
+          "center_distance_m": 18.97696125971109,
+          "circle_overlap_fraction": 0.8493409531065756,
+          "i": 4,
+          "j": 31,
+          "shared_cells": 46283,
+          "shared_occupied_fraction": 0.8842758884218571
+        },
+        {
+          "center_distance_m": 19.237341864062092,
+          "circle_overlap_fraction": 0.8472837381508975,
+          "i": 4,
+          "j": 32,
+          "shared_cells": 46173,
+          "shared_occupied_fraction": 0.8821742453190676
+        },
+        {
+          "center_distance_m": 19.331014174079456,
+          "circle_overlap_fraction": 0.8465437516019777,
+          "i": 4,
+          "j": 33,
+          "shared_cells": 46149,
+          "shared_occupied_fraction": 0.8817157050057317
+        },
+        {
+          "center_distance_m": 20.17927420632294,
+          "circle_overlap_fraction": 0.8398451713074672,
+          "i": 5,
+          "j": 6,
+          "shared_cells": 46820,
+          "shared_occupied_fraction": 0.8817823982522554
+        },
+        {
+          "center_distance_m": 40.189536230416316,
+          "circle_overlap_fraction": 0.6835774863423262,
+          "i": 5,
+          "j": 7,
+          "shared_cells": 40422,
+          "shared_occupied_fraction": 0.7612859483586644
+        },
+        {
+          "center_distance_m": 48.496057388115,
+          "circle_overlap_fraction": 0.6200739222124864,
+          "i": 5,
+          "j": 8,
+          "shared_cells": 38179,
+          "shared_occupied_fraction": 0.7190425071096296
+        },
+        {
+          "center_distance_m": 59.67784937764101,
+          "circle_overlap_fraction": 0.5363520977107373,
+          "i": 5,
+          "j": 9,
+          "shared_cells": 34412,
+          "shared_occupied_fraction": 0.648096879296382
+        },
+        {
+          "center_distance_m": 72.55339550734192,
+          "circle_overlap_fraction": 0.44308526746903765,
+          "i": 5,
+          "j": 10,
+          "shared_cells": 29375,
+          "shared_occupied_fraction": 0.5532327626796241
+        },
+        {
+          "center_distance_m": 89.80425370187015,
+          "circle_overlap_fraction": 0.3248928440640007,
+          "i": 5,
+          "j": 11,
+          "shared_cells": 22100,
+          "shared_occupied_fraction": 0.41621937209258525
+        },
+        {
+          "center_distance_m": 100.37238881322331,
+          "circle_overlap_fraction": 0.2572866801081279,
+          "i": 5,
+          "j": 12,
+          "shared_cells": 17775,
+          "shared_occupied_fraction": 0.33476467597039383
+        },
+        {
+          "center_distance_m": 117.59090809253449,
+          "circle_overlap_fraction": 0.15713519560780098,
+          "i": 5,
+          "j": 13,
+          "shared_cells": 10957,
+          "shared_occupied_fraction": 0.20635817466146864
+        },
+        {
+          "center_distance_m": 135.71561840644839,
+          "circle_overlap_fraction": 0.06934280564993472,
+          "i": 5,
+          "j": 14,
+          "shared_cells": 4734,
+          "shared_occupied_fraction": 0.08915757952426691
+        },
+        {
+          "center_distance_m": 154.56410000157842,
+          "circle_overlap_fraction": 0.007478859715336215,
+          "i": 5,
+          "j": 15,
+          "shared_cells": 492,
+          "shared_occupied_fraction": 0.009266060229391491
+        },
+        {
+          "center_distance_m": 150.4105305659814,
+          "circle_overlap_fraction": 0.017454298554953465,
+          "i": 5,
+          "j": 23,
+          "shared_cells": 1070,
+          "shared_occupied_fraction": 0.020151797653351414
+        },
+        {
+          "center_distance_m": 132.4462686045635,
+          "circle_overlap_fraction": 0.08353629868477387,
+          "i": 5,
+          "j": 24,
+          "shared_cells": 5459,
+          "shared_occupied_fraction": 0.1028118349435938
+        },
+        {
+          "center_distance_m": 114.79943408652142,
+          "circle_overlap_fraction": 0.17240551465547743,
+          "i": 5,
+          "j": 25,
+          "shared_cells": 10709,
+          "shared_occupied_fraction": 0.20168747763527128
+        },
+        {
+          "center_distance_m": 98.16376309970718,
+          "circle_overlap_fraction": 0.2710703925745967,
+          "i": 5,
+          "j": 26,
+          "shared_cells": 15872,
+          "shared_occupied_fraction": 0.29892460967662954
+        },
+        {
+          "center_distance_m": 83.05965488885414,
+          "circle_overlap_fraction": 0.37005298183517055,
+          "i": 5,
+          "j": 27,
+          "shared_cells": 22171,
+          "shared_occupied_fraction": 0.41755654745089177
+        },
+        {
+          "center_distance_m": 65.35461807856201,
+          "circle_overlap_fraction": 0.4947718931695339,
+          "i": 5,
+          "j": 28,
+          "shared_cells": 29379,
+          "shared_occupied_fraction": 0.5533080965026272
+        },
+        {
+          "center_distance_m": 48.457201950637874,
+          "circle_overlap_fraction": 0.6203685906272195,
+          "i": 5,
+          "j": 29,
+          "shared_cells": 36218,
+          "shared_occupied_fraction": 0.6821101003823191
+        },
+        {
+          "center_distance_m": 32.54109358144302,
+          "circle_overlap_fraction": 0.7428426836959755,
+          "i": 5,
+          "j": 30,
+          "shared_cells": 42012,
+          "shared_occupied_fraction": 0.7912311430024295
+        },
+        {
+          "center_distance_m": 31.83716464550735,
+          "circle_overlap_fraction": 0.7483298345130773,
+          "i": 5,
+          "j": 31,
+          "shared_cells": 42288,
+          "shared_occupied_fraction": 0.7964291767896491
+        },
+        {
+          "center_distance_m": 32.10541163588449,
+          "circle_overlap_fraction": 0.7462382434202897,
+          "i": 5,
+          "j": 32,
+          "shared_cells": 42178,
+          "shared_occupied_fraction": 0.7943574966570616
+        },
+        {
+          "center_distance_m": 32.19557792073236,
+          "circle_overlap_fraction": 0.7455353578913709,
+          "i": 5,
+          "j": 33,
+          "shared_cells": 42154,
+          "shared_occupied_fraction": 0.7939054937190425
+        },
+        {
+          "center_distance_m": 20.105325090042523,
+          "circle_overlap_fraction": 0.8404289579858485,
+          "i": 6,
+          "j": 7,
+          "shared_cells": 49129,
+          "shared_occupied_fraction": 0.8950446347239934
+        },
+        {
+          "center_distance_m": 30.933211605426408,
+          "circle_overlap_fraction": 0.7553835031430093,
+          "i": 6,
+          "j": 8,
+          "shared_cells": 46202,
+          "shared_occupied_fraction": 0.8309562777647884
+        },
+        {
+          "center_distance_m": 44.87963496025961,
+          "circle_overlap_fraction": 0.6475993437279567,
+          "i": 6,
+          "j": 9,
+          "shared_cells": 41046,
+          "shared_occupied_fraction": 0.7382241326594845
+        },
+        {
+          "center_distance_m": 61.29191879187106,
+          "circle_overlap_fraction": 0.5244609495227224,
+          "i": 6,
+          "j": 10,
+          "shared_cells": 34255,
+          "shared_occupied_fraction": 0.6160860416179565
+        },
+        {
+          "center_distance_m": 80.6623815612612,
+          "circle_overlap_fraction": 0.3864436653572448,
+          "i": 6,
+          "j": 11,
+          "shared_cells": 25750,
+          "shared_occupied_fraction": 0.46312116688548766
+        },
+        {
+          "center_distance_m": 93.4883532493137,
+          "circle_overlap_fraction": 0.30086269098814344,
+          "i": 6,
+          "j": 12,
+          "shared_cells": 20406,
+          "shared_occupied_fraction": 0.36700778762971886
+        },
+        {
+          "center_distance_m": 112.37604882878401,
+          "circle_overlap_fraction": 0.1859867854329422,
+          "i": 6,
+          "j": 13,
+          "shared_cells": 12702,
+          "shared_occupied_fraction": 0.22844912861279473
+        },
+        {
+          "center_distance_m": 131.68816610394933,
+          "circle_overlap_fraction": 0.08694189047084304,
+          "i": 6,
+          "j": 14,
+          "shared_cells": 5916,
+          "shared_occupied_fraction": 0.10640096401143864
+        },
+        {
+          "center_distance_m": 151.32816706074806,
+          "circle_overlap_fraction": 0.015023034010183242,
+          "i": 6,
+          "j": 15,
+          "shared_cells": 1064,
+          "shared_occupied_fraction": 0.019136346468588694
+        },
+        {
+          "center_distance_m": 158.0412943469442,
+          "circle_overlap_fraction": 0.001622962745831951,
+          "i": 6,
+          "j": 23,
+          "shared_cells": 108,
+          "shared_occupied_fraction": 0.0019424111077138901
+        },
+        {
+          "center_distance_m": 141.3563443793619,
+          "circle_overlap_fraction": 0.046904047748331144,
+          "i": 6,
+          "j": 24,
+          "shared_cells": 3185,
+          "shared_occupied_fraction": 0.057283142389525366
+        },
+        {
+          "center_distance_m": 125.20734817265199,
+          "circle_overlap_fraction": 0.11767548120331195,
+          "i": 6,
+          "j": 25,
+          "shared_cells": 7233,
+          "shared_occupied_fraction": 0.13008758835272746
+        },
+        {
+          "center_distance_m": 110.4373240561791,
+          "circle_overlap_fraction": 0.19706002843230863,
+          "i": 6,
+          "j": 26,
+          "shared_cells": 11490,
+          "shared_occupied_fraction": 0.20985151498548024
+        },
+        {
+          "center_distance_m": 97.57537029472157,
+          "circle_overlap_fraction": 0.2747745472932887,
+          "i": 6,
+          "j": 27,
+          "shared_cells": 16779,
+          "shared_occupied_fraction": 0.31574490506388664
+        },
+        {
+          "center_distance_m": 80.93408457388824,
+          "circle_overlap_fraction": 0.38457746359011186,
+          "i": 6,
+          "j": 28,
+          "shared_cells": 23520,
+          "shared_occupied_fraction": 0.43418065016337154
+        },
+        {
+          "center_distance_m": 64.68084936732309,
+          "circle_overlap_fraction": 0.4996709239609615,
+          "i": 6,
+          "j": 29,
+          "shared_cells": 30383,
+          "shared_occupied_fraction": 0.557578315685159
+        },
+        {
+          "center_distance_m": 49.83313719159678,
+          "circle_overlap_fraction": 0.6099485899759217,
+          "i": 6,
+          "j": 30,
+          "shared_cells": 36137,
+          "shared_occupied_fraction": 0.6779670556451916
+        },
+        {
+          "center_distance_m": 49.12491122536875,
+          "circle_overlap_fraction": 0.6153082123549328,
+          "i": 6,
+          "j": 31,
+          "shared_cells": 36421,
+          "shared_occupied_fraction": 0.6833336460346348
+        },
+        {
+          "center_distance_m": 49.410811059416254,
+          "circle_overlap_fraction": 0.6131436400465012,
+          "i": 6,
+          "j": 32,
+          "shared_cells": 36305,
+          "shared_occupied_fraction": 0.6813234245392786
+        },
+        {
+          "center_distance_m": 49.483902013171935,
+          "circle_overlap_fraction": 0.6125904736559912,
+          "i": 6,
+          "j": 33,
+          "shared_cells": 36282,
+          "shared_occupied_fraction": 0.6805852560495217
+        },
+        {
+          "center_distance_m": 16.79244386110227,
+          "circle_overlap_fraction": 0.8666157089270283,
+          "i": 7,
+          "j": 8,
+          "shared_cells": 50417,
+          "shared_occupied_fraction": 0.9185097467662597
+        },
+        {
+          "center_distance_m": 33.18318276543321,
+          "circle_overlap_fraction": 0.7378420374810409,
+          "i": 7,
+          "j": 9,
+          "shared_cells": 44250,
+          "shared_occupied_fraction": 0.8061577700856258
+        },
+        {
+          "center_distance_m": 52.65728247668564,
+          "circle_overlap_fraction": 0.5886589743830936,
+          "i": 7,
+          "j": 10,
+          "shared_cells": 35760,
+          "shared_occupied_fraction": 0.6514847877573329
+        },
+        {
+          "center_distance_m": 73.20428742126563,
+          "circle_overlap_fraction": 0.43847415845461746,
+          "i": 7,
+          "j": 11,
+          "shared_cells": 26673,
+          "shared_occupied_fraction": 0.48593550737839314
+        },
+        {
+          "center_distance_m": 87.91969078229788,
+          "circle_overlap_fraction": 0.3373639717286708,
+          "i": 7,
+          "j": 12,
+          "shared_cells": 20603,
+          "shared_occupied_fraction": 0.37535070140280563
+        },
+        {
+          "center_distance_m": 107.89522526825195,
+          "circle_overlap_fraction": 0.2118488263940383,
+          "i": 7,
+          "j": 13,
+          "shared_cells": 13080,
+          "shared_occupied_fraction": 0.23829477136090363
+        },
+        {
+          "center_distance_m": 127.9271526200462,
+          "circle_overlap_fraction": 0.10443603514459195,
+          "i": 7,
+          "j": 14,
+          "shared_cells": 6280,
+          "shared_occupied_fraction": 0.11441063946073966
+        },
+        {
+          "center_distance_m": 147.98513196048685,
+          "circle_overlap_fraction": 0.024421880279634288,
+          "i": 7,
+          "j": 15,
+          "shared_cells": 1728,
+          "shared_occupied_fraction": 0.031481144106394604
+        },
+        {
+          "center_distance_m": 150.0688963640863,
+          "circle_overlap_fraction": 0.018389285566330054,
+          "i": 7,
+          "j": 24,
+          "shared_cells": 1296,
+          "shared_occupied_fraction": 0.023610858079795956
+        },
+        {
+          "center_distance_m": 135.587639628546,
+          "circle_overlap_fraction": 0.06988285451638013,
+          "i": 7,
+          "j": 25,
+          "shared_cells": 4317,
+          "shared_occupied_fraction": 0.07864820550191291
+        },
+        {
+          "center_distance_m": 122.78208584557426,
+          "circle_overlap_fraction": 0.12987214501744937,
+          "i": 7,
+          "j": 26,
+          "shared_cells": 7629,
+          "shared_occupied_fraction": 0.13933483096816612
+        },
+        {
+          "center_distance_m": 112.12236439758203,
+          "circle_overlap_fraction": 0.18742537663283834,
+          "i": 7,
+          "j": 27,
+          "shared_cells": 11562,
+          "shared_occupied_fraction": 0.21757211945578744
+        },
+        {
+          "center_distance_m": 96.7064756569324,
+          "circle_overlap_fraction": 0.2802687607829001,
+          "i": 7,
+          "j": 28,
+          "shared_cells": 17597,
+          "shared_occupied_fraction": 0.3248417049712946
+        },
+        {
+          "center_distance_m": 81.35681260729817,
+          "circle_overlap_fraction": 0.3816782254382172,
+          "i": 7,
+          "j": 29,
+          "shared_cells": 24438,
+          "shared_occupied_fraction": 0.4484777302673836
+        },
+        {
+          "center_distance_m": 67.68963704193663,
+          "circle_overlap_fraction": 0.4778727510800029,
+          "i": 7,
+          "j": 30,
+          "shared_cells": 30084,
+          "shared_occupied_fraction": 0.5644065888709617
+        },
+        {
+          "center_distance_m": 67.00262193531056,
+          "circle_overlap_fraction": 0.48283194981824273,
+          "i": 7,
+          "j": 31,
+          "shared_cells": 30367,
+          "shared_occupied_fraction": 0.5697480252912812
+        },
+        {
+          "center_distance_m": 67.28968490384115,
+          "circle_overlap_fraction": 0.4807584696674591,
+          "i": 7,
+          "j": 32,
+          "shared_cells": 30252,
+          "shared_occupied_fraction": 0.5677288593626844
+        },
+        {
+          "center_distance_m": 67.34980450246302,
+          "circle_overlap_fraction": 0.48032446099026316,
+          "i": 7,
+          "j": 33,
+          "shared_cells": 30230,
+          "shared_occupied_fraction": 0.5670605890076909
+        },
+        {
+          "center_distance_m": 16.39835565467842,
+          "circle_overlap_fraction": 0.8697348478206129,
+          "i": 8,
+          "j": 9,
+          "shared_cells": 50638,
+          "shared_occupied_fraction": 0.8906203281917794
+        },
+        {
+          "center_distance_m": 36.08881588386872,
+          "circle_overlap_fraction": 0.7152683573268875,
+          "i": 8,
+          "j": 10,
+          "shared_cells": 41906,
+          "shared_occupied_fraction": 0.7370420528694795
+        },
+        {
+          "center_distance_m": 56.67967388802482,
+          "circle_overlap_fraction": 0.558577221484567,
+          "i": 8,
+          "j": 11,
+          "shared_cells": 32628,
+          "shared_occupied_fraction": 0.5738607383435637
+        },
+        {
+          "center_distance_m": 71.72051536791855,
+          "circle_overlap_fraction": 0.44900125368104477,
+          "i": 8,
+          "j": 12,
+          "shared_cells": 26179,
+          "shared_occupied_fraction": 0.4604358302407795
+        },
+        {
+          "center_distance_m": 91.86148834921154,
+          "circle_overlap_fraction": 0.3114159576304167,
+          "i": 8,
+          "j": 13,
+          "shared_cells": 18475,
+          "shared_occupied_fraction": 0.3249380023567898
+        },
+        {
+          "center_distance_m": 112.00014351506931,
+          "circle_overlap_fraction": 0.18811958878311769,
+          "i": 8,
+          "j": 14,
+          "shared_cells": 11125,
+          "shared_occupied_fraction": 0.19566632076965018
+        },
+        {
+          "center_distance_m": 132.10416881207345,
+          "circle_overlap_fraction": 0.08506792281514988,
+          "i": 8,
+          "j": 15,
+          "shared_cells": 5926,
+          "shared_occupied_fraction": 0.10422639252862444
+        },
+        {
+          "center_distance_m": 151.6366775704913,
+          "circle_overlap_fraction": 0.014232703631707292,
+          "i": 8,
+          "j": 16,
+          "shared_cells": 1027,
+          "shared_occupied_fraction": 0.01806285945442074
+        },
+        {
+          "center_distance_m": 154.57321200167587,
+          "circle_overlap_fraction": 0.0074601272372038,
+          "i": 8,
+          "j": 23,
+          "shared_cells": 509,
+          "shared_occupied_fraction": 0.00906161542432928
+        },
+        {
+          "center_distance_m": 140.55981582173888,
+          "circle_overlap_fraction": 0.04990300948870728,
+          "i": 8,
+          "j": 24,
+          "shared_cells": 3536,
+          "shared_occupied_fraction": 0.062191111032942295
+        },
+        {
+          "center_distance_m": 127.6000120523792,
+          "circle_overlap_fraction": 0.10600312999248983,
+          "i": 8,
+          "j": 25,
+          "shared_cells": 6922,
+          "shared_occupied_fraction": 0.12174402448247357
+        },
+        {
+          "center_distance_m": 116.76970734611957,
+          "circle_overlap_fraction": 0.16158478799316445,
+          "i": 8,
+          "j": 26,
+          "shared_cells": 9997,
+          "shared_occupied_fraction": 0.18258360272496485
+        },
+        {
+          "center_distance_m": 108.59707902755731,
+          "circle_overlap_fraction": 0.20773587409602928,
+          "i": 8,
+          "j": 27,
+          "shared_cells": 13089,
+          "shared_occupied_fraction": 0.24630699459927363
+        },
+        {
+          "center_distance_m": 94.99236009960185,
+          "circle_overlap_fraction": 0.2911906486769464,
+          "i": 8,
+          "j": 28,
+          "shared_cells": 18512,
+          "shared_occupied_fraction": 0.341732661387089
+        },
+        {
+          "center_distance_m": 81.29242460941234,
+          "circle_overlap_fraction": 0.3821194862014309,
+          "i": 8,
+          "j": 29,
+          "shared_cells": 24870,
+          "shared_occupied_fraction": 0.45640564496889396
+        },
+        {
+          "center_distance_m": 69.87926069253461,
+          "circle_overlap_fraction": 0.46214081321873124,
+          "i": 8,
+          "j": 30,
+          "shared_cells": 29607,
+          "shared_occupied_fraction": 0.5554575813290308
+        },
+        {
+          "center_distance_m": 69.25800198966232,
+          "circle_overlap_fraction": 0.4665928428733909,
+          "i": 8,
+          "j": 31,
+          "shared_cells": 29873,
+          "shared_occupied_fraction": 0.5604795587159234
+        },
+        {
+          "center_distance_m": 69.5327289102541,
+          "circle_overlap_fraction": 0.46462296720089286,
+          "i": 8,
+          "j": 32,
+          "shared_cells": 29761,
+          "shared_occupied_fraction": 0.5585144315580077
+        },
+        {
+          "center_distance_m": 69.57022481866643,
+          "circle_overlap_fraction": 0.4643542504021087,
+          "i": 8,
+          "j": 33,
+          "shared_cells": 29746,
+          "shared_occupied_fraction": 0.5579816169574189
+        },
+        {
+          "center_distance_m": 20.04740048697117,
+          "circle_overlap_fraction": 0.84088626421308,
+          "i": 9,
+          "j": 10,
+          "shared_cells": 48489,
+          "shared_occupied_fraction": 0.8469250519623426
+        },
+        {
+          "center_distance_m": 40.577382289873405,
+          "circle_overlap_fraction": 0.6805910313811875,
+          "i": 9,
+          "j": 11,
+          "shared_cells": 39075,
+          "shared_occupied_fraction": 0.6824969870574468
+        },
+        {
+          "center_distance_m": 55.99501030355949,
+          "circle_overlap_fraction": 0.5636766776832901,
+          "i": 9,
+          "j": 12,
+          "shared_cells": 32470,
+          "shared_occupied_fraction": 0.5671318533526627
+        },
+        {
+          "center_distance_m": 76.26394570431442,
+          "circle_overlap_fraction": 0.41694594415969144,
+          "i": 9,
+          "j": 13,
+          "shared_cells": 24669,
+          "shared_occupied_fraction": 0.43087698461216006
+        },
+        {
+          "center_distance_m": 96.4704972759792,
+          "circle_overlap_fraction": 0.2817658404609138,
+          "i": 9,
+          "j": 14,
+          "shared_cells": 16926,
+          "shared_occupied_fraction": 0.2956351632228879
+        },
+        {
+          "center_distance_m": 116.58471175015791,
+          "circle_overlap_fraction": 0.1625921285906875,
+          "i": 9,
+          "j": 15,
+          "shared_cells": 11341,
+          "shared_occupied_fraction": 0.1980856898328472
+        },
+        {
+          "center_distance_m": 136.31929450984518,
+          "circle_overlap_fraction": 0.06681305876207518,
+          "i": 9,
+          "j": 16,
+          "shared_cells": 4862,
+          "shared_occupied_fraction": 0.08492131416694322
+        },
+        {
+          "center_distance_m": 152.1563060312187,
+          "circle_overlap_fraction": 0.012933475902257768,
+          "i": 9,
+          "j": 17,
+          "shared_cells": 931,
+          "shared_occupied_fraction": 0.016261156620613768
+        },
+        {
+          "center_distance_m": 159.95638303430925,
+          "circle_overlap_fraction": 5.402805065355378e-06,
+          "i": 9,
+          "j": 22,
+          "shared_cells": 0,
+          "shared_occupied_fraction": 0.0
+        },
+        {
+          "center_distance_m": 144.63481715193544,
+          "circle_overlap_fraction": 0.03520493658856661,
+          "i": 9,
+          "j": 23,
+          "shared_cells": 2470,
+          "shared_occupied_fraction": 0.043972868562069396
+        },
+        {
+          "center_distance_m": 132.0485385269227,
+          "circle_overlap_fraction": 0.08531779371528045,
+          "i": 9,
+          "j": 24,
+          "shared_cells": 6046,
+          "shared_occupied_fraction": 0.105601453198959
+        },
+        {
+          "center_distance_m": 120.88203124888796,
+          "circle_overlap_fraction": 0.13967305372076302,
+          "i": 9,
+          "j": 25,
+          "shared_cells": 9316,
+          "shared_occupied_fraction": 0.1627163642079891
+        },
+        {
+          "center_distance_m": 112.32660672895423,
+          "circle_overlap_fraction": 0.18626691387359565,
+          "i": 9,
+          "j": 26,
+          "shared_cells": 11885,
+          "shared_occupied_fraction": 0.21706573155808814
+        },
+        {
+          "center_distance_m": 106.89739127681443,
+          "circle_overlap_fraction": 0.2177347135525617,
+          "i": 9,
+          "j": 27,
+          "shared_cells": 13877,
+          "shared_occupied_fraction": 0.2611354697879227
+        },
+        {
+          "center_distance_m": 95.46485301889997,
+          "circle_overlap_fraction": 0.2881691571942863,
+          "i": 9,
+          "j": 28,
+          "shared_cells": 18512,
+          "shared_occupied_fraction": 0.341732661387089
+        },
+        {
+          "center_distance_m": 83.83685275731395,
+          "circle_overlap_fraction": 0.36477604578383593,
+          "i": 9,
+          "j": 29,
+          "shared_cells": 23880,
+          "shared_occupied_fraction": 0.4382375071112661
+        },
+        {
+          "center_distance_m": 75.00614221152065,
+          "circle_overlap_fraction": 0.4257662181742133,
+          "i": 9,
+          "j": 30,
+          "shared_cells": 27798,
+          "shared_occupied_fraction": 0.5215188923492552
+        },
+        {
+          "center_distance_m": 74.47412824691645,
+          "circle_overlap_fraction": 0.4295095545368599,
+          "i": 9,
+          "j": 31,
+          "shared_cells": 28057,
+          "shared_occupied_fraction": 0.5264076249085349
+        },
+        {
+          "center_distance_m": 74.72423472824576,
+          "circle_overlap_fraction": 0.4277488386199759,
+          "i": 9,
+          "j": 32,
+          "shared_cells": 27945,
+          "shared_occupied_fraction": 0.5244341853394888
+        },
+        {
+          "center_distance_m": 74.73976709611041,
+          "circle_overlap_fraction": 0.4276395469638214,
+          "i": 9,
+          "j": 33,
+          "shared_cells": 27933,
+          "shared_occupied_fraction": 0.5239729881823297
+        },
+        {
+          "center_distance_m": 20.592466327260254,
+          "circle_overlap_fraction": 0.8365838919252555,
+          "i": 10,
+          "j": 11,
+          "shared_cells": 49128,
+          "shared_occupied_fraction": 0.8464069741398619
+        },
+        {
+          "center_distance_m": 35.978996972446815,
+          "circle_overlap_fraction": 0.7161198174896081,
+          "i": 10,
+          "j": 12,
+          "shared_cells": 42490,
+          "shared_occupied_fraction": 0.723246353129415
+        },
+        {
+          "center_distance_m": 56.2720113953704,
+          "circle_overlap_fraction": 0.5616124844799271,
+          "i": 10,
+          "j": 13,
+          "shared_cells": 34327,
+          "shared_occupied_fraction": 0.5842993072222505
+        },
+        {
+          "center_distance_m": 76.48803939416158,
+          "circle_overlap_fraction": 0.4153789517523176,
+          "i": 10,
+          "j": 14,
+          "shared_cells": 26016,
+          "shared_occupied_fraction": 0.4428330694990553
+        },
+        {
+          "center_distance_m": 96.59545297931703,
+          "circle_overlap_fraction": 0.2809728428505906,
+          "i": 10,
+          "j": 15,
+          "shared_cells": 19638,
+          "shared_occupied_fraction": 0.33426951948118266
+        },
+        {
+          "center_distance_m": 116.39995235776723,
+          "circle_overlap_fraction": 0.1635999904671006,
+          "i": 10,
+          "j": 16,
+          "shared_cells": 11714,
+          "shared_occupied_fraction": 0.1993906279255817
+        },
+        {
+          "center_distance_m": 132.52917447139544,
+          "circle_overlap_fraction": 0.0831664087893062,
+          "i": 10,
+          "j": 17,
+          "shared_cells": 6006,
+          "shared_occupied_fraction": 0.10394780110420741
+        },
+        {
+          "center_distance_m": 145.58582568733968,
+          "circle_overlap_fraction": 0.032017031558011694,
+          "i": 10,
+          "j": 18,
+          "shared_cells": 2392,
+          "shared_occupied_fraction": 0.045567112431896976
+        },
+        {
+          "center_distance_m": 156.32066510312097,
+          "circle_overlap_fraction": 0.004171614109277711,
+          "i": 10,
+          "j": 21,
+          "shared_cells": 330,
+          "shared_occupied_fraction": 0.006340057636887608
+        },
+        {
+          "center_distance_m": 143.8229315641325,
+          "circle_overlap_fraction": 0.03800187743027272,
+          "i": 10,
+          "j": 22,
+          "shared_cells": 2943,
+          "shared_occupied_fraction": 0.053523688278621445
+        },
+        {
+          "center_distance_m": 129.6957961702159,
+          "circle_overlap_fraction": 0.09608775047759549,
+          "i": 10,
+          "j": 23,
+          "shared_cells": 7101,
+          "shared_occupied_fraction": 0.12641754642075093
+        },
+        {
+          "center_distance_m": 118.88668025223389,
+          "circle_overlap_fraction": 0.15018833806206802,
+          "i": 10,
+          "j": 24,
+          "shared_cells": 10978,
+          "shared_occupied_fraction": 0.18962896427831133
+        },
+        {
+          "center_distance_m": 110.04486611867598,
+          "circle_overlap_fraction": 0.1993234944512274,
+          "i": 10,
+          "j": 25,
+          "shared_cells": 13839,
+          "shared_occupied_fraction": 0.2410723617740306
+        },
+        {
+          "center_distance_m": 104.47154584849923,
+          "circle_overlap_fraction": 0.23222794696084187,
+          "i": 10,
+          "j": 26,
+          "shared_cells": 15482,
+          "shared_occupied_fraction": 0.28276076196738076
+        },
+        {
+          "center_distance_m": 102.58730553947093,
+          "circle_overlap_fraction": 0.24366001174348134,
+          "i": 10,
+          "j": 27,
+          "shared_cells": 16027,
+          "shared_occupied_fraction": 0.3015938729041606
+        },
+        {
+          "center_distance_m": 94.23580309458461,
+          "circle_overlap_fraction": 0.2960457039323218,
+          "i": 10,
+          "j": 28,
+          "shared_cells": 19475,
+          "shared_occupied_fraction": 0.3595097007624005
+        },
+        {
+          "center_distance_m": 85.64783207456682,
+          "circle_overlap_fraction": 0.3525521660131523,
+          "i": 10,
+          "j": 29,
+          "shared_cells": 23588,
+          "shared_occupied_fraction": 0.43287882402598593
+        },
+        {
+          "center_distance_m": 80.33858335913713,
+          "circle_overlap_fraction": 0.3886704831152391,
+          "i": 10,
+          "j": 30,
+          "shared_cells": 25943,
+          "shared_occupied_fraction": 0.4867171963528573
+        },
+        {
+          "center_distance_m": 79.94037330368792,
+          "circle_overlap_fraction": 0.39141319399247543,
+          "i": 10,
+          "j": 31,
+          "shared_cells": 26137,
+          "shared_occupied_fraction": 0.4903844349800184
+        },
+        {
+          "center_distance_m": 80.1475627704759,
+          "circle_overlap_fraction": 0.38998558660331983,
+          "i": 10,
+          "j": 32,
+          "shared_cells": 26041,
+          "shared_occupied_fraction": 0.4887024734451826
+        },
+        {
+          "center_distance_m": 80.13685905014634,
+          "circle_overlap_fraction": 0.3900593087206556,
+          "i": 10,
+          "j": 33,
+          "shared_cells": 26044,
+          "shared_occupied_fraction": 0.4885387356968674
+        },
+        {
+          "center_distance_m": 16.152044325875075,
+          "circle_overlap_fraction": 0.8716847640826114,
+          "i": 11,
+          "j": 12,
+          "shared_cells": 51307,
+          "shared_occupied_fraction": 0.8839481074375893
+        },
+        {
+          "center_distance_m": 36.30586285964976,
+          "circle_overlap_fraction": 0.713585933535237,
+          "i": 11,
+          "j": 13,
+          "shared_cells": 43177,
+          "shared_occupied_fraction": 0.7438795375842048
+        },
+        {
+          "center_distance_m": 56.4621151044988,
+          "circle_overlap_fraction": 0.560196673785668,
+          "i": 11,
+          "j": 14,
+          "shared_cells": 34732,
+          "shared_occupied_fraction": 0.5983839567217408
+        },
+        {
+          "center_distance_m": 76.49556161301693,
+          "circle_overlap_fraction": 0.4153263756094346,
+          "i": 11,
+          "j": 15,
+          "shared_cells": 27968,
+          "shared_occupied_fraction": 0.4818496631807453
+        },
+        {
+          "center_distance_m": 96.48319753543508,
+          "circle_overlap_fraction": 0.28168521488097664,
+          "i": 11,
+          "j": 16,
+          "shared_cells": 19454,
+          "shared_occupied_fraction": 0.3351653084781972
+        },
+        {
+          "center_distance_m": 113.25183834233128,
+          "circle_overlap_fraction": 0.1810447270350167,
+          "i": 11,
+          "j": 17,
+          "shared_cells": 12667,
+          "shared_occupied_fraction": 0.2192319008636356
+        },
+        {
+          "center_distance_m": 126.87779655587633,
+          "circle_overlap_fraction": 0.10948758665418684,
+          "i": 11,
+          "j": 18,
+          "shared_cells": 7714,
+          "shared_occupied_fraction": 0.14695012763363433
+        },
+        {
+          "center_distance_m": 145.20564162299877,
+          "circle_overlap_fraction": 0.03327982422598115,
+          "i": 11,
+          "j": 19,
+          "shared_cells": 2273,
+          "shared_occupied_fraction": 0.04977880951338093
+        },
+        {
+          "center_distance_m": 149.9951992586826,
+          "circle_overlap_fraction": 0.018593049158324885,
+          "i": 11,
+          "j": 20,
+          "shared_cells": 1237,
+          "shared_occupied_fraction": 0.02596721036169364
+        },
+        {
+          "center_distance_m": 140.91892857695632,
+          "circle_overlap_fraction": 0.04854366488482354,
+          "i": 11,
+          "j": 21,
+          "shared_cells": 3378,
+          "shared_occupied_fraction": 0.06489913544668588
+        },
+        {
+          "center_distance_m": 130.1008338567617,
+          "circle_overlap_fraction": 0.09420590986058416,
+          "i": 11,
+          "j": 22,
+          "shared_cells": 6900,
+          "shared_occupied_fraction": 0.12548876966445394
+        },
+        {
+          "center_distance_m": 117.8451388015343,
+          "circle_overlap_fraction": 0.1557650156262212,
+          "i": 11,
+          "j": 23,
+          "shared_cells": 11309,
+          "shared_occupied_fraction": 0.20133164800341813
+        },
+        {
+          "center_distance_m": 109.6666299178726,
+          "circle_overlap_fraction": 0.2015118067397179,
+          "i": 11,
+          "j": 24,
+          "shared_cells": 14545,
+          "shared_occupied_fraction": 0.2512436951564983
+        },
+        {
+          "center_distance_m": 104.07010447474724,
+          "circle_overlap_fraction": 0.23465097174280772,
+          "i": 11,
+          "j": 25,
+          "shared_cells": 16378,
+          "shared_occupied_fraction": 0.28530118802912585
+        },
+        {
+          "center_distance_m": 102.28824730108298,
+          "circle_overlap_fraction": 0.24548814436456667,
+          "i": 11,
+          "j": 26,
+          "shared_cells": 16618,
+          "shared_occupied_fraction": 0.3035084835534126
+        },
+        {
+          "center_distance_m": 104.40780814613898,
+          "circle_overlap_fraction": 0.23261219551176024,
+          "i": 11,
+          "j": 27,
+          "shared_cells": 15626,
+          "shared_occupied_fraction": 0.2940479102764344
+        },
+        {
+          "center_distance_m": 99.528514286219,
+          "circle_overlap_fraction": 0.26253048878851315,
+          "i": 11,
+          "j": 28,
+          "shared_cells": 17701,
+          "shared_occupied_fraction": 0.3267615513835816
+        },
+        {
+          "center_distance_m": 94.1557926478277,
+          "circle_overlap_fraction": 0.2965603727251837,
+          "i": 11,
+          "j": 29,
+          "shared_cells": 20292,
+          "shared_occupied_fraction": 0.3723917711181663
+        },
+        {
+          "center_distance_m": 92.04783212938572,
+          "circle_overlap_fraction": 0.31020244195339625,
+          "i": 11,
+          "j": 30,
+          "shared_cells": 21076,
+          "shared_occupied_fraction": 0.3954073017898015
+        },
+        {
+          "center_distance_m": 91.77305890467761,
+          "circle_overlap_fraction": 0.31199225545258646,
+          "i": 11,
+          "j": 31,
+          "shared_cells": 21195,
+          "shared_occupied_fraction": 0.397662245070264
+        },
+        {
+          "center_distance_m": 91.93721970325956,
+          "circle_overlap_fraction": 0.3109226304900172,
+          "i": 11,
+          "j": 32,
+          "shared_cells": 21128,
+          "shared_occupied_fraction": 0.39650189543219605
+        },
+        {
+          "center_distance_m": 91.90622600467904,
+          "circle_overlap_fraction": 0.3111245046088746,
+          "i": 11,
+          "j": 33,
+          "shared_cells": 21142,
+          "shared_occupied_fraction": 0.3965860063777903
+        },
+        {
+          "center_distance_m": 20.307103480842155,
+          "circle_overlap_fraction": 0.83883611270773,
+          "i": 12,
+          "j": 13,
+          "shared_cells": 50767,
+          "shared_occupied_fraction": 0.8594525046978957
+        },
+        {
+          "center_distance_m": 40.52346684023964,
+          "circle_overlap_fraction": 0.6810060690169424,
+          "i": 12,
+          "j": 14,
+          "shared_cells": 42163,
+          "shared_occupied_fraction": 0.7137923445462087
+        },
+        {
+          "center_distance_m": 60.621972390481,
+          "circle_overlap_fraction": 0.529390140210222,
+          "i": 12,
+          "j": 15,
+          "shared_cells": 34983,
+          "shared_occupied_fraction": 0.5922395842150705
+        },
+        {
+          "center_distance_m": 80.49292086825623,
+          "circle_overlap_fraction": 0.3876086980122285,
+          "i": 12,
+          "j": 16,
+          "shared_cells": 26147,
+          "shared_occupied_fraction": 0.4426518139802604
+        },
+        {
+          "center_distance_m": 97.10434589418547,
+          "circle_overlap_fraction": 0.27774937884580275,
+          "i": 12,
+          "j": 17,
+          "shared_cells": 18835,
+          "shared_occupied_fraction": 0.3259834888108136
+        },
+        {
+          "center_distance_m": 110.75064386555492,
+          "circle_overlap_fraction": 0.1952582277856557,
+          "i": 12,
+          "j": 18,
+          "shared_cells": 13102,
+          "shared_occupied_fraction": 0.2495904293824056
+        },
+        {
+          "center_distance_m": 129.17014898836086,
+          "circle_overlap_fraction": 0.0985467784222924,
+          "i": 12,
+          "j": 19,
+          "shared_cells": 6333,
+          "shared_occupied_fraction": 0.13869300512461127
+        },
+        {
+          "center_distance_m": 134.35121797475438,
+          "circle_overlap_fraction": 0.07516667004248408,
+          "i": 12,
+          "j": 20,
+          "shared_cells": 4585,
+          "shared_occupied_fraction": 0.09624871423473351
+        },
+        {
+          "center_distance_m": 125.93785428770812,
+          "circle_overlap_fraction": 0.1140729991559714,
+          "i": 12,
+          "j": 21,
+          "shared_cells": 7351,
+          "shared_occupied_fraction": 0.1412295869356388
+        },
+        {
+          "center_distance_m": 116.07308097611369,
+          "circle_overlap_fraction": 0.16538747873064927,
+          "i": 12,
+          "j": 22,
+          "shared_cells": 11273,
+          "shared_occupied_fraction": 0.20501955078657816
+        },
+        {
+          "center_distance_m": 105.0705642862266,
+          "circle_overlap_fraction": 0.22862524618983718,
+          "i": 12,
+          "j": 23,
+          "shared_cells": 15709,
+          "shared_occupied_fraction": 0.2796638834986025
+        },
+        {
+          "center_distance_m": 98.79963014623962,
+          "circle_overlap_fraction": 0.26708241411744454,
+          "i": 12,
+          "j": 24,
+          "shared_cells": 18381,
+          "shared_occupied_fraction": 0.3175050093277137
+        },
+        {
+          "center_distance_m": 95.69509789738518,
+          "circle_overlap_fraction": 0.28669977796539875,
+          "i": 12,
+          "j": 25,
+          "shared_cells": 19286,
+          "shared_occupied_fraction": 0.33595791380691914
+        },
+        {
+          "center_distance_m": 96.85486523294853,
+          "circle_overlap_fraction": 0.2793284322470728,
+          "i": 12,
+          "j": 26,
+          "shared_cells": 18867,
+          "shared_occupied_fraction": 0.3445838584187168
+        },
+        {
+          "center_distance_m": 102.0315747180028,
+          "circle_overlap_fraction": 0.24706012473467892,
+          "i": 12,
+          "j": 27,
+          "shared_cells": 16738,
+          "shared_occupied_fraction": 0.31497337272539094
+        },
+        {
+          "center_distance_m": 100.02151362305185,
+          "circle_overlap_fraction": 0.2594635643876624,
+          "i": 12,
+          "j": 28,
+          "shared_cells": 17528,
+          "shared_occupied_fraction": 0.3235679607169888
+        },
+        {
+          "center_distance_m": 97.3565725549943,
+          "circle_overlap_fraction": 0.2761553480669793,
+          "i": 12,
+          "j": 29,
+          "shared_cells": 18929,
+          "shared_occupied_fraction": 0.3473784661687251
+        },
+        {
+          "center_distance_m": 97.87006320488604,
+          "circle_overlap_fraction": 0.2729176800091256,
+          "i": 12,
+          "j": 30,
+          "shared_cells": 18473,
+          "shared_occupied_fraction": 0.34657236126224156
+        },
+        {
+          "center_distance_m": 97.70272255686803,
+          "circle_overlap_fraction": 0.2739716888053051,
+          "i": 12,
+          "j": 31,
+          "shared_cells": 18553,
+          "shared_occupied_fraction": 0.3480928347623783
+        },
+        {
+          "center_distance_m": 97.82749776337066,
+          "circle_overlap_fraction": 0.27318567992689796,
+          "i": 12,
+          "j": 32,
+          "shared_cells": 18497,
+          "shared_occupied_fraction": 0.3471268250572383
+        },
+        {
+          "center_distance_m": 97.78099335937748,
+          "circle_overlap_fraction": 0.27347855987225855,
+          "i": 12,
+          "j": 33,
+          "shared_cells": 18519,
+          "shared_occupied_fraction": 0.3473832301631964
+        },
+        {
+          "center_distance_m": 20.217565535887342,
+          "circle_overlap_fraction": 0.8395428963784597,
+          "i": 13,
+          "j": 14,
+          "shared_cells": 51715,
+          "shared_occupied_fraction": 0.8559818591101694
+        },
+        {
+          "center_distance_m": 40.324022814925065,
+          "circle_overlap_fraction": 0.6825417047611965,
+          "i": 13,
+          "j": 15,
+          "shared_cells": 44305,
+          "shared_occupied_fraction": 0.7330774194615881
+        },
+        {
+          "center_distance_m": 60.19762973358585,
+          "circle_overlap_fraction": 0.5325170145080399,
+          "i": 13,
+          "j": 16,
+          "shared_cells": 35070,
+          "shared_occupied_fraction": 0.5895306616460463
+        },
+        {
+          "center_distance_m": 77.1205587811663,
+          "circle_overlap_fraction": 0.41096336165238634,
+          "i": 13,
+          "j": 17,
+          "shared_cells": 27333,
+          "shared_occupied_fraction": 0.4730611467834334
+        },
+        {
+          "center_distance_m": 91.17773304905842,
+          "circle_overlap_fraction": 0.3158790838127109,
+          "i": 13,
+          "j": 18,
+          "shared_cells": 20742,
+          "shared_occupied_fraction": 0.3951308720996685
+        },
+        {
+          "center_distance_m": 110.02127490800753,
+          "circle_overlap_fraction": 0.1994597863962429,
+          "i": 13,
+          "j": 19,
+          "shared_cells": 12633,
+          "shared_occupied_fraction": 0.2766633086592791
+        },
+        {
+          "center_distance_m": 116.40845501819231,
+          "circle_overlap_fraction": 0.16355356891925615,
+          "i": 13,
+          "j": 20,
+          "shared_cells": 10029,
+          "shared_occupied_fraction": 0.21052963032936584
+        },
+        {
+          "center_distance_m": 109.66159777205282,
+          "circle_overlap_fraction": 0.20154096581907655,
+          "i": 13,
+          "j": 21,
+          "shared_cells": 12741,
+          "shared_occupied_fraction": 0.24478386167146973
+        },
+        {
+          "center_distance_m": 101.95111831251586,
+          "circle_overlap_fraction": 0.24755343554432185,
+          "i": 13,
+          "j": 22,
+          "shared_cells": 16283,
+          "shared_occupied_fraction": 0.2961353096298991
+        },
+        {
+          "center_distance_m": 93.60884988549891,
+          "circle_overlap_fraction": 0.3000847839065766,
+          "i": 13,
+          "j": 23,
+          "shared_cells": 20006,
+          "shared_occupied_fraction": 0.3561624325719677
+        },
+        {
+          "center_distance_m": 90.93836466451087,
+          "circle_overlap_fraction": 0.31744535050824574,
+          "i": 13,
+          "j": 24,
+          "shared_cells": 21199,
+          "shared_occupied_fraction": 0.3661818558695502
+        },
+        {
+          "center_distance_m": 91.97576902102097,
+          "circle_overlap_fraction": 0.3106715904669092,
+          "i": 13,
+          "j": 25,
+          "shared_cells": 20778,
+          "shared_occupied_fraction": 0.3619482284081803
+        },
+        {
+          "center_distance_m": 97.341740066169,
+          "circle_overlap_fraction": 0.2762490199000497,
+          "i": 13,
+          "j": 26,
+          "shared_cells": 18894,
+          "shared_occupied_fraction": 0.3450769820831735
+        },
+        {
+          "center_distance_m": 106.29228352112177,
+          "circle_overlap_fraction": 0.2213257476120863,
+          "i": 13,
+          "j": 27,
+          "shared_cells": 15272,
+          "shared_occupied_fraction": 0.287386387158691
+        },
+        {
+          "center_distance_m": 107.71249052770038,
+          "circle_overlap_fraction": 0.21292335705434348,
+          "i": 13,
+          "j": 28,
+          "shared_cells": 14594,
+          "shared_occupied_fraction": 0.26940613981650696
+        },
+        {
+          "center_distance_m": 108.01913038018925,
+          "circle_overlap_fraction": 0.2111210927415967,
+          "i": 13,
+          "j": 29,
+          "shared_cells": 14640,
+          "shared_occupied_fraction": 0.26866822044007266
+        },
+        {
+          "center_distance_m": 111.076876641399,
+          "circle_overlap_fraction": 0.19338714552977043,
+          "i": 13,
+          "j": 30,
+          "shared_cells": 13289,
+          "shared_occupied_fraction": 0.24931522269333234
+        },
+        {
+          "center_distance_m": 111.01328419358374,
+          "circle_overlap_fraction": 0.19375147526671968,
+          "i": 13,
+          "j": 31,
+          "shared_cells": 13323,
+          "shared_occupied_fraction": 0.2499671663633464
+        },
+        {
+          "center_distance_m": 111.09864454754194,
+          "circle_overlap_fraction": 0.1932624788087544,
+          "i": 13,
+          "j": 32,
+          "shared_cells": 13291,
+          "shared_occupied_fraction": 0.24942761701009647
+        },
+        {
+          "center_distance_m": 111.03876099925648,
+          "circle_overlap_fraction": 0.19360549192187926,
+          "i": 13,
+          "j": 33,
+          "shared_cells": 13316,
+          "shared_occupied_fraction": 0.24978428062277247
+        },
+        {
+          "center_distance_m": 20.11575076881784,
+          "circle_overlap_fraction": 0.8403466510270985,
+          "i": 14,
+          "j": 15,
+          "shared_cells": 52884,
+          "shared_occupied_fraction": 0.8753310381355932
+        },
+        {
+          "center_distance_m": 40.02581900554801,
+          "circle_overlap_fraction": 0.6848387098835556,
+          "i": 14,
+          "j": 16,
+          "shared_cells": 43515,
+          "shared_occupied_fraction": 0.731492065626681
+        },
+        {
+          "center_distance_m": 57.53702885823237,
+          "circle_overlap_fraction": 0.5522040079678867,
+          "i": 14,
+          "j": 17,
+          "shared_cells": 35794,
+          "shared_occupied_fraction": 0.6194984336869797
+        },
+        {
+          "center_distance_m": 72.21413011111984,
+          "circle_overlap_fraction": 0.44549298080879574,
+          "i": 14,
+          "j": 18,
+          "shared_cells": 28973,
+          "shared_occupied_fraction": 0.5519297443517355
+        },
+        {
+          "center_distance_m": 91.59225775935991,
+          "circle_overlap_fraction": 0.31317139011165446,
+          "i": 14,
+          "j": 19,
+          "shared_cells": 20113,
+          "shared_occupied_fraction": 0.4404756690464719
+        },
+        {
+          "center_distance_m": 99.63780128693,
+          "circle_overlap_fraction": 0.26184978854661595,
+          "i": 14,
+          "j": 20,
+          "shared_cells": 16708,
+          "shared_occupied_fraction": 0.35073577261372463
+        },
+        {
+          "center_distance_m": 95.24350980715799,
+          "circle_overlap_fraction": 0.2895835758759583,
+          "i": 14,
+          "j": 21,
+          "shared_cells": 18787,
+          "shared_occupied_fraction": 0.3609414024975985
+        },
+        {
+          "center_distance_m": 90.53664890173152,
+          "circle_overlap_fraction": 0.32007833008562175,
+          "i": 14,
+          "j": 22,
+          "shared_cells": 21272,
+          "shared_occupied_fraction": 0.38686914613076295
+        },
+        {
+          "center_distance_m": 85.8241994598479,
+          "circle_overlap_fraction": 0.3513671835713855,
+          "i": 14,
+          "j": 23,
+          "shared_cells": 23550,
+          "shared_occupied_fraction": 0.41925548770717985
+        },
+        {
+          "center_distance_m": 87.51224176583995,
+          "circle_overlap_fraction": 0.3400756700791149,
+          "i": 14,
+          "j": 24,
+          "shared_cells": 22776,
+          "shared_occupied_fraction": 0.3934222345056312
+        },
+        {
+          "center_distance_m": 92.95739490791168,
+          "circle_overlap_fraction": 0.3042966528934741,
+          "i": 14,
+          "j": 25,
+          "shared_cells": 20425,
+          "shared_occupied_fraction": 0.35579904539595164
+        },
+        {
+          "center_distance_m": 102.22000838069108,
+          "circle_overlap_fraction": 0.2459058053703735,
+          "i": 14,
+          "j": 26,
+          "shared_cells": 16807,
+          "shared_occupied_fraction": 0.3069603492046098
+        },
+        {
+          "center_distance_m": 114.2980104041055,
+          "circle_overlap_fraction": 0.17519136003958455,
+          "i": 14,
+          "j": 27,
+          "shared_cells": 12163,
+          "shared_occupied_fraction": 0.22888165446641953
+        },
+        {
+          "center_distance_m": 118.62241711817093,
+          "circle_overlap_fraction": 0.15159764471246664,
+          "i": 14,
+          "j": 28,
+          "shared_cells": 10498,
+          "shared_occupied_fraction": 0.1937937272710491
+        },
+        {
+          "center_distance_m": 121.33210754839494,
+          "circle_overlap_fraction": 0.13733245625493032,
+          "i": 14,
+          "j": 29,
+          "shared_cells": 9629,
+          "shared_occupied_fraction": 0.17670808023343304
+        },
+        {
+          "center_distance_m": 126.30741656684918,
+          "circle_overlap_fraction": 0.11226337646213654,
+          "i": 14,
+          "j": 30,
+          "shared_cells": 7768,
+          "shared_occupied_fraction": 0.14573561967655999
+        },
+        {
+          "center_distance_m": 126.32347448030767,
+          "circle_overlap_fraction": 0.11218494378168171,
+          "i": 14,
+          "j": 31,
+          "shared_cells": 7769,
+          "shared_occupied_fraction": 0.14576258466387737
+        },
+        {
+          "center_distance_m": 126.37770799468801,
+          "circle_overlap_fraction": 0.11192016959195447,
+          "i": 14,
+          "j": 32,
+          "shared_cells": 7751,
+          "shared_occupied_fraction": 0.1454603460571257
+        },
+        {
+          "center_distance_m": 126.30854132698504,
+          "circle_overlap_fraction": 0.11225788218798154,
+          "i": 14,
+          "j": 33,
+          "shared_cells": 7777,
+          "shared_occupied_fraction": 0.14588257362596135
+        },
+        {
+          "center_distance_m": 20.22551866188922,
+          "circle_overlap_fraction": 0.839480114907129,
+          "i": 15,
+          "j": 16,
+          "shared_cells": 51573,
+          "shared_occupied_fraction": 0.8669479558902636
+        },
+        {
+          "center_distance_m": 39.09805503664291,
+          "circle_overlap_fraction": 0.6919923601058562,
+          "i": 15,
+          "j": 17,
+          "shared_cells": 43473,
+          "shared_occupied_fraction": 0.7524013915090257
+        },
+        {
+          "center_distance_m": 54.72039318542426,
+          "circle_overlap_fraction": 0.5731932873529856,
+          "i": 15,
+          "j": 18,
+          "shared_cells": 36180,
+          "shared_occupied_fraction": 0.689221625328609
+        },
+        {
+          "center_distance_m": 74.6853614657033,
+          "circle_overlap_fraction": 0.4280223934755382,
+          "i": 15,
+          "j": 19,
+          "shared_cells": 27052,
+          "shared_occupied_fraction": 0.5924401033682274
+        },
+        {
+          "center_distance_m": 85.09233252877368,
+          "circle_overlap_fraction": 0.35629086689852885,
+          "i": 15,
+          "j": 20,
+          "shared_cells": 22772,
+          "shared_occupied_fraction": 0.47803178201817914
+        },
+        {
+          "center_distance_m": 84.07704235115018,
+          "circle_overlap_fraction": 0.3631489593294116,
+          "i": 15,
+          "j": 21,
+          "shared_cells": 23476,
+          "shared_occupied_fraction": 0.45102785782901056
+        },
+        {
+          "center_distance_m": 83.42777364970244,
+          "circle_overlap_fraction": 0.3675512790428619,
+          "i": 15,
+          "j": 22,
+          "shared_cells": 24672,
+          "shared_occupied_fraction": 0.44870419205237794
+        },
+        {
+          "center_distance_m": 83.24850200645716,
+          "circle_overlap_fraction": 0.3687690804798855,
+          "i": 15,
+          "j": 23,
+          "shared_cells": 24912,
+          "shared_occupied_fraction": 0.4435028751490983
+        },
+        {
+          "center_distance_m": 89.51238800910694,
+          "circle_overlap_fraction": 0.32681652243777337,
+          "i": 15,
+          "j": 24,
+          "shared_cells": 22021,
+          "shared_occupied_fraction": 0.3803807089062392
+        },
+        {
+          "center_distance_m": 98.94958349500573,
+          "circle_overlap_fraction": 0.2661442434731378,
+          "i": 15,
+          "j": 25,
+          "shared_cells": 17908,
+          "shared_occupied_fraction": 0.3119534543427516
+        },
+        {
+          "center_distance_m": 111.32817380370116,
+          "circle_overlap_fraction": 0.19194933020091046,
+          "i": 15,
+          "j": 26,
+          "shared_cells": 13246,
+          "shared_occupied_fraction": 0.2419228170145928
+        },
+        {
+          "center_distance_m": 125.71643858803279,
+          "circle_overlap_fraction": 0.11516135443086382,
+          "i": 15,
+          "j": 27,
+          "shared_cells": 8144,
+          "shared_occupied_fraction": 0.1532526674319264
+        },
+        {
+          "center_distance_m": 132.29021947003838,
+          "circle_overlap_fraction": 0.08423388939233278,
+          "i": 15,
+          "j": 28,
+          "shared_cells": 5980,
+          "shared_occupied_fraction": 0.11039116870650348
+        },
+        {
+          "center_distance_m": 136.80666211281056,
+          "circle_overlap_fraction": 0.06479220814829777,
+          "i": 15,
+          "j": 29,
+          "shared_cells": 4684,
+          "shared_occupied_fraction": 0.08595914921730194
+        },
+        {
+          "center_distance_m": 143.15303537067223,
+          "circle_overlap_fraction": 0.04036040084235268,
+          "i": 15,
+          "j": 30,
+          "shared_cells": 2871,
+          "shared_occupied_fraction": 0.05386289445048966
+        },
+        {
+          "center_distance_m": 143.22697338749072,
+          "circle_overlap_fraction": 0.04009787074882483,
+          "i": 15,
+          "j": 31,
+          "shared_cells": 2848,
+          "shared_occupied_fraction": 0.05343439839396612
+        },
+        {
+          "center_distance_m": 143.2581244262572,
+          "circle_overlap_fraction": 0.039987426852732315,
+          "i": 15,
+          "j": 32,
+          "shared_cells": 2841,
+          "shared_occupied_fraction": 0.053316068010359194
+        },
+        {
+          "center_distance_m": 143.1827412486558,
+          "circle_overlap_fraction": 0.04025485930110907,
+          "i": 15,
+          "j": 33,
+          "shared_cells": 2861,
+          "shared_occupied_fraction": 0.05366722941286813
+        },
+        {
+          "center_distance_m": 20.171761173318608,
+          "circle_overlap_fraction": 0.8399044809012163,
+          "i": 16,
+          "j": 17,
+          "shared_cells": 51122,
+          "shared_occupied_fraction": 0.8847851295453365
+        },
+        {
+          "center_distance_m": 36.394007311388826,
+          "circle_overlap_fraction": 0.7129028439193694,
+          "i": 16,
+          "j": 18,
+          "shared_cells": 43607,
+          "shared_occupied_fraction": 0.8307044614622624
+        },
+        {
+          "center_distance_m": 56.52108342900423,
+          "circle_overlap_fraction": 0.5597576406880594,
+          "i": 16,
+          "j": 19,
+          "shared_cells": 34206,
+          "shared_occupied_fraction": 0.7491130480487057
+        },
+        {
+          "center_distance_m": 69.21758476321024,
+          "circle_overlap_fraction": 0.4668827990015294,
+          "i": 16,
+          "j": 20,
+          "shared_cells": 29024,
+          "shared_occupied_fraction": 0.6092743035875475
+        },
+        {
+          "center_distance_m": 71.96648512374179,
+          "circle_overlap_fraction": 0.44725230757118045,
+          "i": 16,
+          "j": 21,
+          "shared_cells": 28565,
+          "shared_occupied_fraction": 0.5487992315081652
+        },
+        {
+          "center_distance_m": 75.82216957251077,
+          "circle_overlap_fraction": 0.420039059351058,
+          "i": 16,
+          "j": 22,
+          "shared_cells": 28404,
+          "shared_occupied_fraction": 0.5165772483404565
+        },
+        {
+          "center_distance_m": 80.46954488608259,
+          "circle_overlap_fraction": 0.38776947187041955,
+          "i": 16,
+          "j": 23,
+          "shared_cells": 26396,
+          "shared_occupied_fraction": 0.46992220184792866
+        },
+        {
+          "center_distance_m": 91.01632036315837,
+          "circle_overlap_fraction": 0.3169350439985537,
+          "i": 16,
+          "j": 24,
+          "shared_cells": 21327,
+          "shared_occupied_fraction": 0.3683928694811027
+        },
+        {
+          "center_distance_m": 103.93190019340196,
+          "circle_overlap_fraction": 0.23548673740597054,
+          "i": 16,
+          "j": 25,
+          "shared_cells": 15702,
+          "shared_occupied_fraction": 0.2735254154617984
+        },
+        {
+          "center_distance_m": 118.92173003788618,
+          "circle_overlap_fraction": 0.15000170794051423,
+          "i": 16,
+          "j": 26,
+          "shared_cells": 10287,
+          "shared_occupied_fraction": 0.18788011615801875
+        },
+        {
+          "center_distance_m": 135.24500249330728,
+          "circle_overlap_fraction": 0.07133511403904032,
+          "i": 16,
+          "j": 27,
+          "shared_cells": 5006,
+          "shared_occupied_fraction": 0.09420221674413354
+        },
+        {
+          "center_distance_m": 143.96326514705248,
+          "circle_overlap_fraction": 0.0375135649681888,
+          "i": 16,
+          "j": 28,
+          "shared_cells": 2676,
+          "shared_occupied_fraction": 0.04939912499307748
+        },
+        {
+          "center_distance_m": 150.28934525196692,
+          "circle_overlap_fraction": 0.01778414383405006,
+          "i": 16,
+          "j": 29,
+          "shared_cells": 1334,
+          "shared_occupied_fraction": 0.024481106971793506
+        },
+        {
+          "center_distance_m": 158.05751148188202,
+          "circle_overlap_fraction": 0.0016028729721210661,
+          "i": 16,
+          "j": 30,
+          "shared_cells": 121,
+          "shared_occupied_fraction": 0.002270083674158568
+        },
+        {
+          "center_distance_m": 158.195290495092,
+          "circle_overlap_fraction": 0.001435584257646646,
+          "i": 16,
+          "j": 31,
+          "shared_cells": 107,
+          "shared_occupied_fraction": 0.002007542355391283
+        },
+        {
+          "center_distance_m": 158.2004886272342,
+          "circle_overlap_fraction": 0.0014293933150182592,
+          "i": 16,
+          "j": 32,
+          "shared_cells": 107,
+          "shared_occupied_fraction": 0.002008032128514056
+        },
+        {
+          "center_distance_m": 158.11877278763188,
+          "circle_overlap_fraction": 0.0015277360774282294,
+          "i": 16,
+          "j": 33,
+          "shared_cells": 115,
+          "shared_occupied_fraction": 0.0021571937722753703
+        },
+        {
+          "center_distance_m": 16.248367562895726,
+          "circle_overlap_fraction": 0.8709221873441471,
+          "i": 17,
+          "j": 18,
+          "shared_cells": 50232,
+          "shared_occupied_fraction": 0.9569093610698366
+        },
+        {
+          "center_distance_m": 36.355636437849505,
+          "circle_overlap_fraction": 0.7132001940993627,
+          "i": 17,
+          "j": 19,
+          "shared_cells": 40631,
+          "shared_occupied_fraction": 0.8898208576058867
+        },
+        {
+          "center_distance_m": 49.89302517776317,
+          "circle_overlap_fraction": 0.609495750433026,
+          "i": 17,
+          "j": 20,
+          "shared_cells": 35411,
+          "shared_occupied_fraction": 0.7433507567646997
+        },
+        {
+          "center_distance_m": 55.4882651156666,
+          "circle_overlap_fraction": 0.5674565922702471,
+          "i": 17,
+          "j": 21,
+          "shared_cells": 34581,
+          "shared_occupied_fraction": 0.6643804034582133
+        },
+        {
+          "center_distance_m": 63.39900239073125,
+          "circle_overlap_fraction": 0.5090187944627005,
+          "i": 17,
+          "j": 22,
+          "shared_cells": 32978,
+          "shared_occupied_fraction": 0.5997635718832409
+        },
+        {
+          "center_distance_m": 72.5365013065082,
+          "circle_overlap_fraction": 0.4432050941998229,
+          "i": 17,
+          "j": 23,
+          "shared_cells": 29127,
+          "shared_occupied_fraction": 0.518541596197326
+        },
+        {
+          "center_distance_m": 86.75514101678708,
+          "circle_overlap_fraction": 0.3451287058521399,
+          "i": 17,
+          "j": 24,
+          "shared_cells": 22655,
+          "shared_occupied_fraction": 0.3920974748611087
+        },
+        {
+          "center_distance_m": 102.58541738206421,
+          "circle_overlap_fraction": 0.24367154234511024,
+          "i": 17,
+          "j": 25,
+          "shared_cells": 15887,
+          "shared_occupied_fraction": 0.27674807511409955
+        },
+        {
+          "center_distance_m": 119.75189146641705,
+          "circle_overlap_fraction": 0.14560127878037588,
+          "i": 17,
+          "j": 26,
+          "shared_cells": 9543,
+          "shared_occupied_fraction": 0.17429181962632184
+        },
+        {
+          "center_distance_m": 137.71795783848597,
+          "circle_overlap_fraction": 0.06106602532125429,
+          "i": 17,
+          "j": 27,
+          "shared_cells": 4018,
+          "shared_occupied_fraction": 0.07561016917257861
+        },
+        {
+          "center_distance_m": 148.61908516946542,
+          "circle_overlap_fraction": 0.022528424868012733,
+          "i": 17,
+          "j": 28,
+          "shared_cells": 1514,
+          "shared_occupied_fraction": 0.027948533348101382
+        },
+        {
+          "center_distance_m": 156.9239657904735,
+          "circle_overlap_fraction": 0.003190687279835185,
+          "i": 17,
+          "j": 29,
+          "shared_cells": 242,
+          "shared_occupied_fraction": 0.004441100365197923
+        },
+        {
+          "center_distance_m": 20.136983182880225,
+          "circle_overlap_fraction": 0.8401790309251683,
+          "i": 18,
+          "j": 19,
+          "shared_cells": 42800,
+          "shared_occupied_fraction": 0.9373220621085366
+        },
+        {
+          "center_distance_m": 34.493529042648156,
+          "circle_overlap_fraction": 0.7276505299147842,
+          "i": 18,
+          "j": 20,
+          "shared_cells": 37586,
+          "shared_occupied_fraction": 0.7890085437789953
+        },
+        {
+          "center_distance_m": 43.510422400767325,
+          "circle_overlap_fraction": 0.6580712478749084,
+          "i": 18,
+          "j": 21,
+          "shared_cells": 36290,
+          "shared_occupied_fraction": 0.6972142170989434
+        },
+        {
+          "center_distance_m": 55.55978441311317,
+          "circle_overlap_fraction": 0.5669228280610127,
+          "i": 18,
+          "j": 22,
+          "shared_cells": 33703,
+          "shared_occupied_fraction": 0.6420352802225017
+        },
+        {
+          "center_distance_m": 68.59298463004478,
+          "circle_overlap_fraction": 0.47136866515518794,
+          "i": 18,
+          "j": 23,
+          "shared_cells": 28775,
+          "shared_occupied_fraction": 0.5481578847106336
+        },
+        {
+          "center_distance_m": 85.41271438332045,
+          "circle_overlap_fraction": 0.35413340600226656,
+          "i": 18,
+          "j": 24,
+          "shared_cells": 22009,
+          "shared_occupied_fraction": 0.4192669638434869
+        },
+        {
+          "center_distance_m": 103.13874425930656,
+          "circle_overlap_fraction": 0.24029884421679798,
+          "i": 18,
+          "j": 25,
+          "shared_cells": 15292,
+          "shared_occupied_fraction": 0.29130948298853204
+        },
+        {
+          "center_distance_m": 121.6411373581798,
+          "circle_overlap_fraction": 0.13573214361681346,
+          "i": 18,
+          "j": 26,
+          "shared_cells": 8596,
+          "shared_occupied_fraction": 0.16375204785308797
+        },
+        {
+          "center_distance_m": 140.58823363531337,
+          "circle_overlap_fraction": 0.04979500844752154,
+          "i": 18,
+          "j": 27,
+          "shared_cells": 2994,
+          "shared_occupied_fraction": 0.057035089724539946
+        },
+        {
+          "center_distance_m": 153.04002708914848,
+          "circle_overlap_fraction": 0.01081959459055371,
+          "i": 18,
+          "j": 28,
+          "shared_cells": 627,
+          "shared_occupied_fraction": 0.011944222196822493
+        },
+        {
+          "center_distance_m": 18.958305498994076,
+          "circle_overlap_fraction": 0.8494883640617404,
+          "i": 19,
+          "j": 20,
+          "shared_cells": 39763,
+          "shared_occupied_fraction": 0.8708116157855548
+        },
+        {
+          "center_distance_m": 35.608333110527,
+          "circle_overlap_fraction": 0.7189947091528116,
+          "i": 19,
+          "j": 21,
+          "shared_cells": 36543,
+          "shared_occupied_fraction": 0.8002934606456135
+        },
+        {
+          "center_distance_m": 53.248430271071854,
+          "circle_overlap_fraction": 0.58421987169123,
+          "i": 19,
+          "j": 22,
+          "shared_cells": 32276,
+          "shared_occupied_fraction": 0.7068459550611011
+        },
+        {
+          "center_distance_m": 70.50921412351536,
+          "circle_overlap_fraction": 0.45763599267339455,
+          "i": 19,
+          "j": 23,
+          "shared_cells": 26034,
+          "shared_occupied_fraction": 0.5701458543208795
+        },
+        {
+          "center_distance_m": 89.55885862826185,
+          "circle_overlap_fraction": 0.3265100441638554,
+          "i": 19,
+          "j": 24,
+          "shared_cells": 19372,
+          "shared_occupied_fraction": 0.42424773334501337
+        },
+        {
+          "center_distance_m": 108.8347478499108,
+          "circle_overlap_fraction": 0.2063482231528758,
+          "i": 19,
+          "j": 25,
+          "shared_cells": 12979,
+          "shared_occupied_fraction": 0.2842407253295957
+        },
+        {
+          "center_distance_m": 128.38494954404464,
+          "circle_overlap_fraction": 0.10225496716565939,
+          "i": 19,
+          "j": 26,
+          "shared_cells": 6349,
+          "shared_occupied_fraction": 0.13904340589549297
+        },
+        {
+          "center_distance_m": 148.0897841644414,
+          "circle_overlap_fraction": 0.024105920602971478,
+          "i": 19,
+          "j": 27,
+          "shared_cells": 1314,
+          "shared_occupied_fraction": 0.02877666330865928
+        },
+        {
+          "center_distance_m": 20.09289509454066,
+          "circle_overlap_fraction": 0.8405270891942074,
+          "i": 20,
+          "j": 21,
+          "shared_cells": 43426,
+          "shared_occupied_fraction": 0.911602325923127
+        },
+        {
+          "center_distance_m": 40.029004547037296,
+          "circle_overlap_fraction": 0.6848141662311913,
+          "i": 20,
+          "j": 22,
+          "shared_cells": 38059,
+          "shared_occupied_fraction": 0.7989378004492307
+        },
+        {
+          "center_distance_m": 59.370720719326926,
+          "circle_overlap_fraction": 0.5386207202592029,
+          "i": 20,
+          "j": 23,
+          "shared_cells": 30623,
+          "shared_occupied_fraction": 0.6428406490752986
+        },
+        {
+          "center_distance_m": 79.33220332134923,
+          "circle_overlap_fraction": 0.39561079308808195,
+          "i": 20,
+          "j": 24,
+          "shared_cells": 23682,
+          "shared_occupied_fraction": 0.49713458026324076
+        },
+        {
+          "center_distance_m": 99.30425196803536,
+          "circle_overlap_fraction": 0.26392879621678217,
+          "i": 20,
+          "j": 25,
+          "shared_cells": 16918,
+          "shared_occupied_fraction": 0.3551441106702773
+        },
+        {
+          "center_distance_m": 119.32759188216609,
+          "circle_overlap_fraction": 0.14784556484581848,
+          "i": 20,
+          "j": 26,
+          "shared_cells": 9441,
+          "shared_occupied_fraction": 0.19818628377101832
+        },
+        {
+          "center_distance_m": 139.38218940414646,
+          "circle_overlap_fraction": 0.05444273019576108,
+          "i": 20,
+          "j": 27,
+          "shared_cells": 3240,
+          "shared_occupied_fraction": 0.06801435858681278
+        },
+        {
+          "center_distance_m": 154.6475349301915,
+          "circle_overlap_fraction": 0.007307912068865683,
+          "i": 20,
+          "j": 28,
+          "shared_cells": 330,
+          "shared_occupied_fraction": 0.006927388374582782
+        },
+        {
+          "center_distance_m": 20.182572238534203,
+          "circle_overlap_fraction": 0.8398191360027321,
+          "i": 21,
+          "j": 22,
+          "shared_cells": 46586,
+          "shared_occupied_fraction": 0.8950240153698367
+        },
+        {
+          "center_distance_m": 40.004751622707175,
+          "circle_overlap_fraction": 0.6850010311023537,
+          "i": 21,
+          "j": 23,
+          "shared_cells": 38789,
+          "shared_occupied_fraction": 0.745225744476465
+        },
+        {
+          "center_distance_m": 60.08482162877857,
+          "circle_overlap_fraction": 0.5333488821853394,
+          "i": 21,
+          "j": 24,
+          "shared_cells": 31301,
+          "shared_occupied_fraction": 0.6013640730067243
+        },
+        {
+          "center_distance_m": 80.17456286246826,
+          "circle_overlap_fraction": 0.38979963750868435,
+          "i": 21,
+          "j": 25,
+          "shared_cells": 23762,
+          "shared_occupied_fraction": 0.4565225744476465
+        },
+        {
+          "center_distance_m": 100.27135018091094,
+          "circle_overlap_fraction": 0.2579130350736888,
+          "i": 21,
+          "j": 26,
+          "shared_cells": 15200,
+          "shared_occupied_fraction": 0.2920268972142171
+        },
+        {
+          "center_distance_m": 120.37929195436243,
+          "circle_overlap_fraction": 0.14230125512994937,
+          "i": 21,
+          "j": 27,
+          "shared_cells": 7791,
+          "shared_occupied_fraction": 0.1496829971181556
+        },
+        {
+          "center_distance_m": 136.1619372433539,
+          "circle_overlap_fraction": 0.06746965231623607,
+          "i": 21,
+          "j": 28,
+          "shared_cells": 4280,
+          "shared_occupied_fraction": 0.08222862632084534
+        },
+        {
+          "center_distance_m": 149.28160260991325,
+          "circle_overlap_fraction": 0.02060325639698122,
+          "i": 21,
+          "j": 29,
+          "shared_cells": 1465,
+          "shared_occupied_fraction": 0.028146013448607107
+        },
+        {
+          "center_distance_m": 20.061673137577003,
+          "circle_overlap_fraction": 0.8407735817753257,
+          "i": 22,
+          "j": 23,
+          "shared_cells": 47112,
+          "shared_occupied_fraction": 0.8568154951350369
+        },
+        {
+          "center_distance_m": 40.100537648937404,
+          "circle_overlap_fraction": 0.6842630592633816,
+          "i": 22,
+          "j": 24,
+          "shared_cells": 39346,
+          "shared_occupied_fraction": 0.7155769755387833
+        },
+        {
+          "center_distance_m": 60.204780965971246,
+          "circle_overlap_fraction": 0.5324642886642945,
+          "i": 22,
+          "j": 25,
+          "shared_cells": 31260,
+          "shared_occupied_fraction": 0.568518686914613
+        },
+        {
+          "center_distance_m": 80.30710914528721,
+          "circle_overlap_fraction": 0.3888870985898768,
+          "i": 22,
+          "j": 26,
+          "shared_cells": 21885,
+          "shared_occupied_fraction": 0.39970412580132597
+        },
+        {
+          "center_distance_m": 100.41921050645838,
+          "circle_overlap_fraction": 0.25699656343774274,
+          "i": 22,
+          "j": 27,
+          "shared_cells": 13337,
+          "shared_occupied_fraction": 0.2509738243540769
+        },
+        {
+          "center_distance_m": 116.49544349441251,
+          "circle_overlap_fraction": 0.1630788614765189,
+          "i": 22,
+          "j": 28,
+          "shared_cells": 9089,
+          "shared_occupied_fraction": 0.16778350039689133
+        },
+        {
+          "center_distance_m": 130.03672816818565,
+          "circle_overlap_fraction": 0.09450299395081892,
+          "i": 22,
+          "j": 29,
+          "shared_cells": 5942,
+          "shared_occupied_fraction": 0.10904553045457048
+        },
+        {
+          "center_distance_m": 143.7573607626134,
+          "circle_overlap_fraction": 0.03823073061182097,
+          "i": 22,
+          "j": 30,
+          "shared_cells": 2507,
+          "shared_occupied_fraction": 0.047033882405913476
+        },
+        {
+          "center_distance_m": 144.21270496504977,
+          "circle_overlap_fraction": 0.03665059253543069,
+          "i": 22,
+          "j": 31,
+          "shared_cells": 2381,
+          "shared_occupied_fraction": 0.044672507926977995
+        },
+        {
+          "center_distance_m": 144.07982601122228,
+          "circle_overlap_fraction": 0.03710950836309903,
+          "i": 22,
+          "j": 32,
+          "shared_cells": 2421,
+          "shared_occupied_fraction": 0.04543407273955636
+        },
+        {
+          "center_distance_m": 143.9763657765338,
+          "circle_overlap_fraction": 0.037468082208825464,
+          "i": 22,
+          "j": 33,
+          "shared_cells": 2447,
+          "shared_occupied_fraction": 0.0459013318326768
+        },
+        {
+          "center_distance_m": 20.08195725235363,
+          "circle_overlap_fraction": 0.8406134410896338,
+          "i": 23,
+          "j": 24,
+          "shared_cells": 48198,
+          "shared_occupied_fraction": 0.8580584287265671
+        },
+        {
+          "center_distance_m": 40.18132584221354,
+          "circle_overlap_fraction": 0.6836407282400859,
+          "i": 23,
+          "j": 25,
+          "shared_cells": 39779,
+          "shared_occupied_fraction": 0.7081768172188496
+        },
+        {
+          "center_distance_m": 60.28392480790178,
+          "circle_overlap_fraction": 0.5318808322589407,
+          "i": 23,
+          "j": 26,
+          "shared_cells": 29944,
+          "shared_occupied_fraction": 0.5468924077219514
+        },
+        {
+          "center_distance_m": 80.39609245743004,
+          "circle_overlap_fraction": 0.3882747612465191,
+          "i": 23,
+          "j": 27,
+          "shared_cells": 20571,
+          "shared_occupied_fraction": 0.38710223744378164
+        },
+        {
+          "center_distance_m": 96.44262448803238,
+          "circle_overlap_fraction": 0.28194280768060365,
+          "i": 23,
+          "j": 28,
+          "shared_cells": 15440,
+          "shared_occupied_fraction": 0.2850233519779956
+        },
+        {
+          "center_distance_m": 110.11910182148426,
+          "circle_overlap_fraction": 0.19889478858186727,
+          "i": 23,
+          "j": 29,
+          "shared_cells": 11369,
+          "shared_occupied_fraction": 0.20863995889229414
+        },
+        {
+          "center_distance_m": 124.04100857827959,
+          "circle_overlap_fraction": 0.12349622010613777,
+          "i": 23,
+          "j": 30,
+          "shared_cells": 7362,
+          "shared_occupied_fraction": 0.13811864470376345
+        },
+        {
+          "center_distance_m": 124.51151401049091,
+          "circle_overlap_fraction": 0.12113800970517881,
+          "i": 23,
+          "j": 31,
+          "shared_cells": 7218,
+          "shared_occupied_fraction": 0.13542467963751664
+        },
+        {
+          "center_distance_m": 124.37151702744752,
+          "circle_overlap_fraction": 0.12183826573089802,
+          "i": 23,
+          "j": 32,
+          "shared_cells": 7264,
+          "shared_occupied_fraction": 0.13632098487407573
+        },
+        {
+          "center_distance_m": 124.26756211127999,
+          "circle_overlap_fraction": 0.12235902105139498,
+          "i": 23,
+          "j": 33,
+          "shared_cells": 7294,
+          "shared_occupied_fraction": 0.1368223597824048
+        },
+        {
+          "center_distance_m": 20.105231894580708,
+          "circle_overlap_fraction": 0.8404296937333614,
+          "i": 24,
+          "j": 25,
+          "shared_cells": 49316,
+          "shared_occupied_fraction": 0.8590739643939658
+        },
+        {
+          "center_distance_m": 40.20870802414437,
+          "circle_overlap_fraction": 0.6834298157607238,
+          "i": 24,
+          "j": 26,
+          "shared_cells": 39276,
+          "shared_occupied_fraction": 0.7173305572297408
+        },
+        {
+          "center_distance_m": 60.3214435821824,
+          "circle_overlap_fraction": 0.5316042843232804,
+          "i": 24,
+          "j": 27,
+          "shared_cells": 29518,
+          "shared_occupied_fraction": 0.5554656479930751
+        },
+        {
+          "center_distance_m": 76.55935705235513,
+          "circle_overlap_fraction": 0.414880542435481,
+          "i": 24,
+          "j": 28,
+          "shared_cells": 23846,
+          "shared_occupied_fraction": 0.4401986302634251
+        },
+        {
+          "center_distance_m": 90.64343088035825,
+          "circle_overlap_fraction": 0.31937790627747364,
+          "i": 24,
+          "j": 29,
+          "shared_cells": 18934,
+          "shared_occupied_fraction": 0.34747022444073333
+        },
+        {
+          "center_distance_m": 104.97442811426687,
+          "circle_overlap_fraction": 0.22920239902961173,
+          "i": 24,
+          "j": 30,
+          "shared_cells": 13786,
+          "shared_occupied_fraction": 0.2586394506772729
+        },
+        {
+          "center_distance_m": 105.47388870040511,
+          "circle_overlap_fraction": 0.2262082604462401,
+          "i": 24,
+          "j": 31,
+          "shared_cells": 13593,
+          "shared_occupied_fraction": 0.25503292744704403
+        },
+        {
+          "center_distance_m": 105.32014442259971,
+          "circle_overlap_fraction": 0.2271287635697648,
+          "i": 24,
+          "j": 32,
+          "shared_cells": 13660,
+          "shared_occupied_fraction": 0.256352512855159
+        },
+        {
+          "center_distance_m": 105.21545028563374,
+          "circle_overlap_fraction": 0.22775618047927226,
+          "i": 24,
+          "j": 33,
+          "shared_cells": 13699,
+          "shared_occupied_fraction": 0.2569686737947852
+        },
+        {
+          "center_distance_m": 20.103595615156284,
+          "circle_overlap_fraction": 0.8404426116300509,
+          "i": 25,
+          "j": 26,
+          "shared_cells": 47268,
+          "shared_occupied_fraction": 0.8632951619089365
+        },
+        {
+          "center_distance_m": 40.21634889863059,
+          "circle_overlap_fraction": 0.6833709633112472,
+          "i": 25,
+          "j": 27,
+          "shared_cells": 37314,
+          "shared_occupied_fraction": 0.7021696994787452
+        },
+        {
+          "center_distance_m": 56.662966029184716,
+          "circle_overlap_fraction": 0.5587015589773556,
+          "i": 25,
+          "j": 28,
+          "shared_cells": 31500,
+          "shared_occupied_fraction": 0.5814919421830869
+        },
+        {
+          "center_distance_m": 71.26206789743023,
+          "circle_overlap_fraction": 0.4522650258352363,
+          "i": 25,
+          "j": 29,
+          "shared_cells": 26276,
+          "shared_occupied_fraction": 0.4822080710576058
+        },
+        {
+          "center_distance_m": 86.07629816729278,
+          "circle_overlap_fraction": 0.34967508320907026,
+          "i": 25,
+          "j": 30,
+          "shared_cells": 20336,
+          "shared_occupied_fraction": 0.38152414543544333
+        },
+        {
+          "center_distance_m": 86.61124341383628,
+          "circle_overlap_fraction": 0.34609119366065133,
+          "i": 25,
+          "j": 31,
+          "shared_cells": 20098,
+          "shared_occupied_fraction": 0.3770802454079814
+        },
+        {
+          "center_distance_m": 86.44027420763267,
+          "circle_overlap_fraction": 0.3472356170211777,
+          "i": 25,
+          "j": 32,
+          "shared_cells": 20181,
+          "shared_occupied_fraction": 0.37872987276207637
+        },
+        {
+          "center_distance_m": 86.33510056694293,
+          "circle_overlap_fraction": 0.3479400858429763,
+          "i": 25,
+          "j": 33,
+          "shared_cells": 20225,
+          "shared_occupied_fraction": 0.3793847308197336
+        },
+        {
+          "center_distance_m": 20.112755760466445,
+          "circle_overlap_fraction": 0.8403702954634076,
+          "i": 26,
+          "j": 27,
+          "shared_cells": 44728,
+          "shared_occupied_fraction": 0.8416853277130653
+        },
+        {
+          "center_distance_m": 37.020109352547955,
+          "circle_overlap_fraction": 0.7080533765280737,
+          "i": 26,
+          "j": 28,
+          "shared_cells": 38764,
+          "shared_occupied_fraction": 0.7155858300566724
+        },
+        {
+          "center_distance_m": 52.47047158845013,
+          "circle_overlap_fraction": 0.5900630555136356,
+          "i": 26,
+          "j": 29,
+          "shared_cells": 32910,
+          "shared_occupied_fraction": 0.6039529463581141
+        },
+        {
+          "center_distance_m": 67.92390775276698,
+          "circle_overlap_fraction": 0.4761841738983344,
+          "i": 26,
+          "j": 30,
+          "shared_cells": 26454,
+          "shared_occupied_fraction": 0.4963040786462046
+        },
+        {
+          "center_distance_m": 68.50861000502624,
+          "circle_overlap_fraction": 0.47197535026160414,
+          "i": 26,
+          "j": 31,
+          "shared_cells": 26185,
+          "shared_occupied_fraction": 0.4912850147282313
+        },
+        {
+          "center_distance_m": 68.31259138387745,
+          "circle_overlap_fraction": 0.47338544462274895,
+          "i": 26,
+          "j": 32,
+          "shared_cells": 26280,
+          "shared_occupied_fraction": 0.49318770408737755
+        },
+        {
+          "center_distance_m": 68.20777422659552,
+          "circle_overlap_fraction": 0.47413983568505225,
+          "i": 26,
+          "j": 33,
+          "shared_cells": 26326,
+          "shared_occupied_fraction": 0.4938285499906209
+        },
+        {
+          "center_distance_m": 18.38569593593635,
+          "circle_overlap_fraction": 0.8540139088530003,
+          "i": 27,
+          "j": 28,
+          "shared_cells": 46552,
+          "shared_occupied_fraction": 0.8760091078451666
+        },
+        {
+          "center_distance_m": 35.1455354400529,
+          "circle_overlap_fraction": 0.7225863839800581,
+          "i": 27,
+          "j": 29,
+          "shared_cells": 40013,
+          "shared_occupied_fraction": 0.7529591087860598
+        },
+        {
+          "center_distance_m": 51.233265424882354,
+          "circle_overlap_fraction": 0.5993770620209289,
+          "i": 27,
+          "j": 30,
+          "shared_cells": 33167,
+          "shared_occupied_fraction": 0.6241320261191924
+        },
+        {
+          "center_distance_m": 51.884391734120825,
+          "circle_overlap_fraction": 0.5944719638834669,
+          "i": 27,
+          "j": 31,
+          "shared_cells": 32874,
+          "shared_occupied_fraction": 0.6186183925782353
+        },
+        {
+          "center_distance_m": 51.65217054075462,
+          "circle_overlap_fraction": 0.5962205204719465,
+          "i": 27,
+          "j": 32,
+          "shared_cells": 32981,
+          "shared_occupied_fraction": 0.6206319038030899
+        },
+        {
+          "center_distance_m": 51.550962695420694,
+          "circle_overlap_fraction": 0.5969828719831395,
+          "i": 27,
+          "j": 33,
+          "shared_cells": 33024,
+          "shared_occupied_fraction": 0.6214410718654146
+        },
+        {
+          "center_distance_m": 16.980234804114804,
+          "circle_overlap_fraction": 0.8651296622084341,
+          "i": 28,
+          "j": 29,
+          "shared_cells": 47464,
+          "shared_occupied_fraction": 0.876188366469144
+        },
+        {
+          "center_distance_m": 33.116359781072845,
+          "circle_overlap_fraction": 0.7383622595163961,
+          "i": 28,
+          "j": 30,
+          "shared_cells": 40521,
+          "shared_occupied_fraction": 0.7602153765337135
+        },
+        {
+          "center_distance_m": 33.787740514897905,
+          "circle_overlap_fraction": 0.7331376612196157,
+          "i": 28,
+          "j": 31,
+          "shared_cells": 40229,
+          "shared_occupied_fraction": 0.7547796393928592
+        },
+        {
+          "center_distance_m": 33.54317402709837,
+          "circle_overlap_fraction": 0.7350402905742012,
+          "i": 28,
+          "j": 32,
+          "shared_cells": 40334,
+          "shared_occupied_fraction": 0.7569342791727658
+        },
+        {
+          "center_distance_m": 33.44446374722478,
+          "circle_overlap_fraction": 0.7358083979756842,
+          "i": 28,
+          "j": 33,
+          "shared_cells": 40379,
+          "shared_occupied_fraction": 0.7574376289626712
+        },
+        {
+          "center_distance_m": 16.137940295377323,
+          "circle_overlap_fraction": 0.871796427530677,
+          "i": 29,
+          "j": 30,
+          "shared_cells": 47482,
+          "shared_occupied_fraction": 0.8908108513751829
+        },
+        {
+          "center_distance_m": 16.807668647269896,
+          "circle_overlap_fraction": 0.8664952236507245,
+          "i": 29,
+          "j": 31,
+          "shared_cells": 47195,
+          "shared_occupied_fraction": 0.885476275352258
+        },
+        {
+          "center_distance_m": 16.563926820752457,
+          "circle_overlap_fraction": 0.868424283082079,
+          "i": 29,
+          "j": 32,
+          "shared_cells": 47296,
+          "shared_occupied_fraction": 0.8875877341140262
+        },
+        {
+          "center_distance_m": 16.464955759175645,
+          "circle_overlap_fraction": 0.8692076632858362,
+          "i": 29,
+          "j": 33,
+          "shared_cells": 47344,
+          "shared_occupied_fraction": 0.8880885387356968
+        },
+        {
+          "center_distance_m": 0.712345638825096,
+          "circle_overlap_fraction": 0.9943313522467376,
+          "i": 30,
+          "j": 31,
+          "shared_cells": 53008,
+          "shared_occupied_fraction": 0.9945402352764592
+        },
+        {
+          "center_distance_m": 0.4357115658308623,
+          "circle_overlap_fraction": 0.9965327218122378,
+          "i": 30,
+          "j": 32,
+          "shared_cells": 53115,
+          "shared_occupied_fraction": 0.9967909019254588
+        },
+        {
+          "center_distance_m": 0.3506303616646314,
+          "circle_overlap_fraction": 0.9972097744704526,
+          "i": 30,
+          "j": 33,
+          "shared_cells": 53158,
+          "shared_occupied_fraction": 0.9972984128175303
+        },
+        {
+          "center_distance_m": 0.28749353282030593,
+          "circle_overlap_fraction": 0.9977122003883067,
+          "i": 31,
+          "j": 32,
+          "shared_cells": 53178,
+          "shared_occupied_fraction": 0.9979732012160792
+        },
+        {
+          "center_distance_m": 0.36182594677145147,
+          "circle_overlap_fraction": 0.9971206830557556,
+          "i": 31,
+          "j": 33,
+          "shared_cells": 53160,
+          "shared_occupied_fraction": 0.9973920711458001
+        },
+        {
+          "center_distance_m": 0.1052110991509034,
+          "circle_overlap_fraction": 0.9991627567354372,
+          "i": 32,
+          "j": 33,
+          "shared_cells": 53260,
+          "shared_occupied_fraction": 0.9995120669594265
+        }
+      ],
+      "mean_memberships_per_covered_cell": 10.203950558100768,
+      "nearest_neighbor_overlap": [
+        {
+          "circle_id": 0,
+          "isolated": false,
+          "neighbor_id": 2,
+          "overlap_fraction": 0.9968050506956663
+        },
+        {
+          "circle_id": 1,
+          "isolated": false,
+          "neighbor_id": 0,
+          "overlap_fraction": 0.9866163313486481
+        },
+        {
+          "circle_id": 2,
+          "isolated": false,
+          "neighbor_id": 0,
+          "overlap_fraction": 0.9968050506956663
+        },
+        {
+          "circle_id": 3,
+          "isolated": false,
+          "neighbor_id": 1,
+          "overlap_fraction": 0.9819195147271294
+        },
+        {
+          "circle_id": 4,
+          "isolated": false,
+          "neighbor_id": 5,
+          "overlap_fraction": 0.89682748937881
+        },
+        {
+          "circle_id": 5,
+          "isolated": false,
+          "neighbor_id": 4,
+          "overlap_fraction": 0.89682748937881
+        },
+        {
+          "circle_id": 6,
+          "isolated": false,
+          "neighbor_id": 7,
+          "overlap_fraction": 0.8404289579858485
+        },
+        {
+          "circle_id": 7,
+          "isolated": false,
+          "neighbor_id": 8,
+          "overlap_fraction": 0.8666157089270283
+        },
+        {
+          "circle_id": 8,
+          "isolated": false,
+          "neighbor_id": 9,
+          "overlap_fraction": 0.8697348478206129
+        },
+        {
+          "circle_id": 9,
+          "isolated": false,
+          "neighbor_id": 8,
+          "overlap_fraction": 0.8697348478206129
+        },
+        {
+          "circle_id": 10,
+          "isolated": false,
+          "neighbor_id": 9,
+          "overlap_fraction": 0.84088626421308
+        },
+        {
+          "circle_id": 11,
+          "isolated": false,
+          "neighbor_id": 12,
+          "overlap_fraction": 0.8716847640826114
+        },
+        {
+          "circle_id": 12,
+          "isolated": false,
+          "neighbor_id": 11,
+          "overlap_fraction": 0.8716847640826114
+        },
+        {
+          "circle_id": 13,
+          "isolated": false,
+          "neighbor_id": 14,
+          "overlap_fraction": 0.8395428963784597
+        },
+        {
+          "circle_id": 14,
+          "isolated": false,
+          "neighbor_id": 15,
+          "overlap_fraction": 0.8403466510270985
+        },
+        {
+          "circle_id": 15,
+          "isolated": false,
+          "neighbor_id": 14,
+          "overlap_fraction": 0.8403466510270985
+        },
+        {
+          "circle_id": 16,
+          "isolated": false,
+          "neighbor_id": 17,
+          "overlap_fraction": 0.8399044809012163
+        },
+        {
+          "circle_id": 17,
+          "isolated": false,
+          "neighbor_id": 18,
+          "overlap_fraction": 0.8709221873441471
+        },
+        {
+          "circle_id": 18,
+          "isolated": false,
+          "neighbor_id": 17,
+          "overlap_fraction": 0.8709221873441471
+        },
+        {
+          "circle_id": 19,
+          "isolated": false,
+          "neighbor_id": 20,
+          "overlap_fraction": 0.8494883640617404
+        },
+        {
+          "circle_id": 20,
+          "isolated": false,
+          "neighbor_id": 19,
+          "overlap_fraction": 0.8494883640617404
+        },
+        {
+          "circle_id": 21,
+          "isolated": false,
+          "neighbor_id": 20,
+          "overlap_fraction": 0.8405270891942074
+        },
+        {
+          "circle_id": 22,
+          "isolated": false,
+          "neighbor_id": 23,
+          "overlap_fraction": 0.8407735817753257
+        },
+        {
+          "circle_id": 23,
+          "isolated": false,
+          "neighbor_id": 22,
+          "overlap_fraction": 0.8407735817753257
+        },
+        {
+          "circle_id": 24,
+          "isolated": false,
+          "neighbor_id": 23,
+          "overlap_fraction": 0.8406134410896338
+        },
+        {
+          "circle_id": 25,
+          "isolated": false,
+          "neighbor_id": 26,
+          "overlap_fraction": 0.8404426116300509
+        },
+        {
+          "circle_id": 26,
+          "isolated": false,
+          "neighbor_id": 25,
+          "overlap_fraction": 0.8404426116300509
+        },
+        {
+          "circle_id": 27,
+          "isolated": false,
+          "neighbor_id": 28,
+          "overlap_fraction": 0.8540139088530003
+        },
+        {
+          "circle_id": 28,
+          "isolated": false,
+          "neighbor_id": 29,
+          "overlap_fraction": 0.8651296622084341
+        },
+        {
+          "circle_id": 29,
+          "isolated": false,
+          "neighbor_id": 30,
+          "overlap_fraction": 0.871796427530677
+        },
+        {
+          "circle_id": 30,
+          "isolated": false,
+          "neighbor_id": 33,
+          "overlap_fraction": 0.9972097744704526
+        },
+        {
+          "circle_id": 31,
+          "isolated": false,
+          "neighbor_id": 32,
+          "overlap_fraction": 0.9977122003883067
+        },
+        {
+          "circle_id": 32,
+          "isolated": false,
+          "neighbor_id": 33,
+          "overlap_fraction": 0.9991627567354372
+        },
+        {
+          "circle_id": 33,
+          "isolated": false,
+          "neighbor_id": 32,
+          "overlap_fraction": 0.9991627567354372
+        }
+      ],
+      "nearest_overlap_in_band_fraction": 0.0,
+      "nearest_overlap_median": 0.8681752783738206,
+      "occupied_cells": 183824,
+      "point_coverage": 0.9994397140174083
+    },
+    "update_id": 33
+  },
+  "greedy_fallback_updates": 0,
+  "max_update_s": 11.247410167998169,
+  "mean_update_s": 0.6747108455289409,
+  "median_update_s": 0.09894857348990627,
+  "memory": {
+    "max_child_processes": 0,
+    "peak_sampled_simultaneous_process_tree_rss_bytes": 1087160320,
+    "process_high_water_rss_bytes_before_plotting": 1102217216,
+    "samples": 951,
+    "sampling_period_s": 0.02,
+    "scope": "fresh replay process, input union, solver, state-history validation; excludes gallery plotting"
+  },
+  "minimum_prefix_coverage": 0.9550527364200526,
+  "p95_update_s": 3.8364287156007686,
+  "proven_candidate_minimum_updates": 7,
+  "solver_updates": 7,
+  "total_added_circles": 7
+}

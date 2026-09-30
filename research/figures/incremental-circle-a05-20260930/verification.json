@@ -1,0 +1,31 @@
+{
+  "all_executed_source_hashes_match_delivery": true,
+  "existing_lidar_pipeline_changed": false,
+  "gallery": {
+    "javascript": "syntax and controls passed with mock DOM; native browser interaction not tested",
+    "prefix_images": 34,
+    "static_images_visually_inspected": [
+      "prefix-033.png",
+      "timeline.png"
+    ]
+  },
+  "immutable_centers_and_ids": true,
+  "remote_bulk_root": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps148-20260930",
+  "repeat_circle_histories_identical_at_all_resolutions": true,
+  "schema_version": 1,
+  "source_and_config_sha256": {
+    "research/CIRCLE-COVER.md": "62d6c37c473ffb52a1116946d8388d943ca0d2f8191210063ba066e324224fe4",
+    "research/configs/circle_cover.yaml": "05e0ce5ef074dc2e5b7145eba3b542e0fc38d15a57448b8510fa3b5263a76e70",
+    "research/s3e_pipeline/circle_cover.py": "c36e5c7d3faaba7b2b0909b3f62033f904476fb005258e7f4aa0cd0399fe44e4",
+    "research/s3e_pipeline/circle_cover_benchmark.py": "65cbfc3c11d65b17a369865b9aececfaaace19cb41ec2de494f0ba932db8e9ff",
+    "research/s3e_pipeline/circle_cover_replay.py": "60dea60df52f29456738a3e09ab793dcebedbf2c6de4eab7c58d921f44464843",
+    "research/s3e_pipeline/circle_cover_report.py": "0f3426e61a7b3b77cc9824e852c8e2ab4404b025c94b261d35699a8e742a04c2",
+    "research/tests/test_circle_cover.py": "ed90fc0457b55c47b3b102cdf48efd687d68c3f78f80c668d1b13c2561300935",
+    "research/tests/test_circle_cover_replay.py": "d40facbb7acc73fae5ee41c1db577fbd29cc6141092ddc3819e34a531a5179a7"
+  },
+  "tests": {
+    "148": "...........................                                              [100%]\n27 passed in 0.59s",
+    "local": "27 passed"
+  },
+  "validated_saved_states": 102
+}

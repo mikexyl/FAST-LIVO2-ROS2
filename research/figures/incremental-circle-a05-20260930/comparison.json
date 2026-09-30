@@ -1,0 +1,129 @@
+{
+  "final_footprints": [
+    [
+      "Incremental",
+      7,
+      "99.29%",
+      "99.63%",
+      "1.731",
+      "30.00%"
+    ],
+    [
+      "Trajectory-centered",
+      34,
+      "99.70%",
+      "99.94%",
+      "9.798",
+      "86.82%"
+    ]
+  ],
+  "fresh_process_controls": {
+    "planner": {
+      "max_stage_s": 1.3487957390025258,
+      "mean_stage_s": 0.09988287376601125,
+      "p95_stage_s": 0.5011433530024075,
+      "peak_sampled_simultaneous_process_tree_rss_bytes": 597254144.0
+    },
+    "trajectory_centered": {
+      "max_stage_s": 0.37309660100436304,
+      "mean_stage_s": 0.13703757238288425,
+      "p95_stage_s": 0.3425024320487864,
+      "peak_sampled_simultaneous_process_tree_rss_bytes": 578351104.0
+    }
+  },
+  "immutable_history_verified": true,
+  "inspected_prefixes": 34,
+  "overlap_distributions": [
+    [
+      "Incremental",
+      "Greatest disk overlap",
+      7,
+      "30.00%",
+      "30.00%",
+      "30.00%",
+      "30.00%",
+      "30.00%"
+    ],
+    [
+      "Incremental",
+      "All intersecting-pair disk overlap",
+      12,
+      "0.76%",
+      "17.12%",
+      "29.14%",
+      "30.00%",
+      "30.00%"
+    ],
+    [
+      "Incremental",
+      "Shared occupied cells / smaller membership",
+      12,
+      "1.01%",
+      "23.37%",
+      "34.62%",
+      "43.71%",
+      "59.65%"
+    ],
+    [
+      "Trajectory-centered",
+      "Greatest disk overlap",
+      34,
+      "83.95%",
+      "84.07%",
+      "86.82%",
+      "89.68%",
+      "99.92%"
+    ],
+    [
+      "Trajectory-centered",
+      "All intersecting-pair disk overlap",
+      477,
+      "0.00%",
+      "17.52%",
+      "34.97%",
+      "61.31%",
+      "99.92%"
+    ],
+    [
+      "Trajectory-centered",
+      "Shared occupied cells / smaller membership",
+      477,
+      "0.01%",
+      "20.91%",
+      "39.77%",
+      "67.26%",
+      "99.96%"
+    ]
+  ],
+  "report_source_sha256": "0f3426e61a7b3b77cc9824e852c8e2ab4404b025c94b261d35699a8e742a04c2",
+  "resolution_sensitivity": [
+    [
+      "0.5m",
+      7,
+      "95.505%",
+      "99.408%",
+      "99.630%",
+      "674.7",
+      "11.247"
+    ],
+    [
+      "1m",
+      7,
+      "95.004%",
+      "99.289%",
+      "99.632%",
+      "98.8",
+      "1.339"
+    ],
+    [
+      "2m",
+      9,
+      "95.229%",
+      "99.981%",
+      "99.999%",
+      "19.5",
+      "0.083"
+    ]
+  ],
+  "tests": "...........................                                              [100%]\n27 passed in 0.59s"
+}

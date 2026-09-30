@@ -1,0 +1,766 @@
+{
+  "config": {
+    "candidate_spacing_fraction": 0.25,
+    "cell_size_m": 1.0,
+    "coverage_target": 0.95,
+    "grid_origin_xy": [
+      0.0,
+      0.0
+    ],
+    "overlap_target": 0.3,
+    "overlap_tolerance": 0.1,
+    "radius_m": 80.0,
+    "refinement_max_iterations": 100,
+    "solver_time_limit_s": 10.0
+  },
+  "hostname": "v4rl-server-1",
+  "input_payloads": [
+    {
+      "available_ns": 1661851067295625925,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000000.npz",
+      "first_seen_points": 8352,
+      "keyframe_id": 0,
+      "native_points": 8352,
+      "sha256": "e4ac01cd4b44bb3fe37b79e22964e38bb892926d9ce1f42d26f486cd3922b4d8"
+    },
+    {
+      "available_ns": 1661851077399632931,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000001.npz",
+      "first_seen_points": 33005,
+      "keyframe_id": 1,
+      "native_points": 41357,
+      "sha256": "c5406006ecd7a46f1b1d50ad0797f649bf1d15f3d2b288f98e275f3ee71335c4"
+    },
+    {
+      "available_ns": 1661851087415646076,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000002.npz",
+      "first_seen_points": 14902,
+      "keyframe_id": 2,
+      "native_points": 56254,
+      "sha256": "996defadac3049807f8f8eb400659eb48e5d34e06e79626d1a427c9c5f381eff"
+    },
+    {
+      "available_ns": 1661851097479656935,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000003.npz",
+      "first_seen_points": 7526,
+      "keyframe_id": 3,
+      "native_points": 63785,
+      "sha256": "ec87746bef3c8ef975c3ec4d88ed72e3d93bbd54ea73fdb634fca84bd69bbd2d"
+    },
+    {
+      "available_ns": 1661851107527663946,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000004.npz",
+      "first_seen_points": 17592,
+      "keyframe_id": 4,
+      "native_points": 81377,
+      "sha256": "01e007b162316efc1c9b0180086890c67718891244cac713df1a177a27991ca1"
+    },
+    {
+      "available_ns": 1661851117671674967,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000005.npz",
+      "first_seen_points": 33998,
+      "keyframe_id": 5,
+      "native_points": 115295,
+      "sha256": "5b71182ef7e3e2591b8cd68d1608a220225b7363d5b428a973d78aba0a3bfeee"
+    },
+    {
+      "available_ns": 1661851127543683052,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000006.npz",
+      "first_seen_points": 39886,
+      "keyframe_id": 6,
+      "native_points": 152368,
+      "sha256": "792e9b014ce5ce216ec0ac4c2a8a7cf980de5ce530eef38fb33d7cb3fe3e65cb"
+    },
+    {
+      "available_ns": 1661851135759691954,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000007.npz",
+      "first_seen_points": 39587,
+      "keyframe_id": 7,
+      "native_points": 177223,
+      "sha256": "75d5661e322507afc6212b144b586decab4b938ee775eb7744cb9d9eeeb4bde5"
+    },
+    {
+      "available_ns": 1661851145807702065,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000008.npz",
+      "first_seen_points": 44130,
+      "keyframe_id": 8,
+      "native_points": 201761,
+      "sha256": "be0e1f778687e928323b3b2591ff35441f164806b740f43a3d70a1cb71c59136"
+    },
+    {
+      "available_ns": 1661851155903714895,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000009.npz",
+      "first_seen_points": 32089,
+      "keyframe_id": 9,
+      "native_points": 208369,
+      "sha256": "093621ae1c5b1fb98f51a26edb1dc5c159b0a7b3839897b8c8c2c57173188c1c"
+    },
+    {
+      "available_ns": 1661851164575721979,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000010.npz",
+      "first_seen_points": 26167,
+      "keyframe_id": 10,
+      "native_points": 204887,
+      "sha256": "61b5c3b12110a3f94bd409455703bde5d079adffd692f1e138e3849d279fc795"
+    },
+    {
+      "available_ns": 1661851172087724924,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000011.npz",
+      "first_seen_points": 28585,
+      "keyframe_id": 11,
+      "native_points": 202625,
+      "sha256": "1b75f7bc4acbcecc5899972f055db00b8591db0362dd8802690efeeee0fdaeeb"
+    },
+    {
+      "available_ns": 1661851182103735924,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000012.npz",
+      "first_seen_points": 41277,
+      "keyframe_id": 12,
+      "native_points": 209250,
+      "sha256": "132d85d470bf710ffbaf8c6c9df0f8b7a6004f2c91402d95464ee2daf9afc4f2"
+    },
+    {
+      "available_ns": 1661851189927745104,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000013.npz",
+      "first_seen_points": 33861,
+      "keyframe_id": 13,
+      "native_points": 197925,
+      "sha256": "6f5fa28e53fcf8fa4ad54d8b3a22f5d581109d4ebf2ef22d1f11b7f52041a42b"
+    },
+    {
+      "available_ns": 1661851195991750002,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000014.npz",
+      "first_seen_points": 32407,
+      "keyframe_id": 14,
+      "native_points": 185661,
+      "sha256": "248737c11e1eedfb82574154ac444c5df263d7558c4804f8942b77e0ca7c1994"
+    },
+    {
+      "available_ns": 1661851202007757902,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000015.npz",
+      "first_seen_points": 29024,
+      "keyframe_id": 15,
+      "native_points": 175092,
+      "sha256": "459dd974e00ce3293437b95890fe67a6e1b25e613899c7f5304be9e78cbc2345"
+    },
+    {
+      "available_ns": 1661851207599761009,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000016.npz",
+      "first_seen_points": 28983,
+      "keyframe_id": 16,
+      "native_points": 163273,
+      "sha256": "f3aff2fcf4be7ed59e2397b4c24d8009b0a86fe19d7052a663b27ea705675ab6"
+    },
+    {
+      "available_ns": 1661851212935770988,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000017.npz",
+      "first_seen_points": 32602,
+      "keyframe_id": 17,
+      "native_points": 159158,
+      "sha256": "6bf2408fb47a0860e16c05bb6a3f149073813398df3d902bff127c40d8feb774"
+    },
+    {
+      "available_ns": 1661851222951773882,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000018.npz",
+      "first_seen_points": 34487,
+      "keyframe_id": 18,
+      "native_points": 166395,
+      "sha256": "034cd23337eff9e7b7920ea19d83256416a355daefef7be166d2f03e062368e6"
+    },
+    {
+      "available_ns": 1661851230391784906,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000019.npz",
+      "first_seen_points": 32945,
+      "keyframe_id": 19,
+      "native_points": 164045,
+      "sha256": "a960c1b331b4c815f4f2ef2399190dba86dd12cfa6bcb2b65d7aaf9f70585e8f"
+    },
+    {
+      "available_ns": 1661851240455791950,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000020.npz",
+      "first_seen_points": 33629,
+      "keyframe_id": 20,
+      "native_points": 175385,
+      "sha256": "f2a0e0cd0a1fcb25aa23f68fdd1995881ca7801c07cdcdcca88e9fe886c15f07"
+    },
+    {
+      "available_ns": 1661851249199804068,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000021.npz",
+      "first_seen_points": 20084,
+      "keyframe_id": 21,
+      "native_points": 192577,
+      "sha256": "66859135518bb3f03242a1f218729ec5c253b0b9df53bcabd37958e86c4e4536"
+    },
+    {
+      "available_ns": 1661851256855807066,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000022.npz",
+      "first_seen_points": 21156,
+      "keyframe_id": 22,
+      "native_points": 209534,
+      "sha256": "276521b81ea585f1a97ea508368e359fc71151532d6e7a8ef577deab126884dd"
+    },
+    {
+      "available_ns": 1661851264887819052,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000023.npz",
+      "first_seen_points": 28537,
+      "keyframe_id": 23,
+      "native_points": 216453,
+      "sha256": "62b4cc01c439f8f1c21ea09a6b7fcbc42cdba754b20f4f640aedf4b706d58238"
+    },
+    {
+      "available_ns": 1661851273023827076,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000024.npz",
+      "first_seen_points": 36491,
+      "keyframe_id": 24,
+      "native_points": 221374,
+      "sha256": "2adbbac26bb029a64203299396e78fd33c64578b812589983c33139712af6850"
+    },
+    {
+      "available_ns": 1661851280631830931,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000025.npz",
+      "first_seen_points": 27797,
+      "keyframe_id": 25,
+      "native_points": 223758,
+      "sha256": "d4f479526104306bdc5d85b2ba756c01da838c80baa3b53dd1f8ecdaa59fe542"
+    },
+    {
+      "available_ns": 1661851289727844000,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000026.npz",
+      "first_seen_points": 38817,
+      "keyframe_id": 26,
+      "native_points": 227156,
+      "sha256": "d31ece7c11c5f11d359d79ba70c721c7e277471a4682d00aeb873d00f18320b8"
+    },
+    {
+      "available_ns": 1661851297599848032,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000027.npz",
+      "first_seen_points": 28108,
+      "keyframe_id": 27,
+      "native_points": 247228,
+      "sha256": "d1b91bb613cd01f8845ed00d7972d35577bcc7d3d34caff9ca4d02cd5a551ad7"
+    },
+    {
+      "available_ns": 1661851307639863968,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000028.npz",
+      "first_seen_points": 26496,
+      "keyframe_id": 28,
+      "native_points": 293481,
+      "sha256": "5e4035dda3a31108d40c2e4699b9507808b57ed5607ddb26553f25b5bdbb0801"
+    },
+    {
+      "available_ns": 1661851317703869104,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000029.npz",
+      "first_seen_points": 20028,
+      "keyframe_id": 29,
+      "native_points": 325234,
+      "sha256": "d6ce602c721d37c163e0793fbb5086c05b075bf56dd63674844ae76561e44e6b"
+    },
+    {
+      "available_ns": 1661851327735877037,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000030.npz",
+      "first_seen_points": 9910,
+      "keyframe_id": 30,
+      "native_points": 325428,
+      "sha256": "f192b7cb1169417604b9bb9219f4ae083028bde4934b1735e2117d4b1e850f16"
+    },
+    {
+      "available_ns": 1661851337791887999,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000031.npz",
+      "first_seen_points": 3551,
+      "keyframe_id": 31,
+      "native_points": 329841,
+      "sha256": "5dd7d7c908c9f6918094343c0e80376b01d45cd68b73730d57ce343d13bd9a3c"
+    },
+    {
+      "available_ns": 1661851347887902021,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000032.npz",
+      "first_seen_points": 1034,
+      "keyframe_id": 32,
+      "native_points": 330762,
+      "sha256": "55938322e8aee82d059c19da3569818909449f19a4c45536e8b80edebf46563d"
+    },
+    {
+      "available_ns": 1661851352383902073,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000033.npz",
+      "first_seen_points": 4,
+      "keyframe_id": 33,
+      "native_points": 330913,
+      "sha256": "f6aeb6b49bc41f53ead3f8347a2e90c3f8732377410bc1578106c30b50307a0f"
+    }
+  ],
+  "limitation": "standalone footprint stage; not native LiDAR/submap/MapClosures memory or runtime",
+  "max_child_processes": 0,
+  "max_stage_s": 1.3478566429985221,
+  "mean_stage_s": 0.10108544114722035,
+  "metadata_sha256": "d6c4f4c0ba6784e6d3ed3594465f995a12e9f203ae47251e58b5b9ee39853a8d",
+  "mode": "planner",
+  "numpy": "1.26.4",
+  "p95_stage_s": 0.5042003339513027,
+  "peak_sampled_simultaneous_process_tree_rss_bytes": 589484032,
+  "process_high_water_rss_bytes": 586649600,
+  "python": "3.12.3",
+  "sampling_period_s": 0.02,
+  "scipy": "1.11.4",
+  "scope": "one fresh process per mode; identical native input union; no occupancy history, state I/O or plotting",
+  "source_sha256": {
+    "circle_cover.py": "c36e5c7d3faaba7b2b0909b3f62033f904476fb005258e7f4aa0cd0399fe44e4",
+    "circle_cover_benchmark.py": "65cbfc3c11d65b17a369865b9aececfaaace19cb41ec2de494f0ba932db8e9ff",
+    "circle_cover_replay.py": "60dea60df52f29456738a3e09ab793dcebedbf2c6de4eab7c58d921f44464843",
+    "gravity_bev.py": "b68a210d62b4cbee9d26aa187ea21f41a45112c517f77954c3420991af8defa3"
+  },
+  "timing_scope": "grid insertion plus footprint placement and cell/overlap audit; excludes input I/O and point audit",
+  "total_replay_wall_s": 6.344094896005117,
+  "updates": [
+    {
+      "available_ns": 1661851067295625925,
+      "circle_count": 1,
+      "coverage": 1.0,
+      "mean_memberships": 1.0,
+      "occupied_cells": 1198,
+      "point_coverage": 1.0,
+      "solver": {
+        "dual_bound": 1.0,
+        "fallback": false,
+        "greedy_count": 1,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mip_gap": 0.0,
+        "objective": 1.0,
+        "optimal_candidate_count": true,
+        "selected_count": 1,
+        "status": 0,
+        "wall_s": 0.0031526859966106713
+      },
+      "stage_wall_s": 0.008390995993977413,
+      "update_id": 0
+    },
+    {
+      "available_ns": 1661851077399632931,
+      "circle_count": 1,
+      "coverage": 0.9981072555205047,
+      "mean_memberships": 1.0,
+      "occupied_cells": 3170,
+      "point_coverage": 0.9998307420751021,
+      "solver": null,
+      "stage_wall_s": 0.014760671998374164,
+      "update_id": 1
+    },
+    {
+      "available_ns": 1661851087415646076,
+      "circle_count": 1,
+      "coverage": 0.998282278843401,
+      "mean_memberships": 1.0,
+      "occupied_cells": 3493,
+      "point_coverage": 0.9998222506621163,
+      "solver": null,
+      "stage_wall_s": 0.006215392000740394,
+      "update_id": 2
+    },
+    {
+      "available_ns": 1661851097479656935,
+      "circle_count": 1,
+      "coverage": 0.9936111111111111,
+      "mean_memberships": 1.0,
+      "occupied_cells": 3600,
+      "point_coverage": 0.9988241749627655,
+      "solver": null,
+      "stage_wall_s": 0.004146638995734975,
+      "update_id": 3
+    },
+    {
+      "available_ns": 1661851107527663946,
+      "circle_count": 1,
+      "coverage": 0.9788359788359788,
+      "mean_memberships": 1.0,
+      "occupied_cells": 4725,
+      "point_coverage": 0.995699030438576,
+      "solver": null,
+      "stage_wall_s": 0.007687659002840519,
+      "update_id": 4
+    },
+    {
+      "available_ns": 1661851117671674967,
+      "circle_count": 2,
+      "coverage": 0.9797935103244838,
+      "mean_memberships": 1.6274273671533945,
+      "occupied_cells": 6780,
+      "point_coverage": 0.993421451787649,
+      "solver": {
+        "dual_bound": 1.0,
+        "fallback": false,
+        "greedy_count": 1,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mip_gap": 0.0,
+        "objective": 1.0,
+        "optimal_candidate_count": true,
+        "selected_count": 1,
+        "status": 0,
+        "wall_s": 0.019045423992793076
+      },
+      "stage_wall_s": 0.039961068003322,
+      "update_id": 5
+    },
+    {
+      "available_ns": 1661851127543683052,
+      "circle_count": 2,
+      "coverage": 0.9625448406836885,
+      "mean_memberships": 1.527238846870547,
+      "occupied_cells": 9478,
+      "point_coverage": 0.9831251891975448,
+      "solver": null,
+      "stage_wall_s": 0.02170970500446856,
+      "update_id": 6
+    },
+    {
+      "available_ns": 1661851135759691954,
+      "circle_count": 2,
+      "coverage": 0.9500396510705789,
+      "mean_memberships": 1.4178631051752921,
+      "occupied_cells": 12610,
+      "point_coverage": 0.968637091476433,
+      "solver": null,
+      "stage_wall_s": 0.02460419401177205,
+      "update_id": 7
+    },
+    {
+      "available_ns": 1661851145807702065,
+      "circle_count": 3,
+      "coverage": 0.995279796285945,
+      "mean_memberships": 1.7385959438377534,
+      "occupied_cells": 16101,
+      "point_coverage": 0.9985856438667995,
+      "solver": {
+        "dual_bound": 1.0,
+        "fallback": false,
+        "greedy_count": 1,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mip_gap": 0.0,
+        "objective": 1.0,
+        "optimal_candidate_count": true,
+        "selected_count": 1,
+        "status": 0,
+        "wall_s": 0.002681109996046871
+      },
+      "stage_wall_s": 0.03648799400252756,
+      "update_id": 8
+    },
+    {
+      "available_ns": 1661851155903714895,
+      "circle_count": 3,
+      "coverage": 0.99522494534576,
+      "mean_memberships": 1.7207931094282907,
+      "occupied_cells": 17382,
+      "point_coverage": 0.9987014280602212,
+      "solver": null,
+      "stage_wall_s": 0.026558504992863163,
+      "update_id": 9
+    },
+    {
+      "available_ns": 1661851164575721979,
+      "circle_count": 3,
+      "coverage": 0.9955361944713348,
+      "mean_memberships": 1.6872670304143482,
+      "occupied_cells": 18594,
+      "point_coverage": 0.9988157478619539,
+      "solver": null,
+      "stage_wall_s": 0.025577392996638082,
+      "update_id": 10
+    },
+    {
+      "available_ns": 1661851172087724924,
+      "circle_count": 3,
+      "coverage": 0.9920612147297944,
+      "mean_memberships": 1.6193598148862323,
+      "occupied_cells": 20910,
+      "point_coverage": 0.9983579840340803,
+      "solver": null,
+      "stage_wall_s": 0.026675742003135383,
+      "update_id": 11
+    },
+    {
+      "available_ns": 1661851182103735924,
+      "circle_count": 3,
+      "coverage": 0.9783786107290234,
+      "mean_memberships": 1.5668907341505207,
+      "occupied_cells": 23264,
+      "point_coverage": 0.9912148320875194,
+      "solver": null,
+      "stage_wall_s": 0.03284267199342139,
+      "update_id": 12
+    },
+    {
+      "available_ns": 1661851189927745104,
+      "circle_count": 4,
+      "coverage": 0.9846761453396524,
+      "mean_memberships": 1.7350393069148082,
+      "occupied_cells": 25320,
+      "point_coverage": 0.9948822442306781,
+      "solver": {
+        "dual_bound": 1.0,
+        "fallback": false,
+        "greedy_count": 1,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mip_gap": 0.0,
+        "objective": 1.0,
+        "optimal_candidate_count": true,
+        "selected_count": 1,
+        "status": 0,
+        "wall_s": 0.4123840440006461
+      },
+      "stage_wall_s": 0.4487516829976812,
+      "update_id": 13
+    },
+    {
+      "available_ns": 1661851195991750002,
+      "circle_count": 4,
+      "coverage": 0.9798939144147373,
+      "mean_memberships": 1.6762737281006548,
+      "occupied_cells": 27902,
+      "point_coverage": 0.9917967343849512,
+      "solver": null,
+      "stage_wall_s": 0.03311033900536131,
+      "update_id": 14
+    },
+    {
+      "available_ns": 1661851202007757902,
+      "circle_count": 4,
+      "coverage": 0.9794463782529421,
+      "mean_memberships": 1.625825012692503,
+      "occupied_cells": 30165,
+      "point_coverage": 0.9915006444803931,
+      "solver": null,
+      "stage_wall_s": 0.034502720009186305,
+      "update_id": 15
+    },
+    {
+      "available_ns": 1661851207599761009,
+      "circle_count": 4,
+      "coverage": 0.9801496319536623,
+      "mean_memberships": 1.5690981840566327,
+      "occupied_cells": 33148,
+      "point_coverage": 0.9914667328759735,
+      "solver": null,
+      "stage_wall_s": 0.03667303601105232,
+      "update_id": 16
+    },
+    {
+      "available_ns": 1661851212935770988,
+      "circle_count": 4,
+      "coverage": 0.9549403127276803,
+      "mean_memberships": 1.5425787898350842,
+      "occupied_cells": 35686,
+      "point_coverage": 0.9841766655915477,
+      "solver": null,
+      "stage_wall_s": 0.03870493899739813,
+      "update_id": 17
+    },
+    {
+      "available_ns": 1661851222951773882,
+      "circle_count": 5,
+      "coverage": 0.9713308356409839,
+      "mean_memberships": 1.6586729274973446,
+      "occupied_cells": 36834,
+      "point_coverage": 0.9854313648246965,
+      "solver": {
+        "dual_bound": 1.0,
+        "fallback": false,
+        "greedy_count": 1,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mip_gap": 0.0,
+        "objective": 1.0,
+        "optimal_candidate_count": true,
+        "selected_count": 1,
+        "status": 0,
+        "wall_s": 0.5585806760063861
+      },
+      "stage_wall_s": 0.6071764000080293,
+      "update_id": 18
+    },
+    {
+      "available_ns": 1661851230391784906,
+      "circle_count": 5,
+      "coverage": 0.9608707988341201,
+      "mean_memberships": 1.6363685171265971,
+      "occupied_cells": 38769,
+      "point_coverage": 0.9792612507503319,
+      "solver": null,
+      "stage_wall_s": 0.04291135599487461,
+      "update_id": 19
+    },
+    {
+      "available_ns": 1661851240455791950,
+      "circle_count": 6,
+      "coverage": 0.9925268791282966,
+      "mean_memberships": 1.7264160108811815,
+      "occupied_cells": 41482,
+      "point_coverage": 0.997075359100465,
+      "solver": {
+        "dual_bound": 1.0,
+        "fallback": false,
+        "greedy_count": 1,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mip_gap": 0.0,
+        "objective": 1.0,
+        "optimal_candidate_count": true,
+        "selected_count": 1,
+        "status": 0,
+        "wall_s": 1.2947942419996252
+      },
+      "stage_wall_s": 1.3478566429985221,
+      "update_id": 20
+    },
+    {
+      "available_ns": 1661851249199804068,
+      "circle_count": 6,
+      "coverage": 0.9921942353845795,
+      "mean_memberships": 1.703278380536377,
+      "occupied_cells": 42917,
+      "point_coverage": 0.9970455017531676,
+      "solver": null,
+      "stage_wall_s": 0.03971500101033598,
+      "update_id": 21
+    },
+    {
+      "available_ns": 1661851256855807066,
+      "circle_count": 6,
+      "coverage": 0.9913890928509446,
+      "mean_memberships": 1.6752177035640543,
+      "occupied_cells": 44943,
+      "point_coverage": 0.9963153297292106,
+      "solver": null,
+      "stage_wall_s": 0.03649408000637777,
+      "update_id": 22
+    },
+    {
+      "available_ns": 1661851264887819052,
+      "circle_count": 6,
+      "coverage": 0.9806111469765441,
+      "mean_memberships": 1.6606464921328097,
+      "occupied_cells": 46470,
+      "point_coverage": 0.9900015975567457,
+      "solver": null,
+      "stage_wall_s": 0.04216487699886784,
+      "update_id": 23
+    },
+    {
+      "available_ns": 1661851273023827076,
+      "circle_count": 6,
+      "coverage": 0.9640033465802134,
+      "mean_memberships": 1.6549502050380784,
+      "occupied_cells": 47810,
+      "point_coverage": 0.9671585747064824,
+      "solver": null,
+      "stage_wall_s": 0.04683852299058344,
+      "update_id": 24
+    },
+    {
+      "available_ns": 1661851280631830931,
+      "circle_count": 6,
+      "coverage": 0.9520862082961279,
+      "mean_memberships": 1.644740488116807,
+      "occupied_cells": 49276,
+      "point_coverage": 0.949667961622924,
+      "solver": null,
+      "stage_wall_s": 0.04257007100386545,
+      "update_id": 25
+    },
+    {
+      "available_ns": 1661851289727844000,
+      "circle_count": 7,
+      "coverage": 0.9980584786238497,
+      "mean_memberships": 1.7554760144730188,
+      "occupied_cells": 51506,
+      "point_coverage": 0.9994911745095975,
+      "solver": {
+        "dual_bound": 1.0,
+        "fallback": false,
+        "greedy_count": 1,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "mip_gap": 0.0,
+        "objective": 1.0,
+        "optimal_candidate_count": true,
+        "selected_count": 1,
+        "status": 0,
+        "wall_s": 0.007192792996647768
+      },
+      "stage_wall_s": 0.06270791799761355,
+      "update_id": 26
+    },
+    {
+      "available_ns": 1661851297599848032,
+      "circle_count": 7,
+      "coverage": 0.9978411864088605,
+      "mean_memberships": 1.746496096322077,
+      "occupied_cells": 53270,
+      "point_coverage": 0.9994758021558695,
+      "solver": null,
+      "stage_wall_s": 0.04715778000536375,
+      "update_id": 27
+    },
+    {
+      "available_ns": 1661851307639863968,
+      "circle_count": 7,
+      "coverage": 0.992900515492286,
+      "mean_memberships": 1.740669573571798,
+      "occupied_cells": 54511,
+      "point_coverage": 0.9967965560925257,
+      "solver": null,
+      "stage_wall_s": 0.04759139899397269,
+      "update_id": 28
+    },
+    {
+      "available_ns": 1661851317703869104,
+      "circle_count": 7,
+      "coverage": 0.9928767222101998,
+      "mean_memberships": 1.7309333962983817,
+      "occupied_cells": 55452,
+      "point_coverage": 0.9962580855150662,
+      "solver": null,
+      "stage_wall_s": 0.04612939299840946,
+      "update_id": 29
+    },
+    {
+      "available_ns": 1661851327735877037,
+      "circle_count": 7,
+      "coverage": 0.99288711216754,
+      "mean_memberships": 1.7308752584424534,
+      "occupied_cells": 55533,
+      "point_coverage": 0.9963001072005693,
+      "solver": null,
+      "stage_wall_s": 0.042663564992835745,
+      "update_id": 30
+    },
+    {
+      "available_ns": 1661851337791887999,
+      "circle_count": 7,
+      "coverage": 0.9928877525297994,
+      "mean_memberships": 1.7309177955497526,
+      "occupied_cells": 55538,
+      "point_coverage": 0.9963149358527961,
+      "solver": null,
+      "stage_wall_s": 0.040654673997778445,
+      "update_id": 31
+    },
+    {
+      "available_ns": 1661851347887902021,
+      "circle_count": 7,
+      "coverage": 0.9928878805884154,
+      "mean_memberships": 1.7309045408385317,
+      "occupied_cells": 55539,
+      "point_coverage": 0.9963192314239557,
+      "solver": null,
+      "stage_wall_s": 0.038957550990744494,
+      "update_id": 32
+    },
+    {
+      "available_ns": 1661851352383902073,
+      "circle_count": 7,
+      "coverage": 0.9928878805884154,
+      "mean_memberships": 1.7309045408385317,
+      "occupied_cells": 55539,
+      "point_coverage": 0.9963192480218072,
+      "solver": null,
+      "stage_wall_s": 0.03795441999682225,
+      "update_id": 33
+    }
+  ]
+}

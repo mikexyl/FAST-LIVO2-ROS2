@@ -1,0 +1,18 @@
+Internal ctest changing into directory: /workspace/.ros2/persistent-cbs148-20260928/source/.ros2/dpgo-build/cbs
+Test project /workspace/.ros2/persistent-cbs148-20260928/source/.ros2/dpgo-build/cbs
+    Start 1: persistent_beliefs
+1/6 Test #1: persistent_beliefs ...............   Passed    0.00 sec
+    Start 2: inter_robot_pcm
+2/6 Test #2: inter_robot_pcm ..................   Passed    0.00 sec
+    Start 3: between_initialization
+3/6 Test #3: between_initialization ...........   Passed    0.00 sec
+    Start 4: sim3_transport
+4/6 Test #4: sim3_transport ...................   Passed    0.00 sec
+    Start 5: belief_republish
+5/6 Test #5: belief_republish .................   Passed    0.00 sec
+    Start 6: absolute_pose_scale
+6/6 Test #6: absolute_pose_scale ..............   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Total Test time (real) =   0.02 sec

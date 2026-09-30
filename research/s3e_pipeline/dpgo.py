@@ -45,6 +45,13 @@ def native_provenance(source, settings=None):
 
 
 def run(cfg, artifacts, source, out):
+    execution = cfg['dpgo'].get('execution', 'sealed')
+    if execution == 'persistent':
+        if cfg['dpgo'].get('mode', 'peers') != 'frozen':
+            raise ValueError('Persistent live retrieval uses online_epochs; staged dpgo requires mode=frozen and a loops artifact')
+        from .persistent_cbs import run_frozen
+        return run_frozen(cfg, artifacts, source, out)
+    if execution != 'sealed': raise ValueError('dpgo.execution must be sealed or persistent')
     robots = cfg['robots']; settings = cfg['dpgo']; method = cfg['backend']['name']
     out = Path(out).resolve(); source = Path(source).resolve(); start = time.monotonic()
     overlay = native_overlay(source, settings)

@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "evidence_status": "Final remote records retrieved 2026-09-30; tested source hashes match current implementation",
+  "remote_root": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/persistent-cbs148-20260928",
+  "checks": [
+    {
+      "name": "native CBS core including delayed anchor attachment",
+      "passed": 6,
+      "failed": 0,
+      "remote_log": "core-tests-deferred.log",
+      "local_log": "evidence/core-tests-deferred.log"
+    },
+    {
+      "name": "native registration adapters",
+      "passed": 8,
+      "skipped": 1,
+      "failed": 0,
+      "remote_log": "native-tests-verified.log",
+      "scope": "Completed before the final delayed-anchor core fix",
+      "local_log": "evidence/native-tests-verified.log"
+    },
+    {
+      "name": "local Python tests",
+      "passed": 27,
+      "skipped": 5,
+      "failed": 0,
+      "local_log": "evidence/python-tests.txt"
+    },
+    {
+      "name": "final distributed persistent and legacy sealed GPU tests",
+      "passed": 7,
+      "skipped": 10,
+      "failed": 0,
+      "duration_s": 67.34,
+      "remote_log": "dds-verified.log",
+      "local_log": "evidence/dds-verified.log"
+    },
+    {
+      "name": "2026-09-30 precommit Python checks",
+      "passed": 24,
+      "skipped": 4,
+      "failed": 0,
+      "local_log": "evidence/python-precommit.txt",
+      "tests": [
+        "test_persistent_cbs.py",
+        "test_registration_exchange.py",
+        "test_gpu_registration_config.py",
+        "test_online.py"
+      ]
+    }
+  ],
+  "retained_graco_smoke": {
+    "directory": "graco-smoke-v1",
+    "status": "Observed successful before final delayed-anchor fix",
+    "robots": [
+      "aerial05",
+      "aerial07",
+      "aerial08"
+    ],
+    "same_six_processes_retained": true,
+    "prefixes": [
+      {
+        "epoch": "001",
+        "poses": 6,
+        "retained_loops": 2,
+        "gpu_factors": 2
+      },
+      {
+        "epoch": "020",
+        "poses": 69,
+        "retained_loops": 48,
+        "gpu_factors": 47
+      },
+      {
+        "epoch": "040",
+        "poses": 103,
+        "retained_loops": 106,
+        "gpu_factors": 100
+      }
+    ],
+    "final_connected_components": 1,
+    "final_geometry_checks": "passed",
+    "new_odometry_or_ate_evaluation": false
+  },
+  "final_build_graco_repeat": {
+    "directory": "graco-verified",
+    "status": "Verified complete",
+    "retained_record": "evidence/graco-final-repeat.json",
+    "final_poses": 103,
+    "final_retained_loops": 106,
+    "final_gpu_factors": 100,
+    "final_geometry_checks": "passed",
+    "final_connected_components": 1
+  },
+  "performance_claim": false,
+  "tested_source_hashes": "evidence/tested-source-hashes.json"
+}

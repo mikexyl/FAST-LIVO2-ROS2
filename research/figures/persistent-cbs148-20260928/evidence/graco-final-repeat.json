@@ -1,0 +1,115 @@
+{
+  "state": "complete",
+  "source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/persistent-cbs148-20260928/graco-verified/progress.json",
+  "source_sha256": "77ee131644abddbfe7b1f6467eff21d56b898f3c4642b5e6eaafcf090f223860",
+  "records": [
+    {
+      "capture_revision": 1,
+      "session_revision": 1,
+      "keyframes": 6,
+      "loops": 2,
+      "finished": false,
+      "shared_reference": false,
+      "iterations": {
+        "aerial05": 7,
+        "aerial07": 7,
+        "aerial08": 7
+      },
+      "first_applied_s": 4.2338090559933335,
+      "elapsed_s": 10.128374983993126,
+      "gpu_factors": {
+        "aerial05": 0,
+        "aerial07": 2,
+        "aerial08": 0
+      },
+      "final_geometry_success": {
+        "aerial05": true,
+        "aerial07": true,
+        "aerial08": true
+      },
+      "components": {
+        "aerial05": "aerial05",
+        "aerial07": "aerial07",
+        "aerial08": "aerial07"
+      },
+      "native_process_ids": {
+        "aerial05": 214784,
+        "aerial07": 214788,
+        "aerial08": 214798
+      },
+      "input_sha256": "8a69d8b16e1781a2c8aea8cfd97b926adec900eae7c718d570bd44306ef562e2"
+    },
+    {
+      "capture_revision": 20,
+      "session_revision": 2,
+      "keyframes": 69,
+      "loops": 48,
+      "finished": false,
+      "shared_reference": true,
+      "iterations": {
+        "aerial05": 13,
+        "aerial07": 13,
+        "aerial08": 14
+      },
+      "first_applied_s": 7.042538237001281,
+      "elapsed_s": 10.147115998988738,
+      "gpu_factors": {
+        "aerial05": 23,
+        "aerial07": 24,
+        "aerial08": 0
+      },
+      "final_geometry_success": {
+        "aerial05": true,
+        "aerial07": true,
+        "aerial08": true
+      },
+      "components": {
+        "aerial05": "aerial05",
+        "aerial07": "aerial05",
+        "aerial08": "aerial05"
+      },
+      "native_process_ids": {
+        "aerial05": 214784,
+        "aerial07": 214788,
+        "aerial08": 214798
+      },
+      "input_sha256": "f0324749ee875dba7e973121fba0f3b7081fd778df06ff234eebacad4d43c155"
+    },
+    {
+      "capture_revision": 40,
+      "session_revision": 3,
+      "keyframes": 103,
+      "loops": 106,
+      "finished": true,
+      "shared_reference": true,
+      "iterations": {
+        "aerial05": 28,
+        "aerial07": 29,
+        "aerial08": 30
+      },
+      "first_applied_s": 10.921572368999477,
+      "elapsed_s": 19.815094179997686,
+      "gpu_factors": {
+        "aerial05": 50,
+        "aerial07": 50,
+        "aerial08": 0
+      },
+      "final_geometry_success": {
+        "aerial05": true,
+        "aerial07": true,
+        "aerial08": true
+      },
+      "components": {
+        "aerial05": "aerial05",
+        "aerial07": "aerial05",
+        "aerial08": "aerial05"
+      },
+      "native_process_ids": {
+        "aerial05": 214784,
+        "aerial07": 214788,
+        "aerial08": 214798
+      },
+      "input_sha256": "8ef6329fda56e3a54a7e3ff7a8fc3ad64532e065dc3341cfea66ee01974fbb5d"
+    }
+  ]
+}

@@ -13,7 +13,7 @@ from .registration import bounded_cloud
 
 
 class RegistrationExchange:
-    def __init__(self, robot, robots, rows, store, output, session, cfg, send):
+    def __init__(self, robot, robots, rows, store, output, session, cfg, send, cache=None):
         self.robot = robot; self.robots = robots; self.rows = rows
         self.store = Path(store); self.output = Path(output); self.output.mkdir(exist_ok=True)
         self.session = session; self.cfg = settings(cfg); self.send_message = send
@@ -24,6 +24,11 @@ class RegistrationExchange:
         self.source_records = {}
         self.ellipsoid = self.cfg['factor']=='ellipsoid'
         self.expected = {}
+        self.cache = cache
+        if cache is not None:
+            self.local = cache.setdefault('local', {})
+            self.source_records = cache.setdefault('source_records', {})
+            cache.setdefault('remote', {})
 
     def send(self, peer, kind, **body):
         self.send_message(dict(src=self.robot, dst=peer, kind='registration_'+kind,
@@ -102,6 +107,9 @@ class RegistrationExchange:
             self.needed = {e for pair in self.owned for e in pair}
             for robot, key in sorted(self.needed):
                 if robot == self.robot: self.clouds[robot, key] = self.payload(key)
+                elif self.cache is not None and (robot, key) in self.cache['remote']:
+                    self.clouds[robot, key] = self.cache['remote'][robot, key]
+                    if self.ellipsoid: self.validate_endpoint(self.clouds[robot, key])
                 else: self.requested.add((robot, key))
             for peer in self.robots:
                 keys = sorted(k for r,k in self.requested if r == peer)
@@ -132,6 +140,10 @@ class RegistrationExchange:
                 if endpoint in self.clouds and self.clouds[endpoint] != payload:
                     raise ValueError('Changed duplicate registration cloud')
                 self.clouds[endpoint] = payload
+                if self.cache is not None:
+                    old = self.cache['remote'].get(endpoint)
+                    if old is not None and old != payload: raise ValueError('Changed persistent geometry')
+                    self.cache['remote'][endpoint] = payload
             elif kind == 'registration_ready': self.ready.add(peer)
             else: raise ValueError('Unknown registration message')
         self.pending.clear()
@@ -147,9 +159,17 @@ class RegistrationExchange:
         native_clouds = []
         for index, (endpoint, payload) in enumerate(sorted(self.clouds.items())):
             filename = f'{index:06d}.bin'
-            unpack_array(payload['cloud']).tofile(self.output/filename)
+            if self.cache is None:
+                unpack_array(payload['cloud']).tofile(self.output/filename)
+            else:
+                cache_dir = self.output.parent/'cache'; cache_dir.mkdir(exist_ok=True)
+                filename = payload['payload_sha256']+'.bin'
+                cached = cache_dir/filename
+                if not cached.exists(): unpack_array(payload['cloud']).tofile(cached)
+
             native_clouds.append(dict(endpoint=[self.robots.index(endpoint[0]), endpoint[1]], file=filename,
                                       **{k:v for k,v in payload.items() if k != 'cloud'}))
+            if self.cache is not None: native_clouds[-1]['storage'] = 'persistent_cache'
         spec = dict(schema_version=2 if self.ellipsoid else 1, session_id=self.session, robot_id=self.robots.index(self.robot),
             settings=self.cfg, pairs=[dict(i=[self.robots.index(i[0]), i[1]], j=[self.robots.index(j[0]), j[1]]) for i,j in self.owned],
             clouds=native_clouds)

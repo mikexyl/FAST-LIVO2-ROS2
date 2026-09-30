@@ -52,7 +52,7 @@ def code_hash(stage):
         descriptors=['backends.py','mapclosures.py','data.py','model_worker.py'],
         loops=['backends.py','mapclosures.py','registration.py','ellipsoid_registration.py','geometry.py','data.py','distributed.py','verification.py','isolation.py'],
         pgo=['pgo.py','mixed_pgo.py','registration.py','geometry.py'],evaluate=['evaluation.py','evo_evaluation.py','visualize.py','data.py','geometry.py'],
-        dpgo=['dpgo.py','ros_dpgo_worker.py','registration_exchange.py','mixed_pgo.py','cbs_bridge.py','distributed.py','verification.py','isolation.py','backends.py','mapclosures.py','registration.py','ellipsoid_registration.py','geometry.py','data.py'],
+        dpgo=['persistent_cbs.py','persistent_worker.py','persistent_online.py','online_epochs.py','dpgo.py','ros_dpgo_worker.py','registration_exchange.py','mixed_pgo.py','cbs_bridge.py','distributed.py','verification.py','isolation.py','backends.py','mapclosures.py','registration.py','ellipsoid_registration.py','geometry.py','data.py'],
         dpgo_evaluate=['dpgo_evaluation.py','dpgo_visualize.py','evaluation.py','evo_evaluation.py','visualize.py','cbs_bridge.py','geometry.py','data.py'],
         inspect=['mapclosures_inspection.py','mapclosures_rerun.py','backends.py','registration.py','geometry.py'])[stage]
     if stage in ('descriptors','loops','dpgo','inspect'):

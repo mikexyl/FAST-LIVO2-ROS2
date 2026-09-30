@@ -1,0 +1,148 @@
+# Opt-in CBS+ from the supplied draft; see ../PERSISTENT-CBS.md.
+schema_version: 2
+dataset: /data/s3e/S3Ev2/S3E_Library_2
+robots:
+- Alpha
+- Bob
+- Carol
+output_root: .ros2/persistent-cbs/REPLACE_WITH_FRESH_RUN
+odometry:
+  rate: 1.0
+  frontend: ellipselio
+  imu_noise:
+    acc_noise: 0.1
+    gyr_noise: 0.1
+    acc_bias: 0.0001
+    gyr_bias: 0.0001
+  native_sensor_qos: false
+  record_analytics: true
+  native_mapping:
+    submaps:
+      enabled: false
+    area_maps:
+      enabled: true
+      radius_m: 80.0
+      snapshot_step_m: 20.0
+      snapshot_interval_s: 10.0
+      odometry: false
+keyframes:
+  translation_m: 1.0
+  rotation_deg: 10.0
+  max_interval_s: 2.0
+  submap_s: 5.0
+  voxel_m: 0.25
+backend:
+  name: mapclosures
+  registration:
+    seed: 0
+    voxel_m: 0.4
+    max_range_m: null
+    min_initial_overlap: 0.1
+    max_iterations: 40
+    correspondence_m: 1.5
+    inlier_m: 0.6
+    min_inliers: 100
+    min_overlap: 0.3
+    max_rmse_m: 0.35
+    min_observability: 0.0001
+    max_condition: 1000000
+    rotation_sigma_floor_deg: 2.0
+    translation_sigma_floor_m: 0.2
+    sampling: fixed
+    method: point_gicp
+  evidence:
+    sampling: fixed
+    voxel_m: 0.4
+    max_range_m: null
+  mapclosures:
+    projection_alignment: gravity
+    upstream_commit: 1710f15db000a579324e3ba045cd64a0b4d706da
+    density_map_resolution: 0.5
+    density_threshold: 0.05
+    hamming_distance_threshold: 50
+    inliers_threshold: 5
+    max_hypotheses_per_query: 20
+    max_range_m: null
+    local_map: Persistent native map cropped by horizontal radius around drone; all
+      ages and heights; snapshot IMU frame
+    representation: point_cloud
+    renderer: point_cloud
+    retrieval_channels: legacy
+    multilayer:
+      enabled: true
+      version: terrain-relative-orb-v1
+    vertical_initialization:
+      enabled: true
+      voxel_m: 0.8
+      xy_neighbors: 8
+      xy_radius_m: 1.0
+      histogram_bin_m: 0.5
+      peak_separation_m: 2.0
+      modal_peaks: 5
+      coarse_inlier_m: 1.5
+  ellipsoid_only: false
+loops:
+  top_k: 20
+  same_robot_exclusion_s: 30
+  min_verification_interval_s: 2.0
+  verification_queue_size: 2
+  worker_timeout_s: 120
+  branch_verification_limits:
+    mapclosures: 2
+pgo:
+  odometry_rotation_sigma_deg: 1.0
+  odometry_translation_sigma_m: 0.15
+  alignment_translation_m: 2.0
+  alignment_rotation_deg: 15.0
+  alignment_min_support: 2
+  gnc_probability: 0.99
+evaluation:
+  evo_max_diff_s: 0.05
+  gt_max_gap_s: 2.0
+  proximity_m: 10.0
+  map_voxel_m: 0.25
+  rerun_sensor_stride: 20
+  rerun_verification_limit: 40
+  rerun_version: 0.37.1
+  rerun_map_max_points: 250000
+dpgo:
+  update_interval_s: 10.0
+  pcm:
+    enabled: true
+    probability: 0.99
+    minimum_clique_size: 1
+    timeout_s: 60.0
+  mode: peers
+  timeout_s: 600
+  ros_domain_id: 191
+  localhost_only: true
+  registration_factors:
+    enabled: true
+    factor: vgicp_gpu
+    num_threads: 2
+    timeout_s: 60.0
+    voxel_m: 0.5
+    max_points: 12000
+    max_range_m: null
+    covariance_neighbors: 20
+    correspondence_m: 1.5
+    min_inliers: 100
+    min_overlap: 0.3
+    min_observability: 0.0001
+    max_condition: 1000000.0
+    max_information_ratio: 1.0
+    gpu_voxel_m: 0.5
+    gpu_voxel_max_m: 1.0
+    gpu_distance_min_m: 5.0
+    gpu_distance_max_m: 20.0
+    gpu_voxel_levels: 2
+    gpu_voxel_scaling: 2.0
+  retain_registration_transport: true
+  execution: persistent
+  persistent_loop_rate_hz: 1.0
+  persistent_settle_iterations: 10
+descriptor_branches:
+- point_cloud
+map_source: all stored native accumulated-map representatives in each horizontal area;
+  any earlier scan; not full-resolution raw geometry
+experiment_name: Persistent CBS+ point-cloud pipeline with live GPU registration factors

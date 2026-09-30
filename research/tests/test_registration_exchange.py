@@ -97,3 +97,25 @@ def test_stale_session_ignored_and_disconnection_times_out(tmp_path, monkeypatch
     assert not receiver.pending
     monkeypatch.setattr('s3e_pipeline.registration_exchange.time.monotonic', lambda: receiver.started+181)
     with pytest.raises(TimeoutError): receiver.advance(pcm, edges[event['dst']])
+
+
+def test_persistent_revision_reuses_geometry_without_reads_or_transfers(tmp_path, monkeypatch):
+    workers, queue, pcm, edges = network(tmp_path)
+    caches = {r:{} for r in workers}
+    workers = {r:RegistrationExchange(r,w.robots,w.rows,w.store,w.store/'r1','run/1',w.cfg,
+                                     queue.append,caches[r]) for r,w in workers.items()}
+    first = drain(workers,queue,pcm,edges)
+    assert sum(e['kind']=='registration_response' for e in first)==2
+    before = {r:read_json(w.output/'manifest.json') for r,w in workers.items()}
+    second = {r:RegistrationExchange(r,w.robots,w.rows,w.store,w.store/'r2','run/2',w.cfg,
+                                    queue.append,caches[r]) for r,w in workers.items()}
+    def no_read(*args, **kwargs): raise AssertionError('Unchanged geometry was reloaded')
+    monkeypatch.setattr(np,'load',no_read)
+    sent = drain(second,queue,pcm,edges)
+    assert not any(e['kind'] in ('registration_response','registration_request') for e in sent)
+    for r,w in second.items():
+        after = read_json(w.output/'manifest.json')
+        assert after['clouds']==before[r]['clouds']
+        for c in after['clouds']:
+            assert c['storage']=='persistent_cache'
+            assert (w.output.parent/'cache'/c['file']).stat().st_size == c['points']*24

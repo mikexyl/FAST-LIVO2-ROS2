@@ -110,3 +110,9 @@ and missed capture deadlines. Reports must include these achieved timings.
 This setting applies to `online_epochs`; a single frozen `dpgo.run` is still one
 solve and must not be labelled as a 10-second online run. Historical captures
 and configuration files remain unchanged.
+
+An opt-in long-lived CBS+ mode is available in
+[`persistent_pipeline.yaml`](configs/persistent_pipeline.yaml); see
+[`PERSISTENT-CBS.md`](PERSISTENT-CBS.md) for the draft mapping, online entry point,
+requested 1 Hz iterations, and the fail-closed PCM-retraction limitation.
+The historical sealed execution mode remains the default.

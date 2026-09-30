@@ -86,6 +86,11 @@ def freeze_epoch(work, root, revision, rows, edges, identity, cutoff, cadence):
 
 
 def run(work,source,config,interval=None):
+    execution = config.get('dpgo', {}).get('execution', 'sealed')
+    if execution == 'persistent':
+        from .persistent_online import run as persistent_run
+        return persistent_run(work,source,config,interval)
+    if execution != 'sealed': raise ValueError('dpgo.execution must be sealed or persistent')
     interval=float(interval if interval is not None else config.get('dpgo',{}).get('update_interval_s',10.))
     cadence=Cadence(interval,time.monotonic())
     robots=config['robots']; root=work/'epochs'; root.mkdir(exist_ok=False)

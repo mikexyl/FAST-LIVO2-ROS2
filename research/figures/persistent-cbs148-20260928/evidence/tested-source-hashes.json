@@ -1,0 +1,28 @@
+{
+  "remote_source": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/persistent-cbs148-20260928/source",
+  "local_matches_remote": true,
+  "sha256": {
+    "cbs/CMakeLists.txt": "f2d2b41db35cef332491d85736da4e795ee18115df0113177397bdcd33fe65c5",
+    "cbs/include/cbs/bpsam/bpsam.h": "54f50322ebb8e0b45afe708421516e6e41e6af0fbf0be7087c7808326105542c",
+    "cbs/src/bpsam/bpsam.cpp": "2bc2c3fd6808dbd4c8f1ed88dd38fdedc18c34a07f51e38849235380b8f75ddd",
+    "cbs/include/cbs/gbp/persistent_belief.h": "57ffe8419656a6250880c76349e895ffd774982a2a42e01191162e03c3633301",
+    "cbs/tests/test_persistent_beliefs.cpp": "9f896e7726b869e5fce97c588beb0b81da15a7b8f785d27b882cbdd05937cd64",
+    "cbs_ros/CMakeLists.txt": "27b7c34f399dc2890566e016a03bdd25e9c4517b68c320a0ef1cafd1cadaaf49",
+    "cbs_ros/include/cbs_ros/distributed_pcm.h": "8f9c2754b2b2084b0d6a4c2a87caae3a351de3b7373b86c655926e4d0ffe64c2",
+    "cbs_ros/include/cbs_ros/registration_factors.h": "c5152961e9bacbfdee5fc66e307cf5cfddca45152d3cb9ec724c1a75983a466e",
+    "cbs_ros/msg/Estimate.msg": "cd9f41dac939e4a2af13742a31439b9cfefd27dbf1f32585af66c9a1541177be",
+    "cbs_ros/src/cbs_ros_node.cpp": "25a84d6b1798ddf29a5d49da9d8487f21518c2ea84c3a834eea239d3c58fbc03",
+    "cbs_ros/src/distributed_pcm.cpp": "3ec76eebca2fab2a38d8ff291dee5090d88d0f0e3eba8d13294f3c1d8c925690",
+    "cbs_ros/src/registration_factors.cpp": "69955e4ea6b661b3b986740e1b6a164f3a8643c47a1fb729f8acc6cda68f90be",
+    "cbs_ros/tests/test_registration_factors.cpp": "f1fd67dcf7147af28e0456fb87dd051ace77ed85870c51af77565a54483be256",
+    "cbs_ros/msg/PersistentInput.msg": "056b661bfff8bd3dafeecb31225ef128c36ac072ccabd54b1ac4d20012e776ed",
+    "FAST-LIVO2-ROS2/research/s3e_pipeline/persistent_cbs.py": "ea3b3c1cac561d885e3275a13b0e9aa32445c942fe913799fe01c35374399568",
+    "FAST-LIVO2-ROS2/research/s3e_pipeline/persistent_worker.py": "46f54f3a4418c3b4aa0ebc0140c2a5381be5d81ecf6718c4068c990740dacdf6",
+    "FAST-LIVO2-ROS2/research/s3e_pipeline/persistent_online.py": "cdf2d7aebbef9333c234a303e1d5f64a56e1fafe3ec42ee19c6613e5ef5ccb44",
+    "FAST-LIVO2-ROS2/research/s3e_pipeline/registration_exchange.py": "7e904d44e59e05a67c067cc53e169d7b065601a53134e59b61608da6f4659703",
+    "FAST-LIVO2-ROS2/research/s3e_pipeline/dpgo.py": "cd79519193346a8a30bc2b537e878b6ac048a3b749772ce4079cdb15339e9cfb",
+    "FAST-LIVO2-ROS2/research/s3e_pipeline/online_epochs.py": "27e540da33e2b4a3b58420df396c4ed2db22471314d87527e372e1709be6879c",
+    "FAST-LIVO2-ROS2/research/tests/test_persistent_cbs.py": "19497742c51a2b4bc41e9285918ea324f2defdc19927c564a0d1323633b198fa",
+    "FAST-LIVO2-ROS2/research/tests/test_registration_exchange.py": "201d292100e88dbdc380b1de44776db04856adf310a397128d58ad4786903edc"
+  }
+}

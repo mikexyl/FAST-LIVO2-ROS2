@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GRACO A05 · map and accumulated-area submaps</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef2f5;color:#17283b;font:16px system-ui,sans-serif}main{max-width:1450px;margin:auto;padding:30px}h1{margin:0 0 12px;font-size:30px}p{line-height:1.6;max-width:1150px}.stats{display:flex;gap:32px;flex-wrap:wrap;margin:24px 0}.stats b{display:block;font-size:28px;color:#146678}.stats span{font-size:14px}img{max-width:100%;height:auto;display:block}.panel{background:white;padding:20px;border-radius:12px;margin:22px 0}.controls{display:flex;gap:14px;align-items:center;flex-wrap:wrap}button,select{font:inherit;padding:8px 12px;border:1px solid #acbccb;border-radius:6px;background:white;color:#17283b}button{cursor:pointer}button:disabled{opacity:.4}input{max-width:100%;flex:1;min-width:180px}#detail{width:100%;margin-top:18px}#status{font-variant-numeric:tabular-nums;line-height:1.7;margin-top:12px}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px}.tile{padding:10px;text-align:left;border:1px solid #c7d3df;background:white;border-radius:8px}.tile[aria-pressed=true]{border:2px solid #087e8b}.tile img{width:100%;margin-bottom:7px}.muted{color:#4f6477;font-size:14px}a{color:#146678}.note{border-left:3px solid #d38b28;padding-left:14px}summary{cursor:pointer;font-weight:600;padding:12px 0}label{font-weight:600}@media(max-width:650px){main{padding:16px}.panel{padding:12px}h1{font-size:25px}}
+</style>
+<main>
+<h1>GRACO A05 · map and every submap</h1>
+<p>Accumulated-area snapshots select all stored native map points inside an <b>80 m horizontal radius</b>. A new snapshot is saved after <b>20 m of horizontal displacement or 10 seconds</b>, plus the shutdown tail.</p>
+<div class="stats"><div><b>34</b><span>saved snapshots</span></div><div><b id="reuse"></b><span>median points shared with previous snapshot</span></div><div><b id="multiplicity"></b><span>mean snapshots containing each exported point</span></div></div>
+<p class="note">Historical capture, September 21. The overview is the saved map; the individual images are the <b>actual saved sampled-ellipsoid BEVs</b>, with display contrast enhanced. They are not crops of future map points and are not new point-cloud BEVs. Full 3D snapshot files remain on workstation 148, currently unreachable.</p>
+<a href="overview.png"><img src="overview.png" alt="A05 accumulated map, five overlapping footprints, and exact shared-point matrix"></a>
+<section class="panel" id="viewer">
+<div class="controls"><label for="snapshot">Snapshot</label><select id="snapshot"></select><button id="prev" type="button">Previous</button><button id="next" type="button">Next</button><input id="slider" type="range" min="0" max="33" value="17" aria-label="Snapshot index"></div>
+<div id="status" aria-live="polite"></div>
+<a id="detail-link" href="submaps/017.png"><img id="detail" src="submaps/017.png" alt="Selected snapshot map footprint and saved BEV"></a>
+<p class="muted">Blue: selected footprint. Orange dashed: previous footprint. Teal curve: trajectory. Yellow +: robot at snapshot. Every submap is shown at the same metric scale and heading; its saved gravity alignment is retained. Empty regions were unobserved or suppressed by the original BEV density threshold.</p>
+</section>
+<h2>All 34 submaps</h2><p>Select any panel to inspect it above. Percentages are exact shared stable point IDs, before registration downsampling.</p>
+<div class="gallery" id="gallery"></div>
+<details><summary>Full-size contact sheet</summary><a href="all-submaps.png"><img src="all-submaps.png" loading="lazy" alt="All 34 saved submap BEVs at a common scale"></a></details>
+<p><a href="REPORT.md">Interpretation and limitations</a> · <a href="overlap.csv">Overlap table</a> · <a href="summary.json">Measurements and source hashes</a></p>
+</main>
+<script>
+const data=__DATA__;
+const select=document.getElementById('snapshot'), slider=document.getElementById('slider');
+const gallery=document.getElementById('gallery');
+document.getElementById('reuse').textContent=(100*data.median).toFixed(1)+'%';
+document.getElementById('multiplicity').textContent=data.multiplicity.toFixed(2)+'×';
+for(const [i,s] of data.stats.entries()){
+ const option=document.createElement('option');option.value=i;option.textContent=String(s.key).padStart(2,'0')+' · '+s.time_s.toFixed(1)+' s';select.append(option);
+ const button=document.createElement('button');button.className='tile';button.type='button';button.setAttribute('aria-pressed','false');
+ const image=document.createElement('img');image.src=s.figure;image.loading='lazy';image.alt='Snapshot '+s.key+' footprint and saved submap BEV';
+ const label=document.createElement('span');label.textContent='Snapshot '+s.key+' · '+s.time_s.toFixed(1)+' s · '+(i?(100*s.fraction_current_from_previous).toFixed(1)+'% reused':'first snapshot');
+ button.append(image,label);button.onclick=()=>{show(i);document.getElementById('viewer').scrollIntoView({behavior:'smooth'});};gallery.append(button);
+}
+let selected=17;
+function show(i){
+ selected=Math.max(0,Math.min(data.stats.length-1,Number(i)));const s=data.stats[selected];
+ select.value=selected;slider.value=selected;
+ document.getElementById('detail').src=s.figure;document.getElementById('detail-link').href=s.figure;
+ document.getElementById('status').textContent=s.points.toLocaleString()+' native points · '+s.trigger.replaceAll('_',' ')+(selected?' · '+s.center_step_m.toFixed(2)+' m from previous · '+(100*s.fraction_current_from_previous).toFixed(1)+'% of current points shared with previous · '+(100*s.point_jaccard).toFixed(1)+'% point-set IoU':' · first saved snapshot');
+ document.getElementById('prev').disabled=selected===0;document.getElementById('next').disabled=selected===data.stats.length-1;
+ [...gallery.children].forEach((b,n)=>b.setAttribute('aria-pressed',String(n===selected)));
+}
+select.onchange=()=>show(select.value);slider.oninput=()=>show(slider.value);
+document.getElementById('prev').onclick=()=>show(selected-1);document.getElementById('next').onclick=()=>show(selected+1);show(selected);
+</script>
+</html>

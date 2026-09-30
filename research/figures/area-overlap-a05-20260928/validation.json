@@ -1,0 +1,32 @@
+{
+  "snapshot_count": 34,
+  "all_saved_png_hashes_verified": true,
+  "all_payload_hashes_match_metadata": true,
+  "all_point_range_counts_verified": true,
+  "intersection_checked_by_independent_expansion": [
+    [
+      0,
+      1
+    ],
+    [
+      16,
+      17
+    ],
+    [
+      0,
+      33
+    ],
+    [
+      13,
+      28
+    ]
+  ],
+  "all_static_links_resolve": true,
+  "javascript_syntax_checked": true,
+  "images_visually_checked": [
+    "overview.png",
+    "submaps/017.png"
+  ],
+  "browser_interaction_check": "Blocked by browser file-URL policy; not tested",
+  "remote_geometry_status": "148 unreachable; no new 3D per-snapshot rendering"
+}

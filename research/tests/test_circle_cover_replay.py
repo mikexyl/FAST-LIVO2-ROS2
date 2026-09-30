@@ -76,3 +76,13 @@ def test_fresh_process_control_uses_identical_prefixes(tmp_path):
     assert [r['occupied_cells'] for r in a['updates']] == [r['occupied_cells'] for r in b['updates']]
     assert a['input_payloads'] == b['input_payloads']
     assert a['updates'][-1]['circle_count'] == 1 and b['updates'][-1]['circle_count'] == 2
+
+
+def test_smaller_radius_does_not_shrink_original_comparator(tmp_path):
+    inputs = tmp_path/'inputs'; inputs.mkdir(); store(inputs)
+    history = replay(inputs, tmp_path/'out', CircleCoverConfig(radius_m=40), make_gallery=False)
+    assert history[-1]['trajectory_centered']['radius_m'] == 80
+    assert history[-1]['trajectory_centered']['coverage'] == 1
+    assert history[-1]['planner']['coverage'] >= .95
+    original = benchmark(inputs, 'trajectory_centered', CircleCoverConfig(radius_m=40), tmp_path/'baseline.json')
+    assert original['footprint_radius_m'] == 80

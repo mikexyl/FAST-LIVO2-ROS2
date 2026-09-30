@@ -145,6 +145,20 @@ every 20 ms and the process high-water RSS before plotting. It includes input
 union, planner, solver, history and state validation; it is not a planner-only
 memory measurement. No historical process peaks are summed.
 
+The subsequent A05 controls use `configs/circle_cover_40m.yaml` (40 m / 95%)
+and `configs/circle_cover_40m_99.yaml` (40 m / 99%), with all overlap, grid,
+solver and refinement settings unchanged. The latest requested trial uses
+40 m / 99%; the original 80 m / 95% configuration is retained for reproduction.
+Trajectory-centered comparisons retain the original snapshot radius (80 m)
+when the placement radius changes. The directly compared incremental trials
+use identical causal map prefixes and the same fixed gravity frame.
+
+Inspection galleries are retained under
+`figures/incremental-circle-a05-r40-20260930` and
+`figures/incremental-circle-a05-r40-c99-20260930`. `circle_cover_radius_report`
+renders direct radius or coverage comparisons from completed states, rejecting
+changes to unrelated configuration, inputs or map prefixes.
+
 For a matched footprint-only runtime/memory control, run each mode in a fresh
 process with `s3e_pipeline.circle_cover_benchmark --store ... --output ...json
 --mode planner` or `--mode trajectory_centered`. These controls retain the same

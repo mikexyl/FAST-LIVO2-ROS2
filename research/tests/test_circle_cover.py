@@ -210,3 +210,12 @@ def test_grid_resolution_and_actual_point_coverage(resolution):
     direct = planner.point_coverage(observation)
     assert direct['points'] == len(observation) and 0 <= direct['coverage'] <= 1
     assert np.array_equal(planner.cell_centers, (planner.cells+.5)*resolution)
+
+
+def test_99_percent_incremental_coverage():
+    planner = cc.CircleCoverPlanner(cc.CircleCoverConfig(radius_m=8, coverage_target=.99))
+    for k in range(4):
+        old = planner.circles
+        result = planner.update(grid(k*10, k*10+16, -7, 8), k)
+        assert result.diagnostics['coverage'] >= .99
+        assert planner.circles[:len(old)] == old

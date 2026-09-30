@@ -52,6 +52,9 @@ class PreparedObservations:
         self.frame = gravity_ground(self.rows[0]['gravity_world_m_s2'])
         self.world_frame = self.rows[0]['world_frame']
         self.robot_id = self.rows[0]['robot_id']
+        self.area_radius_m = float(self.rows[0]['area_radius_m'])
+        if not np.isfinite(self.area_radius_m) or self.area_radius_m <= 0:
+            raise ValueError('Invalid original area footprint radius')
         self.ids = np.empty(0, dtype=np.int64)
         self.world = np.empty((0, 3))
         self.payloads = []
@@ -64,6 +67,7 @@ class PreparedObservations:
             if (row['available_ns'] <= previous_available or row['keyframe_id'] <= previous_key or
                     row['available_ns'] < max(row['stamp_ns'], row['last_member_ns']) or
                     row['world_frame'] != self.world_frame or row['robot_id'] != self.robot_id or
+                    row['area_radius_m'] != self.area_radius_m or
                     row['strategy'] != 'area' or row['frame'] != 'snapshot_anchor_imu' or
                     row['cloud_frame'] != row['body_frame'] or not row['complete']):
                 raise ValueError('Noncausal, inconsistent, or incomplete retained snapshot')
@@ -135,6 +139,7 @@ def replay(store, output, config, make_gallery=True):
     (output/'states').mkdir(); (output/'inspection').mkdir()
     observations = PreparedObservations(store)
     planner = CircleCoverPlanner(config, observations.frame)
+    baseline_config = replace(config, radius_m=observations.area_radius_m)
     baseline = []
     history = []
     states = []
@@ -148,9 +153,10 @@ def replay(store, output, config, make_gallery=True):
             baseline_center = planner.project(np.asarray(row['area_center_world']).reshape(1, 3))[0]
             baseline.append(baseline_center.tolist())
             before = time.perf_counter()
-            original = placement_metrics(planner.cell_centers, baseline, config)
+            original = placement_metrics(planner.cell_centers, baseline, baseline_config)
+            original['radius_m'] = baseline_config.radius_m
             original['audit_wall_s'] = time.perf_counter()-before
-            original['point_coverage'] = float(covered_mask(planner.project(observations.world), baseline, config.radius_m).mean())
+            original['point_coverage'] = float(covered_mask(planner.project(observations.world), baseline, baseline_config.radius_m).mean())
             update.diagnostics['point_coverage'] = planner.point_coverage(observations.world)
             planner.save(output/'states'/f'{update_id:03d}.json')
             restored = CircleCoverPlanner.load(output/'states'/f'{update_id:03d}.json')
@@ -180,6 +186,7 @@ def replay(store, output, config, make_gallery=True):
                       point_identity='stable native geometry IDs; coordinates frozen at first available observation',
                       maximum_reobserved_coordinate_delta_m=observations.max_repeat_delta_m,
                       baseline='original trajectory-centered radii and centers, reprojected into the same fixed first-snapshot gravity frame',
+                      baseline_radius_m=baseline_config.radius_m,
                       observation_count=len(history), final_unique_native_points=len(observations.ids),
                       replay_wall_s_before_plotting=time.perf_counter()-start,
                       memory=dict(peak_sampled_simultaneous_process_tree_rss_bytes=memory.peak,
@@ -200,11 +207,11 @@ def replay(store, output, config, make_gallery=True):
         p95_update_s=float(np.percentile([h['planner']['wall_s'] for h in history], 95)),
         max_update_s=max(h['planner']['wall_s'] for h in history), memory=provenance['memory']))
     if make_gallery:
-        render_gallery(output/'inspection', states, history, np.asarray(baseline), config)
+        render_gallery(output/'inspection', states, history, np.asarray(baseline), config, baseline_config.radius_m)
     return history
 
 
-def render_gallery(output, states, history, baseline, config):
+def render_gallery(output, states, history, baseline, config, baseline_radius=None):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -212,29 +219,32 @@ def render_gallery(output, states, history, baseline, config):
     output = Path(output)
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 10, 'axes.spines.top': False, 'axes.spines.right': False})
     origin = np.asarray(config.grid_origin_xy)
+    baseline_radius = config.radius_m if baseline_radius is None else baseline_radius
     final_cells = (np.asarray(states[-1]['occupied_cells'])+.5)*config.cell_size_m+origin
     # Final extents are used only for post-replay presentation, never placement.
     all_centers = np.vstack([baseline, [c['center_xy'] for c in states[-1]['circles']]])
-    lo = np.minimum(final_cells.min(axis=0), all_centers.min(axis=0)-config.radius_m)-8
-    hi = np.maximum(final_cells.max(axis=0), all_centers.max(axis=0)+config.radius_m)+8
+    radii = np.r_[np.full(len(baseline), baseline_radius), np.full(len(states[-1]['circles']), config.radius_m)]
+    lo = np.minimum(final_cells.min(axis=0), (all_centers-radii[:, None]).min(axis=0))-8
+    hi = np.maximum(final_cells.max(axis=0), (all_centers+radii[:, None]).max(axis=0))+8
     for k, state in enumerate(states):
         xy = (np.asarray(state['occupied_cells'])+.5)*config.cell_size_m+origin
         circles = state['circles']
         centers = np.asarray([c['center_xy'] for c in circles])
         fig, axes = plt.subplots(1, 2, figsize=(13, 6.2), constrained_layout=True)
-        for ax, cc, title in [(axes[0], centers, 'Incremental map coverage'), (axes[1], baseline[:k+1], 'Existing trajectory-centered footprints')]:
-            mask = covered_mask(xy, cc, config.radius_m)
+        for ax, cc, radius, title in [(axes[0], centers, config.radius_m, 'Incremental map coverage'),
+                                      (axes[1], baseline[:k+1], baseline_radius, 'Existing trajectory-centered footprints')]:
+            mask = covered_mask(xy, cc, radius)
             ax.scatter(xy[mask, 0], xy[mask, 1], s=.6, color='#8796a3', rasterized=True)
             ax.scatter(xy[~mask, 0], xy[~mask, 1], s=3, color='#e07025', rasterized=True, label='Uncovered cells')
             for j, center in enumerate(cc):
                 is_new = (circles[j]['created_update'] == k) if ax is axes[0] else j == k
                 color = '#168a76' if is_new else '#375875'
-                ax.add_patch(CirclePatch(center, config.radius_m, fill=False, ec=color, lw=1.8 if is_new else .8, alpha=.9 if is_new else .6))
+                ax.add_patch(CirclePatch(center, radius, fill=False, ec=color, lw=1.8 if is_new else .8, alpha=.9 if is_new else .6))
                 ax.plot(*center, '+', color=color, ms=5)
                 if ax is axes[0]:
                     ax.text(center[0]+2, center[1]+2, str(j), color=color, fontsize=8)
             ax.set(xlim=(lo[0], hi[0]), ylim=(lo[1], hi[1]), xlabel='Horizontal x [m]', ylabel='Horizontal y [m]',
-                   title=f'{title}\n{len(cc)} circles · {mask.mean():.2%} cell coverage', aspect='equal')
+                   title=f'{title} · R={radius:g} m\n{len(cc)} circles · {mask.mean():.2%} cell coverage', aspect='equal')
             ax.grid(alpha=.12)
         fig.suptitle(f"GRACO A05 · retained snapshot {k+1}/{len(states)} · {history[k]['elapsed_sensor_s']:.1f}s since first available snapshot\n"
                      'Green: newly published circles  |  Blue: fixed previous circles  |  Orange: uncovered cells', fontsize=12)
@@ -258,7 +268,8 @@ def render_gallery(output, states, history, baseline, config):
                                    coverage=h['planner']['coverage'], seconds=h['planner']['wall_s']) for k, h in enumerate(history)])
     html = '''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>A05 incremental circle placement</title><style>body{font:17px system-ui;max-width:1250px;margin:35px auto;padding:0 20px;color:#213442;background:#f5f7f9}h1{font-size:30px}img{width:100%;background:white;border-radius:8px}input{width:100%}button{padding:8px 16px}a{color:#087a67}.card{background:white;padding:22px;border-radius:10px;margin:20px 0}.hint{color:#526576;font-size:15px}</style>
-<h1>GRACO A05 · incremental spatial footprints</h1><p>Radius 80 m · 95% occupied-cell coverage · desired greatest disk overlap 30% ±10 percentage points.</p>
+<h1>GRACO A05 · incremental spatial footprints</h1><p>SETTINGS</p>
+<p class="hint">The trajectory-centered comparator keeps its original BASELINE_RADIUS m radius; the observed map prefixes are identical.</p>
 <p class="hint">Causal growing union of 34 retained prepared area snapshots, not every original scan. Gravity is fixed from the first snapshot. No trajectory or future map enters circle placement. Published circles remain fixed.</p>
 <div class="card"><button id="prev">Previous</button> <button id="play">Play</button> <button id="next">Next</button>
 <p id="status" aria-live="polite"></p><input id="slider" aria-label="Available snapshot" type="range" min="0" max="33" value="33"><img id="map" alt="Growing observed map and incremental versus trajectory-centered circles"></div>
@@ -270,7 +281,10 @@ function show(){const f=frames[Number(slider.value)];document.getElementById('ma
 slider.max=frames.length-1;slider.value=frames.length-1;slider.oninput=show;
 document.getElementById('prev').onclick=()=>{slider.value=Math.max(0,Number(slider.value)-1);show()};document.getElementById('next').onclick=()=>{slider.value=Math.min(frames.length-1,Number(slider.value)+1);show()};
 document.getElementById('play').onclick=()=>{if(timer){clearInterval(timer);timer=null;document.getElementById('play').textContent='Play'}else{slider.value=0;show();document.getElementById('play').textContent='Pause';timer=setInterval(()=>{if(Number(slider.value)>=frames.length-1){clearInterval(timer);timer=null;document.getElementById('play').textContent='Play'}else{slider.value=Number(slider.value)+1;show()}},800)}};show();</script></html>'''
-    (output/'index.html').write_text(html.replace('FRAMES', figure_links))
+    settings = (f'Radius {config.radius_m:g} m · {100*config.coverage_target:g}% occupied-cell coverage · '
+                f'desired greatest disk overlap {100*config.overlap_target:g}% ±{100*config.overlap_tolerance:g} percentage points.')
+    (output/'index.html').write_text(html.replace('FRAMES', figure_links).replace('SETTINGS', settings)
+                                   .replace('BASELINE_RADIUS', f'{baseline_radius:g}'))
 
 
 def main():

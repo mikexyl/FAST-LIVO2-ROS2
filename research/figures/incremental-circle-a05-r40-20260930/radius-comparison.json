@@ -1,0 +1,53 @@
+{
+  "identical_causal_map_prefixes": true,
+  "immutable_trial_centers_verified": true,
+  "report_source_sha256": "f058f237e351feeefe404ef72b95cdf320ec614ae94820bb723893cee063c6c9",
+  "results": [
+    {
+      "circle_count": 7,
+      "final_cell_coverage": 0.9928878805884154,
+      "final_point_coverage": 0.9963192480218072,
+      "greatest_overlap_median": 0.3000002769258648,
+      "greedy_fallback_updates": 0,
+      "max_update_s": 1.3391532359964913,
+      "mean_memberships_per_covered_cell": 1.7309045408385317,
+      "mean_update_s": 0.09880390873620533,
+      "minimum_prefix_coverage": 0.9500396510705789,
+      "overlap_in_band_fraction": 1.0,
+      "proven_updates": 7,
+      "radius_m": 80.0,
+      "replay_memory": {
+        "max_child_processes": 0,
+        "peak_sampled_simultaneous_process_tree_rss_bytes": 745222144,
+        "process_high_water_rss_bytes_before_plotting": 747397120,
+        "samples": 445,
+        "sampling_period_s": 0.02,
+        "scope": "fresh replay process, input union, solver, state-history validation; excludes gallery plotting"
+      },
+      "solver_updates": 7
+    },
+    {
+      "circle_count": 25,
+      "final_cell_coverage": 0.9676263526530906,
+      "final_point_coverage": 0.9738615879429162,
+      "greatest_overlap_median": 0.3000012618870004,
+      "greedy_fallback_updates": 0,
+      "max_update_s": 0.7499820880038897,
+      "mean_memberships_per_covered_cell": 1.6214435905546976,
+      "mean_update_s": 0.18317917170497822,
+      "minimum_prefix_coverage": 0.9500733018406907,
+      "overlap_in_band_fraction": 1.0,
+      "proven_updates": 22,
+      "radius_m": 40.0,
+      "replay_memory": {
+        "max_child_processes": 0,
+        "peak_sampled_simultaneous_process_tree_rss_bytes": 744394752,
+        "process_high_water_rss_bytes_before_plotting": 746307584,
+        "samples": 481,
+        "sampling_period_s": 0.02,
+        "scope": "fresh replay process, input union, solver, state-history validation; excludes gallery plotting"
+      },
+      "solver_updates": 22
+    }
+  ]
+}

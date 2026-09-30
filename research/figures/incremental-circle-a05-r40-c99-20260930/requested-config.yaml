@@ -1,0 +1,9 @@
+radius_m: 40.0
+cell_size_m: 1.0
+grid_origin_xy: [0.0, 0.0]
+coverage_target: 0.99
+overlap_target: 0.30
+overlap_tolerance: 0.10
+candidate_spacing_fraction: 0.25
+solver_time_limit_s: 10.0
+refinement_max_iterations: 100

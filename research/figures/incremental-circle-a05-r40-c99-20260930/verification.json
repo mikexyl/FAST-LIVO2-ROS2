@@ -1,0 +1,148 @@
+{
+  "validated_saved_states": 34,
+  "every_prefix_at_least_99_percent": true,
+  "immutable_centers_and_ids": true,
+  "executed_source_hashes_match": true,
+  "tests": ".............................                                            [100%]\n29 passed in 0.65s",
+  "config_sha256": "4574beb13df6e22bb0569d30bf4936f82d1eba8d0c74bc62e7cafc4e767bf6ed",
+  "state_sha256": [
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/000.json",
+      "sha256": "299e4d780f90e40203f34b832c5b1070a03ae7cb9324013edc50d4c441badd60"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/001.json",
+      "sha256": "32870f352538cb8d0cc0170167d6a5cac17bc00ee12ae1b82ffe80eeec2e0121"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/002.json",
+      "sha256": "6918e245e5daf5b2f344ced8e94d93a8b9739431a71aeca6100e5d2f2ec14b05"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/003.json",
+      "sha256": "8a2fc1faedac1493d3d989257fa5ce1c50e7b25448ae6169c0a17e48573a278d"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/004.json",
+      "sha256": "f6040673fea3a8b9d42a8e1d9ced0c63deb5e8890aaa363b834d1a3cccd80dd3"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/005.json",
+      "sha256": "1f0440f7183916eeafb779e3e02730031b189ecdf3344cc4e4b4371f892a6354"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/006.json",
+      "sha256": "d5f1aaba1bc0bd33219d0e68958cc1286526ce475c2a93d4144742b3ea20f38e"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/007.json",
+      "sha256": "1ce5896aa09a45b987dfbb052980ff6d3a6fbaa955179a5a625f66b4b9851484"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/008.json",
+      "sha256": "e566a35c1086874bef3a69adf85fa346fcf26c36f347f86056520751a18fe01c"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/009.json",
+      "sha256": "76ecb3a68a91ff70625117bc7fa72e13081575ec7f0a793efc9a5a4dc27ba019"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/010.json",
+      "sha256": "e8d2608defd0f0eeb573c975ac017076afe8dd191b05bebc0a4960fb40b6d9eb"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/011.json",
+      "sha256": "2d3cee6b472715764ec5bee6e2916081107308ac8b211e5a8c60b51c7c3e352a"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/012.json",
+      "sha256": "ad750bd0d774e7712c4ec96106960c7c2960bc3f3735128cce43722fc5367420"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/013.json",
+      "sha256": "bc250a3e99c68ae68e48c3a71ba17a4816c97454d4ae87112c41dcce8b4b4c4d"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/014.json",
+      "sha256": "f81d6a49ed87eff6c90bf02925a0f2b34c7523f6090cb4a27c32d0e969fef25b"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/015.json",
+      "sha256": "48b3f4e99beb7cdd11248109595f96749f38bbf930ca20ff8110c44705a62035"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/016.json",
+      "sha256": "d456b09d2f840d76a689345d48938cb43bc8f4139c9c486fc9aa1553c6d14470"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/017.json",
+      "sha256": "a314ae3ebe39b4e51a80ef963f82830cfb74ab6e687e5b079c03b045cfb67292"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/018.json",
+      "sha256": "1fb145a2873e96068fb759a9d5ee495378cc3f250ae3b8067094c6f59866be4f"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/019.json",
+      "sha256": "5968da827787f97abb7323022872a98662866283eca1bc04d6c466d07e9ca152"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/020.json",
+      "sha256": "704870f2819795b5e1480a1b424662767a9184280bd9ae6eaa8c2fc92353d83c"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/021.json",
+      "sha256": "7a55f2518235f26d0dd5c6502b79c3ca3bdbb357505ccd2061db11a79d1f7980"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/022.json",
+      "sha256": "dba458acc4232e21f8c3e1c2f3afdf7563d7e3e73cd259d9b7f1a3a2df874047"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/023.json",
+      "sha256": "c8e6722f148994a65f54827b656ed4ffff15a472beb486defc83d04ce0d0988a"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/024.json",
+      "sha256": "931876c8b9b2ebbb593503d04e13ce9f286ae8ff7eb7af8d81943def7a7a3b9e"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/025.json",
+      "sha256": "7c519fa0dcd8483dcbaa7b6a97d4216bf7672878f962ed4fb08f712a57381676"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/026.json",
+      "sha256": "539e7a19f1fc95ed758313617feb7d90102798e0d4f06874de42b3146d92a0ac"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/027.json",
+      "sha256": "cddfd91436071149c3790b77a28ceeaf2fff523ba0e68a56c6dd1b884b332e2e"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/028.json",
+      "sha256": "fac6904931b5017695846c3b704cf51f79037e8ed8a578925d61d3d3626b1f9c"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/029.json",
+      "sha256": "e7f776e184901c2709d28490d59fee37790fe07d6bf87b6877479d1b457b099f"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/030.json",
+      "sha256": "f17549ed12ce5670fd0af4ccabbc96e62c511d52d449cb9c71af224ef2e30360"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/031.json",
+      "sha256": "55680233acaf4d078eb8ec687838dd3c6548e12d1697f004dbe9228d2cbaa6c1"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/032.json",
+      "sha256": "c8790517fd0e0a479e917980c4dfed594d527abdf93e374d941c0003556da9d2"
+    },
+    {
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930/replay/states/033.json",
+      "sha256": "9e17ae5a611537a10627328084da0491d109eca984ef5e200f7fba9688d2ef9f"
+    }
+  ],
+  "bulk_root": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/incremental-circle-submaps-r40-c99-148-20260930",
+  "point_arrays_retrieved_locally": false
+}

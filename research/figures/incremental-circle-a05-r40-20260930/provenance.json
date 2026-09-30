@@ -1,0 +1,352 @@
+{
+  "T_horizontal_map": [
+    [
+      0.9994824643217997,
+      0.022817880716480776,
+      0.022674828176438722,
+      0.0
+    ],
+    [
+      -3.469446951953614e-18,
+      -0.7048797878598937,
+      0.7093267827077947,
+      0.0
+    ],
+    [
+      0.03216836199159921,
+      -0.7089596807902403,
+      -0.7045149874208338,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "baseline": "original trajectory-centered radii and centers, reprojected into the same fixed first-snapshot gravity frame",
+  "baseline_radius_m": 80.0,
+  "branch": "dev/incremental-circle-submaps",
+  "config": {
+    "candidate_spacing_fraction": 0.25,
+    "cell_size_m": 1.0,
+    "coverage_target": 0.95,
+    "grid_origin_xy": [
+      0.0,
+      0.0
+    ],
+    "overlap_target": 0.3,
+    "overlap_tolerance": 0.1,
+    "radius_m": 40.0,
+    "refinement_max_iterations": 100,
+    "solver_time_limit_s": 10.0
+  },
+  "final_unique_native_points": 887047,
+  "ground_truth_used": false,
+  "hostname": "v4rl-server-1",
+  "map_semantics": "growing union of retained prepared native area snapshots; not every original scan",
+  "maximum_reobserved_coordinate_delta_m": 2.142005524774504e-05,
+  "memory": {
+    "max_child_processes": 0,
+    "peak_sampled_simultaneous_process_tree_rss_bytes": 744394752,
+    "process_high_water_rss_bytes_before_plotting": 746307584,
+    "samples": 481,
+    "sampling_period_s": 0.02,
+    "scope": "fresh replay process, input union, solver, state-history validation; excludes gallery plotting"
+  },
+  "metadata": {
+    "path": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/keyframes.jsonl",
+    "sha256": "d6c4f4c0ba6784e6d3ed3594465f995a12e9f203ae47251e58b5b9ee39853a8d"
+  },
+  "method": "incremental fixed-radius circle footprints",
+  "numpy": "1.26.4",
+  "observation_count": 34,
+  "payloads": [
+    {
+      "available_ns": 1661851067295625925,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000000.npz",
+      "first_seen_points": 8352,
+      "keyframe_id": 0,
+      "native_points": 8352,
+      "sha256": "e4ac01cd4b44bb3fe37b79e22964e38bb892926d9ce1f42d26f486cd3922b4d8"
+    },
+    {
+      "available_ns": 1661851077399632931,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000001.npz",
+      "first_seen_points": 33005,
+      "keyframe_id": 1,
+      "native_points": 41357,
+      "sha256": "c5406006ecd7a46f1b1d50ad0797f649bf1d15f3d2b288f98e275f3ee71335c4"
+    },
+    {
+      "available_ns": 1661851087415646076,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000002.npz",
+      "first_seen_points": 14902,
+      "keyframe_id": 2,
+      "native_points": 56254,
+      "sha256": "996defadac3049807f8f8eb400659eb48e5d34e06e79626d1a427c9c5f381eff"
+    },
+    {
+      "available_ns": 1661851097479656935,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000003.npz",
+      "first_seen_points": 7526,
+      "keyframe_id": 3,
+      "native_points": 63785,
+      "sha256": "ec87746bef3c8ef975c3ec4d88ed72e3d93bbd54ea73fdb634fca84bd69bbd2d"
+    },
+    {
+      "available_ns": 1661851107527663946,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000004.npz",
+      "first_seen_points": 17592,
+      "keyframe_id": 4,
+      "native_points": 81377,
+      "sha256": "01e007b162316efc1c9b0180086890c67718891244cac713df1a177a27991ca1"
+    },
+    {
+      "available_ns": 1661851117671674967,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000005.npz",
+      "first_seen_points": 33998,
+      "keyframe_id": 5,
+      "native_points": 115295,
+      "sha256": "5b71182ef7e3e2591b8cd68d1608a220225b7363d5b428a973d78aba0a3bfeee"
+    },
+    {
+      "available_ns": 1661851127543683052,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000006.npz",
+      "first_seen_points": 39886,
+      "keyframe_id": 6,
+      "native_points": 152368,
+      "sha256": "792e9b014ce5ce216ec0ac4c2a8a7cf980de5ce530eef38fb33d7cb3fe3e65cb"
+    },
+    {
+      "available_ns": 1661851135759691954,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000007.npz",
+      "first_seen_points": 39587,
+      "keyframe_id": 7,
+      "native_points": 177223,
+      "sha256": "75d5661e322507afc6212b144b586decab4b938ee775eb7744cb9d9eeeb4bde5"
+    },
+    {
+      "available_ns": 1661851145807702065,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000008.npz",
+      "first_seen_points": 44130,
+      "keyframe_id": 8,
+      "native_points": 201761,
+      "sha256": "be0e1f778687e928323b3b2591ff35441f164806b740f43a3d70a1cb71c59136"
+    },
+    {
+      "available_ns": 1661851155903714895,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000009.npz",
+      "first_seen_points": 32089,
+      "keyframe_id": 9,
+      "native_points": 208369,
+      "sha256": "093621ae1c5b1fb98f51a26edb1dc5c159b0a7b3839897b8c8c2c57173188c1c"
+    },
+    {
+      "available_ns": 1661851164575721979,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000010.npz",
+      "first_seen_points": 26167,
+      "keyframe_id": 10,
+      "native_points": 204887,
+      "sha256": "61b5c3b12110a3f94bd409455703bde5d079adffd692f1e138e3849d279fc795"
+    },
+    {
+      "available_ns": 1661851172087724924,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000011.npz",
+      "first_seen_points": 28585,
+      "keyframe_id": 11,
+      "native_points": 202625,
+      "sha256": "1b75f7bc4acbcecc5899972f055db00b8591db0362dd8802690efeeee0fdaeeb"
+    },
+    {
+      "available_ns": 1661851182103735924,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000012.npz",
+      "first_seen_points": 41277,
+      "keyframe_id": 12,
+      "native_points": 209250,
+      "sha256": "132d85d470bf710ffbaf8c6c9df0f8b7a6004f2c91402d95464ee2daf9afc4f2"
+    },
+    {
+      "available_ns": 1661851189927745104,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000013.npz",
+      "first_seen_points": 33861,
+      "keyframe_id": 13,
+      "native_points": 197925,
+      "sha256": "6f5fa28e53fcf8fa4ad54d8b3a22f5d581109d4ebf2ef22d1f11b7f52041a42b"
+    },
+    {
+      "available_ns": 1661851195991750002,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000014.npz",
+      "first_seen_points": 32407,
+      "keyframe_id": 14,
+      "native_points": 185661,
+      "sha256": "248737c11e1eedfb82574154ac444c5df263d7558c4804f8942b77e0ca7c1994"
+    },
+    {
+      "available_ns": 1661851202007757902,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000015.npz",
+      "first_seen_points": 29024,
+      "keyframe_id": 15,
+      "native_points": 175092,
+      "sha256": "459dd974e00ce3293437b95890fe67a6e1b25e613899c7f5304be9e78cbc2345"
+    },
+    {
+      "available_ns": 1661851207599761009,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000016.npz",
+      "first_seen_points": 28983,
+      "keyframe_id": 16,
+      "native_points": 163273,
+      "sha256": "f3aff2fcf4be7ed59e2397b4c24d8009b0a86fe19d7052a663b27ea705675ab6"
+    },
+    {
+      "available_ns": 1661851212935770988,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000017.npz",
+      "first_seen_points": 32602,
+      "keyframe_id": 17,
+      "native_points": 159158,
+      "sha256": "6bf2408fb47a0860e16c05bb6a3f149073813398df3d902bff127c40d8feb774"
+    },
+    {
+      "available_ns": 1661851222951773882,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000018.npz",
+      "first_seen_points": 34487,
+      "keyframe_id": 18,
+      "native_points": 166395,
+      "sha256": "034cd23337eff9e7b7920ea19d83256416a355daefef7be166d2f03e062368e6"
+    },
+    {
+      "available_ns": 1661851230391784906,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000019.npz",
+      "first_seen_points": 32945,
+      "keyframe_id": 19,
+      "native_points": 164045,
+      "sha256": "a960c1b331b4c815f4f2ef2399190dba86dd12cfa6bcb2b65d7aaf9f70585e8f"
+    },
+    {
+      "available_ns": 1661851240455791950,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000020.npz",
+      "first_seen_points": 33629,
+      "keyframe_id": 20,
+      "native_points": 175385,
+      "sha256": "f2a0e0cd0a1fcb25aa23f68fdd1995881ca7801c07cdcdcca88e9fe886c15f07"
+    },
+    {
+      "available_ns": 1661851249199804068,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000021.npz",
+      "first_seen_points": 20084,
+      "keyframe_id": 21,
+      "native_points": 192577,
+      "sha256": "66859135518bb3f03242a1f218729ec5c253b0b9df53bcabd37958e86c4e4536"
+    },
+    {
+      "available_ns": 1661851256855807066,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000022.npz",
+      "first_seen_points": 21156,
+      "keyframe_id": 22,
+      "native_points": 209534,
+      "sha256": "276521b81ea585f1a97ea508368e359fc71151532d6e7a8ef577deab126884dd"
+    },
+    {
+      "available_ns": 1661851264887819052,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000023.npz",
+      "first_seen_points": 28537,
+      "keyframe_id": 23,
+      "native_points": 216453,
+      "sha256": "62b4cc01c439f8f1c21ea09a6b7fcbc42cdba754b20f4f640aedf4b706d58238"
+    },
+    {
+      "available_ns": 1661851273023827076,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000024.npz",
+      "first_seen_points": 36491,
+      "keyframe_id": 24,
+      "native_points": 221374,
+      "sha256": "2adbbac26bb029a64203299396e78fd33c64578b812589983c33139712af6850"
+    },
+    {
+      "available_ns": 1661851280631830931,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000025.npz",
+      "first_seen_points": 27797,
+      "keyframe_id": 25,
+      "native_points": 223758,
+      "sha256": "d4f479526104306bdc5d85b2ba756c01da838c80baa3b53dd1f8ecdaa59fe542"
+    },
+    {
+      "available_ns": 1661851289727844000,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000026.npz",
+      "first_seen_points": 38817,
+      "keyframe_id": 26,
+      "native_points": 227156,
+      "sha256": "d31ece7c11c5f11d359d79ba70c721c7e277471a4682d00aeb873d00f18320b8"
+    },
+    {
+      "available_ns": 1661851297599848032,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000027.npz",
+      "first_seen_points": 28108,
+      "keyframe_id": 27,
+      "native_points": 247228,
+      "sha256": "d1b91bb613cd01f8845ed00d7972d35577bcc7d3d34caff9ca4d02cd5a551ad7"
+    },
+    {
+      "available_ns": 1661851307639863968,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000028.npz",
+      "first_seen_points": 26496,
+      "keyframe_id": 28,
+      "native_points": 293481,
+      "sha256": "5e4035dda3a31108d40c2e4699b9507808b57ed5607ddb26553f25b5bdbb0801"
+    },
+    {
+      "available_ns": 1661851317703869104,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000029.npz",
+      "first_seen_points": 20028,
+      "keyframe_id": 29,
+      "native_points": 325234,
+      "sha256": "d6ce602c721d37c163e0793fbb5086c05b075bf56dd63674844ae76561e44e6b"
+    },
+    {
+      "available_ns": 1661851327735877037,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000030.npz",
+      "first_seen_points": 9910,
+      "keyframe_id": 30,
+      "native_points": 325428,
+      "sha256": "f192b7cb1169417604b9bb9219f4ae083028bde4934b1735e2117d4b1e850f16"
+    },
+    {
+      "available_ns": 1661851337791887999,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000031.npz",
+      "first_seen_points": 3551,
+      "keyframe_id": 31,
+      "native_points": 329841,
+      "sha256": "5dd7d7c908c9f6918094343c0e80376b01d45cd68b73730d57ce343d13bd9a3c"
+    },
+    {
+      "available_ns": 1661851347887902021,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000032.npz",
+      "first_seen_points": 1034,
+      "keyframe_id": 32,
+      "native_points": 330762,
+      "sha256": "55938322e8aee82d059c19da3569818909449f19a4c45536e8b80edebf46563d"
+    },
+    {
+      "available_ns": 1661851352383902073,
+      "file": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-aerial-singleton148-20260921/full/prepared-aerial05/store/000033.npz",
+      "first_seen_points": 4,
+      "keyframe_id": 33,
+      "native_points": 330913,
+      "sha256": "f6aeb6b49bc41f53ead3f8347a2e90c3f8732377410bc1578106c30b50307a0f"
+    }
+  ],
+  "point_identity": "stable native geometry IDs; coordinates frozen at first available observation",
+  "published_base": "1eec4b98c51267398d91d8ad953cdbc472951262",
+  "python": "3.12.3",
+  "replay_wall_s_before_plotting": 16.757487822003895,
+  "robot_id": "aerial05",
+  "schema_version": 1,
+  "scipy": "1.11.4",
+  "source_sha256": {
+    "circle_cover.py": "c36e5c7d3faaba7b2b0909b3f62033f904476fb005258e7f4aa0cd0399fe44e4",
+    "circle_cover_replay.py": "136cf3d35c2abfb039f5963e4756a39abdade44c84d093f90fee6edc85ff056b",
+    "gravity_bev.py": "b68a210d62b4cbee9d26aa187ea21f41a45112c517f77954c3420991af8defa3"
+  },
+  "world_frame": "aerial05/odom_ellipselio"
+}

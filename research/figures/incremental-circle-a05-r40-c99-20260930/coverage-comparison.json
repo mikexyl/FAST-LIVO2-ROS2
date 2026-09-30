@@ -1,0 +1,55 @@
+{
+  "identical_causal_map_prefixes": true,
+  "immutable_trial_centers_verified": true,
+  "report_source_sha256": "287ccb343f64105970b72d85afa2e31a5fdd930ce0c0f8346d64127b4ad0577c",
+  "results": [
+    {
+      "circle_count": 25,
+      "coverage_target": 0.95,
+      "final_cell_coverage": 0.9676263526530906,
+      "final_point_coverage": 0.9738615879429162,
+      "greatest_overlap_median": 0.3000012618870004,
+      "greedy_fallback_updates": 0,
+      "max_update_s": 0.7499820880038897,
+      "mean_memberships_per_covered_cell": 1.6214435905546976,
+      "mean_update_s": 0.18317917170497822,
+      "minimum_prefix_coverage": 0.9500733018406907,
+      "overlap_in_band_fraction": 1.0,
+      "proven_updates": 22,
+      "radius_m": 40.0,
+      "replay_memory": {
+        "max_child_processes": 0,
+        "peak_sampled_simultaneous_process_tree_rss_bytes": 744394752,
+        "process_high_water_rss_bytes_before_plotting": 746307584,
+        "samples": 481,
+        "sampling_period_s": 0.02,
+        "scope": "fresh replay process, input union, solver, state-history validation; excludes gallery plotting"
+      },
+      "solver_updates": 22
+    },
+    {
+      "circle_count": 30,
+      "coverage_target": 0.99,
+      "final_cell_coverage": 0.9915734888996921,
+      "final_point_coverage": 0.9925381631412992,
+      "greatest_overlap_median": 0.30000049938177975,
+      "greedy_fallback_updates": 0,
+      "max_update_s": 0.14029923098860309,
+      "mean_memberships_per_covered_cell": 1.8190154527791396,
+      "mean_update_s": 0.060895250116813904,
+      "minimum_prefix_coverage": 0.9902448657187993,
+      "overlap_in_band_fraction": 0.9666666666666667,
+      "proven_updates": 24,
+      "radius_m": 40.0,
+      "replay_memory": {
+        "max_child_processes": 0,
+        "peak_sampled_simultaneous_process_tree_rss_bytes": 739647488,
+        "process_high_water_rss_bytes_before_plotting": 738021376,
+        "samples": 484,
+        "sampling_period_s": 0.02,
+        "scope": "fresh replay process, input union, solver, state-history validation; excludes gallery plotting"
+      },
+      "solver_updates": 24
+    }
+  ]
+}

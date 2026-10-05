@@ -99,7 +99,12 @@ class OnlineRobot(Node):
         if self.query is not None and not self.replies and not self.payloads:
             self.query=None; self.next+=1
         if self.query is None and self.next<len(self.worker.store.rows):
-            row=self.worker.store.row(self.next); self.query=self.next; self.replies=set(self.robots)
+            row=self.worker.store.row(self.next)
+            if not row.get('retrievable',True):
+                self.events.append(dict(type='unretrievable',keyframe_id=self.next,available_ns=row['available_ns']))
+                self.next+=1
+                return
+            self.query=self.next; self.replies=set(self.robots)
             self.query_start[self.next]=time.time_ns()
             self.events.append(dict(type='observe',keyframe_id=self.next,available_ns=row['available_ns'],
                                     anchor_ns=row['stamp_ns']))

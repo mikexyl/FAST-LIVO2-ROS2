@@ -1,0 +1,7 @@
+char agent_id
+bool include_agent_keys # If true, include receiver-known keys that belong to agent_id.
+uint64[] keys # Legacy explicit extra keys.
+uint8[] compact_keys # Versioned, lossless grouped/delta encoding of explicit extra keys.
+uint8[] initialized_anchor_ids # Sealed-mode bootstrap acknowledgement; actual connected robot anchors (numeric IDs).
+---
+cbs_ros/BeliefBatch beliefs # Packed requested beliefs.

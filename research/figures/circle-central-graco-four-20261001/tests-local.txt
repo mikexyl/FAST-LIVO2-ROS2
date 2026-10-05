@@ -1,0 +1,3 @@
+2026-10-01: 60 passed in 2.42s
+Modules: test_circle_cover.py, test_circle_cover_replay.py, test_circle_submaps.py, test_circle_central_evaluation.py, test_area_maps.py, test_pipeline.py
+PYTHONPATH used the newer native MapClosures adapter.

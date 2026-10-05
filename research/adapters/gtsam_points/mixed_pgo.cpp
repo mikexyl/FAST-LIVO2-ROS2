@@ -1,4 +1,7 @@
 #include "registration_common.hpp"
+#ifdef S3E_REGISTRATION_CUDA
+#include "vgicp_gpu_factor.hpp"
+#endif
 // Native, offline mixed pose / matching-cost graph. No ROS or GT input.
 #include <gtsam/config.h>
 #include <gtsam/geometry/Pose3.h>
@@ -70,6 +73,11 @@ Json run(const Json& input) {
   const auto start = Clock::now();
   if (input.at("schema_version") != 1) throw std::invalid_argument("unsupported input schema");
   const auto cfg = input.at("settings");
+  const std::string mode = cfg.value("factor", "gicp");
+  if (mode != "gicp" && mode != "vgicp_gpu") throw std::invalid_argument("unsupported batch registration factor");
+#ifndef S3E_REGISTRATION_CUDA
+  if (mode == "vgicp_gpu") throw std::invalid_argument("batch adapter was built without CUDA; no CPU fallback");
+#endif
   const int threads = cfg.at("num_threads"), iterations = cfg.at("max_iterations"), neighbors = cfg.at("covariance_neighbors");
   const double distance = cfg.at("correspondence_m"), ratio = cfg.at("max_information_ratio");
   if (threads < 1 || threads > 64 || iterations < 1 || neighbors < 3 ||
@@ -104,7 +112,16 @@ Json run(const Json& input) {
     clouds.emplace(key, load_cloud(spec, neighbors, threads));
   }
   Json diagnostics = Json::array();
-  std::vector<std::shared_ptr<ScaledGICP>> registrations;
+  Json gpu_geometry = Json::array();
+  std::vector<gtsam::NonlinearFactor::shared_ptr> registrations;
+#ifdef S3E_REGISTRATION_CUDA
+  std::map<gtsam::Key, std::shared_ptr<GpuGeometry>> gpu;
+  if (mode == "vgicp_gpu") for (const auto& [key, cloud] : clouds) {
+    auto geometry = upload_vgicp_geometry(cloud, cfg); gpu.emplace(key, geometry);
+    auto diagnostic = gpu_geometry_diagnostics(*geometry); diagnostic["key"] = key;
+    gpu_geometry.push_back(diagnostic);
+  }
+#endif
   std::vector<size_t> accepted_indices;
   std::set<std::pair<gtsam::Key, gtsam::Key>> seen;
   for (const auto& pair : input.at("registrations")) {
@@ -116,10 +133,17 @@ Json run(const Json& input) {
     Json diag = pair; diag["initial_quality"] = quality(target, source, relative, distance);
     diag["reason"] = rejection(diag["initial_quality"], cfg); diag["accepted"] = diag["reason"] == "accepted";
     if (diag["accepted"].get<bool>()) {
-      auto factor = std::make_shared<ScaledGICP>(i, j, target.points, source.points, target.tree);
+      gtsam::NonlinearFactor::shared_ptr factor;
+      std::shared_ptr<ScaledGICP> cpu;
+#ifdef S3E_REGISTRATION_CUDA
+      std::shared_ptr<ScaledVGICPGPU> cuda;
+      if (mode == "vgicp_gpu") { cuda = std::make_shared<ScaledVGICPGPU>(i, j, gpu.at(i), gpu.at(j)); factor = cuda; }
+      else
+#endif
+      { cpu = std::make_shared<ScaledGICP>(i, j, target.points, source.points, target.tree); factor = cpu; }
       // TBB parallelizes different factors; avoid nested OpenMP teams here.
-      factor->set_num_threads(1); factor->set_max_correspondence_distance(distance);
-      factor->set_correspondence_update_tolerance(0, 0);
+      if (cpu) { cpu->set_num_threads(1); cpu->set_max_correspondence_distance(distance);
+        cpu->set_correspondence_update_tolerance(0, 0); }
       auto raw = factor->linearize(baseline);
       const auto a = dynamic_cast<gtsam::HessianFactor*>(raw.get())->augmentedInformation();
       const Matrix6 h = a.block<6, 6>(6, 6);
@@ -128,8 +152,12 @@ Json run(const Json& input) {
         throw std::runtime_error("invalid registration information");
       // Conservative initial curvature cap relative to the verified pose factor.
       // Freeze this scalar; changing it per iteration would change the objective.
-      factor->scale = ratio / eigen.eigenvalues().maxCoeff();
-      diag["information_scale"] = factor->scale;
+      const double scale = ratio / eigen.eigenvalues().maxCoeff();
+      if (cpu) cpu->scale = scale;
+#ifdef S3E_REGISTRATION_CUDA
+      if (cuda) cuda->scale = scale;
+#endif
+      diag["information_scale"] = scale;
       diag["initial_max_information_ratio"] = ratio;
       diag["initial_error"] = factor->error(baseline);
       graph.add(factor); registrations.push_back(factor); accepted_indices.push_back(diagnostics.size());
@@ -149,7 +177,10 @@ Json run(const Json& input) {
     auto& diag = diagnostics[accepted_indices[k]]; auto& factor = registrations[k];
     const auto i = factor->keys()[0], j = factor->keys()[1];
     diag["final_error_fixed_last_correspondences"] = factor->error(result);
-    diag["linearizations"] = factor->linearizations;
+    if (auto cpu = std::dynamic_pointer_cast<ScaledGICP>(factor)) diag["linearizations"] = cpu->linearizations;
+#ifdef S3E_REGISTRATION_CUDA
+    if (auto cuda = std::dynamic_pointer_cast<ScaledVGICPGPU>(factor)) diag["gpu"] = cuda->diagnostics();
+#endif
     diag["final_quality"] = quality(clouds.at(i), clouds.at(j), result.at<gtsam::Pose3>(i).between(result.at<gtsam::Pose3>(j)), distance);
     diag["final_quality_reason"] = rejection(diag["final_quality"], cfg);
     safe &= diag["final_quality_reason"] == "accepted";
@@ -158,20 +189,24 @@ Json run(const Json& input) {
   // publish such a result as successful; preserve the diagnostics for inspection.
   struct rusage usage{}; getrusage(RUSAGE_SELF, &usage);
   return {{"schema_version", 1}, {"success", safe}, {"poses", poses(result)}, {"baseline_poses", poses(baseline)},
-          {"registrations", diagnostics}, {"pose_factor_count", num_pose_factors}, {"registration_factor_count", registrations.size()},
+          {"registrations", diagnostics}, {"gpu_geometry", gpu_geometry}, {"pose_factor_count", num_pose_factors}, {"registration_factor_count", registrations.size()},
           {"baseline_pose_error", baseline_error}, {"initial_mixed_error", initial_error},
           {"final_mixed_error", graph.error(result)}, {"final_pose_error", pose_error},
           {"iterations", solver.iterations()}, {"preparation_s", preparation_s}, {"optimization_s", optimization_s},
           {"wall_s", std::chrono::duration<double>(Clock::now() - start).count()}, {"peak_rss_kib", usage.ru_maxrss},
           {"gtsam_version", GTSAM_VERSION_STRING}, {"gtsam_points_version", GTSAM_POINTS_VERSION_STRING},
-          {"gtsam_points_commit", GTSAM_POINTS_GIT_HASH}, {"device", "CPU"}};
+          {"gtsam_points_commit", GTSAM_POINTS_GIT_HASH}, {"device", mode == "vgicp_gpu" ? "CUDA" : "CPU"}};
 }
 
 int main(int argc, char** argv) {
   try {
     if (argc == 2 && std::string(argv[1]) == "--version") {
+      Json supported = {"gicp"};
+#ifdef S3E_REGISTRATION_CUDA
+      supported.push_back("vgicp_gpu");
+#endif
       std::cout << Json({{"gtsam", GTSAM_VERSION_STRING}, {"gtsam_points", GTSAM_POINTS_VERSION_STRING},
-                         {"gtsam_points_commit", GTSAM_POINTS_GIT_HASH}, {"device", "CPU"}}).dump() << '\n'; return 0;
+                         {"gtsam_points_commit", GTSAM_POINTS_GIT_HASH}, {"supported_factors", supported}}).dump() << '\n'; return 0;
     }
     if (argc != 3) throw std::invalid_argument("usage: s3e_mixed_pgo INPUT.json OUTPUT.json");
     std::ifstream f(argv[1]); Json input; f >> input;

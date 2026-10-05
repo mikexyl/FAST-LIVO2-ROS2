@@ -1,0 +1,10 @@
+\section{Communication cost}
+\label{sec:communication}
+The current run exchanges 546.77\,MB of serialized remote application payload, or 39.05\,MB per assigned robot (Table~\ref{tab:traffic}). Counters include recipient fan-out, retrieval, verification geometry, retained constraints, PCM, registration exchange, and CBS requests and replies. CBS messages are counted once at the requester; PCM and geometry count sent payloads. Local sensor/visualization traffic, report downloads, middleware discovery, transport framing and retransmissions are excluded. These measurements characterize application traffic, not physical network bytes or delivered wireless throughput.
+\input{generated/traffic}
+
+Retrieval queries account for 410.44\,MB, or 75.1\% of total traffic. Requested verification geometry contributes 110.56\,MB. CBS belief traffic is 3.41\,MB, approximately 0.62\% of the total; it cannot stand in for whole-pipeline communication. Retrieval exchange is therefore the largest measured target for communication reduction, subject to maintaining detection and connectivity.
+
+\input{generated/baseline-communication}
+The separate completed ground-trio measurements provide context for magnitude, rather than a same-workload ranking. All entries in Table~\ref{tab:baseline-traffic} connect their assigned team. Our per-robot total is approximately 3.4 times lower than DCL-SLAM's and 6.9 times lower than DiSCo-SLAM's, but 22\% higher than Swarm-SLAM's. Different team sizes, spatial support, trajectory durations and recovered constraints remain confounds; division by robot count does not remove them. The evidence supports a competitive measured communication cost, not an unconditional efficiency win over every baseline.
+\FloatBarrier

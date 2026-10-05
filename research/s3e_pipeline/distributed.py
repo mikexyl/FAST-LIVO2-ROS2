@@ -29,8 +29,9 @@ def eligible_observation(row, query, same_robot, exclusion_ns):
     anchor = query.get('anchor_ns', query['stamp_ns'])
     if anchor - row['stamp_ns'] < exclusion_ns:
         return False
-    if row.get('strategy')=='area' or query.get('strategy')=='area':
-        if row.get('strategy')!='area' or query.get('strategy')!='area':return False
+    spatial = ('area', 'fixed_spatial')
+    if row.get('strategy') in spatial or query.get('strategy') in spatial:
+        if row.get('strategy') not in spatial or query.get('strategy') not in spatial:return False
         from .area_maps import shared_ids
         # Historical points reused in two crops cannot supply an independent loop.
         if shared_ids(row['geometry_id_ranges'],query['geometry_id_ranges']):return False
@@ -108,6 +109,8 @@ class Worker:
         outgoing=[]
         if result['accepted']:
             diagnostics={k:v for k,v in result.items() if k not in ('verification_runtime_s','verification_cache_hit')}
+            if event.get('spatial_endpoints'):
+                diagnostics['spatial_endpoints'] = event['spatial_endpoints']
             edge=constraint([self.robot,q],[src,c],result['T_i_j'],result['information'],
                 accepted=True,kind='loop',backend=self.backend_name,diagnostics=diagnostics)
             outgoing.append(dict(src=self.robot,dst='optimizer',kind='constraint',body=canonical_edge(edge)))
@@ -160,12 +163,12 @@ class Worker:
         evidence=self.backend_config.get('evidence',{})
         sampling=evidence.get('sampling','adaptive')
         if sampling not in ('adaptive','fixed'):raise ValueError('Unknown evidence sampling policy')
-        if row.get('strategy') in ('coverage','area') and (sampling!='fixed' or self.backend_config['registration'].get('sampling')!='fixed'):
+        if row.get('strategy') in ('coverage','area','fixed_spatial') and (sampling!='fixed' or self.backend_config['registration'].get('sampling')!='fixed'):
             raise ValueError('Coverage submaps require fixed-resolution verification')
         budget=None if sampling=='fixed' else evidence.get('max_points',16000)
         original_points=len(cloud)
         max_range=evidence.get('max_range_m',80.)
-        if row.get('strategy')=='area' and (max_range is not None or self.backend_config['registration'].get('max_range_m',80.) is not None):
+        if row.get('strategy') in ('area','fixed_spatial') and (max_range is not None or self.backend_config['registration'].get('max_range_m',80.) is not None):
             raise ValueError('Area map geometry must not have a 3D range crop')
         cloud,resolution=bounded_cloud(cloud,evidence.get('voxel_m',.5),budget,max_range)
         preprocessing=dict(sampling_policy=sampling,requested_voxel_m=evidence.get('voxel_m',.5),
@@ -233,6 +236,10 @@ class Worker:
             preparation_s=time.monotonic()-start
             # Retain only timing/identity here; the bounded IPC future owns evidence.
             metadata=dict(event,body={k:v for k,v in body.items() if k!='payload'})
+            query_row=self.store.row(q)
+            if query_row.get('strategy')=='fixed_spatial' or candidate_row.get('strategy')=='fixed_spatial':
+                from .spatial_cbs_contract import endpoint
+                metadata['spatial_endpoints']=[endpoint(query_row),endpoint(candidate_row)]
             if self.queue_size:self.pending.append((metadata,now,preparation_s,self.verifier.submit(packet)))
             else:self.completed.append(self.finish_verification(metadata,now,self.verifier.verify(packet),preparation_s))
         else:raise ValueError(f'Unknown worker event {kind}')

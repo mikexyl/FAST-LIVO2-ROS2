@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Native elapsed wall-time measurements. All duration columns are in milliseconds.}
+\label{tab:timing}
+\begin{tabular}{lrrrr}
+\toprule
+Timed region & Samples & Median (ms) & P95 (ms) & Maximum (ms) \\
+\midrule
+Local solver update & 842 & 0.351 & 1.003 & 4.499 \\
+Full nonterminal callback & 842 & 1.629 & 32.230 & 1188.685 \\
+Peer-belief service & 3,930 & 0.379 & 2.385 & 190.248 \\
+\bottomrule
+\end{tabular}
+\par\vspace{5pt}\begin{minipage}{0.97\linewidth}\footnotesize The full callback contains the local solver update, so rows must not be added. Peer services run separately. Fourteen terminal callbacks, final geometry validation and pre-update early returns are outside the timing coverage.\end{minipage}
+\end{table}

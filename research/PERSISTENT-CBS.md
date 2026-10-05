@@ -30,9 +30,24 @@ sent once without a divergence test and accepted immediately, providing the
 bootstrap that the draft's previous-belief notation presupposes. A belief that
 arrives before any connecting separator is retained pending that connection;
 it does not create an unanchored graph island or require another bootstrap
-reply. Persistent
-responses originate from the responding robot's optimized estimates; they do
-not relay another robot's old Gaussian as a fresh local belief.
+reply. Locally computed responses originate from the responding robot's
+optimized estimates. Anchor responses also forward cached anchor Gaussians with
+their **original producer identity**, as coordinated CBS does. This is necessary
+on sparse communication graphs: a distant anchor learned only through anchor
+beliefs is absent from the GLOBAL covariance graph after those factors are
+excluded. The initial persistent implementation disabled this relay and could
+not carry a root reference beyond the directly observable anchor neighborhood.
+
+A relay retains the original mean, covariance and producer frame. It is not
+re-labelled as an independent measurement from the forwarding robot and does not
+undergo a second divergence gate or damping step. Unchanged relays are suppressed
+per recipient and original producer/key (with 1e-12 numerical roundoff tolerance
+for the existing canonical/moment conversion). A belief is not echoed to its
+own producer. The recipient retains the existing producer/key replacement and
+deferred-attachment behavior; pose sharing and both covariance exclusions remain
+unchanged. Locally computed beliefs still use the draft's original gates and
+fixed-target damping. This restores the coordinated backend's sparse-topology
+relay behavior; it does not replace cavity covariances with full-graph marginals.
 
 Requests are asynchronous, with at most one outstanding request per neighbor.
 Slow or unavailable peers do not block other neighbors or the local timer.
@@ -41,6 +56,17 @@ remain in the graph. Replies to expired requests are ignored. The existing
 upper-triangular covariance wire format is retained.
 
 ## Graph admission and geometry
+
+Persistent initialization retains supplied odometry poses only for variables
+connected to admitted factors. This uses the factor graph's **variable-key set**:
+GTSAM `FactorGraph::exists(index)` checks a factor slot and must not be used as a
+variable-key query. The earlier check silently discarded every labeled pose key
+and initialized the map at identity. This produced incorrect early beliefs that
+could then be rejected by the unchanged divergence gate when the graph recovered.
+The correction preserves local initial poses and infers missing remote separator
+poses from connected between measurements, while excluding unconnected seeds.
+A first-update regression with a 285 m rotated trajectory catches this defect;
+sparse chain/ring tests separately cover the anchor-relay mechanism.
 
 A `PersistentInput` contains a session ID, a sequential revision number, the
 complete robot-local proposal prefix and an explicit final seal. Exact duplicate
@@ -122,3 +148,10 @@ bootstrap and per-recipient history, retained state across growth, cavity
 exclusions/cache invalidation, geometry reuse and immutable metadata, pose-only
 and GPU DDS graph growth, and the online adapter. Native GICP, GPU VGICP,
 ellipsoid, covariance transport, and legacy belief tests remain regression gates.
+
+
+The spatial-graph follow-up repairs and verifies multi-hop anchor relay and pose
+initialization on A05/A07/G05/G06 at a 10-second local cadence (30 iterations):
+all four share A05’s reference, with 0.954865 m joint ATE and all 13 geometry
+factors passing. [Corrected experiment and regression evidence](figures/circle-cbs-graco-four-20261001/persistent-fixed/index.html).
+This is a frozen-graph test; growing-prefix behavior is covered by native DDS tests.

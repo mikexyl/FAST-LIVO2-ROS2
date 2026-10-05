@@ -1,0 +1,63 @@
+{
+  "success": true,
+  "validator": "rerun 0.37.1 rrd verify (including footers)",
+  "recordings": [
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/aerial07/recording/live.rrd",
+      "bytes": 428828348
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/aerial04/recording/live.rrd",
+      "bytes": 284106363
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/aerial03/recording/live.rrd",
+      "bytes": 434091904
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/ground01/recording/live.rrd",
+      "bytes": 452968511
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/aerial05/recording/live.rrd",
+      "bytes": 320349992
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/ground03/recording/live.rrd",
+      "bytes": 360370568
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/ground06/recording/live.rrd",
+      "bytes": 404953362
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/aerial01/recording/live.rrd",
+      "bytes": 443501738
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/aerial02/recording/live.rrd",
+      "bytes": 292295200
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/ground02/recording/live.rrd",
+      "bytes": 505674414
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/aerial08/recording/live.rrd",
+      "bytes": 303842745
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/ground04/recording/live.rrd",
+      "bytes": 432979823
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/aerial06/recording/live.rrd",
+      "bytes": 349318768
+    },
+    {
+      "path": "/workspace/.ros2/circle-online148-20261001/full/frontends/ground05/recording/live.rrd",
+      "bytes": 662661098
+    }
+  ],
+  "total_bytes": 5675942834
+}

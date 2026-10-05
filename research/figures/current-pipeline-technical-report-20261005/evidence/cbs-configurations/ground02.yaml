@@ -1,0 +1,36 @@
+/**:
+  ros__parameters:
+    belief_stage_switch_strategy: random
+    communication_topology_mode: dynamic_factors
+    enable_dcs: false
+    enable_gkcm: false
+    enable_soft_reset: false
+    enable_visualization: false
+    log_dir: /workspace/.ros2/circle-mature-online148-20261001/full/epochs/persistent/ground02/native
+    loop_rate: 0.1
+    max_iterations: -1
+    num_robots: 14
+    online: true
+    pcm_enabled: true
+    pcm_minimum_clique_size: 1
+    pcm_probability: 0.99
+    pcm_session_id: 7ed84a72ff2c42ff93ffd09eafdf6d98
+    pcm_timeout_sec: 180.0
+    persistent: true
+    pgo_formulation: pose3
+    pose_graph_topic: /ground02/cbs/pose_graph
+    registration_directory: /workspace/.ros2/circle-mature-online148-20261001/full/epochs/persistent/ground02/registration
+    registration_enabled: true
+    registration_settings: '{"correspondence_m": 1.5, "covariance_neighbors": 20,
+      "ellipsoid_max_count": 50000, "ellipsoid_voxel_m": 0.4, "enabled": true, "factor":
+      "vgicp_gpu", "gpu_distance_max_m": 20.0, "gpu_distance_min_m": 5.0, "gpu_voxel_levels":
+      2, "gpu_voxel_m": 0.5, "gpu_voxel_max_m": 1.0, "gpu_voxel_scaling": 2.0, "huber_m":
+      0.6, "max_condition": 1000000.0, "max_information_ratio": 1.0, "max_iterations":
+      30, "max_points": 12000, "max_range_m": null, "max_rmse_m": 0.35, "min_inliers":
+      100, "min_observability": 0.0001, "min_overlap": 0.3, "num_threads": 2, "timeout_s":
+      180.0, "voxel_m": 0.5}'
+    robot_id: 9
+    robot_name: ground02
+    settle_iterations: 30
+    synchronize_optimization_rounds: false
+    use_robust_noise_models: false

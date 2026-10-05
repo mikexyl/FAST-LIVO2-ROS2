@@ -1,0 +1,63 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[margin=21mm,headheight=14pt]{geometry}
+\usepackage{microtype,graphicx,booktabs,tabularx,array,amsmath,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{caption,placeins,fancyhdr,enumitem}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\definecolor{ink}{HTML}{173541}
+\definecolor{teal}{HTML}{087F8C}
+\definecolor{wash}{HTML}{EDF5F5}
+\hypersetup{colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal,
+ pdftitle={Collaborative LiDAR Mapping with Multi-Layer BEVs and Belief Sharing on Robot-Decoupled Submap Graphs},
+ pdfauthor={Research technical report}}
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+\captionsetup[table]{position=top,skip=6pt}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{1em}
+\setlength{\textfloatsep}{13pt}
+\setlength{\intextsep}{12pt}
+\renewcommand{\arraystretch}{1.14}
+\setlist[itemize]{nosep,leftmargin=1.4em}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\color{ink}Multi-layer BEVs and belief sharing on submap graphs}
+\fancyhead[R]{\small Technical report / 2026-10-05}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{.3pt}
+\newcommand{\SE}{\mathrm{SE}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ate}{\operatorname{ATE}}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\small\scshape\color{teal}Technical report\quad /\quad 5 October 2026}\par\vspace{7pt}
+{\LARGE\bfseries\color{ink}Collaborative LiDAR Mapping with Multi-Layer BEVs\par
+and Belief Sharing on Robot-Decoupled Submap Graphs}\par\vspace{7pt}
+{\normalsize Multilayer place recognition, fixed spatial footprints, and persistent distributed optimization}
+\end{center}
+\vspace{-3pt}
+\begin{abstract}
+Collaborative LiDAR mapping must recover a common frame from observations with different viewpoints while controlling submap redundancy and distributed optimization cost. We describe a pipeline combining persistent-map EllipseLIO odometry, incrementally placed fixed-radius circles, gravity-aligned point-cloud bird's-eye views, terrain-relative multilayer matching, geometric verification, pairwise consistency maximization, and persistent Contractive Belief Sharing with GPU registration factors. Circle locations remain fixed while their geometry accumulates before immutable publication. In a simultaneous $1\times$ replay of all eight aerial and six ground GRACO sequences, the pipeline forms one 14-robot component during playback. The final settled result contains 366 submaps and 111 retained loops, achieves 0.933\,m joint position ATE, and exchanges 546.77\,MB of serialized inter-robot application payload. The largest component contains only four robots in an ablation that freezes geometry immediately. Across 842 measured nonterminal updates, median solver and full timer-callback times are 0.351 and 1.629\,ms, respectively; no sharp update-cost increase appears at the observed local graph sizes. These results establish operation at the tested scale on one workstation, with explicit limits on timing coverage, comparison scope, and extrapolation to physical networks or embedded hardware.
+\end{abstract}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\linewidth]{../figures/online-global-map.png}
+\caption{The current pipeline's final joint map from all 14 GRACO sequences, viewed from above and obliquely. Robot colors distinguish contributions. The PLY contains 13.35 million unique retained native map representatives, re-posed by optimized submaps; the preview is thinned for display. A single native-gravity rotation sets the viewing frame. Ground truth is not used for map assembly.}
+\label{fig:joint-map}
+\end{figure}
+\clearpage
+\input{sections/method}
+\input{sections/experiments}
+\input{sections/communication}
+\input{sections/computation}
+\input{sections/discussion}
+\FloatBarrier
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\clearpage
+\appendix
+\input{sections/reproducibility}
+\end{document}

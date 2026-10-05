@@ -1,0 +1,457 @@
+{
+  "source": "/home/mikexyl/workspaces/fast_livo2_ws/src/FAST-LIVO2-ROS2/research/figures/communication-benchmark148-20260928/measured-results.json",
+  "source_sha256": "a91aac073da6211eb42e682a9e45c59e0616ad3e6593478fd1fcef5022655a23",
+  "rows": [
+    {
+      "method": "swarm",
+      "group": "GRACO_ground",
+      "attempt": "full-v2",
+      "status": "complete",
+      "bytes": 96123620,
+      "valid_total": true,
+      "components": [
+        [
+          "ground01",
+          "ground02",
+          "ground03"
+        ]
+      ],
+      "run_status": {
+        "method": "swarm",
+        "group": "GRACO_ground",
+        "robots": [
+          "ground01",
+          "ground02",
+          "ground03"
+        ],
+        "attempt": "full-v2",
+        "phase": "finished",
+        "start_unix": 1790588164.0707276,
+        "resource_quotas": false,
+        "output": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928/runs/swarm-GRACO_ground-full-v2",
+        "duration_s": 0,
+        "tail_s": 120,
+        "container": "communication-swarm-graco-ground-full-v2-0928",
+        "instrumentation_sha256": {
+          "bootstrap.py": "16517a929ba6c4ef4cb8b1a4d4b5d0601eea7754adc7912df4ac3e5abba00ce6",
+          "rcl_probe.cpp": "932ce3c9bdafc99900017adce56b6c1a370e7f19698a68877f1dfc68b651967b",
+          "libcommunication_probe.so": "555a0819037901b6260cf50230f494d23d09c0283a9e933d4ea3ddde8d737042",
+          "test_meter.py": "95bf6c52455b68449ff9608e9e1740d38b7f53f5235e20a4820ed9db9237f584",
+          "meter.py": "7d8feeb2e6a4bbdd66aa59b0b85dde66deedf91ed9b02a61c8f85e10892be9bc",
+          "batch.py": "e0f315b71879d4b91bd188bc82f03f3598f49030662a797bc1c4b676d07f1987",
+          "launch.py": "2600a57fbdd6844aac4228c7016c4e5dd8e25d87e3eef6ed4a9bc5df6d5cad18"
+        },
+        "image": "sha256:c189512677d25e90cb434675ff82c86e4794969a5064c9b9a010a666cb017f7a",
+        "mounts": [
+          "docker",
+          "run",
+          "-d",
+          "--name",
+          "communication-swarm-graco-ground-full-v2-0928",
+          "--entrypoint",
+          "/bin/sleep",
+          "--ipc",
+          "host",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-baselines148-20260922,dst=/baseline",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/swarm/native,dst=/native,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/calibration-corrected148-20260926,dst=/experiment,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_official_s3e,dst=/previous,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src,dst=/project,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/swarm/teaser-build,dst=/teaser,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928,dst=/comm",
+          "sha256:c189512677d25e90cb434675ff82c86e4794969a5064c9b9a010a666cb017f7a",
+          "infinity"
+        ],
+        "command": [
+          "docker",
+          "exec",
+          "communication-swarm-graco-ground-full-v2-0928",
+          "bash",
+          "-lc",
+          "set -eo pipefail\nsource /opt/ros/humble/setup.bash\nsource /ros2_ws/install/setup.bash\nexport PYTHONPATH=/teaser:${PYTHONPATH:-}\nexport LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH:-}:/native/lib\nexport ROS_LOCALHOST_ONLY=1\nexport ROS_DOMAIN_ID=181\nexport OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1\nexport FASTRTPS_DEFAULT_PROFILES_FILE=/baseline/code/fastdds.xml\nexec python3 /comm/code-versions/swarm-GRACO_ground-full-v2/bootstrap.py --method swarm --runner /comm/runners/graco/run_swarm.py --output /comm/runs/swarm-GRACO_ground-full-v2 --robots ground01 ground02 ground03 --duration 0 --tail 120 --calibration-dir /experiment/calibration"
+        ],
+        "pid": 861182,
+        "exit_code": 0,
+        "elapsed_s": 520.7649533748627,
+        "native_phase": "complete",
+        "native_error": null
+      },
+      "robots": [
+        "ground01",
+        "ground02",
+        "ground03"
+      ],
+      "output": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928/runs/swarm-GRACO_ground-full-v2",
+      "native_summary": {
+        "phase": "complete",
+        "error": null,
+        "wall_s": 519.3293386780133,
+        "observed_clouds": {
+          "ground01": 3338,
+          "ground02": 3856,
+          "ground03": 2959
+        },
+        "valid_odometry": {
+          "ground01": 3087,
+          "ground02": 3557,
+          "ground03": 2805
+        },
+        "invalid_odometry": {
+          "ground01": 1,
+          "ground02": 1,
+          "ground03": 1
+        },
+        "descriptors": {
+          "ground01": 484,
+          "ground02": 536,
+          "ground03": 446
+        },
+        "coverage": {
+          "ground01": {
+            "keyframes": 759,
+            "optimized": 759,
+            "complete": true
+          },
+          "ground02": {
+            "keyframes": 873,
+            "optimized": 873,
+            "complete": true
+          },
+          "ground03": {
+            "keyframes": 697,
+            "optimized": 697,
+            "complete": true
+          }
+        },
+        "states": {
+          "0": 0,
+          "1": 0,
+          "2": 0
+        },
+        "loop_attempts": 57,
+        "accepted_inter": 43,
+        "accepted_intra": 2,
+        "process_exits": {
+          "ground01-bag": 0,
+          "ground02-bag": 0,
+          "ground03-bag": 0
+        }
+      },
+      "categories": {
+        "control": 24912,
+        "optimization": 20985280,
+        "retrieval_and_geometry": 75104188,
+        "verification_and_loops": 9240
+      },
+      "measurement": "native RCL serialized publication probe",
+      "scope": "Actual serialized CDR publication sizes times distinct remote robot owners in the observed native subscription topology. Includes startup publications before discovery; excludes same-robot/observer copies, DDS/IP headers and retransmissions. Not confirmed delivery or NIC bytes.",
+      "accounting": {
+        "serialization_errors": [],
+        "unmapped_topics": {},
+        "before_discovery_bytes": 0,
+        "observer_bytes": 94496310
+      },
+      "loops": 43,
+      "connectivity_details": {
+        "coverage": {
+          "ground01": {
+            "keyframes": 759,
+            "optimized": 759,
+            "complete": true
+          },
+          "ground02": {
+            "keyframes": 873,
+            "optimized": 873,
+            "complete": true
+          },
+          "ground03": {
+            "keyframes": 697,
+            "optimized": 697,
+            "complete": true
+          }
+        },
+        "loop_count_scope": "accepted inter-robot messages"
+      },
+      "divergence": null,
+      "wall_s": 519.3293386780133
+    },
+    {
+      "method": "dcl",
+      "group": "GRACO_ground",
+      "attempt": "full-v2",
+      "status": "complete",
+      "bytes": 393519486,
+      "valid_total": true,
+      "components": [
+        [
+          "ground01",
+          "ground02",
+          "ground03"
+        ]
+      ],
+      "run_status": {
+        "method": "dcl",
+        "group": "GRACO_ground",
+        "robots": [
+          "ground01",
+          "ground02",
+          "ground03"
+        ],
+        "attempt": "full-v2",
+        "phase": "finished",
+        "start_unix": 1790588163.7179215,
+        "resource_quotas": false,
+        "output": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928/runs/dcl-GRACO_ground-full-v2",
+        "duration_s": 0,
+        "tail_s": 120,
+        "container": "communication-dcl-graco-ground-full-v2-0928",
+        "instrumentation_sha256": {
+          "bootstrap.py": "16517a929ba6c4ef4cb8b1a4d4b5d0601eea7754adc7912df4ac3e5abba00ce6",
+          "rcl_probe.cpp": "932ce3c9bdafc99900017adce56b6c1a370e7f19698a68877f1dfc68b651967b",
+          "libcommunication_probe.so": "555a0819037901b6260cf50230f494d23d09c0283a9e933d4ea3ddde8d737042",
+          "test_meter.py": "95bf6c52455b68449ff9608e9e1740d38b7f53f5235e20a4820ed9db9237f584",
+          "meter.py": "7d8feeb2e6a4bbdd66aa59b0b85dde66deedf91ed9b02a61c8f85e10892be9bc",
+          "batch.py": "e0f315b71879d4b91bd188bc82f03f3598f49030662a797bc1c4b676d07f1987",
+          "launch.py": "2600a57fbdd6844aac4228c7016c4e5dd8e25d87e3eef6ed4a9bc5df6d5cad18"
+        },
+        "image": "sha256:50c3b2dea17eaf8b8a67a91443de4c843e95c4f21d09688d8035f65446a6230d",
+        "mounts": [
+          "docker",
+          "run",
+          "-d",
+          "--name",
+          "communication-dcl-graco-ground-full-v2-0928",
+          "--entrypoint",
+          "/bin/sleep",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-baselines148-20260922,dst=/baseline",
+          "--mount",
+          "type=bind,src=/data3/graco,dst=/data/graco,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/calibration-corrected148-20260926,dst=/experiment,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928,dst=/comm",
+          "sha256:50c3b2dea17eaf8b8a67a91443de4c843e95c4f21d09688d8035f65446a6230d",
+          "infinity"
+        ],
+        "command": [
+          "docker",
+          "exec",
+          "communication-dcl-graco-ground-full-v2-0928",
+          "bash",
+          "-lc",
+          "set -eo pipefail\nsource /opt/ros/melodic/setup.bash\nsource /baseline/dcl_melodic_ws/devel/setup.bash\nmkdir -p /root/log /comm/runs/dcl-GRACO_ground-full-v2-pcm\nln -s /comm/runs/dcl-GRACO_ground-full-v2-pcm /root/dcl_output\nexec python3 /comm/code-versions/dcl-GRACO_ground-full-v2/bootstrap.py --method dcl --runner /comm/runners/graco/run_dcl.py --output /comm/runs/dcl-GRACO_ground-full-v2 --robots ground01 ground02 ground03 --duration 0 --tail 120 --port 19731 --calibration-dir /experiment/calibration --binary-root /baseline/dcl_melodic_ws/devel/lib/dcl_lio_sam"
+        ],
+        "pid": 860767,
+        "exit_code": 0,
+        "elapsed_s": 529.8036577701569,
+        "native_phase": "complete",
+        "native_error": null
+      },
+      "robots": [
+        "ground01",
+        "ground02",
+        "ground03"
+      ],
+      "output": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928/runs/dcl-GRACO_ground-full-v2",
+      "native_summary": {
+        "phase": "complete",
+        "error": null,
+        "wall_s": 521.0363979289832,
+        "odometry": {
+          "ground01": 1856,
+          "ground02": 2199,
+          "ground03": 1681
+        },
+        "input_clouds": {
+          "ground03": 2969,
+          "ground01": 3338,
+          "ground02": 3866
+        },
+        "invalid_poses": {},
+        "path_counts": {
+          "ground03-global": 354,
+          "ground03-local": 354,
+          "ground01-local": 389,
+          "ground01-global": 389,
+          "ground02-global": 434,
+          "ground02-local": 434
+        },
+        "states": {
+          "ground01": 5,
+          "ground02": 5,
+          "ground03": 5
+        },
+        "loop_messages": 240,
+        "process_exits": {
+          "ground01-bag": 0,
+          "ground02-bag": 0,
+          "ground03-bag": 0
+        }
+      },
+      "categories": {
+        "control": 26795620,
+        "optimization": 488128,
+        "retrieval_and_geometry": 271990576,
+        "verification_and_loops": 94245162
+      },
+      "measurement": "native TCPROS publisher counters minus four-byte message framing",
+      "scope": "Native serialized message-body bytes per publisher/topic/remote robot; reconnects summed, duplicate receiving processes merged by maximum node total. Excludes local/observer links and TCP/IP framing.",
+      "accounting": {
+        "native_connection_bytes": 393519486,
+        "observer_bytes": 393537312,
+        "observer_errors": {}
+      },
+      "loops": 3,
+      "connectivity_details": {
+        "completed_optimizer_cycles": {
+          "ground01": 123,
+          "ground02": 123,
+          "ground03": 123
+        },
+        "loop_count_scope": "latest PCM-kept endpoint union; not all-run loop count"
+      },
+      "divergence": null,
+      "wall_s": 521.0363979289832
+    },
+    {
+      "method": "disco",
+      "group": "GRACO_ground",
+      "attempt": "full-v2",
+      "status": "complete",
+      "bytes": 802584349,
+      "valid_total": true,
+      "components": [
+        [
+          "ground01",
+          "ground02",
+          "ground03"
+        ]
+      ],
+      "run_status": {
+        "method": "disco",
+        "group": "GRACO_ground",
+        "robots": [
+          "ground01",
+          "ground02",
+          "ground03"
+        ],
+        "attempt": "full-v2",
+        "phase": "finished",
+        "start_unix": 1790588163.8940294,
+        "resource_quotas": false,
+        "output": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928/runs/disco-GRACO_ground-full-v2",
+        "duration_s": 0,
+        "tail_s": 120,
+        "container": "communication-disco-graco-ground-full-v2-0928",
+        "instrumentation_sha256": {
+          "bootstrap.py": "16517a929ba6c4ef4cb8b1a4d4b5d0601eea7754adc7912df4ac3e5abba00ce6",
+          "rcl_probe.cpp": "932ce3c9bdafc99900017adce56b6c1a370e7f19698a68877f1dfc68b651967b",
+          "libcommunication_probe.so": "555a0819037901b6260cf50230f494d23d09c0283a9e933d4ea3ddde8d737042",
+          "test_meter.py": "95bf6c52455b68449ff9608e9e1740d38b7f53f5235e20a4820ed9db9237f584",
+          "meter.py": "7d8feeb2e6a4bbdd66aa59b0b85dde66deedf91ed9b02a61c8f85e10892be9bc",
+          "batch.py": "e0f315b71879d4b91bd188bc82f03f3598f49030662a797bc1c4b676d07f1987",
+          "launch.py": "2600a57fbdd6844aac4228c7016c4e5dd8e25d87e3eef6ed4a9bc5df6d5cad18"
+        },
+        "image": "sha256:50c3b2dea17eaf8b8a67a91443de4c843e95c4f21d09688d8035f65446a6230d",
+        "mounts": [
+          "docker",
+          "run",
+          "-d",
+          "--name",
+          "communication-disco-graco-ground-full-v2-0928",
+          "--entrypoint",
+          "/bin/sleep",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/graco-baselines148-20260922,dst=/baseline",
+          "--mount",
+          "type=bind,src=/data3/graco,dst=/data/graco,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/calibration-corrected148-20260926,dst=/experiment,readonly",
+          "--mount",
+          "type=bind,src=/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928,dst=/comm",
+          "sha256:50c3b2dea17eaf8b8a67a91443de4c843e95c4f21d09688d8035f65446a6230d",
+          "infinity"
+        ],
+        "command": [
+          "docker",
+          "exec",
+          "communication-disco-graco-ground-full-v2-0928",
+          "bash",
+          "-lc",
+          "set -eo pipefail\nsource /opt/ros/melodic/setup.bash\nsource /baseline/disco_ws/devel/setup.bash\nexport LD_LIBRARY_PATH=/baseline/install/gtsam/lib:${LD_LIBRARY_PATH:-}\nexec python3 /comm/code-versions/disco-GRACO_ground-full-v2/bootstrap.py --method disco --runner /comm/runners/graco/run_disco.py --output /comm/runs/disco-GRACO_ground-full-v2 --robots ground01 ground02 ground03 --duration 0 --tail 120 --port 19731 --calibration-dir /experiment/calibration"
+        ],
+        "pid": 860998,
+        "exit_code": 0,
+        "elapsed_s": 521.8638443946838,
+        "native_phase": "complete",
+        "native_error": null
+      },
+      "robots": [
+        "ground01",
+        "ground02",
+        "ground03"
+      ],
+      "output": "/data3/mikexyl/swarm_s3e_ws/src/.ros2/communication-benchmark148-20260928/runs/disco-GRACO_ground-full-v2",
+      "native_summary": {
+        "phase": "complete",
+        "error": null,
+        "wall_s": 519.097654118028,
+        "odometry": {
+          "ground01": 1668,
+          "ground02": 1932,
+          "ground03": 1483
+        },
+        "input_clouds": {
+          "ground03": 2969,
+          "ground01": 3338,
+          "ground02": 3866
+        },
+        "invalid_poses": {},
+        "path_counts": {
+          "ground03": 347,
+          "ground01": 387,
+          "ground02": 454
+        },
+        "transform_keys": [
+          "jackal2->jackal1",
+          "ground03",
+          "jackal2->jackal0",
+          "ground02",
+          "jackal1->jackal0"
+        ],
+        "loop_messages": 43,
+        "process_exits": {
+          "ground01-bag": 0,
+          "ground02-bag": 0,
+          "ground03-bag": 0
+        }
+      },
+      "categories": {
+        "control": 53144816,
+        "retrieval_and_geometry": 749436533,
+        "verification_and_loops": 3000
+      },
+      "measurement": "native TCPROS publisher counters minus four-byte message framing",
+      "scope": "Native serialized message-body bytes per publisher/topic/remote robot; reconnects summed, duplicate receiving processes merged by maximum node total. Excludes local/observer links and TCP/IP framing.",
+      "accounting": {
+        "native_connection_bytes": 802584349,
+        "observer_bytes": 741080031,
+        "observer_errors": {}
+      },
+      "loops": 43,
+      "connectivity_details": {
+        "loop_count_scope": "native loop messages; not deduplicated accepted constraints"
+      },
+      "divergence": null,
+      "wall_s": 519.097654118028
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "binary_sha256": "56f2ca84d7705602f55bc9f77524ee25fa62964e28fc4a66de60a9d3ecd29785",
+  "libraries": {
+    "/workspace/.ros2/swarm/native/lib/libgtsam.so.4.3a2": "2d8b044bc5956d55b2ff35f8b8b61d511f411cc364e07c3e4fed676712b56a70",
+    "/workspace/.ros2/swarm/native/lib/libmetis-gtsam.so": "668c2aebe843ca72dac1be13c13fca16bfb53f8791b3758f786fbdf99949736a",
+    "/workspace/.ros2/swarm/native/lib/libcephes-gtsam.so.1.0.0": "94e3c177fba77d3e1d3bf2b1af44f66d42f4c04205696b7af0f461285983476f"
+  },
+  "versions": {
+    "gtsam": "4.3a2",
+    "gtsam_points": "1.2.2",
+    "gtsam_points_commit": "9d32e7dbecf6015560d84b4901d6b0a6f483ec46",
+    "supported_factors": [
+      "gicp",
+      "vgicp_gpu"
+    ]
+  },
+  "adapter_sources": {
+    "vgicp_gpu_factor.hpp": "7cfd5a69d7f86954b8e9cd2af9ea2b478a7bd1f9f2bc1c8a82b72d10cf4eae53",
+    "mixed_pgo.cpp": "cc93546118ef5d4e13efbc5cb1690faae724590f7fd978bd8d97c184e97ce313",
+    "ellipsoid_factor.hpp": "437fbcfde6fe7382007715bf5bd560d627de8d7885c49ca909c7c58fbfb41683",
+    "vgicp_gpu_factor.cpp": "45511f2461863c00dba592a40fb045899cad38736983b22991e83784505a37c9",
+    "registration_common.hpp": "00dc847d94084dcdfd5fea378bdf2e41fb71d7f82a934cf5309ed22f56d18c83",
+    "CMakeLists.txt": "866eb3b22de38816cfca35a3c5319861ab72e075f998ccd9c5f29f9fe2b2f720",
+    "compat/gtsam/base/make_shared.h": "0a737a211c6b63d3a6ed5b48714fe7f5f5685424b3763cf367ff25bf13f73948"
+  },
+  "build_scope": "centralized native GPU VGICP and CPU GICP; isolated ABI"
+}

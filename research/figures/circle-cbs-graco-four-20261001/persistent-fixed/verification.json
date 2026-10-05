@@ -1,0 +1,46 @@
+{
+  "core_ctest": {
+    "passed": 8
+  },
+  "first_persistent_root_iteration": {
+    "aerial05": 1,
+    "aerial07": 3,
+    "ground05": 4,
+    "ground06": 8
+  },
+  "initialization_regression": "Old implementation fails first update; repaired implementation passes",
+  "local_python": {
+    "passed": 21,
+    "skipped": 8
+  },
+  "max_published_loop_translation_m": 0.22770353874915725,
+  "native_python": {
+    "passed": 28,
+    "skipped": 1
+  },
+  "outgoing_stage_counts": {
+    "aerial05": {
+      "anchor": 17,
+      "pose": 12
+    },
+    "aerial07": {
+      "anchor": 16,
+      "pose": 13
+    },
+    "ground05": {
+      "anchor": 14,
+      "pose": 15
+    },
+    "ground06": {
+      "anchor": 17,
+      "pose": 12
+    }
+  },
+  "relay_regression": "Old implementation fails five-robot chain; repaired implementation passes",
+  "ros_ctest": {
+    "passed": 8,
+    "skipped": 1
+  },
+  "source_hashes_match_tested_binary_manifest": true,
+  "stage_policy": "Independent Bernoulli 0.5, no stage barrier; terminal iteration does not request beliefs"
+}

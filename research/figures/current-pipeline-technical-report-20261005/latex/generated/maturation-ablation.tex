@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Geometry-publication ablation on simultaneous all-14 replays. All placement, retrieval and verification thresholds are retained. Each column is a separate fresh execution.}
+\label{tab:maturation-ablation}
+\begin{tabular}{lrr}
+\toprule
+Measure & Immediate freezing & Maturation (current) \\
+\midrule
+Circle nodes & 358 & 366 \\
+Connected components & 11 & 1 \\
+Largest component (robots) & 4 & 14 \\
+Retained loops & 4 & 111 \\
+Empty layered descriptors & 197 & 74 \\
+Final observed IDs in published evidence & 34.7\% & 91.5\% \\
+All-team joint ATE (m) & Unavailable & 0.933 \\
+Application traffic (MB) & 128.32 & 546.77 \\
+\bottomrule
+\end{tabular}
+\par\vspace{5pt}\begin{minipage}{0.97\linewidth}\footnotesize The disconnected immediate-freeze run has no all-team joint ATE. Native-ID evidence coverage is different from occupied-cell footprint coverage. Independent odometry and scheduling introduce small differences in circle placement; this is not a frozen-input or repeated-trial estimate.\end{minipage}
+\end{table}

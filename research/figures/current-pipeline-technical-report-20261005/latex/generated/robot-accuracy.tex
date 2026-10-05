@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering\small
+\caption{GRACO position ATE (RMSE, metres). Raw and CBS individual columns each fit a separate rigid transform per robot. The shared column applies one transform to the entire connected team.}
+\label{tab:robot-accuracy}
+\begin{tabular}{lrrrrr}
+\toprule
+Robot & Circles & Matched poses & Raw, individual & CBS, individual & CBS, shared \\
+\midrule
+A01 & 31 & 3,832 & 0.180 & 0.300 & 0.721 \\
+A02 & 15 & 2,572 & 0.061 & 0.061 & 0.283 \\
+A03 & 22 & 3,685 & 0.065 & 0.224 & 0.675 \\
+A04 & 22 & 2,747 & 0.115 & 0.115 & 0.318 \\
+A05 & 30 & 2,763 & 0.173 & 0.204 & 1.164 \\
+A06 & 19 & 3,107 & 0.064 & 0.065 & 0.758 \\
+A07 & 24 & 3,714 & 0.075 & 0.074 & 0.457 \\
+A08 & 21 & 2,617 & 0.123 & 0.245 & 0.517 \\
+G01 & 23 & 3,102 & 0.297 & 0.292 & 1.035 \\
+G02 & 30 & 3,634 & 0.649 & 0.679 & 1.601 \\
+G03 & 24 & 2,780 & 0.598 & 0.584 & 1.184 \\
+G04 & 30 & 3,075 & 0.515 & 0.494 & 0.996 \\
+G05 & 46 & 4,877 & 0.477 & 0.462 & 0.764 \\
+G06 & 29 & 2,892 & 0.443 & 0.446 & 1.429 \\
+\textbf{All 14} & 366 & 45,397 & --- & --- & \textbf{0.933} \\
+\bottomrule
+\end{tabular}
+\par\vspace{5pt}\begin{minipage}{0.97\linewidth}\footnotesize A01--A08 are aerial; G01--G06 are ground. The all-14 entry is pose-weighted joint RMSE, not the mean of row RMSEs. Independent alignment can hide relative placement error.\end{minipage}
+\end{table}

@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Communication context from completed native-baseline GRACO ground-trio runs and the current 14-robot mixed run. The workloads are different; per-robot normalization is descriptive.}
+\label{tab:baseline-traffic}
+\begin{tabular}{llrrr}
+\toprule
+Method & Assigned team & Connected & Total MB & MB/robot \\
+\midrule
+Swarm-SLAM~\cite{swarm} & G01--G03 & 3/3 & 96.12 & 32.04 \\
+DCL-SLAM~\cite{dcl} & G01--G03 & 3/3 & 393.52 & 131.17 \\
+DiSCo-SLAM~\cite{disco} & G01--G03 & 3/3 & 802.58 & 267.53 \\
+\textbf{Current pipeline} & A01--A08, G01--G06 & 14/14 & 546.77 & 39.05 \\
+\bottomrule
+\end{tabular}
+\par\vspace{5pt}\begin{minipage}{0.97\linewidth}\footnotesize All rows use serialized inter-robot application payload accounting. Different team size, trajectory length, observations and constraints preclude a matched efficiency or accuracy ranking. No incomplete measurement is included.\end{minipage}
+\end{table}

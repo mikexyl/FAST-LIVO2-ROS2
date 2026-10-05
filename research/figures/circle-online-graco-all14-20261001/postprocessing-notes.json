@@ -1,0 +1,6 @@
+{
+  "first_preview_attempt_exit": 139,
+  "reason": "Matplotlib Agg scatter renderer segfault; full audit/evaluation/PLY exports had completed",
+  "recovery": "Preview-only raster renderer; audit rerun, existing numeric evaluation and PLY reused",
+  "online_run_unchanged": true
+}

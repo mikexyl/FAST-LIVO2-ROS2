@@ -23,9 +23,10 @@ def test_persistent_parameter_contract():
         with pytest.raises(ValueError): parameters(cfg)
 
 
-def fixture(root, gpu):
+def fixture(root, gpu, robots=None, pairs=None):
     from test_pipeline import scene
-    robots=['Alpha','Bob','Carol']; rows={}; stores={}; truth={}; loops=[]
+    robots=['Alpha','Bob','Carol'] if robots is None else robots
+    rows={}; stores={}; truth={}; loops=[]
     for index,r in enumerate(robots):
         stores[r]=root/r/'store'; stores[r].mkdir(parents=True); rows[r]=[]
         gauge=np.eye(4); gauge[:3,:3]=Rotation.from_euler('xyz',[.2*index,-.1*index,.7*index]).as_matrix()
@@ -39,7 +40,7 @@ def fixture(root, gpu):
                 geometry_preprocessing='causal trailing submap in keyframe IMU frame'))
             if gpu: np.savez_compressed(stores[r]/f'{k:06d}.npz',cloud=transform(inv(T),scene()))
         write_jsonl(stores[r]/'keyframes.jsonl',rows[r])
-    for a,b in [('Alpha','Bob'),('Bob','Carol'),('Alpha','Carol')]:
+    for a,b in (pairs if pairs is not None else [('Alpha','Bob'),('Bob','Carol'),('Alpha','Carol')]):
         for k in (0,3,5):
             loops.append(constraint([a,k],[b,k],inv(truth[a,k])@truth[b,k],np.eye(6)*100,kind='loop',accepted=True))
     cfg=dict(robots=robots,backend={'registration':{'method':'point_gicp'}},

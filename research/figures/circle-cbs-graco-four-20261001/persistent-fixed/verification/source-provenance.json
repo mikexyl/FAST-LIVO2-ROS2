@@ -1,0 +1,34 @@
+{
+  "cbs-circle-submaps": {
+    "branch": "codex/circle-submap-graphs",
+    "files": {
+      "CMakeLists.txt": "3d362268869d220ceb4d918ab8e5676f49ea5df5621571077d15d036ce1cd461",
+      "include/cbs/bpsam/bpsam.h": "59fff46e6bdefaf12a7b46561a7aae9b61cb5e4958b595a3b1a732bdcce3a67b",
+      "src/bpsam/bpsam.cpp": "85652d36d74f4768a6e5c74f373ea858d8de479b4c0dd2c1bf9745a8c834a505",
+      "tests/test_anchor_bootstrap.cpp": "b98910c9fbb9caa5b6aa7a9094802bef8f9ba463a37c59aa42be103e4a8ce41d",
+      "tests/test_persistent_anchor_relay.cpp": "38401da8699043037831046bb2751e719ddff284b66968c305e3bfe55ecce666"
+    },
+    "head": "87447eeb10b01ceced08db9d6fcf67bc2b9de3b3"
+  },
+  "cbs_ros-circle-submaps": {
+    "branch": "codex/circle-submap-graphs",
+    "files": {
+      "src/cbs_ros_node.cpp": "eed0bb254106852048f0aee44b90d470e09d40767aa1b56e2a37f24dd9918bc1",
+      "srv/Keys.srv": "7c71119af6fa5bd415c12e87069aab15b364e6d397606277443e6ae699f2f7ba"
+    },
+    "head": "4c8da2e43b1f3a6fc1b2bd6d3b22e9eaacb0e7ad"
+  },
+  "incremental-circle-submaps": {
+    "branch": "dev/incremental-circle-submaps",
+    "files": {
+      "research/CIRCLE-CBS.md": "362ccb00c661a627d9e52cf31fb7edd1c461d7e909a7dd2db75d8fa42a7205dc",
+      "research/PERSISTENT-CBS.md": "d3e9f460d4e46fe7a1eb4526f935610370fd5c111b371f34036bc1e0ec5586cd",
+      "research/tests/test_circle_cbs.py": "338ff693e4620a3bbc8bc15188bdfd9e3055c6d16d566ca4cdb238fc7e00a81a",
+      "research/tests/test_persistent_cbs.py": "497e52de3a9c725603ac5a4a32c3895f66b9908a4ba43085bac4bd74f1dd93ad",
+      "scripts/circle_submaps/build_cbs_spatial.sh": "59e4332a5a266da1d36e55f36e8021d101cc94baf7e26682373ff908ea7d5dbd",
+      "scripts/circle_submaps/probe_persistent_cadence.py": "2a42baafa462c1b71142012081f81a09e5b4c196e8f223333c7017b77249a3cf",
+      "scripts/circle_submaps/summarize_persistent_cadence.py": "fa1a8d09a4a0b90e9642ace37eb5c6c4185c34691c4578947ec3493fcab3f078"
+    },
+    "head": "bdaabfe5cacd49f7d0c5c659b2e9e09f18317811"
+  }
+}

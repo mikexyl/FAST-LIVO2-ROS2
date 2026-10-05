@@ -1,0 +1,25 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Effective configuration of the reported online run.}
+\label{tab:settings}
+\begin{tabular}{lp{0.68\linewidth}}
+\toprule
+Component & Setting \\
+\midrule
+Odometry & Persistent native EllipseLIO; calibrated IMU frame \\
+Circle footprint & Radius 40\,m; 1\,m occupied-cell grid; 99\% coverage \\
+Placement priorities & Coverage, circle count, then 30\% overlap target \\
+Placement solve limit & 10\,s per update; validated greedy fallback \\
+Normal geometry publication & Age $\geq$30\,s; growth $\leq$5\% over $\geq$30\,s; terrain/feature gates \\
+Forced publication & 120\,s deadline at next observation, or end of stream \\
+BEV retrieval & Point density, 0.5\,m pixels; five terrain-relative bands \\
+Point-GICP verification & 0.4\,m evidence voxels; 1.5\,m correspondence radius \\
+PCM & Probability 0.99; minimum clique size one \\
+Registration factors & Native GPU VGICP; 0.5\,m preprocessing; 12,000 points/endpoint \\
+Factor voxel levels & Two adaptive levels; recorded maps at 1 and 2\,m \\
+Persistent CBS & 0.1\,Hz requested; random outgoing pose/anchor exchange \\
+Final settling & Common-reference barrier, then 30 iterations \\
+Evaluation & evo 1.36.5; 50\,ms association; shared rigid alignment; no scale \\
+\bottomrule
+\end{tabular}
+\end{table}

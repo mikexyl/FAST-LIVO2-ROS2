@@ -1,0 +1,55 @@
+diff --git a/src/cbs_ros_node.cpp b/src/cbs_ros_node.cpp
+index 8fee40f..ce433ee 100644
+--- a/src/cbs_ros_node.cpp
++++ b/src/cbs_ros_node.cpp
+@@ -934,6 +934,15 @@ public:
+     }
+ 
+     const auto get_beliefs_start = SteadyClock::now();
++    if (!persistent_ && !req->include_agent_keys &&
++        !req->initialized_anchor_ids.empty()) {
++      KeySet initialized;
++      for (const auto id : req->initialized_anchor_ids) {
++        if (id >= num_robots_) throw std::invalid_argument("Invalid initialized anchor ID");
++        initialized.insert(cbs::toRobotKey(static_cast<cbs::AgentId>('a' + id)));
++      }
++      bpsam_->refreshMissingAnchorBootstraps(req->agent_id, initialized);
++    }
+     std::map<gtsam::Key, std::map<cbs::AgentId, gbp::Gaussian>> beliefs;
+     if (persistent_) {
+       KeySet poses, anchors;
+@@ -947,7 +956,7 @@ public:
+       }
+       if (!anchors.empty()) {
+         bpsam_->setMarginalizationGraph(BPSAM::MarginalizationType::GLOBAL);
+-        const auto anchor_beliefs = bpsam_->getBeliefs(anchors, req->agent_id, false);
++        const auto anchor_beliefs = bpsam_->getBeliefs(anchors, req->agent_id, true);
+         beliefs.insert(anchor_beliefs.begin(), anchor_beliefs.end());
+       }
+     } else beliefs = bpsam_->getBeliefs(keys, req->agent_id, true);
+@@ -1574,6 +1583,14 @@ public:
+ 
+         request->include_agent_keys =
+             belief_sharing_stage_ == BeliefSharingStage::Pose;
++        // A Gaussian can arrive before its publisher's connecting separator.
++        // Acknowledge factor-connected anchors, not unconnected cached guesses,
++        // so a missing anchor can receive fresh bootstrap replies afterward.
++        for (const auto& [key, factors] : bpsam_->getVariableIndex()) {
++          if (cbs::isRobotKey(key) && !factors.empty()) {
++            request->initialized_anchor_ids.push_back(cbs::getAgentId(key) - 'a');
++          }
++        }
+         if (request->include_agent_keys) {
+           std::vector<gtsam::Key> explicit_keys;
+           for (auto key : bpsam_->allKeys()) {
+diff --git a/srv/Keys.srv b/srv/Keys.srv
+index 570ac3b..b7d70fb 100644
+--- a/srv/Keys.srv
++++ b/srv/Keys.srv
+@@ -2,5 +2,6 @@ char agent_id
+ bool include_agent_keys # If true, include receiver-known keys that belong to agent_id.
+ uint64[] keys # Legacy explicit extra keys.
+ uint8[] compact_keys # Versioned, lossless grouped/delta encoding of explicit extra keys.
++uint8[] initialized_anchor_ids # Sealed-mode bootstrap acknowledgement; actual connected robot anchors (numeric IDs).
+ ---
+ cbs_ros/BeliefBatch beliefs # Packed requested beliefs.

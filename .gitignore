@@ -23,3 +23,7 @@ research/figures/**/*.so
 # Copied upstream media are not experiment figures. Preserve local snapshots.
 research/figures/**/source/**/Supplementary/
 research/figures/**/source/**/*.gif
+
+# Local report build and visual-review scratch files (keep final artifacts).
+research/figures/current-pipeline-technical-report-20261005/tmp/
+research/figures/current-pipeline-technical-report-20261005/review/

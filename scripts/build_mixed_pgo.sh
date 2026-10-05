@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-S3E_MIXED_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
+S3E_MIXED_REPO="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+S3E_MIXED_ROOT="${S3E_MIXED_ROOT:-$(cd -- "$S3E_MIXED_REPO/.." && pwd)}"
+export S3E_MIXED_REPO
 cd "$S3E_MIXED_ROOT"
 S3E_POINTS_COMMIT=9d32e7dbecf6015560d84b4901d6b0a6f483ec46
 S3E_GTSAM_PREFIX="${S3E_GTSAM_PREFIX:-/home/mikexyl/workspaces/sb_slam_ros2_ws/install/gtsam}"
@@ -15,14 +17,18 @@ fi
 [[ -z "$(git -C "$S3E_POINTS_SOURCE" status --porcelain)" ]] || {
   echo 'gtsam_points checkout has local changes' >&2; exit 1;
 }
-cmake -S FAST-LIVO2-ROS2/research/adapters/gtsam_points -B .ros2/mixed-pgo-build \
+S3E_MIXED_CUDA_ARGS=(-DS3E_REGISTRATION_CUDA="${S3E_REGISTRATION_CUDA:-OFF}")
+if [[ "${S3E_REGISTRATION_CUDA:-OFF}" == ON ]]; then
+  S3E_MIXED_CUDA_ARGS+=(-DCMAKE_CUDA_ARCHITECTURES="${S3E_CUDA_ARCHITECTURES:-native}")
+fi
+cmake -S "$S3E_MIXED_REPO/research/adapters/gtsam_points" -B .ros2/mixed-pgo-build \
   -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$S3E_GTSAM_PREFIX" \
   -DGTSAM_POINTS_SOURCE_DIR="$S3E_POINTS_SOURCE" \
-  -DCMAKE_INSTALL_PREFIX="$S3E_MIXED_ROOT/.ros2/mixed-pgo-install"
+  -DCMAKE_INSTALL_PREFIX="$S3E_MIXED_ROOT/.ros2/mixed-pgo-install" "${S3E_MIXED_CUDA_ARGS[@]}"
 cmake --build .ros2/mixed-pgo-build --parallel "${S3E_BUILD_JOBS:-3}"
 cmake --install .ros2/mixed-pgo-build
 python3 - <<'PY'
-import hashlib, json, pathlib, subprocess
+import hashlib, json, pathlib, subprocess, os
 root=pathlib.Path.cwd()
 binary=root/'.ros2/mixed-pgo-install/bin/s3e_mixed_pgo'
 sha=lambda p:hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()
@@ -32,12 +38,12 @@ for line in subprocess.check_output(['ldd',str(binary)],text=True).splitlines():
         path=pathlib.Path(line.split('=>')[1].split()[0]).resolve()
         libraries[str(path)]=sha(path)
 assert any('libgtsam.so' in p for p in libraries)
-sources=root/'FAST-LIVO2-ROS2/research/adapters/gtsam_points'
+sources=pathlib.Path(os.environ['S3E_MIXED_REPO'])/'research/adapters/gtsam_points'
 manifest=dict(binary_sha256=sha(binary),libraries=libraries,
     versions=json.loads(subprocess.check_output([str(binary),'--version'],text=True)),
     adapter_sources={str(p.relative_to(sources)):sha(p) for p in sorted(sources.rglob('*')) if p.is_file()},
     upstream_commit='9d32e7dbecf6015560d84b4901d6b0a6f483ec46',
-    build_scope='unmodified upstream CPU GICP component statically linked; installed GTSAM batch LM')
+    build_scope='pinned upstream matching kernels; optional CUDA VGICP; installed GTSAM batch LM')
 (binary.parent/'build.json').write_text(json.dumps(manifest,sort_keys=True,indent=2)+'\n')
 print(json.dumps(manifest['versions']))
 PY

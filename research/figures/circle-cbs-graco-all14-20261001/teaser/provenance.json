@@ -1,0 +1,186 @@
+{
+  "map_sha256": "75e064f4cce66255d740ffd01054bd5b6d6c19d1d20bea003f51929eb51c4b33",
+  "export_metadata_sha256": "fec5a3e2acf2c3bfd977e06c87c987229968893c0b928c6eb4ec788d0eab870f",
+  "source_script_sha256": "1602e06d56d1345b47afbbf09f568dc53e6c579923f23275e0b89e380d32f4c9",
+  "trajectory_sha256": {
+    "aerial01": "23aa474e016dffd2a9705995e0eb102b4e4805ec69540633579a44b4edb99498",
+    "aerial02": "ae98cee1ed46c44a33a803b19a433c8de295cba6ab3b03621777be852c22ecb0",
+    "aerial03": "2ff260d5ac89afdcfee9b0800c6da99383db6f26460298d8d5a3f9ed1f54bbc6",
+    "aerial04": "f8d602a905638acc2e24c1b571e1267475357746004986a4020cd7e9a42895cd",
+    "aerial05": "f3075363a046ef7f927b4e109fdd8ec7306d13c7ab576536e8ead78766e0df81",
+    "aerial06": "d2f0b5576f08b457a82cbd580a40451e78af2ebf00a7a542e0087c90bc0a4446",
+    "aerial07": "59d31a6b64e8da064816370a849122f1ac47495bd428d50e562067b668c468f4",
+    "aerial08": "10b24b15a7e5903b9d341073558deab85a160fb03050bfe42dda80db43f1e2a6",
+    "ground01": "c5cf70f096e91e0a0eb9ec60fed8335c33cb810b46b6739e131a03a96b310bba",
+    "ground02": "e0b776689c86b2e22e3200d552b8e77259520d4408a74efec69fdff18179ee49",
+    "ground03": "5335819ada39a9f504ec63d292c4d012400c701e40111ac74c23789a5c1e0a89",
+    "ground04": "ae91f8f9bee50c1db728b59a27ccb3eeb5f69846d5a653691ce205528fb45fe5",
+    "ground05": "839aa50c14ebe6e0fba983289aeed78bc029cfaa87f149600119b04e93eb8a9d",
+    "ground06": "ab157b75f7dc1cb9e21865594f9651775c1bbe9db051c1131363c60410b2a063"
+  },
+  "robots": [
+    "aerial01",
+    "aerial02",
+    "aerial03",
+    "aerial04",
+    "aerial05",
+    "aerial06",
+    "aerial07",
+    "aerial08",
+    "ground01",
+    "ground02",
+    "ground03",
+    "ground04",
+    "ground05",
+    "ground06"
+  ],
+  "map_points": 12951872,
+  "display_points": 350000,
+  "original_map_colors": true,
+  "trajectory_colors_rgb": {
+    "aerial01": [
+      33,
+      102,
+      172
+    ],
+    "aerial02": [
+      67,
+      147,
+      195
+    ],
+    "aerial03": [
+      1,
+      133,
+      113
+    ],
+    "aerial04": [
+      94,
+      156,
+      102
+    ],
+    "aerial05": [
+      194,
+      59,
+      50
+    ],
+    "aerial06": [
+      220,
+      143,
+      38
+    ],
+    "aerial07": [
+      141,
+      93,
+      159
+    ],
+    "aerial08": [
+      178,
+      77,
+      122
+    ],
+    "ground01": [
+      70,
+      107,
+      41
+    ],
+    "ground02": [
+      139,
+      120,
+      45
+    ],
+    "ground03": [
+      43,
+      128,
+      144
+    ],
+    "ground04": [
+      105,
+      87,
+      163
+    ],
+    "ground05": [
+      174,
+      100,
+      59
+    ],
+    "ground06": [
+      98,
+      106,
+      117
+    ]
+  },
+  "trajectory_color_policy": "Exact corresponding robot RGB from PLY export metadata",
+  "orientation": "Identical to report orthographic top view",
+  "trajectory_transform": [
+    [
+      0.9997899086798585,
+      0.014290341615397372,
+      0.014694374380539818,
+      0.0
+    ],
+    [
+      0.0,
+      -0.7168938574576195,
+      0.6971823270418824,
+      0.0
+    ],
+    [
+      0.020497280354237802,
+      -0.6970358550864149,
+      -0.7167432442807048,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "ground_truth_used": false,
+  "trajectory_smoothing": false,
+  "gaps_over_1s": {
+    "aerial01": 0,
+    "aerial02": 0,
+    "aerial03": 0,
+    "aerial04": 0,
+    "aerial05": 0,
+    "aerial06": 0,
+    "aerial07": 0,
+    "aerial08": 0,
+    "ground01": 0,
+    "ground02": 0,
+    "ground03": 0,
+    "ground04": 0,
+    "ground05": 0,
+    "ground06": 0
+  },
+  "scale_bar_m": 100.0,
+  "scale_bar_endpoints_xy": [
+    [
+      -341.0434875488281,
+      -473.85980224609375
+    ],
+    [
+      -241.04348754882812,
+      -473.85980224609375
+    ]
+  ],
+  "figure_size_inches": [
+    3.5,
+    4.673456749462026
+  ],
+  "pdf_map_dpi": 900,
+  "png_dpi": 600,
+  "pdf_trajectory_and_text": "vector",
+  "limits_xy": [
+    [
+      -360.0434875488281,
+      -508.85980224609375
+    ],
+    [
+      184.32159423828125,
+      218.01638793945312
+    ]
+  ]
+}

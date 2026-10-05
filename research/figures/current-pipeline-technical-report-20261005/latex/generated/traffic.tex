@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Measured remote application payload for the current GRACO all-14 run. One MB is $10^6$ bytes.}
+\label{tab:traffic}
+\begin{tabular}{lrr}
+\toprule
+Exchange & MB & Share (\%) \\
+\midrule
+Retrieval queries & 410.444 & 75.07 \\
+Verification geometry replies & 110.565 & 20.22 \\
+Candidate replies & 2.916 & 0.53 \\
+Verified constraints & 0.350 & 0.06 \\
+Geometry requests & 0.109 & 0.02 \\
+Peer completion messages & 0.014 & 0.00 \\
+PCM exchange & 1.206 & 0.22 \\
+CBS registration geometry & 17.752 & 3.25 \\
+CBS belief requests and replies & 3.412 & 0.62 \\
+\textbf{Total} & \textbf{546.767} & \textbf{100.00} \\
+\bottomrule
+\end{tabular}
+\par\vspace{5pt}\begin{minipage}{0.97\linewidth}\footnotesize Recipient fan-out is counted. Middleware/transport headers, discovery and retransmissions are excluded; these are not physical link-byte measurements.\end{minipage}
+\end{table}

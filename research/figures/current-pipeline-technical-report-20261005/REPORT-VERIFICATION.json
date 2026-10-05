@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-05",
+  "scope": "Current-method technical report; one main run and a publication-policy ablation",
+  "main_run": "circle-mature-online148-20261001/full",
+  "pdf_pages": 11,
+  "pdf_sha256": "f5d39c09c7330d5f51c795196f740341b3c4308d8b7181f17d1c6b32e9f70ca9",
+  "latex_warnings": [],
+  "all_fonts_embedded": true,
+  "unresolved_citations_or_references": false,
+  "visual_review": {
+    "pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "checks": [
+      "No clipped tables, text, equations or captions",
+      "All timing axes, units and legend scopes readable",
+      "Figures agree with current online-run evidence",
+      "References and page numbering resolve"
+    ],
+    "title_revision_review": {
+      "pages": [
+        1,
+        2
+      ],
+      "result": "Title/subtitle and running header fit without clipping; 11-page pagination retained"
+    }
+  },
+  "evidence_checks": {
+    "raw_timing_hash_matches_summary": true,
+    "registration_pairs": 110,
+    "pcm_retained_loops": 111,
+    "pcm_rejected_loops": 0,
+    "recordings_validated": 14,
+    "map_points": 13353004,
+    "tables": {
+      "robot_count": 14,
+      "circles": 366,
+      "matched_poses": 45397,
+      "joint_ate_m": 0.9327699534421713,
+      "joint_ate_recomputed_from_robot_sse_m": 0.9327699534421714,
+      "communication_bytes": 546767480,
+      "timed_updates": 842,
+      "peer_service_requests": 3930,
+      "mature_evidence_coverage": 0.9151692008779447,
+      "freeze_evidence_coverage": 0.34746879664802427,
+      "all_nonempty_prefixes_meet_coverage": true,
+      "traffic_breakdown_sums_exactly": true,
+      "baseline_rows_complete_and_connected": true,
+      "generated_tables": [
+        "baseline-communication.tex",
+        "maturation-ablation.tex",
+        "robot-accuracy.tex",
+        "settings.tex",
+        "timing.tex",
+        "traffic.tex"
+      ]
+    }
+  },
+  "active_manuscript": {
+    "method": "Point-cloud multilayer BEVs, mature fixed circles, persistent distributed CBS with native GPU VGICP factors",
+    "obsolete_pipeline_sections": false,
+    "ablation": "Immediate geometry freezing versus maturation; independently replayed inputs",
+    "baseline_scope": "Separate completed ground-trio application-communication measurements, not matched accuracy or efficiency ranking",
+    "current_configuration_s3e_accuracy_claimed": false
+  },
+  "portable_rebuild": {
+    "status": "passed",
+    "method": "Extract zip into a fresh /tmp directory, verify all manifests, regenerate six tables, compile with pdfLaTeX/BibTeX, compare all extracted page text",
+    "files_verified": 115,
+    "table_bytes_identical": true,
+    "pdf_text_identical": true,
+    "compile_warnings": []
+  },
+  "title": "Collaborative LiDAR Mapping with Multi-Layer BEVs and Belief Sharing on Robot-Decoupled Submap Graphs"
+}

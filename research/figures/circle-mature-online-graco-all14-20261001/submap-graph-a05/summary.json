@@ -1,0 +1,94 @@
+{
+  "experiment": "circle-mature-online148-20261001/full",
+  "robot": "aerial05",
+  "submaps": 30,
+  "odometry_edges": 29,
+  "retained_loop_edges": 8,
+  "loops_with_registration_factors": 8,
+  "within_robot_loop_edges": 0,
+  "peer_endpoints": [
+    "A07:7",
+    "A07:14",
+    "A07:16",
+    "A07:17",
+    "A08:12",
+    "A08:15",
+    "A08:20",
+    "G01:9"
+  ],
+  "peer_robots": [
+    "aerial07",
+    "aerial08",
+    "ground01"
+  ],
+  "co_creation_groups": {
+    "1661851067319628954": [
+      0,
+      1
+    ],
+    "1661851127415683985": [
+      6,
+      7
+    ],
+    "1661851145687701941": [
+      9,
+      10
+    ],
+    "1661851181959739923": [
+      13,
+      14
+    ],
+    "1661851202007757902": [
+      16,
+      17
+    ],
+    "1661851212895771027": [
+      19,
+      20
+    ],
+    "1661851240559796095": [
+      22,
+      23
+    ]
+  },
+  "distinct_creation_timestamps": 23,
+  "T_display_cbs": [
+    [
+      0.9990906337962101,
+      -0.0008599104811643411,
+      0.042628230254745964,
+      2.222405866283226
+    ],
+    [
+      -0.031153913504233383,
+      -0.6973048068167077,
+      0.7160973677257056,
+      366.2324681070599
+    ],
+    [
+      0.029109090230682234,
+      -0.7167742091790682,
+      -0.6966974909683998,
+      -9.922035272362251
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "ground_truth_used": false,
+  "checks": {
+    "sources_match_final_map_export": true,
+    "all_nodes_have_final_poses": true,
+    "odometry_edges_match_recorded_bridge_construction": true,
+    "all_eight_loop_pairs_have_accepted_geometry_factors": true,
+    "footprints_match_publication_index": true
+  },
+  "metric_node_positions": "Creation-anchor pose origins, no jitter; grouped labels for co-created nodes",
+  "topology_panel": "ID-ordered layout, no metric meaning; same actual graph edges",
+  "auxiliary_variables": "CBS anchor/belief auxiliary variables and priors are not shown; this is the submap constraint graph",
+  "data_sha256": "7531b58cf671eb1fecbf2d68f0cd03e63e9b71909fe074771e4bdebad9f20fb7",
+  "script_sha256": "f762db9bb3373180b7a55b4aa564ed8ea06eb8e7219f8a3482c09a9c09ebc987"
+}

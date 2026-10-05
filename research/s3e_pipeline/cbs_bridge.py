@@ -29,6 +29,13 @@ def local_graph(rows, robot, cfg):
         raise ValueError('CBS requires consecutive local keys starting at zero')
     if any(type(r['stamp_ns']) is not int for r in rows):
         raise ValueError('Timestamps must be integer nanoseconds')
+    if any(r.get('strategy') == 'fixed_spatial' for r in rows):
+        from .circle_submaps import validate_row
+        for row in rows: validate_row(row)
+        if any(b['stamp_ns'] < a['stamp_ns'] for a,b in zip(rows,rows[1:])):
+            raise ValueError('Spatial anchors must follow creation order')
+        # Equal creation times are valid: identity is (robot, submap ID),
+        # never the timestamp. Geometry remains in each creation-anchor frame.
     origin = inv(pose(rows[0]['T_world_body']))
     nodes = [dict(r, T_world_body=(origin @ pose(r['T_world_body'])).tolist()) for r in rows]
     sigmas = np.array([np.deg2rad(cfg['odometry_rotation_sigma_deg'])] * 3 +

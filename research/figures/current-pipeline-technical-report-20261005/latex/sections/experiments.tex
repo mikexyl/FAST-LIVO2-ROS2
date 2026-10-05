@@ -1,0 +1,34 @@
+\section{Experimental protocol}
+\label{sec:protocol}
+The experiment assigns one logical robot to each of GRACO's~\cite{graco} eight aerial and six ground sequences. All 14 converted sensor streams replay simultaneously at $1\times$ on workstation 148. Each robot runs fresh calibrated EllipseLIO, circle preparation, point-cloud BEV retrieval and verification, and persistent distributed PCM/CBS during playback. Peers exchange actual DDS messages with isolated geometry ownership. The result is a simultaneous online replay on one workstation, not a physical 14-radio deployment or an embedded-hardware benchmark.
+
+Native frontends use dataset- and robot-specific calibration, reliable sensor input, four ROS callback threads, and one numerical-library thread per process. No CPU, memory or GPU quotas are imposed. The effective native configurations and per-robot CBS YAML files, rather than unused inherited profile fields, define the run. Odometry validation requires complete finite chronological output, speed below 20\,m/s, and no post-initialization gap of at least 1\,s between successful LiDAR updates. Ground truth is confined to post-run evaluation.
+
+Position accuracy uses evo~1.36.5 with 50\,ms association, rigid $\SE(3)$ alignment and no scale fitting. GRACO reference positions are expressed at the IMU; the separate ground/aerial calibrations are used consistently. For matched sets $\mathcal{I}_r$, joint ATE is
+\begin{equation}
+ \ate_{\mathcal{C}}=\sqrt{\frac{\sum_{r\in\mathcal{C}}\sum_{i\in\mathcal{I}_r}
+ \|R_{\mathcal{C}}\widehat p_{ri}+t_{\mathcal{C}}-p^{\mathrm{GT}}_{ri}\|^2}
+ {\sum_{r\in\mathcal{C}}|\mathcal{I}_r|}}.
+\end{equation}
+One shared transform is fitted for the whole confirmed component. This pose-weighted RMSE differs from averaging independently aligned robot errors. A disconnected team has no valid all-team joint ATE. Map assembly uses optimized poses and native gravity only.
+
+\section{Fourteen-robot online results}
+\label{sec:results}
+All 14 robots form one shared component at 430.46\,s after playback release, before the last bag ends at 520.05\,s. The final publication is at 909.19\,s, including 389.14\,s after the last bag; total measured process lifetime is 913.15\,s. The final accuracy therefore describes the settled output of an online run, not accuracy at the instant playback ends. Thirteen growing graph revisions are admitted and each robot completes 60--62 persistent iterations, including final settling.
+
+The final graph contains 366 submaps and 111 retained loops. Of 120 candidates reaching three-dimensional verification, 111 are accepted and all 111 survive PCM. Of those loops, 110 admit GPU registration factors and pass final support checks. The G02/26--G04/4 pair has initial overlap 0.289, below the unchanged 0.30 geometry-factor gate; only its companion pose constraint remains. Zero PCM rejection in this run does not establish zero false positives, and overlapping evidence makes loop counts dependent.
+
+The all-14 joint ATE is 0.933\,m over 45,397 associated poses. Table~\ref{tab:robot-accuracy} distinguishes independently aligned trajectory shape from placement under the shared transform. CBS need not improve every robot's independent ATE while establishing a shared map. All odometry streams pass validation: maximum recorded speed is 5.43\,m/s and the largest successful-update gap is 0.472\,s.
+\input{generated/robot-accuracy}
+
+The exported map contains 13,353,004 unique native representatives (Fig.~\ref{fig:joint-map}). Its gravity-aligned PLY retains robot colors, submap ownership and an uncovered-point flag, without an additional export voxel filter. The 31,212 representatives outside every footprint receive the nearest correction and remain visible. Independent PLY readback, per-robot counts and finite coordinates pass validation; a visual map is not itself an accuracy measurement.
+
+\subsection{Ablation: the geometry-publication policy}
+\label{sec:ablation}
+Immediate geometry freezing tests whether geometric footprint coverage alone supplies adequate retrieval support. The ablation uses the same circle settings, odometry calibration, terrain estimator, matching and verification thresholds, PCM, and GPU registration settings. Its independent fresh replay is not an exactly frozen-input experiment; small differences in odometry and circle count remain. One execution per setting provides descriptive evidence, without repeated-trial confidence intervals.
+\input{generated/maturation-ablation}
+
+The largest recovered component increases from four to 14 robots when geometry matures before publication, while empty layered descriptors decrease from 197 to 74. Published evidence contains 91.5\% of final observed native point IDs, compared with 34.7\% under immediate freezing. These evidence fractions differ from the 99\% occupied-cell footprint target. Every nonempty completed placement update satisfies that target, with a measured minimum of 99.0003\%.
+
+The current run publishes 188 circles after normal stability/support checks, 129 at their deadline, and 49 at end of stream. Median sensor-time age at publication is 110.47\,s; the maximum is 129.60\,s because deadlines are checked at observations. Thus support improves at the cost of delayed availability and greater traffic. The remaining 74 terrain failures have no layered features. This ablation supports maturation for the tested sequence, not a universal waiting policy or guaranteed semantic terrain identification.
+\FloatBarrier

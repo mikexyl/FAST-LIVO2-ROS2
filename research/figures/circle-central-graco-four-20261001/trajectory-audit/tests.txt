@@ -1,0 +1,2 @@
+2026-10-01: 6 passed in 0.23s
+Modules: test_trajectory_continuity.py and test_circle_central_evaluation.py. New checks cover rigid-transform invariance, detection of an injected 1 m discontinuity, and rejected timestamp mismatches/nonchronological input.

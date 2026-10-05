@@ -1,0 +1,41 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 703a45b..5800696 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,6 +60,9 @@ endif()
+ 
+ include(CTest)
+ if(BUILD_TESTING)
++  add_executable(test_anchor_bootstrap tests/test_anchor_bootstrap.cpp)
++  target_link_libraries(test_anchor_bootstrap PRIVATE ${PROJECT_NAME})
++  add_test(NAME anchor_bootstrap COMMAND test_anchor_bootstrap)
+   add_executable(test_persistent_beliefs tests/test_persistent_beliefs.cpp)
+   target_link_libraries(test_persistent_beliefs PRIVATE ${PROJECT_NAME})
+   add_test(NAME persistent_beliefs COMMAND test_persistent_beliefs)
+diff --git a/include/cbs/bpsam/bpsam.h b/include/cbs/bpsam/bpsam.h
+index c5debf5..8f4e178 100644
+--- a/include/cbs/bpsam/bpsam.h
++++ b/include/cbs/bpsam/bpsam.h
+@@ -200,6 +200,22 @@ class BPSAMT : public BaseSAM {
+ 
+   AgentId id() const { return params_.robot_id; }
+ 
++  // Refresh only the sealed-mode bootstrap for an anchor whose publisher's
++  // frame is now connected at the recipient. The Gaussian and its producer
++  // identity are unchanged; no belief contraction or measurement is added here.
++  void refreshMissingAnchorBootstraps(AgentId recipient,
++                                     const KeySet& initialized_anchors) const {
++    if (params_.persistent) return;
++    auto& counts = sent_belief_counts_[recipient];
++    for (auto& [endpoint, count] : counts) {
++      const auto [key, producer] = endpoint;
++      if (isRobotKey(key) && initialized_anchors.count(key) == 0 &&
++          initialized_anchors.count(toRobotKey(producer)) != 0) {
++        count = 0;
++      }
++    }
++  }
++
+   auto marginalizationFactors() const {
+     if (not tmp_marginals_) {
+       return GaussianFactorGraph{};

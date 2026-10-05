@@ -1,0 +1,7 @@
+{
+  "success": false,
+  "reason": "Published transforms inconsistent despite matching reference labels",
+  "joint_ate_m": 87.8994038757,
+  "max_loop_translation_m": 208.673,
+  "original_completion_flag_insufficient": true
+}

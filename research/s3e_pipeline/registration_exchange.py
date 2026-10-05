@@ -24,6 +24,7 @@ class RegistrationExchange:
         self.source_records = {}
         self.ellipsoid = self.cfg['factor']=='ellipsoid'
         self.expected = {}
+        self.spatial_expected = {}
         self.cache = cache
         if cache is not None:
             self.local = cache.setdefault('local', {})
@@ -48,20 +49,28 @@ class RegistrationExchange:
             raise ValueError('Invalid requested local geometry ID')
         if key not in self.local:
             row = self.rows[key]
+            spatial = row.get('strategy') == 'fixed_spatial'
             if (row['robot_id'] != self.robot or row['keyframe_id'] != key or
                 row.get('cloud_frame') != row.get('body_frame') or not row.get('body_frame') or
-                row.get('submap_end_ns') != row['stamp_ns'] or
+                (not spatial and (row.get('submap_end_ns') != row['stamp_ns'] or
                 row.get('geometry_preprocessing') not in ('causal trailing submap in keyframe IMU frame',
-                    'causal completed native submap in anchor IMU frame','causal accumulated area map in snapshot IMU frame')):
+                    'causal completed native submap in anchor IMU frame','causal accumulated area map in snapshot IMU frame')))):
                 raise ValueError('Invalid registration submap coordinates or time')
-            if not self.ellipsoid and row.get('strategy')=='area' and self.cfg['max_range_m'] is not None:
+            if spatial and self.ellipsoid:
+                raise ValueError('Fixed spatial prototype requires point-cloud evidence')
+            if not self.ellipsoid and row.get('strategy') in ('area','fixed_spatial') and self.cfg['max_range_m'] is not None:
                 raise ValueError('Area registration geometry must not have a 3D range crop')
             path = self.store/f'{key:06d}.npz'
             with np.load(path, allow_pickle=False) as data:
                 if self.ellipsoid:
                     from .ellipsoid_backend import prepared_evidence
                     cloud=prepared_evidence(data,row,self.cfg);voxel=self.cfg['ellipsoid_voxel_m']
-                else:cloud, voxel = bounded_cloud(data['cloud'], self.cfg['voxel_m'], self.cfg['max_points'], self.cfg['max_range_m'])
+                else:
+                    raw = data['cloud']
+                    if spatial:
+                        from .spatial_cbs_contract import prepared_cloud
+                        raw = prepared_cloud(path, data, row)
+                    cloud, voxel = bounded_cloud(raw, self.cfg['voxel_m'], self.cfg['max_points'], self.cfg['max_range_m'])
             cloud = np.asarray(cloud, dtype='<f8')
             if len(cloud) < (3 if self.ellipsoid else self.cfg['covariance_neighbors']): raise ValueError('Insufficient submap points')
             payload = dict(robot=self.robot, key=key, stamp_ns=row['stamp_ns'], cloud_frame=row['cloud_frame'],
@@ -71,10 +80,29 @@ class RegistrationExchange:
                 payload.update(schema_version=2,geometry_type='native_ellipsoids_v1',
                                evidence_sha256=row['ellipsoid_evidence_sha256'])
                 self.validate_endpoint(payload)
+            if spatial:
+                from .spatial_cbs_contract import endpoint
+                payload.update(schema_version=3, geometry_type='fixed_spatial_points_v1', submap_endpoint=endpoint(row))
             self.local[key] = payload
             self.source_records[key] = dict(source_npz=str(path), source_sha256=file_hash(path),
                                            **{k:v for k,v in payload.items() if k != 'cloud'})
-        return self.local[key]
+        payload = self.local[key]
+        if self.rows[key].get('strategy') == 'fixed_spatial':
+            from .spatial_cbs_contract import endpoint
+            if payload.get('submap_endpoint') != endpoint(self.rows[key]):
+                raise ValueError('Changed persistent spatial endpoint')
+        self.validate_spatial_endpoint(payload)
+        return payload
+
+    def validate_spatial_endpoint(self, payload):
+        key = (payload['robot'],payload['key'])
+        expected = self.spatial_expected.get(key)
+        spatial = payload.get('geometry_type') == 'fixed_spatial_points_v1'
+        if expected is None and not spatial: return
+        if (expected is None or not spatial or payload.get('schema_version') != 3 or
+            payload.get('submap_endpoint') != expected or
+            any(payload[k] != expected[k] for k in ('robot','key','stamp_ns','cloud_frame'))):
+            raise ValueError('Spatial evidence differs from verified loop endpoint')
 
     def validate_endpoint(self,payload):
         endpoint=(payload['robot'],payload['key'])
@@ -94,6 +122,17 @@ class RegistrationExchange:
             decisions = named_pcm_verdicts(pcm, self.robots)
             self.selected = {native_pair(k, self.robots):e for k,e in edges.items()
                              if k[0][0] == k[1][0] or decisions[k]['retained']}
+            for edge in self.selected.values():
+                evidence = edge.get('diagnostics',{}).get('spatial_endpoints')
+                if evidence is None: continue
+                if len(evidence) != 2: raise ValueError('Incomplete spatial endpoint provenance')
+                if {(m['robot'],m['key']) for m in evidence} != {tuple(edge['i']),tuple(edge['j'])}:
+                    raise ValueError('Spatial provenance endpoint mismatch')
+                for meta in evidence:
+                    endpoint = (meta['robot'],meta['key'])
+                    if endpoint in self.spatial_expected and self.spatial_expected[endpoint] != meta:
+                        raise ValueError('Changed verified spatial endpoint')
+                    self.spatial_expected[endpoint] = meta
             if self.ellipsoid:
                 for edge in self.selected.values():
                     evidence=edge.get('diagnostics',{}).get('ellipsoid_endpoints',[])
@@ -110,6 +149,7 @@ class RegistrationExchange:
                 elif self.cache is not None and (robot, key) in self.cache['remote']:
                     self.clouds[robot, key] = self.cache['remote'][robot, key]
                     if self.ellipsoid: self.validate_endpoint(self.clouds[robot, key])
+                    self.validate_spatial_endpoint(self.clouds[robot, key])
                 else: self.requested.add((robot, key))
             for peer in self.robots:
                 keys = sorted(k for r,k in self.requested if r == peer)
@@ -137,6 +177,7 @@ class RegistrationExchange:
                     from .ellipsoid_registration import validate,projectors
                     projectors(validate(cloud));self.validate_endpoint(payload)
                     if endpoint not in self.expected:raise ValueError('Missing verified endpoint metadata')
+                self.validate_spatial_endpoint(payload)
                 if endpoint in self.clouds and self.clouds[endpoint] != payload:
                     raise ValueError('Changed duplicate registration cloud')
                 self.clouds[endpoint] = payload

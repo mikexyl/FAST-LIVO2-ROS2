@@ -1,0 +1,114 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 703a45b..77414f3 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,6 +60,12 @@ endif()
+ 
+ include(CTest)
+ if(BUILD_TESTING)
++  add_executable(test_persistent_anchor_relay tests/test_persistent_anchor_relay.cpp)
++  target_link_libraries(test_persistent_anchor_relay PRIVATE ${PROJECT_NAME})
++  add_test(NAME persistent_anchor_relay COMMAND test_persistent_anchor_relay)
++  add_executable(test_anchor_bootstrap tests/test_anchor_bootstrap.cpp)
++  target_link_libraries(test_anchor_bootstrap PRIVATE ${PROJECT_NAME})
++  add_test(NAME anchor_bootstrap COMMAND test_anchor_bootstrap)
+   add_executable(test_persistent_beliefs tests/test_persistent_beliefs.cpp)
+   target_link_libraries(test_persistent_beliefs PRIVATE ${PROJECT_NAME})
+   add_test(NAME persistent_beliefs COMMAND test_persistent_beliefs)
+diff --git a/include/cbs/bpsam/bpsam.h b/include/cbs/bpsam/bpsam.h
+index c5debf5..8f4e178 100644
+--- a/include/cbs/bpsam/bpsam.h
++++ b/include/cbs/bpsam/bpsam.h
+@@ -200,6 +200,22 @@ class BPSAMT : public BaseSAM {
+ 
+   AgentId id() const { return params_.robot_id; }
+ 
++  // Refresh only the sealed-mode bootstrap for an anchor whose publisher's
++  // frame is now connected at the recipient. The Gaussian and its producer
++  // identity are unchanged; no belief contraction or measurement is added here.
++  void refreshMissingAnchorBootstraps(AgentId recipient,
++                                     const KeySet& initialized_anchors) const {
++    if (params_.persistent) return;
++    auto& counts = sent_belief_counts_[recipient];
++    for (auto& [endpoint, count] : counts) {
++      const auto [key, producer] = endpoint;
++      if (isRobotKey(key) && initialized_anchors.count(key) == 0 &&
++          initialized_anchors.count(toRobotKey(producer)) != 0) {
++        count = 0;
++      }
++    }
++  }
++
+   auto marginalizationFactors() const {
+     if (not tmp_marginals_) {
+       return GaussianFactorGraph{};
+diff --git a/src/bpsam/bpsam.cpp b/src/bpsam/bpsam.cpp
+index 3eda073..a817d5c 100644
+--- a/src/bpsam/bpsam.cpp
++++ b/src/bpsam/bpsam.cpp
+@@ -171,7 +171,7 @@ std::map<Key, std::map<AgentId, gbp::Gaussian>> BPSAMT<VALUE>::getBeliefs(
+   }
+   spdlog::debug("BPSAM {}: {}", id(), keys_ss.str());
+ 
+-  if (use_other_robots && !params_.persistent) {
++  if (use_other_robots) {
+     std::stringstream ss;
+     // find robot keys from the keys
+     for (const auto& key : keys) {
+@@ -238,6 +238,23 @@ std::map<Key, std::map<AgentId, gbp::Gaussian>> BPSAMT<VALUE>::getBeliefs(
+     for (auto it = beliefs.begin(); it != beliefs.end();) {
+       for (auto jt = it->second.begin(); jt != it->second.end();) {
+         const auto previous = robot_last.find({it->first, jt->first});
++        if (jt->first != params_.robot_id) {
++          // Anchor covariances learned only through incoming anchor factors
++          // are absent from the GLOBAL cavity. Forward the original producer's
++          // Gaussian, as in coordinated CBS, instead of dropping that route or
++          // inventing a locally independent measurement. It has already been
++          // damped; do not contract or apply the divergence gate a second time.
++          // The receive-side canonical/moment conversion can introduce roundoff.
++          const bool unchanged = previous != robot_last.end() &&
++              previous->second.mu().isApprox(jt->second.mu(), 1e-12) &&
++              previous->second.Sigma().isApprox(jt->second.Sigma(), 1e-12);
++          if (jt->first == requesting_robot || unchanged) {
++            jt = it->second.erase(jt);
++          } else {
++            ++jt;
++          }
++          continue;
++        }
+         auto filtered = params_.persistent_belief(
+             jt->second, previous == robot_last.end() ? nullptr : &previous->second);
+         if (!filtered) jt = it->second.erase(jt);
+@@ -430,6 +447,7 @@ ISAM2Result BPSAMT<VALUE>::update(const NonlinearFactorGraph& newFactors,
+   bool robust_belief_factor = true;
+ 
+   NonlinearFactorGraph newFactorsCopy = newFactors;
++  const KeySet new_factor_keys = newFactorsCopy.keys();
+ 
+   Values newThetaCopy(newTheta);
+ 
+@@ -465,7 +483,7 @@ ISAM2Result BPSAMT<VALUE>::update(const NonlinearFactorGraph& newFactors,
+       bool connected =
+           variableIndex_.find(first_key) != variableIndex_.end() or
+           variableIndex_.find(second_key) != variableIndex_.end() or
+-          newFactorsCopy.exists(first_key) or newFactorsCopy.exists(second_key);
++          new_factor_keys.count(first_key) or new_factor_keys.count(second_key);
+       if (connected) {
+         newBeliefFactors.push_back(factor);
+         if (variableIndex_.find(first_key) == variableIndex_.end() and
+@@ -609,10 +627,14 @@ ISAM2Result BPSAMT<VALUE>::update(const NonlinearFactorGraph& newFactors,
+   }
+ 
+   // remove keys already exist
++  // FactorGraph::exists tests a factor SLOT, not a variable key. In persistent
++  // mode that check discarded every supplied pose (LabeledSymbol keys are
++  // much larger than the factor count), initializing the whole map at identity.
++  const KeySet connected_keys = odom_valid_belief_factors.keys();
+   Values filtered_new_theta;
+   for (const auto& [key, value] : newThetaCopy) {
+     if (not valueExists(key) &&
+-        (!params_.persistent || odom_valid_belief_factors.exists(key))) {
++        (!params_.persistent || connected_keys.count(key))) {
+       filtered_new_theta.insert(key, value);
+     }
+   }

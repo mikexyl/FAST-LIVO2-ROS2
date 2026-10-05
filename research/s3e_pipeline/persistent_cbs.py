@@ -16,6 +16,25 @@ from .mixed_pgo import settings as registration_settings
 from .dpgo import native_overlay
 
 
+def common_reference_ready(snapshot, robots):
+    """Every retained-loop component has reached its lowest native robot ID.
+
+    A finite settling count is not a frame-propagation barrier on long chains.
+    Callers may keep the final prefix open until this condition, then seal the
+    unchanged prefix without resetting the optimizer or geometry cache.
+    """
+    parent={r:r for r in robots}
+    def root(r):
+        while parent[r]!=r: r=parent[r]
+        return r
+    for e in snapshot['constraints']:
+        a,b=root(e['i'][0]),root(e['j'][0])
+        first,second=sorted((a,b),key=robots.index)
+        parent[second]=first
+    statuses=snapshot['summary']['robots']
+    return all(statuses[r]['component']==root(r) for r in robots)
+
+
 def parameters(config):
     cfg = copy.deepcopy(config['dpgo'])
     if not cfg.get('pcm', {}).get('enabled', False):

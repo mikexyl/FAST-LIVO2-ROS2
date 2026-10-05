@@ -4,7 +4,7 @@ import time
 from .artifacts import digest
 from .online_io import Journal, atomic_json
 from .online_epochs import Cadence, prefix, freeze_epoch
-from .persistent_cbs import PersistentSession, save_snapshot
+from .persistent_cbs import PersistentSession, save_snapshot, common_reference_ready
 
 
 def run(work, source, config, interval=None):
@@ -14,6 +14,7 @@ def run(work, source, config, interval=None):
     events = Journal(root/'events.jsonl'); session = None; accepted = []; pending = None
     captured_final = False; identity = None; epoch = None; published = None; last_poll = 0.
     coalesced = 0; ready_started = time.monotonic()
+    awaiting_reference = False; reference_started = None
     try:
         session = PersistentSession(config,source,root/'persistent',
             {r:work/f'prepared-{r}/store' for r in robots})
@@ -43,18 +44,36 @@ def run(work, source, config, interval=None):
                     publication = dict(revision=session.revision,path=str(epoch/'dpgo'),
                         cutoff_wall_ns=metadata['cutoff_wall_ns'],published_wall_ns=time.time_ns(),
                         loops=snapshot['summary']['loops'],inputs=str(epoch/'input.json'),mode='persistent',
-                        iterations=snapshot['summary']['iterations'])
+                        iterations=snapshot['summary']['iterations'],
+                        components={r:s['component'] for r,s in snapshot['summary']['robots'].items()},
+                        common_reference_ready=common_reference_ready(snapshot,robots),
+                        keyframes=snapshot['summary']['keyframes'])
                     atomic_json(epoch/'publication.json',publication); atomic_json(root/'latest.json',publication)
                     events.append(dict(type='epoch_published',**publication))
                     if snapshot['summary']['finished']:
                         atomic_json(root/'DONE',dict(revisions=session.revision,mode='persistent',
                             coalesced_prefixes=coalesced,final_loops=len(accepted),finished_wall_ns=time.time_ns()))
                         return
+                if awaiting_reference and snapshot:
+                    if common_reference_ready(snapshot,robots):
+                        atomic_json(root/'reference-barrier.json',dict(
+                            wall_ns=time.time_ns(),elapsed_s=time.monotonic()-reference_started,
+                            iterations=snapshot['summary']['iterations'],
+                            components={r:s['component'] for r,s in snapshot['summary']['robots'].items()}))
+                        pending=(session.last_rows,session.last_edges,identity,time.time_ns(),
+                            dict(final=True,reference_barrier_passed=True,target_interval_s=interval))
+                        awaiting_reference=False
+                    elif time.monotonic()-reference_started>config['dpgo'].get('timeout_s',600):
+                        raise TimeoutError('Final online component reference propagation')
             if pending and session.submitted is None and session.ready():
                 rows,edges,key,cutoff,detail = pending; pending = None
                 epoch = freeze_epoch(work,root,session.revision+1,rows,edges,key,cutoff,detail)
                 metadata = dict(cutoff_wall_ns=cutoff)
-                session.submit(rows,edges,final=detail['final'])
+                final=detail['final']
+                if (final and config['dpgo'].get('persistent_reference_barrier',False)
+                        and not detail.get('reference_barrier_passed')):
+                    final=False;awaiting_reference=True;reference_started=time.monotonic()
+                session.submit(rows,edges,final=final)
                 events.append(dict(type='epoch_started',revision=session.revision,cutoff_wall_ns=cutoff,
                     mode='persistent',coalesced_prefixes=coalesced))
             if not session.revision and now-ready_started > config['dpgo'].get('timeout_s',600):

@@ -105,7 +105,6 @@ def refine_graph(graph, stores, cfg, source, output, provenance=None):
     import gtsam
     start = time.monotonic(); cfg = settings(cfg); output = Path(output)
     if not cfg['enabled']: return graph
-    if cfg['factor']=='vgicp_gpu':raise ValueError('vgicp_gpu is supported by distributed CBS; use its native adapter')
     provenance = provenance or native_provenance(source)
     selected = [f for f in graph['factors'] if f['kind'] == 'loop' and f['solver_weight'] > 0]
     endpoints = sorted({tuple(f[e]) for f in selected for e in ('i', 'j')})
@@ -121,9 +120,12 @@ def refine_graph(graph, stores, cfg, source, output, provenance=None):
             robot, key = endpoint
             path = Path(stores[robot])/f'{key:06d}.npz'
             row = metadata[endpoint]
-            if (row.get('cloud_frame') != row.get('body_frame') or not row.get('body_frame') or
-                    row.get('submap_end_ns') != row['stamp_ns'] or
-                    row.get('geometry_preprocessing') != 'causal trailing submap in keyframe IMU frame'):
+            if row.get('strategy') == 'fixed_spatial':
+                from .circle_submaps import validate_row
+                validate_row(row)
+            elif (row.get('cloud_frame') != row.get('body_frame') or not row.get('body_frame') or
+                  row.get('submap_end_ns') != row['stamp_ns'] or
+                  row.get('geometry_preprocessing') != 'causal trailing submap in keyframe IMU frame'):
                 raise ValueError(f'Unverified keyframe cloud coordinate frame: {endpoint}')
             with np.load(path, allow_pickle=False) as f:
                 points, voxel = bounded_cloud(f['cloud'], cfg['voxel_m'], cfg['max_points'], cfg['max_range_m'])
@@ -164,7 +166,8 @@ def refine_graph(graph, stores, cfg, source, output, provenance=None):
         f['squared_whitened_residual'] = float(residual@info@residual)
     for diagnostic in native['registrations']:
         if not diagnostic['accepted']: continue
-        result['factors'].append(dict(kind='registration', factor_type='gtsam_points::IntegratedGICPFactor',
+        result['factors'].append(dict(kind='registration', factor_type=('gtsam_points::IntegratedVGICPFactorGPU'
+            if cfg['factor']=='vgicp_gpu' else 'gtsam_points::IntegratedGICPFactor'),
             i=diagnostic['endpoint_i'], j=diagnostic['endpoint_j'], factor_index=len(result['factors']),
             solver_weight=1., robust_weight=1., known_inlier=False,
             squared_whitened_residual=2*diagnostic['final_error_fixed_last_correspondences'],

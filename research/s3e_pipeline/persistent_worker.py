@@ -42,8 +42,8 @@ class PersistentRobot(Node):
         from .isolation import restrict_reads, worker_paths
         restrict_reads(worker_paths(spec['store'], spec['store'], {}) +
                        [spec['output'], spec['ros_underlay'], spec['ros_overlay']])
+        self.transport_ready = False
         self.timer = self.create_timer(.05, self.tick)
-        atomic_json(self.output/'READY', dict(pid=os.getpid()))
 
     def send(self, event):
         msg = UInt8MultiArray(data=zlib.compress(canonical(event)))
@@ -112,6 +112,14 @@ class PersistentRobot(Node):
             atomic_json(self.output/'summary.json',status); self.finished = True
 
     def tick(self):
+        if not self.transport_ready:
+            # Reliable volatile publishers do not retain a ready packet sent
+            # before DDS discovers its subscriber. In particular, a first
+            # prefix with no loops can otherwise lose the geometry barrier.
+            if self.graph.get_subscription_count() < 1 or any(
+                    p.get_subscription_count() < 1 for p in self.peer_publishers.values()): return
+            self.transport_ready = True
+            atomic_json(self.output/'READY', dict(pid=os.getpid(), peer_subscriptions_ready=True))
         path = self.output/'input'/f'{self.revision+1}.json'
         if path.exists():
             if self.current and (self.last_estimate is None or self.last_estimate.graph_revision != self.revision):

@@ -15,6 +15,7 @@ from .online_io import atomic_json, Journal
 from .cbs_bridge import local_graph, loop_for_robot, ros_graph, matrix_pose, named_pcm_verdicts
 from .ros_dpgo_worker import reliable
 from .registration_exchange import RegistrationExchange
+from .spatial_graph import active_component
 
 
 class PersistentRobot(Node):
@@ -24,7 +25,8 @@ class PersistentRobot(Node):
         self.output = Path(spec['output']); self.revision = 0
         self.rows = []; self.edges = {}; self.pcm = None; self.registration = None
         self.cache = {}; self.inbox = []; self.current = None; self.finished = False
-        self.spatial_graph = None; self.local_constraints = []
+        self.spatial_graph = None; self.local_constraints = []; self.admitted_local_constraints = []
+        self.active_rows = []; self.pending_rows = []
         if spec['pgo'].get('spatial_neighbors', {}).get('enabled', False):
             from .spatial_graph import SpatialGraph
             self.spatial_graph = SpatialGraph(self.robot, spec['store'], spec['pgo'])
@@ -85,12 +87,17 @@ class PersistentRobot(Node):
         self.last_estimate = msg
         if msg.robot_id != self.robots.index(self.robot): raise ValueError('Foreign CBS estimate')
         if not self.current or msg.graph_revision != self.revision: return
-        if list(msg.keyframe_ids) != [r['keyframe_id'] for r in self.rows] or list(msg.stamp_ns) != [r['stamp_ns'] for r in self.rows]:
+        if list(msg.keyframe_ids) != [r['keyframe_id'] for r in self.active_rows] or list(msg.stamp_ns) != [r['stamp_ns'] for r in self.active_rows]:
             raise ValueError('Incomplete/mistimestamped persistent estimate')
         if not self.pcm or self.pcm['state'] != 'ready': return
         poses = [dict(robot_id=self.robot, keyframe_id=int(k), stamp_ns=int(t),
             T_world_body=matrix_pose(p).tolist(), reference_available=msg.reference_available,
-            component=self.robots[msg.reference_robot_id]) for k,t,p in zip(msg.keyframe_ids,msg.stamp_ns,msg.poses)]
+            component=self.robots[msg.reference_robot_id], optimized=True) for k,t,p in zip(msg.keyframe_ids,msg.stamp_ns,msg.poses)]
+        poses += [dict(robot_id=self.robot,keyframe_id=r['keyframe_id'],stamp_ns=r['stamp_ns'],
+            T_world_body=r['T_world_body'],reference_available=False,optimized=False,
+            component=f"{self.robot}/unconnected/{r['local_component']}",
+            pending_reason='no supported local path to reference submap') for r in self.pending_rows]
+        poses.sort(key=lambda r:r['keyframe_id'])
         decisions = named_pcm_verdicts(self.pcm, self.robots)
         proposed = list(self.edges.values())
         retained = [e for e in proposed if e['i'][0] == e['j'][0] or decisions[tuple(e['i']),tuple(e['j'])]['retained']]
@@ -109,7 +116,10 @@ class PersistentRobot(Node):
             registration_network_cdr_bytes=self.wire_bytes, pcm_network_cdr_bytes=self.pcm_bytes,
             cbs_last_stats=self.stats, wall_s=time.monotonic()-self.started)
         # One atomic object couples its trajectory and metadata to this revision.
-        status['map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in self.local_constraints)
+        status['map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in self.admitted_local_constraints)
+        status['pending_map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in self.local_constraints) - status['map_consistency_factors']
+        status['unconnected_submaps'] = [r['keyframe_id'] for r in self.pending_rows]
+        status['alignment_complete'] = not self.pending_rows
         atomic_json(self.output/'estimate.json', dict(status=status, poses=poses, constraints=retained,
             local_constraints=self.local_constraints))
         if msg.finished and self.stats and self.stats['iteration'] >= msg.iteration:
@@ -138,9 +148,18 @@ class PersistentRobot(Node):
             nodes, odometry = local_graph(rows, self.robot, self.spec['pgo'],
                 spatial_graph=self.spatial_graph, store=self.spec['store'])
             self.local_constraints = odometry
+            nodes, admitted_local, self.pending_rows = active_component(nodes,odometry,self.spec['pgo'])
+            self.active_rows = nodes; self.admitted_local_constraints = admitted_local
             atomic_json(self.output/'local-graph.json', dict(constraints=odometry,
+                active_keys=[r['keyframe_id'] for r in nodes],
+                unconnected_keys=[r['keyframe_id'] for r in self.pending_rows],
                 spatial=None if self.spatial_graph is None else self.spatial_graph.diagnostics()))
             edges = [loop_for_robot(e,self.robot) for e in value['edges']]
+            pending_keys = {r['keyframe_id'] for r in self.pending_rows}
+            deferred = [e for e in edges if e['i'][0] == e['j'][0] and
+                        (e['i'][1] in pending_keys or e['j'][1] in pending_keys)]
+            atomic_json(self.output/'deferred-local-loops.json',deferred)
+            edges = [e for e in edges if e not in deferred]
             local_pairs = {(tuple(e['i']),tuple(e['j'])) for e in odometry}
             if any((tuple(e['i']),tuple(e['j'])) in local_pairs for e in edges):
                 raise ValueError('Loop collides with an existing local graph factor')
@@ -151,7 +170,7 @@ class PersistentRobot(Node):
                     self.output/'registration'/str(self.revision),f"{self.spec['session']}/{self.revision}",
                     self.spec['registration_factors'],self.send,self.cache)
             self.graph.publish(PersistentInput(session_id=self.spec['session'],revision=self.revision,
-                final=value['final'],graph=ros_graph(nodes,odometry+edges,self.robots)))
+                final=value['final'],graph=ros_graph(nodes,admitted_local+edges,self.robots)))
         pending = []
         for revision,event in self.inbox:
             if revision == self.revision and self.registration: self.registration.receive(event)

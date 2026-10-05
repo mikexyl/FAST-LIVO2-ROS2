@@ -30,11 +30,12 @@ def run(store, output):
             raise AssertionError('An admitted spatial edge changed')
         old = list(edges)
         prefixes.append(dict(submaps=n, available_ns=rows[n-1]['available_ns'],
-            odometry_edges=n-1, map_consistency_edges=len(edges),
+            odometry_edges=0, components=graph.diagnostics()['component_count'], map_consistency_edges=len(edges),
             additional_degree_max=max(graph.degree), construction_s=time.perf_counter()-before))
     nodes, edges = local_graph(rows, robot, pgo, spatial_graph=graph)
-    result = dict(robot=robot, nodes=len(nodes), odometry_edges=len(rows)-1,
-        map_consistency_edges=len(graph.edges), local_cycle_rank=len(graph.edges),
+    result = dict(robot=robot, nodes=len(nodes), odometry_edges=0,
+        map_consistency_edges=len(graph.edges), local_cycle_rank=graph.diagnostics()['cycle_rank'],
+        component_count=graph.diagnostics()['component_count'],
         construction_wall_s=time.perf_counter()-start,
         fresh_process_peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
         scope='sealed publication-prefix graph construction only; no optimization or new sensor replay',

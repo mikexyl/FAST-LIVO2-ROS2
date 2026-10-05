@@ -30,6 +30,9 @@ def reliable(depth=1000, durable=False):
 
 class Robot(Node):
     def __init__(self, spec):
+        spatial_config = spec['pgo'].get('spatial_neighbors', {})
+        if spatial_config.get('enabled', False) and spatial_config.get('topology', 'spatial_only') == 'spatial_only':
+            raise ValueError('Spatial-only graphs require the persistent component-aware bridge')
         self.spec = spec; self.robot = spec['robot']; self.robots = spec['robots']
         super().__init__('s3e_frontend', namespace=self.robot)
         self.output = Path(spec['output']); self.start = time.monotonic()

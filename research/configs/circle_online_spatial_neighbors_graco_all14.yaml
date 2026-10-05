@@ -108,6 +108,9 @@ pgo:
   gnc_probability: 0.99
   spatial_neighbors:
     enabled: true
+    topology: spatial_only
+    rotation_sigma_deg: 3.0
+    translation_sigma_m: 0.5
     max_degree: 3
     max_new_edges: 2
     min_shared_points: 100

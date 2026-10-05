@@ -89,6 +89,8 @@ class PersistentSession:
                     pcm_probability=float(settings['pcm'].get('probability',.99)),
                     pcm_minimum_clique_size=settings['pcm'].get('minimum_clique_size',1),
                     pcm_timeout_sec=float(settings['pcm'].get('timeout_s',60.)),registration_enabled=registration['enabled'])
+                spatial = config['pgo'].get('spatial_neighbors',{})
+                params['pcm_spatial_graph'] = bool(spatial.get('enabled',False) and spatial.get('topology','spatial_only')=='spatial_only')
                 if registration['enabled']:
                     params.update(registration_directory=str(local/'registration'),registration_settings=json.dumps(registration,sort_keys=True))
                 path = local/'cbs.yaml'; path.write_text(yaml.safe_dump({'/**':{'ros__parameters':params}}))
@@ -172,7 +174,9 @@ class PersistentSession:
             registration_network_cdr_bytes=sum(v['status']['registration_network_cdr_bytes'] for v in values.values()),
             pcm_network_cdr_bytes=sum(v['status']['pcm_network_cdr_bytes'] for v in values.values()))
         local = [e for v in values.values() for e in v.get('local_constraints', [])]
-        summary['map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in local)
+        summary['map_consistency_factors'] = sum(v['status']['map_consistency_factors'] for v in values.values())
+        summary['pending_map_consistency_factors'] = sum(v['status'].get('pending_map_consistency_factors',0) for v in values.values())
+        summary['alignment_complete'] = all(v['status'].get('alignment_complete',True) for v in values.values())
         return dict(summary=summary,poses=poses,constraints=list(constraints.values()),proposed=self.last_edges,
                     local_constraints=local,
                     statistics={r:str(self.output/r/'stats.jsonl') for r in self.robots})

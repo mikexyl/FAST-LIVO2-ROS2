@@ -1,0 +1,14 @@
+{
+  "pipeline": {
+    "branch": "codex/spatial-neighbor-submap-graphs",
+    "base_commit": "85fb0163f7352db934e18ae110b540c84908a954"
+  },
+  "cbs": {
+    "branch": "codex/spatial-neighbor-submap-graphs",
+    "base_commit": "0a23e909b8b3596f83589cfd63de2bc07a9269aa"
+  },
+  "cbs_ros": {
+    "branch": "codex/spatial-neighbor-submap-graphs",
+    "base_commit": "943bdbba8edc85948c06d535180c7b53a58d3d36"
+  }
+}

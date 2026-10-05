@@ -51,7 +51,8 @@ def local_graph(rows, robot, cfg, store=None, spatial_graph=None):
             if store is None:
                 raise ValueError('Spatial graph requires the owned sealed geometry store')
             spatial_graph = SpatialGraph(robot, store, cfg)
-        edges += spatial_graph.update(rows)
+        spatial = spatial_graph.update(rows)
+        edges = edges + spatial if spatial_graph.cfg.topology == 'creation_backbone' else spatial
     return nodes, edges
 
 

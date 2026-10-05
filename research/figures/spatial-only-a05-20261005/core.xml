@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Linux-c++"
+	tests="8"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname="2ba775e57e2b"
+	time="0"
+	timestamp="2026-10-05T13:09:36"
+	>
+	<testcase name="persistent_anchor_relay" classname="persistent_anchor_relay" time="0.0999851" status="run">
+		<system-out>[2026-10-05 13:09:36.115] [warning] BPSAM c: Rejecting inter-robot message, key br98 does not exist, br98 -&gt; ar97
+[2026-10-05 13:09:36.116] [warning] BPSAM c: Rejecting inter-robot message, key br98 does not exist, br98 -&gt; cr99
+[2026-10-05 13:09:36.116] [warning] BPSAM d: Rejecting inter-robot message, key er101 does not exist, er101 -&gt; dr100
+[2026-10-05 13:09:36.116] [warning] BPSAM d: Rejecting inter-robot message, key br98 does not exist, br98 -&gt; ar97
+[2026-10-05 13:09:36.117] [warning] BPSAM e: Rejecting inter-robot message, key br98 does not exist, br98 -&gt; ar97
+[2026-10-05 13:09:36.117] [warning] BPSAM e: Rejecting inter-robot message, key cr99 does not exist, cr99 -&gt; br98
+[2026-10-05 13:09:36.137] [warning] BPSAM d: Rejecting inter-robot message, key er101 does not exist, er101 -&gt; dr100
+[2026-10-05 13:09:36.137] [warning] BPSAM c: Rejecting inter-robot message, key br98 does not exist, br98 -&gt; ar97
+[2026-10-05 13:09:36.137] [warning] BPSAM c: Rejecting inter-robot message, key br98 does not exist, br98 ...
+The rest of the test output was removed since it exceeds the threshold of 1024 bytes.
+</system-out>
+	</testcase>
+	<testcase name="anchor_bootstrap" classname="anchor_bootstrap" time="0.00320111" status="run">
+		<system-out>recipient-aware anchor bootstrap refresh: passed
+</system-out>
+	</testcase>
+	<testcase name="persistent_beliefs" classname="persistent_beliefs" time="0.00357204" status="run">
+		<system-out>[2026-10-05 13:09:36.197] [warning] BPSAM a: Rejecting inter-robot message, key dr100 does not exist, dr100 -&gt; cr99
+persistent policy, bootstrap, cavities and incremental state: passed
+</system-out>
+	</testcase>
+	<testcase name="inter_robot_pcm" classname="inter_robot_pcm" time="0.00294577" status="run">
+		<system-out>PCM geometry, covariance, clique, reversal, isolation and gap tests passed
+</system-out>
+	</testcase>
+	<testcase name="between_initialization" classname="between_initialization" time="0.00227242" status="run">
+		<system-out></system-out>
+	</testcase>
+	<testcase name="sim3_transport" classname="sim3_transport" time="0.00203776" status="run">
+		<system-out></system-out>
+	</testcase>
+	<testcase name="belief_republish" classname="belief_republish" time="0.00287383" status="run">
+		<system-out></system-out>
+	</testcase>
+	<testcase name="absolute_pose_scale" classname="absolute_pose_scale" time="0.00332287" status="run">
+		<system-out></system-out>
+	</testcase>
+</testsuite>

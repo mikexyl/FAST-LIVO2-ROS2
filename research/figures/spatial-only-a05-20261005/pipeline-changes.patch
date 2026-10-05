@@ -1,0 +1,768 @@
+diff --git a/research/SPATIAL-NEIGHBOR-GRAPH.md b/research/SPATIAL-NEIGHBOR-GRAPH.md
+index 790dbbd..635f519 100644
+--- a/research/SPATIAL-NEIGHBOR-GRAPH.md
++++ b/research/SPATIAL-NEIGHBOR-GRAPH.md
+@@ -1,110 +1,111 @@
+-# Sparse spatial neighbors on circle submap graphs
+-
+-This experimental backend retains the complete chronological odometry backbone
+-and adds **robot-local map-consistency factors** between supported, nonconsecutive
+-sealed footprints. Placement, maturation, retrieval, loop verification, PCM,
+-inter-robot GPU registration and trajectory/map reconstruction are unchanged.
+-The published mature-circle experiment remains a separate control.
+-
+-Enable `pgo.spatial_neighbors.enabled` in a matched configuration. The example
+-`configs/circle_online_spatial_neighbors_graco_all14.yaml` differs from the mature
+-online configuration only in this block and its experiment label. Build the
+-matching `cbs_ros` branch `codex/spatial-neighbor-submap-graphs`: native wire type
+-100 is reserved by this adapter for map consistency. Older bridges reject it.
+-The CBS core requires no further change beyond the published anchor fixes.
+-Set `CBS_OVERLAY` to the newly built overlay when using `online148_env.sh`;
+-the launcher honors that override and otherwise retains the published default.
+-
+-## Causal topology
+-
+-Only published, immutable local rows and their owned point payloads are read.
+-As each new row becomes available, consider older intersecting footprints except
+-its chronological predecessor, which already has an odometry edge. Require at
+-least 100 shared native point IDs and at least 10% shared membership relative to
+-the smaller crop. Rank candidates by shared fraction, shared count, increasing
+-center distance, then older ID. Add at most two edges at creation of a graph node
+-and permit at most three added spatial neighbors at either endpoint. Rejected
+-edges and degree limits remain visible in diagnostics. A later endpoint cannot
+-replace or reweight an existing edge; replaying the same prefixes reconstructs
+-the same graph. Existing frames, circle centers and IDs never change.
+-
+-Validate payload hashes, membership and footprint containment. Every common ID
+-must agree in the original map frame within 5 mm. Check all shared points in
+-bounded batches; use up to 2,048 deterministic shared-ID samples for spatial
+-support. The second principal-axis standard deviation must be at least 1 m:
+-line-like or concentrated support is rejected, while planar support is allowed.
+-The primitive correspondence here is exact identity, not a nearest-neighbor
+-surface match. Missing or changed evidence fails closed.
+-
+-## Factor and correlation policy
++# Spatial-support graphs for fixed circle submaps
++
++Enable `pgo.spatial_neighbors.enabled: true` and `topology: spatial_only` in the
++persistent CBS configuration. This mode has **no creation-order odometry chain**.
++A new circle connects to older circles with validated common geometry, regardless
++of their creation IDs. A05's 27--28 chronological link is therefore not retained
++when those footprints do not overlap. Circle placement, publication/maturation,
++point-cloud multi-layer retrieval and verified inter-robot loop measurements are
++unchanged. The previous configuration remains a separate experimental control.
++
++Build matching `cbs` and `cbs_ros` sources on `codex/spatial-neighbor-submap-graphs`
++with `scripts/circle_submaps/build_cbs_spatial.sh`. Set `CBS_OVERLAY` to this
++isolated build when launching. Native edge type 100 identifies a robot-local
++map-consistency factor. Spatial PCM packets use protocol version 2; mismatched
++peers fail closed. The historical raw-chain pipeline keeps protocol version 1.
++`topology: creation_backbone` explicitly selects the previous augmentation mode;
++disabling spatial neighbors preserves the original pipeline.
++
++## Causal topology and support
++
++Each immutable published crop can add edges to intersecting older footprints,
++including its immediate predecessor only when geometry supports that edge.
++Require at least 100 shared native point IDs and at least 10% of the smaller
++crop's membership. Check hashes, fixed frames, footprint containment and all
++shared coordinates (5 mm tolerance). Up to 2,048 deterministic shared-ID samples
++must have a second principal-axis standard deviation of at least 1 m. Purely
++line-like/concentrated shared observations do not qualify.
++
++Prefer supported bridges between graph components, then cycles. Within these
++classes prefer endpoints below the degree budget, then larger shared fraction,
++shared count, shorter center distance and smaller ID. The normal budgets are
++three spatial neighbors per endpoint and two new incident edges per publication.
++A genuinely supported bridge may exceed those budgets to connect existing
++components; every exception is recorded. Budgets limit extra cycles, not valid
++forest connections. The total remains a spanning forest plus a bounded number of
++cycle additions. Existing edges, their weights, IDs and circle locations never
++change. No weak, distant or chronological fallback edge is inserted.
++
++## What the local factors mean
+ 
+ Each accepted pair receives one nonlinear `BetweenFactor<Pose3>` with measurement
+-`inverse(T_world_i) * T_world_j`, in the original creation-anchor frames. The
+-shared geometry validates that this relation actually connects common map data.
+-The factor encourages compatible corrections of overlapping crops as external
+-loops deform the graph. It does **not** independently estimate or remove local
+-odometry drift. No ICP or additional GPU geometry factor is created for this
+-edge. Submap centers are only spatial-selection inputs, not pose-variable origins.
+-
+-Shared crops reuse observations and are correlated with the raw map and chain.
+-Consequently, information does not grow with the number of shared points.
+-Compose the existing odometry covariances along the i-to-j chain using right
+-Pose3 tangents, transporting each edge covariance into endpoint j's frame:
+-
+-`Sigma_ij = sum_k Ad(T_(k+1,j)^-1) Sigma_odom Ad(T_(k+1,j)^-1)^T`.
+-
+-Then set `Omega_ij = (information_fraction / max_degree) inverse(Sigma_ij)`;
+-defaults are 0.25 and 3. This is an explicit, conservative regularization
+-heuristic, **not** a claim of statistically independent information or a fully
+-correlation-aware posterior. It needs a matched accuracy/deformation ablation.
+-Increasing degree or shared point count must not silently strengthen each factor.
+-
+-The native adapter accepts the new edge only between distinct local endpoints
+-in metric Pose3 graphs. PCM passes it through without adding it to raw odometry
+-summaries, loop votes, peer packets or GPU registration manifests. Detected loops
+-retain their original admission and evidence policies. A same-endpoint collision
+-between a local constraint and a detected loop fails explicitly rather than
+-silently overwriting a factor. The current circle retrieval policy excludes
+-overlapping same-robot crops.
+-
+-## Cost, output and verification
+-
+-Local point payloads are cached in a four-cloud LRU; no peer cloud request is
+-needed for these edges. Additional geometry network bytes are zero by design.
+-This is **not** a claim of unchanged total communication: changed posterior
+-beliefs can affect CBS traffic, and added edges can increase solver work.
+-Persistent bridge outputs retain separate `local-graph.json`, local constraints
+-and map-consistency counts; detected-loop counts remain comparable. CPU time,
+-cache bytes, support/rejection decisions and input hashes are retained.
+-
+-`scripts/circle_submaps/inspect_spatial_graph.py --store <owned-store> --output
+-<new-directory>` replays publication prefixes without optimization. Its A05
+-inspection is a graph-construction test on the retained online run, not a new
+-online replay or an accuracy experiment. Synthetic tests cover causality,
+-degree bounds, deterministic restart, covariance transport, common-frame
+-invariance, corrupted geometry, weak support and the disabled control. The native
+-growing three-robot test also enables GPU loop factors to verify that spatial
+-cycles survive revisions, propagate through beliefs, preserve loop counts and do
+-not cause geometry retransmission on an unchanged final revision.
+-
+-## Retained implementation check (2026-10-05)
+-
+-A05's 30 sealed submaps produce 29 unchanged backbone edges plus 33 supported
+-map-consistency edges (33 local cycles). Sixteen intersecting nonconsecutive
+-pairs fail shared membership support and eleven hit the degree budget. The
+-accepted pairs share 4,660–46,303 native IDs; the maximum map-frame discrepancy
+-is 0.0000114 m. Prefix construction on 148 took 1.318 s total, at most 81.1 ms
+-per prefix, with 11.66 MB of peak cached arrays and 157.7 MiB of fresh inspection
+-process peak RSS. These are construction measurements, not CBS solve timings.
+-
+-Verification passed: 48 local Python tests (10 native-gated skips), 42 Python/ROS
+-checks on 148 (no skips), eight CBS-core C++ tests and nine CBS-ROS C++ tests.
+-The native growing three-robot GPU case includes seven new local factors per
+-robot, nine inter-robot registration pairs and a shared Alpha reference. Every
+-final geometry check passes. The unchanged last revision reuses cached geometry.
+-
+-The [A05 comparison gallery](figures/spatial-neighbor-a05-20261005/index.html)
+-retains the actual edge list, candidate decisions, timing, input/source hashes,
+-JUnit records and native binary hashes. No new all-14 ATE result is claimed.
+-The new pipeline configuration is opt-in pending that matched dataset comparison.
+-Use CBS core `0a23e90` and CBS ROS `943bdbb` (or their matching descendants).
++`inverse(T_world_i) * T_world_j`. Variables retain their creation-anchor IMU
++frames; selection is based on circle footprints and shared map data. These
++constraints preserve compatible corrections of crops containing the same
++observations. They do not independently estimate or repair raw odometry drift,
++and they do not add ICP or GPU registration factors.
++
++Shared observations are correlated, so information does not grow with their
++count. Define a regularizer at the shared geometry's centroid, expressed in
++endpoint j's frame, with 3-degree rotational and 0.5-m translational scales.
++For centroid transform C and right Pose3 tangent ordering [rotation, translation],
++
++`Omega_ij = (0.25 / 3) Ad(C^-1)^T diag(sigma^-2) Ad(C^-1)`.
++
++The scales and fraction are explicit configuration parameters, not estimated
++uncertainty. This is a conservative regularization policy, not an independent
++measurement or a correlation-aware posterior. Unlike the historical augmentation
++mode, it uses neither creation-order path length nor odometry-chain covariance.
++Supported bridge exceptions can raise incident total information above the usual
++degree budget; diagnostics expose this and a matched accuracy ablation is needed.
++
++## PCM and disconnected components
++
++Local PCM obtains relative poses and covariance proxies through deterministic
++shortest-edge-count spatial support paths. A path may move backwards through
++creation IDs. A missing path is unavailable, never an identity transform.
++Correlated cycles are not fused to manufacture more information. Peers exchange
++direct summaries for each pair of incident separator keys, preserving the exact
++chosen path covariance. They never compose those summaries into another chain.
++Only verified loop proposals vote in PCM; map-consistency edges are not loop
++votes or registration-geometry requests.
++
++The present CBS interface has one anchor per physical robot. Only the local
++component containing submap 0 enters that robot's solver. Other components stay
++explicitly pending with their own component labels, original poses,
++`optimized: false` and `reference_available: false`. Their loop endpoints are
++unavailable to PCM. A later supported local bridge admits the newly connected
++component into the same running process without moving or changing old factors.
++Pending same-robot loops are logged separately. No extra gauge priors are added.
++
++**Current limitation:** independent disconnected fragments are not separately
++optimized, and an inter-robot loop alone cannot activate them. They need a local
++support path to the robot's reference submap. This is explicit pending state,
++not a claim of global alignment. `alignment_complete` is false while any fragment
++is pending, and joint map export/dense trajectory interpolation refuse that
++input. Supporting a distinct CBS anchor per fragment is a separate extension.
++The sealed bridge rejects spatial-only mode rather than silently using chain PCM.
++
++## Computation, communication and retained evidence
++
++Support geometry stays local in a four-cloud LRU cache. These edges request no
++new peer geometry. Total communication is not necessarily unchanged: protocol 2
++sends O(s^2) pair summaries for s separator keys per robot pair, and changed graphs
++can change CBS beliefs. Serialized traffic remains measured by the existing
++counters. This implementation is not a new communication or accuracy benchmark.
++
++`local-graph.json` retains all components, admitted/pending IDs, support and
++rejection decisions, construction times, cache sizes and edge diagnostics.
++Published snapshots retain local constraints separately from verified loops.
++`scripts/circle_submaps/inspect_spatial_graph.py` reconstructs publication-prefix
++graphs from immutable saved crops. It does not replay new scans or optimize them.
++
++Tests cover no chronological fallback, deferred components and later bridging,
++causal immutable factors, deterministic restart, covariance transport, frame
++invariance, corrupt geometry, weak support and historical-mode compatibility.
++Native tests exercise spatial PCM summaries, missing paths, peer barriers,
++serialized-byte accounting, persistent graph growth and GPU loop factors.
++The new A05 inspection and verification records are in
++[the spatial-only gallery](figures/spatial-only-a05-20261005/index.html).
++Prior augmentation results remain in their original historical directory and
++must not be cited as results of this replacement.
+diff --git a/research/configs/circle_online_spatial_neighbors_graco_all14.yaml b/research/configs/circle_online_spatial_neighbors_graco_all14.yaml
+index fd995f4..e839fe4 100644
+--- a/research/configs/circle_online_spatial_neighbors_graco_all14.yaml
++++ b/research/configs/circle_online_spatial_neighbors_graco_all14.yaml
+@@ -108,6 +108,9 @@ pgo:
+   gnc_probability: 0.99
+   spatial_neighbors:
+     enabled: true
++    topology: spatial_only
++    rotation_sigma_deg: 3.0
++    translation_sigma_m: 0.5
+     max_degree: 3
+     max_new_edges: 2
+     min_shared_points: 100
+diff --git a/research/s3e_pipeline/cbs_bridge.py b/research/s3e_pipeline/cbs_bridge.py
+index ed4d04a..3fdb412 100644
+--- a/research/s3e_pipeline/cbs_bridge.py
++++ b/research/s3e_pipeline/cbs_bridge.py
+@@ -51,7 +51,8 @@ def local_graph(rows, robot, cfg, store=None, spatial_graph=None):
+             if store is None:
+                 raise ValueError('Spatial graph requires the owned sealed geometry store')
+             spatial_graph = SpatialGraph(robot, store, cfg)
+-        edges += spatial_graph.update(rows)
++        spatial = spatial_graph.update(rows)
++        edges = edges + spatial if spatial_graph.cfg.topology == 'creation_backbone' else spatial
+     return nodes, edges
+ 
+ 
+diff --git a/research/s3e_pipeline/circle_cbs.py b/research/s3e_pipeline/circle_cbs.py
+index 8435daa..1d7c39b 100644
+--- a/research/s3e_pipeline/circle_cbs.py
++++ b/research/s3e_pipeline/circle_cbs.py
+@@ -76,6 +76,8 @@ def solution_graph(snapshot, rows):
+         consistency.append(dict(i=e['i'],j=e['j'],translation_m=float(np.linalg.norm(error[:3,3])),
+             rotation_deg=float(np.degrees(Rotation.from_matrix(error[:3,:3]).magnitude()))))
+     return dict(poses=poses,components={r:s['component'] for r,s in robots.items()},
++        unconnected_submaps=[p for p in poses if not p.get('optimized',True)],
++        alignment_complete=all(p.get('optimized',True) for p in poses),
+         local_constraints=snapshot.get('local_constraints',[]),
+         constraints=snapshot['constraints'],solver='CBS with owned submap Pose3 keys',node_type='fixed_spatial_submap',
+         published_loop_residuals=consistency,
+diff --git a/research/s3e_pipeline/circle_central_evaluation.py b/research/s3e_pipeline/circle_central_evaluation.py
+index 0254b6d..42d2d3c 100644
+--- a/research/s3e_pipeline/circle_central_evaluation.py
++++ b/research/s3e_pipeline/circle_central_evaluation.py
+@@ -39,6 +39,8 @@ def correction_anchors(keys,optimized):
+     nodes can differ; averaging is an explicit trajectory reconstruction choice,
+     while map geometry retains each circle's actual optimized node.
+     """
++    if any(not r.get('optimized',True) for r in optimized):
++        raise ValueError('Cannot interpolate a trajectory across unconnected submap components')
+     by_key={r['keyframe_id']:r for r in optimized};groups=defaultdict(list)
+     for row in keys:groups[row['stamp_ns']].append(row)
+     collapsed=[]; graph=[]; diagnostics=[]
+@@ -60,6 +62,8 @@ def corrected_union(world,keys,optimized):
+     nearest circle correction and flagged, never silently discarded or called
+     covered. No geometry registration or new measurements are introduced here.
+     """
++    if any(not r.get('optimized',True) for r in optimized):
++        raise ValueError('Unconnected submaps must remain separate; refusing a joint map')
+     frame=np.asarray(keys[0]['T_horizontal_map']);xy=transform(frame,world)[:,:2]
+     distance,owner=cKDTree([r['footprint_center_xy'] for r in keys]).query(xy)
+     by_key={r['keyframe_id']:r for r in optimized};result=np.empty_like(world,dtype=float)
+diff --git a/research/s3e_pipeline/dpgo.py b/research/s3e_pipeline/dpgo.py
+index 0385a45..536861a 100644
+--- a/research/s3e_pipeline/dpgo.py
++++ b/research/s3e_pipeline/dpgo.py
+@@ -52,6 +52,9 @@ def run(cfg, artifacts, source, out):
+         from .persistent_cbs import run_frozen
+         return run_frozen(cfg, artifacts, source, out)
+     if execution != 'sealed': raise ValueError('dpgo.execution must be sealed or persistent')
++    spatial = cfg['pgo'].get('spatial_neighbors',{})
++    if spatial.get('enabled',False) and spatial.get('topology','spatial_only')=='spatial_only':
++        raise ValueError('Spatial-only graphs require persistent execution and explicit pending-component handling')
+     robots = cfg['robots']; settings = cfg['dpgo']; method = cfg['backend']['name']
+     out = Path(out).resolve(); source = Path(source).resolve(); start = time.monotonic()
+     overlay = native_overlay(source, settings)
+diff --git a/research/s3e_pipeline/persistent_cbs.py b/research/s3e_pipeline/persistent_cbs.py
+index 69d7dcb..5867922 100644
+--- a/research/s3e_pipeline/persistent_cbs.py
++++ b/research/s3e_pipeline/persistent_cbs.py
+@@ -89,6 +89,8 @@ class PersistentSession:
+                     pcm_probability=float(settings['pcm'].get('probability',.99)),
+                     pcm_minimum_clique_size=settings['pcm'].get('minimum_clique_size',1),
+                     pcm_timeout_sec=float(settings['pcm'].get('timeout_s',60.)),registration_enabled=registration['enabled'])
++                spatial = config['pgo'].get('spatial_neighbors',{})
++                params['pcm_spatial_graph'] = bool(spatial.get('enabled',False) and spatial.get('topology','spatial_only')=='spatial_only')
+                 if registration['enabled']:
+                     params.update(registration_directory=str(local/'registration'),registration_settings=json.dumps(registration,sort_keys=True))
+                 path = local/'cbs.yaml'; path.write_text(yaml.safe_dump({'/**':{'ros__parameters':params}}))
+@@ -172,7 +174,9 @@ class PersistentSession:
+             registration_network_cdr_bytes=sum(v['status']['registration_network_cdr_bytes'] for v in values.values()),
+             pcm_network_cdr_bytes=sum(v['status']['pcm_network_cdr_bytes'] for v in values.values()))
+         local = [e for v in values.values() for e in v.get('local_constraints', [])]
+-        summary['map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in local)
++        summary['map_consistency_factors'] = sum(v['status']['map_consistency_factors'] for v in values.values())
++        summary['pending_map_consistency_factors'] = sum(v['status'].get('pending_map_consistency_factors',0) for v in values.values())
++        summary['alignment_complete'] = all(v['status'].get('alignment_complete',True) for v in values.values())
+         return dict(summary=summary,poses=poses,constraints=list(constraints.values()),proposed=self.last_edges,
+                     local_constraints=local,
+                     statistics={r:str(self.output/r/'stats.jsonl') for r in self.robots})
+diff --git a/research/s3e_pipeline/persistent_worker.py b/research/s3e_pipeline/persistent_worker.py
+index b1a86fb..e961a2c 100644
+--- a/research/s3e_pipeline/persistent_worker.py
++++ b/research/s3e_pipeline/persistent_worker.py
+@@ -15,6 +15,7 @@ from .online_io import atomic_json, Journal
+ from .cbs_bridge import local_graph, loop_for_robot, ros_graph, matrix_pose, named_pcm_verdicts
+ from .ros_dpgo_worker import reliable
+ from .registration_exchange import RegistrationExchange
++from .spatial_graph import active_component
+ 
+ 
+ class PersistentRobot(Node):
+@@ -24,7 +25,8 @@ class PersistentRobot(Node):
+         self.output = Path(spec['output']); self.revision = 0
+         self.rows = []; self.edges = {}; self.pcm = None; self.registration = None
+         self.cache = {}; self.inbox = []; self.current = None; self.finished = False
+-        self.spatial_graph = None; self.local_constraints = []
++        self.spatial_graph = None; self.local_constraints = []; self.admitted_local_constraints = []
++        self.active_rows = []; self.pending_rows = []
+         if spec['pgo'].get('spatial_neighbors', {}).get('enabled', False):
+             from .spatial_graph import SpatialGraph
+             self.spatial_graph = SpatialGraph(self.robot, spec['store'], spec['pgo'])
+@@ -85,12 +87,17 @@ class PersistentRobot(Node):
+         self.last_estimate = msg
+         if msg.robot_id != self.robots.index(self.robot): raise ValueError('Foreign CBS estimate')
+         if not self.current or msg.graph_revision != self.revision: return
+-        if list(msg.keyframe_ids) != [r['keyframe_id'] for r in self.rows] or list(msg.stamp_ns) != [r['stamp_ns'] for r in self.rows]:
++        if list(msg.keyframe_ids) != [r['keyframe_id'] for r in self.active_rows] or list(msg.stamp_ns) != [r['stamp_ns'] for r in self.active_rows]:
+             raise ValueError('Incomplete/mistimestamped persistent estimate')
+         if not self.pcm or self.pcm['state'] != 'ready': return
+         poses = [dict(robot_id=self.robot, keyframe_id=int(k), stamp_ns=int(t),
+             T_world_body=matrix_pose(p).tolist(), reference_available=msg.reference_available,
+-            component=self.robots[msg.reference_robot_id]) for k,t,p in zip(msg.keyframe_ids,msg.stamp_ns,msg.poses)]
++            component=self.robots[msg.reference_robot_id], optimized=True) for k,t,p in zip(msg.keyframe_ids,msg.stamp_ns,msg.poses)]
++        poses += [dict(robot_id=self.robot,keyframe_id=r['keyframe_id'],stamp_ns=r['stamp_ns'],
++            T_world_body=r['T_world_body'],reference_available=False,optimized=False,
++            component=f"{self.robot}/unconnected/{r['local_component']}",
++            pending_reason='no supported local path to reference submap') for r in self.pending_rows]
++        poses.sort(key=lambda r:r['keyframe_id'])
+         decisions = named_pcm_verdicts(self.pcm, self.robots)
+         proposed = list(self.edges.values())
+         retained = [e for e in proposed if e['i'][0] == e['j'][0] or decisions[tuple(e['i']),tuple(e['j'])]['retained']]
+@@ -109,7 +116,10 @@ class PersistentRobot(Node):
+             registration_network_cdr_bytes=self.wire_bytes, pcm_network_cdr_bytes=self.pcm_bytes,
+             cbs_last_stats=self.stats, wall_s=time.monotonic()-self.started)
+         # One atomic object couples its trajectory and metadata to this revision.
+-        status['map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in self.local_constraints)
++        status['map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in self.admitted_local_constraints)
++        status['pending_map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in self.local_constraints) - status['map_consistency_factors']
++        status['unconnected_submaps'] = [r['keyframe_id'] for r in self.pending_rows]
++        status['alignment_complete'] = not self.pending_rows
+         atomic_json(self.output/'estimate.json', dict(status=status, poses=poses, constraints=retained,
+             local_constraints=self.local_constraints))
+         if msg.finished and self.stats and self.stats['iteration'] >= msg.iteration:
+@@ -138,9 +148,18 @@ class PersistentRobot(Node):
+             nodes, odometry = local_graph(rows, self.robot, self.spec['pgo'],
+                 spatial_graph=self.spatial_graph, store=self.spec['store'])
+             self.local_constraints = odometry
++            nodes, admitted_local, self.pending_rows = active_component(nodes,odometry,self.spec['pgo'])
++            self.active_rows = nodes; self.admitted_local_constraints = admitted_local
+             atomic_json(self.output/'local-graph.json', dict(constraints=odometry,
++                active_keys=[r['keyframe_id'] for r in nodes],
++                unconnected_keys=[r['keyframe_id'] for r in self.pending_rows],
+                 spatial=None if self.spatial_graph is None else self.spatial_graph.diagnostics()))
+             edges = [loop_for_robot(e,self.robot) for e in value['edges']]
++            pending_keys = {r['keyframe_id'] for r in self.pending_rows}
++            deferred = [e for e in edges if e['i'][0] == e['j'][0] and
++                        (e['i'][1] in pending_keys or e['j'][1] in pending_keys)]
++            atomic_json(self.output/'deferred-local-loops.json',deferred)
++            edges = [e for e in edges if e not in deferred]
+             local_pairs = {(tuple(e['i']),tuple(e['j'])) for e in odometry}
+             if any((tuple(e['i']),tuple(e['j'])) in local_pairs for e in edges):
+                 raise ValueError('Loop collides with an existing local graph factor')
+@@ -151,7 +170,7 @@ class PersistentRobot(Node):
+                     self.output/'registration'/str(self.revision),f"{self.spec['session']}/{self.revision}",
+                     self.spec['registration_factors'],self.send,self.cache)
+             self.graph.publish(PersistentInput(session_id=self.spec['session'],revision=self.revision,
+-                final=value['final'],graph=ros_graph(nodes,odometry+edges,self.robots)))
++                final=value['final'],graph=ros_graph(nodes,admitted_local+edges,self.robots)))
+         pending = []
+         for revision,event in self.inbox:
+             if revision == self.revision and self.registration: self.registration.receive(event)
+diff --git a/research/s3e_pipeline/ros_dpgo_worker.py b/research/s3e_pipeline/ros_dpgo_worker.py
+index f580230..db335e7 100644
+--- a/research/s3e_pipeline/ros_dpgo_worker.py
++++ b/research/s3e_pipeline/ros_dpgo_worker.py
+@@ -30,6 +30,9 @@ def reliable(depth=1000, durable=False):
+ 
+ class Robot(Node):
+     def __init__(self, spec):
++        spatial_config = spec['pgo'].get('spatial_neighbors', {})
++        if spatial_config.get('enabled', False) and spatial_config.get('topology', 'spatial_only') == 'spatial_only':
++            raise ValueError('Spatial-only graphs require the persistent component-aware bridge')
+         self.spec = spec; self.robot = spec['robot']; self.robots = spec['robots']
+         super().__init__('s3e_frontend', namespace=self.robot)
+         self.output = Path(spec['output']); self.start = time.monotonic()
+diff --git a/research/s3e_pipeline/spatial_graph.py b/research/s3e_pipeline/spatial_graph.py
+index 7688087..85850c7 100644
+--- a/research/s3e_pipeline/spatial_graph.py
++++ b/research/s3e_pipeline/spatial_graph.py
+@@ -23,6 +23,7 @@ MAP_CONSISTENCY_EDGE_TYPE = 100
+ @dataclass(frozen=True)
+ class SpatialGraphConfig:
+     enabled: bool = False
++    topology: str = 'spatial_only'
+     max_degree: int = 3
+     max_new_edges: int = 2
+     min_shared_points: int = 100
+@@ -32,10 +33,14 @@ class SpatialGraphConfig:
+     information_fraction: float = .25
+     support_sample_points: int = 2048
+     cache_clouds: int = 4
++    rotation_sigma_deg: float = 3.
++    translation_sigma_m: float = .5
+ 
+     def __post_init__(self):
+         if type(self.enabled) is not bool:
+             raise ValueError('spatial_neighbors.enabled must be Boolean')
++        if self.topology not in ('spatial_only', 'creation_backbone'):
++            raise ValueError('Unknown spatial graph topology')
+         for name in ('max_degree', 'max_new_edges', 'min_shared_points',
+                      'support_sample_points', 'cache_clouds'):
+             if type(getattr(self, name)) is not int or getattr(self, name) < 1:
+@@ -45,7 +50,8 @@ class SpatialGraphConfig:
+         for name in ('min_shared_fraction', 'information_fraction'):
+             if not np.isfinite(getattr(self, name)) or not 0 < getattr(self, name) <= 1:
+                 raise ValueError(f'Invalid spatial graph {name}')
+-        for name in ('min_second_axis_std_m', 'max_shared_discrepancy_m'):
++        for name in ('min_second_axis_std_m', 'max_shared_discrepancy_m',
++                     'rotation_sigma_deg', 'translation_sigma_m'):
+             if not np.isfinite(getattr(self, name)) or getattr(self, name) <= 0:
+                 raise ValueError(f'Invalid spatial graph {name}')
+ 
+@@ -73,6 +79,29 @@ def path_covariance(rows, i, j, edge_covariance):
+     return (covariance + covariance.T) / 2
+ 
+ 
++def components(count, edges):
++    parent = list(range(count))
++    def root(k):
++        while parent[k] != k:
++            parent[k] = parent[parent[k]]
++            k = parent[k]
++        return k
++    for e in edges:
++        a, b = sorted((root(e['i'][1]), root(e['j'][1])))
++        parent[b] = a
++    return [root(k) for k in range(count)]
++
++
++def active_component(nodes, edges, cfg):
++    """Keep unanchored fragments explicit; never add numerical gauge links."""
++    if not cfg.get('spatial_neighbors', {}).get('enabled', False) or cfg['spatial_neighbors'].get('topology', 'spatial_only') != 'spatial_only':
++        return nodes, edges, []
++    groups = components(len(nodes), edges)
++    return ([r for r in nodes if groups[r['keyframe_id']] == 0],
++            [e for e in edges if groups[e['i'][1]] == 0],
++            [dict(r, local_component=groups[r['keyframe_id']]) for r in nodes if groups[r['keyframe_id']] != 0])
++
++
+ class SpatialGraph:
+     def __init__(self, robot, store, pgo):
+         self.robot = robot
+@@ -104,6 +133,8 @@ class SpatialGraph:
+         with np.load(path, allow_pickle=False) as data:
+             xyz = np.asarray(data['cloud'], dtype=float)
+             ids = np.asarray(data['point_ids'])
++        if ids.ndim != 1 or ids.dtype.kind not in 'iu':
++            raise ValueError('Native point IDs must be integer indices')
+         validate_geometry(row, xyz, ids)
+         self.payload_reads += 1
+         while len(self.cache) >= self.cfg.cache_clouds:
+@@ -133,6 +164,7 @@ class SpatialGraph:
+         centered = points - points.mean(axis=0)
+         std = np.sqrt(np.maximum(0, np.linalg.eigvalsh(centered.T @ centered / len(points))))
+         return dict(shared_discrepancy_max_m=discrepancy, shared_axis_std_m=std.tolist(),
++                    shared_centroid_in_j=xb[pb[sample]].mean(axis=0).tolist(),
+                     support_samples=len(points), supported=bool(std[1] >= self.cfg.min_second_axis_std_m))
+ 
+     def update(self, rows):
+@@ -156,8 +188,8 @@ class SpatialGraph:
+             self.degree.append(0)
+             candidates = []
+             for i, a in enumerate(self.rows):
+-                # Adjacent nodes already have the unchanged odometry constraint.
+-                if i == j-1:
++                # Only the historical augmentation mode supplies a chain.
++                if self.cfg.topology == 'creation_backbone' and i == j-1:
+                     continue
+                 distance = float(np.linalg.norm(np.asarray(a['footprint_center_xy']) - b['footprint_center_xy']))
+                 if distance >= a['footprint_radius_m'] + b['footprint_radius_m']:
+@@ -171,9 +203,19 @@ class SpatialGraph:
+                     self.decisions.append(dict(record, reason='insufficient_shared_geometry'))
+                 else:
+                     candidates.append(((-fraction, -count, distance, i), record))
+-            for _, record in sorted(candidates, key=lambda item: item[0]):
++            while candidates:
++                groups = components(j+1, self.edges)
++                # Prefer real support that joins components. Degree limits may
++                # suppress cycles, never a needed supported forest connection.
++                candidates.sort(key=lambda item: (
++                    groups[item[1]['i'][1]] == groups[j] if self.cfg.topology == 'spatial_only' else False,
++                    self.degree[item[1]['i'][1]] >= self.cfg.max_degree,
++                    item[0]))
++                _, record = candidates.pop(0)
+                 i = record['i'][1]
+-                if self.degree[j] >= self.cfg.max_new_edges or self.degree[i] >= self.cfg.max_degree:
++                bridge = self.cfg.topology == 'spatial_only' and groups[i] != groups[j]
++                over_budget = self.degree[j] >= self.cfg.max_new_edges or self.degree[i] >= self.cfg.max_degree
++                if over_budget and not bridge:
+                     self.decisions.append(dict(record, reason='degree_budget'))
+                     continue
+                 quality = self.support(rows[i], b, record['shared_points'])
+@@ -183,12 +225,22 @@ class SpatialGraph:
+                     continue
+                 # Shared crops are correlated. This is a regularization budget,
+                 # never a covariance estimate from N supposedly independent points.
+-                covariance = path_covariance(rows, i, j, self.edge_covariance)
+                 weight = self.cfg.information_fraction / self.cfg.max_degree
+-                information = weight * np.linalg.inv(covariance)
++                if self.cfg.topology == 'creation_backbone':
++                    covariance = path_covariance(rows, i, j, self.edge_covariance)
++                    information = weight * np.linalg.inv(covariance)
++                else:
++                    # Define the regularizer at shared geometry, not the drone's
++                    # creation-time position or number of intervening circles.
++                    center = np.eye(4); center[:3,3] = quality['shared_centroid_in_j']
++                    A = adjoint(inv(center))
++                    sigmas = np.array([np.deg2rad(self.cfg.rotation_sigma_deg)]*3 +
++                                      [self.cfg.translation_sigma_m]*3)
++                    information = weight * A.T @ np.diag(1/sigmas**2) @ A
+                 information = (information + information.T) / 2
+                 record.update(reason='accepted', source_hashes=[rows[i]['sha256'], b['sha256']],
+-                    information_weight=weight, path_edges=j-i,
++                    information_weight=weight, joins_components=bridge,
++                    degree_budget_exception=bool(bridge and over_budget),
+                     evidence='shared native point IDs; correlated local map consistency')
+                 self.edges.append(constraint(record['i'], record['j'],
+                     inv(pose(rows[i]['T_world_body'])) @ pose(b['T_world_body']), information,
+@@ -204,9 +256,12 @@ class SpatialGraph:
+     def diagnostics(self):
+         return dict(schema_version=1, robot=self.robot, config=asdict(self.cfg),
+             submaps=len(self.rows), map_consistency_factors=len(self.edges),
++            components=components(len(self.rows),self.edges),
++            component_count=len(set(components(len(self.rows),self.edges))),
++            cycle_rank=len(self.edges)-len(self.rows)+len(set(components(len(self.rows),self.edges))),
+             additional_degree=self.degree, decisions=self.decisions,
+             construction_s=self.elapsed_s, payload_reads=self.payload_reads,
+             peak_cached_cloud_bytes=self.peak_cached_cloud_bytes,
+             geometry_network_bytes=0,
+             communication_scope='robot-local construction only; CBS belief traffic measured separately',
+-            uncertainty_policy='heuristic regularizer; correlated with the odometry backbone')
++            uncertainty_policy='correlated map regularizer; no creation-order measurements in spatial_only')
+diff --git a/research/tests/test_spatial_graph.py b/research/tests/test_spatial_graph.py
+index 9982bc6..3cf6815 100644
+--- a/research/tests/test_spatial_graph.py
++++ b/research/tests/test_spatial_graph.py
+@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+ from s3e_pipeline.artifacts import file_hash, read_json, write_jsonl
+ from s3e_pipeline.cbs_bridge import local_graph, ros_graph
+ from s3e_pipeline.geometry import inv, transform, adjoint
+-from s3e_pipeline.spatial_graph import SpatialGraph, SpatialGraphConfig, shared_count, path_covariance
++from s3e_pipeline.spatial_graph import SpatialGraph, SpatialGraphConfig, shared_count, path_covariance, active_component
+ from test_circle_cbs import spatialize
+ 
+ 
+@@ -45,21 +45,27 @@ def test_prefix_causality_immutable_edges_and_restart(tmp_path, monkeypatch):
+     for n in range(1, len(rows)+1):
+         edges = graph.update(rows[:n])
+         assert edges[:len(old)] == old
+-        assert all(e['j'][1] < n and e['j'][1]-e['i'][1] > 1 for e in edges)
+-        assert max(graph.degree) <= 3
++        assert all(e['j'][1] < n and e['j'][1] > e['i'][1] for e in edges)
++        assert all(not e['diagnostics']['degree_budget_exception'] or e['diagnostics']['joins_components'] for e in edges)
+         assert all(sum(e['j'][1] == j for e in edges) <= 2 for j in range(n))
+         old = copy.deepcopy(edges)
+     assert len(edges) > 0
+     replay = SpatialGraph('A', tmp_path, pgo)
+     assert replay.update(rows) == edges
++    disabled = dict(pgo, spatial_neighbors=dict(enabled=False))
++    _, chain = local_graph(rows, 'A', disabled)
++    legacy = copy.deepcopy(pgo)
++    legacy['spatial_neighbors']['topology'] = 'creation_backbone'
++    _, augmented = local_graph(rows, 'A', legacy, store=tmp_path)
++    assert augmented[:len(chain)] == chain
++    assert all(e['j'][1]-e['i'][1] > 1 for e in augmented[len(chain):])
+     reads = graph.payload_reads
+     monkeypatch.setattr(np, 'load', lambda *a, **k: pytest.fail('Unchanged prefix reloaded geometry'))
+     assert graph.update(rows) == edges and graph.payload_reads == reads
+     _, all_edges = local_graph(rows, 'A', pgo, spatial_graph=graph)
+-    assert len(all_edges) == len(rows)-1 + len(edges)
+-    disabled = dict(pgo, spatial_neighbors=dict(enabled=False))
+-    _, chain = local_graph(rows, 'A', disabled)
+-    assert all_edges[:len(chain)] == chain
++    assert all_edges == edges
++    assert all(e['kind'] == 'map_consistency' for e in all_edges)
++
+ 
+ 
+ @pytest.mark.parametrize('fault', ['row', 'hash', 'frame', 'robot', 'coordinates', 'prefix'])
+@@ -100,12 +106,19 @@ def test_weak_or_unshared_overlap_is_not_an_edge(tmp_path):
+     assert graph.update(rows) == [] and graph.payload_reads == 0
+ 
+ 
+-def test_composed_covariance_and_information_budget(tmp_path):
++@pytest.mark.parametrize('topology',['spatial_only','creation_backbone'])
++def test_composed_covariance_and_information_budget(tmp_path, topology):
+     rows, pgo = fixture(tmp_path)
++    pgo['spatial_neighbors']['topology'] = topology
+     graph = SpatialGraph('A', tmp_path, pgo)
+     for e in graph.update(rows):
+         i, j = e['i'][1], e['j'][1]
+-        cov = path_covariance(rows, i, j, graph.edge_covariance)
++        if topology == 'creation_backbone':
++            cov = path_covariance(rows, i, j, graph.edge_covariance)
++        else:
++            C = np.eye(4); C[:3,3] = e['diagnostics']['shared_centroid_in_j']
++            sigmas = [np.deg2rad(3.)]*3+[.5]*3
++            cov = adjoint(C)@np.diag(np.square(sigmas))@adjoint(C).T
+         np.testing.assert_allclose(np.asarray(e['information']) @ cov, np.eye(6)*.25/3, atol=1e-12)
+         np.testing.assert_allclose(transform(np.asarray(e['T_i_j']), [1., 2., 3.]),
+             transform(inv(np.asarray(rows[i]['T_world_body'])) @ np.asarray(rows[j]['T_world_body']), [1.,2.,3.]))
+@@ -161,7 +174,7 @@ def test_ros_distinct_edge_type(tmp_path):
+     rows, cfg = fixture(tmp_path)
+     nodes, edges = local_graph(rows, 'A', cfg, store=tmp_path)
+     message = ros_graph(nodes, edges, ['A'])
+-    assert sum(e.type == 100 for e in message.edges) == len(edges)-len(rows)+1
++    assert all(e.type == 100 for e in message.edges)
+ 
+ 
+ @pytest.mark.skipif(os.environ.get('S3E_TEST_PERSISTENT_DDS')!='1', reason='Requires native spatial CBS overlay')
+@@ -206,3 +219,91 @@ def test_native_growing_graph_with_gpu_and_spatial_cycles(tmp_path):
+             assert not read_json(session.output/r/'registration/3/transport.json')['requested']
+     finally:
+         session.close()
++
++
++def disconnect_then_bridge(rows, store, bridge_key=2):
++    """0 and 1 share no identities; 2 genuinely contains both observation sets."""
++    from s3e_pipeline.circle_submaps import id_ranges
++    for k in range(1,bridge_key+1):
++        path = store/f'{k:06d}.npz'
++        with np.load(path) as data:
++            xyz, ids = data['cloud'].copy(), data['point_ids'].copy()
++        if k < bridge_key: ids += 10000000
++        else:
++            xyz = np.concatenate([xyz,xyz]); ids = np.r_[ids,ids+10000000]
++        np.savez_compressed(path, cloud=xyz, point_ids=ids)
++        rows[k].update(sha256=file_hash(path), geometry_count=len(ids),
++                      geometry_id_ranges=id_ranges(ids))
++
++
++def test_no_chain_disconnected_component_and_later_spatial_bridge(tmp_path):
++    rows, pgo = fixture(tmp_path,count=3)
++    disconnect_then_bridge(rows,tmp_path)
++    graph = SpatialGraph('A',tmp_path,pgo)
++    nodes, edges = local_graph(rows[:2],'A',pgo,spatial_graph=graph)
++    active, admitted, pending = active_component(nodes,edges,pgo)
++    assert not edges and [r['keyframe_id'] for r in active] == [0]
++    assert [r['keyframe_id'] for r in pending] == [1]
++    nodes, edges = local_graph(rows,'A',pgo,spatial_graph=graph)
++    assert {(e['i'][1],e['j'][1]) for e in edges} == {(0,2),(1,2)}
++    assert active_component(nodes,edges,pgo) == (nodes,edges,[])
++    assert graph.diagnostics()['component_count'] == 1
++
++
++def test_pending_submaps_cannot_be_exported_as_a_joint_map():
++    from s3e_pipeline.circle_central_evaluation import correction_anchors, corrected_union
++    pending = [dict(keyframe_id=1, optimized=False)]
++    with pytest.raises(ValueError, match='unconnected'):
++        correction_anchors([], pending)
++    with pytest.raises(ValueError, match='Unconnected'):
++        corrected_union(np.empty((0,3)), [], pending)
++
++
++@pytest.mark.skipif(os.environ.get('S3E_TEST_PERSISTENT_DDS')!='1', reason='Requires native spatial CBS overlay')
++def test_native_pending_component_joins_through_new_overlap(tmp_path):
++    from test_persistent_cbs import fixture as native_fixture
++    from s3e_pipeline.persistent_cbs import PersistentSession
++    from s3e_pipeline.geometry import constraint
++    cfg, stores, rows, _, truth = native_fixture(tmp_path, True, robots=['Alpha','Bob'],pairs=[('Alpha','Bob')])
++    cfg['pgo']['spatial_neighbors'] = dict(enabled=True,min_second_axis_std_m=.1)
++    cfg['dpgo']['registration_factors']['max_range_m'] = None
++    cfg['dpgo']['ros_domain_id'] = 198
++    for r in rows:
++        for row in rows[r]: spatialize(row,stores[r]/f"{row['keyframe_id']:06d}.npz",.01)
++        disconnect_then_bridge(rows[r],stores[r],bridge_key=3)
++        write_jsonl(stores[r]/'keyframes.jsonl',rows[r])
++    loops = [constraint(['Alpha',k],['Bob',k],inv(truth['Alpha',k])@truth['Bob',k],np.eye(6)*100,kind='loop',accepted=True) for k in (0,1)]
++    from s3e_pipeline.spatial_cbs_contract import endpoint
++    for e in loops: e['diagnostics'] = dict(spatial_endpoints=[endpoint(rows[r][k]) for r,k in (e['i'],e['j'])])
++    session = PersistentSession(cfg,Path(__file__).resolve().parents[3],tmp_path/'session',stores)
++    try:
++        deadline = time.monotonic()+30
++        while not session.ready():
++            assert time.monotonic()<deadline; time.sleep(.1)
++        pids=[p.pid for _,p in session.processes]
++        for count,final in [(3,False),(4,True)]:
++            session.submit({r:v[:count] for r,v in rows.items()},loops,final)
++            snap=None; start=time.monotonic()
++            while snap is None or time.monotonic()-start<2 or (final and not snap['summary']['finished']):
++                snap=session.snapshot(); time.sleep(.1); assert time.monotonic()-start<65
++            assert [p.pid for _,p in session.processes]==pids
++            assert snap['summary']['alignment_complete'] == final
++            if not final:
++                assert snap['summary']['map_consistency_factors'] == 0
++                assert snap['summary']['pending_map_consistency_factors'] == 2
++            assert snap['summary']['loops'] == (2 if final else 1)
++            for row in snap['poses']:
++                assert row['optimized'] == (final or row['keyframe_id']==0)
++                if row['optimized']:
++                    np.testing.assert_allclose(row['T_world_body'], inv(truth['Alpha',0])@truth[row['robot_id'],row['keyframe_id']],atol=.01)
++                else:
++                    assert not row['reference_available'] and '/unconnected/' in row['component']
++    finally: session.close()
++
++
++def test_spatial_only_cannot_silently_use_sealed_chain_pcm(tmp_path):
++    from s3e_pipeline.dpgo import run
++    cfg=dict(dpgo=dict(execution='sealed'),pgo=dict(spatial_neighbors=dict(enabled=True)))
++    with pytest.raises(ValueError,match='persistent execution'):
++        run(cfg,{},tmp_path,tmp_path/'out')
++    assert not (tmp_path/'out').exists()
+diff --git a/scripts/circle_submaps/inspect_spatial_graph.py b/scripts/circle_submaps/inspect_spatial_graph.py
+index cefe281..aa549ba 100644
+--- a/scripts/circle_submaps/inspect_spatial_graph.py
++++ b/scripts/circle_submaps/inspect_spatial_graph.py
+@@ -30,11 +30,12 @@ def run(store, output):
+             raise AssertionError('An admitted spatial edge changed')
+         old = list(edges)
+         prefixes.append(dict(submaps=n, available_ns=rows[n-1]['available_ns'],
+-            odometry_edges=n-1, map_consistency_edges=len(edges),
++            odometry_edges=0, components=graph.diagnostics()['component_count'], map_consistency_edges=len(edges),
+             additional_degree_max=max(graph.degree), construction_s=time.perf_counter()-before))
+     nodes, edges = local_graph(rows, robot, pgo, spatial_graph=graph)
+-    result = dict(robot=robot, nodes=len(nodes), odometry_edges=len(rows)-1,
+-        map_consistency_edges=len(graph.edges), local_cycle_rank=len(graph.edges),
++    result = dict(robot=robot, nodes=len(nodes), odometry_edges=0,
++        map_consistency_edges=len(graph.edges), local_cycle_rank=graph.diagnostics()['cycle_rank'],
++        component_count=graph.diagnostics()['component_count'],
+         construction_wall_s=time.perf_counter()-start,
+         fresh_process_peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss,
+         scope='sealed publication-prefix graph construction only; no optimization or new sensor replay',

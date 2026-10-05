@@ -1,0 +1,317 @@
+diff --git a/include/cbs_ros/distributed_pcm.h b/include/cbs_ros/distributed_pcm.h
+index 7f88db7..3f2ce6d 100644
+--- a/include/cbs_ros/distributed_pcm.h
++++ b/include/cbs_ros/distributed_pcm.h
+@@ -26,7 +26,8 @@ public:
+   using Packet = msg::PcmPacket;
+   DistributedPcm(const rclcpp::Node::SharedPtr &node, int robot, int robots,
+                  std::string session, cbs::PcmOptions options,
+-                 double timeout_sec, const std::filesystem::path &log_dir, bool persistent = false);
++                 double timeout_sec, const std::filesystem::path &log_dir,
++                 bool persistent = false, bool spatial_graph = false);
+   // Normalizes reversed loop endpoints AND covariance before CBS ownership.
+   Graph observe(const Graph &input);
+   bool advance();
+@@ -39,6 +40,7 @@ private:
+   void receive(const Packet &message);
+   void openLogs(const std::filesystem::path& log_dir);
+   bool persistent_ = false;
++  bool spatial_graph_ = false;
+   std::string base_session_;
+   uint64_t revision_ = 0;
+   std::map<std::pair<int,int>, Packet> next_packets_;
+@@ -62,7 +64,8 @@ private:
+   bool snapshots_sent_ = false, ready_ = false;
+   std::optional<msg::PcmInputSeal> seal_;
+   std::set<gtsam::Key> own_keys_;
+-  std::map<std::pair<gtsam::Key, gtsam::Key>, cbs::PcmEdge> odometry_, loops_;
++  std::map<std::pair<gtsam::Key, gtsam::Key>, cbs::PcmEdge> odometry_, loops_,
++      spatial_;
+   std::map<int, Packet> snapshots_, remote_snapshots_, remote_selections_;
+   std::map<int, cbs::PcmResult> results_;
+   std::set<int> agreed_;
+diff --git a/msg/PcmPacket.msg b/msg/PcmPacket.msg
+index e7ce90f..c7ba22e 100644
+--- a/msg/PcmPacket.msg
++++ b/msg/PcmPacket.msg
+@@ -8,7 +8,9 @@ uint8 phase
+ float64 probability
+ uint64 minimum_clique_size
+ # SNAPSHOT: sorted canonical incident loops, and only the source's separator
+-# keys and disjoint odometry intervals. No optimized poses or ground truth.
++# keys and support summaries. Protocol 1: disjoint odometry intervals.
++# Protocol 2: direct pairwise spatial-support paths, unavailable across islands.
++# No optimized poses or ground truth.
+ cbs_ros/PcmEdge[] loops
+ uint64[] available_keys
+ cbs_ros/PcmEdge[] odometry
+diff --git a/src/cbs_ros_node.cpp b/src/cbs_ros_node.cpp
+index ce433ee..64ebda1 100644
+--- a/src/cbs_ros_node.cpp
++++ b/src/cbs_ros_node.cpp
+@@ -620,7 +620,8 @@ public:
+       pcm_ = std::make_unique<cbs_ros::DistributedPcm>(
+           node_, robot_id_int, num_robots_int,
+           declareParameter("pcm_session_id", std::string("")), options,
+-          declareParameter("pcm_timeout_sec", 60.0), log_dir_, persistent_);
++          declareParameter("pcm_timeout_sec", 60.0), log_dir_, persistent_,
++          declareParameter("pcm_spatial_graph", false));
+     }
+ #ifdef CBS_ROS_WITH_REGISTRATION_FACTORS
+     if (registration_enabled_) {
+diff --git a/src/distributed_pcm.cpp b/src/distributed_pcm.cpp
+index eab23dd..70d9c91 100644
+--- a/src/distributed_pcm.cpp
++++ b/src/distributed_pcm.cpp
+@@ -56,7 +56,9 @@ std::vector<cbs::PcmEdge> decode(const std::vector<msg::PcmEdge> &values) {
+ cbs::PcmTrajectory trajectory(const msg::PcmPacket &packet) {
+   return cbs::PcmTrajectory(
+       {packet.available_keys.begin(), packet.available_keys.end()},
+-      decode(packet.odometry));
++      decode(packet.odometry),
++      packet.protocol_version == 2 ? cbs::PcmTrajectory::Mode::PairwiseSummaries
++                                   : cbs::PcmTrajectory::Mode::OrderedChain);
+ }
+ 
+ void validateSnapshot(const msg::PcmPacket &own, const msg::PcmPacket &peer) {
+@@ -77,15 +79,29 @@ void validateSnapshot(const msg::PcmPacket &own, const msg::PcmPacket &peer) {
+     if (!expected.count(key) || !keys.insert(key).second)
+       throw std::runtime_error("PCM peer shared a foreign/non-separator key");
+   }
+-  if (peer.odometry.size() + 1 != expected.size())
+-    throw std::runtime_error("PCM peer odometry summary has wrong size");
+-  size_t index = 0;
+-  for (auto i = expected.begin(), j = std::next(i); j != expected.end();
+-       ++i, ++j) {
+-    const auto &edge = peer.odometry[index++];
+-    if (edge.key_from != *i || edge.key_to != *j)
+-      throw std::runtime_error(
+-          "PCM peer shared non-consecutive separator intervals");
++  if (peer.protocol_version == 2) {
++    const size_t n = expected.size();
++    if (peer.odometry.size() != n * (n - 1) / 2)
++      throw std::runtime_error("Spatial PCM pair-summary size mismatch");
++    size_t index = 0;
++    for (auto i = expected.begin(); i != expected.end(); ++i)
++      for (auto j = std::next(i); j != expected.end(); ++j) {
++        const auto &edge = peer.odometry[index++];
++        if (edge.key_from != *i || edge.key_to != *j)
++          throw std::runtime_error(
++              "Spatial PCM summary is not an exact separator pair");
++      }
++  } else {
++    if (peer.odometry.size() + 1 != expected.size())
++      throw std::runtime_error("PCM peer odometry summary has wrong size");
++    size_t index = 0;
++    for (auto i = expected.begin(), j = std::next(i); j != expected.end();
++         ++i, ++j) {
++      const auto &edge = peer.odometry[index++];
++      if (edge.key_from != *i || edge.key_to != *j)
++        throw std::runtime_error(
++            "PCM peer shared non-consecutive separator intervals");
++    }
+   }
+   // Constructor validates available segments and covariances.
+   (void)trajectory(peer);
+@@ -95,10 +111,12 @@ void validateSnapshot(const msg::PcmPacket &own, const msg::PcmPacket &peer) {
+ DistributedPcm::DistributedPcm(const rclcpp::Node::SharedPtr &node, int robot,
+                                int robots, std::string session,
+                                cbs::PcmOptions options, double timeout_sec,
+-                               const std::filesystem::path &log_dir, bool persistent)
++                               const std::filesystem::path &log_dir,
++                               bool persistent, bool spatial_graph)
+     : node_(node), robot_(robot), robots_(robots), session_(std::move(session)),
+       options_(options), timeout_sec_(timeout_sec) {
+   persistent_ = persistent; base_session_ = session_;
++  spatial_graph_ = spatial_graph;
+   options_.validate();
+   if (session_.empty() || !std::isfinite(timeout_sec_) || timeout_sec_ <= 0)
+     throw std::invalid_argument(
+@@ -162,7 +180,11 @@ void DistributedPcm::beginRevision(const std::string& session,
+     state_ = "collecting"; error_.clear(); wait_started_.reset();
+     graph_messages_ = network_bytes_ = 0; compute_s_ = 0;
+     snapshots_sent_ = ready_ = false; seal_.reset();
+-    own_keys_.clear(); odometry_.clear(); loops_.clear(); snapshots_.clear();
++    own_keys_.clear();
++    odometry_.clear();
++    loops_.clear();
++    spatial_.clear();
++    snapshots_.clear();
+     remote_snapshots_.clear(); remote_selections_.clear(); results_.clear(); agreed_.clear();
+     early.swap(next_packets_); openLogs(logs); publishStatus();
+   }
+@@ -195,15 +217,19 @@ DistributedPcm::Graph DistributedPcm::observe(const Graph &input) {
+     cbs::validatePcmMeasurement(normalized.measurement);
+     const auto key = std::make_pair(normalized.from, normalized.to);
+     if (edge.type == PoseGraphEdge::ODOM) {
++      if (spatial_graph_)
++        throw std::runtime_error("Odometry edge in spatial-only graph");
+       if (cbs::getPoseIndex(normalized.to) !=
+           cbs::getPoseIndex(normalized.from) + 1)
+         throw std::runtime_error("PCM requires consecutive raw odometry edges");
+       odometry_[key] = normalized;
+     } else if (edge.type == PoseGraphEdge::LOOPCLOSE) {
+       loops_[key] = normalized;
++    } else if (spatial_graph_) {
++      spatial_[key] = normalized;
+     }
+-    // Local map-consistency edges pass through to CBS, but must not enter the
+-    // raw odometry trajectory, PCM votes, peer packets or loop geometry exchange.
++    // Map-consistency factors support spatial paths; they are not loop votes
++    // or geometry-exchange requests. Only separator path summaries travel.
+     const auto canonical = encode(normalized);
+     edge.robot_from = cbs::getAgentId(normalized.from) - 'a';
+     edge.robot_to = cbs::getAgentId(normalized.to) - 'a';
+@@ -236,7 +262,7 @@ void DistributedPcm::receiveSeal(const msg::PcmInputSeal &seal) {
+ DistributedPcm::Packet DistributedPcm::basePacket(int peer,
+                                                   uint8_t phase) const {
+   Packet packet;
+-  packet.protocol_version = 1;
++  packet.protocol_version = spatial_graph_ ? 2 : 1;
+   packet.session_id = session_;
+   packet.source_robot = robot_;
+   packet.target_robot = peer;
+@@ -257,9 +283,12 @@ void DistributedPcm::trySeal() {
+   if (own_keys_.empty() || own_keys_.size() != seal_->own_nodes)
+     throw std::runtime_error("PCM input seal does not match local nodes");
+   std::vector<cbs::PcmEdge> odometry;
+-  for (const auto &[key, edge] : odometry_)
++  for (const auto &[key, edge] : (spatial_graph_ ? spatial_ : odometry_))
+     odometry.push_back(edge);
+-  cbs::PcmTrajectory own(own_keys_, odometry);
++  cbs::PcmTrajectory own(own_keys_, odometry,
++                         spatial_graph_
++                             ? cbs::PcmTrajectory::Mode::SpatialGraph
++                             : cbs::PcmTrajectory::Mode::OrderedChain);
+   std::map<int, std::set<gtsam::Key>> endpoints;
+   for (const auto &[key, edge] : loops_) {
+     if (cbs::getAgentId(edge.from) == cbs::getAgentId(edge.to))
+@@ -311,8 +340,9 @@ void DistributedPcm::receive(const Packet &message) {
+     return;
+   }
+   try {
+-    if (message.protocol_version != 1 || message.target_robot != robot_ ||
+-        message.source_robot == robot_ || message.source_robot >= robots_ ||
++    if (message.protocol_version != (spatial_graph_ ? 2u : 1u) ||
++        message.target_robot != robot_ || message.source_robot == robot_ ||
++        message.source_robot >= robots_ ||
+         message.probability != options_.probability ||
+         message.minimum_clique_size != options_.minimum_clique_size)
+       throw std::runtime_error("PCM peer protocol/configuration mismatch");
+diff --git a/tests/test_distributed_pcm.cpp b/tests/test_distributed_pcm.cpp
+index 5317669..0bc52fd 100644
+--- a/tests/test_distributed_pcm.cpp
++++ b/tests/test_distributed_pcm.cpp
+@@ -16,7 +16,7 @@ void require(bool value, const char *message) {
+   if (!value)
+     throw std::runtime_error(message);
+ }
+-DistributedPcm::Graph graph(int robot, bool loops) {
++DistributedPcm::Graph graph(int robot, bool loops, bool spatial = false) {
+   DistributedPcm::Graph graph;
+   if (!loops) {
+     for (int k = 0; k < 3; ++k) {
+@@ -28,7 +28,7 @@ DistributedPcm::Graph graph(int robot, bool loops) {
+       graph.nodes.push_back(node);
+     }
+   }
+-  for (int k = 0; k < 2; ++k) {
++  for (int k = 0; k < (loops && spatial ? 3 : 2); ++k) {
+     pose_graph_tools_msgs::msg::PoseGraphEdge edge;
+     edge.robot_from = loops ? 0 : robot;
+     edge.robot_to = loops ? 1 : robot;
+@@ -52,10 +52,14 @@ DistributedPcm::Graph graph(int robot, bool loops) {
+     local.pose.position.x = 2.;
+     graph.edges.push_back(local);
+   }
++  if (spatial && !loops) {
++    graph.edges.erase(graph.edges.begin()); // remove unsupported 0--1
++    graph.edges.front().type = cbs_ros::kMapConsistencyEdge; // 1--2 and 0--2
++  }
+   return graph;
+ }
+ 
+-void protocolTest(bool mismatch, bool missing_peer) {
++void protocolTest(bool mismatch, bool missing_peer, bool spatial = false) {
+   auto a = std::make_shared<rclcpp::Node>("pcm_test_a");
+   auto b = std::make_shared<rclcpp::Node>("pcm_test_b");
+   auto observer = std::make_shared<rclcpp::Node>("pcm_test_observer");
+@@ -63,8 +67,8 @@ void protocolTest(bool mismatch, bool missing_peer) {
+   executor.add_node(a);
+   executor.add_node(b);
+   executor.add_node(observer);
+-  const auto session =
+-      "pcm_protocol_" + std::to_string(mismatch) + std::to_string(missing_peer);
++  const auto session = "pcm_protocol_" + std::to_string(mismatch) +
++                       std::to_string(missing_peer) + std::to_string(spatial);
+   const auto qos = rclcpp::QoS(2).reliable().transient_local();
+   uint64_t observed_bytes = 0;
+   std::vector<PcmPacket> received;
+@@ -88,12 +92,13 @@ void protocolTest(bool mismatch, bool missing_peer) {
+             statuses[status->robot_id] = *status;
+         }));
+   }
+-  DistributedPcm alpha(a, 0, 2, session, {.99, 2}, missing_peer ? .3 : 5., {});
++  DistributedPcm alpha(a, 0, 2, session, {.99, 2}, missing_peer ? .3 : 5., {},
++                       false, spatial);
+   std::unique_ptr<DistributedPcm> bob;
+   if (!missing_peer)
+     bob = std::make_unique<DistributedPcm>(
+         b, 1, 2, session, cbs::PcmOptions{mismatch ? .95 : .99, 2}, 5.,
+-        std::filesystem::path{});
++        std::filesystem::path{}, false, spatial);
+   auto seal_a = observer->create_publisher<PcmInputSeal>(
+       "/cbs_ros_0/pcm/input_seal", qos);
+   auto seal_b = observer->create_publisher<PcmInputSeal>(
+@@ -113,14 +118,14 @@ void protocolTest(bool mismatch, bool missing_peer) {
+   for (int k = 0; k < 5; ++k)
+     spin();
+   require(!alpha.advance(), "PCM ran before its graph arrived");
+-  alpha.observe(graph(0, false));
++  alpha.observe(graph(0, false, spatial));
+   require(!alpha.advance(),
+           "PCM ran before all declared graph messages arrived");
+-  alpha.observe(graph(0, true));
++  alpha.observe(graph(0, true, spatial));
+   require(!alpha.advance(), "PCM ran without peer evidence");
+   if (bob) {
+-    bob->observe(graph(1, false));
+-    bob->observe(graph(1, true));
++    bob->observe(graph(1, false, spatial));
++    bob->observe(graph(1, true, spatial));
+     for (int k = 0; k < 10; ++k)
+       spin();
+     // A partial peer batch is not evidence, even with matching loops.
+@@ -157,9 +162,12 @@ void protocolTest(bool mismatch, bool missing_peer) {
+   for (const auto &packet : received) {
+     if (packet.phase != PcmPacket::SNAPSHOT)
+       continue;
+-    require(packet.available_keys.size() == 2 && packet.odometry.size() == 1,
++    require(packet.protocol_version == (spatial ? 2 : 1),
++            "Incorrect PCM protocol mode");
++    require(packet.available_keys.size() == (spatial ? 3 : 2) &&
++                packet.odometry.size() == (spatial ? 3 : 1),
+             "PCM exchanged non-separator trajectory data");
+-    require(packet.loops.size() == 2,
++    require(packet.loops.size() == (spatial ? 3 : 2),
+             "Local map consistency leaked into peer loop evidence");
+     for (auto key : packet.available_keys)
+       require(cbs::getAgentId(key) == 'a' + packet.source_robot,
+@@ -181,7 +189,7 @@ void protocolTest(bool mismatch, bool missing_peer) {
+   require(alpha.advance(), "Duplicate or stale messages changed PCM agreement");
+   bool late_failed = false;
+   try {
+-    alpha.observe(graph(0, true));
++    alpha.observe(graph(0, true, spatial));
+   } catch (const std::exception &) {
+     late_failed = true;
+   }
+@@ -213,6 +221,8 @@ int main(int argc, char **argv) {
+   rclcpp::init(argc, argv);
+   try {
+     protocolTest(false, false);
++    protocolTest(false, false, true);
++    protocolTest(true, false, true);
+     protocolTest(true, false);
+     protocolTest(false, true);
+     rclcpp::shutdown();

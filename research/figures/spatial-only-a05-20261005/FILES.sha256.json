@@ -1,0 +1,66 @@
+{
+  "cbs-changes.patch": {
+    "bytes": 9685,
+    "sha256": "dc4d7a527c2190b0d07ca83f44adf28c0281ede9ac07202461c73d75cf17cc5e"
+  },
+  "cbs_ros-changes.patch": {
+    "bytes": 15145,
+    "sha256": "6a670b47b13d4c731949e62b8e97ce429aaaf78b8de39389bca36cc1932090a9"
+  },
+  "collect_verification.py": {
+    "bytes": 2707,
+    "sha256": "1df2de83677b34e84546d9225faac7c9df473f59146d8b14deb71cbb4b189d9a"
+  },
+  "core.xml": {
+    "bytes": 2778,
+    "sha256": "b6c8ce2c51b56c4bb1dddf54c1a1e4193b240e86a88f892daf5b015fc770dd97"
+  },
+  "gen_fig_spatial_graph.py": {
+    "bytes": 6399,
+    "sha256": "2bca1bfa17a632998c6fa2aa6a5020bdef2562482efe8323c84ad48eb619f70f"
+  },
+  "graph-comparison.png": {
+    "bytes": 1363050,
+    "sha256": "1bd9d2fc30e42439da74c73dccc02e1bb35e85bcc004666e6195c1cd9354ddf3"
+  },
+  "graph.json": {
+    "bytes": 145300,
+    "sha256": "64b53909bd25420e237888c3ea93e138c5ad503e9654b8d285f99ffa79c8bd21"
+  },
+  "index.html": {
+    "bytes": 2805,
+    "sha256": "4b3515d5c52f9fa7a78698f5289d82dc7bc953f75eeac380b7f82f2d2b183a65"
+  },
+  "local-tests.xml": {
+    "bytes": 9515,
+    "sha256": "0db3610ea645b132d88e01f7b300f48dd23904786acaf2fbdd4653c7e6529153"
+  },
+  "output/pdf/graph-comparison.pdf": {
+    "bytes": 104335,
+    "sha256": "e403f715da1e3509f0312636fcad4dac026478ba9e7d131a857cd6dc597c6615"
+  },
+  "pipeline-changes.patch": {
+    "bytes": 47935,
+    "sha256": "2502cc1f03b13a5a95b51c8af2fcd5ecc28f932b93b5b94ea275f166ff0f6ebe"
+  },
+  "python.xml": {
+    "bytes": 6692,
+    "sha256": "929a797d59a8c6fad90bfd858e72f99b7757e35f3ce7a157ac8063fedb833e50"
+  },
+  "ros.xml": {
+    "bytes": 2433,
+    "sha256": "c373b2616e5f4339c89cf56edb147fd73b4f80025503df7e3d78eef27ef451a0"
+  },
+  "source-checkpoints.json": {
+    "bytes": 408,
+    "sha256": "352a09e5711b71b97e3c8d71db94b937668da97633675b6bb4f7ad7427310ae9"
+  },
+  "verification.json": {
+    "bytes": 24012,
+    "sha256": "541aa24e6017308a359a5fbe3ad9ebda01d74f7d0fded40623add748fd950972"
+  },
+  "verify.log": {
+    "bytes": 2431,
+    "sha256": "b6b9d3d6837ca4040918c0c467c0e21607ce02101f60be7d6be27525cdec9de0"
+  }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="9"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname="2ba775e57e2b"
+	time="3"
+	timestamp="2026-10-05T13:09:36"
+	>
+	<testcase name="reliable_belief_response" classname="reliable_belief_response" time="1.11272" status="run">
+		<system-out>Late belief retained; missing belief fails explicitly
+</system-out>
+	</testcase>
+	<testcase name="registration_factors" classname="registration_factors" time="0.181585" status="run">
+		<system-out>CBS live GICP, marginalization, rekey, ownership and session checks passed
+</system-out>
+	</testcase>
+	<testcase name="ellipsoid_registration_cbs" classname="ellipsoid_registration_cbs" time="0.0261347" status="run">
+		<system-out>CBS live GICP, marginalization, rekey, ownership and session checks passed
+</system-out>
+	</testcase>
+	<testcase name="gpu_registration_cbs" classname="gpu_registration_cbs" time="0.268107" status="run">
+		<system-out>GPU correction initial=0.142127 final=0.0699267 pose=0.417464 -0.36699 0.209781
+CBS live GICP, marginalization, rekey, ownership and session checks passed
+</system-out>
+	</testcase>
+	<testcase name="ellipsoid_factor_math" classname="ellipsoid_factor_math" time="0.00397865" status="run">
+		<system-out>Ellipsoid Jacobian, frame, scaling, cloning and correspondence-loss tests passed
+</system-out>
+	</testcase>
+	<testcase name="distributed_pcm_protocol" classname="distributed_pcm_protocol" time="2.1342" status="run">
+		<system-out>[INFO] [1791205778.055797927] [pcm_test_a]: Distributed PCM agreed with 1 peers before CBS initialization
+[INFO] [1791205778.055918065] [pcm_test_b]: Distributed PCM agreed with 1 peers before CBS initialization
+[INFO] [1791205778.617414180] [pcm_test_a]: Distributed PCM agreed with 1 peers before CBS initialization
+[INFO] [1791205778.617464144] [pcm_test_b]: Distributed PCM agreed with 1 peers before CBS initialization
+PCM peer protocol, barriers, isolation, bytes and failure tests passed
+</system-out>
+	</testcase>
+	<testcase name="belief_batch" classname="belief_batch" time="0.00298578" status="run">
+		<system-out></system-out>
+	</testcase>
+	<testcase name="pose_graph_factor" classname="pose_graph_factor" time="0.00240829" status="run">
+		<system-out></system-out>
+	</testcase>
+	<testcase name="loop_scale_sidecar" classname="loop_scale_sidecar" time="0.00141634" status="run">
+		<system-out></system-out>
+	</testcase>
+</testsuite>

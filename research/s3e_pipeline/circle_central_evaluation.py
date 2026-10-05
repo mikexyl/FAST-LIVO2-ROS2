@@ -39,6 +39,8 @@ def correction_anchors(keys,optimized):
     nodes can differ; averaging is an explicit trajectory reconstruction choice,
     while map geometry retains each circle's actual optimized node.
     """
+    if any(not r.get('optimized',True) for r in optimized):
+        raise ValueError('Cannot interpolate a trajectory across unconnected submap components')
     by_key={r['keyframe_id']:r for r in optimized};groups=defaultdict(list)
     for row in keys:groups[row['stamp_ns']].append(row)
     collapsed=[]; graph=[]; diagnostics=[]
@@ -60,6 +62,8 @@ def corrected_union(world,keys,optimized):
     nearest circle correction and flagged, never silently discarded or called
     covered. No geometry registration or new measurements are introduced here.
     """
+    if any(not r.get('optimized',True) for r in optimized):
+        raise ValueError('Unconnected submaps must remain separate; refusing a joint map')
     frame=np.asarray(keys[0]['T_horizontal_map']);xy=transform(frame,world)[:,:2]
     distance,owner=cKDTree([r['footprint_center_xy'] for r in keys]).query(xy)
     by_key={r['keyframe_id']:r for r in optimized};result=np.empty_like(world,dtype=float)

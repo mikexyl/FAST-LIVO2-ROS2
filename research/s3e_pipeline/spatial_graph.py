@@ -23,6 +23,7 @@ MAP_CONSISTENCY_EDGE_TYPE = 100
 @dataclass(frozen=True)
 class SpatialGraphConfig:
     enabled: bool = False
+    topology: str = 'spatial_only'
     max_degree: int = 3
     max_new_edges: int = 2
     min_shared_points: int = 100
@@ -32,10 +33,14 @@ class SpatialGraphConfig:
     information_fraction: float = .25
     support_sample_points: int = 2048
     cache_clouds: int = 4
+    rotation_sigma_deg: float = 3.
+    translation_sigma_m: float = .5
 
     def __post_init__(self):
         if type(self.enabled) is not bool:
             raise ValueError('spatial_neighbors.enabled must be Boolean')
+        if self.topology not in ('spatial_only', 'creation_backbone'):
+            raise ValueError('Unknown spatial graph topology')
         for name in ('max_degree', 'max_new_edges', 'min_shared_points',
                      'support_sample_points', 'cache_clouds'):
             if type(getattr(self, name)) is not int or getattr(self, name) < 1:
@@ -45,7 +50,8 @@ class SpatialGraphConfig:
         for name in ('min_shared_fraction', 'information_fraction'):
             if not np.isfinite(getattr(self, name)) or not 0 < getattr(self, name) <= 1:
                 raise ValueError(f'Invalid spatial graph {name}')
-        for name in ('min_second_axis_std_m', 'max_shared_discrepancy_m'):
+        for name in ('min_second_axis_std_m', 'max_shared_discrepancy_m',
+                     'rotation_sigma_deg', 'translation_sigma_m'):
             if not np.isfinite(getattr(self, name)) or getattr(self, name) <= 0:
                 raise ValueError(f'Invalid spatial graph {name}')
 
@@ -71,6 +77,29 @@ def path_covariance(rows, i, j, edge_covariance):
         A = adjoint(inv(suffix))
         covariance += A @ edge_covariance @ A.T
     return (covariance + covariance.T) / 2
+
+
+def components(count, edges):
+    parent = list(range(count))
+    def root(k):
+        while parent[k] != k:
+            parent[k] = parent[parent[k]]
+            k = parent[k]
+        return k
+    for e in edges:
+        a, b = sorted((root(e['i'][1]), root(e['j'][1])))
+        parent[b] = a
+    return [root(k) for k in range(count)]
+
+
+def active_component(nodes, edges, cfg):
+    """Keep unanchored fragments explicit; never add numerical gauge links."""
+    if not cfg.get('spatial_neighbors', {}).get('enabled', False) or cfg['spatial_neighbors'].get('topology', 'spatial_only') != 'spatial_only':
+        return nodes, edges, []
+    groups = components(len(nodes), edges)
+    return ([r for r in nodes if groups[r['keyframe_id']] == 0],
+            [e for e in edges if groups[e['i'][1]] == 0],
+            [dict(r, local_component=groups[r['keyframe_id']]) for r in nodes if groups[r['keyframe_id']] != 0])
 
 
 class SpatialGraph:
@@ -104,6 +133,8 @@ class SpatialGraph:
         with np.load(path, allow_pickle=False) as data:
             xyz = np.asarray(data['cloud'], dtype=float)
             ids = np.asarray(data['point_ids'])
+        if ids.ndim != 1 or ids.dtype.kind not in 'iu':
+            raise ValueError('Native point IDs must be integer indices')
         validate_geometry(row, xyz, ids)
         self.payload_reads += 1
         while len(self.cache) >= self.cfg.cache_clouds:
@@ -133,6 +164,7 @@ class SpatialGraph:
         centered = points - points.mean(axis=0)
         std = np.sqrt(np.maximum(0, np.linalg.eigvalsh(centered.T @ centered / len(points))))
         return dict(shared_discrepancy_max_m=discrepancy, shared_axis_std_m=std.tolist(),
+                    shared_centroid_in_j=xb[pb[sample]].mean(axis=0).tolist(),
                     support_samples=len(points), supported=bool(std[1] >= self.cfg.min_second_axis_std_m))
 
     def update(self, rows):
@@ -156,8 +188,8 @@ class SpatialGraph:
             self.degree.append(0)
             candidates = []
             for i, a in enumerate(self.rows):
-                # Adjacent nodes already have the unchanged odometry constraint.
-                if i == j-1:
+                # Only the historical augmentation mode supplies a chain.
+                if self.cfg.topology == 'creation_backbone' and i == j-1:
                     continue
                 distance = float(np.linalg.norm(np.asarray(a['footprint_center_xy']) - b['footprint_center_xy']))
                 if distance >= a['footprint_radius_m'] + b['footprint_radius_m']:
@@ -171,9 +203,19 @@ class SpatialGraph:
                     self.decisions.append(dict(record, reason='insufficient_shared_geometry'))
                 else:
                     candidates.append(((-fraction, -count, distance, i), record))
-            for _, record in sorted(candidates, key=lambda item: item[0]):
+            while candidates:
+                groups = components(j+1, self.edges)
+                # Prefer real support that joins components. Degree limits may
+                # suppress cycles, never a needed supported forest connection.
+                candidates.sort(key=lambda item: (
+                    groups[item[1]['i'][1]] == groups[j] if self.cfg.topology == 'spatial_only' else False,
+                    self.degree[item[1]['i'][1]] >= self.cfg.max_degree,
+                    item[0]))
+                _, record = candidates.pop(0)
                 i = record['i'][1]
-                if self.degree[j] >= self.cfg.max_new_edges or self.degree[i] >= self.cfg.max_degree:
+                bridge = self.cfg.topology == 'spatial_only' and groups[i] != groups[j]
+                over_budget = self.degree[j] >= self.cfg.max_new_edges or self.degree[i] >= self.cfg.max_degree
+                if over_budget and not bridge:
                     self.decisions.append(dict(record, reason='degree_budget'))
                     continue
                 quality = self.support(rows[i], b, record['shared_points'])
@@ -183,12 +225,22 @@ class SpatialGraph:
                     continue
                 # Shared crops are correlated. This is a regularization budget,
                 # never a covariance estimate from N supposedly independent points.
-                covariance = path_covariance(rows, i, j, self.edge_covariance)
                 weight = self.cfg.information_fraction / self.cfg.max_degree
-                information = weight * np.linalg.inv(covariance)
+                if self.cfg.topology == 'creation_backbone':
+                    covariance = path_covariance(rows, i, j, self.edge_covariance)
+                    information = weight * np.linalg.inv(covariance)
+                else:
+                    # Define the regularizer at shared geometry, not the drone's
+                    # creation-time position or number of intervening circles.
+                    center = np.eye(4); center[:3,3] = quality['shared_centroid_in_j']
+                    A = adjoint(inv(center))
+                    sigmas = np.array([np.deg2rad(self.cfg.rotation_sigma_deg)]*3 +
+                                      [self.cfg.translation_sigma_m]*3)
+                    information = weight * A.T @ np.diag(1/sigmas**2) @ A
                 information = (information + information.T) / 2
                 record.update(reason='accepted', source_hashes=[rows[i]['sha256'], b['sha256']],
-                    information_weight=weight, path_edges=j-i,
+                    information_weight=weight, joins_components=bridge,
+                    degree_budget_exception=bool(bridge and over_budget),
                     evidence='shared native point IDs; correlated local map consistency')
                 self.edges.append(constraint(record['i'], record['j'],
                     inv(pose(rows[i]['T_world_body'])) @ pose(b['T_world_body']), information,
@@ -204,9 +256,12 @@ class SpatialGraph:
     def diagnostics(self):
         return dict(schema_version=1, robot=self.robot, config=asdict(self.cfg),
             submaps=len(self.rows), map_consistency_factors=len(self.edges),
+            components=components(len(self.rows),self.edges),
+            component_count=len(set(components(len(self.rows),self.edges))),
+            cycle_rank=len(self.edges)-len(self.rows)+len(set(components(len(self.rows),self.edges))),
             additional_degree=self.degree, decisions=self.decisions,
             construction_s=self.elapsed_s, payload_reads=self.payload_reads,
             peak_cached_cloud_bytes=self.peak_cached_cloud_bytes,
             geometry_network_bytes=0,
             communication_scope='robot-local construction only; CBS belief traffic measured separately',
-            uncertainty_policy='heuristic regularizer; correlated with the odometry backbone')
+            uncertainty_policy='correlated map regularizer; no creation-order measurements in spatial_only')

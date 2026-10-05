@@ -1,0 +1,226 @@
+diff --git a/include/cbs/robust/inter_robot_pcm.h b/include/cbs/robust/inter_robot_pcm.h
+index 3bf6366..8780ceb 100644
+--- a/include/cbs/robust/inter_robot_pcm.h
++++ b/include/cbs/robust/inter_robot_pcm.h
+@@ -27,12 +27,15 @@ struct PcmEdge {
+   PcmEdge canonical() const;
+ };
+ 
+-// An ordered chain of independent odometry edges, or disjoint summaries of
+-// that chain between successive separator keys. Missing segments stay missing.
++// Local support is either ordered odometry or a spatial graph. Spatial peer
++// summaries are direct pair values, never recomposed as a temporal chain.
++// Missing segments and disconnected components stay unavailable.
+ class PcmTrajectory {
+  public:
++  enum class Mode { OrderedChain, SpatialGraph, PairwiseSummaries };
+   PcmTrajectory(std::set<gtsam::Key> keys,
+-                const std::vector<PcmEdge>& segments);
++                const std::vector<PcmEdge>& segments,
++                Mode mode = Mode::OrderedChain);
+   std::optional<PcmPose> relative(gtsam::Key from, gtsam::Key to) const;
+   std::vector<PcmEdge> summarize(const std::set<gtsam::Key>& endpoints) const;
+   const std::set<gtsam::Key>& keys() const { return keys_; }
+@@ -40,6 +43,9 @@ class PcmTrajectory {
+  private:
+   std::set<gtsam::Key> keys_;
+   std::map<gtsam::Key, PcmEdge> segments_;
++  Mode mode_;
++  std::map<gtsam::Key, std::map<gtsam::Key, PcmPose>> adjacency_;
++  std::map<std::pair<gtsam::Key, gtsam::Key>, PcmPose> pairwise_;
+   mutable std::map<gtsam::Key, std::map<gtsam::Key, PcmPose>> cache_;
+ };
+ 
+diff --git a/src/robust/inter_robot_pcm.cpp b/src/robust/inter_robot_pcm.cpp
+index 84cc899..b04a295 100644
+--- a/src/robust/inter_robot_pcm.cpp
++++ b/src/robust/inter_robot_pcm.cpp
+@@ -5,6 +5,7 @@
+ #include <boost/math/distributions/chi_squared.hpp>
+ #include <cmath>
+ #include <pcm/pcm.hpp>
++#include <queue>
+ #include <stdexcept>
+ 
+ #include "cbs/key.h"
+@@ -48,8 +49,9 @@ PcmEdge PcmEdge::canonical() const {
+ }
+ 
+ PcmTrajectory::PcmTrajectory(std::set<gtsam::Key> keys,
+-                             const std::vector<PcmEdge>& segments)
+-    : keys_(std::move(keys)) {
++                             const std::vector<PcmEdge>& segments,
++                             Mode mode)
++    : keys_(std::move(keys)), mode_(mode) {
+   if (!keys_.empty()) {
+     const auto owner = getAgentId(*keys_.begin());
+     for (auto key : keys_) {
+@@ -57,6 +59,27 @@ PcmTrajectory::PcmTrajectory(std::set<gtsam::Key> keys,
+         throw std::invalid_argument("PCM trajectory contains foreign keys");
+     }
+   }
++  if (mode_ != Mode::OrderedChain) {
++    std::set<std::pair<gtsam::Key, gtsam::Key>> seen;
++    for (const auto& input : segments) {
++      const auto edge = input.canonical();
++      if (edge.from == edge.to ||
++          getAgentId(edge.from) != getAgentId(edge.to) ||
++          !seen.emplace(edge.from, edge.to).second)
++        throw std::invalid_argument("Invalid duplicate spatial PCM pair");
++      if (!edge.available) continue;
++      if (!keys_.count(edge.from) || !keys_.count(edge.to))
++        throw std::invalid_argument("Spatial PCM endpoints lack local support");
++      validatePcmMeasurement(edge.measurement);
++      if (mode_ == Mode::PairwiseSummaries) {
++        pairwise_.emplace(std::make_pair(edge.from, edge.to), edge.measurement);
++      } else {
++        adjacency_[edge.from][edge.to] = edge.measurement;
++        adjacency_[edge.to][edge.from] = edge.measurement.inverse();
++      }
++    }
++    return;
++  }
+   gtsam::Key previous_to = 0;
+   std::map<gtsam::Key, PcmEdge> ordered;
+   for (const auto& input : segments) {
+@@ -86,17 +109,42 @@ std::optional<PcmPose> PcmTrajectory::relative(gtsam::Key from,
+     const auto forward = relative(to, from);
+     return forward ? std::optional<PcmPose>(forward->inverse()) : std::nullopt;
+   }
++  if (mode_ == Mode::PairwiseSummaries) {
++    const auto found = pairwise_.find({from, to});
++    return found == pairwise_.end() ? std::nullopt
++                                    : std::optional<PcmPose>(found->second);
++  }
+   auto [it, added] = cache_.try_emplace(from);
+   if (added) {
+-    // Compose each suffix once, avoiding a trajectory traversal for every
+-    // loop pair. Covariances use only the interval, never shared marginals.
+-    auto key = from;
+-    PcmPose accumulated;
+-    while (segments_.count(key)) {
+-      const auto& edge = segments_.at(key);
+-      accumulated = accumulated.compose(edge.measurement);
+-      key = edge.to;
+-      it->second.emplace(key, accumulated);
++    if (mode_ == Mode::SpatialGraph) {
++      // Deterministic breadth-first support paths. Never invent a temporal
++      // connection across missing geometry; do not sum information over cycles.
++      std::queue<gtsam::Key> pending;
++      std::set<gtsam::Key> seen{from};
++      pending.push(from);
++      it->second.emplace(from, PcmPose{});
++      while (!pending.empty()) {
++        const auto key = pending.front();
++        pending.pop();
++        const auto neighbors = adjacency_.find(key);
++        if (neighbors == adjacency_.end()) continue;
++        for (const auto& [next, measurement] : neighbors->second) {
++          if (!seen.insert(next).second) continue;
++          it->second.emplace(next, it->second.at(key).compose(measurement));
++          pending.push(next);
++        }
++      }
++    } else {
++      // Compose each suffix once, avoiding a trajectory traversal for every
++      // loop pair. Covariances use only the interval, never shared marginals.
++      auto key = from;
++      PcmPose accumulated;
++      while (segments_.count(key)) {
++        const auto& edge = segments_.at(key);
++        accumulated = accumulated.compose(edge.measurement);
++        key = edge.to;
++        it->second.emplace(key, accumulated);
++      }
+     }
+   }
+   const auto found = it->second.find(to);
+@@ -108,6 +156,17 @@ std::vector<PcmEdge> PcmTrajectory::summarize(
+     const std::set<gtsam::Key>& endpoints) const {
+   std::vector<PcmEdge> result;
+   if (endpoints.empty()) return result;
++  if (mode_ != Mode::OrderedChain) {
++    // Direct summaries of each requested pair, not chained summaries that
++    // could repeat shared path edges or hide a disconnected component.
++    for (auto i = endpoints.begin(); i != endpoints.end(); ++i)
++      for (auto j = std::next(i); j != endpoints.end(); ++j) {
++        const auto value = relative(*i, *j);
++        result.push_back(
++            {*i, *j, value.value_or(PcmPose{}), value.has_value()});
++      }
++    return result;
++  }
+   for (auto i = endpoints.begin(), j = std::next(i); j != endpoints.end();
+        ++i, ++j) {
+     const auto value = relative(*i, *j);
+diff --git a/tests/test_inter_robot_pcm.cpp b/tests/test_inter_robot_pcm.cpp
+index f8e6715..c248b6e 100644
+--- a/tests/test_inter_robot_pcm.cpp
++++ b/tests/test_inter_robot_pcm.cpp
+@@ -50,6 +50,66 @@ int main() {
+                         true});
+     }
+   }
++  // Spatial paths may run backwards in creation order and leave islands.
++  const auto k0 = toPoseKey('a', 0), k1 = toPoseKey('a', 1);
++  const auto k2 = toPoseKey('a', 2), k3 = toPoseKey('a', 3);
++  const std::set<gtsam::Key> spatial_keys{k0, k1, k2, k3};
++  std::vector<PcmEdge> support{
++      {k0,
++       k2,
++       {truth(0, 0).between(truth(0, 2)), Matrix6::Identity() * .01},
++       true},
++      {k2,
++       k1,
++       {truth(0, 2).between(truth(0, 1)), Matrix6::Identity() * .02},
++       true}};
++  const PcmTrajectory spatial(
++      spatial_keys, support, PcmTrajectory::Mode::SpatialGraph);
++  require(spatial.relative(k0, k1)->pose.equals(
++              truth(0, 0).between(truth(0, 1)), 1e-10),
++          "Spatial path incorrectly used creation order");
++  require(!spatial.relative(k0, k3),
++          "Spatial graph invented an island connection");
++  const auto pairs = spatial.summarize(spatial_keys);
++  require(pairs.size() == 6, "Spatial summary omitted separator pairs");
++  const PcmTrajectory remote(
++      spatial_keys, pairs, PcmTrajectory::Mode::PairwiseSummaries);
++  for (auto i : spatial_keys)
++    for (auto j : spatial_keys) {
++      const auto a = spatial.relative(i, j), b = remote.relative(i, j);
++      require(bool(a) == bool(b), "Pair summary changed support availability");
++      if (a)
++        require(a->pose.equals(b->pose, 1e-10) &&
++                    a->covariance.isApprox(b->covariance, 1e-9),
++                "Pair summary changed spatial covariance");
++    }
++  auto missing_pair = pairs;
++  missing_pair.erase(missing_pair.begin());
++  require(
++      !PcmTrajectory(
++           spatial_keys, missing_pair, PcmTrajectory::Mode::PairwiseSummaries)
++           .relative(k0, k1),
++      "Pair-summary reader composed a substitute path");
++  auto duplicate_support = support;
++  duplicate_support.push_back(support.front().canonical());
++  rejects([&] {
++    PcmTrajectory(
++        spatial_keys, duplicate_support, PcmTrajectory::Mode::SpatialGraph);
++  });
++  auto foreign_support = support;
++  foreign_support.front().to = toPoseKey('b', 2);
++  rejects([&] {
++    PcmTrajectory(
++        spatial_keys, foreign_support, PcmTrajectory::Mode::SpatialGraph);
++  });
++  auto shuffled_support = support;
++  std::reverse(shuffled_support.begin(), shuffled_support.end());
++  require(
++      PcmTrajectory(
++          spatial_keys, shuffled_support, PcmTrajectory::Mode::SpatialGraph)
++          .relative(k0, k1)
++          ->covariance.isApprox(spatial.relative(k0, k1)->covariance, 1e-10),
++      "Spatial path depends on input edge ordering");
+   const PcmTrajectory a(ka, oa), b(kb, ob);
+   require(a.relative(toPoseKey('a', 0), toPoseKey('a', 1))
+               ->pose.equals(truth(0, 0).between(truth(0, 1)), 1e-10),

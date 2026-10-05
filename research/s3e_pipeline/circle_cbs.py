@@ -76,6 +76,8 @@ def solution_graph(snapshot, rows):
         consistency.append(dict(i=e['i'],j=e['j'],translation_m=float(np.linalg.norm(error[:3,3])),
             rotation_deg=float(np.degrees(Rotation.from_matrix(error[:3,:3]).magnitude()))))
     return dict(poses=poses,components={r:s['component'] for r,s in robots.items()},
+        unconnected_submaps=[p for p in poses if not p.get('optimized',True)],
+        alignment_complete=all(p.get('optimized',True) for p in poses),
         local_constraints=snapshot.get('local_constraints',[]),
         constraints=snapshot['constraints'],solver='CBS with owned submap Pose3 keys',node_type='fixed_spatial_submap',
         published_loop_residuals=consistency,

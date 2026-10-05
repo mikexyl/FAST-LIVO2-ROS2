@@ -52,6 +52,9 @@ def run(cfg, artifacts, source, out):
         from .persistent_cbs import run_frozen
         return run_frozen(cfg, artifacts, source, out)
     if execution != 'sealed': raise ValueError('dpgo.execution must be sealed or persistent')
+    spatial = cfg['pgo'].get('spatial_neighbors',{})
+    if spatial.get('enabled',False) and spatial.get('topology','spatial_only')=='spatial_only':
+        raise ValueError('Spatial-only graphs require persistent execution and explicit pending-component handling')
     robots = cfg['robots']; settings = cfg['dpgo']; method = cfg['backend']['name']
     out = Path(out).resolve(); source = Path(source).resolve(); start = time.monotonic()
     overlay = native_overlay(source, settings)

@@ -44,7 +44,7 @@ def prepare(capture, output, config):
             # stores. Immutable hardlinks (or copies across filesystems) can.
             try: os.link(source,target)
             except OSError: shutil.copy2(source,target)
-        local_graph(rows[robot],robot,config['pgo'])
+        local_graph(rows[robot],robot,config['pgo'],store=store)
         write_jsonl(store/'keyframes.jsonl',rows[robot])
         for name in ('union.npz','placement.json','placement-history.jsonl','images'):
             path=capture/robot/name
@@ -76,6 +76,7 @@ def solution_graph(snapshot, rows):
         consistency.append(dict(i=e['i'],j=e['j'],translation_m=float(np.linalg.norm(error[:3,3])),
             rotation_deg=float(np.degrees(Rotation.from_matrix(error[:3,:3]).magnitude()))))
     return dict(poses=poses,components={r:s['component'] for r,s in robots.items()},
+        local_constraints=snapshot.get('local_constraints',[]),
         constraints=snapshot['constraints'],solver='CBS with owned submap Pose3 keys',node_type='fixed_spatial_submap',
         published_loop_residuals=consistency,
         identity='robot_id, keyframe_id; creation timestamps may repeat')
@@ -108,7 +109,8 @@ def sealed(config, source, output, rows, loops):
     for r,status in summary['robots'].items():
         poses=read_jsonl(output/'cbs'/r/'poses.jsonl');status['component']=poses[0]['component']
     summary['finished']=True
-    return dict(summary=summary,poses=read_jsonl(output/'cbs/poses.jsonl'),
+    local = [e for r in config['robots'] for e in read_json(output/'cbs'/r/'local-graph.json')['constraints']]
+    return dict(summary=summary,poses=read_jsonl(output/'cbs/poses.jsonl'),local_constraints=local,
                 constraints=read_jsonl(output/'cbs/constraints.jsonl'))
 
 

@@ -34,7 +34,11 @@ class Robot(Node):
         super().__init__('s3e_frontend', namespace=self.robot)
         self.output = Path(spec['output']); self.start = time.monotonic()
         self.rows = read_jsonl(Path(spec['store']) / 'keyframes.jsonl')
-        self.nodes, self.odometry = local_graph(self.rows, self.robot, spec['pgo'])
+        from .spatial_graph import SpatialGraph
+        spatial = SpatialGraph(self.robot, spec['store'], spec['pgo']) if spec['pgo'].get('spatial_neighbors',{}).get('enabled',False) else None
+        self.nodes, self.odometry = local_graph(self.rows, self.robot, spec['pgo'], spatial_graph=spatial)
+        atomic_json(self.output/'local-graph.json', dict(constraints=self.odometry,
+            spatial=None if spatial is None else spatial.diagnostics()))
         self.next_index = 0; self.statuses = {}; self.mailbox = deque()
         self.query = None; self.remaining_replies = set(); self.payloads = set()
         self.counter = 0; self.done_sent = False; self.done_peers = set()
@@ -122,6 +126,8 @@ class Robot(Node):
     def accept(self, edge):
         edge = loop_for_robot(edge, self.robot)
         key = (tuple(edge['i']), tuple(edge['j']))
+        if key in {(tuple(e['i']),tuple(e['j'])) for e in self.odometry}:
+            raise ValueError('Loop collides with an existing local graph factor')
         # Reciprocal proposals choose the earliest query, regardless of verifier
         # completion order. CBS replaces a factor if an earlier proposal arrives.
         rank = lambda e: (e.get('diagnostics', {}).get('query_stamp_ns', 0),
@@ -189,7 +195,7 @@ class Robot(Node):
                 if candidates and min(candidates)[1] == self.robot:
                     stamp, _, key = min(candidates)
                     if key != self.next_index: raise ValueError('Invalid peer watermark')
-                    self.publish_graph([self.nodes[key]], self.odometry[key-1:key] if key else [])
+                    self.publish_graph([self.nodes[key]], [e for e in self.odometry if e['j'][1] == key])
                     self.query = key; self.remaining_replies = set(self.robots)
                     self.query_wall_start[key] = time.monotonic()
                     outgoing, records = self.worker.handle(dict(kind='observe', src=self.robot,
@@ -269,6 +275,7 @@ class Robot(Node):
         write_jsonl(self.output/'events.jsonl', self.events); write_jsonl(self.output/'wire.jsonl', self.wire)
         write_jsonl(self.output/'stats.jsonl', self.stats)
         write_json(self.output/'summary.json', dict(robot=self.robot, poses=len(poses), loops=len(retained),
+            map_consistency_factors=sum(e['kind']=='map_consistency' for e in self.odometry),
             proposed_loops=len(proposals), pcm_enabled=pcm_enabled,
             pcm_network_cdr_bytes=self.pcm_status['network_cdr_bytes'] if pcm_enabled else 0,
             registration=registration,

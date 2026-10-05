@@ -171,7 +171,10 @@ class PersistentSession:
                 (v['status']['cbs_last_stats'] or {}).get('bandwidth_recv_bytes',0) for v in values.values()),
             registration_network_cdr_bytes=sum(v['status']['registration_network_cdr_bytes'] for v in values.values()),
             pcm_network_cdr_bytes=sum(v['status']['pcm_network_cdr_bytes'] for v in values.values()))
+        local = [e for v in values.values() for e in v.get('local_constraints', [])]
+        summary['map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in local)
         return dict(summary=summary,poses=poses,constraints=list(constraints.values()),proposed=self.last_edges,
+                    local_constraints=local,
                     statistics={r:str(self.output/r/'stats.jsonl') for r in self.robots})
 
     def close(self):
@@ -187,6 +190,7 @@ def save_snapshot(snapshot, output):
     output = Path(output); output.mkdir(parents=True,exist_ok=True)
     for name in ('poses','constraints'):
         temp = output/f'{name}.jsonl.tmp'; write_jsonl(temp,snapshot[name]); temp.replace(output/f'{name}.jsonl')
+    write_jsonl(output/'local-constraints.jsonl',snapshot.get('local_constraints',[]))
     atomic_json(output/'summary.json',snapshot['summary'])
     robots = snapshot['summary']['robots']
     atomic_json(output/'registration.json', dict(

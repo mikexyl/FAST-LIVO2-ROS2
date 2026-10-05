@@ -78,7 +78,7 @@ def evaluate(cfg, artifacts, dataset, output):
         dense += track
         save_tum(output/f'{robot}-corrected.tum', track); write_jsonl(output/f'{robot}-corrected.jsonl', track)
         np.savez_compressed(output/f'{robot}-maps.npz', original=original.astype(np.float32), optimized=optimized.astype(np.float32))
-        _, odom = local_graph(keys, robot, cfg['pgo']); factors += odom
+        _, odom = local_graph(keys, robot, cfg['pgo'],store=store); factors += odom
         events += read_jsonl(dpgo/robot/'events.jsonl')
         if central:
             crows = [p for p in central['poses'] if p['robot_id'] == robot]

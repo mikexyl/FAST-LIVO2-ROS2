@@ -3,9 +3,9 @@ set -eo pipefail
 CIRCLE_PROJECT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." && pwd)"
 source /opt/ros/humble/setup.bash
 source /workspace/.ros2/cbs-underlay/setup.bash
-source /workspace/.ros2/circle-cbs148-20261001/source/.ros2/cbs-spatial-install/setup.bash
+export CBS_OVERLAY="${CBS_OVERLAY:-/workspace/.ros2/circle-cbs148-20261001/source/.ros2/cbs-spatial-install}"
+source "$CBS_OVERLAY/setup.bash"
 source /workspace/.ros2/upstream-area-s3e-20260921/capacity-run/install/ellipselio/share/ellipselio/local_setup.bash
-export CBS_OVERLAY=/workspace/.ros2/circle-cbs148-20261001/source/.ros2/cbs-spatial-install
 export CBS_UNDERLAY=/workspace/.ros2/cbs-underlay
 export LD_LIBRARY_PATH="/workspace/.ros2/swarm/native/lib:/usr/local/cuda/lib64:${LD_LIBRARY_PATH:-}"
 export PYTHONPATH="${CIRCLE_PROJECT}/research:/workspace/.ros2/full-ellipsoid148-20260926/native:${PYTHONPATH:-}"

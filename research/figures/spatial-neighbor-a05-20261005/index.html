@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><title>A05 sparse spatial graph</title>
+<style>body{font:17px/1.65 system-ui;max-width:1150px;margin:45px auto;padding:0 25px;color:#223943;background:#f7f9fa}
+h1{font-size:30px} img{width:100%;background:white;border:1px solid #dde5e8;border-radius:10px}
+.numbers{display:flex;gap:30px;padding:18px 24px;background:white;border-radius:10px} b{color:#a65b21}
+a{color:#166182} table{border-collapse:collapse} td,th{padding:8px 24px 8px 0;text-align:left}</style>
+<h1>A05: sparse spatial connections between circle submaps</h1>
+<p>The original 29-edge backbone is retained. An additional <b>33 map-consistency factors</b> connect nonconsecutive overlapping crops supported by shared native point IDs.</p>
+<div class="numbers"><span><b>30</b> submaps</span><span><b>33</b> new local cycles</span><span><b>3</b> maximum spatial degree</span><span><b>0</b> new peer geometry bytes</span></div>
+<p><img src="graph-comparison.png" alt="A05 chronological versus sparse spatial graph"></p>
+<p>Nodes are drawn at circle centers to show spatial relationships. The actual pose variables remain in creation-anchor IMU frames. These panels show topology, not a new optimized solution.</p>
+<table><tr><th>Construction on 148</th><th>Measured value</th></tr>
+<tr><td>All 30 publication-prefix updates</td><td>1.318 s</td></tr>
+<tr><td>Slowest prefix update</td><td>81.1 ms</td></tr>
+<tr><td>Peak resident memory, fresh inspection process</td><td>157.7 MiB</td></tr>
+<tr><td>Shared-point support</td><td>4,660–46,303 IDs per accepted edge</td></tr>
+<tr><td>Candidate exclusions</td><td>16 insufficient support; 11 degree limit</td></tr></table>
+<p>Construction runs only on each robot's local sealed geometry. Overall communication and CBS update time still require matched measurements: new constraints can change beliefs and solver work.</p>
+<p><b>Evidence caveat.</b> Shared crops are correlated. These conservatively weighted constraints preserve map consistency; they are not independent loop detections and do not independently correct raw odometry drift.</p>
+<p><b>Implementation verification:</b> 42 native Python/ROS tests and 17 C++ tests passed. The growing three-robot GPU test retained 21 local consistency factors and nine inter-robot registration pairs, reached a shared frame, and passed final geometry validation. See <a href="verification.json">verification and binary hashes</a>. A new all-14 dataset accuracy run has not been performed.</p>
+<p><a href="output/pdf/graph-comparison.pdf">Vector figure</a> · <a href="graph.json">Measured graph, input/source hashes and all decisions</a></p>

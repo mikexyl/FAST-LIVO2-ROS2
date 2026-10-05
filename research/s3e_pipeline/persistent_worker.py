@@ -24,6 +24,10 @@ class PersistentRobot(Node):
         self.output = Path(spec['output']); self.revision = 0
         self.rows = []; self.edges = {}; self.pcm = None; self.registration = None
         self.cache = {}; self.inbox = []; self.current = None; self.finished = False
+        self.spatial_graph = None; self.local_constraints = []
+        if spec['pgo'].get('spatial_neighbors', {}).get('enabled', False):
+            from .spatial_graph import SpatialGraph
+            self.spatial_graph = SpatialGraph(self.robot, spec['store'], spec['pgo'])
         self.wire_bytes = 0; self.stats = None; self.last_estimate = None
         self.pcm_bytes = 0; self.pcm_counted = set(); self.started = time.monotonic()
         self.stats_log = Journal(self.output/'stats.jsonl')
@@ -105,7 +109,9 @@ class PersistentRobot(Node):
             registration_network_cdr_bytes=self.wire_bytes, pcm_network_cdr_bytes=self.pcm_bytes,
             cbs_last_stats=self.stats, wall_s=time.monotonic()-self.started)
         # One atomic object couples its trajectory and metadata to this revision.
-        atomic_json(self.output/'estimate.json', dict(status=status, poses=poses, constraints=retained))
+        status['map_consistency_factors'] = sum(e['kind']=='map_consistency' for e in self.local_constraints)
+        atomic_json(self.output/'estimate.json', dict(status=status, poses=poses, constraints=retained,
+            local_constraints=self.local_constraints))
         if msg.finished and self.stats and self.stats['iteration'] >= msg.iteration:
             write_jsonl(self.output/'poses.jsonl',poses)
             write_jsonl(self.output/'constraints.jsonl',retained)
@@ -129,8 +135,15 @@ class PersistentRobot(Node):
             rows = value['rows']
             if rows[:len(self.rows)] != self.rows: raise ValueError('Changed persistent keyframe prefix')
             self.rows = rows; self.current = value; self.revision += 1; self.pcm = None
-            nodes, odometry = local_graph(rows, self.robot, self.spec['pgo'])
+            nodes, odometry = local_graph(rows, self.robot, self.spec['pgo'],
+                spatial_graph=self.spatial_graph, store=self.spec['store'])
+            self.local_constraints = odometry
+            atomic_json(self.output/'local-graph.json', dict(constraints=odometry,
+                spatial=None if self.spatial_graph is None else self.spatial_graph.diagnostics()))
             edges = [loop_for_robot(e,self.robot) for e in value['edges']]
+            local_pairs = {(tuple(e['i']),tuple(e['j'])) for e in odometry}
+            if any((tuple(e['i']),tuple(e['j'])) in local_pairs for e in edges):
+                raise ValueError('Loop collides with an existing local graph factor')
             self.edges = {(tuple(e['i']),tuple(e['j'])):e for e in edges}
             if len(self.edges) != len(edges): raise ValueError('Duplicate persistent loop')
             if self.spec['registration_factors']['enabled']:

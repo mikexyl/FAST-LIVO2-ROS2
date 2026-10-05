@@ -22,7 +22,7 @@ def native_pair(endpoints, robots):
     return tuple(sorted(endpoints, key=lambda e: (robots.index(e[0]), e[1])))
 
 
-def local_graph(rows, robot, cfg):
+def local_graph(rows, robot, cfg, store=None, spatial_graph=None):
     if not rows or any(r['robot_id'] != robot for r in rows):
         raise ValueError('A publisher may load only its own nonempty trajectory')
     if [r['keyframe_id'] for r in rows] != list(range(len(rows))):
@@ -45,6 +45,13 @@ def local_graph(rows, robot, cfg):
                         inv(pose(a['T_world_body'])) @ pose(b['T_world_body']),
                         information, kind='odometry', accepted=True)
              for a, b in zip(rows, rows[1:])]
+    if cfg.get('spatial_neighbors', {}).get('enabled', False):
+        from .spatial_graph import SpatialGraph
+        if spatial_graph is None:
+            if store is None:
+                raise ValueError('Spatial graph requires the owned sealed geometry store')
+            spatial_graph = SpatialGraph(robot, store, cfg)
+        edges += spatial_graph.update(rows)
     return nodes, edges
 
 
@@ -87,7 +94,14 @@ def ros_graph(nodes, edges, robots):
     for edge in edges:
         e = PoseGraphEdge(robot_from=robots.index(edge['i'][0]), robot_to=robots.index(edge['j'][0]),
                           key_from=edge['i'][1], key_to=edge['j'][1])
-        e.type = e.ODOM if edge['kind'] == 'odometry' else e.LOOPCLOSE
+        from .spatial_graph import MAP_CONSISTENCY_EDGE_TYPE
+        kinds = {'odometry': e.ODOM, 'loop': e.LOOPCLOSE,
+                 'map_consistency': MAP_CONSISTENCY_EDGE_TYPE}
+        if edge['kind'] not in kinds:
+            raise ValueError('Unknown CBS edge kind')
+        if edge['kind'] == 'map_consistency' and edge['i'][0] != edge['j'][0]:
+            raise ValueError('Map consistency must remain robot-local')
+        e.type = kinds[edge['kind']]
         e.pose = ros_pose(edge['T_i_j'])
         # CBS's PoseGraphEdge uses [rotation, translation], NOT ROS
         # PoseWithCovariance's [translation, rotation]. Keep cross terms.

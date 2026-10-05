@@ -1,0 +1,139 @@
+{
+  "native_python_tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "42",
+    "time": "124.639",
+    "timestamp": "2026-10-05T12:27:16.078088+00:00",
+    "hostname": "2ba775e57e2b"
+  },
+  "spatial_native_test": {
+    "classname": "research.tests.test_spatial_graph",
+    "name": "test_native_growing_graph_with_gpu_and_spatial_cycles",
+    "time": "13.597"
+  },
+  "native_cpp_tests": {
+    "cbs_ros_passed": 9,
+    "core_build_log": "build-retry.log",
+    "cbs_core_passed": 8,
+    "bridge_dds_enabled_log": "native-tests-retry.log"
+  },
+  "native_spatial_session": {
+    "robots": {
+      "Alpha": {
+        "component": "Alpha",
+        "iterations": 59,
+        "map_consistency_factors": 7,
+        "local_edges": 12,
+        "registration_pairs": 6,
+        "registration_success": true,
+        "geometry_network_cdr_bytes": 1628,
+        "pcm_network_cdr_bytes": 8685,
+        "cbs_stats": {
+          "bandwidth_recv_bytes": 9500,
+          "bandwidth_sent_bytes": 2732,
+          "belief_stage": "anchor",
+          "iteration": 59,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 15,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 15,
+          "residual": 0.004212625972621919,
+          "residual_abs_change": 0.0,
+          "residual_rel_change": 0.0,
+          "residual_signed_change": 0.0,
+          "result_logmap_change": 1.416708760963117e-22,
+          "robot_id": 0,
+          "robot_name": "Alpha"
+        }
+      },
+      "Bob": {
+        "component": "Alpha",
+        "iterations": 59,
+        "map_consistency_factors": 7,
+        "local_edges": 12,
+        "registration_pairs": 3,
+        "registration_success": true,
+        "geometry_network_cdr_bytes": 180560,
+        "pcm_network_cdr_bytes": 8685,
+        "cbs_stats": {
+          "bandwidth_recv_bytes": 9748,
+          "bandwidth_sent_bytes": 2468,
+          "belief_stage": "pose",
+          "iteration": 59,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 12,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 12,
+          "residual": 0.0016959120889255997,
+          "residual_abs_change": 0.0,
+          "residual_rel_change": 0.0,
+          "residual_signed_change": 0.0,
+          "result_logmap_change": 1.2905077151789428e-23,
+          "robot_id": 1,
+          "robot_name": "Bob"
+        }
+      },
+      "Carol": {
+        "component": "Alpha",
+        "iterations": 59,
+        "map_consistency_factors": 7,
+        "local_edges": 12,
+        "registration_pairs": 0,
+        "registration_success": true,
+        "geometry_network_cdr_bytes": 359193,
+        "pcm_network_cdr_bytes": 8140,
+        "cbs_stats": {
+          "bandwidth_recv_bytes": 8272,
+          "bandwidth_sent_bytes": 1920,
+          "belief_stage": "anchor",
+          "iteration": 59,
+          "meaningful_update": false,
+          "num_accepted_beliefs": 0,
+          "num_changed_values": 9,
+          "num_new_factors": 0,
+          "num_new_values": 0,
+          "num_received_beliefs": 0,
+          "num_removed_factors": 0,
+          "num_values": 9,
+          "residual": 2.549312314427286e-09,
+          "residual_abs_change": 0.0,
+          "residual_rel_change": 0.0,
+          "residual_signed_change": 0.0,
+          "result_logmap_change": 1.1757853144988778e-23,
+          "robot_id": 2,
+          "robot_name": "Carol"
+        }
+      }
+    },
+    "retained_loops": 9,
+    "scope": "synthetic growing three-robot correctness test at 5 Hz; not a real-time dataset benchmark"
+  },
+  "hashes": {
+    "source/cbs_ros/include/cbs_ros/pose_graph_factor.h": "361c94908695b03ec984ac6fc267e750975265d0ce19ee4f27fb42b6a270864c",
+    "source/cbs_ros/src/distributed_pcm.cpp": "c3af81919f8b04195f5724b4b806e0e112ede0601ea96afd546f70eb487e5466",
+    "source/cbs_ros/tests/test_distributed_pcm.cpp": "f23e21b9b6bdffcb4786f84e25053dc1122ceca099c5da0c36db20039367f8ba",
+    "source/cbs_ros/tests/test_pose_graph_factor.cpp": "16aaae1e315da904783e66db33ca9adac572142e4fd21f12239df7f974ec4a0c",
+    "source/.ros2/cbs-spatial-install/cbs/lib/libcbs.so": "8509db67ecd85a875516e94e1361cea1cd94ce910eaab2423a82bb81660bf8f8",
+    "source/.ros2/cbs-spatial-install/cbs_ros/lib/cbs_ros/cbs_ros_node": "e51f09d2e0b09686fd7a8f8021f2349c0a6f03441f2f22a1e8b413b91006df3f",
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/spatial_graph.py": "9083c7b1554e9c3d63fdceb9b5b912f6f84488b19c940f32bc06ffb2cae5d9f4",
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/cbs_bridge.py": "0f685d1c426a11ad2325e9d7422cbc6bdf6139fcec5b787301faf24ffbdae9f6",
+    "source/FAST-LIVO2-ROS2/research/s3e_pipeline/persistent_worker.py": "23b719f703d34eff3272021eb9259ea225477bdf5fafc09d856099850fecc867"
+  },
+  "initialization_attempts": [
+    "CMake native CUDA architecture detection failed; retried with prior validated explicit sm_120",
+    "ROS default log directory not writable; used dedicated run directory",
+    "System Python lacked mcap; used existing research virtual environment",
+    "ROS launch_testing pytest plugin incompatible; disabled unrelated plugin auto-loading"
+  ]
+}
